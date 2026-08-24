@@ -1,0 +1,782 @@
+[
+  {
+    "stt": 1,
+    "name": "Máy in A4 đen trắng 2 mặt",
+    "model": "PA4000x",
+    "brand": "KYOCERA",
+    "origin": "Việt Nam",
+    "unit": "Chiếc",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "Chức năng chuẩn",
+        "value": "In"
+      },
+      {
+        "key": "CPU",
+        "value": "1.0 Ghz"
+      },
+      {
+        "key": "Phương thức in",
+        "value": "Laser"
+      },
+      {
+        "key": "Tốc độ in",
+        "value": "40 trang/phút(A4)"
+      },
+      {
+        "key": "Bảng điều khiển",
+        "value": "LCD 5 dòng"
+      },
+      {
+        "key": "Bộ nhớ RAM tiêu chuẩn",
+        "value": "512MB"
+      },
+      {
+        "key": "Thời gian khởi động máy",
+        "value": "Khoảng 15 giây"
+      },
+      {
+        "key": "Ngôn ngữ",
+        "value": "Tiếng Việt"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "A6R-A4"
+      },
+      {
+        "key": "Trữ lượng giấy (chuẩn)",
+        "value": "01 khay gầm x 250 tờ"
+      },
+      {
+        "key": "",
+        "value": "01 khay tay x 100 tờ"
+      },
+      {
+        "key": "Định lượng giấy tiêu chuẩn",
+        "value": "Khay gầm: 60 – 163 g/m2"
+      },
+      {
+        "key": "",
+        "value": "Khay tay: 60 – 220 g/m2"
+      },
+      {
+        "key": "Khay giấy ra",
+        "value": "250 tờ úp mặt"
+      },
+      {
+        "key": "Công suất tiêu thụ",
+        "value": "Chế độ hoạt động: 555,9W"
+      },
+      {
+        "key": "",
+        "value": "Chế độ chờ: 6W"
+      },
+      {
+        "key": "",
+        "value": "Chế độ nghỉ/ tiết kiệm:  0,3W"
+      },
+      {
+        "key": "Độ phân giải",
+        "value": "300 x 300 dpi, 600 x 600 dpi, Fast1200, Fine1200"
+      },
+      {
+        "key": "Thời gian bản in đầu tiên",
+        "value": "6,4 giây hoặc ít hơn"
+      },
+      {
+        "key": "In 2 mặt (Duplex)",
+        "value": "Tiêu chuẩn"
+      },
+      {
+        "key": "In di động",
+        "value": "AirPrint, Mopria, KYOCERA Mobile Print"
+      },
+      {
+        "key": "Giao diện",
+        "value": "USB 2.0 High Speedx1; Ethernet 10BASE-T/100BASE-TX/1,000BASE-T;\r\nUSB Host Interface (USB Host)x1"
+      },
+      {
+        "key": "Giao thức hỗ trợ",
+        "value": "TCP/IP, FTP, LPR, Port9100, NetBEUI, Apple Bonjour"
+      },
+      {
+        "key": "Ngôn ngữ in",
+        "value": "PCL6 (PCL5e, PCL-XL), KPDL3 (Postscript 3 compatible), PRESCRIBE, Line Printer, IBM Proprinter, Epson LQ-850, PDF Direct Print"
+      },
+      {
+        "key": "Hộp mực",
+        "value": "7.200 trang A4"
+      },
+      {
+        "key": "",
+        "value": "Mực khởi động 3.600 trang"
+      },
+      {
+        "key": "Tuổi thọ cụm trống",
+        "value": "70.000 trang A4"
+      },
+      {
+        "key": "Bảo hành",
+        "value": "100.000 bản hoặc 12 tháng tuỳ theo điều kiện nào tới trước"
+      }
+    ]
+  },
+  {
+    "stt": 2,
+    "name": "Máy scan A3",
+    "model": "Fi-7460",
+    "brand": "RICOH",
+    "origin": "Indonesia",
+    "unit": "Chiếc",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "Kiểu máy",
+        "value": "Quét 2 mặt tự động"
+      },
+      {
+        "key": "Đèn quét",
+        "value": "Color CCD (Charge-coupled device) x 2"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "Tối đa: 304,8 x 431,8 mm; Tối thiểu: 50.8 x 69 mm"
+      },
+      {
+        "key": "",
+        "value": "Kéo giấy dài: 304,8 x 5.588 mm"
+      },
+      {
+        "key": "",
+        "value": "Khả năng quét thẻ nhựa chữ nổi, độ dày tối đa 1,4mm"
+      },
+      {
+        "key": "",
+        "value": "Khả năng quét tài liệu khổ A2 bằng cách gập đôi tài liệu"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "27 - 413 g/m2"
+      },
+      {
+        "key": "Tốc độ quét (A4 ngang, quét màu, 300dpi)",
+        "value": "Một mặt: 60 ppm, Hai mặt: 120 ipm"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "100 tờ (A4: 80 g/m2)"
+      },
+      {
+        "key": "Công suất",
+        "value": "18000 trang/ ngày"
+      },
+      {
+        "key": "Phát hiện kéo đúp, kẹt giấy",
+        "value": "Bằng cảm biến siêu âm & Cảm biến giấy & iSOP"
+      },
+      {
+        "key": "Chức năng quản lý máy",
+        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
+      },
+      {
+        "key": "Định dạng file",
+        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
+      },
+      {
+        "key": "Hỗ trợ Index file",
+        "value": "XML, CSV, TXT"
+      },
+      {
+        "key": "Tính năng tách trường văn bản (Metadata fields)",
+        "value": "20 trường, hỗ trợ font tiếng Việt, Anh, Hàn Quốc, Nhật Bản, Trung Quốc. Người dùng có thể tự định nghĩa trường văn bản."
+      },
+      {
+        "key": "Phần mềm số hóa tiếng Việt đi kèm",
+        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
+      },
+      {
+        "key": "",
+        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
+      },
+      {
+        "key": "",
+        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
+      },
+      {
+        "key": "",
+        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
+      }
+    ]
+  },
+  {
+    "stt": 3,
+    "name": "Máy scan A3",
+    "model": "Fi-7480",
+    "brand": "RICOH",
+    "origin": "Indonesia",
+    "unit": "Chiếc",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "Kiểu máy",
+        "value": "Quét 2 mặt tự động"
+      },
+      {
+        "key": "Đèn quét",
+        "value": "Color CCD (Charge-coupled device) x 2"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "Tối đa: 304,8 x 431,8 mm; Tối thiểu: 50.8 x 69 mm"
+      },
+      {
+        "key": "",
+        "value": "Kéo giấy dài: 304,8 x 5.588 mm"
+      },
+      {
+        "key": "",
+        "value": "Khả năng quét thẻ nhựa chữ nổi, độ dày tối đa 1,4mm"
+      },
+      {
+        "key": "",
+        "value": "Khả năng quét tài liệu khổ A2 bằng cách gập đôi tài liệu"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "27 - 413 g/m2"
+      },
+      {
+        "key": "Tốc độ quét (A4 ngang, quét màu, 300dpi)",
+        "value": "Một mặt: 80 ppm, Hai mặt: 160 ipm"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "100 tờ (A4: 80 g/m2)"
+      },
+      {
+        "key": "Công suất",
+        "value": "24000 trang/ ngày"
+      },
+      {
+        "key": "Cổng kết nối",
+        "value": "USB 3.0 / USB 2.0 / USB 1.1"
+      },
+      {
+        "key": "Phát hiện kéo đúp, kẹt giấy",
+        "value": "Bằng cảm biến siêu âm & Cảm biến giấy & iSOP"
+      },
+      {
+        "key": "Chức năng quản lý máy",
+        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
+      },
+      {
+        "key": "Định dạng file",
+        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
+      },
+      {
+        "key": "Hỗ trợ Index file",
+        "value": "XML, CSV, TXT"
+      },
+      {
+        "key": "Tính năng tách trường văn bản (Metadata fields)",
+        "value": "20 trường, hỗ trợ font tiếng Việt, Anh, Hàn Quốc, Nhật Bản, Trung Quốc. Người dùng có thể tự định nghĩa trường văn bản."
+      },
+      {
+        "key": "Phần mềm số hóa tiếng Việt đi kèm",
+        "value": "Phần mềm số hóa tiếng Việt:"
+      },
+      {
+        "key": "",
+        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
+      },
+      {
+        "key": "",
+        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
+      },
+      {
+        "key": "",
+        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
+      },
+      {
+        "key": "",
+        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
+      }
+    ]
+  },
+  {
+    "stt": 4,
+    "name": "Máy scan A4",
+    "model": "SP-2230N",
+    "brand": "RICOH",
+    "origin": "Thái Lan",
+    "unit": "Chiếc",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "Kiểu máy",
+        "value": "Quét 2 mặt tự động"
+      },
+      {
+        "key": "Đèn quét",
+        "value": "CIS x 2"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "Tối đa: 210 x 297 mm; Tối thiểu: 50,8 x 50,8 mm"
+      },
+      {
+        "key": "",
+        "value": "Kéo giấy dài: 6.096 mm"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "27 - 413 g/m2"
+      },
+      {
+        "key": "",
+        "value": "Thẻ nhựa: 1,4 mm"
+      },
+      {
+        "key": "Tốc độ quét",
+        "value": "Một mặt: 30 ppm, Hai mặt: 60 ipm (A4, quét màu, 300dpi)\\"
+      },
+      {
+        "key": "Độ phân giải",
+        "value": "600 dpi, tối đa 1200 dpi"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "80 tờ (A4: 80 g/m2)"
+      },
+      {
+        "key": "Công suất",
+        "value": "4500 trang/ ngày"
+      },
+      {
+        "key": "Cổng kết nối",
+        "value": "USB type C (3.2 Gen1x1 / USB 2.0 / USB 1.1)"
+      },
+      {
+        "key": "",
+        "value": "LAN: 10BASE-T, 100BASE-TX, 1000BASE-T"
+      },
+      {
+        "key": "Bộ nhớ",
+        "value": "2048 MB"
+      },
+      {
+        "key": "Chức năng Direct Scan (Quét trực tiếp, không cần qua máy tính",
+        "value": "Quét vào thư mục mạng, Quét vào email, Quét vào FTP server"
+      },
+      {
+        "key": "Chức năng quản lý máy",
+        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
+      },
+      {
+        "key": "Định dạng file",
+        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
+      },
+      {
+        "key": "Hỗ trợ Index file",
+        "value": "XML, CSV, TXT"
+      },
+      {
+        "key": "Tính năng tách trường văn bản (Metadata fields)",
+        "value": "20 trường"
+      },
+      {
+        "key": "Phần mềm số hóa tiếng Việt đi kèm",
+        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
+      },
+      {
+        "key": "",
+        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
+      },
+      {
+        "key": "",
+        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
+      },
+      {
+        "key": "",
+        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
+      }
+    ]
+  },
+  {
+    "stt": 5,
+    "name": "Máy scan A4",
+    "model": "SP-2240N",
+    "brand": "Ricoh",
+    "origin": "Thái Lan",
+    "unit": "Cái",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "Kiểu máy",
+        "value": "Quét 2 mặt tự động"
+      },
+      {
+        "key": "Đèn quét",
+        "value": "CIS x 2"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "Tối đa: 215,9 x 360 mm; Tối thiểu: 50,8 x 50,8 mm"
+      },
+      {
+        "key": "",
+        "value": "Kéo giấy dài: 6.096 mm"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "27 - 413 g/m2"
+      },
+      {
+        "key": "Tốc độ quét",
+        "value": "Một mặt: 40 ppm, Hai mặt: 80 ipm (A4, quét màu, 300dpi)\\"
+      },
+      {
+        "key": "Độ phân giải",
+        "value": "600 dpi, tối đa 1200 dpi"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "80 tờ (A4: 80 g/m2)"
+      },
+      {
+        "key": "Công suất",
+        "value": "6.000 trang/ ngày"
+      },
+      {
+        "key": "Cổng kết nối",
+        "value": "USB 3.2 Gen1x1 / USB 2.0 / USB 1.1\r\nLAN: 10BASE-T, 100BASE-TX, 1000BASE-T"
+      },
+      {
+        "key": "Chức năng quản lý máy",
+        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
+      },
+      {
+        "key": "Định dạng file",
+        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
+      },
+      {
+        "key": "Hỗ trợ Index file",
+        "value": "XML, CSV, TXT"
+      },
+      {
+        "key": "Tính năng tách trường văn bản (Metadata fields)",
+        "value": "20 trường"
+      },
+      {
+        "key": "Phần mềm số hóa tiếng Việt đi kèm",
+        "value": "Phần mềm số hóa tiếng Việt :\r\nTự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản\r\nChuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)\r\nTự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký.\r\nNguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
+      }
+    ]
+  },
+  {
+    "stt": 6,
+    "name": "Máy scan A4",
+    "model": "Fi-8150",
+    "brand": "Ricoh",
+    "origin": "Indonesia",
+    "unit": "Cái",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "Kiểu máy",
+        "value": "Quét 2 mặt tự động, có chức năng quét hộ chiếu và và khổ A3 gập đôi"
+      },
+      {
+        "key": "Đèn quét",
+        "value": "CIS x 2"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "Tối đa: 215,9 x 355,6 mm; Tối thiểu: 48 x 50 mm"
+      },
+      {
+        "key": "",
+        "value": "Kéo giấy dài: 6.096 mm"
+      },
+      {
+        "key": "",
+        "value": "Khả năng quét thẻ nhựa chữ nổi, độ dày tối đa 1,4mm"
+      },
+      {
+        "key": "",
+        "value": "Quét sổ/ Hộ chiếu: tối đa dày 7 mm"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "20 - 465 g/m2"
+      },
+      {
+        "key": "Tốc độ quét",
+        "value": "Một mặt: 50 ppm, Hai mặt: 100 ipm (A4, quét màu, 300dpi)\\"
+      },
+      {
+        "key": "Độ phân giải",
+        "value": "600 x 600 dpi, tối đa 1200 dpi"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "100 tờ (A4: 80 g/m2)"
+      },
+      {
+        "key": "Công suất",
+        "value": "8000 trang/ ngày"
+      },
+      {
+        "key": "Cổng kết nối",
+        "value": "USB 3.2 Gen1x1 / USB 2.0 / USB 1.1"
+      },
+      {
+        "key": "",
+        "value": "LAN: 10BASE-T, 100BASE-TX, 1000BASE-T"
+      },
+      {
+        "key": "Chức năng quét khổ A3, bì thư, hộ chiếu",
+        "value": "Có khả năng quét giấy khổ A3 bằng cách gập đôi và quét bì thư, hộ chiếu mà không cần sử dụng phụ kiện"
+      },
+      {
+        "key": "Chức năng quản lý máy",
+        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
+      },
+      {
+        "key": "Định dạng file",
+        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
+      },
+      {
+        "key": "Hỗ trợ Index file",
+        "value": "XML, CSV, TXT"
+      },
+      {
+        "key": "Tính năng tách trường văn bản (Metadata fields)",
+        "value": "20 trường, hỗ trợ font tiếng Việt, Anh, Hàn Quốc, Nhật Bản, Trung Quốc. Người dùng có thể tự định nghĩa trường văn bản."
+      },
+      {
+        "key": "Phần mềm số hóa tiếng Việt đi kèm",
+        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
+      },
+      {
+        "key": "",
+        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
+      },
+      {
+        "key": "",
+        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
+      },
+      {
+        "key": "",
+        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
+      }
+    ]
+  },
+  {
+    "stt": 7,
+    "name": "Máy scan A4",
+    "model": "Fi-8150U",
+    "brand": "Ricoh",
+    "origin": "Indonesia",
+    "unit": "Cái",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "Kiểu máy",
+        "value": "Quét 2 mặt tự động, có chức năng quét hộ chiếu và và khổ A3 gập đôi"
+      },
+      {
+        "key": "Đèn quét",
+        "value": "CIS x 2"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "Tối đa: 215,9 x 355,6 mm; Tối thiểu: 48 x 50 mm"
+      },
+      {
+        "key": "",
+        "value": "Kéo giấy dài: 6.096 mm"
+      },
+      {
+        "key": "",
+        "value": "Khả năng quét thẻ nhựa chữ nổi, độ dày tối đa 1,4mm"
+      },
+      {
+        "key": "",
+        "value": "Quét sổ/ Hộ chiếu: tối đa dày 7 mm"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "20 - 465 g/m2"
+      },
+      {
+        "key": "Tốc độ quét",
+        "value": "Một mặt: 50 ppm, Hai mặt: 100 ipm (A4, quét màu, 300dpi)\\"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "100 tờ (A4: 80 g/m2)"
+      },
+      {
+        "key": "Công suất",
+        "value": "8000 trang/ ngày"
+      },
+      {
+        "key": "Cổng kết nối",
+        "value": "USB 3.2 Gen1x1 / USB 2.0 / USB 1.1"
+      },
+      {
+        "key": "Chức năng quét khổ A3, bì thư",
+        "value": "Có khả năng quét giấy khổ A3 bằng cách gập đôi và quét bì thư mà không cần sử dụng phụ kiện"
+      },
+      {
+        "key": "Chức năng quản lý máy",
+        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
+      },
+      {
+        "key": "Định dạng file",
+        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
+      },
+      {
+        "key": "Hỗ trợ Index file",
+        "value": "XML, CSV, TXT"
+      },
+      {
+        "key": "Tính năng tách trường văn bản (Metadata fields)",
+        "value": "20 trường, hỗ trợ font tiếng Việt, Anh, Hàn Quốc, Nhật Bản, Trung Quốc. Người dùng có thể tự định nghĩa trường văn bản."
+      },
+      {
+        "key": "Phần mềm số hóa tiếng Việt đi kèm",
+        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
+      },
+      {
+        "key": "",
+        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
+      },
+      {
+        "key": "",
+        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
+      },
+      {
+        "key": "",
+        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
+      }
+    ]
+  },
+  {
+    "stt": 8,
+    "name": "Máy đa chức năng đen trắng IM 3500",
+    "model": "IM 3500",
+    "brand": "Ricoh",
+    "origin": "Thái Lan",
+    "unit": "Cái",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "",
+        "value": "(Cấu hình copy + in + scan)"
+      },
+      {
+        "key": "Tốc độ sao chụp / in",
+        "value": "35 bản/phút"
+      },
+      {
+        "key": "Tốc độ scan",
+        "value": "80 ipm"
+      },
+      {
+        "key": "Độ phân giải sao chụp",
+        "value": "600 x 600 dpi"
+      },
+      {
+        "key": "Độ phân giải scan",
+        "value": "100 dpi, 200dpi, 300 dpi, 400 dpi, 600 dpi"
+      },
+      {
+        "key": "Thời gian ra bản chụp đầu tiên",
+        "value": "3.8 giây,"
+      },
+      {
+        "key": "Copy liên tục",
+        "value": "999 bản một lần"
+      },
+      {
+        "key": "Thời gian khởi động máy",
+        "value": "18.6 giây"
+      },
+      {
+        "key": "Phóng to/ Thu nhỏ",
+        "value": "25% ~ 400% điều chỉnh 1%"
+      },
+      {
+        "key": "Bộ phận tự động nạp và đảo bản gốc",
+        "value": "ARDF có sẵn"
+      },
+      {
+        "key": "Chia bộ điện tử và sao chụp hai mặt",
+        "value": "có sẵn"
+      },
+      {
+        "key": "Chia bản chụp theo 2 chế độ",
+        "value": "so le và dọc ngang"
+      },
+      {
+        "key": "Chế độ tự động ngủ khi không sử dụng",
+        "value": "có sẵn"
+      },
+      {
+        "key": "Kích cỡ giấy",
+        "value": "B6 - A3"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "52 ~ 300 g/m2"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "2 khay x 550 tờ, khay tay x 100 tờ"
+      },
+      {
+        "key": "Khay giấy ra",
+        "value": "500 tờ"
+      },
+      {
+        "key": "Bộ nhớ tiêu chuẩn",
+        "value": "2 GB, HDD : 320 GB"
+      },
+      {
+        "key": "Ngôn ngữ in",
+        "value": "PCL5e/PCL6, PDF Driect, PS3 (Emulation)"
+      },
+      {
+        "key": "Kết nối",
+        "value": "Ethernet 10Base-T/100Base-TX/1000Base-T, USB Host I/F"
+      },
+      {
+        "key": "Hệ điều hành hỗ trợ",
+        "value": "Windows Vista/7/8/8.1/10, Windows server/2008/2008 R2/2012/2012 R2"
+      },
+      {
+        "key": "Hỗ trợ scan",
+        "value": "scan to email, scan to USB/SD, scan to Folder,"
+      },
+      {
+        "key": "Định dạng scan",
+        "value": "PDF, TIFF, JPEG,High Compression PDF, PDF-A"
+      },
+      {
+        "key": "Chân kê: có sẵn",
+        "value": "có sẵn"
+      }
+    ]
+  }
+]

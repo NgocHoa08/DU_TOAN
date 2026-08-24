@@ -1539,7 +1539,7 @@
   <div class="wrap">
 
     <div class="hdr">
-      <div class="badge">🤖 AI &amp; Đa File · Chuẩn Mẫu Excel V1 · v2.8 (Mới nhất)</div>
+      <div class="badge">🤖 AI &amp; Đa File · Chuẩn Mẫu Excel V1 · v3.0 (Thêm Tab Báo Giá &amp; Bảo Mật Admin)</div>
       <h1>Tạo Mẫu Dự Toán Tự Động Từ Nhiều File</h1>
       <p>Bóc tách tự động báo giá &amp; thông số kỹ thuật → Xuất file Excel chuẩn mẫu V1 đẹp, gọn, đúng 100% từng sheet
       </p>
@@ -1550,6 +1550,7 @@
       <div class="mtab active" id="mtab-dutoan" onclick="switchMainTab('dutoan')">📊 Làm Dự Toán</div>
       <div class="mtab" id="mtab-bbbg" onclick="switchMainTab('bbbg')" style="display:none">📝 Biên Bản Bàn Giao</div>
       <div class="mtab" id="mtab-tddu" onclick="switchMainTab('tddu')" style="display:none">✅ Bảng Tuyên Bố Đáp Ứng</div>
+      <div class="mtab" id="mtab-baogia" onclick="switchMainTab('baogia')" style="display:none">💰 Báo Giá (Admin)</div>
       <button class="btn btn-o btn-sm" id="btnSwitchModule" onclick="showAllMainModules()" style="height:36px;font-size:12.5px;font-weight:700;border-radius:20px;padding:0 14px">More ▾</button>
     </div>
 
@@ -2135,7 +2136,74 @@
         </div>
       </div>
     </div>
-  </div> <!-- end view-tddu -->
+  <!-- ══════════════════ VIEW BAO GIA (ADMIN) ══════════════════ -->
+  <div id="view-baogia" style="display:none">
+    <div class="card" style="margin-top:0">
+      <div class="ch">
+        <div class="ci">💰</div>
+        <div>
+          <div class="ct">Lập Bảng Báo Giá Thiết Bị Chuyên Nghiệp</div>
+          <div class="cs">Đã đọc &amp; nạp sẵn từ file "Báo giá máy Scan, Photo" - Xuất file Excel chuẩn mẫu</div>
+        </div>
+        <div style="margin-left:auto;display:flex;gap:8px;align-items:center">
+          <span style="font-size:11.5px;background:#fef3c7;color:#92400e;border:1px solid #fde68a;padding:4px 10px;border-radius:20px;font-weight:700">🚧 Đang phát triển</span>
+          <button class="btn btn-o btn-sm" onclick="lockAdminSession()" title="Khóa bảo vệ quản trị">🔒 Khóa Admin</button>
+        </div>
+      </div>
+
+      <!-- CUSTOMER INFO FORM -->
+      <div style="background:#f8fafc;border:1px solid var(--bdr);border-radius:var(--rs);padding:16px;margin-bottom:16px">
+        <div style="font-weight:800;font-size:14px;color:#0f172a;margin-bottom:12px">🏢 THÔNG TIN BẢNG BÁO GIÁ</div>
+        <div class="fgrid">
+          <div class="fg"><label>Kính gửi (Người nhận / Quý khách hàng)</label><input id="bg_to" type="text" value="Quý khách hàng" /></div>
+          <div class="fg"><label>Tên Công ty / Cơ quan</label><input id="bg_company" type="text" placeholder="Nhập tên đơn vị nhận báo giá..." /></div>
+          <div class="fg full"><label>Địa chỉ nhận hàng / trụ sở</label><input id="bg_address" type="text" placeholder="Nhập địa chỉ..." /></div>
+          <div class="fg"><label>Ngày báo giá</label><input id="bg_date" type="date" /></div>
+          <div class="fg"><label>Đơn vị gửi báo giá</label><input id="bg_seller" type="text" value="CÔNG TY TNHH THƯƠNG MẠI ĐẦU TƯ VÀ SẢN XUẤT THUẬN PHÁT" /></div>
+        </div>
+      </div>
+
+      <!-- TOOLBAR & PRODUCTS TABLE -->
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+        <div style="font-weight:700;font-size:14px;color:#0f172a">Bảng Chi Tiết Giá &amp; Thông Số Kỹ Thuật Thiết Bị</div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <button class="btn btn-p btn-sm" onclick="bgAddProduct()">➕ Thêm thiết bị</button>
+          <button class="btn btn-o btn-sm" onclick="bgLoadOriginal8Items()">🔄 Nạp lại 8 mẫu máy Scan &amp; Photo gốc</button>
+          <button class="btn btn-o btn-sm" style="color:var(--re);border-color:rgba(207,34,46,0.3)" onclick="bgClearAll()">🗑️ Xóa trắng</button>
+        </div>
+      </div>
+
+      <div id="bgTableArea" style="overflow-x:auto;margin-bottom:16px"></div>
+
+      <!-- EXPORT ACTIONS -->
+      <div class="expc" style="margin-top:16px">
+        <div class="expc-ico">📥</div>
+        <div class="expc-t">Xuất File Excel Bảng Báo Giá (.xlsx)</div>
+        <div class="expc-d">
+          File Excel xuất ra gồm đầy đủ tiêu đề công ty, thông tin khách hàng, bảng danh mục sản phẩm kèm từng dòng thông số kỹ thuật chi tiết của từng máy, đơn giá, thành tiền và tổng cộng thanh toán chuẩn định dạng.
+        </div>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <button class="btn btn-g btn-lg" onclick="exportBaogiaExcel()">⬇️ Tải file Excel Báo Giá (.xlsx)</button>
+        </div>
+      </div>
+    </div>
+  </div> <!-- end view-baogia -->
+
+  <!-- ADMIN PASSWORD MODAL -->
+  <div id="adminPassModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.65);z-index:99999;align-items:center;justify-content:center;padding:16px">
+    <div style="background:#ffffff;border-radius:14px;max-width:420px;width:100%;padding:24px;box-shadow:0 20px 25px -5px rgba(0,0,0,0.2);text-align:center">
+      <div style="font-size:40px;margin-bottom:10px">🔒</div>
+      <div style="font-size:18px;font-weight:800;color:#0f172a;margin-bottom:6px">Khu Vực Quản Trị Báo Giá</div>
+      <div style="font-size:13px;color:#64748b;margin-bottom:16px">Tính năng Báo Giá đang được phát triển nội bộ. Vui lòng nhập mật khẩu Quản trị (Admin) để mở khóa:</div>
+      <div style="margin-bottom:14px">
+        <input type="password" id="adminPassInput" placeholder="Nhập mật khẩu Admin (admin123)" style="width:100%;padding:10px 14px;border:1px solid #cbd5e1;border-radius:8px;font-size:14px;text-align:center" onkeydown="if(event.key==='Enter') verifyAdminPass()"/>
+      </div>
+      <div style="display:flex;gap:10px;justify-content:center">
+        <button class="btn btn-s" onclick="closeAdminModal()">Hủy bỏ</button>
+        <button class="btn btn-p" onclick="verifyAdminPass()">🔓 Mở Khóa Truy Cập</button>
+      </div>
+    </div>
+  </div>
 
   </div> <!-- end wrap -->
   <div id="toast"><span id="ti">✅</span><span id="tm">OK</span></div>
@@ -2163,21 +2231,32 @@
       if (typeof goStep === 'function') goStep(1);
     }
 
+    var isAdminUnlocked = false;
+
     function switchMainTab(tab) {
+      if (tab === 'baogia' && !isAdminUnlocked) {
+        openAdminModal();
+        return;
+      }
+
       document.querySelectorAll('.mtab').forEach(function (el) { el.classList.remove('active') });
       document.getElementById('view-dutoan').style.display = 'none';
       document.getElementById('view-bbbg').style.display = 'none';
       document.getElementById('view-tddu').style.display = 'none';
+      var bgView = document.getElementById('view-baogia');
+      if (bgView) bgView.style.display = 'none';
 
       var tabD = document.getElementById('mtab-dutoan');
       var tabB = document.getElementById('mtab-bbbg');
       var tabT = document.getElementById('mtab-tddu');
+      var tabG = document.getElementById('mtab-baogia');
       var btnSwitch = document.getElementById('btnSwitchModule');
 
       if (tab === 'dutoan') {
         if (tabD) { tabD.classList.add('active'); tabD.style.display = ''; }
         if (tabB) tabB.style.display = 'none';
         if (tabT) tabT.style.display = 'none';
+        if (tabG) tabG.style.display = 'none';
         if (btnSwitch) btnSwitch.style.display = '';
         document.getElementById('view-dutoan').style.display = 'block';
       } else if (tab === 'bbbg') {
@@ -2185,6 +2264,7 @@
         if (tabB) { tabB.classList.add('active'); tabB.style.display = ''; }
         if (tabD) tabD.style.display = 'none';
         if (tabT) tabT.style.display = 'none';
+        if (tabG) tabG.style.display = 'none';
         if (btnSwitch) btnSwitch.style.display = '';
         document.getElementById('view-bbbg').style.display = 'block';
         if (typeof renderHandoverForm === 'function') {
@@ -2195,10 +2275,22 @@
         if (tabT) { tabT.classList.add('active'); tabT.style.display = ''; }
         if (tabD) tabD.style.display = 'none';
         if (tabB) tabB.style.display = 'none';
+        if (tabG) tabG.style.display = 'none';
         if (btnSwitch) btnSwitch.style.display = '';
         document.getElementById('view-tddu').style.display = 'block';
         if (typeof renderTdduForm === 'function') {
           renderTdduForm();
+        }
+      } else if (tab === 'baogia') {
+        resetDutoanState();
+        if (tabG) { tabG.classList.add('active'); tabG.style.display = ''; }
+        if (tabD) tabD.style.display = 'none';
+        if (tabB) tabB.style.display = 'none';
+        if (tabT) tabT.style.display = 'none';
+        if (btnSwitch) btnSwitch.style.display = '';
+        if (bgView) bgView.style.display = 'block';
+        if (typeof renderBaogiaForm === 'function') {
+          renderBaogiaForm();
         }
       }
     }
@@ -2207,11 +2299,45 @@
       var tabD = document.getElementById('mtab-dutoan');
       var tabB = document.getElementById('mtab-bbbg');
       var tabT = document.getElementById('mtab-tddu');
+      var tabG = document.getElementById('mtab-baogia');
       var btnSwitch = document.getElementById('btnSwitchModule');
       if (tabD) tabD.style.display = '';
       if (tabB) tabB.style.display = '';
       if (tabT) tabT.style.display = '';
+      if (tabG) tabG.style.display = '';
       if (btnSwitch) btnSwitch.style.display = 'none';
+    }
+
+    function openAdminModal() {
+      var modal = document.getElementById('adminPassModal');
+      if (modal) {
+        modal.style.display = 'flex';
+        var inp = document.getElementById('adminPassInput');
+        if (inp) { inp.value = ''; inp.focus(); }
+      }
+    }
+
+    function closeAdminModal() {
+      var modal = document.getElementById('adminPassModal');
+      if (modal) modal.style.display = 'none';
+    }
+
+    function verifyAdminPass() {
+      var pass = (document.getElementById('adminPassInput').value || '').trim();
+      if (pass === 'admin123' || pass === 'thuanphat' || pass === 'admin' || pass === '123456') {
+        isAdminUnlocked = true;
+        closeAdminModal();
+        switchMainTab('baogia');
+        toast('🔓 Mở khóa thành công khu vực Quản trị Báo Giá!', 'ok');
+      } else {
+        toast('❌ Mật khẩu Admin không chính xác! (Gợi ý: admin123)', 'err');
+      }
+    }
+
+    function lockAdminSession() {
+      isAdminUnlocked = false;
+      switchMainTab('dutoan');
+      toast('🔒 Đã khóa lại khu vực Quản trị Báo Giá!', 'ok');
     }
 
     function goStep(s) {
@@ -6929,6 +7055,1082 @@ QUY TẮC PHẢN HỒI:
       } catch (e) {
         console.error(e);
         toast('❌ Lỗi xuất file: ' + e.message, 'err');
+      }
+    }
+
+    
+    /* ═══════════════════════════════════════════
+       MODULE BÁO GIÁ (ADMIN ONLY - SCAN & PHOTO)
+    ═══════════════════════════════════════════ */
+    var BAOGIA_SAMPLE_ITEMS = [
+  {
+    "stt": 1,
+    "name": "Máy in A4 đen trắng 2 mặt",
+    "model": "PA4000x",
+    "brand": "KYOCERA",
+    "origin": "Việt Nam",
+    "unit": "Chiếc",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "Chức năng chuẩn",
+        "value": "In"
+      },
+      {
+        "key": "CPU",
+        "value": "1.0 Ghz"
+      },
+      {
+        "key": "Phương thức in",
+        "value": "Laser"
+      },
+      {
+        "key": "Tốc độ in",
+        "value": "40 trang/phút(A4)"
+      },
+      {
+        "key": "Bảng điều khiển",
+        "value": "LCD 5 dòng"
+      },
+      {
+        "key": "Bộ nhớ RAM tiêu chuẩn",
+        "value": "512MB"
+      },
+      {
+        "key": "Thời gian khởi động máy",
+        "value": "Khoảng 15 giây"
+      },
+      {
+        "key": "Ngôn ngữ",
+        "value": "Tiếng Việt"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "A6R-A4"
+      },
+      {
+        "key": "Trữ lượng giấy (chuẩn)",
+        "value": "01 khay gầm x 250 tờ"
+      },
+      {
+        "key": "",
+        "value": "01 khay tay x 100 tờ"
+      },
+      {
+        "key": "Định lượng giấy tiêu chuẩn",
+        "value": "Khay gầm: 60 – 163 g/m2"
+      },
+      {
+        "key": "",
+        "value": "Khay tay: 60 – 220 g/m2"
+      },
+      {
+        "key": "Khay giấy ra",
+        "value": "250 tờ úp mặt"
+      },
+      {
+        "key": "Công suất tiêu thụ",
+        "value": "Chế độ hoạt động: 555,9W"
+      },
+      {
+        "key": "",
+        "value": "Chế độ chờ: 6W"
+      },
+      {
+        "key": "",
+        "value": "Chế độ nghỉ/ tiết kiệm:  0,3W"
+      },
+      {
+        "key": "Độ phân giải",
+        "value": "300 x 300 dpi, 600 x 600 dpi, Fast1200, Fine1200"
+      },
+      {
+        "key": "Thời gian bản in đầu tiên",
+        "value": "6,4 giây hoặc ít hơn"
+      },
+      {
+        "key": "In 2 mặt (Duplex)",
+        "value": "Tiêu chuẩn"
+      },
+      {
+        "key": "In di động",
+        "value": "AirPrint, Mopria, KYOCERA Mobile Print"
+      },
+      {
+        "key": "Giao diện",
+        "value": "USB 2.0 High Speedx1; Ethernet 10BASE-T/100BASE-TX/1,000BASE-T;\r\nUSB Host Interface (USB Host)x1"
+      },
+      {
+        "key": "Giao thức hỗ trợ",
+        "value": "TCP/IP, FTP, LPR, Port9100, NetBEUI, Apple Bonjour"
+      },
+      {
+        "key": "Ngôn ngữ in",
+        "value": "PCL6 (PCL5e, PCL-XL), KPDL3 (Postscript 3 compatible), PRESCRIBE, Line Printer, IBM Proprinter, Epson LQ-850, PDF Direct Print"
+      },
+      {
+        "key": "Hộp mực",
+        "value": "7.200 trang A4"
+      },
+      {
+        "key": "",
+        "value": "Mực khởi động 3.600 trang"
+      },
+      {
+        "key": "Tuổi thọ cụm trống",
+        "value": "70.000 trang A4"
+      },
+      {
+        "key": "Bảo hành",
+        "value": "100.000 bản hoặc 12 tháng tuỳ theo điều kiện nào tới trước"
+      }
+    ]
+  },
+  {
+    "stt": 2,
+    "name": "Máy scan A3",
+    "model": "Fi-7460",
+    "brand": "RICOH",
+    "origin": "Indonesia",
+    "unit": "Chiếc",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "Kiểu máy",
+        "value": "Quét 2 mặt tự động"
+      },
+      {
+        "key": "Đèn quét",
+        "value": "Color CCD (Charge-coupled device) x 2"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "Tối đa: 304,8 x 431,8 mm; Tối thiểu: 50.8 x 69 mm"
+      },
+      {
+        "key": "",
+        "value": "Kéo giấy dài: 304,8 x 5.588 mm"
+      },
+      {
+        "key": "",
+        "value": "Khả năng quét thẻ nhựa chữ nổi, độ dày tối đa 1,4mm"
+      },
+      {
+        "key": "",
+        "value": "Khả năng quét tài liệu khổ A2 bằng cách gập đôi tài liệu"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "27 - 413 g/m2"
+      },
+      {
+        "key": "Tốc độ quét (A4 ngang, quét màu, 300dpi)",
+        "value": "Một mặt: 60 ppm, Hai mặt: 120 ipm"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "100 tờ (A4: 80 g/m2)"
+      },
+      {
+        "key": "Công suất",
+        "value": "18000 trang/ ngày"
+      },
+      {
+        "key": "Phát hiện kéo đúp, kẹt giấy",
+        "value": "Bằng cảm biến siêu âm & Cảm biến giấy & iSOP"
+      },
+      {
+        "key": "Chức năng quản lý máy",
+        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
+      },
+      {
+        "key": "Định dạng file",
+        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
+      },
+      {
+        "key": "Hỗ trợ Index file",
+        "value": "XML, CSV, TXT"
+      },
+      {
+        "key": "Tính năng tách trường văn bản (Metadata fields)",
+        "value": "20 trường, hỗ trợ font tiếng Việt, Anh, Hàn Quốc, Nhật Bản, Trung Quốc. Người dùng có thể tự định nghĩa trường văn bản."
+      },
+      {
+        "key": "Phần mềm số hóa tiếng Việt đi kèm",
+        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
+      },
+      {
+        "key": "",
+        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
+      },
+      {
+        "key": "",
+        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
+      },
+      {
+        "key": "",
+        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
+      }
+    ]
+  },
+  {
+    "stt": 3,
+    "name": "Máy scan A3",
+    "model": "Fi-7480",
+    "brand": "RICOH",
+    "origin": "Indonesia",
+    "unit": "Chiếc",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "Kiểu máy",
+        "value": "Quét 2 mặt tự động"
+      },
+      {
+        "key": "Đèn quét",
+        "value": "Color CCD (Charge-coupled device) x 2"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "Tối đa: 304,8 x 431,8 mm; Tối thiểu: 50.8 x 69 mm"
+      },
+      {
+        "key": "",
+        "value": "Kéo giấy dài: 304,8 x 5.588 mm"
+      },
+      {
+        "key": "",
+        "value": "Khả năng quét thẻ nhựa chữ nổi, độ dày tối đa 1,4mm"
+      },
+      {
+        "key": "",
+        "value": "Khả năng quét tài liệu khổ A2 bằng cách gập đôi tài liệu"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "27 - 413 g/m2"
+      },
+      {
+        "key": "Tốc độ quét (A4 ngang, quét màu, 300dpi)",
+        "value": "Một mặt: 80 ppm, Hai mặt: 160 ipm"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "100 tờ (A4: 80 g/m2)"
+      },
+      {
+        "key": "Công suất",
+        "value": "24000 trang/ ngày"
+      },
+      {
+        "key": "Cổng kết nối",
+        "value": "USB 3.0 / USB 2.0 / USB 1.1"
+      },
+      {
+        "key": "Phát hiện kéo đúp, kẹt giấy",
+        "value": "Bằng cảm biến siêu âm & Cảm biến giấy & iSOP"
+      },
+      {
+        "key": "Chức năng quản lý máy",
+        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
+      },
+      {
+        "key": "Định dạng file",
+        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
+      },
+      {
+        "key": "Hỗ trợ Index file",
+        "value": "XML, CSV, TXT"
+      },
+      {
+        "key": "Tính năng tách trường văn bản (Metadata fields)",
+        "value": "20 trường, hỗ trợ font tiếng Việt, Anh, Hàn Quốc, Nhật Bản, Trung Quốc. Người dùng có thể tự định nghĩa trường văn bản."
+      },
+      {
+        "key": "Phần mềm số hóa tiếng Việt đi kèm",
+        "value": "Phần mềm số hóa tiếng Việt:"
+      },
+      {
+        "key": "",
+        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
+      },
+      {
+        "key": "",
+        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
+      },
+      {
+        "key": "",
+        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
+      },
+      {
+        "key": "",
+        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
+      }
+    ]
+  },
+  {
+    "stt": 4,
+    "name": "Máy scan A4",
+    "model": "SP-2230N",
+    "brand": "RICOH",
+    "origin": "Thái Lan",
+    "unit": "Chiếc",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "Kiểu máy",
+        "value": "Quét 2 mặt tự động"
+      },
+      {
+        "key": "Đèn quét",
+        "value": "CIS x 2"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "Tối đa: 210 x 297 mm; Tối thiểu: 50,8 x 50,8 mm"
+      },
+      {
+        "key": "",
+        "value": "Kéo giấy dài: 6.096 mm"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "27 - 413 g/m2"
+      },
+      {
+        "key": "",
+        "value": "Thẻ nhựa: 1,4 mm"
+      },
+      {
+        "key": "Tốc độ quét",
+        "value": "Một mặt: 30 ppm, Hai mặt: 60 ipm (A4, quét màu, 300dpi)\\"
+      },
+      {
+        "key": "Độ phân giải",
+        "value": "600 dpi, tối đa 1200 dpi"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "80 tờ (A4: 80 g/m2)"
+      },
+      {
+        "key": "Công suất",
+        "value": "4500 trang/ ngày"
+      },
+      {
+        "key": "Cổng kết nối",
+        "value": "USB type C (3.2 Gen1x1 / USB 2.0 / USB 1.1)"
+      },
+      {
+        "key": "",
+        "value": "LAN: 10BASE-T, 100BASE-TX, 1000BASE-T"
+      },
+      {
+        "key": "Bộ nhớ",
+        "value": "2048 MB"
+      },
+      {
+        "key": "Chức năng Direct Scan (Quét trực tiếp, không cần qua máy tính",
+        "value": "Quét vào thư mục mạng, Quét vào email, Quét vào FTP server"
+      },
+      {
+        "key": "Chức năng quản lý máy",
+        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
+      },
+      {
+        "key": "Định dạng file",
+        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
+      },
+      {
+        "key": "Hỗ trợ Index file",
+        "value": "XML, CSV, TXT"
+      },
+      {
+        "key": "Tính năng tách trường văn bản (Metadata fields)",
+        "value": "20 trường"
+      },
+      {
+        "key": "Phần mềm số hóa tiếng Việt đi kèm",
+        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
+      },
+      {
+        "key": "",
+        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
+      },
+      {
+        "key": "",
+        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
+      },
+      {
+        "key": "",
+        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
+      }
+    ]
+  },
+  {
+    "stt": 5,
+    "name": "Máy scan A4",
+    "model": "SP-2240N",
+    "brand": "Ricoh",
+    "origin": "Thái Lan",
+    "unit": "Cái",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "Kiểu máy",
+        "value": "Quét 2 mặt tự động"
+      },
+      {
+        "key": "Đèn quét",
+        "value": "CIS x 2"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "Tối đa: 215,9 x 360 mm; Tối thiểu: 50,8 x 50,8 mm"
+      },
+      {
+        "key": "",
+        "value": "Kéo giấy dài: 6.096 mm"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "27 - 413 g/m2"
+      },
+      {
+        "key": "Tốc độ quét",
+        "value": "Một mặt: 40 ppm, Hai mặt: 80 ipm (A4, quét màu, 300dpi)\\"
+      },
+      {
+        "key": "Độ phân giải",
+        "value": "600 dpi, tối đa 1200 dpi"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "80 tờ (A4: 80 g/m2)"
+      },
+      {
+        "key": "Công suất",
+        "value": "6.000 trang/ ngày"
+      },
+      {
+        "key": "Cổng kết nối",
+        "value": "USB 3.2 Gen1x1 / USB 2.0 / USB 1.1\r\nLAN: 10BASE-T, 100BASE-TX, 1000BASE-T"
+      },
+      {
+        "key": "Chức năng quản lý máy",
+        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
+      },
+      {
+        "key": "Định dạng file",
+        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
+      },
+      {
+        "key": "Hỗ trợ Index file",
+        "value": "XML, CSV, TXT"
+      },
+      {
+        "key": "Tính năng tách trường văn bản (Metadata fields)",
+        "value": "20 trường"
+      },
+      {
+        "key": "Phần mềm số hóa tiếng Việt đi kèm",
+        "value": "Phần mềm số hóa tiếng Việt :\r\nTự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản\r\nChuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)\r\nTự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký.\r\nNguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
+      }
+    ]
+  },
+  {
+    "stt": 6,
+    "name": "Máy scan A4",
+    "model": "Fi-8150",
+    "brand": "Ricoh",
+    "origin": "Indonesia",
+    "unit": "Cái",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "Kiểu máy",
+        "value": "Quét 2 mặt tự động, có chức năng quét hộ chiếu và và khổ A3 gập đôi"
+      },
+      {
+        "key": "Đèn quét",
+        "value": "CIS x 2"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "Tối đa: 215,9 x 355,6 mm; Tối thiểu: 48 x 50 mm"
+      },
+      {
+        "key": "",
+        "value": "Kéo giấy dài: 6.096 mm"
+      },
+      {
+        "key": "",
+        "value": "Khả năng quét thẻ nhựa chữ nổi, độ dày tối đa 1,4mm"
+      },
+      {
+        "key": "",
+        "value": "Quét sổ/ Hộ chiếu: tối đa dày 7 mm"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "20 - 465 g/m2"
+      },
+      {
+        "key": "Tốc độ quét",
+        "value": "Một mặt: 50 ppm, Hai mặt: 100 ipm (A4, quét màu, 300dpi)\\"
+      },
+      {
+        "key": "Độ phân giải",
+        "value": "600 x 600 dpi, tối đa 1200 dpi"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "100 tờ (A4: 80 g/m2)"
+      },
+      {
+        "key": "Công suất",
+        "value": "8000 trang/ ngày"
+      },
+      {
+        "key": "Cổng kết nối",
+        "value": "USB 3.2 Gen1x1 / USB 2.0 / USB 1.1"
+      },
+      {
+        "key": "",
+        "value": "LAN: 10BASE-T, 100BASE-TX, 1000BASE-T"
+      },
+      {
+        "key": "Chức năng quét khổ A3, bì thư, hộ chiếu",
+        "value": "Có khả năng quét giấy khổ A3 bằng cách gập đôi và quét bì thư, hộ chiếu mà không cần sử dụng phụ kiện"
+      },
+      {
+        "key": "Chức năng quản lý máy",
+        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
+      },
+      {
+        "key": "Định dạng file",
+        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
+      },
+      {
+        "key": "Hỗ trợ Index file",
+        "value": "XML, CSV, TXT"
+      },
+      {
+        "key": "Tính năng tách trường văn bản (Metadata fields)",
+        "value": "20 trường, hỗ trợ font tiếng Việt, Anh, Hàn Quốc, Nhật Bản, Trung Quốc. Người dùng có thể tự định nghĩa trường văn bản."
+      },
+      {
+        "key": "Phần mềm số hóa tiếng Việt đi kèm",
+        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
+      },
+      {
+        "key": "",
+        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
+      },
+      {
+        "key": "",
+        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
+      },
+      {
+        "key": "",
+        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
+      }
+    ]
+  },
+  {
+    "stt": 7,
+    "name": "Máy scan A4",
+    "model": "Fi-8150U",
+    "brand": "Ricoh",
+    "origin": "Indonesia",
+    "unit": "Cái",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "Kiểu máy",
+        "value": "Quét 2 mặt tự động, có chức năng quét hộ chiếu và và khổ A3 gập đôi"
+      },
+      {
+        "key": "Đèn quét",
+        "value": "CIS x 2"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "Tối đa: 215,9 x 355,6 mm; Tối thiểu: 48 x 50 mm"
+      },
+      {
+        "key": "",
+        "value": "Kéo giấy dài: 6.096 mm"
+      },
+      {
+        "key": "",
+        "value": "Khả năng quét thẻ nhựa chữ nổi, độ dày tối đa 1,4mm"
+      },
+      {
+        "key": "",
+        "value": "Quét sổ/ Hộ chiếu: tối đa dày 7 mm"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "20 - 465 g/m2"
+      },
+      {
+        "key": "Tốc độ quét",
+        "value": "Một mặt: 50 ppm, Hai mặt: 100 ipm (A4, quét màu, 300dpi)\\"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "100 tờ (A4: 80 g/m2)"
+      },
+      {
+        "key": "Công suất",
+        "value": "8000 trang/ ngày"
+      },
+      {
+        "key": "Cổng kết nối",
+        "value": "USB 3.2 Gen1x1 / USB 2.0 / USB 1.1"
+      },
+      {
+        "key": "Chức năng quét khổ A3, bì thư",
+        "value": "Có khả năng quét giấy khổ A3 bằng cách gập đôi và quét bì thư mà không cần sử dụng phụ kiện"
+      },
+      {
+        "key": "Chức năng quản lý máy",
+        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
+      },
+      {
+        "key": "Định dạng file",
+        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
+      },
+      {
+        "key": "Hỗ trợ Index file",
+        "value": "XML, CSV, TXT"
+      },
+      {
+        "key": "Tính năng tách trường văn bản (Metadata fields)",
+        "value": "20 trường, hỗ trợ font tiếng Việt, Anh, Hàn Quốc, Nhật Bản, Trung Quốc. Người dùng có thể tự định nghĩa trường văn bản."
+      },
+      {
+        "key": "Phần mềm số hóa tiếng Việt đi kèm",
+        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
+      },
+      {
+        "key": "",
+        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
+      },
+      {
+        "key": "",
+        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
+      },
+      {
+        "key": "",
+        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
+      }
+    ]
+  },
+  {
+    "stt": 8,
+    "name": "Máy đa chức năng đen trắng IM 3500",
+    "model": "IM 3500",
+    "brand": "Ricoh",
+    "origin": "Thái Lan",
+    "unit": "Cái",
+    "qty": 1,
+    "price": "",
+    "specs": [
+      {
+        "key": "",
+        "value": "(Cấu hình copy + in + scan)"
+      },
+      {
+        "key": "Tốc độ sao chụp / in",
+        "value": "35 bản/phút"
+      },
+      {
+        "key": "Tốc độ scan",
+        "value": "80 ipm"
+      },
+      {
+        "key": "Độ phân giải sao chụp",
+        "value": "600 x 600 dpi"
+      },
+      {
+        "key": "Độ phân giải scan",
+        "value": "100 dpi, 200dpi, 300 dpi, 400 dpi, 600 dpi"
+      },
+      {
+        "key": "Thời gian ra bản chụp đầu tiên",
+        "value": "3.8 giây,"
+      },
+      {
+        "key": "Copy liên tục",
+        "value": "999 bản một lần"
+      },
+      {
+        "key": "Thời gian khởi động máy",
+        "value": "18.6 giây"
+      },
+      {
+        "key": "Phóng to/ Thu nhỏ",
+        "value": "25% ~ 400% điều chỉnh 1%"
+      },
+      {
+        "key": "Bộ phận tự động nạp và đảo bản gốc",
+        "value": "ARDF có sẵn"
+      },
+      {
+        "key": "Chia bộ điện tử và sao chụp hai mặt",
+        "value": "có sẵn"
+      },
+      {
+        "key": "Chia bản chụp theo 2 chế độ",
+        "value": "so le và dọc ngang"
+      },
+      {
+        "key": "Chế độ tự động ngủ khi không sử dụng",
+        "value": "có sẵn"
+      },
+      {
+        "key": "Kích cỡ giấy",
+        "value": "B6 - A3"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "52 ~ 300 g/m2"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "2 khay x 550 tờ, khay tay x 100 tờ"
+      },
+      {
+        "key": "Khay giấy ra",
+        "value": "500 tờ"
+      },
+      {
+        "key": "Bộ nhớ tiêu chuẩn",
+        "value": "2 GB, HDD : 320 GB"
+      },
+      {
+        "key": "Ngôn ngữ in",
+        "value": "PCL5e/PCL6, PDF Driect, PS3 (Emulation)"
+      },
+      {
+        "key": "Kết nối",
+        "value": "Ethernet 10Base-T/100Base-TX/1000Base-T, USB Host I/F"
+      },
+      {
+        "key": "Hệ điều hành hỗ trợ",
+        "value": "Windows Vista/7/8/8.1/10, Windows server/2008/2008 R2/2012/2012 R2"
+      },
+      {
+        "key": "Hỗ trợ scan",
+        "value": "scan to email, scan to USB/SD, scan to Folder,"
+      },
+      {
+        "key": "Định dạng scan",
+        "value": "PDF, TIFF, JPEG,High Compression PDF, PDF-A"
+      },
+      {
+        "key": "Chân kê: có sẵn",
+        "value": "có sẵn"
+      }
+    ]
+  }
+];
+    var bgItems = JSON.parse(JSON.stringify(BAOGIA_SAMPLE_ITEMS));
+
+    function renderBaogiaForm() {
+      var container = document.getElementById('bgTableArea');
+      if (!container) return;
+
+      var dtEl = document.getElementById('bg_date');
+      if (dtEl && !dtEl.value) dtEl.valueAsDate = new Date();
+
+      var grandTotal = 0;
+      var totalQty = 0;
+
+      var html = '<table class="excel-table" style="width:100%">' +
+        '<thead>' +
+        '<tr>' +
+        '<th style="width:40px">STT</th>' +
+        '<th>Mô Tả Sản Phẩm &amp; Thông Số Kỹ Thuật</th>' +
+        '<th style="width:110px">Model</th>' +
+        '<th style="width:90px">Hãng</th>' +
+        '<th style="width:90px">Xuất xứ</th>' +
+        '<th style="width:65px">ĐVT</th>' +
+        '<th style="width:60px">SL</th>' +
+        '<th style="width:120px">Đơn giá (VNĐ)</th>' +
+        '<th style="width:130px">Thành tiền</th>' +
+        '<th style="width:45px">Xóa</th>' +
+        '</tr>' +
+        '</thead><tbody>';
+
+      if (!bgItems || bgItems.length === 0) {
+        html += '<tr><td colspan="10" class="ctr" style="padding:30px;color:var(--t2);background:#fff">' +
+          '<div style="font-size:32px;margin-bottom:8px">💰</div>' +
+          '<div style="font-weight:700;margin-bottom:4px;color:#0f172a">Bảng báo giá hiện đang trống</div>' +
+          '<div style="font-size:12.5px;margin-bottom:12px">Bấm nút bên dưới để nạp lại dữ liệu 8 mẫu máy Scan &amp; Photo từ file gốc hoặc thêm thiết bị mới</div>' +
+          '<button class="btn btn-p btn-sm" onclick="bgLoadOriginal8Items()">🔄 Nạp 8 mẫu máy Scan &amp; Photo gốc</button>' +
+          '</td></tr>';
+      } else {
+        bgItems.forEach(function (d, idx) {
+          var qty = parseInt(d.qty) || 1;
+          var price = d.price === '' ? 0 : (typeof d.price === 'number' ? d.price : parseNum(d.price));
+          var total = qty * price;
+          grandTotal += total;
+          totalQty += qty;
+
+          html += '<tr style="background:#fafbfc">' +
+            '<td class="ctr" style="font-weight:700">' + (idx + 1) + '</td>' +
+            '<td><input type="text" class="cell-inp" style="font-weight:700;color:var(--b2)" value="' + escH(d.name || '') + '" onchange="bgUpdateField(' + idx + ', \'name\', this.value)"/></td>' +
+            '<td><input type="text" class="cell-inp ctr" value="' + escH(d.model || '') + '" onchange="bgUpdateField(' + idx + ', \'model\', this.value)"/></td>' +
+            '<td><input type="text" class="cell-inp ctr" value="' + escH(d.brand || '') + '" onchange="bgUpdateField(' + idx + ', \'brand\', this.value)"/></td>' +
+            '<td><input type="text" class="cell-inp ctr" value="' + escH(d.origin || '') + '" onchange="bgUpdateField(' + idx + ', \'origin\', this.value)"/></td>' +
+            '<td><input type="text" class="cell-inp ctr" value="' + escH(d.unit || 'Chiếc') + '" onchange="bgUpdateField(' + idx + ', \'unit\', this.value)"/></td>' +
+            '<td><input type="number" min="1" class="cell-inp ctr" style="font-weight:700" value="' + qty + '" onchange="bgUpdateField(' + idx + ', \'qty\', this.value)"/></td>' +
+            '<td><input type="text" class="cell-inp text-r" placeholder="Tự điền giá..." value="' + (price > 0 ? fmtMoney(price) : '') + '" onchange="bgUpdateField(' + idx + ', \'price\', this.value)"/></td>' +
+            '<td class="text-r" style="font-weight:700;color:var(--gr)">' + (total > 0 ? fmtMoney(total) + ' đ' : '-') + '</td>' +
+            '<td class="ctr"><button style="background:none;border:none;cursor:pointer;color:var(--re);font-size:15px" onclick="bgDelProduct(' + idx + ')" title="Xóa dòng">✕</button></td>' +
+            '</tr>';
+
+          // Specs rows
+          if (d.specs && d.specs.length > 0) {
+            d.specs.forEach(function (sp) {
+              html += '<tr style="font-size:12px;background:#ffffff">' +
+                '<td></td>' +
+                '<td style="padding-left:24px;color:#475569"><span style="font-weight:600;color:#1e293b">' + (sp.key ? escH(sp.key) + ': ' : '') + '</span>' + escH(sp.value || '') + '</td>' +
+                '<td colspan="8" style="color:#94a3b8;font-size:11px">-</td>' +
+                '</tr>';
+            });
+          }
+        });
+
+        // Summary row
+        html += '<tr style="background:#f1f5f9;font-weight:800;border-top:2px solid #cbd5e1">' +
+          '<td colspan="6" class="text-r" style="padding:10px 14px;color:#0f172a">TỔNG CỘNG TIỀN HÀNG (CHƯA VAT):</td>' +
+          '<td class="ctr" style="color:var(--b2)">' + totalQty + '</td>' +
+          '<td></td>' +
+          '<td class="text-r" style="color:var(--gr);font-size:14px">' + (grandTotal > 0 ? fmtMoney(grandTotal) + ' đ' : '0 đ') + '</td>' +
+          '<td></td>' +
+          '</tr>';
+      }
+
+      html += '</tbody></table>';
+      container.innerHTML = html;
+    }
+
+    function bgUpdateField(idx, field, val) {
+      if (!bgItems[idx]) return;
+      if (field === 'qty') {
+        bgItems[idx].qty = parseInt(val) || 1;
+      } else if (field === 'price') {
+        bgItems[idx].price = val === '' ? '' : parseNum(val);
+      } else {
+        bgItems[idx][field] = val;
+      }
+      renderBaogiaForm();
+    }
+
+    function bgAddProduct() {
+      bgItems.push({
+        stt: bgItems.length + 1,
+        name: 'Thiết bị mới',
+        model: '',
+        brand: '',
+        origin: 'Việt Nam',
+        unit: 'Chiếc',
+        qty: 1,
+        price: '',
+        specs: [
+          { key: 'Chức năng chuẩn', value: '...' },
+          { key: 'Bảo hành', value: '12 tháng' }
+        ]
+      });
+      renderBaogiaForm();
+      toast('➕ Đã thêm dòng thiết bị báo giá mới!', 'ok');
+    }
+
+    function bgDelProduct(idx) {
+      if (confirm('Bạn có chắc muốn xóa thiết bị này khỏi bảng báo giá?')) {
+        bgItems.splice(idx, 1);
+        renderBaogiaForm();
+        toast('🗑️ Đã xóa thiết bị!', 'ok');
+      }
+    }
+
+    function bgLoadOriginal8Items() {
+      bgItems = JSON.parse(JSON.stringify(BAOGIA_SAMPLE_ITEMS));
+      renderBaogiaForm();
+      toast('🔄 Đã nạp lại đủ 8 dòng máy Scan & Photo gốc!', 'ok');
+    }
+
+    function bgClearAll() {
+      if (confirm('Bạn có chắc chắn muốn xóa trắng bảng báo giá?')) {
+        bgItems = [];
+        renderBaogiaForm();
+        toast('🗑️ Đã làm mới bảng báo giá!', 'ok');
+      }
+    }
+
+    function exportBaogiaExcel() {
+      if (!bgItems || bgItems.length === 0) {
+        toast('⚠️ Bảng báo giá đang trống, không thể xuất file!', 'err');
+        return;
+      }
+
+      try {
+        var wb = XLSX.utils.book_new();
+        var ws = {};
+        ws["!cols"] = [
+          { wch: 6 },  // A: STT
+          { wch: 42 }, // B: MÔ TẢ / Key
+          { wch: 38 }, // C: Value
+          { wch: 18 }, // D: Model
+          { wch: 15 }, // E: Hãng
+          { wch: 15 }, // F: Xuất xứ
+          { wch: 10 }, // G: ĐVT
+          { wch: 8 },  // H: SL
+          { wch: 16 }, // I: Đơn giá
+          { wch: 18 }  // J: Thành tiền
+        ];
+        ws["!rows"] = [];
+        var mg = [];
+
+        var SCompany = { font: { bold: true, name: 'Times New Roman', sz: 12, color: { rgb: '002060' } } };
+        var SDate = { font: { italic: true, name: 'Times New Roman', sz: 11 }, alignment: { horizontal: 'right' } };
+        var STitle = { font: { bold: true, name: 'Times New Roman', sz: 18, color: { rgb: 'C00000' } }, alignment: { horizontal: 'center' } };
+        var SHead = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, fill: { fgColor: { rgb: 'D9E1F2' } }, alignment: { horizontal: 'center', vertical: 'center', wrapText: true }, border: BORD };
+        var SDevRow = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '002060' } }, fill: { fgColor: { rgb: 'F2F2F2' } }, border: BORD };
+        var SText = { font: { name: 'Times New Roman', sz: 10.5 }, border: BORD, alignment: { vertical: 'center', wrapText: true } };
+        var SCtr = { font: { name: 'Times New Roman', sz: 10.5 }, border: BORD, alignment: { horizontal: 'center', vertical: 'center' } };
+        var SNum = { font: { name: 'Times New Roman', sz: 10.5 }, border: BORD, alignment: { horizontal: 'right', vertical: 'center' }, numFmt: '#,##0' };
+        var STotal = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: 'C00000' } }, fill: { fgColor: { rgb: 'FFF2CC' } }, border: BORD, alignment: { horizontal: 'right', vertical: 'center' }, numFmt: '#,##0' };
+
+        var r = 0;
+        var seller = (document.getElementById('bg_seller') && document.getElementById('bg_seller').value) || 'CÔNG TY TNHH THƯƠNG MẠI ĐẦU TƯ VÀ SẢN XUẤT THUẬN PHÁT';
+        setCell(ws, r, 0, seller, SCompany);
+        mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 5 } });
+        ws["!rows"][r] = { hpt: 20 }; r++;
+
+        setCell(ws, r, 0, 'Địa chỉ: Thôn Dục Nội, Xã Đông Anh, TP. Hà Nội, Việt Nam', { font: { name: 'Times New Roman', sz: 10.5 } });
+        mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 5 } });
+        ws["!rows"][r] = { hpt: 18 }; r++;
+
+        r++; // Blank
+        var dateVal = (document.getElementById('bg_date') && document.getElementById('bg_date').value) || new Date().toISOString().slice(0, 10);
+        var dtParts = dateVal.split('-');
+        var dateText = 'Hà Nội, Ngày ' + (dtParts[2] || '...') + ' tháng ' + (dtParts[1] || '...') + ' năm ' + (dtParts[0] || '2026');
+        setCell(ws, r, 5, dateText, SDate);
+        mg.push({ s: { r: r, c: 5 }, e: { r: r, c: 9 } });
+        ws["!rows"][r] = { hpt: 20 }; r++;
+
+        // Title
+        setCell(ws, r, 0, 'BẢNG BÁO GIÁ SẢN PHẨM', STitle);
+        mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 9 } });
+        ws["!rows"][r] = { hpt: 28 }; r++;
+
+        var toName = (document.getElementById('bg_to') && document.getElementById('bg_to').value) || 'Quý khách hàng';
+        var toComp = (document.getElementById('bg_company') && document.getElementById('bg_company').value) || '';
+        var toAddr = (document.getElementById('bg_address') && document.getElementById('bg_address').value) || '';
+
+        setCell(ws, r, 0, 'Kính gửi: ' + toName, { font: { bold: true, name: 'Times New Roman', sz: 11 } }); r++;
+        if (toComp) { setCell(ws, r, 0, 'Công ty / Đơn vị: ' + toComp, { font: { name: 'Times New Roman', sz: 11 } }); r++; }
+        if (toAddr) { setCell(ws, r, 0, 'Địa chỉ: ' + toAddr, { font: { name: 'Times New Roman', sz: 11 } }); r++; }
+        
+        setCell(ws, r, 0, 'Trân trọng cảm ơn quý khách hàng đã quan tâm đến sản phẩm và dịch vụ của chúng tôi. Chúng tôi xin gửi tới Quý khách bảng báo giá sản phẩm như sau:', { font: { italic: true, name: 'Times New Roman', sz: 10.5 } });
+        mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 9 } });
+        ws["!rows"][r] = { hpt: 22 }; r++;
+        r++; // Blank
+
+        // Header Table
+        setCell(ws, r, 0, 'STT', SHead);
+        setCell(ws, r, 1, 'MÔ TẢ SẢN PHẨM', SHead);
+        setCell(ws, r, 2, '', SHead);
+        mg.push({ s: { r: r, c: 1 }, e: { r: r, c: 2 } });
+        setCell(ws, r, 3, 'Model', SHead);
+        setCell(ws, r, 4, 'Hãng', SHead);
+        setCell(ws, r, 5, 'Xuất xứ', SHead);
+        setCell(ws, r, 6, 'ĐVT', SHead);
+        setCell(ws, r, 7, 'SL', SHead);
+        setCell(ws, r, 8, 'Đơn giá', SHead);
+        setCell(ws, r, 9, 'Thành tiền', SHead);
+        ws["!rows"][r] = { hpt: 26 }; r++;
+
+        var grandTotal = 0;
+        var totalQty = 0;
+
+        bgItems.forEach(function (d, idx) {
+          var qty = parseInt(d.qty) || 1;
+          var price = d.price === '' ? 0 : (typeof d.price === 'number' ? d.price : parseNum(d.price));
+          var total = qty * price;
+          grandTotal += total;
+          totalQty += qty;
+
+          setCell(ws, r, 0, idx + 1, SCtr);
+          setCell(ws, r, 1, d.name || '', SDevRow);
+          setCell(ws, r, 2, '', SDevRow);
+          mg.push({ s: { r: r, c: 1 }, e: { r: r, c: 2 } });
+          setCell(ws, r, 3, d.model || '', SCtr);
+          setCell(ws, r, 4, d.brand || '', SCtr);
+          setCell(ws, r, 5, d.origin || '', SCtr);
+          setCell(ws, r, 6, d.unit || 'Chiếc', SCtr);
+          setCell(ws, r, 7, qty, SCtr);
+          setCell(ws, r, 8, price > 0 ? price : '', SNum);
+          setCell(ws, r, 9, total > 0 ? total : 0, SNum);
+          ws["!rows"][r] = { hpt: 22 }; r++;
+
+          if (d.specs && d.specs.length > 0) {
+            d.specs.forEach(function (sp) {
+              setCell(ws, r, 0, '', SCtr);
+              setCell(ws, r, 1, sp.key || '', SText);
+              setCell(ws, r, 2, sp.value || '', SText);
+              setCell(ws, r, 3, '', SCtr);
+              setCell(ws, r, 4, '', SCtr);
+              setCell(ws, r, 5, '', SCtr);
+              setCell(ws, r, 6, '', SCtr);
+              setCell(ws, r, 7, '', SCtr);
+              setCell(ws, r, 8, '', SCtr);
+              setCell(ws, r, 9, '', SCtr);
+              ws["!rows"][r] = { hpt: 20 }; r++;
+            });
+          }
+        });
+
+        // Summary Total
+        setCell(ws, r, 0, '', STotal);
+        setCell(ws, r, 1, 'TỔNG CỘNG TIỀN HÀNG (CHƯA VAT):', STotal);
+        setCell(ws, r, 2, '', STotal);
+        mg.push({ s: { r: r, c: 1 }, e: { r: r, c: 6 } });
+        for (var c = 3; c <= 6; c++) setCell(ws, r, c, '', STotal);
+        setCell(ws, r, 7, totalQty, STotal);
+        setCell(ws, r, 8, '', STotal);
+        setCell(ws, r, 9, grandTotal, STotal);
+        ws["!rows"][r] = { hpt: 24 }; r++;
+
+        // Footer signatures
+        r += 2;
+        setCell(ws, r, 1, 'NGƯỜI LẬP BÁO GIÁ', { font: { bold: true, name: 'Times New Roman', sz: 11 }, alignment: { horizontal: 'center' } });
+        setCell(ws, r, 7, 'ĐẠI DIỆN CÔNG TY', { font: { bold: true, name: 'Times New Roman', sz: 11 }, alignment: { horizontal: 'center' } });
+        mg.push({ s: { r: r, c: 7 }, e: { r: r, c: 9 } });
+        ws["!rows"][r] = { hpt: 20 }; r++;
+
+        ws["!merges"] = mg;
+        ws["!ref"] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: r + 3, c: 9 } });
+        XLSX.utils.book_append_sheet(wb, ws, 'BaoGia');
+
+        var fileName = 'Bang_Bao_Gia_May_Scan_Photo_' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '.xlsx';
+        XLSX.writeFile(wb, fileName);
+        toast('✅ Đã xuất file Excel Bảng Báo Giá (' + bgItems.length + ' thiết bị) thành công!', 'ok');
+      } catch (err) {
+        console.error(err);
+        toast('❌ Lỗi xuất file báo giá: ' + err.message, 'err');
       }
     }
 
