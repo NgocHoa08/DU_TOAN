@@ -2153,6 +2153,16 @@
     /* ═══════════════════════════════════════════
        STEP NAV
     ═══════════════════════════════════════════ */
+    function resetDutoanState() {
+      selectedCatalogItems = {};
+      devs = [];
+      devCnt = 0;
+      fileList = [];
+      if (typeof renderCatalogGrid === 'function') renderCatalogGrid();
+      if (typeof renderFileList === 'function') renderFileList();
+      if (typeof goStep === 'function') goStep(1);
+    }
+
     function switchMainTab(tab) {
       document.querySelectorAll('.mtab').forEach(function (el) { el.classList.remove('active') });
       document.getElementById('view-dutoan').style.display = 'none';
@@ -2171,6 +2181,7 @@
         if (btnSwitch) btnSwitch.style.display = '';
         document.getElementById('view-dutoan').style.display = 'block';
       } else if (tab === 'bbbg') {
+        resetDutoanState(); // Tự động bỏ chọn toàn bộ máy bên Dự toán
         if (tabB) { tabB.classList.add('active'); tabB.style.display = ''; }
         if (tabD) tabD.style.display = 'none';
         if (tabT) tabT.style.display = 'none';
@@ -2180,6 +2191,7 @@
           renderHandoverForm();
         }
       } else if (tab === 'tddu') {
+        resetDutoanState(); // Tự động bỏ chọn toàn bộ máy bên Dự toán
         if (tabT) { tabT.classList.add('active'); tabT.style.display = ''; }
         if (tabD) tabD.style.display = 'none';
         if (tabB) tabB.style.display = 'none';
