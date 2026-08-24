@@ -1799,8 +1799,10 @@
 
       </div>
 
-      <div style="text-align:right; margin-top:16px;">
-        <button class="btn btn-p btn-lg" onclick="goStep(2)">Tiếp theo: Kiểm Tra &amp; Lọc →</button>
+      <div style="display:flex; justify-content:flex-end; align-items:center; gap:10px; margin-top:16px; flex-wrap:wrap">
+        <button class="btn btn-o" onclick="goStep(2)">🔍 Kiểm Tra &amp; Lọc (Bước 2)</button>
+        <button class="btn btn-p btn-lg" onclick="if(!devs.length && typeof selectedCatalogItems!=='undefined' && Object.keys(selectedCatalogItems).length){createProjectFromCatalog();}else if(devs.length){goStep(3);}else{toast('⚠️ Vui lòng chọn thiết bị hoặc tải file trước!','err');}">📑 Xem Trước &amp; Xuất File Excel (Bước 3) →</button>
+        <button class="btn btn-g btn-lg" onclick="if(!devs.length && typeof selectedCatalogItems!=='undefined' && Object.keys(selectedCatalogItems).length){createProjectFromCatalog();doExport();}else if(devs.length){doExport();}else{toast('⚠️ Vui lòng chọn thiết bị hoặc tải file trước khi xuất Excel!','err');}">⬇️ Xuất File Excel Dự Toán (.xlsx)</button>
       </div>
 
     </div>
@@ -4772,7 +4774,7 @@ QUY TẮC PHẢN HỒI:
       });
 
       toast('🚀 Đã nạp ' + devs.length + ' thiết bị kèm 100% thông số kỹ thuật!', 'ok');
-      goStep(2);
+      goStep(3);
     }
 
     /* ── QUICK EDIT FORM ── */
