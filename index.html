@@ -1539,7 +1539,7 @@
   <div class="wrap">
 
     <div class="hdr">
-      <div class="badge">🤖 AI &amp; Đa File · Chuẩn Mẫu Excel V1 · v2.3 (Mới nhất)</div>
+      <div class="badge">🤖 AI &amp; Đa File · Chuẩn Mẫu Excel V1 · v2.4 (Mới nhất)</div>
       <h1>Tạo Mẫu Dự Toán Tự Động Từ Nhiều File</h1>
       <p>Bóc tách tự động báo giá &amp; thông số kỹ thuật → Xuất file Excel chuẩn mẫu V1 đẹp, gọn, đúng 100% từng sheet
       </p>
@@ -2073,11 +2073,15 @@
         <div class="tddu-stat-item">❌ <strong>Không đáp ứng:</strong> <span id="tdduStatFail"
             style="color:#f85149;font-weight:800">0</span></div>
         <div style="margin-left:auto;display:flex;gap:8px;flex-wrap:wrap;align-items:center">
-          <select class="key-inp" style="height:32px;font-size:12px;max-width:210px;background:#ffffff"
+          <select class="key-inp" style="height:32px;font-size:12px;max-width:220px;background:#ffffff"
             onchange="if(this.value){tdduAddPresetDirectly(this.value);this.value='';}">
             <option value="">➕ Thêm mẫu máy chuẩn...</option>
+            <option value="msi_cubi_nuc">💻 Mini PC MSI Cubi NUC 1M</option>
             <option value="msi_dp180">💻 Máy vi tính MSI PRO DP180</option>
             <option value="oki_b433dn">🖨️ Máy in OKI B433DN</option>
+            <option value="oki_b513dn">🖨️ Máy in OKI B513DN</option>
+            <option value="canon_lbp2900">🖨️ Máy in Canon LBP2900</option>
+            <option value="hp_m404dn">🖨️ Máy in HP LaserJet M404dn</option>
             <option value="ricoh_im2500">📠 Máy photo Ricoh IM 2500</option>
             <option value="ricoh_fi8170">📄 Máy scan RICOH Fi-8170</option>
             <option value="switch_gwn7813">🌐 Switch Grandstream GWN7813</option>
@@ -5500,7 +5504,7 @@ QUY TẮC PHẢN HỒI:
       }
     ];
 
-    var tdduItems = JSON.parse(JSON.stringify(TDDU_SAMPLE_ITEMS));
+    var tdduItems = []; // Independent Compliance Table state
 
     /* ── LOAD SAMPLE TDDU FILE ── */
     function loadSampleTdduFile() {
