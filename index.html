@@ -4412,35 +4412,69 @@ QUY TẮC PHẢN HỒI:
           { key: 'Nước sản xuất', value: 'Trung Quốc / Việt Nam' }
         ];
       }
-      // 2. LAPTOP / MÁY TÍNH XÁCH TAY
-      else if (nL.includes('laptop') || nL.includes('notebook') || nL.includes('macbook') || nL.includes('vivobook') || nL.includes('thinkpad') || nL.includes('latitude') || nL.includes('vostro 3') || nL.includes('vostro 5') || nL.includes('aspire') || nL.includes('ideapad')) {
-        sp = [
-          { key: 'Chức năng / Loại thiết bị', value: 'Máy tính xách tay (Laptop) phục vụ học tập, văn phòng và xử lý đồ họa' },
-          { key: 'Bộ vi xử lý (CPU)', value: 'Intel Core i5 / i7 thế hệ mới (10 - 12 nhân, Turbo 4.6 GHz)' },
-          { key: 'Bộ nhớ tiêu chuẩn (RAM)', value: '16GB DDR4 / DDR5 High Speed (Hỗ trợ nâng cấp tối đa 32GB)' },
-          { key: 'Ổ đĩa cứng lưu trữ (SSD)', value: '512GB M.2 PCIe NVMe SSD siêu tốc' },
-          { key: 'Màn hình hiển thị', value: '14.0 inch / 15.6 inch Full HD (1920x1080) IPS chống chói Anti-Glare' },
-          { key: 'Card đồ họa (VGA)', value: 'Intel Iris Xe Graphics / AMD Radeon Graphics tích hợp mượt mà' },
-          { key: 'Bàn phím & Touchpad', value: 'Bàn phím tiêu chuẩn gõ êm, Touchpad cảm ứng đa điểm' },
-          { key: 'Webcam & Microphone', value: 'HD Webcam 720p/1080p tích hợp Micro kép lọc ồn thông minh' },
-          { key: 'Công nghệ âm thanh', value: 'Stereo Speakers công nghệ Waves MaxxAudio / Dolby Audio' },
-          { key: 'Kết nối không dây', value: 'Wi-Fi 6 (802.11ax) + Bluetooth 5.2 tốc độ cao' },
-          { key: 'Cổng giao tiếp ngoại vi', value: '2x USB 3.2, 1x Type-C, 1x HDMI 1.4, 1x Audio 3.5mm, 1x Khe thẻ SD' },
-          { key: 'Dung lượng Pin', value: 'Pin 3-cell / 4-cell 41Wh - 54Wh (Thời lượng dùng 5 - 8 giờ liên tục)' },
-          { key: 'Bộ nguồn / Sạc', value: 'Adapter sạc nhanh 45W - 65W chuẩn an toàn' },
-          { key: 'Hệ điều hành', value: 'Windows 11 Home / Pro 64-bit bản quyền' },
-          { key: 'Trọng lượng & Kích thước', value: 'Khoảng 1.4kg - 1.7kg; Thiết kế mỏng nhẹ cơ động' },
-          { key: 'Chất liệu vỏ máy', value: 'Hợp kim nhôm hoặc nhựa Polycarbonate cao cấp chống bám vân tay' },
-          { key: 'Tính năng bảo mật', value: 'Cảm biến vân tay 1 chạm Fingerprint / TPM 2.0 bảo mật phần cứng' },
-          { key: 'Phụ kiện đi kèm', value: 'Củ sạc, Cáp nguồn, Túi chống sốc / Balo chính hãng' },
-          { key: 'Tiêu chuẩn độ bền', value: 'Đạt chuẩn độ bền quân đội Mỹ MIL-STD-810H' },
-          { key: 'Công suất tiêu thụ', value: 'Tiết kiệm năng lượng chuẩn Energy Star' },
-          { key: 'Tuổi thọ phần cứng', value: 'MTBF > 80.000 giờ sử dụng' },
-          { key: 'Bảo hành', value: '12 - 24 tháng chính hãng' },
-          { key: 'Năm sản xuất', value: 'từ 2024 tới nay' },
-          { key: 'Hãng sản xuất', value: brand || 'Chính hãng (Dell / HP / Asus / Lenovo / Acer)' },
-          { key: 'Nước sản xuất', value: 'Trung Quốc' }
-        ];
+      // 2. LAPTOP / MÁY TÍNH XÁCH TAY (BAO GỒM LAPTOP VĂN PHÒNG & GAMING ĐỒ HỌA CAO CẤP)
+      else if (nL.includes('laptop') || nL.includes('notebook') || nL.includes('macbook') || nL.includes('vivobook') || nL.includes('zenbook') || nL.includes('thinkpad') || nL.includes('thinkbook') || nL.includes('latitude') || nL.includes('vostro') || nL.includes('inspiron') || nL.includes('xps') || nL.includes('precision') || nL.includes('aspire') || nL.includes('swift') || nL.includes('ideapad') || nL.includes('legion') || nL.includes('loq') || nL.includes('yoga') || nL.includes('tuf') || nL.includes('rog') || nL.includes('zephyrus') || nL.includes('strix') || nL.includes('alienware') || nL.includes('omen') || nL.includes('victus') || nL.includes('pavilion') || nL.includes('spectre') || nL.includes('envy') || nL.includes('elitebook') || nL.includes('probook') || nL.includes('predator') || nL.includes('nitro') || nL.includes('katana') || nL.includes('cyborg') || nL.includes('stealth') || nL.includes('raider') || nL.includes('titan') || nL.includes('sword') || nL.includes('thin') || nL.includes('modern') || nL.includes('prestige') || nL.includes('expertbook') || nL.includes('surface') || nL.includes('gaming') || nL.includes('g15') || nL.includes('g16') || nL.includes('lenovo') || nL.includes('asus') || nL.includes('acer')) {
+        
+        var isGaming = nL.includes('legion') || nL.includes('gaming') || nL.includes('rog') || nL.includes('predator') || nL.includes('tuf') || nL.includes('nitro') || nL.includes('omen') || nL.includes('victus') || nL.includes('alienware') || nL.includes('loq') || nL.includes('katana') || nL.includes('zephyrus');
+        
+        if (isGaming || nL.includes('legion')) {
+          sp = [
+            { key: 'Chức năng / Loại thiết bị', value: 'Máy tính xách tay Gaming & Đồ họa chuyên nghiệp (High Performance Laptop)' },
+            { key: 'Bộ vi xử lý (CPU)', value: 'AMD Ryzen 7 6800H / Intel Core i7-12700H (8 - 14 nhân, 16 - 20 luồng, Turbo tới 4.7 GHz)' },
+            { key: 'Bộ nhớ tiêu chuẩn (RAM)', value: '16GB / 32GB DDR5 4800MHz Dual Channel (2 khe SO-DIMM nâng cấp tới 64GB)' },
+            { key: 'Ổ đĩa cứng lưu trữ (SSD)', value: '512GB / 1TB PCIe NVMe Gen 4 siêu tốc (Hỗ trợ 2 khe cắm M.2 SSD)' },
+            { key: 'Màn hình hiển thị', value: '16.0 inch WQXGA 2.5K (2560 x 1600) 165Hz IPS, 500 nits, 100% sRGB, Dolby Vision, G-Sync' },
+            { key: 'Card đồ họa rời (VGA)', value: 'NVIDIA GeForce RTX 3060 / RTX 3070 Ti 6GB/8GB GDDR6 (TGP 140W, MUX Switch)' },
+            { key: 'Hệ thống tản nhiệt', value: 'Legion Coldfront 4.0 buồng hơi đồng kép với quạt làm mát cánh siêu mỏng vận hành êm ái' },
+            { key: 'Bàn phím & Touchpad', value: 'Bàn phím Legion TrueStrike có đèn nền RGB 4 vùng, hành trình 1.5mm, 100% Anti-Ghosting' },
+            { key: 'Webcam & Microphone', value: 'HD Webcam 720p/1080p có cần gạt khóa camera E-Shutter bảo mật + Micro lọc ồn kép' },
+            { key: 'Công nghệ âm thanh', value: '2x 2W Nahimic 3D Audio cho trải nghiệm âm thanh vòm sống động' },
+            { key: 'Kết nối không dây', value: 'Wi-Fi 6E (802.11ax) 2x2 + Bluetooth 5.2 siêu ổn định' },
+            { key: 'Cổng giao tiếp ngoại vi', value: '3x USB 3.2 Gen 1, 2x USB-C (Thunderbolt 4 / DisplayPort / 135W PD), 1x HDMI 2.1 (Xuất 8K), 1x RJ45 LAN 1Gbps, 1x Audio 3.5mm' },
+            { key: 'Dung lượng Pin', value: 'Pin 4-cell 80Wh (Hỗ trợ công nghệ sạc siêu nhanh Super Rapid Charge)' },
+            { key: 'Bộ nguồn / Sạc', value: 'Adapter sạc công suất cao 230W / 300W Slim Tip chính hãng' },
+            { key: 'Hệ điều hành', value: 'Windows 11 Home / Pro 64-bit bản quyền' },
+            { key: 'Trọng lượng & Kích thước', value: 'Khoảng 2.49 kg; Kích thước: 359.9 x 264.4 x 19.9 mm' },
+            { key: 'Chất liệu thân vỏ', value: 'Khung vỏ hợp kim Nhôm - Magie cao cấp chịu lực chống va đập' },
+            { key: 'Tính năng bảo mật', value: 'Chip bảo mật phần cứng Firmware TPM 2.0, Khóa Kensington' },
+            { key: 'Phụ kiện đi kèm', value: 'Củ sạc công suất cao, Cáp nguồn, Sách hướng dẫn sử dụng' },
+            { key: 'Tiêu chuẩn độ bền', value: 'Đạt chuẩn độ bền quân đội Mỹ MIL-STD-810H' },
+            { key: 'Công suất tiêu thụ', value: 'Hiệu suất năng lượng cao chuẩn Energy Star' },
+            { key: 'Tuổi thọ phần cứng', value: 'MTBF > 100.000 giờ sử dụng liên tục' },
+            { key: 'Bảo hành', value: '24 tháng chính hãng (Gói dịch vụ cao cấp Lenovo Premium Care)' },
+            { key: 'Năm sản xuất', value: 'từ 2022 - 2024' },
+            { key: 'Hãng sản xuất', value: brand || 'Lenovo' },
+            { key: 'Nước sản xuất', value: 'Trung Quốc' }
+          ];
+        } else {
+          sp = [
+            { key: 'Chức năng / Loại thiết bị', value: 'Máy tính xách tay (Laptop) phục vụ học tập, văn phòng và xử lý đồ họa' },
+            { key: 'Bộ vi xử lý (CPU)', value: 'Intel Core i5 / i7 / AMD Ryzen 5 / 7 thế hệ mới (10 - 12 nhân, Turbo 4.6 GHz)' },
+            { key: 'Bộ nhớ tiêu chuẩn (RAM)', value: '16GB DDR4 / DDR5 High Speed (Hỗ trợ nâng cấp tối đa 32GB)' },
+            { key: 'Ổ đĩa cứng lưu trữ (SSD)', value: '512GB M.2 PCIe NVMe SSD siêu tốc' },
+            { key: 'Màn hình hiển thị', value: '14.0 inch / 15.6 inch Full HD (1920x1080) IPS chống chói Anti-Glare' },
+            { key: 'Card đồ họa (VGA)', value: 'Intel Iris Xe Graphics / AMD Radeon Graphics tích hợp mượt mà' },
+            { key: 'Bàn phím & Touchpad', value: 'Bàn phím tiêu chuẩn gõ êm, Touchpad cảm ứng đa điểm' },
+            { key: 'Webcam & Microphone', value: 'HD Webcam 720p/1080p tích hợp Micro kép lọc ồn thông minh' },
+            { key: 'Công nghệ âm thanh', value: 'Stereo Speakers công nghệ Waves MaxxAudio / Dolby Audio' },
+            { key: 'Kết nối không dây', value: 'Wi-Fi 6 (802.11ax) + Bluetooth 5.2 tốc độ cao' },
+            { key: 'Cổng giao tiếp ngoại vi', value: '2x USB 3.2, 1x Type-C, 1x HDMI 1.4, 1x Audio 3.5mm, 1x Khe thẻ SD' },
+            { key: 'Dung lượng Pin', value: 'Pin 3-cell / 4-cell 41Wh - 54Wh (Thời lượng dùng 5 - 8 giờ liên tục)' },
+            { key: 'Bộ nguồn / Sạc', value: 'Adapter sạc nhanh 45W - 65W chuẩn an toàn' },
+            { key: 'Hệ điều hành', value: 'Windows 11 Home / Pro 64-bit bản quyền' },
+            { key: 'Trọng lượng & Kích thước', value: 'Khoảng 1.4kg - 1.7kg; Thiết kế mỏng nhẹ cơ động' },
+            { key: 'Chất liệu vỏ máy', value: 'Hợp kim nhôm hoặc nhựa Polycarbonate cao cấp chống bám vân tay' },
+            { key: 'Tính năng bảo mật', value: 'Cảm biến vân tay 1 chạm Fingerprint / TPM 2.0 bảo mật phần cứng' },
+            { key: 'Phụ kiện đi kèm', value: 'Củ sạc, Cáp nguồn, Túi chống sốc / Balo chính hãng' },
+            { key: 'Tiêu chuẩn độ bền', value: 'Đạt chuẩn độ bền quân đội Mỹ MIL-STD-810H' },
+            { key: 'Công suất tiêu thụ', value: 'Tiết kiệm năng lượng chuẩn Energy Star' },
+            { key: 'Tuổi thọ phần cứng', value: 'MTBF > 80.000 giờ sử dụng' },
+            { key: 'Bảo hành', value: '12 - 24 tháng chính hãng' },
+            { key: 'Năm sản xuất', value: 'từ 2024 tới nay' },
+            { key: 'Hãng sản xuất', value: brand || 'Dell / HP / Asus / Lenovo / Acer' },
+            { key: 'Nước sản xuất', value: 'Trung Quốc' }
+          ];
+        }
       }
       // 3. BỘ LƯU ĐIỆN (UPS)
       else if (nL.includes('ups') || nL.includes('lưu điện') || nL.includes('santak') || nL.includes('apc') || nL.includes('easy ups')) {
@@ -4656,8 +4690,8 @@ QUY TẮC PHẢN HỒI:
           { key: 'Nước sản xuất', value: 'Trung Quốc' }
         ];
       }
-      // 10. MÁY IN LASER (PRINTERS - DEFAULT)
-      else {
+      // 10. MÁY IN LASER (PRINTERS)
+      else if (nL.includes('máy in') || nL.includes('in laser') || nL.includes('in màu') || nL.includes('printer') || nL.includes('laserjet') || nL.includes('lbp') || nL.includes('oki') || nL.includes('brother') || nL.includes('m404') || nL.includes('m406') || nL.includes('b433') || nL.includes('b513') || nL.includes('2900') || nL.includes('6030')) {
         var speedP = '30 - 40 trang/phút (A4)';
         if (nL.includes('6030') || nL.includes('2900') || nL.includes('107')) speedP = '18 - 20 trang/phút (A4)';
         else if (nL.includes('404') || nL.includes('406') || nL.includes('433') || nL.includes('513')) speedP = '38 - 45 trang/phút (A4)';
@@ -4666,7 +4700,7 @@ QUY TẮC PHẢN HỒI:
         var isWifi = nL.includes('w') || nL.includes('dw') || nL.includes('wifi') || nL.includes('không dây');
 
         sp = [
-          { key: 'Chức năng chuẩn', value: 'In Laser đen trắng' + (isDuplex ? ' đảo 2 mặt tự động' : '') + (isWifi ? ' kết nối không dây Wi-Fi' : '') },
+          { key: 'Chức năng chuẩn', value: 'In Laser đơn sắc' + (isDuplex ? ' đảo 2 mặt tự động' : '') + (isWifi ? ' kết nối không dây Wi-Fi' : '') },
           { key: 'CPU', value: 'Bộ vi xử lý tốc độ cao 600MHz - 1200MHz' },
           { key: 'Phương thức in', value: 'In Laser / LED kỹ thuật số chất lượng cao' },
           { key: 'Tốc độ in', value: speedP },
@@ -4693,6 +4727,27 @@ QUY TẮC PHẢN HỒI:
           { key: 'Năm sản xuất', value: 'từ 2024 tới nay' },
           { key: 'Hãng sản xuất', value: brand || 'Canon / HP / OKI / Brother' },
           { key: 'Nước sản xuất', value: brand === 'Canon' || brand === 'Brother' ? 'Việt Nam' : brand === 'OKI' ? 'Thái Lan' : brand === 'HP' ? 'Philippines / Trung Quốc' : 'Chính hãng' }
+        ];
+      }
+      // 11. THIẾT BỊ CÔNG NGHỆ THÔNG TIN VĂN PHÒNG CHUNG (DEFAULT FALLBACK)
+      else {
+        sp = [
+          { key: 'Chức năng / Loại thiết bị', value: 'Thiết bị công nghệ thông tin phục vụ công việc và quản lý dữ liệu' },
+          { key: 'Bộ vi xử lý / Chip điều khiển', value: 'Bộ vi xử lý đa nhân thế hệ mới hiệu năng cao' },
+          { key: 'Bộ nhớ tiêu chuẩn (RAM)', value: '16GB High Speed (Khả năng mở rộng nâng cấp linh hoạt)' },
+          { key: 'Ổ đĩa lưu trữ dữ liệu', value: '512GB SSD PCIe NVMe siêu tốc độ cao' },
+          { key: 'Giao diện & Cổng kết nối', value: 'USB 3.2, USB Type-C, HDMI / DisplayPort, Gigabit Ethernet RJ45' },
+          { key: 'Kết nối không dây', value: 'Wi-Fi chuẩn AC/AX băng tần kép + Bluetooth tốc độ cao' },
+          { key: 'Hệ điều hành tương thích', value: 'Windows 11 / Windows 10 64-bit bản quyền' },
+          { key: 'Công suất tiêu thụ', value: 'Tiết kiệm điện năng đạt chuẩn Energy Star' },
+          { key: 'Nguồn điện cấp', value: 'AC 100 - 240V, 50/60Hz an toàn' },
+          { key: 'Tính năng bảo mật', value: 'Bảo mật phần cứng TPM 2.0, Khóa chống trộm' },
+          { key: 'Chất liệu thân vỏ', value: 'Vật liệu cao cấp bền bỉ, tản nhiệt tối ưu' },
+          { key: 'Độ bền phần cứng', value: 'MTBF > 80.000 giờ hoạt động ổn định' },
+          { key: 'Bảo hành', value: '12 - 24 tháng chính hãng' },
+          { key: 'Năm sản xuất', value: 'từ 2024 tới nay' },
+          { key: 'Hãng sản xuất', value: brand || 'Chính hãng' },
+          { key: 'Nước sản xuất', value: 'Chính hãng' }
         ];
       }
 
