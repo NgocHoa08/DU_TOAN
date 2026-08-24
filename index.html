@@ -1539,7 +1539,7 @@
   <div class="wrap">
 
     <div class="hdr">
-      <div class="badge">🤖 AI &amp; Đa File · Chuẩn Mẫu Excel V1 · v2.4 (Mới nhất)</div>
+      <div class="badge">🤖 AI &amp; Đa File · Chuẩn Mẫu Excel V1 · v2.5 (3 Module Độc Lập 100%)</div>
       <h1>Tạo Mẫu Dự Toán Tự Động Từ Nhiều File</h1>
       <p>Bóc tách tự động báo giá &amp; thông số kỹ thuật → Xuất file Excel chuẩn mẫu V1 đẹp, gọn, đúng 100% từng sheet
       </p>
@@ -1905,7 +1905,6 @@
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
           <button class="btn btn-s" onclick="goStep(2)">← Chỉnh sửa thêm</button>
           <button class="btn btn-g btn-lg" id="btnExp" onclick="doExport()">⬇️ Tải file Excel dự toán (.xlsx)</button>
-          <button class="btn btn-p btn-lg" onclick="switchMainTab('bbbg')">Chuyển sang: Lập Biên Bản Bàn Giao →</button>
         </div>
       </div>
     </div>
@@ -2098,7 +2097,6 @@
           <button class="btn btn-o btn-sm" onclick="tdduCollapseAll(true)" title="Thu gọn danh sách">🔼 Thu gọn</button>
           <button class="btn btn-o btn-sm" onclick="tdduAutoMatchAllPresets()"
             title="Tự động nhận diện danh mục và gán máy chào thầu chuẩn">⚡ Khớp tự động</button>
-          <button class="btn btn-o btn-sm" onclick="tdduSyncFromDutoan()">🔄 Lấy từ Dự Toán</button>
           <button class="btn btn-p btn-sm" onclick="tdduAddDev()">➕ Thêm thiết bị</button>
           <button class="btn btn-o btn-sm" style="color:var(--rd);border-color:rgba(248,81,73,0.4)"
             onclick="tdduClearAll()" title="Xóa toàn bộ danh sách để làm mới hoàn toàn">🗑 Xóa hết</button>
@@ -5232,9 +5230,8 @@ QUY TẮC PHẢN HỒI:
         '<option value="ups_santak_1000">🔋 Bộ lưu điện UPS 1000VA</option>' +
         '<option value="canon_eos_r6">📷 Máy ảnh Canon EOS R6</option>' +
         '</select>' +
-        '<button class="btn btn-o btn-sm" onclick="bbAddDev()">➕ Thêm dòng trống</button>' +
+        '<button class="btn btn-p btn-sm" onclick="bbAddDev()">➕ Thêm dòng mới</button>' +
         '<button class="btn btn-o btn-sm" style="color:var(--re);border-color:rgba(207,34,46,0.3)" onclick="bbResetAll()" title="Xóa trắng để lập biên bản mới">🗑️ Làm mới biên bản</button>' +
-        '<button class="btn btn-o btn-sm" onclick="bbSyncFromDutoan()" title="Sao chép toàn bộ danh sách thiết bị từ tab Dự Toán sang">🔄 Lấy từ Dự Toán</button>' +
         '</div>' +
         '</div>';
 
@@ -5245,7 +5242,7 @@ QUY TẮC PHẢN HỒI:
         html += '<tr><td colspan="6" class="ctr" style="padding:32px 20px;color:var(--t2);background:#ffffff">' +
           '<div style="font-size:32px;margin-bottom:8px">📝</div>' +
           '<div style="font-size:14px;font-weight:700;color:#0f172a;margin-bottom:4px">Chưa có thiết bị nào trong biên bản bàn giao</div>' +
-          '<div style="font-size:12.5px;color:var(--t2);margin-bottom:14px">Bạn có thể thêm dòng mới, chọn từ mẫu máy có sẵn hoặc lấy từ bảng Dự Toán</div>' +
+          '<div style="font-size:12.5px;color:var(--t2);margin-bottom:14px">Bạn có thể thêm dòng mới hoặc chọn nhanh từ danh mục mẫu máy có sẵn bên dưới</div>' +
           '<div style="display:flex;gap:10px;justify-content:center">' +
           '<button class="btn btn-p btn-sm" onclick="bbAddDev()">➕ Thêm thiết bị mới</button>' +
           '<button class="btn btn-o btn-sm" onclick="bbAddPreset(\'msi_cubi_nuc\')">💻 Thêm mẫu Mini PC</button>' +
