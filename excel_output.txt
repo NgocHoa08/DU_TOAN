@@ -1,0 +1,189 @@
+Sheets: [ 'Tổng hợp', '1', '2', '3', '4' ]
+
+
+=== Sheet 0: "Tổng hợp" ===
+Rows: 9, Cols: 11
+Row 1: [{"col":1,"val":"STT"},{"col":2,"val":"Danh mục"},{"col":3,"val":"Model"},{"col":4,"val":"Hãng"},{"col":5,"val":"Xuất xứ"},{"col":6,"val":"ĐVT"},{"col":7,"val":"SL"},{"col":8,"val":"Đơn giá (Đã gồm VAT)"},{"col":9,"val":"Thành tiền"}]
+Row 4: [{"col":1,"val":1},{"col":2,"val":"Máy in A4 đen trắng OKI B433DN"},{"col":3,"val":"B433DN"},{"col":4,"val":"OKI"},{"col":5,"val":"Thái Lan"},{"col":6,"val":"Máy"},{"col":7,"val":1},{"col":8,"val":4950000},{"col":9,"val":"FORMULA:H4*G4"}]
+Row 5: [{"col":1,"val":2},{"col":2,"val":"Máy đa chức năng đen trắng Ricoh IM 2500"},{"col":3,"val":"IM 2500"},{"col":4,"val":"Ricoh"},{"col":5,"val":"Thái Lan"},{"col":6,"val":"Máy"},{"col":7,"val":2},{"col":8,"val":72000000},{"col":9,"val":"FORMULA:H5*G5"}]
+Row 6: [{"col":1,"val":3},{"col":2,"val":"Máy scan A4 Ricoh SP-2240N"},{"col":3,"val":"SP-2240N"},{"col":4,"val":"Ricoh"},{"col":5,"val":"Thái Lan"},{"col":6,"val":"Cái"},{"col":7,"val":3},{"col":8,"val":9500000},{"col":9,"val":"FORMULA:H6*G6"}]
+Row 7: [{"col":1,"val":4},{"col":2,"val":"Máy tính để bàn"},{"col":3,"val":"CUBI NUC 1M"},{"col":4,"val":"MSI"},{"col":5,"val":"Trung Quốc"},{"col":6,"val":"Bộ"},{"col":7,"val":4},{"col":8,"val":16500000},{"col":9,"val":"FORMULA:H7*G7"}]
+
+
+=== Sheet 1: "1" ===
+Rows: 28, Cols: 6
+Row 1: [{"col":1,"val":"STT"},{"col":3,"val":"Thông số kỹ thuật"}]
+Row 2: [{"col":1,"val":1},{"col":2,"val":"Máy in A4 đen trắng OKI B433DN"},{"col":6,"val":"QUAY LẠI"}]
+Row 3: [{"col":2,"val":"Chức năng chuẩn"},{"col":3,"val":"Máy in đen trắng đảo mặt tự động"},{"col":4,"val":"Máy in đen trắng đảo mặt tự động"}]
+Row 4: [{"col":2,"val":"CPU"},{"col":3,"val":"667 MHz"},{"col":4,"val":"667 MHz"}]
+Row 5: [{"col":2,"val":"Phương thức in"},{"col":3,"val":"Laser Led"},{"col":4,"val":"Laser Led"}]
+Row 6: [{"col":2,"val":"Tốc độ in"},{"col":3,"val":"40 trang/phút (A4)"},{"col":4,"val":"40 trang/phút (A4)"}]
+Row 7: [{"col":2,"val":"Bảng điều khiển"},{"col":3,"val":"Màn hình LCD 1,82 inch"},{"col":4,"val":"Màn hình LCD 1,82 inch"}]
+Row 8: [{"col":2,"val":"Bộ nhớ tiêu chuẩn (Ram)"},{"col":3,"val":"512MB, bộ nhớ trong 3GB"},{"col":4,"val":"512MB, bộ nhớ trong 3GB"}]
+Row 9: [{"col":2,"val":"Thời gian sẵn sàng in"},{"col":3,"val":"Khoảng 12,7 giây từ chế độ nghỉ, 18 giây từ khi khởi động"},{"col":4,"val":"Khoảng 12,7 giây từ chế độ nghỉ, 18 giây từ khi khởi động"}]
+Row 10: [{"col":2,"val":"Thời gian in trang đầu tiên"},{"col":3,"val":"4,5 giây"},{"col":4,"val":"4,5 giây"}]
+Row 11: [{"col":2,"val":"Khổ giấy"},{"col":3,"val":"A6-A4, Banner 1,3m (tùy chọn tối đa 216 x 1320 mm)"},{"col":4,"val":"A6-A4, Banner 1,3m (tùy chọn tối đa 216 x 1320 mm)"}]
+Row 12: [{"col":2,"val":"Trữ lượng giấy (chuẩn)"},{"col":3,"val":"01 khay chuẩn x 250 tờ\n01 khay tay x 100 tờ"},{"col":4,"val":"01 khay chuẩn x 250 tờ\n01 khay tay x 100 tờ"}]
+Row 13: [{"col":2,"val":"Định lượng giấy tiêu chuẩn"},{"col":3,"val":"Khay chuẩn: 60 – 163 g/m2\nKhay tay: 60 – 163 g/m2"},{"col":4,"val":"Khay chuẩn: 60 – 163 g/m2\nKhay tay: 60 – 163 g/m2"}]
+Row 14: [{"col":2,"val":"Khay giấy ra"},{"col":3,"val":"150 tờ úp mặt"},{"col":4,"val":"150 tờ úp mặt"}]
+Row 15: [{"col":2,"val":"Công suất tiêu thụ"},{"col":3,"val":"Chế độ hoạt động: 570W\nChế độ chờ: 4,4W\nChế độ nghỉ/ tiết kiệm: 0,7W"},{"col":4,"val":"Chế độ hoạt động: 570W\nChế độ chờ: 4,4W\nChế độ nghỉ/ tiết kiệm: 0,7W"}]
+Row 16: [{"col":2,"val":"Độ phân giải"},{"col":3,"val":"1200 x 1200dpi"},{"col":4,"val":"1200 x 1200dpi"}]
+Row 17: [{"col":2,"val":"In 2 mặt (Duplex)"},{"col":3,"val":"Tiêu chuẩn"},{"col":4,"val":"Tiêu chuẩn"}]
+Row 18: [{"col":2,"val":"In di động"},{"col":3,"val":"AirPrint, Mopria, OKI Mobile Print"},{"col":4,"val":"AirPrint, Mopria, OKI Mobile Print"}]
+Row 19: [{"col":2,"val":"Giao diện"},{"col":3,"val":"USB 2.0 x 1; Ethernet 10BASE-T/100BASE-TX/1,000BASE-T; NFC; USB Host Interface (USB Host)x1"},{"col":4,"val":"USB 2.0 x 1; Ethernet 10BASE-T/100BASE-TX/1,000BASE-T; NFC; USB Host Interface (USB Host)x1"}]
+Row 20: [{"col":2,"val":"Giao thức hỗ trợ"},{"col":3,"val":"TCP/IPv4&v6, AirPrint, Mopria™, IPP Everywhere™, NetBIOS over TCP, HTTP, HTTPS, DNS, DDNS, WINS, Bonjour, SMTP, SMTPS, POP3, POP3S, SNMPv1&v3, SNTP, IPP, IPPS,WSD Print, LLTD, IEEE802.1X, LPR, Port9100, Telnet, FTP, FTPS, IPSec"},{"col":4,"val":"TCP/IPv4&v6, AirPrint, Mopria™, IPP Everywhere™, NetBIOS over TCP, HTTP, HTTPS, DNS, DDNS, WINS, Bonjour, SMTP, SMTPS, POP3, POP3S, SNMPv1&v3, SNTP, IPP, IPPS,WSD Print, LLTD, IEEE802.1X, LPR, Port9100, Telnet, FTP, FTPS, IPSec"}]
+Row 21: [{"col":2,"val":"Ngôn ngữ in"},{"col":3,"val":"Adobe PostScript 3, PDF1.7, PCL6 Emulation, PCL5c Emulation, EPSON FX, EPSON LQ, IBM ProPrinter"},{"col":4,"val":"Adobe PostScript 3, PDF1.7, PCL6 Emulation, PCL5c Emulation, EPSON FX, EPSON LQ, IBM ProPrinter"}]
+Row 22: [{"col":2,"val":"Phần mềm tiện ích"},{"col":3,"val":"Template Manager, smart PrintSuperVision, Monitoring Tool, Printer Supply Manager, Network Status Monitor, PS Gamma Adjuster, Print Job Accounting Client, OKI LPR, Driver Installer Generator, Mobile Print, Print Plugin"},{"col":4,"val":"Template Manager, smart PrintSuperVision, Monitoring Tool, Printer Supply Manager, Network Status Monitor, PS Gamma Adjuster, Print Job Accounting Client, OKI LPR, Driver Installer Generator, Mobile Print, Print Plugin"}]
+Row 23: [{"col":2,"val":"Công suất in"},{"col":3,"val":"80,000 trang"},{"col":4,"val":"80,000 trang"}]
+Row 24: [{"col":2,"val":"Hộp mực"},{"col":3,"val":"Tương thích linh hoạt với nhiều dung lượng hộp mực 3,000 trang, 7,000 trang và 12,000 trang A4 (Độ phủ tiêu chuẩn)\nMực theo máy 2.000 trang"},{"col":4,"val":"Tương thích linh hoạt với nhiều dung lượng hộp mực 3,000 trang, 7,000 trang và 12,000 trang A4 (Độ phủ tiêu chuẩn)\nMực theo máy 2.000 trang"}]
+Row 25: [{"col":2,"val":"Tuổi thọ cụm trống"},{"col":3,"val":"30.000 trang A4"},{"col":4,"val":"30.000 trang A4"}]
+Row 26: [{"col":2,"val":"Bảo hành"},{"col":3,"val":"12 tháng"},{"col":4,"val":"12 tháng"}]
+Row 27: [{"col":2,"val":"Năm sản xuất"},{"col":3,"val":"từ 2026 tới nay"},{"col":4,"val":"từ 2026 tới nay"}]
+Row 28: [{"col":2,"val":"Nước sản xuất"},{"col":3,"val":"Thái Lan"},{"col":4,"val":"Thái Lan"}]
+
+
+=== Sheet 2: "2" ===
+Rows: 27, Cols: 6
+Row 1: [{"col":1,"val":"STT"},{"col":2,"val":"Thông số kỹ thuật"}]
+Row 2: [{"col":1,"val":2},{"col":2,"val":"Máy đa chức năng đen trắng Ricoh IM 2500 (Cấu hình copy + in + scan)"},{"col":6,"val":"QUAY LẠI"}]
+Row 3: [{"col":2,"val":"Tốc độ sao chụp / in"},{"col":3,"val":"25 bản/phút"},{"col":4,"val":"25 bản/phút"}]
+Row 4: [{"col":2,"val":"Tốc độ scan"},{"col":3,"val":"80 ipm"},{"col":4,"val":"80 ipm"}]
+Row 5: [{"col":2,"val":"Độ phân giải sao chụp"},{"col":3,"val":"600 x 600 dpi"},{"col":4,"val":"600 x 600 dpi"}]
+Row 6: [{"col":2,"val":"Độ phân giải scan"},{"col":3,"val":"100 dpi, 200dpi, 300 dpi, 400 dpi, 600 dpi"},{"col":4,"val":"100 dpi, 200dpi, 300 dpi, 400 dpi, 600 dpi"}]
+Row 7: [{"col":2,"val":"Thời gian ra bản chụp đầu tiên"},{"col":3,"val":"4.1 giây"},{"col":4,"val":"4.1 giây"}]
+Row 8: [{"col":2,"val":"Copy liên tục"},{"col":3,"val":"999 bản một lần"},{"col":4,"val":"999 bản một lần"}]
+Row 9: [{"col":2,"val":"Thời gian khởi động máy"},{"col":3,"val":"18 giây"},{"col":4,"val":"18 giây"}]
+Row 10: [{"col":2,"val":"Phóng to/ Thu nhỏ"},{"col":3,"val":"25% ~ 400% điều chỉnh 1%"},{"col":4,"val":"25% ~ 400% điều chỉnh 1%"}]
+Row 11: [{"col":2,"val":"Bộ phận tự động nạp và đảo bản gốc"},{"col":3,"val":"có sẵn"},{"col":4,"val":"có sẵn"}]
+Row 12: [{"col":2,"val":"Chia bộ điện tử và sao chụp hai mặt"},{"col":3,"val":"có sẵn"},{"col":4,"val":"có sẵn"}]
+Row 13: [{"col":2,"val":"Chia bản chụp theo 2 chế độ"},{"col":3,"val":"so le và dọc ngang"},{"col":4,"val":"so le và dọc ngang"}]
+Row 14: [{"col":2,"val":"Chế độ tự động ngủ khi không sử dụng"},{"col":3,"val":"có sẵn"},{"col":4,"val":"có sẵn"}]
+Row 15: [{"col":2,"val":"Kích cỡ giấy"},{"col":3,"val":"B6 - A3"},{"col":4,"val":"B6 - A3"}]
+Row 16: [{"col":2,"val":"Định lượng giấy"},{"col":3,"val":"52 ~ 300 g/m2"},{"col":4,"val":"52 ~ 300 g/m2"}]
+Row 17: [{"col":2,"val":"Khay giấy"},{"col":3,"val":"2 khay x 550 tờ, khay tay x 100 tờ"},{"col":4,"val":"2 khay x 550 tờ, khay tay x 100 tờ"}]
+Row 18: [{"col":2,"val":"Khay giấy ra"},{"col":3,"val":"500 tờ"},{"col":4,"val":"500 tờ"}]
+Row 19: [{"col":2,"val":"Bộ nhớ tiêu chuẩn"},{"col":3,"val":"2 GB, HDD : 320 GB"},{"col":4,"val":"2 GB, HDD : 320 GB"}]
+Row 20: [{"col":2,"val":"Ngôn ngữ in"},{"col":3,"val":"PCL5e/PCL6, PDF Direct, PS3 (Emulation)"},{"col":4,"val":"PCL5e/PCL6, PDF Direct, PS3 (Emulation)"}]
+Row 21: [{"col":2,"val":"Kết nối"},{"col":3,"val":"Ethernet 10Base-T/100Base-TX/1000Base-T, USB Host I/F"},{"col":4,"val":"Ethernet 10Base-T/100Base-TX/1000Base-T, USB Host I/F"}]
+Row 22: [{"col":2,"val":"Hệ điều hành hỗ trợ"},{"col":3,"val":"Windows Vista/7/8/8.1/10, Windows server/2008/2008 R2/2012/2012 R2"},{"col":4,"val":"Windows Vista/7/8/8.1/10, Windows server/2008/2008 R2/2012/2012 R2"}]
+Row 23: [{"col":2,"val":"Hỗ trợ scan"},{"col":3,"val":"scan to email, scan to USB/SD, scan to Folder"},{"col":4,"val":"scan to email, scan to USB/SD, scan to Folder"}]
+Row 24: [{"col":2,"val":"Định dạng scan"},{"col":3,"val":"PDF, TIFF, JPEG, High Compression PDF, PDF-A"},{"col":4,"val":"PDF, TIFF, JPEG, High Compression PDF, PDF-A"}]
+Row 25: [{"col":2,"val":"Chân kê"},{"col":3,"val":"có sẵn"},{"col":4,"val":"có sẵn"}]
+Row 26: [{"col":2,"val":"Sản xuất tại"},{"col":3,"val":"Thái Lan"},{"col":4,"val":"Thái Lan"}]
+Row 27: [{"col":2,"val":"Bảo hành"},{"col":3,"val":"12 tháng"},{"col":4,"val":"12 tháng"}]
+
+
+=== Sheet 3: "3" ===
+Rows: 18, Cols: 4
+Row 1: [{"col":1,"val":"STT"},{"col":2,"val":"Thông số kỹ thuật"},{"col":3,"val":"Thông số kỹ thuật"},{"col":4,"val":"QUAY LẠI"}]
+Row 2: [{"col":1,"val":3},{"col":2,"val":"Máy scan A4 Ricoh SP-2240N"}]
+Row 3: [{"col":2,"val":"Kiểu máy"},{"col":3,"val":"Quét 2 mặt tự động"}]
+Row 4: [{"col":2,"val":"Đèn quét"},{"col":3,"val":"CIS x 2"}]
+Row 5: [{"col":2,"val":"Khổ giấy"},{"col":3,"val":"Tối đa: 215,9 x 360 mm; Tối thiểu: 50,8 x 50,8 mm\nKéo giấy dài: 6.096 mm"}]
+Row 6: [{"col":2,"val":"Định lượng giấy"},{"col":3,"val":"27 - 413 g/m2"}]
+Row 7: [{"col":2,"val":"Tốc độ quét"},{"col":3,"val":"Một mặt: 40 ppm, Hai mặt: 80 ipm (A4, quét màu, 300dpi)"}]
+Row 8: [{"col":2,"val":"Độ phân giải"},{"col":3,"val":"600 dpi, tối đa 1200 dpi"}]
+Row 9: [{"col":2,"val":"Khay giấy"},{"col":3,"val":"80 tờ (A4: 80 g/m2)"}]
+Row 10: [{"col":2,"val":"Công suất"},{"col":3,"val":"6.000 trang/ ngày"}]
+Row 11: [{"col":2,"val":"Cổng kết nối"},{"col":3,"val":"USB 3.2 Gen1x1 / USB 2.0 / USB 1.1\nLAN: 10BASE-T, 100BASE-TX, 1000BASE-T"}]
+Row 12: [{"col":2,"val":"Chức năng quản lý máy"},{"col":3,"val":"Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"}]
+Row 13: [{"col":2,"val":"Định dạng file"},{"col":3,"val":"Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"}]
+Row 14: [{"col":2,"val":"Hỗ trợ Index file"},{"col":3,"val":"XML, CSV, TXT"}]
+Row 15: [{"col":2,"val":"Tính năng tách trường văn bản (Metadata fields)"},{"col":3,"val":"20 trường"}]
+Row 16: [{"col":2,"val":"Phần mềm số hóa tiếng Việt đi kèm"},{"col":3,"val":"Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản\nChuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)\nTự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký.\nNguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."}]
+Row 17: [{"col":2,"val":"Xuất xứ"},{"col":3,"val":"Thái Lan"}]
+Row 18: [{"col":2,"val":"Bảo hành"},{"col":3,"val":"12 tháng"}]
+
+
+=== Sheet 4: "4" ===
+Rows: 52, Cols: 5
+Row 1: [{"col":1,"val":"STT"},{"col":2,"val":"Thông số kỹ thuật"},{"col":3,"val":"Thông số kỹ thuật"},{"col":5,"val":"QUAY LẠI"}]
+Row 2: [{"col":1,"val":1},{"col":2,"val":"Máy tính để bàn Mini PC MSI Cubi NUC 1M"}]
+Row 3: [{"col":2,"val":"Processor"},{"col":3,"val":"Intel® Core™ 3 100U Processor  (1.2Ghz upto 4.7Ghz, 10M Cache, 6 nhân/8 luồng)"}]
+Row 4: [{"col":2,"val":"Chipset"},{"col":3,"val":"Intel® Soc "}]
+Row 5: [{"col":2,"val":"Ổ đĩa lưu trữ"},{"col":3,"val":"1x 256GB M.2 2280 SSD\n1x M.2 2242 SSD (PCIE, free slot)\n1x 2.5” HDD/SSD"}]
+Row 6: [{"col":2,"val":"Dung lượng RAM"},{"col":3,"val":"1 x 8GB RAM DDR5 up to 5200MHz SO-DIMMs, up to 64GB ( 2 slot)"}]
+Row 7: [{"col":2,"val":"Hệ điều hành (OS)"},{"col":3,"val":"Microsoft Win Pro 11"}]
+Row 8: [{"col":2,"val":"Đồ họa"},{"col":3,"val":"Intel® Graphics"}]
+Row 9: [{"col":2,"val":"Âm thanh"},{"col":3,"val":"Realtek® ALC256 "}]
+Row 10: [{"col":2,"val":"Cổng I/O (Phía trước)"},{"col":3,"val":"2x USB 10Gbps Type A"}]
+Row 11: [{"col":2,"val":"Cổng I/O (Phía trước)"},{"col":3,"val":"1x Mic-in / Headphone-out combo"}]
+Row 12: [{"col":2,"val":"Cổng I/O (Phía trước)"},{"col":3,"val":"1x Micro-SD Card Reader"}]
+Row 13: [{"col":2,"val":"Cổng I/O (Phía sau)"},{"col":3,"val":"2x Thunderbolt 4 (DP 1.4 alt-mode up to 4K@60Hz /PD-out 15W / One of TBT supports PD-in"}]
+Row 14: [{"col":2,"val":"Cổng I/O (Phía sau)"},{"col":3,"val":"2x USB 10Gbps Type A"}]
+Row 15: [{"col":2,"val":"Cổng I/O (Phía sau)"},{"col":3,"val":"2x RJ45"}]
+Row 16: [{"col":2,"val":"Cổng I/O (Phía sau)"},{"col":3,"val":"2x HDMI out (supports 4K @60Hz as specified in HDMI 2.1)"}]
+Row 17: [{"col":2,"val":"Cổng I/O (Side)"},{"col":3,"val":"1x Kensington Lock"}]
+Row 18: [{"col":2,"val":"Cổng I/O (Side)"},{"col":3,"val":"1x External Power Switch Pin Header"}]
+Row 19: [{"col":2,"val":"Cổng  I/O bên trong (Inside)"},{"col":3,"val":"2 x USB 2.0 header"}]
+Row 20: [{"col":2,"val":"TPM"},{"col":3,"val":"dTPM 2.0"}]
+Row 21: [{"col":2,"val":"Kết nối không dây"},{"col":3,"val":"M.2 key with Intel Wireles Wireless AX211"}]
+Row 22: [{"col":2,"val":"Bluetooth"},{"col":3,"val":5.3}]
+Row 23: [{"col":2,"val":"Kết nối mạng"},{"col":3,"val":"2 cổng Lan RJ45 được tích hợp sẵn:\n2 x Intel I226V (2.5Gb)"}]
+Row 24: [{"col":2,"val":"Nguồn "},{"col":3,"val":"Nguồn tiết kiệm điện dùng adaptor 120W"}]
+Row 25: [{"col":2,"val":"Ext Power Switch"},{"col":3,"val":"Công tắc điện nối dài"}]
+Row 26: [{"col":2,"val":"VESA Mount"},{"col":3,"val":"75 x 75 mm & 100 x 100 mm"}]
+Row 27: [{"col":2,"val":"Kensington Lock"},{"col":3,"val":"Có hỗ trợ"}]
+Row 28: [{"col":2,"val":"Keyboard & Mouse"},{"col":3,"val":"Đồng bộ thương hiệu MSI"}]
+Row 29: [{"col":2,"val":"Tính năng"},{"col":3,"val":"1.\tHệ thống bảo mật  dTPM 2.0 hardware được tích hợp sẵn trên máy tính. Tăng cường bảo mật cho hệ thống người dùng."}]
+Row 30: [{"col":3,"val":"2.\tCho phép người dùng sao lưu và chia sẽ dữ liệu quan trọng cần thiết qua Cloud đến các thiết bị khác như smartphone, máy tính khác."}]
+Row 31: [{"col":3,"val":"3.\tHỗ trợ xuất hình 4 màn hình cùng lúc."}]
+Row 32: [{"col":3,"val":"4.\tHỗ trợ bật tắt máy tính bằng nút nguồn màn hình thông qua Thunderbolt 4 PD."}]
+Row 33: [{"col":3,"val":"5.\tMáy tính tích hợp hệ thống AI Engine tự học tự động phát hiện các tình huống của người dùng và điều chỉnh hiệu suất, hiệu ứng âm thanh và chế độ hiển thị cho phù hợp. Chẩn đoán hệ thống và tự động rà soát và nâng cấp Bios và phân mềm khi có bản cập nhật mới."}]
+Row 34: [{"col":3,"val":"6.\t'Hệ thống Lan Manager cho phép người dùng theo dõi thông đường truyền cho từng ứng dụng cụ thể với mức độ ưu tiên khác nhau nhằm tối ưu hóa hiệu năng sử dụng đường truyền mạng nội bộ và internet."}]
+Row 35: [{"col":3,"val":"7.\tHệ thống tích hợp Dual Lan RJ45 onboard gồm 2.5Gb x 2 nhằm tăng cường tốc độ truy suất đường truyền và cho phép người dùng và người quản trị thiết lập hạ tầng mạng  riêng biệt, nâng cao bảo mật giữa internet và local"}]
+Row 36: [{"col":3,"val":"8.\t'Hiển thị và theo dõi thông tin hệ thống theo thời gian thực như CPU, Mainboard, Ram, xung CPU, tốc độ fan…"}]
+Row 37: [{"col":2,"val":"Màn hình đồng bộ thương hiệu MSI"}]
+Row 38: [{"col":2,"val":"Kích thước"},{"col":3,"val":"21.45\""}]
+Row 39: [{"col":2,"val":"Tấm nền"},{"col":3,"val":"VA"}]
+Row 40: [{"col":2,"val":"Độ phân giải"},{"col":3,"val":"1920 x 1080 (FHD)"}]
+Row 41: [{"col":2,"val":"Tỉ lệ hình ảnh"},{"col":3,"val":"16:9"}]
+Row 42: [{"col":2,"val":"Độ sáng"},{"col":3,"val":"300 cd/m²"}]
+Row 43: [{"col":2,"val":"Độ tương phản "},{"col":3,"val":"4000:1"}]
+Row 44: [{"col":2,"val":"Độ tương phản động"},{"col":3,"val":"100000000:1"}]
+Row 45: [{"col":2,"val":"Tần số quét"},{"col":3,"val":"120Hz"}]
+Row 46: [{"col":2,"val":"Thời gian phản hồi"},{"col":3,"val":"1ms (MPRT) / 4ms (GTG)"}]
+Row 47: [{"col":2,"val":"Góc nhìn"},{"col":3,"val":"178°(H) / 178°(V)"}]
+Row 48: [{"col":2,"val":"Chống chói"},{"col":3,"val":"Anti-glare"}]
+Row 49: [{"col":2,"val":"Màu hiển thị"},{"col":3,"val":"16.7M, 8 bits"}]
+Row 50: [{"col":2,"val":"Cổng kết nối"},{"col":3,"val":"1x HDMI™ 1.4b (FHD@120Hz)\n1x D-Sub (VGA)"}]
+Row 51: [{"col":2,"val":"Nguồn điện"},{"col":3,"val":"100~240V, 50~60Hz"}]
+Row 52: [{"col":2,"val":"Bảo hành"},{"col":3,"val":"24 tháng"}]
+
+
+=== Merged cells per sheet ===
+Sheet "Tổng hợp" merges: N/A
+[]
+Sheet "1" merges: N/A
+[
+  'C3:D3',   'C4:D4',   'C5:D5',
+  'C6:D6',   'C7:D7',   'C8:D8',
+  'C9:D9',   'C10:D10', 'C11:D11',
+  'C12:D12', 'C13:D13', 'C14:D14',
+  'C15:D15', 'C16:D16', 'C17:D17',
+  'C18:D18', 'C19:D19', 'C20:D20',
+  'C21:D21', 'C22:D22', 'C23:D23',
+  'C24:D24', 'C25:D25', 'C26:D26',
+  'C27:D27', 'C28:D28'
+]
+Sheet "2" merges: N/A
+[
+  'C3:D3',   'C4:D4',   'C5:D5',
+  'C6:D6',   'C7:D7',   'C8:D8',
+  'C9:D9',   'C10:D10', 'C11:D11',
+  'C12:D12', 'C13:D13', 'C14:D14',
+  'C15:D15', 'C16:D16', 'C17:D17',
+  'C18:D18', 'C19:D19', 'C20:D20',
+  'C21:D21', 'C22:D22', 'C23:D23',
+  'C24:D24', 'C25:D25', 'C26:D26',
+  'C27:D27'
+]
+Sheet "3" merges: N/A
+[ 'B1:C1' ]
+Sheet "4" merges: N/A
+[
+  'B1:C1',   'A10:A12',
+  'A13:A16', 'A17:A18',
+  'A29:A36', 'B10:B12',
+  'B13:B16', 'B17:B18'
+]
