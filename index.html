@@ -1799,10 +1799,8 @@
 
       </div>
 
-      <div style="display:flex; justify-content:flex-end; align-items:center; gap:10px; margin-top:16px; flex-wrap:wrap">
-        <button class="btn btn-o" onclick="goStep(2)">🔍 Kiểm Tra &amp; Lọc (Bước 2)</button>
-        <button class="btn btn-p btn-lg" onclick="if(!devs.length && typeof selectedCatalogItems!=='undefined' && Object.keys(selectedCatalogItems).length){createProjectFromCatalog();}else if(devs.length){goStep(3);}else{toast('⚠️ Vui lòng chọn thiết bị hoặc tải file trước!','err');}">📑 Xem Trước &amp; Xuất File Excel (Bước 3) →</button>
-        <button class="btn btn-g btn-lg" onclick="if(!devs.length && typeof selectedCatalogItems!=='undefined' && Object.keys(selectedCatalogItems).length){createProjectFromCatalog();doExport();}else if(devs.length){doExport();}else{toast('⚠️ Vui lòng chọn thiết bị hoặc tải file trước khi xuất Excel!','err');}">⬇️ Xuất File Excel Dự Toán (.xlsx)</button>
+      <div style="text-align:right; margin-top:16px;">
+        <button class="btn btn-p btn-lg" id="btnExpDirect" onclick="handleDirectExportFromStep1()">⬇️ Xuất File Excel Dự Toán (.xlsx)</button>
       </div>
 
     </div>
@@ -4907,6 +4905,17 @@ QUY TẮC PHẢN HỒI:
       var id = ++devCnt;
       devs.push({ id: id, stt: devs.length + 1, name: 'Thiết bị mới', model: '', brand: '', origin: '', unit: 'Máy', qty: 1, price: 0, warranty: '', specs: [{ key: 'Xuất xứ', value: '' }, { key: 'Bảo hành', value: '12 tháng' }] });
       buildStep2();
+    }
+
+    function handleDirectExportFromStep1() {
+      if ((!devs || devs.length === 0) && typeof selectedCatalogItems !== 'undefined' && Object.keys(selectedCatalogItems).length > 0) {
+        createProjectFromCatalog();
+      }
+      if (!devs || devs.length === 0) {
+        toast('⚠️ Vui lòng chọn thiết bị từ danh mục hoặc tải file lên trước khi xuất Excel!', 'err');
+        return;
+      }
+      doExport();
     }
 
     /* ═══════════════════════════════════════════
