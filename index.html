@@ -2175,10 +2175,13 @@
     }
 
     function goStep(s) {
+      if (s === 2 || s === 3) {
+        if ((!devs || devs.length === 0) && typeof selectedCatalogItems !== 'undefined' && Object.keys(selectedCatalogItems).length > 0) {
+          compileCatalogIntoDevs();
+        }
+      }
       if (s === 2) {
-        renderExcelTabs();
-        renderCurrentSheetView();
-        renderQuickEdit();
+        buildStep2();
       }
       if (s === 3) buildFinal();
 
@@ -4733,13 +4736,9 @@ QUY TẮC PHẢN HỒI:
       toast('✅ Đã cào thành công toàn bộ 26 thông số kỹ thuật cho: ' + name + '!', 'ok');
     }
 
-    function createProjectFromCatalog() {
-      var keys = Object.keys(selectedCatalogItems);
-      if (keys.length === 0) {
-        toast('⚠️ Vui lòng chọn ít nhất 1 dòng máy trong danh sách trước!', 'err');
-        return;
-      }
-
+    function compileCatalogIntoDevs() {
+      var keys = Object.keys(selectedCatalogItems || {});
+      if (keys.length === 0) return false;
       devs = [];
       devCnt = 0;
 
@@ -4770,7 +4769,14 @@ QUY TẮC PHẢN HỒI:
         syncDeviceSpecs(devObj);
         devs.push(devObj);
       });
+      return true;
+    }
 
+    function createProjectFromCatalog() {
+      if (!compileCatalogIntoDevs()) {
+        toast('⚠️ Vui lòng chọn ít nhất 1 dòng máy trong danh sách trước!', 'err');
+        return;
+      }
       toast('🚀 Đã nạp ' + devs.length + ' thiết bị kèm 100% thông số kỹ thuật!', 'ok');
       goStep(3);
     }
