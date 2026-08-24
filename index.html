@@ -1539,17 +1539,17 @@
   <div class="wrap">
 
     <div class="hdr">
-      <div class="badge">🤖 AI &amp; Đa File · Chuẩn Mẫu Excel V1 · v2.5 (3 Module Độc Lập 100%)</div>
+      <div class="badge">🤖 AI &amp; Đa File · Chuẩn Mẫu Excel V1 · v2.6 (Tự Động Ẩn/Hiện Tab khi làm Dự Toán)</div>
       <h1>Tạo Mẫu Dự Toán Tự Động Từ Nhiều File</h1>
       <p>Bóc tách tự động báo giá &amp; thông số kỹ thuật → Xuất file Excel chuẩn mẫu V1 đẹp, gọn, đúng 100% từng sheet
       </p>
     </div>
 
     <!-- MAIN TABS -->
-    <div class="main-tabs">
-      <div class="mtab active" onclick="switchMainTab('dutoan')">📊 Làm Dự Toán</div>
-      <div class="mtab" onclick="switchMainTab('bbbg')">📝 Biên Bản Bàn Giao</div>
-      <div class="mtab" onclick="switchMainTab('tddu')">✅ Bảng Tuyên Bố Đáp Ứng</div>
+    <div class="main-tabs" id="mainTabsBar">
+      <div class="mtab active" id="mtab-dutoan" onclick="switchMainTab('dutoan')">📊 Làm Dự Toán</div>
+      <div class="mtab" id="mtab-bbbg" onclick="switchMainTab('bbbg')">📝 Biên Bản Bàn Giao</div>
+      <div class="mtab" id="mtab-tddu" onclick="switchMainTab('tddu')">✅ Bảng Tuyên Bố Đáp Ứng</div>
     </div>
 
     <div id="view-dutoan">
@@ -2158,17 +2158,26 @@
       document.getElementById('view-bbbg').style.display = 'none';
       document.getElementById('view-tddu').style.display = 'none';
 
+      // Always restore tabs visibility when switching main tabs
+      var tabB = document.getElementById('mtab-bbbg');
+      var tabT = document.getElementById('mtab-tddu');
+      if (tabB) tabB.style.display = '';
+      if (tabT) tabT.style.display = '';
+
       if (tab === 'dutoan') {
-        document.querySelector('.mtab[onclick*="dutoan"]').classList.add('active');
+        var mEl = document.getElementById('mtab-dutoan') || document.querySelector('.mtab[onclick*="dutoan"]');
+        if (mEl) mEl.classList.add('active');
         document.getElementById('view-dutoan').style.display = 'block';
       } else if (tab === 'bbbg') {
-        document.querySelector('.mtab[onclick*="bbbg"]').classList.add('active');
+        var mEl = document.getElementById('mtab-bbbg') || document.querySelector('.mtab[onclick*="bbbg"]');
+        if (mEl) mEl.classList.add('active');
         document.getElementById('view-bbbg').style.display = 'block';
         if (typeof renderHandoverForm === 'function') {
           renderHandoverForm();
         }
       } else if (tab === 'tddu') {
-        document.querySelector('.mtab[onclick*="tddu"]').classList.add('active');
+        var mEl = document.getElementById('mtab-tddu') || document.querySelector('.mtab[onclick*="tddu"]');
+        if (mEl) mEl.classList.add('active');
         document.getElementById('view-tddu').style.display = 'block';
         if (typeof renderTdduForm === 'function') {
           renderTdduForm();
@@ -2186,6 +2195,19 @@
         buildStep2();
       }
       if (s === 3) buildFinal();
+
+      // Ẩn 2 nút BBBG và TDDU khi ở Bước 2 & 3, hiện lại khi quay về Bước 1
+      var tabB = document.getElementById('mtab-bbbg');
+      var tabT = document.getElementById('mtab-tddu');
+      if (tabB && tabT) {
+        if (s === 1) {
+          tabB.style.display = '';
+          tabT.style.display = '';
+        } else {
+          tabB.style.display = 'none';
+          tabT.style.display = 'none';
+        }
+      }
 
       // Select panels inside view-dutoan
       document.getElementById('view-dutoan').querySelectorAll('.panel').forEach(function (p) { p.classList.remove('on') });
