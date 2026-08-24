@@ -3675,64 +3675,67 @@ QUY TẮC PHẢN HỒI:
     var MODEL_PRESETS = {
       'oki_b433dn': {
         name: 'Máy in A4 đen trắng OKI B433DN',
-        model: 'B433DN', brand: 'OKI', origin: 'Thái Lan', warranty: '12 tháng', unit: 'Máy', price: '',
+        model: 'B433DN', brand: 'OKI', origin: 'Thái Lan', warranty: '12 tháng', unit: 'Máy', price: 9500000,
         specs: [
-          { key: 'Chức năng chuẩn', value: 'Máy in đen trắng đảo mặt tự động' },
-          { key: 'CPU', value: '667 MHz' },
-          { key: 'Phương thức in', value: 'Laser Led' },
-          { key: 'Tốc độ in', value: '40 trang/phút (A4)' },
-          { key: 'Bảng điều khiển', value: 'Màn hình LCD 1,82 inch' },
-          { key: 'Bộ nhớ tiêu chuẩn (Ram)', value: '512MB, bộ nhớ trong 3GB' },
-          { key: 'Thời gian sẵn sàng in', value: 'Khoảng 12,7 giây từ chế độ nghỉ, 18,5 giây từ khi bật nguồn' },
+          { key: 'Chức năng chuẩn', value: 'Máy in kỹ thuật số đơn sắc đơn năng, in đảo mặt tự động' },
+          { key: 'Công nghệ in', value: 'Digital LED Electrophotographic độ bền cao' },
+          { key: 'Tốc độ in (A4)', value: '40 trang/phút (ppm)' },
+          { key: 'Độ phân giải', value: '1200 x 1200 dpi sắc nét' },
+          { key: 'Bộ vi xử lý (CPU)', value: '667 MHz' },
+          { key: 'Bộ nhớ tiêu chuẩn (RAM)', value: '512MB RAM + 3GB eMMC bộ nhớ trong' },
           { key: 'Thời gian in trang đầu tiên', value: '4,5 giây' },
-          { key: 'Khổ giấy', value: 'A6-A4, Banner 1,3m (tùy chọn tối đa 216 x 1320 mm)' },
-          { key: 'Trữ lượng giấy (chuẩn)', value: '01 khay chuẩn x 250 tờ\n01 khay tay x 100 tờ' },
-          { key: 'Định lượng giấy tiêu chuẩn', value: 'Khay chuẩn: 60 – 163 g/m2\nKhay tay: 60 – 163 g/m2\nKhay tùy chọn: 60 – 163 g/m2\nIn 2 mặt: 60 – 120 g/m2' },
-          { key: 'Khay giấy ra', value: '150 tờ úp mặt, 100 tờ ngửa mặt' },
-          { key: 'Công suất tiêu thụ', value: 'Chế độ hoạt động: 570W\nChế độ chờ: 50W\nChế độ tiết kiệm: 7W' },
-          { key: 'Độ phân giải', value: '1200 x 1200dpi' },
-          { key: 'In 2 mặt (Duplex)', value: 'Tiêu chuẩn' },
-          { key: 'In di động', value: 'AirPrint, Mopria, OKI Mobile Print' },
-          { key: 'Giao diện', value: 'USB 2.0 x 1; Ethernet 10BASE-T/100BASE-TX/1,000BASE-T; NFC; USB Host' },
-          { key: 'Giao thức hỗ trợ', value: 'TCP/IPv4&v6, AirPrint, Mopria™, IPP Everywhere™, NetBIOS, HTTP, HTTPS, SMTP, SNMP' },
-          { key: 'Ngôn ngữ in', value: 'Adobe PostScript 3, PDF1.7, PCL6 Emulation, PCL5e, XPS, IBM Proprinter, EPSON FX' },
-          { key: 'Phần mềm tiện ích', value: 'Template Manager, smart PrintSuperVision, Network Extension, Driver Installer' },
-          { key: 'Công suất in', value: '80,000 trang/tháng; Khuyến nghị: 500 - 5,000 trang/tháng' },
-          { key: 'Hộp mực', value: 'Tương thích linh hoạt với nhiều dung lượng: 3.000 / 7.000 / 12.000 trang' },
-          { key: 'Tuổi thọ cụm trống', value: '30.000 trang A4' },
-          { key: 'Bảo hành', value: '12 tháng' },
+          { key: 'Thời gian sẵn sàng in', value: 'Khoảng 12,7 giây từ chế độ nghỉ / 18,5 giây từ khi bật nguồn' },
+          { key: 'In 2 mặt tự động (Duplex)', value: 'Tích hợp sẵn bộ đảo mặt tự động Duplex tiêu chuẩn' },
+          { key: 'Bảng điều khiển', value: 'Màn hình LCD 1,82 inch hiển thị trạng thái và nút bấm chức năng' },
+          { key: 'Khổ giấy hỗ trợ', value: 'A4, A5, B5, A6, Letter, Legal 13/14, Envelopes, Banner dài tới 1.320 mm' },
+          { key: 'Khay nạp giấy tiêu chuẩn', value: 'Khay gầm 250 tờ (định lượng 60 - 120 g/m²)' },
+          { key: 'Khay đa năng (Multi-purpose Tray)', value: 'Khay tay 100 tờ (định lượng 60 - 163 g/m²)' },
+          { key: 'Khay giấy ra', value: '150 tờ úp mặt (Face down) + 100 tờ ngửa mặt (Face up)' },
+          { key: 'Định lượng giấy tiêu chuẩn', value: 'Khay chính & khay tay: 60 – 163 g/m²; In 2 mặt: 60 – 120 g/m²' },
+          { key: 'Cổng kết nối giao diện', value: 'USB 2.0 High Speed, Gigabit Ethernet 10/100/1000Base-TX, USB Host, NFC' },
+          { key: 'Giao thức mạng hỗ trợ', value: 'TCP/IPv4&v6, AirPrint, Mopria™, IPP Everywhere™, NetBIOS, HTTP, HTTPS, SMTP, SNMP v1/v3' },
+          { key: 'Ngôn ngữ in (Emulation)', value: 'Adobe PostScript 3, PDF v1.7, PCL6 (XL3.0), PCL5e, XPS, IBM Proprinter, EPSON FX' },
+          { key: 'Tính năng in di động', value: 'AirPrint, Mopria Certified, Google Cloud Print, OKI Mobile Print' },
+          { key: 'Tính năng bảo mật', value: 'IP/MAC Filtering, SSL/TLS, IPSec, Secure Print (In bảo mật mã PIN cá nhân)' },
+          { key: 'Phần mềm tiện ích đi kèm', value: 'Template Manager, smart PrintSuperVision, Network Extension, Driver Installer' },
+          { key: 'Công suất in hàng tháng', value: 'Tối đa 80.000 trang/tháng; Khuyến nghị: 500 - 5.000 trang/tháng' },
+          { key: 'Hộp mực theo máy & thay thế', value: 'Tương thích linh hoạt các mức: 3.000 trang / 7.000 trang / 12.000 trang (ISO/IEC 19752)' },
+          { key: 'Tuổi thọ cụm trống (Drum)', value: '30.000 trang A4' },
+          { key: 'Công suất tiêu thụ điện', value: 'Hoạt động: 570W; Chờ: 50W; Tiết kiệm: 7W; Ngủ sâu (Deep Sleep): < 0.9W' },
+          { key: 'Độ ồn khi vận hành', value: 'Hoạt động: 55 dB(A); Chế độ chờ: 30 dB(A)' },
+          { key: 'Kích thước (RxSxC) & Trọng lượng', value: '387 x 364 x 245 mm; Trọng lượng: ~12 kg' },
+          { key: 'Nguồn điện sử dụng', value: '220 - 240 VAC, 50/60 Hz' },
+          { key: 'Thời gian bảo hành', value: '12 - 24 tháng chính hãng' },
           { key: 'Năm sản xuất', value: 'từ 2024 tới nay' },
           { key: 'Nước sản xuất', value: 'Thái Lan' }
         ]
       },
       'oki_b513dn': {
         name: 'Máy in A4 đen trắng OKI B513DN',
-        model: 'B513DN', brand: 'OKI', origin: 'Thái Lan', warranty: '12 tháng', unit: 'Máy', price: '',
+        model: 'B513DN', brand: 'OKI', origin: 'Thái Lan', warranty: '12 tháng', unit: 'Máy', price: 13500000,
         specs: [
-          { key: 'Chức năng chuẩn', value: 'Máy in đen trắng đảo mặt tự động tốc độ cao' },
-          { key: 'CPU', value: '667 MHz' },
-          { key: 'Phương thức in', value: 'Laser Led kỹ thuật số' },
-          { key: 'Tốc độ in', value: '45 trang/phút (A4)' },
-          { key: 'Bảng điều khiển', value: 'Màn hình LCD 1,82 inch có đèn nền' },
-          { key: 'Bộ nhớ tiêu chuẩn (Ram)', value: '512MB RAM' },
-          { key: 'Thời gian sẵn sàng in', value: 'Dưới 17 giây từ khi bật nguồn' },
-          { key: 'Thời gian in trang đầu tiên', value: '4,5 giây' },
-          { key: 'Khổ giấy', value: 'A6-A4, Banner 1,3m' },
-          { key: 'Trữ lượng giấy (chuẩn)', value: 'Khay 530 tờ + Khay tay 100 tờ' },
-          { key: 'Định lượng giấy tiêu chuẩn', value: '60 – 163 g/m2' },
-          { key: 'Khay giấy ra', value: '150 tờ úp mặt' },
-          { key: 'Công suất tiêu thụ', value: '600W (Hoạt động) / 7W (Tiết kiệm)' },
-          { key: 'Độ phân giải', value: '1200 x 1200dpi' },
-          { key: 'In 2 mặt (Duplex)', value: 'Có sẵn (Tự động)' },
-          { key: 'In di động', value: 'AirPrint, Google Cloud Print, Mopria' },
-          { key: 'Giao diện', value: 'USB 2.0 High Speed, Gigabit Ethernet 10/100/1000' },
-          { key: 'Giao thức hỗ trợ', value: 'TCP/IPv4 & v6, IPSec, NetBIOS, SNMP' },
-          { key: 'Ngôn ngữ in', value: 'PCL6, PCL5e, PostScript 3, IBM Proprinter' },
-          { key: 'Phần mềm tiện ích', value: 'smart PrintSuperVision, Template Manager' },
-          { key: 'Công suất in', value: '100.000 trang/tháng' },
-          { key: 'Hộp mực', value: 'Dung lượng cao 12.000 trang' },
-          { key: 'Tuổi thọ cụm trống', value: '30.000 trang' },
-          { key: 'Bảo hành', value: '12 tháng' },
+          { key: 'Chức năng chuẩn', value: 'Máy in laser/LED đen trắng đơn sắc đảo mặt tự động tốc độ cao' },
+          { key: 'Công nghệ in', value: 'Digital LED Electrophotographic độ bền công nghiệp' },
+          { key: 'Tốc độ in (A4)', value: '45 trang/phút (ppm)' },
+          { key: 'Độ phân giải', value: '1200 x 1200 dpi' },
+          { key: 'Bộ vi xử lý (CPU)', value: '667 MHz' },
+          { key: 'Bộ nhớ tiêu chuẩn (RAM)', value: '512MB RAM + 3GB eMMC' },
+          { key: 'Thời gian sẵn sàng in', value: 'Dưới 17 giây từ khi bật nguồn / 4,5 giây trang đầu tiên' },
+          { key: 'In 2 mặt tự động (Duplex)', value: 'Có sẵn (Tự động)' },
+          { key: 'Bảng điều khiển', value: 'Màn hình LCD 1,82 inch đồ họa có đèn nền' },
+          { key: 'Khổ giấy hỗ trợ', value: 'A4, A5, B5, A6, Letter, Legal, Banner 1,3m' },
+          { key: 'Trữ lượng giấy (chuẩn)', value: 'Khay gầm lớn 530 tờ + Khay đa năng 100 tờ' },
+          { key: 'Định lượng giấy tiêu chuẩn', value: 'Khay chính & khay tay: 60 – 163 g/m²; In 2 mặt: 60 – 120 g/m²' },
+          { key: 'Khay giấy ra', value: '150 tờ úp mặt + 100 tờ ngửa mặt' },
+          { key: 'Cổng kết nối giao diện', value: 'USB 2.0 High Speed, Gigabit Ethernet 10/100/1000Base-TX, NFC' },
+          { key: 'Giao thức hỗ trợ', value: 'TCP/IPv4 & v6, IPSec, NetBIOS, SNMP v1/v3, HTTP/HTTPS' },
+          { key: 'Ngôn ngữ in', value: 'PCL6, PCL5e, Adobe PostScript 3, XPS, IBM Proprinter' },
+          { key: 'In di động & Quản trị', value: 'AirPrint, Google Cloud Print, Mopria, smart PrintSuperVision' },
+          { key: 'Công suất in tối đa', value: '100.000 trang/tháng; Khuyến nghị: 750 - 10.000 trang/tháng' },
+          { key: 'Hộp mực & Trống từ', value: 'Hộp mực dung lượng cao 12.000 trang; Cụm trống 30.000 trang' },
+          { key: 'Công suất tiêu thụ', value: '600W (Hoạt động) / 50W (Chờ) / 7W (Tiết kiệm)' },
+          { key: 'Kích thước & Trọng lượng', value: '387 x 393 x 286 mm; Trọng lượng: ~15 kg' },
+          { key: 'Bảo hành', value: '12 - 24 tháng chính hãng' },
           { key: 'Năm sản xuất', value: 'từ 2024 tới nay' },
           { key: 'Nước sản xuất', value: 'Thái Lan' }
         ]
@@ -5336,263 +5339,6 @@ QUY TẮC PHẢN HỒI:
     /* ═══════════════════════════════════════════
        STEP 5 / BẢNG TUYÊN BỐ ĐÁP ỨNG (COMPLIANCE TABLE)
     ═══════════════════════════════════════════ */
-    var MODEL_PRESETS = {
-      msi_dp180: {
-        name: "Máy vi tính để bàn",
-        model: "MSI PRO DP180 AI 8HG",
-        brand: "MSI",
-        origin: "Chính hãng",
-        specs: [
-          { key: "Bộ vi xử lý (CPU)", value: "Intel® Core™ Ultra 5 125H (14 nhân 18 luồng, Turbo 4.5GHz)" },
-          { key: "Bộ nhớ trong (RAM)", value: "16GB DDR5 5600MHz (Hỗ trợ nâng cấp tối đa 64GB)" },
-          { key: "Ổ đĩa cứng (Storage)", value: "512GB SSD M.2 PCIe Gen4 NVMe tốc độ cao" },
-          { key: "Màn hình đi kèm", value: "23.8 inch IPS Full HD (1920x1080), 100Hz, chống lóa Anti-Glare" },
-          { key: "Bo mạch chủ & Đồ họa", value: "Intel SoC tích hợp Intel® Arc™ Graphics AI Engine" },
-          { key: "Cổng kết nối", value: "1x HDMI 2.1, 1x DP 1.4, 1x VGA, 1x Type-C, 6x USB 3.2, 1x 2.5G LAN + 1x 1G LAN" },
-          { key: "Phụ kiện đi kèm", value: "Bàn phím + Chuột quang có dây chính hãng MSI" },
-          { key: "Hệ điều hành", value: "Windows 11 Pro 64-bit bản quyền vĩnh viễn" },
-          { key: "Phần mềm văn phòng", value: "Microsoft Office Home & Business 2024 bản quyền vĩnh viễn" },
-          { key: "Phần mềm diệt virus", value: "Phần mềm Antivirus bản quyền 03 năm chính hãng" },
-          { key: "Nguồn & Vỏ case", value: "Nguồn 500W 80 Plus Bronze chuẩn Form Factor nhỏ gọn" },
-          { key: "Thời gian bảo hành", value: "24 tháng chính hãng tại nơi sử dụng" }
-        ]
-      },
-      msi_cubi_nuc: {
-        name: "Máy tính để bàn Mini PC MSI Cubi NUC 1M",
-        model: "MSI Cubi NUC 1M",
-        brand: "MSI",
-        origin: "Trung Quốc",
-        specs: [
-          { key: "Processor", value: "Intel® Core™ 3 100U Processor (1.2Ghz upto 4.7Ghz, 10M Cache, 6 nhân/8 luồng)" },
-          { key: "Chipset", value: "Intel® Soc" },
-          { key: "Ổ đĩa lưu trữ", value: "1x 256GB M.2 2280 SSD\n1x M.2 2242 SSD (PCIe, free slot)\n1x 2.5\" HDD/SSD" },
-          { key: "Dung lượng RAM", value: "1 x 8GB RAM DDR5 up to 5200MHz SO-DIMMs, up to 64GB ( 2 slot)" },
-          { key: "Hệ điều hành (OS)", value: "Microsoft Win Pro 11" },
-          { key: "Đồ họa", value: "Intel® Graphics" },
-          { key: "Âm thanh", value: "Realtek® ALC256" },
-          { key: "Cổng I/O (Phía trước)", value: "2x USB 10Gbps Type A\n1x Mic-in / Headphone-out combo\n1x Micro-SD Card Reader" },
-          { key: "Cổng I/O (Phía sau)", value: "2x Thunderbolt 4 (DP 1.4 alt-mode up to 4K@60Hz /PD-out 15W / One of TBT supports PD-in)\n2x USB 10Gbps Type A\n2x RJ45\n2x HDMI out (supports 4K @60Hz as specified in HDMI 2.1)" },
-          { key: "Cổng I/O (Side)", value: "1x Kensington Lock\n1x External Power Switch Pin Header" },
-          { key: "Cổng I/O bên trong (Inside)", value: "2 x USB 2.0 header" },
-          { key: "TPM", value: "dTPM 2.0" },
-          { key: "Kết nối không dây", value: "M.2 key with Intel Wireless AX211" },
-          { key: "Bluetooth", value: "5.3" },
-          { key: "Kết nối mạng", value: "2 cổng Lan RJ45 được tích hợp sẵn:\n2 x Intel I226V (2.5Gb)" },
-          { key: "Nguồn", value: "Nguồn tiết kiệm điện dùng adaptor 120W" },
-          { key: "Ext Power Switch", value: "Công tắc điện nối dài" },
-          { key: "VESA Mount", value: "75 x 75 mm & 100 x 100 mm" },
-          { key: "Kensington Lock", value: "Có hỗ trợ" },
-          { key: "Keyboard & Mouse", value: "Đồng bộ thương hiệu MSI" },
-          { key: "Tính năng", value: "1. Hệ thống bảo mật dTPM 2.0 hardware được tích hợp sẵn trên máy tính. Tăng cường bảo mật cho hệ thống người dùng.\n2. Cho phép người dùng sao lưu và chia sẻ dữ liệu quan trọng cần thiết qua Cloud đến các thiết bị khác như smartphone, máy tính khác.\n3. Hỗ trợ xuất hình 4 màn hình cùng lúc.\n4. Hỗ trợ bật tắt máy tính bằng nút nguồn màn hình thông qua Thunderbolt 4 PD.\n5. Máy tính tích hợp hệ thống AI Engine tự học tự động phát hiện các tình huống của người dùng và điều chỉnh hiệu suất, hiệu ứng âm thanh và chế độ hiển thị cho phù hợp. Chẩn đoán hệ thống và tự động rà soát và nâng cấp Bios và phần mềm khi có bản cập nhật mới.\n6. Hệ thống Lan Manager cho phép người dùng theo dõi thông đường truyền cho từng ứng dụng cụ thể với mức độ ưu tiên khác nhau nhằm tối ưu hóa hiệu năng sử dụng đường truyền mạng nội bộ và internet.\n7. Hệ thống tích hợp Dual Lan RJ45 onboard gồm 2.5Gb x 2 nhằm tăng cường tốc độ truy suất đường truyền và cho phép người dùng và người quản trị thiết lập hạ tầng mạng riêng biệt, nâng cao bảo mật giữa internet và local\n8. Hiển thị và theo dõi thông tin hệ thống theo thời gian thực như CPU, Mainboard, Ram, xung CPU, tốc độ fan..." },
-          { key: "Màn hình đồng bộ thương hiệu MSI", value: "MSI PRO Series" },
-          { key: "Kích thước màn hình", value: "21.45\"" },
-          { key: "Tấm nền", value: "VA" },
-          { key: "Độ phân giải", value: "1920 x 1080 (FHD)" },
-          { key: "Tỉ lệ hình ảnh", value: "16:9" },
-          { key: "Độ sáng", value: "300 cd/m²" },
-          { key: "Độ tương phản", value: "4000:1" },
-          { key: "Độ tương phản động", value: "100000000:1" },
-          { key: "Tần số quét", value: "120Hz" },
-          { key: "Thời gian phản hồi", value: "1ms (MPRT) / 4ms (GTG)" },
-          { key: "Góc nhìn", value: "178°(H) / 178°(V)" },
-          { key: "Chống chói", value: "Anti-glare" },
-          { key: "Màu hiển thị", value: "16.7M, 8 bits" },
-          { key: "Cổng kết nối màn hình", value: "1x HDMI™ 1.4b (FHD@120Hz)\n1x D-Sub (VGA)" },
-          { key: "Nguồn điện màn hình", value: "100~240V, 50~60Hz" },
-          { key: "Bảo hành", value: "24 tháng" }
-        ]
-      },
-      oki_b433dn: {
-        name: "Máy in laser đơn năng",
-        model: "OKI B433DN",
-        brand: "OKI",
-        origin: "Chính hãng Thái Lan",
-        specs: [
-          { key: "Công nghệ in", value: "In Laser / LED kỹ thuật số đơn sắc độ bền cao" },
-          { key: "Tốc độ in (A4)", value: "40 trang/phút (ppm)" },
-          { key: "Độ phân giải", value: "1200 x 1200 dpi sắc nét" },
-          { key: "In 2 mặt tự động", value: "Tích hợp sẵn bộ đảo mặt tự động Duplex" },
-          { key: "Khổ giấy hỗ trợ", value: "A4, A5, B5, A6, Letter, Legal, Envelopes" },
-          { key: "Bộ nhớ", value: "512MB RAM + 3GB eMMC" },
-          { key: "Cổng kết nối", value: "Gigabit Ethernet 10/100/1000Base-TX, USB 2.0 High Speed" },
-          { key: "Khay nạp giấy", value: "Khay chính 250 tờ + Khay đa năng 100 tờ" },
-          { key: "Công suất in tối đa", value: "80.000 trang/tháng" },
-          { key: "Bảo hành", value: "12 - 24 tháng chính hãng" }
-        ]
-      },
-      oki_b513dn: {
-        name: "Máy in laser tốc độ cao",
-        model: "OKI B513DN",
-        brand: "OKI",
-        origin: "Chính hãng Thái Lan",
-        specs: [
-          { key: "Công nghệ in", value: "In LED kỹ thuật số đơn sắc" },
-          { key: "Tốc độ in", value: "45 trang/phút (ppm)" },
-          { key: "Độ phân giải", value: "1200 x 1200 dpi" },
-          { key: "In 2 mặt tự động", value: "Có sẵn Duplex" },
-          { key: "Màn hình điều khiển", value: "Màn hình LCD đồ họa có đèn nền" },
-          { key: "Bộ nhớ", value: "512MB RAM + 3GB eMMC" },
-          { key: "Kết nối", value: "Gigabit Ethernet, USB 2.0" },
-          { key: "Bảo hành", value: "24 tháng chính hãng" }
-        ]
-      },
-      canon_lbp2900: {
-        name: "Máy in laser",
-        model: "Canon LBP2900",
-        brand: "Canon",
-        origin: "Chính hãng",
-        specs: [
-          { key: "Loại máy in", value: "Laser đơn năng đơn sắc" },
-          { key: "Tốc độ in", value: "12 - 18 trang/phút" },
-          { key: "Độ phân giải", value: "2400 x 600 dpi" },
-          { key: "Khổ giấy", value: "A4, Letter" },
-          { key: "Kết nối", value: "USB 2.0" },
-          { key: "Bảo hành", value: "12 tháng" }
-        ]
-      },
-      hp_m404dn: {
-        name: "Máy in laser",
-        model: "HP LaserJet Pro M404dn",
-        brand: "HP",
-        origin: "Chính hãng",
-        specs: [
-          { key: "Công nghệ in", value: "Laser đơn sắc" },
-          { key: "Tốc độ in", value: "38 trang/phút (ppm)" },
-          { key: "Độ phân giải", value: "1200 x 1200 dpi" },
-          { key: "In 2 mặt", value: "Tự động đảo mặt Duplex" },
-          { key: "Kết nối", value: "Gigabit Ethernet, USB 2.0" },
-          { key: "Bảo hành", value: "12 tháng" }
-        ]
-      },
-      ricoh_fi8170: {
-        name: "Máy scan tài liệu",
-        model: "RICOH Fi-8170",
-        brand: "RICOH / Fujitsu",
-        origin: "Chính hãng Nhật Bản",
-        specs: [
-          { key: "Kiểu máy quét", value: "Để bàn nạp giấy tự động (ADF) quét 2 mặt đồng thời" },
-          { key: "Cảm biến hình ảnh", value: "Color CIS x 2 (Mặt trước x 1, Mặt sau x 1)" },
-          { key: "Độ phân giải quang học", value: "600 dpi (Độ phân giải đầu ra lên đến 1200 dpi)" },
-          { key: "Tốc độ quét (A4)", value: "70 ppm / 140 ipm (200/300 dpi, Màu/Xám/Đơn sắc)" },
-          { key: "Khay nạp tự động (ADF)", value: "100 tờ (A4, 80 g/m²)" },
-          { key: "Công nghệ xử lý", value: "Clear Image Capture, Tự căn thẳng giấy, Cảm biến kẹt giấy siêu âm iSOP" },
-          { key: "Cổng kết nối", value: "USB 3.2 Gen 1 / USB 2.0 / USB 1.1, 10BASE-T/100BASE-TX/1000BASE-T RJ45" },
-          { key: "Công suất quét", value: "10.000 tờ/ngày" },
-          { key: "Bảo hành", value: "12 - 24 tháng chính hãng" }
-        ]
-      },
-      ricoh_sp2240n: {
-        name: "Máy scan tài liệu",
-        model: "Ricoh SP-2240N",
-        brand: "Ricoh",
-        origin: "Chính hãng",
-        specs: [
-          { key: "Kiểu máy", value: "Máy quét ADF 2 mặt tự động" },
-          { key: "Tốc độ quét", value: "40 ppm / 80 ipm" },
-          { key: "Độ phân giải", value: "600 dpi" },
-          { key: "Khay ADF", value: "50 tờ" },
-          { key: "Kết nối", value: "USB 3.2, Gigabit LAN" },
-          { key: "Bảo hành", value: "12 tháng" }
-        ]
-      },
-      ricoh_im2500: {
-        name: "Máy photocopy đa năng A3",
-        model: "RICOH IM 2500",
-        brand: "RICOH",
-        origin: "Chính hãng",
-        specs: [
-          { key: "Chức năng", value: "Copy + In qua mạng + Scan màu qua mạng + ARDF tự đảo mặt" },
-          { key: "Tốc độ sao chụp/in", value: "25 trang/phút (Khổ A4), 14 trang/phút (Khổ A3)" },
-          { key: "Độ phân giải", value: "1200 x 1200 dpi" },
-          { key: "Khổ giấy", value: "A6 - A3" },
-          { key: "Khay giấy", value: "2 khay x 550 tờ + Khay tay 100 tờ" },
-          { key: "Màn hình điều khiển", value: "Cảm biến thông minh Smart Operation Panel 10.1 inch chạy Android" },
-          { key: "Bộ nhớ", value: "2GB RAM + 320GB HDD" },
-          { key: "Bảo hành", value: "24 tháng hoặc 100.000 bản chụp" }
-        ]
-      },
-      switch_gwn7813: {
-        name: "Thiết bị chuyển mạch Switch Layer 3",
-        model: "Grandstream GWN7813",
-        brand: "Grandstream",
-        origin: "Chính hãng",
-        specs: [
-          { key: "Loại thiết bị", value: "Switch Layer 3 Enterprise Managed Gigabit Switch" },
-          { key: "Cổng kết nối", value: "24 cổng Gigabit RJ45 + 4 cổng 10G SFP+ Uplink" },
-          { key: "Băng thông chuyển mạch", value: "128 Gbps" },
-          { key: "Tốc độ chuyển tiếp gói tin", value: "95.23 Mpps" },
-          { key: "Tính năng Layer 3", value: "Static Routing, RIP/OSPF v2, VRRP, DHCP Server/Relay, 4K VLANs" },
-          { key: "Quản trị", value: "Cloud Controller GWN.Cloud, Web GUI, CLI, SNMP v1/v2c/v3" },
-          { key: "Bảo hành", value: "36 tháng chính hãng" }
-        ]
-      },
-      dau_doc_the_tu: {
-        name: "Đầu đọc thẻ thông minh tiếp xúc & không tiếp xúc",
-        model: "Identiv uTrust 4701 F",
-        brand: "Identiv",
-        origin: "Chính hãng Đức",
-        specs: [
-          { key: "Giao diện thẻ", value: "Dual Interface: Tiếp xúc ISO/IEC 7816 & Không tiếp xúc 13.56MHz NFC" },
-          { key: "Chuẩn thẻ hỗ trợ", value: "Thẻ CCCD gắn chip, ISO 14443 Type A & B, MIFARE, FeliCa, ISO 15693" },
-          { key: "Giao diện kết nối", value: "USB 2.0 CCID cắm là chạy (Plug & Play)" },
-          { key: "Hệ điều hành", value: "Windows 11/10/8/7, MacOS, Linux, Android" },
-          { key: "Bảo hành", value: "12 tháng chính hãng" }
-        ]
-      },
-      doc_the_nho: {
-        name: "Thiết bị đọc thẻ nhớ đa năng",
-        model: "ATEN UH3240",
-        brand: "ATEN",
-        origin: "Chính hãng",
-        specs: [
-          { key: "Chức năng", value: "USB-C Multiport Dock & Đầu đọc thẻ nhớ tốc độ cao" },
-          { key: "Cổng kết nối thẻ", value: "1x SD/SDHC/SDXC UHS-I, 1x microSD/SDHC/SDXC" },
-          { key: "Cổng giao tiếp khác", value: "1x Gigabit LAN, 3x USB 3.2 Gen 1, 2x HDMI 4K, 1x USB-C PD 100W" },
-          { key: "Bảo hành", value: "12 tháng chính hãng" }
-        ]
-      },
-      man_hinh_24: {
-        name: "Màn hình máy tính",
-        model: "MSI PRO MP241X (23.8 inch IPS)",
-        brand: "MSI",
-        origin: "Chính hãng",
-        specs: [
-          { key: "Kích thước màn hình", value: "23.8 inch (16:9)" },
-          { key: "Tấm nền (Panel)", value: "IPS góc nhìn rộng 178°/178°" },
-          { key: "Độ phân giải", value: "Full HD (1920 x 1080), 75Hz - 100Hz" },
-          { key: "Công nghệ bảo vệ mắt", value: "Anti-Flicker, Less Blue Light chống chói mỏi mắt" },
-          { key: "Cổng xuất hình", value: "1x HDMI, 1x D-Sub (VGA)" },
-          { key: "Bảo hành", value: "24 - 36 tháng chính hãng" }
-        ]
-      },
-      ups_santak_1000: {
-        name: "Bộ lưu điện UPS",
-        model: "Santak Blazer 1000 Pro (1000VA/600W)",
-        brand: "Santak",
-        origin: "Chính hãng",
-        specs: [
-          { key: "Công suất", value: "1000VA / 600W" },
-          { key: "Công nghệ", value: "Line-Interactive với bộ ổn áp AVR tích hợp" },
-          { key: "Thời gian lưu điện", value: "Tối thiểu 15 - 20 phút cho 1 bộ PC văn phòng" },
-          { key: "Điện áp vào/ra", value: "220V AC (162 - 290V) / 220V ± 10%" },
-          { key: "Bảo hành", value: "36 tháng chính hãng" }
-        ]
-      },
-      canon_eos_r6: {
-        name: "Máy ảnh kỹ thuật số chuyên nghiệp",
-        model: "Canon EOS R6 Mark II + Lens 24-105mm",
-        brand: "Canon",
-        origin: "Chính hãng Nhật Bản",
-        specs: [
-          { key: "Cảm biến", value: "Full-Frame CMOS 24.2 Megapixels" },
-          { key: "Bộ xử lý hình ảnh", value: "DIGIC X tốc độ cao" },
-          { key: "Chống rung", value: "In-Body Image Stabilizer (IBIS) lên đến 8 stops" },
-          { key: "Quay video", value: "4K 60p không crop, 6K RAW qua HDMI" },
-          { key: "Bảo hành", value: "24 tháng chính hãng Lê Bảo Minh" }
-        ]
-      }
-    };
-
     var TDDU_SAMPLE_ITEMS = [
       {
         reqName: "Máy vi tính",
