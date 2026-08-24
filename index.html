@@ -1539,17 +1539,18 @@
   <div class="wrap">
 
     <div class="hdr">
-      <div class="badge">🤖 AI &amp; Đa File · Chuẩn Mẫu Excel V1 · v2.6 (Tự Động Ẩn/Hiện Tab khi làm Dự Toán)</div>
+      <div class="badge">🤖 AI &amp; Đa File · Chuẩn Mẫu Excel V1 · v2.7 (Ẩn Hoàn Toàn 2 Module Còn Lại)</div>
       <h1>Tạo Mẫu Dự Toán Tự Động Từ Nhiều File</h1>
       <p>Bóc tách tự động báo giá &amp; thông số kỹ thuật → Xuất file Excel chuẩn mẫu V1 đẹp, gọn, đúng 100% từng sheet
       </p>
     </div>
 
     <!-- MAIN TABS -->
-    <div class="main-tabs" id="mainTabsBar">
+    <div class="main-tabs" id="mainTabsBar" style="display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap">
       <div class="mtab active" id="mtab-dutoan" onclick="switchMainTab('dutoan')">📊 Làm Dự Toán</div>
-      <div class="mtab" id="mtab-bbbg" onclick="switchMainTab('bbbg')">📝 Biên Bản Bàn Giao</div>
-      <div class="mtab" id="mtab-tddu" onclick="switchMainTab('tddu')">✅ Bảng Tuyên Bố Đáp Ứng</div>
+      <div class="mtab" id="mtab-bbbg" onclick="switchMainTab('bbbg')" style="display:none">📝 Biên Bản Bàn Giao</div>
+      <div class="mtab" id="mtab-tddu" onclick="switchMainTab('tddu')" style="display:none">✅ Bảng Tuyên Bố Đáp Ứng</div>
+      <button class="btn btn-o btn-sm" id="btnSwitchModule" onclick="showAllMainModules()" style="height:36px;font-size:12px;border-radius:20px">🔄 Đổi công cụ khác</button>
     </div>
 
     <div id="view-dutoan">
@@ -2158,31 +2159,47 @@
       document.getElementById('view-bbbg').style.display = 'none';
       document.getElementById('view-tddu').style.display = 'none';
 
-      // Always restore tabs visibility when switching main tabs
+      var tabD = document.getElementById('mtab-dutoan');
       var tabB = document.getElementById('mtab-bbbg');
       var tabT = document.getElementById('mtab-tddu');
-      if (tabB) tabB.style.display = '';
-      if (tabT) tabT.style.display = '';
+      var btnSwitch = document.getElementById('btnSwitchModule');
 
       if (tab === 'dutoan') {
-        var mEl = document.getElementById('mtab-dutoan') || document.querySelector('.mtab[onclick*="dutoan"]');
-        if (mEl) mEl.classList.add('active');
+        if (tabD) { tabD.classList.add('active'); tabD.style.display = ''; }
+        if (tabB) tabB.style.display = 'none';
+        if (tabT) tabT.style.display = 'none';
+        if (btnSwitch) btnSwitch.style.display = '';
         document.getElementById('view-dutoan').style.display = 'block';
       } else if (tab === 'bbbg') {
-        var mEl = document.getElementById('mtab-bbbg') || document.querySelector('.mtab[onclick*="bbbg"]');
-        if (mEl) mEl.classList.add('active');
+        if (tabB) { tabB.classList.add('active'); tabB.style.display = ''; }
+        if (tabD) tabD.style.display = 'none';
+        if (tabT) tabT.style.display = 'none';
+        if (btnSwitch) btnSwitch.style.display = '';
         document.getElementById('view-bbbg').style.display = 'block';
         if (typeof renderHandoverForm === 'function') {
           renderHandoverForm();
         }
       } else if (tab === 'tddu') {
-        var mEl = document.getElementById('mtab-tddu') || document.querySelector('.mtab[onclick*="tddu"]');
-        if (mEl) mEl.classList.add('active');
+        if (tabT) { tabT.classList.add('active'); tabT.style.display = ''; }
+        if (tabD) tabD.style.display = 'none';
+        if (tabB) tabB.style.display = 'none';
+        if (btnSwitch) btnSwitch.style.display = '';
         document.getElementById('view-tddu').style.display = 'block';
         if (typeof renderTdduForm === 'function') {
           renderTdduForm();
         }
       }
+    }
+
+    function showAllMainModules() {
+      var tabD = document.getElementById('mtab-dutoan');
+      var tabB = document.getElementById('mtab-bbbg');
+      var tabT = document.getElementById('mtab-tddu');
+      var btnSwitch = document.getElementById('btnSwitchModule');
+      if (tabD) tabD.style.display = '';
+      if (tabB) tabB.style.display = '';
+      if (tabT) tabT.style.display = '';
+      if (btnSwitch) btnSwitch.style.display = 'none';
     }
 
     function goStep(s) {
@@ -2195,19 +2212,6 @@
         buildStep2();
       }
       if (s === 3) buildFinal();
-
-      // Ẩn 2 nút BBBG và TDDU khi ở Bước 2 & 3, hiện lại khi quay về Bước 1
-      var tabB = document.getElementById('mtab-bbbg');
-      var tabT = document.getElementById('mtab-tddu');
-      if (tabB && tabT) {
-        if (s === 1) {
-          tabB.style.display = '';
-          tabT.style.display = '';
-        } else {
-          tabB.style.display = 'none';
-          tabT.style.display = 'none';
-        }
-      }
 
       // Select panels inside view-dutoan
       document.getElementById('view-dutoan').querySelectorAll('.panel').forEach(function (p) { p.classList.remove('on') });
