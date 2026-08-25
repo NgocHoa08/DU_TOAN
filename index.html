@@ -2793,7 +2793,7 @@ QUY TẮC PHẢN HỒI:
       "origin": "Thái Lan",
       "unit": "Máy",
       "qty": 1,
-      "price": 4950000,
+      "price": 0,
       "warranty": "12 tháng",
       "specs": [
         {"key": "Chức năng chuẩn", "value": "Máy in đen trắng đảo mặt tự động"},
@@ -3051,7 +3051,7 @@ QUY TẮC PHẢN HỒI:
         var origin = colMap.origin >= 0 ? gv(ws, row, colMap.origin) : '';
         var unit = colMap.unit >= 0 ? gv(ws, row, colMap.unit) : 'Máy';
         var qty = colMap.qty >= 0 ? (gn(ws, row, colMap.qty) || 1) : 1;
-        var price = colMap.price >= 0 ? gn(ws, row, colMap.price) : 0;
+        var price = 0;
 
         var name = cleanFullDeviceName(rawName, sttNum, model, brand);
 
@@ -3059,9 +3059,8 @@ QUY TẮC PHẢN HỒI:
           for (var fc = range.s.c; fc <= range.e.c; fc++) {
             if (fc === colMap.name || fc === colMap.stt || fc === colMap.qty) continue;
             var cellVal = gn(ws, row, fc);
-            if (cellVal >= 1000) {
-              price = cellVal; break;
-            }
+            // No default prices
+            price = 0;
           }
         }
 
@@ -4204,7 +4203,7 @@ QUY TẮC PHẢN HỒI:
             "origin": "Trung Quốc",
             "warranty": "12 tháng",
             "unit": "Bộ",
-            "price": 17800000,
+            "price": 0,
             "specs": [
                   {
                         "key": "Processor",
@@ -4411,7 +4410,7 @@ QUY TẮC PHẢN HỒI:
             "origin": "Trung Quốc",
             "warranty": "12 tháng",
             "unit": "Chiếc",
-            "price": 17800000,
+            "price": 0,
             "specs": [
                   {
                         "key": "CPU",
@@ -4494,7 +4493,7 @@ QUY TẮC PHẢN HỒI:
             "origin": "Thái Lan",
             "warranty": "12 tháng",
             "unit": "Chiếc",
-            "price": 4800000,
+            "price": 0,
             "specs": [
                   {
                         "key": "Chức năng chuẩn",
@@ -4561,7 +4560,7 @@ QUY TẮC PHẢN HỒI:
             "origin": "Thái Lan",
             "warranty": "12 tháng",
             "unit": "Chiếc",
-            "price": 8800000,
+            "price": 0,
             "specs": [
                   {
                         "key": "Kiểu máy",
@@ -4757,7 +4756,7 @@ QUY TẮC PHẢN HỒI:
             "origin": "Đài Loan",
             "warranty": "12 tháng",
             "unit": "Bộ",
-            "price": 56000000,
+            "price": 0,
             "specs": [
                   {
                         "key": "Chức năng chuẩn",
@@ -4819,7 +4818,7 @@ QUY TẮC PHẢN HỒI:
             "origin": "Đài Loan",
             "warranty": "12 tháng",
             "unit": "Cái",
-            "price": 58000000,
+            "price": 0,
             "specs": [
                   {
                         "key": "Chức năng chuẩn",
@@ -4912,7 +4911,7 @@ QUY TẮC PHẢN HỒI:
             "origin": "Trung Quốc",
             "warranty": "12 tháng",
             "unit": "Bộ",
-            "price": 23000000,
+            "price": 0,
             "specs": [
                   {
                         "key": "Máy chiếu",
@@ -5223,7 +5222,7 @@ QUY TẮC PHẢN HỒI:
             "origin": "Việt Nam",
             "warranty": "12 tháng",
             "unit": "Thùng",
-            "price": 2800000,
+            "price": 0,
             "specs": [
                   {
                         "key": "Kiểu cáp",
@@ -5282,7 +5281,7 @@ QUY TẮC PHẢN HỒI:
             "origin": "Trung Quốc",
             "warranty": "12 tháng",
             "unit": "Cái",
-            "price": 5000000,
+            "price": 0,
             "specs": [
                   {
                         "key": "CPU",
@@ -5389,7 +5388,7 @@ QUY TẮC PHẢN HỒI:
             "origin": "Trung Quốc",
             "warranty": "12 tháng",
             "unit": "Chiếc",
-            "price": 18750000,
+            "price": 0,
             "specs": [
                   {
                         "key": "Công nghệ in",
@@ -5484,7 +5483,7 @@ QUY TẮC PHẢN HỒI:
             "origin": "Thái Lan",
             "warranty": "12 tháng",
             "unit": "Chiếc",
-            "price": 88000000,
+            "price": 0,
             "specs": [
                   {
                         "key": "Tốc độ sao chụp / in",
@@ -5759,7 +5758,7 @@ QUY TẮC PHẢN HỒI:
             "model": "Cubi B0B1",
             "brand": "MSI",
             "origin": "Trung Quốc",
-            "price": 17800000,
+            "price": 0,
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Bộ",
@@ -5773,7 +5772,7 @@ QUY TẮC PHẢN HỒI:
             "model": "MS-14S1",
             "brand": "MSI",
             "origin": "Trung Quốc",
-            "price": 17800000,
+            "price": 0,
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Chiếc",
@@ -5787,7 +5786,7 @@ QUY TẮC PHẢN HỒI:
             "model": "B433DN",
             "brand": "OKI",
             "origin": "Thái Lan",
-            "price": 4800000,
+            "price": 0,
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Chiếc",
@@ -5801,7 +5800,7 @@ QUY TẮC PHẢN HỒI:
             "model": "SP-2240",
             "brand": "Ricoh",
             "origin": "Thái Lan",
-            "price": 8800000,
+            "price": 0,
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Chiếc",
@@ -5857,7 +5856,7 @@ QUY TẮC PHẢN HỒI:
             "model": "VC520 PRO3",
             "brand": "Aver",
             "origin": "Đài Loan",
-            "price": 56000000,
+            "price": 0,
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Bộ",
@@ -5885,7 +5884,7 @@ QUY TẮC PHẢN HỒI:
             "model": "XGS 128",
             "brand": "Sophos",
             "origin": "Đài Loan",
-            "price": 58000000,
+            "price": 0,
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Cái",
@@ -5927,7 +5926,7 @@ QUY TẮC PHẢN HỒI:
             "model": "P162",
             "brand": "INFOCUS",
             "origin": "Trung Quốc",
-            "price": 23000000,
+            "price": 0,
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Bộ",
@@ -5941,7 +5940,7 @@ QUY TẮC PHẢN HỒI:
             "model": "Việt Hàn CAT6",
             "brand": "Việt Hàn",
             "origin": "Việt Nam",
-            "price": 2800000,
+            "price": 0,
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Thùng",
@@ -5955,7 +5954,7 @@ QUY TẮC PHẢN HỒI:
             "model": "ER707-M2",
             "brand": "TP-Link",
             "origin": "Trung Quốc",
-            "price": 5000000,
+            "price": 0,
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Cái",
@@ -5969,7 +5968,7 @@ QUY TẮC PHẢN HỒI:
             "model": "LaserJet Pro M706n",
             "brand": "HP",
             "origin": "Trung Quốc",
-            "price": 18750000,
+            "price": 0,
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Chiếc",
@@ -5983,7 +5982,7 @@ QUY TẮC PHẢN HỒI:
             "model": "IM 3500",
             "brand": "Ricoh",
             "origin": "Thái Lan",
-            "price": 88000000,
+            "price": 0,
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Chiếc",
