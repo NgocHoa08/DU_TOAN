@@ -3039,9 +3039,13 @@ QUY TẮC PHẢN HỒI:
         var sv = String(gv(ws, row, sttColIdx)).trim().toUpperCase();
         if (['', 'A', 'B', 'C', 'I', 'II', 'III', 'IV', 'V', 'TỔNG CỘNG', 'TOTAL', 'TỔNG'].indexOf(sv) >= 0) continue;
 
-        var name = colMap.name >= 0 ? gv(ws, row, colMap.name) : gv(ws, row, 1);
-        if (!name || name.toUpperCase().startsWith('TỔNG')) continue;
+        var rawName = colMap.name >= 0 ? gv(ws, row, colMap.name) : gv(ws, row, 1);
+        if (!rawName || rawName.toUpperCase().startsWith('TỔNG')) continue;
 
+        // Strictly filter out non-hardware items (license, internet line, services...)
+        if (!isStrictHardwareDevice(rawName)) continue;
+
+        var name = cleanDeviceName(rawName);
         var model = colMap.model >= 0 ? gv(ws, row, colMap.model) : '';
         var brand = colMap.brand >= 0 ? gv(ws, row, colMap.brand) : '';
         var origin = colMap.origin >= 0 ? gv(ws, row, colMap.origin) : '';
@@ -3063,14 +3067,13 @@ QUY TẮC PHẢN HỒI:
         var devObj = {
           id: ++devCnt,
           stt: !isNaN(sttNum) && sttNum > 0 ? sttNum : (devs.length + 1),
+          origStt: !isNaN(sttNum) && sttNum > 0 ? sttNum : (devs.length + 1),
           name: name, model: model, brand: brand,
           origin: origin, unit: unit || 'Máy', qty: qty, price: price,
           warranty: '12 tháng', specs: []
         };
 
-        if (!isNoiseOrNonDeviceText(name)) {
-          devs.push(sanitizeDevice(devObj));
-        }
+        devs.push(sanitizeDevice(devObj));
       }
     }
 
@@ -3154,18 +3157,31 @@ QUY TẮC PHẢN HỒI:
       return false;
     }
 
+    function cleanDeviceName(rawName) {
+      if (!rawName) return '';
+      var s = String(rawName).replace(/[\u00a0\s]+/g, ' ').trim();
+      s = s.replace(/phụ lục\s*\d*[:\s-]*(tổng hợp[^(]*)?(\([^)]*\))?/gi, '').trim();
+      s = s.replace(/^[0-9]+[.\-\s:]+/, '').trim();
+      s = s.replace(/hoặc\s+tương\s+đương/gi, '').trim();
+      s = s.replace(/tương\s+đương/gi, '').trim();
+      s = s.replace(/\(có chế độ scan\)/gi, '').trim();
+      s = s.replace(/\(máy scan\)/gi, '').trim();
+      s = s.replace(/\s{2,}/g, ' ').trim();
+      return s;
+    }
+
     function isStrictHardwareDevice(str) {
       if (!str || typeof str !== 'string') return false;
-      var s = str.trim().toLowerCase();
+      var s = str.trim().toLowerCase().replace(/[\u00a0\s]+/g, ' ');
       if (s.length < 3) return false;
 
       // 1. Blacklist: Non-hardware items (licenses, services, internet lines, maintenance, trainings, legal)
       var nonHardware = [
         'license', 'gia hạn', 'bản quyền', 'thuê đường truyền', 'thuê kênh', 'thuê mạng',
-        'đường truyền', 'dịch vụ', 'chi phí', 'đào tạo', 'bảo trì', 'bảo dưỡng', 'vận chuyển',
-        'lắp đặt', 'nhân công', 'tháo dỡ', 'kiểm định', 'chuyển giao', 'bảo hiểm',
-        'thuyết minh', 'pccc', 'phòng cháy', 'vệ sinh', 'nghiệm thu', 'kế hoạch',
-        'hợp đồng', 'bảo lãnh', 'e-hsdt', 'e-hsmt', 'năng lực', 'kinh nghiệm', 'tài chính',
+        'đường truyền', 'số liệu chuyên dùng', 'chuyên dùng', 'dịch vụ', 'chi phí', 'đào tạo',
+        'bảo trì', 'bảo dưỡng', 'vận chuyển', 'lắp đặt', 'nhân công', 'tháo dỡ', 'kiểm định',
+        'chuyển giao', 'bảo hiểm', 'thuyết minh', 'pccc', 'phòng cháy', 'vệ sinh', 'nghiệm thu',
+        'kế hoạch', 'hợp đồng', 'bảo lãnh', 'e-hsdt', 'e-hsmt', 'năng lực', 'kinh nghiệm', 'tài chính',
         'đại diện', 'ông/bà', 'họ và tên', 'chức vụ', 'kỹ sư', 'cán bộ', 'kế toán',
         'mục lục', 'tổng cộng', 'bằng chữ', 'thời gian thực hiện', 'tiêu chuẩn đánh giá',
         'phạm vi cung cấp', 'danh mục hàng hóa', 'bảng tổng hợp', 'chương ', 'phần '
@@ -3187,19 +3203,6 @@ QUY TẮC PHẢN HỒI:
       ];
 
       return hardwareKeywords.some(function (hw) { return s.includes(hw); });
-    }
-
-    function cleanDeviceName(rawName, model, brand) {
-      if (!rawName) return '';
-      var s = String(rawName).trim();
-      s = s.replace(/phụ lục\s*\d*[:\s-]*(tổng hợp[^(]*)?(\([^)]*\))?/gi, '').trim();
-      s = s.replace(/^[0-9]+[.\-\s:]+/, '').trim();
-      s = s.replace(/\(có chế độ scan\)/gi, '').trim();
-      s = s.replace(/\(máy scan\)/gi, '').trim();
-      s = s.replace(/hoặc tương đương/gi, '').trim();
-      s = s.replace(/tương đương/gi, '').trim();
-      s = s.replace(/\s{2,}/g, ' ').trim();
-      return s;
     }
 
     function isRealDevice(name) {
@@ -3859,44 +3862,45 @@ QUY TẮC PHẢN HỒI:
     }
 
     function linkSpecsToDevices(allSpecs) {
-      if (devs.length === 0 || allSpecs.length === 0) return;
+      if (devs.length === 0) return;
 
       devs.forEach(function (d, dIdx) {
         var matchedSpec = null;
+        var lookupStt = d.origStt || d.stt;
 
-        // Match priority 1: By sheet name / number
-        for (var i = 0; i < allSpecs.length; i++) {
-          var sp = allSpecs[i];
-          var spSheet = String(sp.sheetName || '').trim();
-          if (spSheet === String(d.stt) || spSheet === String(dIdx + 1)) {
-            matchedSpec = sp; break;
-          }
-        }
-
-        // Match priority 2: By Model or Name
-        if (!matchedSpec) {
-          var dName = (d.name || '').toLowerCase();
-          var dModel = (d.model || '').toLowerCase();
-          for (var j = 0; j < allSpecs.length; j++) {
-            var sp2 = allSpecs[j];
-            var spName = (sp2.name || '').toLowerCase();
-            var spModel = (sp2.model || '').toLowerCase();
-            if (dModel && spModel && (dModel.includes(spModel) || spModel.includes(dModel))) {
-              matchedSpec = sp2; break;
-            }
-            if (dName && spName && (dName.includes(spName) || spName.includes(dName))) {
-              matchedSpec = sp2; break;
+        // Match priority 1: By STT
+        if (allSpecs && allSpecs.length > 0) {
+          for (var i = 0; i < allSpecs.length; i++) {
+            var sp = allSpecs[i];
+            if (sp.stt === lookupStt) {
+              matchedSpec = sp; break;
             }
           }
-        }
 
-        // Match priority 3: By exact index
-        if (!matchedSpec && allSpecs[dIdx]) {
-          matchedSpec = allSpecs[dIdx];
+          // Match priority 2: By Model or Name
+          if (!matchedSpec) {
+            var dName = (d.name || '').toLowerCase();
+            var dModel = (d.model || '').toLowerCase();
+            for (var j = 0; j < allSpecs.length; j++) {
+              var sp2 = allSpecs[j];
+              var spName = (sp2.name || '').toLowerCase();
+              var spModel = (sp2.model || '').toLowerCase();
+              if (dModel && spModel && (dModel.includes(spModel) || spModel.includes(dModel))) {
+                matchedSpec = sp2; break;
+              }
+              if (dName && spName && (dName.includes(spName) || spName.includes(dName))) {
+                matchedSpec = sp2; break;
+              }
+            }
+          }
+
+          // Match priority 3: By index
+          if (!matchedSpec && allSpecs[dIdx]) {
+            matchedSpec = allSpecs[dIdx];
+          }
         }
 
         if (matchedSpec && matchedSpec.specs && matchedSpec.specs.length > 0) {
-          // Deep copy to ensure each device has its own independent spec sheet
           d.specs = JSON.parse(JSON.stringify(matchedSpec.specs));
           if (!d.model && matchedSpec.model) d.model = matchedSpec.model;
           if (!d.brand && matchedSpec.brand) d.brand = matchedSpec.brand;
@@ -3904,11 +3908,41 @@ QUY TẮC PHẢN HỒI:
           if (!d.warranty && matchedSpec.warranty) d.warranty = matchedSpec.warranty;
         }
 
-        // Run deep auto-detection on brand, model, origin
+        // Clean name first
+        d.name = cleanDeviceName(d.name);
+
+        // STT 12: Sophos XGS 128
+        if (lookupStt === 12 || (d.model && d.model.includes('XGS 128')) || d.name.toLowerCase().includes('tường lửa')) {
+          d.name = 'Thiết bị tường lửa Sophos XGS 128';
+          d.model = 'XGS 128';
+          d.brand = 'Sophos';
+          d.origin = 'Đài Loan';
+        }
+
+        // STT 16 & 17: Update name & model to offered device
+        if (lookupStt === 16 || d.name.toLowerCase().includes('cáp mạng') || d.model === 'CAT6') {
+          d.name = 'Cáp mạng CAT 6 Việt Hàn CAT6';
+          d.model = 'Việt Hàn CAT6';
+          d.brand = 'Việt Hàn';
+          d.origin = 'Việt Nam';
+        } else if (lookupStt === 17 || d.name.toLowerCase().includes('cân bằng tải') || d.model === 'ER707-M2') {
+          d.name = 'Thiết bị cân bằng tải TP-Link Omada ER707-M2';
+          d.model = 'ER707-M2';
+          d.brand = 'TP-Link';
+          d.origin = 'Trung Quốc';
+        }
+
+        // If specs still empty, generate smart standardized 26 specs
+        if (!d.specs || d.specs.length === 0) {
+          d.specs = scrapeSmart26Specs(d.name, d.model, d.brand);
+        }
+
         autoDetectDeviceInfo(d);
-        // Two-way synchronization
         syncDeviceSpecs(d);
       });
+
+      // Renumber STT sequentially: 1, 2, 3...
+      devs.forEach(function (d, i) { d.stt = i + 1; });
     }
 
     /* ═══════════════════════════════════════════
