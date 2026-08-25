@@ -3045,13 +3045,15 @@ QUY TẮC PHẢN HỒI:
         // Strictly filter out non-hardware items (license, internet line, services...)
         if (!isStrictHardwareDevice(rawName)) continue;
 
-        var name = cleanDeviceName(rawName);
+        var sttNum = parseInt(sv);
         var model = colMap.model >= 0 ? gv(ws, row, colMap.model) : '';
         var brand = colMap.brand >= 0 ? gv(ws, row, colMap.brand) : '';
         var origin = colMap.origin >= 0 ? gv(ws, row, colMap.origin) : '';
         var unit = colMap.unit >= 0 ? gv(ws, row, colMap.unit) : 'Máy';
         var qty = colMap.qty >= 0 ? (gn(ws, row, colMap.qty) || 1) : 1;
         var price = colMap.price >= 0 ? gn(ws, row, colMap.price) : 0;
+
+        var name = cleanFullDeviceName(rawName, sttNum, model, brand);
 
         if (!price) {
           for (var fc = range.s.c; fc <= range.e.c; fc++) {
@@ -3063,7 +3065,6 @@ QUY TẮC PHẢN HỒI:
           }
         }
 
-        var sttNum = parseInt(sv);
         var devObj = {
           id: ++devCnt,
           stt: !isNaN(sttNum) && sttNum > 0 ? sttNum : (devs.length + 1),
@@ -3168,6 +3169,80 @@ QUY TẮC PHẢN HỒI:
       s = s.replace(/\(máy scan\)/gi, '').trim();
       s = s.replace(/\s{2,}/g, ' ').trim();
       return s;
+    }
+
+    function cleanFullDeviceName(name, stt, model, brand) {
+      if (!name) return '';
+      var s = String(name).replace(/[\u00a0\s]+/g, ' ').trim();
+      s = s.replace(/phụ lục\s*\d*[:\s-]*(tổng hợp[^(]*)?(\([^)]*\))?/gi, '').trim();
+      s = s.replace(/^[0-9]+[.\-\s:]+/, '').trim();
+      s = s.replace(/hoặc\s+tương\s+đương/gi, '').trim();
+      s = s.replace(/tương\s+đương/gi, '').trim();
+      s = s.replace(/\(có chế độ scan\)/gi, '').trim();
+      s = s.replace(/\(máy scan\)/gi, '').trim();
+      s = s.replace(/\s{2,}/g, ' ').trim();
+
+      var sttNum = parseInt(stt);
+      if (sttNum === 1 || s.includes('Cubi')) return 'Máy vi tính để bàn MSI Cubi NUC 1M';
+      if (sttNum === 2 || s.includes('MS-14S1') || s.includes('Commercial 14')) return 'Máy tính xách tay MSI Commercial 14 B1MG (MS-14S1)';
+      if (sttNum === 3 || s.includes('B433DN') || s.includes('OKI')) return 'Máy in A4 đen trắng OKI B433DN';
+      if (sttNum === 4 || s.includes('SP-2240') || s.includes('RICOH SP') || s.includes('SP-2240N')) return 'Máy quét tài liệu số hóa RICOH SP-2240N';
+      if (sttNum === 6 || s.includes('CBS350')) return 'Thiết bị mạng Switch Cisco CBS350-24S';
+      if (sttNum === 7 || s.includes('WS-C2960L')) return 'Thiết bị mạng Switch Cisco WS-C2960L';
+      if (sttNum === 8 || s.includes('CBS250')) return 'Thiết bị mạng Switch Cisco CBS250-48PP';
+      if (sttNum === 9 || s.includes('VC520')) return 'Thiết bị phòng họp trực tuyến Aver VC520 PRO3';
+      if (sttNum === 10 || (s.includes('Switch Cisco') && !s.includes('CBS'))) return 'Thiết bị mạng Switch Cisco 24 Port Gigabit';
+      if (sttNum === 12 || s.includes('Sophos') || s.includes('XGS') || s.includes('tường lửa')) return 'Thiết bị tường lửa Sophos XGS 128';
+      if (sttNum === 13 || s.includes('1200')) return 'Switch Cisco Catalyst 1200 Series';
+      if (sttNum === 14 || s.includes('Camera')) return 'Camera an ninh IP';
+      if (sttNum === 15 || s.includes('P162') || s.includes('chiếu')) return 'Máy chiếu INFOCUS P162 + phụ kiện';
+      if (sttNum === 16 || s.includes('CAT6') || s.includes('Việt Hàn') || s.includes('COMMSCOPE')) return 'Cáp mạng CAT 6 Việt Hàn CAT6';
+      if (sttNum === 17 || s.includes('ER707') || s.includes('Draytek') || s.includes('cân bằng tải')) return 'Thiết bị cân bằng tải TP-Link Omada ER707-M2';
+      if (sttNum === 18 || s.includes('M706n') || s.includes('Máy in A3')) return 'Máy in A3 HP LaserJet Pro M706n';
+      if (sttNum === 19 || s.includes('IM 3500') || s.includes('photocopy')) return 'Máy photocopy Ricoh IM 3500';
+
+      return s;
+    }
+
+    function cleanDeviceName(rawName) {
+      return cleanFullDeviceName(rawName);
+    }
+
+    function cleanFullDeviceName(name, stt, model, brand) {
+      if (!name) return '';
+      var s = String(name).replace(/[\u00a0\s]+/g, ' ').trim();
+      s = s.replace(/phụ lục\s*\d*[:\s-]*(tổng hợp[^(]*)?(\([^)]*\))?/gi, '').trim();
+      s = s.replace(/^[0-9]+[.\-\s:]+/, '').trim();
+      s = s.replace(/hoặc\s+tương\s+đương/gi, '').trim();
+      s = s.replace(/tương\s+đương/gi, '').trim();
+      s = s.replace(/\(có chế độ scan\)/gi, '').trim();
+      s = s.replace(/\(máy scan\)/gi, '').trim();
+      s = s.replace(/\s{2,}/g, ' ').trim();
+
+      var sttNum = parseInt(stt);
+      if (sttNum === 1 || s.includes('Cubi')) return 'Máy vi tính để bàn MSI Cubi NUC 1M';
+      if (sttNum === 2 || s.includes('MS-14S1') || s.includes('Commercial 14')) return 'Máy tính xách tay MSI Commercial 14 B1MG (MS-14S1)';
+      if (sttNum === 3 || s.includes('B433DN') || s.includes('OKI')) return 'Máy in A4 đen trắng OKI B433DN';
+      if (sttNum === 4 || s.includes('SP-2240') || s.includes('RICOH SP') || s.includes('SP-2240N')) return 'Máy quét tài liệu số hóa RICOH SP-2240N';
+      if (sttNum === 6 || s.includes('CBS350')) return 'Thiết bị mạng Switch Cisco CBS350-24S';
+      if (sttNum === 7 || s.includes('WS-C2960L') || s.includes('2960L')) return 'Thiết bị mạng Switch Cisco WS-C2960L';
+      if (sttNum === 8 || s.includes('CBS250')) return 'Thiết bị mạng Switch Cisco CBS250-48PP';
+      if (sttNum === 9 || s.includes('VC520')) return 'Thiết bị phòng họp trực tuyến Aver VC520 PRO3';
+      if (sttNum === 13 || s.includes('1200') || s.includes('catalyst')) return 'Switch Cisco Catalyst 1200 Series';
+      if (sttNum === 10 || s.includes('Switch Cisco')) return 'Thiết bị mạng Switch Cisco 24 Port Gigabit';
+      if (sttNum === 12 || s.includes('Sophos') || s.includes('XGS') || s.includes('tường lửa')) return 'Thiết bị tường lửa Sophos XGS 128';
+      if (sttNum === 14 || s.includes('Camera')) return 'Camera an ninh IP';
+      if (sttNum === 15 || s.includes('P162') || s.includes('chiếu')) return 'Máy chiếu INFOCUS P162 + phụ kiện';
+      if (sttNum === 16 || s.includes('CAT6') || s.includes('Việt Hàn') || s.includes('COMMSCOPE')) return 'Cáp mạng CAT 6 Việt Hàn CAT6';
+      if (sttNum === 17 || s.includes('ER707') || s.includes('Draytek') || s.includes('cân bằng tải')) return 'Thiết bị cân bằng tải TP-Link Omada ER707-M2';
+      if (sttNum === 18 || s.includes('M706n') || s.includes('Máy in A3')) return 'Máy in A3 HP LaserJet Pro M706n';
+      if (sttNum === 19 || s.includes('IM 3500') || s.includes('photocopy')) return 'Máy photocopy Ricoh IM 3500';
+
+      return s;
+    }
+
+    function cleanDeviceName(rawName) {
+      return cleanFullDeviceName(rawName);
     }
 
     function isStrictHardwareDevice(str) {
@@ -3908,11 +3983,11 @@ QUY TẮC PHẢN HỒI:
           if (!d.warranty && matchedSpec.warranty) d.warranty = matchedSpec.warranty;
         }
 
-        // Clean name first
-        d.name = cleanDeviceName(d.name);
+        // Apply full exact commercial name
+        d.name = cleanFullDeviceName(d.name, lookupStt, d.model, d.brand);
 
         // STT 12: Sophos XGS 128
-        if (lookupStt === 12 || (d.model && d.model.includes('XGS 128')) || d.name.toLowerCase().includes('tường lửa')) {
+        if (lookupStt === 12 || (d.model && d.model.includes('XGS 128')) || d.name.includes('Sophos')) {
           d.name = 'Thiết bị tường lửa Sophos XGS 128';
           d.model = 'XGS 128';
           d.brand = 'Sophos';
@@ -3920,12 +3995,12 @@ QUY TẮC PHẢN HỒI:
         }
 
         // STT 16 & 17: Update name & model to offered device
-        if (lookupStt === 16 || d.name.toLowerCase().includes('cáp mạng') || d.model === 'CAT6') {
+        if (lookupStt === 16 || d.name.includes('Việt Hàn') || d.name.includes('CAT6') || d.name.includes('COMMSCOPE')) {
           d.name = 'Cáp mạng CAT 6 Việt Hàn CAT6';
           d.model = 'Việt Hàn CAT6';
           d.brand = 'Việt Hàn';
           d.origin = 'Việt Nam';
-        } else if (lookupStt === 17 || d.name.toLowerCase().includes('cân bằng tải') || d.model === 'ER707-M2') {
+        } else if (lookupStt === 17 || d.name.includes('ER707') || d.name.includes('Draytek') || d.name.includes('cân bằng tải')) {
           d.name = 'Thiết bị cân bằng tải TP-Link Omada ER707-M2';
           d.model = 'ER707-M2';
           d.brand = 'TP-Link';
@@ -4122,8 +4197,8 @@ QUY TẮC PHẢN HỒI:
     ];
 
     var MODEL_PRESETS = {
-      "hw_dev_1": {
-            "name": "Máy vi tính để bàn",
+      "hw_full_1": {
+            "name": "Máy vi tính để bàn MSI Cubi NUC 1M",
             "model": "Cubi B0B1",
             "brand": "MSI",
             "origin": "Trung Quốc",
@@ -4329,8 +4404,8 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_2": {
-            "name": "Máy tính xách tay",
+      "hw_full_2": {
+            "name": "Máy tính xách tay MSI Commercial 14 B1MG (MS-14S1)",
             "model": "MS-14S1",
             "brand": "MSI",
             "origin": "Trung Quốc",
@@ -4412,8 +4487,8 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_3": {
-            "name": "Máy in A4",
+      "hw_full_3": {
+            "name": "Máy in A4 đen trắng OKI B433DN",
             "model": "B433DN",
             "brand": "OKI",
             "origin": "Thái Lan",
@@ -4479,8 +4554,8 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_4": {
-            "name": "Máy quét tài liệu số hóa",
+      "hw_full_4": {
+            "name": "Máy quét tài liệu số hóa RICOH SP-2240N",
             "model": "SP-2240",
             "brand": "Ricoh",
             "origin": "Thái Lan",
@@ -4582,30 +4657,30 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_5": {
-            "name": "Thiết bị mạng CBS350-24S",
-            "model": "",
-            "brand": "",
-            "origin": "",
+      "hw_full_5": {
+            "name": "Thiết bị mạng Switch Cisco CBS350-24S",
+            "model": "CBS350-24S",
+            "brand": "Cisco",
+            "origin": "Trung Quốc",
             "warranty": "12 tháng",
             "unit": "Cái",
             "price": 0,
             "specs": [
                   {
                         "key": "Chức năng chuẩn",
-                        "value": "Thiết bị mạng CBS350-24S"
+                        "value": "Thiết bị mạng Switch Cisco CBS350-24S"
                   },
                   {
                         "key": "Model / Mã hiệu",
-                        "value": "Chính hãng"
+                        "value": "CBS350-24S"
                   },
                   {
                         "key": "Hãng sản xuất",
-                        "value": "Chính hãng"
+                        "value": "Cisco"
                   },
                   {
                         "key": "Xuất xứ",
-                        "value": "Chính hãng"
+                        "value": "Trung Quốc"
                   },
                   {
                         "key": "Bảo hành",
@@ -4613,30 +4688,30 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_6": {
-            "name": "Thiết bị mạng Cisco WS-C2960L",
-            "model": "",
-            "brand": "",
-            "origin": "",
+      "hw_full_6": {
+            "name": "Thiết bị mạng Switch Cisco WS-C2960L",
+            "model": "WS-C2960L",
+            "brand": "Cisco",
+            "origin": "Trung Quốc",
             "warranty": "12 tháng",
             "unit": "Cái",
             "price": 0,
             "specs": [
                   {
                         "key": "Chức năng chuẩn",
-                        "value": "Thiết bị mạng Cisco WS-C2960L"
+                        "value": "Thiết bị mạng Switch Cisco WS-C2960L"
                   },
                   {
                         "key": "Model / Mã hiệu",
-                        "value": "Chính hãng"
+                        "value": "WS-C2960L"
                   },
                   {
                         "key": "Hãng sản xuất",
-                        "value": "Chính hãng"
+                        "value": "Cisco"
                   },
                   {
                         "key": "Xuất xứ",
-                        "value": "Chính hãng"
+                        "value": "Trung Quốc"
                   },
                   {
                         "key": "Bảo hành",
@@ -4644,30 +4719,30 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_7": {
-            "name": "Thiết bị mạng Switch Cisco CBS250-48PP",
-            "model": "",
-            "brand": "",
-            "origin": "",
+      "hw_full_7": {
+            "name": "Thiết bị mạng Switch Cisco CBS250-48PP",
+            "model": "CBS250-48PP",
+            "brand": "Cisco",
+            "origin": "Trung Quốc",
             "warranty": "12 tháng",
             "unit": "Cái",
             "price": 0,
             "specs": [
                   {
                         "key": "Chức năng chuẩn",
-                        "value": "Thiết bị mạng Switch Cisco CBS250-48PP"
+                        "value": "Thiết bị mạng Switch Cisco CBS250-48PP"
                   },
                   {
                         "key": "Model / Mã hiệu",
-                        "value": "Chính hãng"
+                        "value": "CBS250-48PP"
                   },
                   {
                         "key": "Hãng sản xuất",
-                        "value": "Chính hãng"
+                        "value": "Cisco"
                   },
                   {
                         "key": "Xuất xứ",
-                        "value": "Chính hãng"
+                        "value": "Trung Quốc"
                   },
                   {
                         "key": "Bảo hành",
@@ -4675,8 +4750,8 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_8": {
-            "name": "Thiết bị phòng họp trực tuyến",
+      "hw_full_8": {
+            "name": "Thiết bị phòng họp trực tuyến Aver VC520 PRO3",
             "model": "VC520 PRO3",
             "brand": "Aver",
             "origin": "Đài Loan",
@@ -4686,7 +4761,7 @@ QUY TẮC PHẢN HỒI:
             "specs": [
                   {
                         "key": "Chức năng chuẩn",
-                        "value": "Thiết bị phòng họp trực tuyến"
+                        "value": "Thiết bị phòng họp trực tuyến Aver VC520 PRO3"
                   },
                   {
                         "key": "Model / Mã hiệu",
@@ -4706,30 +4781,30 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_9": {
-            "name": "Thiết bị mạng Switch Cisco hoặc",
-            "model": "",
-            "brand": "",
-            "origin": "",
+      "hw_full_9": {
+            "name": "Thiết bị mạng Switch Cisco 24 Port Gigabit",
+            "model": "24 Port Gigabit",
+            "brand": "Cisco",
+            "origin": "Trung Quốc",
             "warranty": "12 tháng",
             "unit": "Cái",
             "price": 0,
             "specs": [
                   {
                         "key": "Chức năng chuẩn",
-                        "value": "Thiết bị mạng Switch Cisco hoặc"
+                        "value": "Thiết bị mạng Switch Cisco 24 Port Gigabit"
                   },
                   {
                         "key": "Model / Mã hiệu",
-                        "value": "Chính hãng"
+                        "value": "24 Port Gigabit"
                   },
                   {
                         "key": "Hãng sản xuất",
-                        "value": "Chính hãng"
+                        "value": "Cisco"
                   },
                   {
                         "key": "Xuất xứ",
-                        "value": "Chính hãng"
+                        "value": "Trung Quốc"
                   },
                   {
                         "key": "Bảo hành",
@@ -4737,8 +4812,8 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_10": {
-            "name": "Thiết bị tường lửa Fortinet hoặc",
+      "hw_full_10": {
+            "name": "Thiết bị tường lửa Sophos XGS 128",
             "model": "XGS 128",
             "brand": "Sophos",
             "origin": "Đài Loan",
@@ -4748,7 +4823,7 @@ QUY TẮC PHẢN HỒI:
             "specs": [
                   {
                         "key": "Chức năng chuẩn",
-                        "value": "Thiết bị tường lửa Fortinet hoặc"
+                        "value": "Thiết bị tường lửa Sophos XGS 128"
                   },
                   {
                         "key": "Model / Mã hiệu",
@@ -4768,30 +4843,30 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_11": {
-            "name": "Switch Cisco catalyst 1200 Series",
-            "model": "",
-            "brand": "",
-            "origin": "",
+      "hw_full_11": {
+            "name": "Switch Cisco Catalyst 1200 Series",
+            "model": "Catalyst 1200",
+            "brand": "Cisco",
+            "origin": "Trung Quốc",
             "warranty": "12 tháng",
             "unit": "Cái",
             "price": 0,
             "specs": [
                   {
                         "key": "Chức năng chuẩn",
-                        "value": "Switch Cisco catalyst 1200 Series"
+                        "value": "Switch Cisco Catalyst 1200 Series"
                   },
                   {
                         "key": "Model / Mã hiệu",
-                        "value": "Chính hãng"
+                        "value": "Catalyst 1200"
                   },
                   {
                         "key": "Hãng sản xuất",
-                        "value": "Chính hãng"
+                        "value": "Cisco"
                   },
                   {
                         "key": "Xuất xứ",
-                        "value": "Chính hãng"
+                        "value": "Trung Quốc"
                   },
                   {
                         "key": "Bảo hành",
@@ -4799,22 +4874,22 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_12": {
-            "name": "Camera an ninh",
-            "model": "",
-            "brand": "",
-            "origin": "",
+      "hw_full_12": {
+            "name": "Camera an ninh IP",
+            "model": "IP Dome/Bullet",
+            "brand": "Chính hãng",
+            "origin": "Trung Quốc",
             "warranty": "12 tháng",
             "unit": "Chiếc",
             "price": 0,
             "specs": [
                   {
                         "key": "Chức năng chuẩn",
-                        "value": "Camera an ninh"
+                        "value": "Camera an ninh IP"
                   },
                   {
                         "key": "Model / Mã hiệu",
-                        "value": "Chính hãng"
+                        "value": "IP Dome/Bullet"
                   },
                   {
                         "key": "Hãng sản xuất",
@@ -4822,7 +4897,7 @@ QUY TẮC PHẢN HỒI:
                   },
                   {
                         "key": "Xuất xứ",
-                        "value": "Chính hãng"
+                        "value": "Trung Quốc"
                   },
                   {
                         "key": "Bảo hành",
@@ -4830,8 +4905,8 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_13": {
-            "name": "Máy chiếu",
+      "hw_full_13": {
+            "name": "Máy chiếu INFOCUS P162 + phụ kiện",
             "model": "P162",
             "brand": "INFOCUS",
             "origin": "Trung Quốc",
@@ -5141,7 +5216,7 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_14": {
+      "hw_full_14": {
             "name": "Cáp mạng CAT 6 Việt Hàn CAT6",
             "model": "Việt Hàn CAT6",
             "brand": "Việt Hàn",
@@ -5200,7 +5275,7 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_15": {
+      "hw_full_15": {
             "name": "Thiết bị cân bằng tải TP-Link Omada ER707-M2",
             "model": "ER707-M2",
             "brand": "TP-Link",
@@ -5307,8 +5382,8 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_16": {
-            "name": "Máy in A3",
+      "hw_full_16": {
+            "name": "Máy in A3 HP LaserJet Pro M706n",
             "model": "LaserJet Pro M706n",
             "brand": "HP",
             "origin": "Trung Quốc",
@@ -5402,8 +5477,8 @@ QUY TẮC PHẢN HỒI:
                   }
             ]
       },
-      "hw_dev_17": {
-            "name": "Máy photocopy",
+      "hw_full_17": {
+            "name": "Máy photocopy Ricoh IM 3500",
             "model": "IM 3500",
             "brand": "Ricoh",
             "origin": "Thái Lan",
@@ -5677,69 +5752,69 @@ QUY TẮC PHẢN HỒI:
 
     var CATALOG_ITEMS = [
       {
-            "id": "hw_dev_1",
+            "id": "hw_full_1",
             "cat": "may_tinh",
-            "presetKey": "hw_dev_1",
-            "name": "Máy vi tính để bàn",
+            "presetKey": "hw_full_1",
+            "name": "Máy vi tính để bàn MSI Cubi NUC 1M",
             "model": "Cubi B0B1",
             "brand": "MSI",
             "origin": "Trung Quốc",
             "price": 17800000,
-            "qty": 134,
+            "qty": 1,
             "warranty": "12 tháng",
             "unit": "Bộ",
             "specCount": 49
       },
       {
-            "id": "hw_dev_2",
+            "id": "hw_full_2",
             "cat": "may_tinh",
-            "presetKey": "hw_dev_2",
-            "name": "Máy tính xách tay",
+            "presetKey": "hw_full_2",
+            "name": "Máy tính xách tay MSI Commercial 14 B1MG (MS-14S1)",
             "model": "MS-14S1",
             "brand": "MSI",
             "origin": "Trung Quốc",
             "price": 17800000,
-            "qty": 56,
+            "qty": 1,
             "warranty": "12 tháng",
             "unit": "Chiếc",
             "specCount": 18
       },
       {
-            "id": "hw_dev_3",
+            "id": "hw_full_3",
             "cat": "may_in",
-            "presetKey": "hw_dev_3",
-            "name": "Máy in A4",
+            "presetKey": "hw_full_3",
+            "name": "Máy in A4 đen trắng OKI B433DN",
             "model": "B433DN",
             "brand": "OKI",
             "origin": "Thái Lan",
             "price": 4800000,
-            "qty": 56,
+            "qty": 1,
             "warranty": "12 tháng",
             "unit": "Chiếc",
             "specCount": 14
       },
       {
-            "id": "hw_dev_4",
+            "id": "hw_full_4",
             "cat": "may_scan",
-            "presetKey": "hw_dev_4",
-            "name": "Máy quét tài liệu số hóa",
+            "presetKey": "hw_full_4",
+            "name": "Máy quét tài liệu số hóa RICOH SP-2240N",
             "model": "SP-2240",
             "brand": "Ricoh",
             "origin": "Thái Lan",
             "price": 8800000,
-            "qty": 24,
+            "qty": 1,
             "warranty": "12 tháng",
             "unit": "Chiếc",
             "specCount": 23
       },
       {
-            "id": "hw_dev_5",
+            "id": "hw_full_5",
             "cat": "thiet_bi_khac",
-            "presetKey": "hw_dev_5",
-            "name": "Thiết bị mạng CBS350-24S",
-            "model": "",
-            "brand": "",
-            "origin": "",
+            "presetKey": "hw_full_5",
+            "name": "Thiết bị mạng Switch Cisco CBS350-24S",
+            "model": "CBS350-24S",
+            "brand": "Cisco",
+            "origin": "Trung Quốc",
             "price": 0,
             "qty": 1,
             "warranty": "12 tháng",
@@ -5747,97 +5822,97 @@ QUY TẮC PHẢN HỒI:
             "specCount": 5
       },
       {
-            "id": "hw_dev_6",
+            "id": "hw_full_6",
             "cat": "thiet_bi_khac",
-            "presetKey": "hw_dev_6",
-            "name": "Thiết bị mạng Cisco WS-C2960L",
-            "model": "",
-            "brand": "",
-            "origin": "",
+            "presetKey": "hw_full_6",
+            "name": "Thiết bị mạng Switch Cisco WS-C2960L",
+            "model": "WS-C2960L",
+            "brand": "Cisco",
+            "origin": "Trung Quốc",
             "price": 0,
-            "qty": 4,
+            "qty": 1,
             "warranty": "12 tháng",
             "unit": "Cái",
             "specCount": 5
       },
       {
-            "id": "hw_dev_7",
+            "id": "hw_full_7",
             "cat": "thiet_bi_khac",
-            "presetKey": "hw_dev_7",
-            "name": "Thiết bị mạng Switch Cisco CBS250-48PP",
-            "model": "",
-            "brand": "",
-            "origin": "",
+            "presetKey": "hw_full_7",
+            "name": "Thiết bị mạng Switch Cisco CBS250-48PP",
+            "model": "CBS250-48PP",
+            "brand": "Cisco",
+            "origin": "Trung Quốc",
             "price": 0,
-            "qty": 6,
+            "qty": 1,
             "warranty": "12 tháng",
             "unit": "Cái",
             "specCount": 5
       },
       {
-            "id": "hw_dev_8",
+            "id": "hw_full_8",
             "cat": "thiet_bi_khac",
-            "presetKey": "hw_dev_8",
-            "name": "Thiết bị phòng họp trực tuyến",
+            "presetKey": "hw_full_8",
+            "name": "Thiết bị phòng họp trực tuyến Aver VC520 PRO3",
             "model": "VC520 PRO3",
             "brand": "Aver",
             "origin": "Đài Loan",
             "price": 56000000,
-            "qty": 5,
+            "qty": 1,
             "warranty": "12 tháng",
             "unit": "Bộ",
             "specCount": 5
       },
       {
-            "id": "hw_dev_9",
+            "id": "hw_full_9",
             "cat": "thiet_bi_khac",
-            "presetKey": "hw_dev_9",
-            "name": "Thiết bị mạng Switch Cisco hoặc",
-            "model": "",
-            "brand": "",
-            "origin": "",
+            "presetKey": "hw_full_9",
+            "name": "Thiết bị mạng Switch Cisco 24 Port Gigabit",
+            "model": "24 Port Gigabit",
+            "brand": "Cisco",
+            "origin": "Trung Quốc",
             "price": 0,
-            "qty": 10,
+            "qty": 1,
             "warranty": "12 tháng",
             "unit": "Cái",
             "specCount": 5
       },
       {
-            "id": "hw_dev_10",
+            "id": "hw_full_10",
             "cat": "thiet_bi_khac",
-            "presetKey": "hw_dev_10",
-            "name": "Thiết bị tường lửa Fortinet hoặc",
+            "presetKey": "hw_full_10",
+            "name": "Thiết bị tường lửa Sophos XGS 128",
             "model": "XGS 128",
             "brand": "Sophos",
             "origin": "Đài Loan",
             "price": 58000000,
-            "qty": 6,
+            "qty": 1,
             "warranty": "12 tháng",
             "unit": "Cái",
             "specCount": 5
       },
       {
-            "id": "hw_dev_11",
+            "id": "hw_full_11",
             "cat": "thiet_bi_khac",
-            "presetKey": "hw_dev_11",
-            "name": "Switch Cisco catalyst 1200 Series",
-            "model": "",
-            "brand": "",
-            "origin": "",
+            "presetKey": "hw_full_11",
+            "name": "Switch Cisco Catalyst 1200 Series",
+            "model": "Catalyst 1200",
+            "brand": "Cisco",
+            "origin": "Trung Quốc",
             "price": 0,
-            "qty": 2,
+            "qty": 1,
             "warranty": "12 tháng",
             "unit": "Cái",
             "specCount": 5
       },
       {
-            "id": "hw_dev_12",
+            "id": "hw_full_12",
             "cat": "thiet_bi_khac",
-            "presetKey": "hw_dev_12",
-            "name": "Camera an ninh",
-            "model": "",
-            "brand": "",
-            "origin": "",
+            "presetKey": "hw_full_12",
+            "name": "Camera an ninh IP",
+            "model": "IP Dome/Bullet",
+            "brand": "Chính hãng",
+            "origin": "Trung Quốc",
             "price": 0,
             "qty": 1,
             "warranty": "12 tháng",
@@ -5845,10 +5920,10 @@ QUY TẮC PHẢN HỒI:
             "specCount": 5
       },
       {
-            "id": "hw_dev_13",
+            "id": "hw_full_13",
             "cat": "thiet_bi_khac",
-            "presetKey": "hw_dev_13",
-            "name": "Máy chiếu",
+            "presetKey": "hw_full_13",
+            "name": "Máy chiếu INFOCUS P162 + phụ kiện",
             "model": "P162",
             "brand": "INFOCUS",
             "origin": "Trung Quốc",
@@ -5859,23 +5934,23 @@ QUY TẮC PHẢN HỒI:
             "specCount": 75
       },
       {
-            "id": "hw_dev_14",
+            "id": "hw_full_14",
             "cat": "thiet_bi_khac",
-            "presetKey": "hw_dev_14",
+            "presetKey": "hw_full_14",
             "name": "Cáp mạng CAT 6 Việt Hàn CAT6",
             "model": "Việt Hàn CAT6",
             "brand": "Việt Hàn",
             "origin": "Việt Nam",
             "price": 2800000,
-            "qty": 3,
+            "qty": 1,
             "warranty": "12 tháng",
             "unit": "Thùng",
             "specCount": 12
       },
       {
-            "id": "hw_dev_15",
+            "id": "hw_full_15",
             "cat": "thiet_bi_khac",
-            "presetKey": "hw_dev_15",
+            "presetKey": "hw_full_15",
             "name": "Thiết bị cân bằng tải TP-Link Omada ER707-M2",
             "model": "ER707-M2",
             "brand": "TP-Link",
@@ -5887,29 +5962,29 @@ QUY TẮC PHẢN HỒI:
             "specCount": 24
       },
       {
-            "id": "hw_dev_16",
+            "id": "hw_full_16",
             "cat": "may_in",
-            "presetKey": "hw_dev_16",
-            "name": "Máy in A3",
+            "presetKey": "hw_full_16",
+            "name": "Máy in A3 HP LaserJet Pro M706n",
             "model": "LaserJet Pro M706n",
             "brand": "HP",
             "origin": "Trung Quốc",
             "price": 18750000,
-            "qty": 2,
+            "qty": 1,
             "warranty": "12 tháng",
             "unit": "Chiếc",
             "specCount": 21
       },
       {
-            "id": "hw_dev_17",
-            "cat": "may_scan",
-            "presetKey": "hw_dev_17",
-            "name": "Máy photocopy",
+            "id": "hw_full_17",
+            "cat": "photocopy",
+            "presetKey": "hw_full_17",
+            "name": "Máy photocopy Ricoh IM 3500",
             "model": "IM 3500",
             "brand": "Ricoh",
             "origin": "Thái Lan",
             "price": 88000000,
-            "qty": 9,
+            "qty": 1,
             "warranty": "12 tháng",
             "unit": "Chiếc",
             "specCount": 24
