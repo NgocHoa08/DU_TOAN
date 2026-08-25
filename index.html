@@ -3346,7 +3346,6 @@ QUY TẮC PHẢN HỒI:
         return cell ? String(cell.w || cell.v || '').trim() : '';
       }
 
-      // 1. Detect header row & columns
       var hdrRow = -1;
       var colMap = { stt: -1, name: -1, req: -1, offer: -1, compare: -1 };
 
@@ -3382,9 +3381,7 @@ QUY TẮC PHẢN HỒI:
         }
       }
 
-      if (hdrRow === -1) {
-        return null;
-      }
+      if (hdrRow === -1) return null;
 
       if (colMap.name === -1 && colMap.stt !== -1 && colMap.req > colMap.stt + 1) {
         colMap.name = colMap.stt + 1;
@@ -3392,7 +3389,6 @@ QUY TẮC PHẢN HỒI:
 
       var sections = [];
       var curDev = null;
-      // STT 16 & 17 use offer column (cột Đề xuất)
       var USE_OFFER_ITEMS = [16, 17];
 
       function finalize() {
@@ -3419,17 +3415,12 @@ QUY TẮC PHẢN HỒI:
         if (!isNaN(sttNum) && sttNum > 0 && String(sttRaw).trim() !== '' && (nameRaw || reqRaw || offerRaw)) {
           finalize();
           var isOfferItem = USE_OFFER_ITEMS.indexOf(sttNum) >= 0;
-          var devName = '';
-          if (isOfferItem) {
-            devName = offerRaw || nameRaw || reqRaw;
-          } else {
-            devName = nameRaw || reqRaw || offerRaw;
-          }
+          var devName = isOfferItem ? (offerRaw || nameRaw || reqRaw) : (nameRaw || reqRaw || offerRaw);
 
           curDev = {
             sheetName: sheetName,
             stt: sttNum,
-            name: devName,
+            name: cleanFullDeviceName(devName, sttNum),
             isOfferItem: isOfferItem,
             model: '', brand: '', origin: '', warranty: '',
             specs: []
@@ -3448,7 +3439,7 @@ QUY TẮC PHẢN HỒI:
         if (rowText.startsWith('thông số kỹ thuật') || rowText === 'thông số kỹ thuật:') continue;
         if (rowText.includes('đại diện hợp pháp') || rowText.includes('đứng đầu liên danh') || rowText.includes('ký tên')) continue;
 
-        if (!specKey && specVal.includes(':')) {
+        if (!specKey && specVal.includes(':') && specVal.length < 80) {
           var parts = specVal.split(':');
           specKey = parts[0].trim();
           specVal = parts.slice(1).join(':').trim();
@@ -3458,18 +3449,21 @@ QUY TẮC PHẢN HỒI:
           specVal = parts2.slice(1).join(':').trim();
         }
 
-        if (!specKey && specVal.length > 2) {
-          specKey = 'Thông số';
-        }
-
-        if (specKey || specVal) {
-          var kL = (specKey || '').toLowerCase();
+        if (specKey) {
+          var kL = specKey.toLowerCase();
           if (!curDev.model && (kL.includes('model') || kL.includes('mã hiệu'))) curDev.model = specVal;
           if (!curDev.brand && (kL.includes('hãng') || kL.includes('thương hiệu') || kL.includes('nhà sản xuất'))) curDev.brand = specVal;
           if (!curDev.origin && (kL.includes('xuất xứ') || kL.includes('nước sản xuất') || kL.includes('sản xuất tại'))) curDev.origin = specVal;
           if (!curDev.warranty && kL.includes('bảo hành')) curDev.warranty = specVal;
 
-          curDev.specs.push({ key: specKey || 'Thông số', value: specVal });
+          curDev.specs.push({ key: specKey, value: specVal });
+        } else if (specVal) {
+          // If no specKey, merge into previous spec item instead of creating a generic 'Thông số' row!
+          if (curDev.specs.length > 0) {
+            curDev.specs[curDev.specs.length - 1].value += '\n' + specVal;
+          } else {
+            curDev.specs.push({ key: 'Mô tả chung', value: specVal });
+          }
         }
       }
       finalize();
@@ -4227,39 +4221,15 @@ QUY TẮC PHẢN HỒI:
                   },
                   {
                         "key": "Cổng I/O (Phía trước)",
-                        "value": "2x USB 10Gbps Type A"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "1x Mic-in / Headphone-out combo"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "1x Micro-SD Card Reader"
+                        "value": "2x USB 10Gbps Type A\n1x Mic-in / Headphone-out combo\n1x Micro-SD Card Reader"
                   },
                   {
                         "key": "Cổng I/O (Phía sau)",
-                        "value": "2x Thunderbolt 4 (DP 1.4 alt-mode up to 4K@60Hz /PD-out 15W / One of TBT supports PD-in"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "2x USB 10Gbps Type A"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "2x RJ45"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "2x HDMI out (supports 4K @60Hz as specified in HDMI 2.1)"
+                        "value": "2x Thunderbolt 4 (DP 1.4 alt-mode up to 4K@60Hz /PD-out 15W / One of TBT supports PD-in\n2x USB 10Gbps Type A\n2x RJ45\n2x HDMI out (supports 4K @60Hz as specified in HDMI 2.1)"
                   },
                   {
                         "key": "Cổng I/O (Side)",
-                        "value": "1x Kensington Lock"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "1x External Power Switch Pin Header"
+                        "value": "1x Kensington Lock\n1x External Power Switch Pin Header"
                   },
                   {
                         "key": "Cổng  I/O bên trong (Inside)",
@@ -4303,35 +4273,7 @@ QUY TẮC PHẢN HỒI:
                   },
                   {
                         "key": "Tính năng",
-                        "value": "1.\tHệ thống bảo mật  dTPM 2.0 hardware được tích hợp sẵn trên máy tính. Tăng cường bảo mật cho hệ thống người dùng."
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "2.\tCho phép người dùng sao lưu và chia sẽ dữ liệu quan trọng cần thiết qua Cloud đến các thiết bị khác như smartphone, máy tính khác."
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "3.\tHỗ trợ xuất hình 4 màn hình cùng lúc."
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "4.\tHỗ trợ bật tắt máy tính bằng nút nguồn màn hình thông qua Thunderbolt 4 PD."
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "5.\tMáy tính tích hợp hệ thống AI Engine tự học tự động phát hiện các tình huống của người dùng và điều chỉnh hiệu suất, hiệu ứng âm thanh và chế độ hiển thị cho phù hợp. Chẩn đoán hệ thống và tự động rà soát và nâng cấp Bios và phân mềm khi có bản cập nhật mới."
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "6.\t'Hệ thống Lan Manager cho phép người dùng theo dõi thông đường truyền cho từng ứng dụng cụ thể với mức độ ưu tiên khác nhau nhằm tối ưu hóa hiệu năng sử dụng đường truyền mạng nội bộ và internet."
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "7.\tHệ thống tích hợp Dual Lan RJ45 onboard gồm 2.5Gb x 2 nhằm tăng cường tốc độ truy suất đường truyền và cho phép người dùng và người quản trị thiết lập hạ tầng mạng  riêng biệt, nâng cao bảo mật giữa internet và local"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "8.\t'Hiển thị và theo dõi thông tin hệ thống theo thời gian thực như CPU, Mainboard, Ram, xung CPU, tốc độ fan…"
+                        "value": "1.\tHệ thống bảo mật  dTPM 2.0 hardware được tích hợp sẵn trên máy tính. Tăng cường bảo mật cho hệ thống người dùng.\n2.\tCho phép người dùng sao lưu và chia sẽ dữ liệu quan trọng cần thiết qua Cloud đến các thiết bị khác như smartphone, máy tính khác.\n3.\tHỗ trợ xuất hình 4 màn hình cùng lúc.\n4.\tHỗ trợ bật tắt máy tính bằng nút nguồn màn hình thông qua Thunderbolt 4 PD.\n5.\tMáy tính tích hợp hệ thống AI Engine tự học tự động phát hiện các tình huống của người dùng và điều chỉnh hiệu suất, hiệu ứng âm thanh và chế độ hiển thị cho phù hợp. Chẩn đoán hệ thống và tự động rà soát và nâng cấp Bios và phân mềm khi có bản cập nhật mới.\n6.\t'Hệ thống Lan Manager cho phép người dùng theo dõi thông đường truyền cho từng ứng dụng cụ thể với mức độ ưu tiên khác nhau nhằm tối ưu hóa hiệu năng sử dụng đường truyền mạng nội bộ và internet.\n7.\tHệ thống tích hợp Dual Lan RJ45 onboard gồm 2.5Gb x 2 nhằm tăng cường tốc độ truy suất đường truyền và cho phép người dùng và người quản trị thiết lập hạ tầng mạng  riêng biệt, nâng cao bảo mật giữa internet và local\n8.\t'Hiển thị và theo dõi thông tin hệ thống theo thời gian thực như CPU, Mainboard, Ram, xung CPU, tốc độ fan…"
                   },
                   {
                         "key": "Màn hình MSI",
@@ -4387,11 +4329,7 @@ QUY TẮC PHẢN HỒI:
                   },
                   {
                         "key": "Video Interface / Cổng kết nối / Giao diện kết nối",
-                        "value": "1x HDMI™ 1.4b (FHD@120Hz)"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "1x D-Sub (VGA)"
+                        "value": "1x HDMI™ 1.4b (FHD@120Hz)\n1x D-Sub (VGA)"
                   },
                   {
                         "key": "Nguồn điện",
@@ -4517,11 +4455,7 @@ QUY TẮC PHẢN HỒI:
                   },
                   {
                         "key": "Trữ lượng giấy (chuẩn)",
-                        "value": "01 khay chuẩn x 250 tờ"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "01 khay tay x 100 tờ"
+                        "value": "01 khay chuẩn x 250 tờ\n01 khay tay x 100 tờ"
                   },
                   {
                         "key": "Khay giấy ra",
@@ -4636,19 +4570,7 @@ QUY TẮC PHẢN HỒI:
                   },
                   {
                         "key": "Phần mềm số hóa tiếng Việt đi kèm",
-                        "value": "-        Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "-        Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
-                  },
-                  {
-                        "key": "-        Tự động bóc tách các trường trên văn bản hành chính",
-                        "value": "Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
+                        "value": "-        Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản\n-        Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)\n-        Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký.\nNguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
                   },
                   {
                         "key": "Bảo hành",
@@ -4971,11 +4893,7 @@ QUY TẮC PHẢN HỒI:
                   },
                   {
                         "key": "Loa tích hợp",
-                        "value": "16W x1"
-                  },
-                  {
-                        "key": "Cổng kết nối",
-                        "value": "- VGA (Computer in) x1; Composite Video x1; HDMI x2; USB-B 2.0 x1; RJ45 (LAN) x1; Audio in 3.5 mm x1; Audio out 3.5 mm x1; RS232 x 1; VGA (Monitor out) x1; USB-A x 1."
+                        "value": "16W x1\nCổng kết nối:\r\n- VGA (Computer in) x1; Composite Video x1; HDMI x2; USB-B 2.0 x1; RJ45 (LAN) x1; Audio in 3.5 mm x1; Audio out 3.5 mm x1; RS232 x 1; VGA (Monitor out) x1; USB-A x 1."
                   },
                   {
                         "key": "Nguồn điện",
@@ -5003,11 +4921,7 @@ QUY TẮC PHẢN HỒI:
                   },
                   {
                         "key": "Phụ kiện theo kèm",
-                        "value": "Dây nguồn x 1, Cáp VGA x1, Pin+ điều khiển, Đĩa mềm HDSD"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Tính năng công nghệ"
+                        "value": "Dây nguồn x 1, Cáp VGA x1, Pin+ điều khiển, Đĩa mềm HDSD\nTính năng công nghệ"
                   },
                   {
                         "key": "Tính năng đồng bộ hóa độ ổn định của hình ảnh (Fine sync) (chỉ VGA)",
@@ -5015,119 +4929,15 @@ QUY TẮC PHẢN HỒI:
                   },
                   {
                         "key": "Điều chỉnh vị trí hình ảnh chiều ngang và chiều dọc (chỉ VGA)",
-                        "value": "(-5) - (+5)"
-                  },
-                  {
-                        "key": "Tính năng điều chỉnh độ rộng chiều ngang của hình ảnh (H. Size) (chỉ VGA)",
-                        "value": "(-15) - (+15)"
-                  },
-                  {
-                        "key": "Chức năng cho phép cắt hình ảnh thành các phần 5x5 hoặc nhỏ hơn, sau đó chọn phần hình ảnh để hiện thị (Aspect",
-                        "value": "Advanced)"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Chức năng đọc file trên USB hỗ trợ đọc file hình ảnh và file PDF cơ bản"
+                        "value": "(-5) - (+5)\nTính năng điều chỉnh độ rộng chiều ngang của hình ảnh (H. Size) (chỉ VGA): (-15) - (+15)\nChức năng cho phép cắt hình ảnh thành các phần 5x5 hoặc nhỏ hơn, sau đó chọn phần hình ảnh để hiện thị (Aspect: Advanced)\nChức năng đọc file trên USB hỗ trợ đọc file hình ảnh và file PDF cơ bản"
                   },
                   {
                         "key": "Tính năng điều chỉnh tỉ lệ khung hình",
-                        "value": "Normal, Wide, Full, 4:3, Advanced"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Chức năng Bảo mật (Security) giúp bảo mật cài đặt máy chiếu. Chức năng khóa mã PIN ngăn chặn sử dụng trái phép máy chiếu"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Tính năng thay đổi độ sáng màn hình (Brightness Mode) 4 chế độ giúp tùy chỉnh độ sáng và tiết kiệm điện năng tiêu thụ"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Chức năng cài đặt tự động Chức năng này cho phép tìm kiếm nguồn đầu vào, điều chỉnh AUTO PC và AUTO Keystone bằng cách nhấn nút AUTO trên điều khiển từ xa một cách đơn giản."
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Chức năng quản lý nguồn điện (Power Management) điều chỉnh thời gian nghỉ hoặc tắt của máy chiếu khi không có tín hiệu đầu vào giúp giảm tiêu thụ điện năng và duy trì tuổi thọ của bóng đèn. Có thể tắt tính năng này trong phần cài đặt"
-                  },
-                  {
-                        "key": "Chế độ hình ảnh đa dạng, phù hợp với nhiều môi trường cũng như màu tường khác nhau",
-                        "value": "Dynamic, Standard, Cinema, Blackboard (Green), Colorboard, User Image."
-                  },
-                  {
-                        "key": "Chức năng điều chỉnh màu sắc đa dạng",
-                        "value": "Contrast, Brightness, Colour temp., cân bằng trắng (điều chỉnh Red, Green, Blue) và Sharpness"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Chức năng Direct Power ON máy chiếu sẽ tự động bật khi nguồn AC được cung cấp mà không cần nhấn phím bật nguồn mà không cần nhấn phím  trên bảng điều khiển máy chiếu hoặc trên điều khiển từ xa."
-                  },
-                  {
-                        "key": "Chế độ tiết kiệm tiêu thụ điện năng ở chế độ chờ (Standby mode)",
-                        "value": "ECO; Normal; Network"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Chức năng zoom kỹ thuật số (0-19) cho phép bạn tập trung vào thông tin quan trọng trong một bài thuyết trình."
-                  },
-                  {
-                        "key": "Chức năng điều chỉnh keystone",
-                        "value": "có thể điều chỉnh sự biến dạng keystone của hình ảnh trong máy chiếu của mình bằng điều chỉnh Keystone ngang dọc, điều chỉnh 4 góc hoặc tự động điều chỉnh"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Tính năng khóa bàn phím (Key lock) giúp khóa bàn phím, tránh sử dụng trái phép bằng phím bấm trên máy chiếu"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Chức năng FREEZE đóng băng một hình ảnh (Giúp nhấn mạnh nội dung thuyết trình)"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Chức năng điều khiển quạt máy chiếu, bạn có thể thay đổi cài đặt về tốc độ của quạt làm mát theo độ cao mà máy chiếu của bạn đang hoạt động (High altitude) chọn (BẬT) khi bạn vận hành điều hành máy chiếu khi hoạt động ở trên vùng có độ cao lớn."
-                  },
-                  {
-                        "key": "Chế độ làm mát nhanh (Cooling fast)",
-                        "value": "normal, 30 Sec, 0 Sec. Đặc biệt chọn chức năng (0 Sec) cho phép bạn rút phích cắm nguồn AC trực tiếp sau khi tắt máy, không cần chờ đợi máy chiếu làm mát."
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Chế độ hiển thị  nhắc nhở thời gian sử dụng bộ lọc, đặt thời gian để hiển thị cảnh báo dụng bộ lọc cần được thay thế giúp bảo vệ máy chiếu bền bỉ hoạt động một cách tốt nhất (Filter counter)"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Chức năng (Test pattern) để hiển thị mẫu thử nghiệm có sẵn của máy chiếu."
-                  },
-                  {
-                        "key": "Chức năng hiển thị thông tin và trạng thái của máy chiếu, giúp người dùng có thể xem được các thông tin hiển thị",
-                        "value": "Input, H-sync. Freq, V-sync. Freq, Lamp counter, Model Name, S/N, Firmware Version, SUB CPU."
-                  },
-                  {
-                        "key": "Tính năng điều chỉnh ngôn ngữ hiển thị của máy chiếu",
-                        "value": "26 ngôn ngữ trong đó có Tiếng Việt"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Tính năng Công nghệ Iris nâng cao giúp tỷ lệ tương phản tối ưu nhất giữa không gian sáng và tối sẽ tự động điều chỉnh cài đặt để tối ưu hóa độ sáng cho phù hợp nhất với nội dung được hiển thị. Tính năng Iris nâng cao cung cấp cho các cảnh tối và nội dung có màu đen tối hơn và sáng hơn trên các cảnh sáng để sử dụng tối ưu công suất ánh sáng có sẵn của máy chiếu"
-                  },
-                  {
-                        "key": "Tính năng trang trống (Blank)",
-                        "value": "thay vì chiếu hình ảnh hiện tại, tính năng này cho phép chiếu một trang trống và có thể tiếp tục chiếu ngay lập tức khi cần"
+                        "value": "Normal, Wide, Full, 4:3, Advanced\nChức năng Bảo mật (Security) giúp bảo mật cài đặt máy chiếu. Chức năng khóa mã PIN ngăn chặn sử dụng trái phép máy chiếu\nTính năng thay đổi độ sáng màn hình (Brightness Mode) 4 chế độ giúp tùy chỉnh độ sáng và tiết kiệm điện năng tiêu thụ\nChức năng cài đặt tự động Chức năng này cho phép tìm kiếm nguồn đầu vào, điều chỉnh AUTO PC và AUTO Keystone bằng cách nhấn nút AUTO trên điều khiển từ xa một cách đơn giản.\nChức năng quản lý nguồn điện (Power Management) điều chỉnh thời gian nghỉ hoặc tắt của máy chiếu khi không có tín hiệu đầu vào giúp giảm tiêu thụ điện năng và duy trì tuổi thọ của bóng đèn. Có thể tắt tính năng này trong phần cài đặt\nChế độ hình ảnh đa dạng, phù hợp với nhiều môi trường cũng như màu tường khác nhau: Dynamic, Standard, Cinema, Blackboard (Green), Colorboard, User Image.\nChức năng điều chỉnh màu sắc đa dạng: Contrast, Brightness, Colour temp., cân bằng trắng (điều chỉnh Red, Green, Blue) và Sharpness\nChức năng Direct Power ON máy chiếu sẽ tự động bật khi nguồn AC được cung cấp mà không cần nhấn phím bật nguồn mà không cần nhấn phím  trên bảng điều khiển máy chiếu hoặc trên điều khiển từ xa.\nChế độ tiết kiệm tiêu thụ điện năng ở chế độ chờ (Standby mode): ECO; Normal; Network\nChức năng zoom kỹ thuật số (0-19) cho phép bạn tập trung vào thông tin quan trọng trong một bài thuyết trình.\nChức năng điều chỉnh keystone: có thể điều chỉnh sự biến dạng keystone của hình ảnh trong máy chiếu của mình bằng điều chỉnh Keystone ngang dọc, điều chỉnh 4 góc hoặc tự động điều chỉnh\nTính năng khóa bàn phím (Key lock) giúp khóa bàn phím, tránh sử dụng trái phép bằng phím bấm trên máy chiếu\nChức năng FREEZE đóng băng một hình ảnh (Giúp nhấn mạnh nội dung thuyết trình)\nChức năng điều khiển quạt máy chiếu, bạn có thể thay đổi cài đặt về tốc độ của quạt làm mát theo độ cao mà máy chiếu của bạn đang hoạt động (High altitude) chọn (BẬT) khi bạn vận hành điều hành máy chiếu khi hoạt động ở trên vùng có độ cao lớn.\nChế độ làm mát nhanh (Cooling fast): normal, 30 Sec, 0 Sec. Đặc biệt chọn chức năng (0 Sec) cho phép bạn rút phích cắm nguồn AC trực tiếp sau khi tắt máy, không cần chờ đợi máy chiếu làm mát.\nChế độ hiển thị  nhắc nhở thời gian sử dụng bộ lọc, đặt thời gian để hiển thị cảnh báo dụng bộ lọc cần được thay thế giúp bảo vệ máy chiếu bền bỉ hoạt động một cách tốt nhất (Filter counter)\nChức năng (Test pattern) để hiển thị mẫu thử nghiệm có sẵn của máy chiếu.\nChức năng hiển thị thông tin và trạng thái của máy chiếu, giúp người dùng có thể xem được các thông tin hiển thị: Input, H-sync. Freq, V-sync. Freq, Lamp counter, Model Name, S/N, Firmware Version, SUB CPU.\nTính năng điều chỉnh ngôn ngữ hiển thị của máy chiếu: 26 ngôn ngữ trong đó có Tiếng Việt\nTính năng Công nghệ Iris nâng cao giúp tỷ lệ tương phản tối ưu nhất giữa không gian sáng và tối sẽ tự động điều chỉnh cài đặt để tối ưu hóa độ sáng cho phù hợp nhất với nội dung được hiển thị. Tính năng Iris nâng cao cung cấp cho các cảnh tối và nội dung có màu đen tối hơn và sáng hơn trên các cảnh sáng để sử dụng tối ưu công suất ánh sáng có sẵn của máy chiếu\nTính năng trang trống (Blank): thay vì chiếu hình ảnh hiện tại, tính năng này cho phép chiếu một trang trống và có thể tiếp tục chiếu ngay lập tức khi cần"
                   },
                   {
                         "key": "Tính năng điều chỉnh dải màu của tín hiệu HDMI",
-                        "value": "64-940; 0-1023; Auto"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Tính năng cài đặt EQ của tín hiệu HDMI"
-                  },
-                  {
-                        "key": "Hiển thị qua USB",
-                        "value": "Hiển thị nội dung từ máy tính xách tay hoặc máy tính Windows của bạn qua cổng USB bằng cáp USB với máy chiếu."
-                  },
-                  {
-                        "key": "Hiển thị qua mạng LAN",
-                        "value": "Kết nối máy chiếu và thiết bị Windows của bạn với cùng một mạng LAN và sử dụng phần mềm để hiển thị"
+                        "value": "64-940; 0-1023; Auto\nTính năng cài đặt EQ của tín hiệu HDMI\nHiển thị qua USB:  Hiển thị nội dung từ máy tính xách tay hoặc máy tính Windows của bạn qua cổng USB bằng cáp USB với máy chiếu.\nHiển thị qua mạng LAN: Kết nối máy chiếu và thiết bị Windows của bạn với cùng một mạng LAN và sử dụng phần mềm để hiển thị"
                   },
                   {
                         "key": "Phụ kiện theo kèm",
@@ -5147,19 +4957,11 @@ QUY TẮC PHẢN HỒI:
                   },
                   {
                         "key": "Kích thước đường chéo",
-                        "value": "120\""
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Có điều khiển từ xa"
+                        "value": "120\"\nCó điều khiển từ xa"
                   },
                   {
                         "key": "Chất liệu",
-                        "value": "Matte White"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "độ bền cao, chống ẩm mốc"
+                        "value": "Matte White\nđộ bền cao, chống ẩm mốc"
                   },
                   {
                         "key": "Giá treo máy chiếu 1m",
@@ -5171,19 +4973,7 @@ QUY TẮC PHẢN HỒI:
                   },
                   {
                         "key": "Độ dài tối đa",
-                        "value": "1000mm"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Màu trắng"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Phù hợp với mọi loại máy chiếu."
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "An toàn và thuận tiện trong lắp đặt."
+                        "value": "1000mm\nMàu trắng\nPhù hợp với mọi loại máy chiếu.\nAn toàn và thuận tiện trong lắp đặt."
                   },
                   {
                         "key": "Tải trọng",
@@ -5191,23 +4981,7 @@ QUY TẮC PHẢN HỒI:
                   },
                   {
                         "key": "Cáp HDMI 15m",
-                        "value": ""
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Chiều dài cáp 15m chuyên dùng cho máy chiếu, TV, PC, laptop và trong các thiết bị có ngõ tín hiệu HDMI"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Chuẩn kết nối 2.0"
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Cấu tạo lõi xoắn, chuẩn chất liệu 26AWG, có bọc 2 lớp giáp chống nhiễu và bọc nhựa PVC dẻo chống đứt gãy."
-                  },
-                  {
-                        "key": "Thông số",
-                        "value": "Độ phân giải đạt full HD 1080p@60Hz, 4K@60Hz cho hình ảnh và âm thanh chất lượng cao và đảm bảo đồng bộ"
+                        "value": "\nChiều dài cáp 15m chuyên dùng cho máy chiếu, TV, PC, laptop và trong các thiết bị có ngõ tín hiệu HDMI\nChuẩn kết nối 2.0\nCấu tạo lõi xoắn, chuẩn chất liệu 26AWG, có bọc 2 lớp giáp chống nhiễu và bọc nhựa PVC dẻo chống đứt gãy.\nĐộ phân giải đạt full HD 1080p@60Hz, 4K@60Hz cho hình ảnh và âm thanh chất lượng cao và đảm bảo đồng bộ"
                   },
                   {
                         "key": "Bảo hành",
@@ -5455,7 +5229,7 @@ QUY TẮC PHẢN HỒI:
                         "value": "Tray 1: A4, A3, B4 (JIS), B5 (JIS), A5, 16K; letter, legal, executive, 11 x 17, 8.5 x 13; envelopes\r\n(B5, C5, DL, No. 10, Monarch); postcard (JIS), DPostcard (JIS); Custom media sizes: 76.2 x 127 mm\r\nto 312 x 470 mm (3 x 5 in to 12.28 x 18.5 in); Tray 2: A4, A3, B4 (JIS), B5 (JIS), A5, 16K, letter, legal,\r\nexecutive, 11 x 17, 8.5 x 13; Custom media sizes: 148 x 210 mm to 297 x 431.8 mm (5.83 x 8.27 in\r\nto 11.69 x 17 in); Optional tray 3: A4, A3, B4 (JIS), B5 (JIS), A5, 16K; letter, legal, executive, 11 x 17,\r\n8.5 x 13; Custom media sizes: 148 x 210 mm to 297 x 431.8 mm (5.83 x 8.27 in to 11.69 x 17 in);"
                   },
                   {
-                        "key": "Quản lý máy in :",
+                        "key": "Quản lý máy in",
                         "value": ""
                   },
                   {
@@ -5762,7 +5536,7 @@ QUY TẮC PHẢN HỒI:
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Bộ",
-            "specCount": 49
+            "specCount": 35
       },
       {
             "id": "hw_full_2",
@@ -5790,7 +5564,7 @@ QUY TẮC PHẢN HỒI:
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Chiếc",
-            "specCount": 14
+            "specCount": 13
       },
       {
             "id": "hw_full_4",
@@ -5804,7 +5578,7 @@ QUY TẮC PHẢN HỒI:
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Chiếc",
-            "specCount": 23
+            "specCount": 20
       },
       {
             "id": "hw_full_5",
@@ -5930,7 +5704,7 @@ QUY TẮC PHẢN HỒI:
             "qty": 1,
             "warranty": "12 tháng",
             "unit": "Bộ",
-            "specCount": 75
+            "specCount": 38
       },
       {
             "id": "hw_full_14",
