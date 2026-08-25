@@ -3983,6 +3983,17 @@ QUY TẮC PHẢN HỒI:
 
     /* ── BUILD SUMMARY TABLE (EXACT 100% TO IMAGE 1) ── */
     function buildSummaryTableHtml() {
+      var kw = (document.getElementById('fltKeyword') ? document.getElementById('fltKeyword').value : '').toLowerCase().trim();
+      var selBrand = document.getElementById('fltBrand') ? document.getElementById('fltBrand').value : '';
+      var selModel = document.getElementById('fltModel') ? document.getElementById('fltModel').value : '';
+
+      var filtered = devs.filter(function (d) {
+        var mKw = !kw || (d.name && d.name.toLowerCase().includes(kw)) || (d.model && d.model.toLowerCase().includes(kw)) || (d.brand && d.brand.toLowerCase().includes(kw));
+        var mBr = !selBrand || d.brand === selBrand;
+        var mMd = !selModel || d.model === selModel;
+        return mKw && mBr && mMd;
+      });
+
       var rows = filtered.map(function (d, i) {
         var t = (d.qty || 0) * (d.price || 0);
         var realIdx = devs.indexOf(d) + 1;
