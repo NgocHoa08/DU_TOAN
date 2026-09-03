@@ -8404,15 +8404,35 @@ function renderBaogiaForm() {
 
   var vatRate = parseInt(document.getElementById('bg_vat_rate') ? document.getElementById('bg_vat_rate').value : 10) || 0;
   var toName = (document.getElementById('bg_to') && document.getElementById('bg_to').value) || 'Quý khách hàng';
+  var toComp = (document.getElementById('bg_company') && document.getElementById('bg_company').value) || '';
   var sellerName = (document.getElementById('bg_seller') && document.getElementById('bg_seller').value) || 'Công ty TNHH Thương Mại Đầu tư và Sản xuất Thuận Phát';
+  var dateVal = (document.getElementById('bg_date') && document.getElementById('bg_date').value) || new Date().toISOString().slice(0, 10);
+  var dtParts = dateVal.split('-');
+  var dateFormatted = 'Hà Nội, Ngày ' + (dtParts[2] || '...') + ' tháng ' + (dtParts[1] || '...') + ' năm ' + (dtParts[0] || '2026');
   var dTime = (document.getElementById('bg_delivery_time') && document.getElementById('bg_delivery_time').value) || 'Trong vòng 03 - 05 ngày làm việc';
-  var dLoc = (document.getElementById('bg_delivery_loc') && document.getElementById('bg_delivery_loc').value) || 'Tại kho bên mua';
+  var dLoc = (document.getElementById('bg_delivery_loc') && document.getElementById('bg_delivery_loc').value) || 'Tại kho bên mua hoặc địa điểm chỉ định';
   var dVal = (document.getElementById('bg_validity') && document.getElementById('bg_validity').value) || 'trong vòng 20 ngày kể từ ngày phát hành báo giá.';
 
   var totalTruocThue = 0;
   var totalQty = 0;
 
-  var html = '<table class="excel-table" style="width:100%">' +
+    var html = '<div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px 10px 0 0;padding:20px;border-bottom:none">' +
+    '<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:14px">' +
+    '  <img src="logo_thuanphat.png" alt="Thuận Phát Logo" style="height:64px;object-fit:contain;border-radius:4px" />' +
+    '  <div style="font-size:12.5px;font-style:italic;color:#475569;text-align:right">' + dateFormatted + '</div>' +
+    '</div>' +
+    '<div style="text-align:center;margin-bottom:12px">' +
+    '  <div style="font-size:22px;font-weight:900;color:#0f172a;letter-spacing:1px">BÁO GIÁ</div>' +
+    '</div>' +
+    '<div style="font-size:13px;color:#1e293b;line-height:1.6;margin-bottom:6px">' +
+    '  <b>Kính gửi:</b> <span style="font-weight:700;color:#0369a1">' + escH(toName + (toComp ? ' - ' + toComp : '')) + '</span>' +
+    '</div>' +
+    '<div style="font-size:12.5px;color:#475569;line-height:1.5">' +
+    '  Trân trọng cảm ơn quý khách hàng đã quan tâm đến sản phẩm và dịch vụ của chúng tôi. <b>' + escH(sellerName) + '</b> xin gửi tới Quý khách bảng báo giá sản phẩm như sau:' +
+    '</div>' +
+    '</div>';
+
+  html += '<table class="excel-table" style="width:100%">';
     '<thead>' +
     '<tr>' +
     '<th style="width:40px">STT</th>' +
