@@ -1,0 +1,1279 @@
+[
+  {
+    "stt": 1,
+    "name": "Máy vi tính để bàn",
+    "model": "Cubi B0B1",
+    "brand": "MSI",
+    "origin": "Trung Quốc",
+    "qty": 134,
+    "unit": "Bộ",
+    "price": 17800000,
+    "warranty": "12 tháng",
+    "specs": [
+      {
+        "key": "Processor",
+        "value": "Intel® Core™ 3 Processor 100U (Gen 14), 6 nhân 8 luồng, xung nhịp tối đa lên đến  4.7GHz"
+      },
+      {
+        "key": "Ổ đĩa lưu trữ",
+        "value": "1x 256GB M.2 2280 SSD \r\n1x M.2 2242 SSD (PCIE, free slot)\r\n1x 2.5” HDD/SSD"
+      },
+      {
+        "key": "Dung lượng RAM",
+        "value": "1 x 8GB RAM DDR5  SO-DIMMs, up to 64GB ( 2 slot)"
+      },
+      {
+        "key": "Đồ họa",
+        "value": "Intel® Graphics"
+      },
+      {
+        "key": "Âm thanh",
+        "value": "Realtek® ALC256"
+      },
+      {
+        "key": "Cổng I/O (Phía trước)",
+        "value": "2x USB 10Gbps Type A"
+      },
+      {
+        "key": "Thông số",
+        "value": "1x Mic-in / Headphone-out combo"
+      },
+      {
+        "key": "Thông số",
+        "value": "1x Micro-SD Card Reader"
+      },
+      {
+        "key": "Cổng I/O (Phía sau)",
+        "value": "2x Thunderbolt 4 (DP 1.4 alt-mode up to 4K@60Hz /PD-out 15W / One of TBT supports PD-in"
+      },
+      {
+        "key": "Thông số",
+        "value": "2x USB 10Gbps Type A"
+      },
+      {
+        "key": "Thông số",
+        "value": "2x RJ45"
+      },
+      {
+        "key": "Thông số",
+        "value": "2x HDMI out (supports 4K @60Hz as specified in HDMI 2.1)"
+      },
+      {
+        "key": "Cổng I/O (Side)",
+        "value": "1x Kensington Lock"
+      },
+      {
+        "key": "Thông số",
+        "value": "1x External Power Switch Pin Header"
+      },
+      {
+        "key": "Cổng  I/O bên trong (Inside)",
+        "value": "2 x USB 2.0 header"
+      },
+      {
+        "key": "TPM",
+        "value": "dTPM 2.0"
+      },
+      {
+        "key": "Kết nối không dây",
+        "value": "M.2 key with Intel Wireles Wireless AX211"
+      },
+      {
+        "key": "Bluetooth",
+        "value": "5.3"
+      },
+      {
+        "key": "Kết nối mạng",
+        "value": "2 cổng Lan RJ45 được tích hợp sẵn:\r\n2 x Intel I226V (2.5Gb)"
+      },
+      {
+        "key": "Nguồn",
+        "value": "Nguồn tiết kiệm điện dùng adaptor 120W"
+      },
+      {
+        "key": "Bật tắt nguồn mở rộng",
+        "value": "Công tắc điện nối dài"
+      },
+      {
+        "key": "VESA Mount",
+        "value": "75 x 75 mm & 100 x 100 mm"
+      },
+      {
+        "key": "Kensington Lock",
+        "value": "Có hỗ trợ"
+      },
+      {
+        "key": "Keyboard & Mouse",
+        "value": "Đồng bộ với hãng sản xuất MSI"
+      },
+      {
+        "key": "Tính năng",
+        "value": "1.\tHệ thống bảo mật  dTPM 2.0 hardware được tích hợp sẵn trên máy tính. Tăng cường bảo mật cho hệ thống người dùng."
+      },
+      {
+        "key": "Thông số",
+        "value": "2.\tCho phép người dùng sao lưu và chia sẽ dữ liệu quan trọng cần thiết qua Cloud đến các thiết bị khác như smartphone, máy tính khác."
+      },
+      {
+        "key": "Thông số",
+        "value": "3.\tHỗ trợ xuất hình 4 màn hình cùng lúc."
+      },
+      {
+        "key": "Thông số",
+        "value": "4.\tHỗ trợ bật tắt máy tính bằng nút nguồn màn hình thông qua Thunderbolt 4 PD."
+      },
+      {
+        "key": "Thông số",
+        "value": "5.\tMáy tính tích hợp hệ thống AI Engine tự học tự động phát hiện các tình huống của người dùng và điều chỉnh hiệu suất, hiệu ứng âm thanh và chế độ hiển thị cho phù hợp. Chẩn đoán hệ thống và tự động rà soát và nâng cấp Bios và phân mềm khi có bản cập nhật mới."
+      },
+      {
+        "key": "Thông số",
+        "value": "6.\t'Hệ thống Lan Manager cho phép người dùng theo dõi thông đường truyền cho từng ứng dụng cụ thể với mức độ ưu tiên khác nhau nhằm tối ưu hóa hiệu năng sử dụng đường truyền mạng nội bộ và internet."
+      },
+      {
+        "key": "Thông số",
+        "value": "7.\tHệ thống tích hợp Dual Lan RJ45 onboard gồm 2.5Gb x 2 nhằm tăng cường tốc độ truy suất đường truyền và cho phép người dùng và người quản trị thiết lập hạ tầng mạng  riêng biệt, nâng cao bảo mật giữa internet và local"
+      },
+      {
+        "key": "Thông số",
+        "value": "8.\t'Hiển thị và theo dõi thông tin hệ thống theo thời gian thực như CPU, Mainboard, Ram, xung CPU, tốc độ fan…"
+      },
+      {
+        "key": "Màn hình MSI",
+        "value": ""
+      },
+      {
+        "key": "Kích thước",
+        "value": "21.45\""
+      },
+      {
+        "key": "Tấm nền",
+        "value": "VA"
+      },
+      {
+        "key": "Độ phân giải",
+        "value": "1920 x 1080 (FHD)"
+      },
+      {
+        "key": "Tỉ lệ hình ảnh",
+        "value": "16:9"
+      },
+      {
+        "key": "Độ sáng",
+        "value": "300 cd/m²"
+      },
+      {
+        "key": "Độ tương phản",
+        "value": "4000:1"
+      },
+      {
+        "key": "DCR",
+        "value": "100000000:1"
+      },
+      {
+        "key": "Tần số quét",
+        "value": "120Hz"
+      },
+      {
+        "key": "Thời gian phản hồi",
+        "value": "1ms (MPRT) / 4ms (GTG)"
+      },
+      {
+        "key": "Góc nhìn",
+        "value": "178°(H) / 178°(V)"
+      },
+      {
+        "key": "Chống chói",
+        "value": "Anti-glare"
+      },
+      {
+        "key": "Màu hiển thị",
+        "value": "16.7M"
+      },
+      {
+        "key": "Video Interface / Cổng kết nối / Giao diện kết nối",
+        "value": "1x HDMI™ 1.4b (FHD@120Hz)"
+      },
+      {
+        "key": "Thông số",
+        "value": "1x D-Sub (VGA)"
+      },
+      {
+        "key": "Nguồn điện",
+        "value": "100~240V, 50~60Hz"
+      },
+      {
+        "key": "Bảo hành",
+        "value": "Bảo hành và hỗ trợ kỹ thuật chính hãng Onsite 24 tháng\r\nTrung Tâm Bảo Hành ủy quyền MSI tại Việt Nam  có chứng chỉ ISO 9001"
+      }
+    ]
+  },
+  {
+    "stt": 2,
+    "name": "Máy tính xách tay",
+    "model": "MS-14S1",
+    "brand": "MSI",
+    "origin": "Trung Quốc",
+    "qty": 56,
+    "unit": "Chiếc",
+    "price": 17800000,
+    "warranty": "12 tháng",
+    "specs": [
+      {
+        "key": "CPU",
+        "value": "Intel® Core™ 3 Processor 100U (Gen 14), 6 nhân 8 luồng, xung nhịp tối đa lên đến  4.7GHz."
+      },
+      {
+        "key": "Chipset",
+        "value": "Integrated SoC"
+      },
+      {
+        "key": "Bộ Nhớ",
+        "value": "8GB DDR4 ,2 Khe, hỗ trợ nâng cấp tối đa 64GB"
+      },
+      {
+        "key": "Màn hình",
+        "value": "14 inch FHD (1920×1080), IPS-level, 60Hz, 45% NTSC, mở 180°, có chế độ trình chiếu nhanh cho phép đảo/chia sẻ nội dung màn hình"
+      },
+      {
+        "key": "Đồ họa (Graphics)",
+        "value": "Intel® Graphics"
+      },
+      {
+        "key": "Webcam",
+        "value": "HD type (30fps@720p) có nút khóa webcam chủ động chống truy cập trái phép"
+      },
+      {
+        "key": "Ổ cứng (Storage)",
+        "value": "512GB NVMe PCIe SSD"
+      },
+      {
+        "key": "Kết nối không dây",
+        "value": "Intel® Wi-Fi 6E AX211 (802.11ax), Bluetooth v5.3"
+      },
+      {
+        "key": "Âm thanh",
+        "value": "2 loa stereo công suất 2W"
+      },
+      {
+        "key": "Bàn phím",
+        "value": "Bàn phím đơn có đèn nền màu trắng, tích hợp phím Copilot hỗ trợ AI, tối ưu hiệu suất làm việc và trải nghiệm người dùng"
+      },
+      {
+        "key": "Bảo mật",
+        "value": "Firmware Trusted Platform Module(fTPM) 2.0, finger print, khóa Kensington."
+      },
+      {
+        "key": "Cổng kết nối (I/O Ports):",
+        "value": "1 x USB 3.2 Gen2 Type-C / DisplayPort™/ Power Delivery 3.0\r\n3× USB Type-A 3.2 Gen 1\r\n1× HDMI 1.4 (up to 4K@30Hz)\r\n1× MicroSD card reader\r\n1× combo audio jack\r\n1× DC-in\r\n1× RJ-45\r\n1× Kensington lock"
+      },
+      {
+        "key": "Pin và adaptor",
+        "value": "Pin Li-Polymer 3 Cell 46.8Whr, hỗ trợ công nghệ sạc nhanh Fast Charging; Adapter 65W"
+      },
+      {
+        "key": "Kích thước (DxRxC)",
+        "value": "323.9  x  217.2  x 19.9 mm"
+      },
+      {
+        "key": "Cân nặng",
+        "value": "1.5 Kg"
+      },
+      {
+        "key": "HĐH",
+        "value": "Win 11 Home"
+      },
+      {
+        "key": "Tính năng khác",
+        "value": "- Phần mềm quản lý hệ thống đi kèm theo máy, sử dụng trí tuệ nhân tạo AI, giúp cải thiện hiệu suất, độ ổn định, và trải nghiệm sử dụng người dùng\r\n- Máy được thử nghiệm theo tiêu chuẩn quân đội MIL-STD-810H về nhiệt độ, độ ẩm, rơi rớt, rung động mạnh...nhằm đảm bảo máy hoạt động bền bỉ và tin cậy\r\n- Sử dụng vật liệu nhựa tái chế PCR (Post-Consumer Recycled Resin), thân thiện với môi trường. Máy đạt chứng nhận EPEAT thân thiện với môi trường\r\n- Nhà máy sản xuất đạt các chứng nhận quốc tế về quản lý chất lượng, môi trường, an toàn thông tin, an toàn sức khỏe nghề nghiệp và quản lý năng lượng theo các tiêu chuẩn ISO 9001:2015, ISO 14001:2015, ISO/IEC 27001:2022, ISO 45001:2018 và ISO 50001:2018."
+      },
+      {
+        "key": "Bảo hành",
+        "value": "12tháng bảo hành tận nơi"
+      }
+    ]
+  },
+  {
+    "stt": 3,
+    "name": "Máy in A4",
+    "model": "B433DN",
+    "brand": "OKI",
+    "origin": "Thái Lan",
+    "qty": 56,
+    "unit": "Chiếc",
+    "price": 4800000,
+    "warranty": "12 tháng",
+    "specs": [
+      {
+        "key": "Chức năng chuẩn",
+        "value": "Máy in đen trắng đảo mặt tự động"
+      },
+      {
+        "key": "Phương thức in",
+        "value": "laser"
+      },
+      {
+        "key": "Tốc độ in",
+        "value": "40 trang/phút (A4)"
+      },
+      {
+        "key": "Bộ nhớ RAM tiêu chuẩn",
+        "value": "512MB, bộ nhớ trong 3GB"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "A6-A4, Banner 1,3m (tùy chọn tối đa 216 x 1320 mm)"
+      },
+      {
+        "key": "Trữ lượng giấy (chuẩn)",
+        "value": "01 khay chuẩn x 250 tờ"
+      },
+      {
+        "key": "Thông số",
+        "value": "01 khay tay x 100 tờ"
+      },
+      {
+        "key": "Khay giấy ra",
+        "value": "150 tờ úp mặt"
+      },
+      {
+        "key": "Độ phân giải",
+        "value": "1200 x 1200dpi"
+      },
+      {
+        "key": "In 2 mặt (Duplex)",
+        "value": "Tiêu chuẩn"
+      },
+      {
+        "key": "In di động",
+        "value": "AirPrint, Mopria"
+      },
+      {
+        "key": "Giao diện",
+        "value": "USB 2.0 x 1; Ethernet 10BASE-T/100BASE-TX/1,000BASE-T; NFC;\r\nUSB Host Interface (USB Host)x1"
+      },
+      {
+        "key": "Công suất in",
+        "value": "80,000 trang"
+      },
+      {
+        "key": "Bảo hành",
+        "value": "12 tháng"
+      }
+    ]
+  },
+  {
+    "stt": 4,
+    "name": "Máy quét tài liệu số hóa (máy Scan)",
+    "model": "SP-2240",
+    "brand": "Ricoh",
+    "origin": "Thái Lan",
+    "qty": 24,
+    "unit": "Chiếc",
+    "price": 8800000,
+    "warranty": "12 tháng",
+    "specs": [
+      {
+        "key": "Kiểu máy",
+        "value": "Quét 2 mặt tự động"
+      },
+      {
+        "key": "Đèn quét",
+        "value": "CIS x 2"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "Tối đa: 215,9 x 355,6 mm; Tối thiểu: 50,8 x 50,8 mm"
+      },
+      {
+        "key": "Kéo giấy dài",
+        "value": "6.096 mm"
+      },
+      {
+        "key": "Quét khổ A3 gập",
+        "value": "Có"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "27 - 413 g/m2"
+      },
+      {
+        "key": "Thẻ nhựa",
+        "value": "1,4 mm"
+      },
+      {
+        "key": "Tốc độ quét",
+        "value": "Một mặt: 40 ppm, Hai mặt: 80 ipm (A4, quét màu, 300dpi)\\"
+      },
+      {
+        "key": "Độ phân giải",
+        "value": "600 dpi, tối đa 1200 dpi"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "80 tờ (A4: 80 g/m2)"
+      },
+      {
+        "key": "Công suất",
+        "value": "6.000 trang/ ngày"
+      },
+      {
+        "key": "Bộ nhớ",
+        "value": "2048 MB"
+      },
+      {
+        "key": "Cổng kết nối",
+        "value": "USB type C (3.2 Gen1x1 / USB 2.0 / USB 1.1"
+      },
+      {
+        "key": "Các chứng nhận",
+        "value": "ENERGY STAR, RoHS, EPEAT"
+      },
+      {
+        "key": "Chức năng quản lý máy",
+        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
+      },
+      {
+        "key": "Định dạng file",
+        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
+      },
+      {
+        "key": "Hỗ trợ Index file",
+        "value": "XML, CSV, TXT"
+      },
+      {
+        "key": "Tính năng tách trường văn bản (Metadata fields)",
+        "value": "20 trường"
+      },
+      {
+        "key": "Phần mềm số hóa tiếng Việt đi kèm",
+        "value": "-        Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
+      },
+      {
+        "key": "Thông số",
+        "value": "-        Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
+      },
+      {
+        "key": "-        Tự động bóc tách các trường trên văn bản hành chính",
+        "value": "Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
+      },
+      {
+        "key": "Thông số",
+        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
+      },
+      {
+        "key": "Bảo hành",
+        "value": "12 tháng"
+      }
+    ]
+  },
+  {
+    "stt": 5,
+    "name": "Gia hạn License FortiGate-200E",
+    "model": "",
+    "brand": "",
+    "origin": "",
+    "qty": 1,
+    "unit": "License",
+    "price": 0,
+    "warranty": "12 tháng",
+    "specs": []
+  },
+  {
+    "stt": 6,
+    "name": "Thiết bị mạng tương đương CBS350-24S",
+    "model": "",
+    "brand": "",
+    "origin": "",
+    "qty": 1,
+    "unit": "Cái",
+    "price": 0,
+    "warranty": "12 tháng",
+    "specs": []
+  },
+  {
+    "stt": 7,
+    "name": "Thiết bị mạng tương đương Cisco WS-C2960L",
+    "model": "",
+    "brand": "",
+    "origin": "",
+    "qty": 4,
+    "unit": "Cái",
+    "price": 0,
+    "warranty": "12 tháng",
+    "specs": []
+  },
+  {
+    "stt": 8,
+    "name": "Thiết bị mạng tương đương Switch Cisco CBS250-48PP",
+    "model": "",
+    "brand": "",
+    "origin": "",
+    "qty": 6,
+    "unit": "Cái",
+    "price": 0,
+    "warranty": "12 tháng",
+    "specs": []
+  },
+  {
+    "stt": 9,
+    "name": "Thiết bị phòng họp trực tuyến",
+    "model": "VC520 PRO3",
+    "brand": "Aver",
+    "origin": "Đài Loan",
+    "qty": 5,
+    "unit": "Bộ",
+    "price": 56000000,
+    "warranty": "12 tháng",
+    "specs": []
+  },
+  {
+    "stt": 10,
+    "name": "Thiết bị mạng Switch Cisco hoặc tương đương",
+    "model": "",
+    "brand": "",
+    "origin": "",
+    "qty": 10,
+    "unit": "Cái",
+    "price": 0,
+    "warranty": "12 tháng",
+    "specs": []
+  },
+  {
+    "stt": 11,
+    "name": "Thuê đường truyền mạng số liệu chuyên dùng",
+    "model": "",
+    "brand": "",
+    "origin": "",
+    "qty": 7,
+    "unit": "Hệ thống",
+    "price": 0,
+    "warranty": "12 tháng",
+    "specs": []
+  },
+  {
+    "stt": 12,
+    "name": "Thiết bị tường lửa Fortinet hoặc tương đương",
+    "model": "XGS 128",
+    "brand": "Sophos",
+    "origin": "Đài Loan",
+    "qty": 6,
+    "unit": "Cái",
+    "price": 58000000,
+    "warranty": "12 tháng",
+    "specs": []
+  },
+  {
+    "stt": 13,
+    "name": "Switch tương đương Cisco catalyst 1200 Series",
+    "model": "",
+    "brand": "",
+    "origin": "",
+    "qty": 2,
+    "unit": "Cái",
+    "price": 0,
+    "warranty": "12 tháng",
+    "specs": []
+  },
+  {
+    "stt": 14,
+    "name": "Camera an ninh",
+    "model": "",
+    "brand": "",
+    "origin": "",
+    "qty": 1,
+    "unit": "Chiếc",
+    "price": 0,
+    "warranty": "12 tháng",
+    "specs": []
+  },
+  {
+    "stt": 15,
+    "name": "Máy chiếu",
+    "model": "P162",
+    "brand": "INFOCUS",
+    "origin": "Trung Quốc",
+    "qty": 1,
+    "unit": "Bộ",
+    "price": 23000000,
+    "warranty": "12 tháng",
+    "specs": [
+      {
+        "key": "Máy chiếu",
+        "value": "Công nghệ hiển thị: LCD with Micro-Lens Array"
+      },
+      {
+        "key": "Kích thước bảng điều khiển",
+        "value": "3 x SonyTM 0.63\""
+      },
+      {
+        "key": "Độ phân giải thực",
+        "value": "WXGA (1280 x 800)"
+      },
+      {
+        "key": "Độ phân hỗ trợ",
+        "value": "3840 x 2160 (4K) @ 30Hz"
+      },
+      {
+        "key": "Độ tương phản",
+        "value": "50000:1"
+      },
+      {
+        "key": "Độ sáng",
+        "value": "5000  Lumens"
+      },
+      {
+        "key": "Nguồn sáng",
+        "value": "UHP Lamp"
+      },
+      {
+        "key": "Tuổi thọ bóng đèn tối đa",
+        "value": "20000 giờ"
+      },
+      {
+        "key": "Ống kính",
+        "value": "Zoom 1.66x"
+      },
+      {
+        "key": "Chỉnh Keystone ( ngang/ dọc)",
+        "value": "±30°"
+      },
+      {
+        "key": "Ống Kính (F-Stop / focal length )",
+        "value": "F:1.7 ~ 2.1/ f=17.5 ~ 29.01 (mm)"
+      },
+      {
+        "key": "Hệ số chiếu",
+        "value": "1.26 ~ 2.09:1"
+      },
+      {
+        "key": "Khoảng cách chiếu",
+        "value": "0.81 ~ 13.86 (m)"
+      },
+      {
+        "key": "Digital Zoom",
+        "value": "0.0x ~ 4.0x"
+      },
+      {
+        "key": "Loa tích hợp",
+        "value": "16W x1"
+      },
+      {
+        "key": "Cổng kết nối",
+        "value": "- VGA (Computer in) x1; Composite Video x1; HDMI x2; USB-B 2.0 x1; RJ45 (LAN) x1; Audio in 3.5 mm x1; Audio out 3.5 mm x1; RS232 x 1; VGA (Monitor out) x1; USB-A x 1."
+      },
+      {
+        "key": "Nguồn điện",
+        "value": "100-240 V AC; 50 - 60 Hz"
+      },
+      {
+        "key": "Công suất tiêu thụ nguồn tối đa",
+        "value": "340 (W)"
+      },
+      {
+        "key": "Công suất chờ",
+        "value": "<0.5 (W)"
+      },
+      {
+        "key": "Bảo vệ",
+        "value": "Kensington Lock Port, Security Bar, Keypad Lock, PIN & Timer Functions"
+      },
+      {
+        "key": "Kích thước máy chiếu",
+        "value": "345 x 261 x 99 mm"
+      },
+      {
+        "key": "Trọng lượng",
+        "value": "3.3 kg"
+      },
+      {
+        "key": "Phụ kiện theo kèm",
+        "value": "Dây nguồn x 1, Cáp VGA x1, Pin+ điều khiển, Đĩa mềm HDSD"
+      },
+      {
+        "key": "Thông số",
+        "value": "Tính năng công nghệ"
+      },
+      {
+        "key": "Tính năng đồng bộ hóa độ ổn định của hình ảnh (Fine sync) (chỉ VGA)",
+        "value": "0 - 31"
+      },
+      {
+        "key": "Điều chỉnh vị trí hình ảnh chiều ngang và chiều dọc (chỉ VGA)",
+        "value": "(-5) - (+5)"
+      },
+      {
+        "key": "Tính năng điều chỉnh độ rộng chiều ngang của hình ảnh (H. Size) (chỉ VGA)",
+        "value": "(-15) - (+15)"
+      },
+      {
+        "key": "Chức năng cho phép cắt hình ảnh thành các phần 5x5 hoặc nhỏ hơn, sau đó chọn phần hình ảnh để hiện thị (Aspect",
+        "value": "Advanced)"
+      },
+      {
+        "key": "Thông số",
+        "value": "Chức năng đọc file trên USB hỗ trợ đọc file hình ảnh và file PDF cơ bản"
+      },
+      {
+        "key": "Tính năng điều chỉnh tỉ lệ khung hình",
+        "value": "Normal, Wide, Full, 4:3, Advanced"
+      },
+      {
+        "key": "Thông số",
+        "value": "Chức năng Bảo mật (Security) giúp bảo mật cài đặt máy chiếu. Chức năng khóa mã PIN ngăn chặn sử dụng trái phép máy chiếu"
+      },
+      {
+        "key": "Thông số",
+        "value": "Tính năng thay đổi độ sáng màn hình (Brightness Mode) 4 chế độ giúp tùy chỉnh độ sáng và tiết kiệm điện năng tiêu thụ"
+      },
+      {
+        "key": "Thông số",
+        "value": "Chức năng cài đặt tự động Chức năng này cho phép tìm kiếm nguồn đầu vào, điều chỉnh AUTO PC và AUTO Keystone bằng cách nhấn nút AUTO trên điều khiển từ xa một cách đơn giản."
+      },
+      {
+        "key": "Thông số",
+        "value": "Chức năng quản lý nguồn điện (Power Management) điều chỉnh thời gian nghỉ hoặc tắt của máy chiếu khi không có tín hiệu đầu vào giúp giảm tiêu thụ điện năng và duy trì tuổi thọ của bóng đèn. Có thể tắt tính năng này trong phần cài đặt"
+      },
+      {
+        "key": "Chế độ hình ảnh đa dạng, phù hợp với nhiều môi trường cũng như màu tường khác nhau",
+        "value": "Dynamic, Standard, Cinema, Blackboard (Green), Colorboard, User Image."
+      },
+      {
+        "key": "Chức năng điều chỉnh màu sắc đa dạng",
+        "value": "Contrast, Brightness, Colour temp., cân bằng trắng (điều chỉnh Red, Green, Blue) và Sharpness"
+      },
+      {
+        "key": "Thông số",
+        "value": "Chức năng Direct Power ON máy chiếu sẽ tự động bật khi nguồn AC được cung cấp mà không cần nhấn phím bật nguồn mà không cần nhấn phím  trên bảng điều khiển máy chiếu hoặc trên điều khiển từ xa."
+      },
+      {
+        "key": "Chế độ tiết kiệm tiêu thụ điện năng ở chế độ chờ (Standby mode)",
+        "value": "ECO; Normal; Network"
+      },
+      {
+        "key": "Thông số",
+        "value": "Chức năng zoom kỹ thuật số (0-19) cho phép bạn tập trung vào thông tin quan trọng trong một bài thuyết trình."
+      },
+      {
+        "key": "Chức năng điều chỉnh keystone",
+        "value": "có thể điều chỉnh sự biến dạng keystone của hình ảnh trong máy chiếu của mình bằng điều chỉnh Keystone ngang dọc, điều chỉnh 4 góc hoặc tự động điều chỉnh"
+      },
+      {
+        "key": "Thông số",
+        "value": "Tính năng khóa bàn phím (Key lock) giúp khóa bàn phím, tránh sử dụng trái phép bằng phím bấm trên máy chiếu"
+      },
+      {
+        "key": "Thông số",
+        "value": "Chức năng FREEZE đóng băng một hình ảnh (Giúp nhấn mạnh nội dung thuyết trình)"
+      },
+      {
+        "key": "Thông số",
+        "value": "Chức năng điều khiển quạt máy chiếu, bạn có thể thay đổi cài đặt về tốc độ của quạt làm mát theo độ cao mà máy chiếu của bạn đang hoạt động (High altitude) chọn (BẬT) khi bạn vận hành điều hành máy chiếu khi hoạt động ở trên vùng có độ cao lớn."
+      },
+      {
+        "key": "Chế độ làm mát nhanh (Cooling fast)",
+        "value": "normal, 30 Sec, 0 Sec. Đặc biệt chọn chức năng (0 Sec) cho phép bạn rút phích cắm nguồn AC trực tiếp sau khi tắt máy, không cần chờ đợi máy chiếu làm mát."
+      },
+      {
+        "key": "Thông số",
+        "value": "Chế độ hiển thị  nhắc nhở thời gian sử dụng bộ lọc, đặt thời gian để hiển thị cảnh báo dụng bộ lọc cần được thay thế giúp bảo vệ máy chiếu bền bỉ hoạt động một cách tốt nhất (Filter counter)"
+      },
+      {
+        "key": "Thông số",
+        "value": "Chức năng (Test pattern) để hiển thị mẫu thử nghiệm có sẵn của máy chiếu."
+      },
+      {
+        "key": "Chức năng hiển thị thông tin và trạng thái của máy chiếu, giúp người dùng có thể xem được các thông tin hiển thị",
+        "value": "Input, H-sync. Freq, V-sync. Freq, Lamp counter, Model Name, S/N, Firmware Version, SUB CPU."
+      },
+      {
+        "key": "Tính năng điều chỉnh ngôn ngữ hiển thị của máy chiếu",
+        "value": "26 ngôn ngữ trong đó có Tiếng Việt"
+      },
+      {
+        "key": "Thông số",
+        "value": "Tính năng Công nghệ Iris nâng cao giúp tỷ lệ tương phản tối ưu nhất giữa không gian sáng và tối sẽ tự động điều chỉnh cài đặt để tối ưu hóa độ sáng cho phù hợp nhất với nội dung được hiển thị. Tính năng Iris nâng cao cung cấp cho các cảnh tối và nội dung có màu đen tối hơn và sáng hơn trên các cảnh sáng để sử dụng tối ưu công suất ánh sáng có sẵn của máy chiếu"
+      },
+      {
+        "key": "Tính năng trang trống (Blank)",
+        "value": "thay vì chiếu hình ảnh hiện tại, tính năng này cho phép chiếu một trang trống và có thể tiếp tục chiếu ngay lập tức khi cần"
+      },
+      {
+        "key": "Tính năng điều chỉnh dải màu của tín hiệu HDMI",
+        "value": "64-940; 0-1023; Auto"
+      },
+      {
+        "key": "Thông số",
+        "value": "Tính năng cài đặt EQ của tín hiệu HDMI"
+      },
+      {
+        "key": "Hiển thị qua USB",
+        "value": "Hiển thị nội dung từ máy tính xách tay hoặc máy tính Windows của bạn qua cổng USB bằng cáp USB với máy chiếu."
+      },
+      {
+        "key": "Hiển thị qua mạng LAN",
+        "value": "Kết nối máy chiếu và thiết bị Windows của bạn với cùng một mạng LAN và sử dụng phần mềm để hiển thị"
+      },
+      {
+        "key": "Phụ kiện theo kèm",
+        "value": "Dây nguồn x 1, Cáp VGA x1, Pin+ điều khiển, Đĩa mềm HDSD"
+      },
+      {
+        "key": "Màn chiếu điện 120\"",
+        "value": ""
+      },
+      {
+        "key": "Kích thước vùng chiếu",
+        "value": "2.13m x 2.13m"
+      },
+      {
+        "key": "Tỉ lệ",
+        "value": "1:1"
+      },
+      {
+        "key": "Kích thước đường chéo",
+        "value": "120\""
+      },
+      {
+        "key": "Thông số",
+        "value": "Có điều khiển từ xa"
+      },
+      {
+        "key": "Chất liệu",
+        "value": "Matte White"
+      },
+      {
+        "key": "Thông số",
+        "value": "độ bền cao, chống ẩm mốc"
+      },
+      {
+        "key": "Giá treo máy chiếu 1m",
+        "value": ""
+      },
+      {
+        "key": "Độ dài tối thiểu",
+        "value": "630mm"
+      },
+      {
+        "key": "Độ dài tối đa",
+        "value": "1000mm"
+      },
+      {
+        "key": "Thông số",
+        "value": "Màu trắng"
+      },
+      {
+        "key": "Thông số",
+        "value": "Phù hợp với mọi loại máy chiếu."
+      },
+      {
+        "key": "Thông số",
+        "value": "An toàn và thuận tiện trong lắp đặt."
+      },
+      {
+        "key": "Tải trọng",
+        "value": "25kg"
+      },
+      {
+        "key": "Cáp HDMI 15m",
+        "value": ""
+      },
+      {
+        "key": "Thông số",
+        "value": "Chiều dài cáp 15m chuyên dùng cho máy chiếu, TV, PC, laptop và trong các thiết bị có ngõ tín hiệu HDMI"
+      },
+      {
+        "key": "Thông số",
+        "value": "Chuẩn kết nối 2.0"
+      },
+      {
+        "key": "Thông số",
+        "value": "Cấu tạo lõi xoắn, chuẩn chất liệu 26AWG, có bọc 2 lớp giáp chống nhiễu và bọc nhựa PVC dẻo chống đứt gãy."
+      },
+      {
+        "key": "Thông số",
+        "value": "Độ phân giải đạt full HD 1080p@60Hz, 4K@60Hz cho hình ảnh và âm thanh chất lượng cao và đảm bảo đồng bộ"
+      },
+      {
+        "key": "Bảo hành",
+        "value": "12 tháng hoặc 1000 giờ đối với bóng đèn tùy điều kiện nào đến trước"
+      }
+    ]
+  },
+  {
+    "stt": 16,
+    "name": "Cáp mạng CAT 6 Việt Hàn CAT6",
+    "model": "Việt Hàn CAT6",
+    "brand": "Việt Hàn",
+    "origin": "Việt Nam",
+    "qty": 3,
+    "unit": "Thùng",
+    "price": 2800000,
+    "warranty": "12 tháng",
+    "specs": [
+      {
+        "key": "Kiểu cáp",
+        "value": "UTP"
+      },
+      {
+        "key": "Số đôi dây",
+        "value": "4 đôi / 8 lõi"
+      },
+      {
+        "key": "Ruột dẫn",
+        "value": "Solid"
+      },
+      {
+        "key": "Cỡ dây",
+        "value": "24 AWG / 4PRS"
+      },
+      {
+        "key": "Đường kính ruột đồng",
+        "value": "0,5 mm"
+      },
+      {
+        "key": "Vật liệu ruột dẫn",
+        "value": "Đồng 99,99% LS Hàn Quốc / SEI Thái Lan"
+      },
+      {
+        "key": "Cách điện lõi",
+        "value": "HDPE"
+      },
+      {
+        "key": "Lõi phân cách",
+        "value": "Lõi chữ thập PEHD"
+      },
+      {
+        "key": "Vỏ ngoài",
+        "value": "PVC nguyên sinh"
+      },
+      {
+        "key": "Chiều dài cuộn",
+        "value": "305 m"
+      },
+      {
+        "key": "Tiêu chuẩn khác",
+        "value": "ISO 9001:2015; Quatest 1; TIA/EIA-568-B2; TCVN 8698:2011"
+      },
+      {
+        "key": "Khoảng truyền công bố",
+        "value": "150–190 m"
+      }
+    ]
+  },
+  {
+    "stt": 17,
+    "name": "Thiết bị cân bằng tải TP-Link Omada ER707-M2",
+    "model": "ER707-M2",
+    "brand": "TP-Link",
+    "origin": "Trung Quốc",
+    "qty": 1,
+    "unit": "Cái",
+    "price": 5000000,
+    "warranty": "12 tháng",
+    "specs": [
+      {
+        "key": "CPU",
+        "value": "Dual-core ARMv8"
+      },
+      {
+        "key": "RAM",
+        "value": "1 GB DDR4"
+      },
+      {
+        "key": "Cổng 2.5GbE",
+        "value": "2 × 2.5G RJ45: 1 WAN + 1 WAN/LAN"
+      },
+      {
+        "key": "Cổng SFP",
+        "value": "1 × GbE SFP WAN/LAN"
+      },
+      {
+        "key": "Cổng Gigabit RJ45 khác",
+        "value": "4 × 1GbE WAN/LAN"
+      },
+      {
+        "key": "Số WAN tối đa",
+        "value": "Tối đa 6 WAN ở Standalone"
+      },
+      {
+        "key": "Cân bằng tải",
+        "value": "Có – Intelligent Load Balance"
+      },
+      {
+        "key": "Failover",
+        "value": "Có – Link Backup/Failover"
+      },
+      {
+        "key": "NAT Throughput",
+        "value": "khoảng 2.35–2.37 Gbps"
+      },
+      {
+        "key": "Concurrent Sessions",
+        "value": "500"
+      },
+      {
+        "key": "OpenVPN",
+        "value": "Có"
+      },
+      {
+        "key": "WireGuard",
+        "value": "Có"
+      },
+      {
+        "key": "PPTP/L2TP",
+        "value": "Có"
+      },
+      {
+        "key": "VLAN 802.1Q",
+        "value": "Có"
+      },
+      {
+        "key": "Static Routing",
+        "value": "Có"
+      },
+      {
+        "key": "Policy Routing",
+        "value": "Có"
+      },
+      {
+        "key": "OSPF",
+        "value": "Có"
+      },
+      {
+        "key": "IDS/IPS",
+        "value": "Có IPS/IDS + DPI"
+      },
+      {
+        "key": "DPI",
+        "value": "Có DPI, hỗ trợ nhận diện nhiều ứng dụng"
+      },
+      {
+        "key": "SD-WAN",
+        "value": "Có, Controller Mode"
+      },
+      {
+        "key": "Quản lý tập trung",
+        "value": "Omada SDN Controller"
+      },
+      {
+        "key": "SNMP",
+        "value": "v1/v2c/v3"
+      },
+      {
+        "key": "4G backup USB",
+        "value": "Có LTE dongle backup"
+      },
+      {
+        "key": "Bảo hành",
+        "value": "12 tháng"
+      }
+    ]
+  },
+  {
+    "stt": 18,
+    "name": "Máy in A3",
+    "model": "LaserJet Pro M706n",
+    "brand": "HP",
+    "origin": "Trung Quốc",
+    "qty": 2,
+    "unit": "Chiếc",
+    "price": 18750000,
+    "warranty": "12 tháng",
+    "specs": [
+      {
+        "key": "Công nghệ in",
+        "value": "Laser"
+      },
+      {
+        "key": "Duplex printing",
+        "value": "Optional Duplexer accessory"
+      },
+      {
+        "key": "Tốc độ in",
+        "value": "Up to 35 ppm, A4/letter; Up to 18 ppm, A3;"
+      },
+      {
+        "key": "Độ phân giải",
+        "value": "Black (best) Up to 1200 x 1200 dpi;"
+      },
+      {
+        "key": "Ngôn ngữ máy in",
+        "value": "HP PCL 6, HP PCL 5e, HP Postscript 3 emulation, PCLm"
+      },
+      {
+        "key": "Khả năng kết nối",
+        "value": "1 USB 2.0 device port; 1 fast Ethernet 10/100"
+      },
+      {
+        "key": "Khả năng in trên thiết bị di đông",
+        "value": "Có"
+      },
+      {
+        "key": "Tính năng phần mềm in thông minh :",
+        "value": "ePrint; Auto On/Off"
+      },
+      {
+        "key": "Bộ nhớ",
+        "value": "256 MB (NAND ROM"
+      },
+      {
+        "key": "Tốc độ VXL",
+        "value": "750 MHz"
+      },
+      {
+        "key": "Số lượng trang được đề xuất hàng tháng",
+        "value": "Up to 65,000 pages"
+      },
+      {
+        "key": "Khay nạp giấy vào tiêu chuẩn.",
+        "value": "Up to 350 sheets Standard: Tray 1: 100‑sheet multipurpose tray, Tray 2: 250‑sheet input tray"
+      },
+      {
+        "key": "Khay nhả giấy, tiêu chuẩn",
+        "value": "250‑sheet output bin"
+      },
+      {
+        "key": "Kiểu giấy in hỗ trợ",
+        "value": "Paper (coloured, letterhead, light, plain, preprinted, prepunched, recycled, rough, heavy), bond, cardstock, envelope, labels, transparency, vellum"
+      },
+      {
+        "key": "Độ dầy của giấy được hỗ trợ",
+        "value": "Tray 1: 60 to 199 g/m²; Tray 2: 60 to 120 g/m²"
+      },
+      {
+        "key": "Kích cỡ giấy in",
+        "value": "Tray 1: A4, A3, B4 (JIS), B5 (JIS), A5, 16K; letter, legal, executive, 11 x 17, 8.5 x 13; envelopes\r\n(B5, C5, DL, No. 10, Monarch); postcard (JIS), DPostcard (JIS); Custom media sizes: 76.2 x 127 mm\r\nto 312 x 470 mm (3 x 5 in to 12.28 x 18.5 in); Tray 2: A4, A3, B4 (JIS), B5 (JIS), A5, 16K, letter, legal,\r\nexecutive, 11 x 17, 8.5 x 13; Custom media sizes: 148 x 210 mm to 297 x 431.8 mm (5.83 x 8.27 in\r\nto 11.69 x 17 in); Optional tray 3: A4, A3, B4 (JIS), B5 (JIS), A5, 16K; letter, legal, executive, 11 x 17,\r\n8.5 x 13; Custom media sizes: 148 x 210 mm to 297 x 431.8 mm (5.83 x 8.27 in to 11.69 x 17 in);"
+      },
+      {
+        "key": "Quản lý máy in :",
+        "value": ""
+      },
+      {
+        "key": "Quản lý bảo mật máy in",
+        "value": "Management security: SNMP v2, SSL/TLS (HTTPS), 802.1x authentication; password protection,\r\n802.1x authentication (EAP‑PEAP, LEAP, EAP‑TTLS, EAP‑TLS, EAP‑MD5) with RADIUS servers"
+      },
+      {
+        "key": "Control panel",
+        "value": "2‑line LCD with write backlit; 7 buttons (OK, Cancel, Forward, Backward, Reverse, Power, ePrint); 3 LEDs (Power, Ready, Error)"
+      },
+      {
+        "key": "Power consumption /Điện năng tiêu thụ",
+        "value": "680 watts (printing), 11 watts (ready), 2.5 watts (sleep), 0.2 watts (off)"
+      },
+      {
+        "key": "Warranty/Bảo hành",
+        "value": "Bảo hành 1 năm tại nơi sử dụng"
+      }
+    ]
+  },
+  {
+    "stt": 19,
+    "name": "Máy photocopy (có chế độ Scan)",
+    "model": "IM 3500",
+    "brand": "Ricoh",
+    "origin": "Thái Lan",
+    "qty": 9,
+    "unit": "Chiếc",
+    "price": 88000000,
+    "warranty": "12 tháng",
+    "specs": [
+      {
+        "key": "Tốc độ sao chụp / in",
+        "value": "35 bản/phút"
+      },
+      {
+        "key": "Tốc độ scan",
+        "value": "80 ipm"
+      },
+      {
+        "key": "Độ phân giải sao chụp",
+        "value": "600 x 600 dpi"
+      },
+      {
+        "key": "Độ phân giải scan",
+        "value": "100 dpi, 200dpi, 300 dpi, 400 dpi, 600 dpi"
+      },
+      {
+        "key": "Thời gian ra bản chụp đầu tiên",
+        "value": "3.8 giây,"
+      },
+      {
+        "key": "Copy liên tục",
+        "value": "999 bản một lần"
+      },
+      {
+        "key": "Thời gian khởi động máy",
+        "value": "18.6 giây"
+      },
+      {
+        "key": "Phóng to/ Thu nhỏ",
+        "value": "25% ~ 400% điều chỉnh 1%"
+      },
+      {
+        "key": "Bộ phận tự động nạp và đảo bản gốc",
+        "value": "ARDF có sẵn"
+      },
+      {
+        "key": "Chia bộ điện tử và sao chụp hai mặt",
+        "value": "có sẵn"
+      },
+      {
+        "key": "Chia bản chụp theo 2 chế độ",
+        "value": "so le và dọc ngang"
+      },
+      {
+        "key": "Chế độ tự động ngủ khi không sử dụng",
+        "value": "có sẵn"
+      },
+      {
+        "key": "Kích cỡ giấy",
+        "value": "B6 - A3"
+      },
+      {
+        "key": "Định lượng giấy",
+        "value": "52 ~ 300 g/m2"
+      },
+      {
+        "key": "Khay giấy",
+        "value": "2 khay x 550 tờ, khay tay x 100 tờ"
+      },
+      {
+        "key": "Khay giấy ra",
+        "value": "500 tờ"
+      },
+      {
+        "key": "Bộ nhớ tiêu chuẩn",
+        "value": "2 GB, HDD : 320 GB"
+      },
+      {
+        "key": "Ngôn ngữ in",
+        "value": "PCL5e/PCL6, PDF Driect, PS3 (Emulation)"
+      },
+      {
+        "key": "Kết nối",
+        "value": "Ethernet 10Base-T/100Base-TX/1000Base-T, USB Host I/F"
+      },
+      {
+        "key": "Hệ điều hành hỗ trợ",
+        "value": "Windows Vista/7/8/8.1/10, Windows server/2008/2008 R2/2012/2012 R2"
+      },
+      {
+        "key": "Hỗ trợ scan",
+        "value": "scan to email, scan to USB/SD, scan to Folder,"
+      },
+      {
+        "key": "Định dạng scan",
+        "value": "PDF, TIFF, JPEG,High Compression PDF, PDF-A"
+      },
+      {
+        "key": "Chân kê: có sẵn",
+        "value": "có sẵn"
+      },
+      {
+        "key": "Bảo hành",
+        "value": "12 Tháng"
+      }
+    ]
+  }
+]

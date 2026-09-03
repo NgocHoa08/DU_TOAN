@@ -1,0 +1,73 @@
+@page "/"
+@inject IJSRuntime JSRuntime
+
+<div class="wrap">
+    <header class="hdr">
+        <h1>Tool Dự Toán Thiết Bị</h1>
+        <p>Phiên bản Blazor (C#) - Hoàn toàn không dùng JavaScript cho Logic</p>
+    </header>
+
+    <div class="card">
+        <h3>1. Upload Excel File (Bảng tuyên bố đáp ứng / Danh mục)</h3>
+        <InputFile OnChange="@LoadFiles" class="form-control" />
+    </div>
+
+    @if (Devices.Any())
+    {
+        <div class="card">
+            <h3>2. Kết quả trích xuất (@Devices.Count thiết bị)</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên thiết bị</th>
+                        <th>Hãng</th>
+                        <th>Model</th>
+                        <th>Bảo hành</th>
+                        <th>Số thông số</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var dev in Devices)
+                    {
+                        <tr>
+                            <td>@dev.Stt</td>
+                            <td>@dev.Name</td>
+                            <td>@dev.Brand</td>
+                            <td>@dev.Model</td>
+                            <td>@dev.Warranty</td>
+                            <td>@dev.Specs.Count</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    }
+</div>
+
+@code {
+    private List<ToolDuToanBlazor.Models.DeviceModel> Devices = new();
+
+    private async Task LoadFiles(InputFileChangeEventArgs e)
+    {
+        var file = e.File;
+        using var stream = file.OpenReadStream(maxAllowedSize: 10485760); // 10MB max
+        using var ms = new MemoryStream();
+        await stream.CopyToAsync(ms);
+        ms.Position = 0;
+
+        // In a real implementation, we would call the ExcelParserService here
+        // var parser = new ExcelParserService();
+        // Devices = parser.ParseExcel(ms);
+        
+        // Mock data for demonstration
+        Devices.Add(new ToolDuToanBlazor.Models.DeviceModel 
+        { 
+            Stt = 1, 
+            Name = "Máy tính xách tay", 
+            Brand = "Dell", 
+            Model = "Latitude",
+            Warranty = "12 tháng"
+        });
+    }
+}
