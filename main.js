@@ -453,10 +453,11 @@ function renderLichSu() {
           '</div>' +
           metaHtml +
         '</div>' +
-        '<div style="display:flex;gap:4px;align-items:center;flex-shrink:0">' +
-          '<button onclick="copyLichSuEntryDetails(\'' + e.id + '\')" title="Sao chép toàn bộ thông tin file này" style="background:none;border:none;cursor:pointer;color:var(--t2);font-size:14px;padding:6px;border-radius:6px;transition:all .15s">📑</button>' +
-          '<button onclick="deleteLichSuEntry(\'' + e.id + '\')" title="Xóa file này khỏi lịch sử" style="background:none;border:none;cursor:pointer;color:var(--t3);font-size:15px;padding:6px;border-radius:6px;transition:all .15s">✕</button>' +
-        '</div>' +
+        '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;flex-shrink:0">' +
+          '<button onclick="reDownloadLichSuEntry(\'' + e.id + '\')" style="font-size:12px;padding:6px 14px;font-weight:700;display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,#16a34a,#059669);color:#ffffff;border:none;border-radius:8px;cursor:pointer;box-shadow:0 2px 8px rgba(22,163,74,0.35);transition:all .15s" title="Tải lại ngay file này về máy tính">⬇️ Tải Lại</button>' +
+          '<button onclick="openLichSuEntry(\'' + e.id + '\')" style="font-size:12px;padding:6px 12px;font-weight:600;display:inline-flex;align-items:center;gap:4px;border:1px solid var(--bdr2);border-radius:8px;background:var(--card);color:var(--t1);cursor:pointer;box-shadow:0 1px 3px rgba(0,0,0,0.05)" title="Mở lại bảng dữ liệu file này để xem hoặc chỉnh sửa">✏️ Mở Sửa</button>' +
+          '<button onclick="copyLichSuEntryDetails(\'' + e.id + '\')" style="background:var(--inp);border:1px solid var(--bdr);cursor:pointer;color:var(--t2);font-size:13px;padding:5px 9px;border-radius:8px" title="Sao chép toàn bộ thông tin">📋</button>' +
+          '<button onclick="deleteLichSuEntry(\'' + e.id + '\')" style="background:none;border:none;cursor:pointer;color:var(--re);font-size:15px;padding:4px 6px;border-radius:6px" title="Xóa khỏi lịch sử">🗑️</button>' +
       '</div>';
     });
   });
