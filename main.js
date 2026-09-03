@@ -41,8 +41,45 @@ var _lsCurrentFilter = 'all';
 var _lsSearchQuery = '';
 var _lsDateFilter = 'all';
 
+var SAMPLE_HISTORY_DATA = [
+  {
+    id: 'ls_sample_bg_01',
+    time: new Date().toISOString(),
+    type: 'baogia',
+    label: 'Báo Giá Thuận Phát - Bộ giải pháp Microsoft 365 Standard',
+    fileName: 'BaoGia_ThuanPhat_Office365.xlsx',
+    meta: { customer: 'Công ty CP Sách & Thiết Bị Giáo Dục Hòa Phát', total: '273.240.000 ₫' }
+  },
+  {
+    id: 'ls_sample_dt_02',
+    time: new Date(Date.now() - 3600000).toISOString(),
+    type: 'dutoan',
+    label: 'Dự Toán Thiết Bị Tin Học & Scan RICOH Fi-8170',
+    fileName: 'DuToan_ThietBi_CNTT_Scan.xlsx',
+    meta: { project: 'Nâng cấp hạ tầng số và thiết bị CNTT', total: '185.600.000 ₫' }
+  },
+  {
+    id: 'ls_sample_bb_03',
+    time: new Date(Date.now() - 7200000).toISOString(),
+    type: 'bbbg',
+    label: 'Biên Bản Bàn Giao Hàng Hóa - Hòa Phát',
+    fileName: 'BienBanBanGiao_HoaPhat.docx',
+    meta: { customer: 'CÔNG TY CP SÁCH VÀ THIẾT BỊ GIÁO DỤC HÒA PHÁT', total: '54 thiết bị' }
+  }
+];
+
 function lsGetHistory() {
-  try { return JSON.parse(localStorage.getItem(LS_HISTORY_KEY) || '[]'); } catch(e) { return []; }
+  try {
+    var raw = localStorage.getItem(LS_HISTORY_KEY);
+    if (!raw) {
+      localStorage.setItem(LS_HISTORY_KEY, JSON.stringify(SAMPLE_HISTORY_DATA));
+      return SAMPLE_HISTORY_DATA;
+    }
+    var parsed = JSON.parse(raw);
+    return Array.isArray(parsed) && parsed.length > 0 ? parsed : SAMPLE_HISTORY_DATA;
+  } catch(e) {
+    return SAMPLE_HISTORY_DATA;
+  }
 }
 
 function lsSaveHistory(arr) {
@@ -487,6 +524,11 @@ function switchMainTab(tab) {
   } else if (tab === 'baogia') {
     if (tabG) tabG.classList.add('active');
     if (bgView) bgView.style.display = 'block';
+    if (!bgItems || bgItems.length === 0) {
+      if (typeof BAOGIA_THUANPHAT_ITEMS !== 'undefined') {
+        bgItems = JSON.parse(JSON.stringify(BAOGIA_THUANPHAT_ITEMS));
+      }
+    }
     if (typeof renderBaogiaForm === 'function') {
       renderBaogiaForm();
     }
@@ -497,6 +539,7 @@ function switchMainTab(tab) {
       renderLichSu();
     }
   }
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(e) {}
 }
 
 function goStep(s) {
