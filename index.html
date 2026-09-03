@@ -39,13 +39,13 @@
       <h1>Tạo Mẫu Dự Toán Tự Động Từ Nhiều File</h1>
     </div>
 
-    <!-- MAIN TABS: 3 CHỨC NĂNG CHẠY ĐỘC LẬP HOÀN TOÀN -->
+    <!-- MAIN TABS: 5 CHỨC NĂNG -->
     <div class="main-tabs" id="mainTabsBar">
       <div class="mtab active" id="mtab-dutoan" onclick="switchMainTab('dutoan')">📊 1. Làm Dự Toán</div>
       <div class="mtab" id="mtab-bbbg" onclick="switchMainTab('bbbg')">📝 2. Biên Bản Bàn Giao</div>
       <div class="mtab" id="mtab-tddu" onclick="switchMainTab('tddu')">✅ 3. Tuyên Bố Đáp Ứng</div>
-      <div class="mtab" id="mtab-baogia" onclick="switchMainTab('baogia')" style="background:#fffbeb;border:1px solid #f59e0b;color:#b45309;font-weight:700" title="Khu vực Báo Giá Máy Scan & Photo (Yêu cầu mật khẩu Admin)">🔒 4. Báo Giá (Admin)</div>
-      <div class="mtab" id="mtab-lichsu" onclick="switchMainTab('lichsu')" style="background:linear-gradient(135deg,rgba(124,58,237,.08),rgba(37,99,235,.08));border:1px solid rgba(124,58,237,.3);color:#7c3aed;font-weight:700" title="Xem lịch sử các file đã xuất">🕐 5. Lịch Sử File</div>
+      <div class="mtab" id="mtab-baogia" onclick="switchMainTab('baogia')" style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.4);color:#b45309;font-weight:700" title="Lập Bảng Báo Giá Chuẩn Mẫu Thuận Phát (BGThuanPhat.xlsx)">🧾 4. Báo Giá Thuận Phát</div>
+      <div class="mtab" id="mtab-lichsu" onclick="switchMainTab('lichsu')" style="background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.4);color:#7c3aed;font-weight:700" title="Xem lịch sử các file đã xuất">🕐 5. Lịch Sử File <span id="lsBadgeTab" style="display:none;background:#7c3aed;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;margin-left:4px">0</span></div>
     </div>
 
     <div id="view-dutoan">
