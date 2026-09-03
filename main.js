@@ -962,7 +962,37 @@ async function callAiApi(prompt) {
   if (!key && p !== 'grok') throw new Error('Chưa có API Key! Vui lòng dán API Key vào ô nhập.');
 
   if (p === 'gemini') {
-    var tryModels = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.5-pro'];
+    // 1. Tự động truy vấn danh sách model được hỗ trợ trực tiếp từ tài khoản Google của người dùng
+    var autoModels = [];
+    try {
+      var listRes = await fetch('https://generativelanguage.googleapis.com/v1beta/models?key=' + encodeURIComponent(key));
+      if (listRes.ok) {
+        var listData = await listRes.json();
+        if (listData.models && Array.isArray(listData.models)) {
+          autoModels = listData.models
+            .filter(function(m) { return m.supportedGenerationMethods && m.supportedGenerationMethods.includes('generateContent'); })
+            .map(function(m) { return m.name.replace(/^models\//, ''); });
+        }
+      }
+    } catch (eList) { }
+
+    // Sắp xếp ưu tiên các model flash nhanh nhất
+    var priorityModels = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.5-flash-8b', 'gemini-1.5-flash-latest', 'gemini-pro', 'gemini-1.0-pro'];
+    var tryModels = [];
+    
+    // Thêm các priority models có trong autoModels trước
+    priorityModels.forEach(function(pm) {
+      if (autoModels.includes(pm)) tryModels.push(pm);
+    });
+    // Thêm các model còn lại trong autoModels
+    autoModels.forEach(function(am) {
+      if (!tryModels.includes(am)) tryModels.push(am);
+    });
+    // Nếu autoModels rỗng (do mạng chặn list), fallback về priority list
+    if (tryModels.length === 0) {
+      tryModels = priorityModels;
+    }
+
     var lastErrMsg = '';
 
     for (var mIdx = 0; mIdx < tryModels.length; mIdx++) {
