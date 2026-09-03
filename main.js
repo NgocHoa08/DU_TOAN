@@ -6229,7 +6229,7 @@ function renderHandoverForm() {
         '<td><input type="text" class="key-inp" style="width:100%;font-weight:600" value="' + escH(d.name || '') + '" oninput="bbDevs[' + i + '].name=this.value" placeholder="Nhập tên thiết bị..."></td>' +
         '<td class="ctr"><input type="number" class="key-inp" style="width:100%;text-align:center;font-weight:700" value="' + (d.qty || 1) + '" oninput="bbDevs[' + i + '].qty=this.value"></td>' +
         '<td class="ctr"><input type="text" class="key-inp" style="width:100%;text-align:center" value="' + escH(d.unit || 'Máy') + '" oninput="bbDevs[' + i + '].unit=this.value"></td>' +
-        '<td><textarea class="key-inp" style="width:100%;height:75px;resize:vertical;font-family:monospace;font-size:12px" oninput="bbDevs[' + i + '].serials=this.value" placeholder="Dán danh sách serials vào đây (tự động chia 2 cột đều nhau)...">' + escH(d.serials || '') + '</textarea></td>' +
+        '<td><textarea class="key-inp" style="width:100%;height:75px;resize:vertical;font-family:monospace;font-size:12px;text-align:center" oninput="bbDevs[' + i + '].serials=this.value" placeholder="Dán danh sách serials vào đây (tự động chia 2 cột đều nhau và căn giữa)...">' + escH(d.serials || '') + '</textarea></td>' +
         '<td class="ctr"><button class="btn btn-o btn-sm" style="color:var(--re);border-color:rgba(207,34,46,0.3)" onclick="bbRemoveDev(' + i + ')" title="Xóa thiết bị này">✕</button></td>' +
         '</tr>';
     });
@@ -6528,7 +6528,7 @@ function exportHandoverWord() {
       serCellHtml += '</tbody></table>';
     } else {
       // Từ 10 serial trở lên → chia đôi: Nửa đầu bên TRÁI, Nửa sau bên PHẢI
-      serTdAlign = 'left'; // 2 cột thì không căn giữa toàn ô
+      serTdAlign = 'center'; // Căn giữa toàn bộ serial
       var total = serLines.length;
       var half = Math.ceil(total / 2);
       var leftItems = serLines.slice(0, half);
@@ -6542,8 +6542,8 @@ function exportHandoverWord() {
         var lVal = leftItems[j] || '&nbsp;';
         var rVal = (j < rightItems.length) ? rightItems[j] : '&nbsp;';
         serCellHtml += '<tr>';
-        serCellHtml += '<td class="col-l" style="width:50%;border:none;border-right:1.0pt solid #000;padding:1.5pt 6pt;vertical-align:middle;font-size:11pt;line-height:1.25;">' + lVal + '</td>';
-        serCellHtml += '<td class="col-r" style="width:50%;border:none;padding:1.5pt 6pt;vertical-align:middle;font-size:11pt;line-height:1.25;">' + rVal + '</td>';
+        serCellHtml += '<td class="col-l" align="center" style="width:50%;border:none;border-right:1.0pt solid #000;padding:1.5pt 6pt;vertical-align:middle;font-size:11pt;line-height:1.25;text-align:center;">' + lVal + '</td>';
+        serCellHtml += '<td class="col-r" align="center" style="width:50%;border:none;padding:1.5pt 6pt;vertical-align:middle;font-size:11pt;line-height:1.25;text-align:center;">' + rVal + '</td>';
         serCellHtml += '</tr>';
       }
       serCellHtml += '</tbody></table>';
@@ -6586,9 +6586,9 @@ function exportHandoverWord() {
   table.content-table td, table.content-table th { border: 1px solid black; padding: 6px; }
   table.content-table td.ser-cell { padding: 0 !important; margin: 0 !important; }
   table.serial-subtable { border-collapse: collapse !important; width: 100% !important; border: none !important; margin: 0 !important; padding: 0 !important; }
-  table.serial-subtable td { border: none !important; padding: 1.5pt 6pt !important; vertical-align: middle !important; font-size: 11pt !important; line-height: 1.25 !important; }
-  table.serial-subtable td.col-l { border-right: 1.0pt solid black !important; width: 50% !important; }
-  table.serial-subtable td.col-r { width: 50% !important; }
+  table.serial-subtable td { border: none !important; padding: 1.5pt 6pt !important; vertical-align: middle !important; font-size: 11pt !important; line-height: 1.25 !important; text-align: center !important; }
+  table.serial-subtable td.col-l { border-right: 1.0pt solid black !important; width: 50% !important; text-align: center !important; }
+  table.serial-subtable td.col-r { width: 50% !important; text-align: center !important; }
   .ctr { text-align: center; }
   .val-mid { vertical-align: middle; }
   .bold { font-weight: bold; }
