@@ -218,11 +218,12 @@
 
             <div class="cat-nav" id="catNav">
               <button class="cat-btn active" onclick="filterCatType('all')">Tất cả danh mục</button>
-              <button class="cat-btn" onclick="filterCatType('may_in')">🖨️ Máy in Laser A4</button>
-              <button class="cat-btn" onclick="filterCatType('photocopy')">📠 Máy photocopy / Đa năng</button>
+              <button class="cat-btn" onclick="filterCatType('dien_thoai')">📱 Điện thoại &amp; IP Phone</button>
+              <button class="cat-btn" onclick="filterCatType('may_tinh')">💻 Máy tính &amp; Laptop</button>
+              <button class="cat-btn" onclick="filterCatType('man_hinh')">🖥️ Màn hình máy tính</button>
+              <button class="cat-btn" onclick="filterCatType('may_in')">🖨️ Máy in &amp; Photocopy</button>
               <button class="cat-btn" onclick="filterCatType('may_scan')">📄 Máy Scan tài liệu</button>
-              <button class="cat-btn" onclick="filterCatType('may_tinh')">💻 Máy tính / Mini PC</button>
-              <button class="cat-btn" onclick="filterCatType('thiet_bi_khac')">🔋 UPS &amp; Thiết bị mạng</button>
+              <button class="cat-btn" onclick="filterCatType('thiet_bi_khac')">🌐 Mạng, UPS &amp; Khác</button>
             </div>
 
             <!-- Catalog Items Grid -->
@@ -678,23 +679,23 @@
     </div>
   </div> <!-- end view-tddu -->
 
-  <!-- ══════════════════ VIEW BAO GIA (ADMIN) ══════════════════ -->
+  <!-- ══════════════════ VIEW BAO GIA (ADMIN - THUẬN PHÁT) ══════════════════ -->
   <div id="view-baogia" style="display:none">
     <div class="card" style="margin-top:0">
       <div class="ch">
         <div class="ci">💰</div>
         <div>
-          <div class="ct">Lập Bảng Báo Giá Thiết Bị Chuyên Nghiệp</div>
-          <div class="cs">Đã đọc &amp; nạp sẵn từ file "Báo giá máy Scan, Photo" - Xuất file Excel chuẩn mẫu</div>
+          <div class="ct">Lập Bảng Báo Giá Thuận Phát Chuẩn Mẫu (BGThuanPhat.xlsx)</div>
+          <div class="cs">Tự động tính thuế VAT, thành tiền, dịch số tiền thành chữ và xuất file Excel chuẩn 100% mẫu công ty Thuận Phát</div>
         </div>
       </div>
 
-      <!-- CUSTOMER INFO FORM -->
+      <!-- CUSTOMER & SETTINGS INFO FORM -->
       <div style="background:var(--card2);border:1px solid var(--bdr);border-radius:var(--rs);padding:16px;margin-bottom:16px">
         <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
-          <div style="font-weight:800;font-size:14px;color:var(--t1)">🏢 THÔNG TIN BẢNG BÁO GIÁ</div>
-          <select onchange="bgFillCustomer(this.value);this.value='';" style="font-size:12px;padding:5px 10px;border-radius:6px;border:1px solid var(--bdr2);background:var(--card);color:var(--t1);cursor:pointer;max-width:300px">
-            <option value="">📋 Chọn mẫu khách hàng ▾</option>
+          <div style="font-weight:800;font-size:14px;color:var(--t1)">🏢 THÔNG TIN BẢNG BÁO GIÁ THUẬN PHÁT</div>
+          <select onchange="bgFillCustomer(this.value);this.value='';" style="font-size:12px;padding:5px 10px;border-radius:6px;border:1px solid var(--bdr2);background:var(--card);color:var(--t1);cursor:pointer;max-width:320px">
+            <option value="">📋 Chọn mẫu khách hàng nhanh ▾</option>
             <option value="hoa_phat">🏢 Hòa Phát (Kiến Hưng Hà Đông - 0787416666)</option>
             <option value="ecoit">🏢 ECOIT (Imperia Garden - Đoàn Văn Ngà)</option>
             <option value="tin_thanh">🏢 Tín Thành (Do Nha Tây Mỗ / Cầu Giấy)</option>
@@ -703,35 +704,51 @@
           </select>
         </div>
         <div class="fgrid">
-          <div class="fg"><label>Kính gửi (Người nhận / Quý khách hàng)</label><input id="bg_to" type="text" value="Quý khách hàng" /></div>
-          <div class="fg"><label>Tên Công ty / Cơ quan</label><input id="bg_company" type="text" placeholder="Nhập tên đơn vị nhận báo giá..." /></div>
-          <div class="fg full"><label>Địa chỉ nhận hàng / trụ sở</label><input id="bg_address" type="text" placeholder="Nhập địa chỉ..." /></div>
-          <div class="fg"><label>Ngày báo giá</label><input id="bg_date" type="date" /></div>
-          <div class="fg"><label>Đơn vị gửi báo giá</label><input id="bg_seller" type="text" value="CÔNG TY TNHH THƯƠNG MẠI ĐẦU TƯ VÀ SẢN XUẤT THUẬN PHÁT" /></div>
+          <div class="fg"><label>Kính gửi (Người nhận / Quý khách hàng)</label><input id="bg_to" type="text" value="Quý khách hàng" oninput="renderBaogiaForm()" /></div>
+          <div class="fg"><label>Tên Công ty / Cơ quan</label><input id="bg_company" type="text" placeholder="Nhập tên đơn vị nhận báo giá..." oninput="renderBaogiaForm()" /></div>
+          <div class="fg full"><label>Đơn vị gửi báo giá</label><input id="bg_seller" type="text" value="Công ty TNHH Thương Mại Đầu tư và Sản xuất Thuận Phát" oninput="renderBaogiaForm()" /></div>
+          <div class="fg"><label>Ngày báo giá</label><input id="bg_date" type="date" onchange="renderBaogiaForm()" /></div>
+          <div class="fg">
+            <label>Thuế suất VAT (%)</label>
+            <select id="bg_vat_rate" onchange="renderBaogiaForm()">
+              <option value="10" selected>10% (Chuẩn hiện hành)</option>
+              <option value="8">8% (Thuế suất ưu đãi)</option>
+              <option value="0">0% (Không chịu thuế VAT)</option>
+            </select>
+          </div>
+          <div class="fg"><label>Thời gian giao hàng</label><input id="bg_delivery_time" type="text" value="Trong vòng 03 - 05 ngày làm việc" oninput="renderBaogiaForm()" /></div>
+          <div class="fg"><label>Địa điểm giao hàng</label><input id="bg_delivery_loc" type="text" value="Tại kho bên mua hoặc địa điểm chỉ định" oninput="renderBaogiaForm()" /></div>
+          <div class="fg full"><label>Hiệu lực của báo giá</label><input id="bg_validity" type="text" value="trong vòng 20 ngày kể từ ngày phát hành báo giá." oninput="renderBaogiaForm()" /></div>
         </div>
       </div>
 
-      <!-- TOOLBAR & PRODUCTS TABLE -->
+      <!-- TOOLBAR & QUICK ACTIONS -->
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
-        <div style="font-weight:700;font-size:14px;color:var(--t1)">Bảng Chi Tiết Giá &amp; Thông Số Kỹ Thuật Thiết Bị</div>
+        <div style="font-weight:700;font-size:14px;color:var(--t1)">Danh Mục Sản Phẩm &amp; Bảng Giá</div>
         <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-          <button class="btn btn-p btn-sm" onclick="bgAddProduct()">➕ Thêm thiết bị</button>
-          <button class="btn btn-o btn-sm" onclick="bgLoadOriginal8Items()">🔄 Nạp lại 8 mẫu máy Scan &amp; Photo gốc</button>
+          <button class="btn btn-p btn-sm" onclick="bgAddProduct()">➕ Thêm dòng sản phẩm</button>
+          <button class="btn btn-o btn-sm" onclick="bgSyncFromDuToan()" title="Lấy tất cả thiết bị từ tab Dự Toán sang đây">🔄 Lấy từ tab Dự Toán</button>
+          <button class="btn btn-o btn-sm" onclick="bgLoadSampleThuanPhat()" title="Nạp lại file mẫu BGThuanPhat.xlsx gốc">✨ Nạp mẫu BGThuanPhat</button>
+          <label class="btn btn-o btn-sm" style="cursor:pointer;margin:0" title="Tải file Excel báo giá có sẵn lên">
+            📁 Nhập file Excel...
+            <input type="file" accept=".xlsx,.xls" onchange="bgImportExcel(event)" style="display:none" />
+          </label>
           <button class="btn btn-o btn-sm" style="color:var(--re);border-color:rgba(207,34,46,0.3)" onclick="bgClearAll()">🗑️ Xóa trắng</button>
         </div>
       </div>
 
+      <!-- LIVE PREVIEW TABLE -->
       <div id="bgTableArea" style="overflow-x:auto;margin-bottom:16px"></div>
 
       <!-- EXPORT ACTIONS -->
       <div class="expc" style="margin-top:16px">
-        <div class="expc-ico">📥</div>
-        <div class="expc-t">Xuất File Excel Bảng Báo Giá (.xlsx)</div>
+        <div class="expc-ico">📊</div>
+        <div class="expc-t">Xuất File Excel Báo Giá Thuận Phát Chuẩn (.xlsx)</div>
         <div class="expc-d">
-          File Excel xuất ra gồm đầy đủ tiêu đề công ty, thông tin khách hàng, bảng danh mục sản phẩm kèm từng dòng thông số kỹ thuật chi tiết của từng máy, đơn giá, thành tiền và tổng cộng thanh toán chuẩn định dạng.
+          File Excel xuất ra chuẩn 100% mẫu <b>BGThuanPhat.xlsx</b>: Sheet "Báo giá TP", tiêu đề trang trọng, bảng sản phẩm có công thức thành tiền tự động <code>=G*H</code>, tổng cộng trước thuế <code>=SUM()</code>, thuế VAT <code>=I*10%</code>, tổng sau thuế, kèm dịch số tiền thành chữ Tiếng Việt chuẩn xác.
         </div>
         <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-          <button class="btn btn-g btn-lg" onclick="exportBaogiaExcel()">⬇️ Tải file Excel Báo Giá (.xlsx)</button>
+          <button class="btn btn-g btn-lg" onclick="exportBaogiaExcel()">⬇️ Tải file Excel Báo Giá Thuận Phát (.xlsx)</button>
         </div>
       </div>
     </div>

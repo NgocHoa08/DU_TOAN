@@ -4179,6 +4179,264 @@ var MODEL_PRESETS = {
       { key: 'Thời gian bảo hành', value: '12 tháng' }
     ]
   },
+  // ── ĐIỆN THOẠI & IP PHONE ──
+  'dt_iphone_15_pro_max': {
+    name: 'Điện thoại thông minh Apple iPhone 15 Pro Max 256GB',
+    model: 'iPhone 15 Pro Max', brand: 'Apple', origin: 'Trung Quốc', warranty: '12 tháng', unit: 'Chiếc', price: 0,
+    specs: [
+      { key: 'Màn hình', value: '6.7 inch Super Retina XDR OLED, 2796 x 1290 pixel, 120Hz ProMotion, Độ sáng tối đa 2000 nits' },
+      { key: 'Bộ vi xử lý (Chipset)', value: 'Apple A17 Pro (6 nhân CPU: 2 nhân hiệu năng cao + 4 nhân tiết kiệm điện, 6 nhân GPU, 16 nhân Neural Engine)' },
+      { key: 'Bộ nhớ RAM', value: '8GB' },
+      { key: 'Bộ nhớ trong (ROM)', value: '256GB NVMe' },
+      { key: 'Hệ thống Camera sau', value: 'Cụm 3 camera: Chính 48MP (f/1.78, OIS dịch chuyển cảm biến thế hệ 2) + Góc siêu rộng 12MP (120 độ) + Telephoto 12MP (Zoom quang 5x)' },
+      { key: 'Camera trước', value: '12MP TrueDepth (f/1.9), tự động lấy nét PDAF' },
+      { key: 'Quay video', value: '4K Dolby Vision HDR @ 60fps, quay video ProRes 4K @ 60fps với ghi ngoài qua USB-C' },
+      { key: 'Dung lượng Pin & Sạc', value: '4.422 mAh, Sạc nhanh 20W (50% trong 30 phút), Sạc không dây MagSafe 15W' },
+      { key: 'Cổng kết nối', value: 'USB-C (hỗ trợ chuẩn USB 3.0 tốc độ truyền dữ liệu lên tới 10Gb/s)' },
+      { key: 'Kết nối mạng & không dây', value: '5G (sub-6 GHz), Wi-Fi 6E (802.11ax), Bluetooth 5.3, Chip Ultra Wideband thế hệ 2, NFC' },
+      { key: 'SIM', value: 'Hỗ trợ 2 SIM (1 Nano SIM + 1 eSIM hoặc 2 eSIM)' },
+      { key: 'Chỉ số kháng nước & bụi', value: 'Đạt chuẩn IP68 (chống nước ở độ sâu 6m trong tối đa 30 phút theo tiêu chuẩn IEC 60529)' },
+      { key: 'Bảo mật', value: 'Nhận diện khuôn mặt Face ID bảo mật qua camera TrueDepth' },
+      { key: 'Chất liệu khung vỏ', value: 'Khung viền Titanium chuẩn hàng không vũ trụ, mặt lưng kính nhám cao cấp' },
+      { key: 'Hệ điều hành', value: 'iOS 17 (hoặc phiên bản mới nhất)' },
+      { key: 'Kích thước & Trọng lượng', value: '159.9 x 76.7 x 8.25 mm, Trọng lượng: 221 g' },
+      { key: 'Bảo hành', value: '12 tháng chính hãng' }
+    ]
+  },
+  'dt_samsung_s24_ultra': {
+    name: 'Điện thoại thông minh Samsung Galaxy S24 Ultra 5G 256GB',
+    model: 'Galaxy S24 Ultra (SM-S928B)', brand: 'Samsung', origin: 'Việt Nam', warranty: '12 tháng', unit: 'Chiếc', price: 0,
+    specs: [
+      { key: 'Màn hình', value: '6.8 inch Dynamic AMOLED 2X, QHD+ (3120 x 1440 pixel), Tần số quét tương thích 1-120Hz, Độ sáng 2600 nits, Kính cường lực Corning Gorilla Armor chống chói' },
+      { key: 'Bộ vi xử lý', value: 'Qualcomm Snapdragon 8 Gen 3 for Galaxy (4nm, 8 nhân, xung nhịp tối đa 3.39GHz)' },
+      { key: 'Bộ nhớ RAM', value: '12GB LPDDR5X' },
+      { key: 'Bộ nhớ trong (ROM)', value: '256GB UFS 4.0' },
+      { key: 'Bút cảm ứng đi kèm', value: 'Tích hợp sẵn bút S-Pen điều khiển từ xa có khe cắm trong thân máy' },
+      { key: 'Camera chính sau', value: '200MP (f/1.7, OIS) + 50MP Periscope Tele (Zoom quang 5x, OIS) + 10MP Tele (Zoom quang 3x) + 12MP Ultra-Wide (120 độ)' },
+      { key: 'Camera trước', value: '12MP Dual Pixel PDAF (f/2.2)' },
+      { key: 'Tính năng AI thông minh', value: 'Galaxy AI (Dịch trực tiếp cuộc gọi, Trợ lý phiên dịch, Khoanh tròn tìm kiếm Circle to Search, Trợ lý Note/Photo AI)' },
+      { key: 'Pin & Sạc', value: '5.000 mAh, Sạc siêu nhanh 45W có dây, Sạc nhanh không dây 15W, Chia sẻ pin không dây' },
+      { key: 'Kết nối', value: '5G, Wi-Fi 7, Bluetooth 5.3, NFC, Cổng USB Type-C 3.2 Gen 1 (hỗ trợ Samsung DeX)' },
+      { key: 'Kháng nước & Bụi', value: 'Chuẩn IP68' },
+      { key: 'Hệ điều hành', value: 'Android 14 với giao diện One UI 6.1 (hỗ trợ nâng cấp OS 7 năm)' },
+      { key: 'Kích thước & Trọng lượng', value: '162.3 x 79.0 x 8.6 mm, 232 g, Khung viền Titanium' },
+      { key: 'Bảo hành', value: '12 tháng chính hãng' }
+    ]
+  },
+  'dt_yealink_t46u': {
+    name: 'Điện thoại IP Doanh Nghiệp Yealink SIP-T46U',
+    model: 'SIP-T46U', brand: 'Yealink', origin: 'Trung Quốc', warranty: '12 tháng', unit: 'Chiếc', price: 0,
+    specs: [
+      { key: 'Chủng loại', value: 'Điện thoại IP để bàn Gigabit cao cấp cho doanh nghiệp và lãnh đạo' },
+      { key: 'Màn hình hiển thị', value: 'Màn hình màu LCD 4.3 inch (480 x 272 pixel) có đèn nền' },
+      { key: 'Tài khoản SIP', value: 'Hỗ trợ lên tới 16 tài khoản SIP độc lập' },
+      { key: 'Chất lượng âm thanh', value: 'Âm thanh chuẩn Yealink Optima HD Voice, công nghệ lọc ồn thông minh Acoustic Shield' },
+      { key: 'Cổng mạng LAN', value: '2 cổng mạng Gigabit Ethernet 10/100/1000Mbps, tích hợp cấp nguồn qua mạng PoE (IEEE 802.3af)' },
+      { key: 'Cổng USB mở rộng', value: '2 cổng USB 2.0 (hỗ trợ cắm USB ghi âm cuộc gọi, Tai nghe USB, Dongle Wi-Fi WF50 hoặc Dongle Bluetooth BT41)' },
+      { key: 'Phím chức năng', value: '10 phím Line với đèn LED 2 màu (lên tới 27 phím DSS không giấy qua 3 trang chuyển đổi)' },
+      { key: 'Bộ giải mã âm thanh (Audio Codec)', value: 'Opus, G.722, G.711(A/u), G.729AB, G.726, iLBC' },
+      { key: 'Tính năng thoại', value: 'Hội nghị âm thanh 3 bên, Chuyển cuộc gọi, Giữ cuộc gọi, Chuyển tiếp cuộc gọi, Danh bạ tới 1000 số' },
+      { key: 'Bảo mật mạng', value: 'SIP over TLS/SRTP, HTTPS, OpenVPN, 802.1x, VLAN' },
+      { key: 'Bảo hành', value: '12 tháng' }
+    ]
+  },
+  'dt_grandstream_2614': {
+    name: 'Điện thoại IP Grandstream GRP2614 Carrier-Grade',
+    model: 'GRP2614', brand: 'Grandstream', origin: 'Trung Quốc', warranty: '12 tháng', unit: 'Chiếc', price: 0,
+    specs: [
+      { key: 'Màn hình', value: '2 màn hình LCD: Màn hình chính màu TFT 2.8 inch (320x240) + Màn hình phụ 2.4 inch hiển thị phím số nhanh' },
+      { key: 'Tài khoản SIP', value: '4 tài khoản SIP, 4 phím Line chính, lên tới 40 phím số nhanh BLF ảo' },
+      { key: 'Kết nối mạng không dây', value: 'Tích hợp sẵn Wi-Fi băng tần kép 802.11 a/b/g/n/ac (2.4GHz & 5GHz) và Bluetooth 5.0' },
+      { key: 'Cổng mạng có dây', value: '2 cổng mạng Gigabit 10/100/1000 Mbps hỗ trợ PoE tích hợp' },
+      { key: 'Âm thanh', value: 'Âm thanh HD trên loa ngoài và tay cầm nghe, công nghệ lọc tạp âm' },
+      { key: 'Bảo mật chuẩn Carrier', value: 'Khởi động an toàn Secure Boot, mã hóa kép hình ảnh phần mềm, lưu trữ dữ liệu mã hóa' },
+      { key: 'Bảo hành', value: '12 tháng' }
+    ]
+  },
+
+  // ── MÀN HÌNH MÁY TÍNH ──
+  'mh_dell_u2424h': {
+    name: 'Màn hình vi tính Dell UltraSharp 23.8 inch U2424H',
+    model: 'U2424H', brand: 'Dell', origin: 'Trung Quốc', warranty: '36 tháng', unit: 'Chiếc', price: 0,
+    specs: [
+      { key: 'Kích thước đường chéo', value: '23.8 inch (60.47 cm)' },
+      { key: 'Tấm nền hiển thị (Panel)', value: 'IPS (In-Plane Switching) cao cấp chống chói 3H' },
+      { key: 'Độ phân giải', value: 'Full HD (1920 x 1080 pixel) @ 120Hz' },
+      { key: 'Tỷ lệ khung hình', value: '16:9' },
+      { key: 'Độ sáng màn hình', value: '250 cd/m² (nits)' },
+      { key: 'Độ tương phản', value: '1000:1 (tĩnh)' },
+      { key: 'Thời gian đáp ứng', value: '5ms (Fast mode), 8ms (Normal mode)' },
+      { key: 'Góc nhìn', value: '178° dọc / 178° ngang' },
+      { key: 'Độ phủ màu', value: '100% sRGB, 100% BT.709, 85% DCI-P3, Delta E < 2' },
+      { key: 'Công nghệ bảo vệ mắt', value: 'Cảm biến ánh sáng tự động chỉnh độ sáng, ComfortView Plus giảm ánh sáng xanh có hại' },
+      { key: 'Cổng kết nối', value: '1 x DisplayPort 1.4, 1 x DisplayPort out (MST), 1 x HDMI 1.4, 1 x USB-C (Data only), 3 x USB-A 3.2 Gen 2 10Gbps, 1 x Audio-out 3.5mm' },
+      { key: 'Khả năng điều chỉnh chân đế', value: 'Nâng hạ độ cao 150mm, Xoay dọc 90 độ hai chiều, Xoay ngang -45° đến 45°, Nghiêng -5° đến 21°' },
+      { key: 'Chuẩn gắn VESA', value: 'VESA 100 x 100 mm' },
+      { key: 'Phụ kiện đi kèm', value: 'Dây nguồn, Cáp DisplayPort to DisplayPort 1.8m, Cáp USB-A to USB-C 1.0m' },
+      { key: 'Bảo hành', value: '36 tháng chính hãng' }
+    ]
+  },
+  'mh_lg_27up850': {
+    name: 'Màn hình đồ họa LG 27 inch 4K UHD 27UP850N-W',
+    model: '27UP850N-W', brand: 'LG', origin: 'Trung Quốc', warranty: '24 tháng', unit: 'Chiếc', price: 0,
+    specs: [
+      { key: 'Kích thước màn hình', value: '27 inch (68.4 cm)' },
+      { key: 'Độ phân giải', value: '4K UHD (3840 x 2160 pixel)' },
+      { key: 'Tấm nền', value: 'IPS với góc nhìn siêu rộng 178/178 độ' },
+      { key: 'Độ sáng & Độ tương phản', value: '400 cd/m², Độ tương phản 1200:1, Hỗ trợ VESA DisplayHDR 400' },
+      { key: 'Không gian màu', value: 'DCI-P3 95% (CIE1976), hiệu chuẩn màu sẵn tại nhà máy (Hardware Calibration Ready)' },
+      { key: 'Cổng giao tiếp đa năng', value: '1 x USB Type-C (hỗ trợ truyền hình ảnh 4K, dữ liệu và sạc ngược Power Delivery 90W), 2 x HDMI, 1 x DisplayPort 1.4, 2 x USB 3.0, 1 x Audio out' },
+      { key: 'Tích hợp loa ngoài', value: 'Hệ thống loa Stereo 5W x 2 công nghệ Waves MaxxAudio' },
+      { key: 'Công nghệ hỗ trợ hình ảnh', value: 'AMD FreeSync, Dynamic Action Sync, Black Stabilizer, Flicker Safe, Reader Mode' },
+      { key: 'Chân đế', value: 'Chân đế điều chỉnh độ cao, xoay dọc màn hình 90 độ và gập nghiêng' },
+      { key: 'Bảo hành', value: '24 tháng' }
+    ]
+  },
+  'mh_samsung_24': {
+    name: 'Màn hình vi tính Samsung 24 inch LS24C310EAEXXV',
+    model: 'LS24C310EAEXXV', brand: 'Samsung', origin: 'Việt Nam', warranty: '24 tháng', unit: 'Chiếc', price: 0,
+    specs: [
+      { key: 'Kích thước hiển thị', value: '23.8 inch (60.4 cm) viền siêu mỏng 3 cạnh' },
+      { key: 'Tấm nền (Panel)', value: 'IPS góc nhìn rộng 178/178 độ' },
+      { key: 'Độ phân giải', value: 'Full HD (1920 x 1080 pixel) @ 75Hz' },
+      { key: 'Độ sáng', value: '250 cd/m² (nits)' },
+      { key: 'Thời gian phản hồi', value: '5ms (GTG)' },
+      { key: 'Công nghệ đồng bộ', value: 'AMD FreeSync giảm thiểu giật hình và xé hình' },
+      { key: 'Bảo vệ mắt', value: 'Chế độ Eye Saver Mode và công nghệ chống nháy Flicker Free' },
+      { key: 'Cổng kết nối', value: '1 x HDMI 1.4, 1 x D-Sub (VGA)' },
+      { key: 'Chuẩn VESA', value: '75 x 75 mm' },
+      { key: 'Bảo hành', value: '24 tháng chính hãng' }
+    ]
+  },
+
+  // ── MÁY TÍNH ĐỂ BÀN & LAPTOP ──
+  'pc_dell_optiplex_7010': {
+    name: 'Máy vi tính để bàn Dell OptiPlex 7010 SFF',
+    model: 'OptiPlex 7010 SFF', brand: 'Dell', origin: 'Trung Quốc', warranty: '36 tháng', unit: 'Bộ', price: 0,
+    specs: [
+      { key: 'Kiểu dáng thân máy', value: 'Small Form Factor (SFF) nhỏ gọn, tiết kiệm không gian' },
+      { key: 'Bộ vi xử lý (CPU)', value: 'Intel Core i5-13500 (14 nhân, 20 luồng, 24MB Cache, xung nhịp cơ bản 2.50 GHz, tối đa 4.80 GHz)' },
+      { key: 'Bộ nhớ trong (RAM)', value: '16GB (1x16GB) DDR4 3200MHz (2 khe cắm RAM, nâng cấp tối đa 64GB)' },
+      { key: 'Ổ đĩa cứng lưu trữ', value: '512GB M.2 PCIe NVMe Class 35 SSD (hỗ trợ thêm 1 khe cắm ổ cứng 3.5 inch/2.5 inch SATA)' },
+      { key: 'Card đồ họa', value: 'Tích hợp Intel UHD Graphics 770' },
+      { key: 'Kết nối mạng có dây', value: 'Integrated Realtek RTL8111HSD-CG Gigabit Ethernet LAN 10/100/1000' },
+      { key: 'Kết nối không dây', value: 'Intel Wi-Fi 6E AX211 2x2 802.11ax + Bluetooth 5.3' },
+      { key: 'Cổng kết nối mặt trước', value: '2 x USB 3.2 Gen 1, 2 x USB 2.0, 1 x Jack tai nghe 3.5mm combo' },
+      { key: 'Cổng kết nối mặt sau', value: '2 x USB 3.2 Gen 1, 2 x USB 2.0, 1 x DisplayPort 1.4a, 1 x HDMI 1.4b, 1 x RJ-45 LAN, 1 x Audio out' },
+      { key: 'Bộ nguồn (PSU)', value: '180W chuẩn 80 PLUS Bronze chứng nhận tiết kiệm điện' },
+      { key: 'Bàn phím & Chuột', value: 'Bàn phím có dây Dell KB216 USB + Chuột quang có dây Dell MS116 USB' },
+      { key: 'Hệ điều hành', value: 'Windows 11 Home / Pro 64-bit bản quyền' },
+      { key: 'Bảo hành', value: '36 tháng ProSupport tận nơi' }
+    ]
+  },
+  'pc_hp_prodesk_400': {
+    name: 'Máy tính để bàn HP ProDesk 400 G9 SFF',
+    model: 'ProDesk 400 G9 SFF', brand: 'HP', origin: 'Trung Quốc', warranty: '12 tháng', unit: 'Bộ', price: 0,
+    specs: [
+      { key: 'Bộ vi xử lý (CPU)', value: 'Intel Core i5-13500 (14 nhân, 20 luồng, 24MB L3 Cache, xung nhịp Turbo tối đa 4.8 GHz)' },
+      { key: 'Chipset bo mạch', value: 'Intel Q670 Express' },
+      { key: 'Bộ nhớ RAM', value: '16GB (1x16GB) DDR4 3200MHz' },
+      { key: 'Ổ đĩa lưu trữ', value: '512GB PCIe NVMe M.2 SSD' },
+      { key: 'Đồ họa', value: 'Intel UHD Graphics 770' },
+      { key: 'Cổng kết nối', value: '1 x HDMI 1.4b, 1 x DisplayPort 1.4, 1 x RJ-45, 1 x USB Type-C 10Gbps, 3 x SuperSpeed USB Type-A 10Gbps, 3 x USB Type-A 480Mbps' },
+      { key: 'Bàn phím & Chuột', value: 'Đi kèm trọn bộ Bàn phím + Chuột quang HP cổng USB' },
+      { key: 'Bảo hành', value: '12 tháng chính hãng HP' }
+    ]
+  },
+  'lt_dell_latitude_3440': {
+    name: 'Máy tính xách tay Dell Latitude 3440 (14 inch)',
+    model: 'Latitude 3440', brand: 'Dell', origin: 'Trung Quốc', warranty: '12 tháng', unit: 'Chiếc', price: 0,
+    specs: [
+      { key: 'Màn hình', value: '14.0 inch Full HD (1920 x 1080), IPS, chống chói Anti-Glare, độ sáng 250 nits' },
+      { key: 'Bộ vi xử lý (CPU)', value: 'Intel Core i5-1335U (10 nhân, 12 luồng, 12MB Cache, Turbo Boost lên đến 4.60 GHz)' },
+      { key: 'Bộ nhớ RAM', value: '16GB (1x16GB) DDR4 3200MHz (2 khe RAM SODIMM, hỗ trợ tối đa 64GB)' },
+      { key: 'Ổ cứng lưu trữ', value: '512GB M.2 2230 PCIe NVMe SSD' },
+      { key: 'Đồ họa', value: 'Intel Iris Xe Graphics' },
+      { key: 'Webcam & Âm thanh', value: 'Camera HD 720p có nắp che bảo mật cơ học (Privacy Shutter), Micro kép, 2 loa Waves MaxxAudio Pro' },
+      { key: 'Kết nối mạng', value: 'Intel Wi-Fi 6E AX211 (2x2) + Bluetooth 5.3 + Cổng mạng LAN RJ45 10/100/1000' },
+      { key: 'Cổng giao tiếp', value: '1 x USB 3.2 Gen 2 Type-C (DisplayPort & Power Delivery), 3 x USB 3.2 Gen 1, 1 x HDMI 1.4, 1 x Audio Jack combo 3.5mm' },
+      { key: 'Dung lượng Pin & Sạc', value: 'Pin 3 cell 42Wh hỗ trợ công nghệ sạc nhanh ExpressCharge, Củ sạc 65W Type-C' },
+      { key: 'Trọng lượng', value: '1.54 kg' },
+      { key: 'Hệ điều hành', value: 'Windows 11 Home / Pro bản quyền' },
+      { key: 'Bảo hành', value: '12 tháng tận nơi' }
+    ]
+  },
+
+  // ── MÁY IN LASER & ĐA NĂNG ──
+  'in_canon_2900': {
+    name: 'Máy in laser đen trắng Canon LBP2900',
+    model: 'LBP2900', brand: 'Canon', origin: 'Việt Nam', warranty: '12 tháng', unit: 'Chiếc', price: 0,
+    specs: [
+      { key: 'Chức năng chuẩn', value: 'In đơn năng laser đen trắng A4/A5' },
+      { key: 'Công nghệ in', value: 'Laser đơn sắc với công nghệ sấy theo nhu cầu độc quyền On-Demand Fixing' },
+      { key: 'Tốc độ in', value: '12 trang/phút (khổ A4)' },
+      { key: 'Độ phân giải in', value: '600 x 600 dpi (tương đương 2400 x 600 dpi với công nghệ AIR)' },
+      { key: 'Thời gian in trang đầu tiên', value: 'Xấp xỉ 9.3 giây' },
+      { key: 'Thời gian làm nóng máy', value: '0 giây (ở chế độ chờ)' },
+      { key: 'Ngôn ngữ in', value: 'CAPT 2.1 (Công nghệ nén dữ liệu in ấn thông minh của Canon)' },
+      { key: 'Bộ nhớ tiêu chuẩn', value: '2MB (sử dụng bộ nhớ máy tính qua kiến trúc CAPT)' },
+      { key: 'Khay chứa giấy nạp', value: 'Khay trước 150 tờ + Khay tay 1 tờ' },
+      { key: 'Khay giấy ra', value: '100 tờ (úp mặt xuống)' },
+      { key: 'Khổ giấy in hỗ trợ', value: 'A4, B5, A5, Letter, Legal, Executive, Envelope' },
+      { key: 'Định lượng giấy in', value: '64 đến 163 g/m²' },
+      { key: 'Giao diện kết nối', value: 'USB 2.0 tốc độ cao' },
+      { key: 'Hộp mực theo máy (Cartridge)', value: 'Cartridge Canon 303 (in khoảng 2.000 trang độ phủ 5%)' },
+      { key: 'Công suất in hàng tháng', value: 'Khuyến nghị 500 - 2.000 trang/tháng' },
+      { key: 'Hệ điều hành tương thích', value: 'Windows 11, Windows 10, Windows 8.1, Windows 7, Linux' },
+      { key: 'Bảo hành', value: '12 tháng chính hãng' }
+    ]
+  },
+  'in_hp_m404dn': {
+    name: 'Máy in laser trắng đen HP LaserJet Pro M404dn',
+    model: 'M404dn (W1A53A)', brand: 'HP', origin: 'Việt Nam', warranty: '12 tháng', unit: 'Chiếc', price: 0,
+    specs: [
+      { key: 'Chức năng chuẩn', value: 'In laser đen trắng đơn năng có in đảo mặt tự động' },
+      { key: 'Tốc độ in', value: 'Lên đến 38 trang/phút (A4 tiêu chuẩn) / In 2 mặt tự động: 31 trang/phút' },
+      { key: 'Độ phân giải', value: 'HP FastRes1200, HP ProRes1200 (1200 x 1200 dpi)' },
+      { key: 'Thời gian in trang đầu', value: 'Nhanh 6.3 giây' },
+      { key: 'Bộ xử lý CPU & Bộ nhớ', value: 'CPU tốc độ 1200 MHz, Bộ nhớ RAM 256MB DRAM' },
+      { key: 'Màn hình điều khiển', value: 'Màn hình LCD 2 dòng hiển thị rõ nét với bàn phím điều hướng' },
+      { key: 'Tính năng in 2 mặt (Duplex)', value: 'Tự động (Automatic Duplex Printing tích hợp)' },
+      { key: 'Khay nạp giấy', value: 'Khay 1 đa năng 100 tờ + Khay 2 tiêu chuẩn 250 tờ (Tổng nạp 350 tờ)' },
+      { key: 'Khay giấy ra', value: '150 tờ' },
+      { key: 'Khổ giấy in', value: 'A4, A5, A6, B5 (JIS), B6 (JIS), 16K, Legal, Letter' },
+      { key: 'Cổng kết nối', value: '1 x Hi-Speed USB 2.0, 1 x Gigabit Ethernet LAN 10/100/1000BASE-T' },
+      { key: 'Tính năng in di động', value: 'Apple AirPrint, HP ePrint, HP Smart App, Mopria Certified' },
+      { key: 'Hộp mực sử dụng', value: 'HP 76A Black LaserJet Toner Cartridge (~3.000 trang) hoặc HP 76X Black High Yield (~10.000 trang)' },
+      { key: 'Chu kỳ in hàng tháng', value: 'Tối đa 80.000 trang/tháng (khuyến nghị 750 đến 4.000 trang/tháng)' },
+      { key: 'Bảo hành', value: '12 tháng chính hãng HP' }
+    ]
+  },
+  'in_brother_l2321d': {
+    name: 'Máy in laser Brother HL-L2321D',
+    model: 'HL-L2321D', brand: 'Brother', origin: 'Việt Nam', warranty: '12 tháng', unit: 'Chiếc', price: 0,
+    specs: [
+      { key: 'Chức năng', value: 'In laser đen trắng A4 đảo mặt tự động' },
+      { key: 'Tốc độ in ấn', value: '30 trang/phút (A4)' },
+      { key: 'Độ phân giải', value: 'HQ1200 (2400 x 600 dpi), 600 x 600 dpi' },
+      { key: 'Tự động in 2 mặt', value: 'Có sẵn (Duplex Print)' },
+      { key: 'Bộ nhớ trong', value: '8MB' },
+      { key: 'Khay nạp giấy kín', value: 'Khay chứa tiêu chuẩn 250 tờ chống ẩm bụi + 1 khe nạp giấy thủ công' },
+      { key: 'Giao tiếp', value: 'USB 2.0 tốc độ cao' },
+      { key: 'Hộp mực & Cụm trống rời', value: 'Mực TN-2385 (2.600 trang) & Cụm trống từ DR-2385 (12.000 trang) giúp tiết kiệm tối đa chi phí thay thế' },
+      { key: 'Bảo hành', value: '12 tháng' }
+    ]
+  },
+  'in_epson_l3250': {
+    name: 'Máy in phun màu đa năng Epson EcoTank L3250 (In/Scan/Copy/Wi-Fi)',
+    model: 'EcoTank L3250', brand: 'Epson', origin: 'Philippines', warranty: '24 tháng', unit: 'Chiếc', price: 0,
+    specs: [
+      { key: 'Chức năng đa năng', value: 'In màu, Quét ảnh/văn bản (Scan), Sao chụp (Copy)' },
+      { key: 'Công nghệ in', value: 'Công nghệ in không nhiệt Epson Heat-Free Micro Piezo độc quyền' },
+      { key: 'Tốc độ in', value: '33 trang/phút (đen trắng nháp), 15 trang/phút (màu nháp); 10 ipm (đen ISO), 5 ipm (màu ISO)' },
+      { key: 'Độ phân giải in tối đa', value: '5760 x 1440 dpi' },
+      { key: 'Công nghệ Scan', value: 'Cảm biến phẳng Flatbed CIS, độ phân giải quang học 1200 x 2400 dpi' },
+      { key: 'Hệ thống mực liên tục', value: 'Hệ thống bình mực EcoTank chống tràn tích hợp sẵn (Mực đen 003 in 4.500 trang, bộ 3 màu 003 in 7.500 trang)' },
+      { key: 'Kết nối mạng & không dây', value: 'Wi-Fi IEEE 802.11b/g/n, Wi-Fi Direct in không cần router, USB 2.0' },
+      { key: 'In di động thông minh', value: 'Epson Smart Panel, Epson iPrint, Apple AirPrint, Mopria' },
+      { key: 'Bảo hành', value: '24 tháng hoặc 30.000 bản in (tùy điều kiện nào đến trước)' }
+    ]
+  }
 };
 
 function applyModelPreset(devId, presetKey) {
@@ -4254,22 +4512,92 @@ function applyCategoryFramework(devId, frameKey) {
   var d = devs.find(function (x) { return x.id === devId; });
   if (!d) return;
 
-  if (frameKey === 'khung_may_in') {
-    applyStandard26Specs(devId);
-    return;
-  }
-
   var keys = [];
-  if (frameKey === 'khung_photocopy') {
-    keys = ['Chức năng chuẩn', 'CPU', 'Phương thức in', 'Tốc độ in/copy', 'Bảng điều khiển', 'Bộ nhớ RAM/HDD', 'Thời gian khởi động', 'Thời gian bản chụp đầu tiên', 'Khổ giấy', 'Trữ lượng giấy', 'Bộ nạp đảo bản gốc tự động (ARDF)', 'Độ phân giải', 'In / Copy 2 mặt', 'Tốc độ quét Scan', 'Định dạng file Scan', 'Giao diện kết nối', 'Ngôn ngữ in', 'Tính năng bảo mật', 'Tuổi thọ mực', 'Tuổi thọ Trống', 'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'];
-  } else if (frameKey === 'khung_may_scan') {
-    keys = ['Kiểu máy', 'Cảm biến hình ảnh', 'Nguồn sáng', 'Khổ giấy quét', 'Định lượng giấy', 'Tốc độ quét một mặt', 'Tốc độ quét hai mặt', 'Khay nạp giấy ADF', 'Công suất quét ngày', 'Độ phân giải quang học', 'Độ phân giải đầu ra', 'Cổng kết nối', 'Cảm biến phát hiện kẹt giấy', 'Định dạng file xuất', 'Phần mềm OCR đi kèm', 'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'];
-  } else if (frameKey === 'khung_may_tinh') {
-    keys = ['Kiểu dáng', 'Bộ vi xử lý (CPU)', 'Bộ nhớ RAM', 'Ổ đĩa cứng (SSD/HDD)', 'Card đồ họa (VGA)', 'Cổng xuất hình ảnh', 'Kết nối mạng LAN', 'Kết nối không dây (Wi-Fi/Bluetooth)', 'Cổng kết nối USB', 'Bàn phím & Chuột', 'Hệ điều hành', 'Nguồn điện', 'Kích thước & Trọng lượng', 'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'];
+  if (frameKey === 'khung_dien_thoai') {
+    keys = [
+      'Chủng loại', 'Màn hình hiển thị', 'Kích thước & Độ phân giải màn hình', 'Tấm nền & Tần số quét',
+      'Bộ vi xử lý (Chipset / CPU)', 'Bộ nhớ RAM', 'Bộ nhớ lưu trữ trong (ROM)', 'Hệ thống Camera sau',
+      'Camera trước', 'Quay video', 'Dung lượng Pin & Công nghệ sạc', 'Cổng giao tiếp',
+      'Chuẩn kết nối mạng di động (5G/4G)', 'Kết nối không dây (Wi-Fi/Bluetooth/NFC)', 'Thẻ SIM hỗ trợ',
+      'Tiêu chuẩn kháng nước & bụi', 'Tính năng bảo mật', 'Chất liệu khung viền & mặt lưng',
+      'Hệ điều hành', 'Kích thước', 'Trọng lượng', 'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'
+    ];
   } else if (frameKey === 'khung_man_hinh') {
-    keys = ['Kích thước màn hình', 'Độ phân giải', 'Tấm nền (Panel)', 'Tần số quét', 'Thời gian phản hồi', 'Tỷ lệ khung hình', 'Độ sáng', 'Độ tương phản', 'Góc nhìn', 'Cổng kết nối', 'Phụ kiện đi kèm', 'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'];
+    keys = [
+      'Kích thước màn hình', 'Độ phân giải tối ưu', 'Tấm nền hiển thị (Panel)', 'Tần số quét (Refresh Rate)',
+      'Thời gian phản hồi (Response Time)', 'Tỷ lệ khung hình', 'Độ sáng màn hình', 'Độ tương phản tĩnh',
+      'Độ tương phản động', 'Góc nhìn (Ngang/Dọc)', 'Độ phủ không gian màu', 'Công nghệ chống nháy & Bảo vệ mắt',
+      'Cổng xuất hình ảnh (HDMI/DisplayPort/Type-C/VGA)', 'Cổng USB mở rộng', 'Khả năng điều chỉnh chân đế (Nâng hạ/Xoay/Nghiêng)',
+      'Chuẩn gắn tường VESA', 'Loa tích hợp', 'Công suất tiêu thụ điện', 'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'
+    ];
+  } else if (frameKey === 'khung_may_tinh') {
+    keys = [
+      'Kiểu dáng thân máy (Form Factor)', 'Bộ vi xử lý (CPU)', 'Số nhân & Số luồng xử lý', 'Tốc độ xung nhịp CPU',
+      'Bộ nhớ đệm (Cache)', 'Bộ nhớ trong (RAM)', 'Chuẩn RAM & Tốc độ Bus', 'Khả năng nâng cấp RAM',
+      'Ổ đĩa lưu trữ chính (SSD NVMe)', 'Khe cắm mở rộng lưu trữ', 'Card đồ họa (VGA)',
+      'Cổng kết nối mặt trước', 'Cổng kết nối mặt sau', 'Cổng xuất hình ảnh', 'Kết nối mạng LAN (Ethernet)',
+      'Kết nối không dây (Wi-Fi & Bluetooth)', 'Bàn phím & Chuột đi kèm', 'Bộ nguồn công suất (PSU)',
+      'Hệ điều hành bản quyền', 'Kích thước & Trọng lượng', 'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'
+    ];
+  } else if (frameKey === 'khung_laptop') {
+    keys = [
+      'Kích thước & Độ phân giải màn hình', 'Công nghệ tấm nền màn hình', 'Bộ vi xử lý (CPU)', 'Tốc độ xung nhịp CPU',
+      'Bộ nhớ trong (RAM)', 'Ổ đĩa cứng lưu trữ (SSD)', 'Card đồ họa (VGA)', 'Camera Web & Micro thu âm',
+      'Hệ thống âm thanh & Loa', 'Bàn phím & Đèn nền', 'Bàn di chuột (Touchpad)', 'Chuẩn kết nối không dây (Wi-Fi/Bluetooth)',
+      'Cổng giao tiếp (USB-A, USB-C/Thunderbolt, HDMI)', 'Cổng mạng LAN', 'Cảm biến bảo mật (Vân tay/Khuôn mặt)',
+      'Dung lượng Pin & Bộ sạc', 'Chất liệu vỏ máy', 'Trọng lượng máy', 'Hệ điều hành', 'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'
+    ];
+  } else if (frameKey === 'khung_may_in') {
+    keys = [
+      'Chức năng chuẩn', 'Công nghệ in', 'Tốc độ in ấn (A4)', 'Độ phân giải in (dpi)', 'Thời gian in trang đầu tiên',
+      'Tính năng in đảo mặt (Duplex)', 'Bộ xử lý CPU & Bộ nhớ RAM', 'Bảng điều khiển & Màn hình hiển thị',
+      'Khay nạp giấy tiêu chuẩn', 'Khay nạp giấy tay đa năng', 'Khay chứa giấy ra', 'Khổ giấy in hỗ trợ',
+      'Định lượng giấy in', 'Cổng kết nối giao tiếp (USB/LAN/Wi-Fi)', 'Khả năng in ấn di động', 'Ngôn ngữ in ấn',
+      'Hộp mực đi kèm (Dung lượng trang in)', 'Tuổi thọ cụm trống (Drum)', 'Công suất in hàng tháng (Khuyến nghị/Tối đa)',
+      'Hệ điều hành tương thích', 'Kích thước & Trọng lượng', 'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'
+    ];
+  } else if (frameKey === 'khung_photocopy') {
+    keys = [
+      'Chức năng chuẩn (Copy/In/Scan)', 'Bộ nạp & Đảo bản gốc tự động (ARDF/SPDF)', 'Tốc độ sao chụp & in (A4)',
+      'Độ phân giải in/copy', 'Thời gian khởi động & Bản chụp đầu', 'Bảng điều khiển cảm ứng', 'Bộ nhớ RAM & Ổ đĩa cứng',
+      'Khổ giấy sao chụp/in', 'Trữ lượng giấy tiêu chuẩn (Khay nạp)', 'Tính năng in/copy 2 mặt tự động',
+      'Tốc độ quét ảnh (Scan)', 'Định dạng file quét ảnh', 'Giao diện kết nối mạng (LAN/USB)', 'Ngôn ngữ in',
+      'Tính năng bảo mật dữ liệu', 'Hộp mực theo máy (Số bản in)', 'Tuổi thọ cụm từ & trống', 'Công suất tiêu thụ điện',
+      'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'
+    ];
+  } else if (frameKey === 'khung_may_scan') {
+    keys = [
+      'Kiểu dáng máy quét', 'Công nghệ cảm biến quét ảnh', 'Nguồn sáng quét', 'Khổ giấy quét tối đa',
+      'Định lượng giấy quét hỗ trợ', 'Tốc độ quét một mặt (Simplex)', 'Tốc độ quét hai mặt (Duplex)',
+      'Khay nạp bản gốc tự động (ADF)', 'Công suất quét hàng ngày', 'Độ phân giải quang học', 'Độ phân giải đầu ra',
+      'Cổng giao tiếp kết nối', 'Cảm biến siêu âm phát hiện nạp giấy kép', 'Định dạng file xuất ra',
+      'Phần mềm xử lý ảnh & OCR tiếng Việt đi kèm', 'Hệ điều hành tương thích', 'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'
+    ];
   } else if (frameKey === 'khung_ups') {
-    keys = ['Công suất (VA/Watt)', 'Công nghệ', 'Điện áp vào', 'Điện áp ra', 'Thời gian lưu điện', 'Dạng sóng ngõ ra', 'Loại ắc quy', 'Thời gian nạp sạc', 'Cổng kết nối quản lý', 'Bảo vệ quá tải / sét', 'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'];
+    keys = [
+      'Công suất nguồn (VA / Watt)', 'Công nghệ lưu điện', 'Điện áp vào danh định & Dải điện áp',
+      'Điện áp ra danh định & Độ ổn định', 'Thời gian lưu điện (ở 50% & 100% tải)', 'Dạng sóng điện áp ngõ ra',
+      'Loại ắc quy sử dụng', 'Thời gian sạc nạp lại ắc quy', 'Số lượng ổ cắm ngõ ra', 'Cổng giao tiếp quản lý (USB/RS232/SNMP)',
+      'Bảo vệ quá tải, ngắn mạch & Chống sét lan truyền', 'Màn hình hiển thị LCD/LED trạng thái', 'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'
+    ];
+  } else if (frameKey === 'khung_mang') {
+    keys = [
+      'Loại thiết bị mạng', 'Số lượng cổng mạng tốc độ cao (RJ45)', 'Cổng quang Uplink (SFP/SFP+)',
+      'Băng thông chuyển mạch (Switching Capacity)', 'Tốc độ chuyển tiếp gói tin (Forwarding Rate)',
+      'Cấp nguồn qua mạng PoE (Số cổng & Tổng công suất PoE Budget)', 'Tính năng quản lý Layer (L2/L3)',
+      'Hỗ trợ VLAN (802.1Q)', 'Tính năng bảo mật mạng (ACL, 802.1X, DHCP Snooping)', 'Giao thức định tuyến (Static Routing/OSPF)',
+      'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'
+    ];
+  } else if (frameKey === 'khung_camera') {
+    keys = [
+      'Cảm biến hình ảnh', 'Độ phân giải tối đa', 'Ống kính tiêu cự & Góc quan sát', 'Tầm nhìn hồng ngoại ban đêm (IR Range)',
+      'Chuẩn nén video (H.265+/H.265/H.264)', 'Tốc độ khung hình (Frame Rate)', 'Công nghệ chống ngược sáng (WDR)',
+      'Tính năng phân tích hình ảnh thông minh AI (Phát hiện người/xe)', 'Tích hợp Micro & Loa đàm thoại 2 chiều',
+      'Khe cắm thẻ nhớ MicroSD mở rộng', 'Chuẩn kết nối mạng & Cấp nguồn PoE', 'Tiêu chuẩn bảo vệ kháng nước & bụi (IP67/IK10)',
+      'Bảo hành', 'Năm sản xuất', 'Nước sản xuất'
+    ];
+  } else {
+    keys = STANDARD_26_SPEC_KEYS;
   }
 
   var currentMap = {};
@@ -4277,7 +4605,15 @@ function applyCategoryFramework(devId, frameKey) {
 
   var newSpecs = keys.map(function (k) {
     var kL = k.toLowerCase().trim();
-    return { key: k, value: currentMap[kL] || '' };
+    var val = currentMap[kL] || '';
+    if (!val) {
+      if (kL.includes('model') && d.model) val = d.model;
+      else if ((kL.includes('hãng') || kL.includes('thương hiệu')) && d.brand) val = d.brand;
+      else if ((kL.includes('xuất xứ') || kL.includes('nước sản xuất')) && d.origin) val = d.origin;
+      else if (kL.includes('bảo hành') && d.warranty) val = d.warranty;
+      else if (kL.includes('năm sản xuất')) val = 'Từ 2024 tới nay';
+    }
+    return { key: k, value: val };
   });
 
   d.specs = newSpecs;
@@ -4285,7 +4621,7 @@ function applyCategoryFramework(devId, frameKey) {
   var sel = document.getElementById('quickDevSelect');
   renderEditForm(sel ? +sel.value : 0);
   renderCurrentSheetView();
-  toast('✅ Đã áp dụng khung thông số cho ' + frameKey.replace('khung_', ''), 'ok');
+  toast('✅ Đã áp dụng khung thông số chuẩn cho ' + frameKey.replace('khung_', ''), 'ok');
 }
 
 function findMatchingPresetKey(name, model) {
@@ -4315,15 +4651,23 @@ function buildOfficialSpecPrompt(name, model, brand) {
     '- Tên thiết bị: "' + (name || '') + '"\n' +
     '- Model: "' + (model || '') + '"\n' +
     '- Hãng sản xuất: "' + (brand || '') + '"\n\n' +
-    'YÊU CẦU BẮT BUỘC:\n' +
-    '1. Tra cứu đúng dòng máy, model và cấu hình tiêu chuẩn của hãng (Dell, HP, Lenovo, Ricoh, Canon, Brother, OKI, Epson, Cisco, TP-Link, Grandstream, Hikvision, Dahua, Apple, Asus, Acer, Samsung...).\n' +
-    '2. Trích xuất từ 15 đến 25 thông số kỹ thuật chi tiết nhất. Các mục cần có bao gồm: Chủng loại, Bộ vi xử lý (CPU) / Tốc độ, Bộ nhớ trong (RAM), Ổ cứng lưu trữ (SSD/HDD), Màn hình/Độ phân giải, Công nghệ in/scan/quét, Tốc độ in/scan, Khay nạp giấy, Chuẩn kết nối (USB, LAN, Wi-Fi, HDMI...), Tiêu chuẩn chất lượng / ISO, Nguồn điện, Kích thước, Trọng lượng, Hệ điều hành, Xuất xứ, Bảo hành.\n' +
-    '3. ĐỊNH DẠNG TRẢ VỀ:\n' +
+    'HƯỚNG DẪN BÓC TÁCH CHI TIẾT THEO LOẠI THIẾT BỊ:\n' +
+    '1. NẾU LÀ ĐIỆN THOẠI (iPhone, Samsung, Xiaomi, Yealink, Grandstream, Cisco...):\n' +
+    '   Trích xuất: Màn hình & Tần số quét, Bộ vi xử lý (Chipset), RAM, Bộ nhớ trong (ROM), Camera trước & sau, Pin & Sạc nhanh, Chuẩn kết nối 5G/Wi-Fi/Bluetooth, SIM, Kháng nước IP68, Hệ điều hành, Kích thước & Trọng lượng, Bảo hành, Xuất xứ.\n' +
+    '2. NẾU LÀ MÀN HÌNH MÁY TÍNH (Dell UltraSharp, LG, Samsung, Asus, MSI...):\n' +
+    '   Trích xuất: Kích thước màn hình, Tấm nền (IPS/VA), Độ phân giải (FHD/2K/4K), Tần số quét (Hz), Thời gian đáp ứng (ms), Độ sáng (nits), Độ tương phản, Góc nhìn, Không gian màu (sRGB/DCI-P3), Cổng kết nối (HDMI/DP/Type-C/VGA), Công nghệ bảo vệ mắt, Chân đế nâng hạ xoay, Bảo hành, Xuất xứ.\n' +
+    '3. NẾU LÀ MÁY TÍNH (Desktop / Laptop / Mini PC / Server):\n' +
+    '   Trích xuất: CPU & Xung nhịp, RAM (chuẩn, bus, nâng cấp), Ổ cứng (SSD NVMe/HDD), Card đồ họa (VGA), Màn hình (đối với laptop), Bàn phím chuột, Cổng kết nối, Wi-Fi/Bluetooth/LAN, Bộ nguồn (PSU), Hệ điều hành bản quyền, Bảo hành, Xuất xứ.\n' +
+    '4. NẾU LÀ MÁY IN (Canon, HP, Brother, OKI, Epson...):\n' +
+    '   Trích xuất: Công nghệ in, Tốc độ in (ppm), Độ phân giải, In đảo mặt tự động (Duplex), Khay giấy chính & khay tay, Khổ giấy in, Cổng kết nối (USB/LAN/Wi-Fi), Hộp mực theo máy, Công suất in hàng tháng, Hệ điều hành, Bảo hành, Xuất xứ.\n' +
+    '5. NẾU LÀ MÁY SCAN / PHOTOCOPY / MẠNG / UPS / CAMERA:\n' +
+    '   Trích xuất đầy đủ các thông số đặc thù theo tiêu chuẩn datasheet của dòng máy đó.\n\n' +
+    'YÊU CẦU ĐỊNH DẠNG ĐẦU RA:\n' +
     'CHỈ TRẢ VỀ DUY NHẤT một JSON Array hợp lệ gồm các object {"key": "Tên thông số", "value": "Chi tiết giá trị thông số"}.\n' +
-    'Ví dụ mẫu:\n' +
+    'Ví dụ:\n' +
     '[\n' +
-    '  {"key": "Bộ vi xử lý", "value": "Intel Core i5-13500 (14 nhân, 20 luồng, 24MB Cache, xung nhịp tối đa 4.8 GHz)"},\n' +
-    '  {"key": "Bộ nhớ RAM", "value": "16GB DDR4 3200MHz (2 khe cắm, hỗ trợ nâng cấp 64GB)"}\n' +
+    '  {"key": "Bộ vi xử lý", "value": "Intel Core i5-13500 (14 nhân, 20 luồng, 24MB Cache, tối đa 4.8 GHz)"},\n' +
+    '  {"key": "Bộ nhớ RAM", "value": "16GB DDR4 3200MHz (hỗ trợ nâng cấp tối đa 64GB)"}\n' +
     ']\n' +
     'Tuyệt đối không giải thích thêm hay viết bất kỳ chữ nào bên ngoài JSON Array.';
 }
@@ -4697,6 +5041,203 @@ var CATALOG_ITEMS = [
     "warranty": "12 tháng",
     "unit": "Chiếc",
     "specCount": 24
+  },
+  // ── SẢN PHẨM MỚI BỔ SUNG: ĐIỆN THOẠI, MÀN HÌNH, MÁY TÍNH, MÁY IN ──
+  {
+    "id": "cat_dt_1",
+    "cat": "dien_thoai",
+    "presetKey": "dt_iphone_15_pro_max",
+    "name": "Điện thoại thông minh Apple iPhone 15 Pro Max 256GB",
+    "model": "iPhone 15 Pro Max",
+    "brand": "Apple",
+    "origin": "Trung Quốc",
+    "price": 0,
+    "qty": 1,
+    "warranty": "12 tháng",
+    "unit": "Chiếc",
+    "specCount": 17
+  },
+  {
+    "id": "cat_dt_2",
+    "cat": "dien_thoai",
+    "presetKey": "dt_samsung_s24_ultra",
+    "name": "Điện thoại thông minh Samsung Galaxy S24 Ultra 5G 256GB",
+    "model": "Galaxy S24 Ultra",
+    "brand": "Samsung",
+    "origin": "Việt Nam",
+    "price": 0,
+    "qty": 1,
+    "warranty": "12 tháng",
+    "unit": "Chiếc",
+    "specCount": 14
+  },
+  {
+    "id": "cat_dt_3",
+    "cat": "dien_thoai",
+    "presetKey": "dt_yealink_t46u",
+    "name": "Điện thoại IP Doanh Nghiệp Yealink SIP-T46U",
+    "model": "SIP-T46U",
+    "brand": "Yealink",
+    "origin": "Trung Quốc",
+    "price": 0,
+    "qty": 1,
+    "warranty": "12 tháng",
+    "unit": "Chiếc",
+    "specCount": 11
+  },
+  {
+    "id": "cat_dt_4",
+    "cat": "dien_thoai",
+    "presetKey": "dt_grandstream_2614",
+    "name": "Điện thoại IP Grandstream GRP2614 Carrier-Grade",
+    "model": "GRP2614",
+    "brand": "Grandstream",
+    "origin": "Trung Quốc",
+    "price": 0,
+    "qty": 1,
+    "warranty": "12 tháng",
+    "unit": "Chiếc",
+    "specCount": 7
+  },
+  {
+    "id": "cat_mh_1",
+    "cat": "man_hinh",
+    "presetKey": "mh_dell_u2424h",
+    "name": "Màn hình vi tính Dell UltraSharp 23.8 inch U2424H",
+    "model": "U2424H",
+    "brand": "Dell",
+    "origin": "Trung Quốc",
+    "price": 0,
+    "qty": 1,
+    "warranty": "36 tháng",
+    "unit": "Chiếc",
+    "specCount": 15
+  },
+  {
+    "id": "cat_mh_2",
+    "cat": "man_hinh",
+    "presetKey": "mh_lg_27up850",
+    "name": "Màn hình đồ họa LG 27 inch 4K UHD 27UP850N-W",
+    "model": "27UP850N-W",
+    "brand": "LG",
+    "origin": "Trung Quốc",
+    "price": 0,
+    "qty": 1,
+    "warranty": "24 tháng",
+    "unit": "Chiếc",
+    "specCount": 10
+  },
+  {
+    "id": "cat_mh_3",
+    "cat": "man_hinh",
+    "presetKey": "mh_samsung_24",
+    "name": "Màn hình vi tính Samsung 24 inch LS24C310EAEXXV",
+    "model": "LS24C310EAEXXV",
+    "brand": "Samsung",
+    "origin": "Việt Nam",
+    "price": 0,
+    "qty": 1,
+    "warranty": "24 tháng",
+    "unit": "Chiếc",
+    "specCount": 10
+  },
+  {
+    "id": "cat_pc_1",
+    "cat": "may_tinh",
+    "presetKey": "pc_dell_optiplex_7010",
+    "name": "Máy vi tính để bàn Dell OptiPlex 7010 SFF (Core i5/16GB/512GB)",
+    "model": "OptiPlex 7010 SFF",
+    "brand": "Dell",
+    "origin": "Trung Quốc",
+    "price": 0,
+    "qty": 1,
+    "warranty": "36 tháng",
+    "unit": "Bộ",
+    "specCount": 13
+  },
+  {
+    "id": "cat_pc_2",
+    "cat": "may_tinh",
+    "presetKey": "pc_hp_prodesk_400",
+    "name": "Máy tính để bàn HP ProDesk 400 G9 SFF",
+    "model": "ProDesk 400 G9 SFF",
+    "brand": "HP",
+    "origin": "Trung Quốc",
+    "price": 0,
+    "qty": 1,
+    "warranty": "12 tháng",
+    "unit": "Bộ",
+    "specCount": 8
+  },
+  {
+    "id": "cat_lt_1",
+    "cat": "may_tinh",
+    "presetKey": "lt_dell_latitude_3440",
+    "name": "Máy tính xách tay Dell Latitude 3440 (14 inch Full HD)",
+    "model": "Latitude 3440",
+    "brand": "Dell",
+    "origin": "Trung Quốc",
+    "price": 0,
+    "qty": 1,
+    "warranty": "12 tháng",
+    "unit": "Chiếc",
+    "specCount": 12
+  },
+  {
+    "id": "cat_in_1",
+    "cat": "may_in",
+    "presetKey": "in_canon_2900",
+    "name": "Máy in laser đen trắng Canon LBP2900",
+    "model": "LBP2900",
+    "brand": "Canon",
+    "origin": "Việt Nam",
+    "price": 0,
+    "qty": 1,
+    "warranty": "12 tháng",
+    "unit": "Chiếc",
+    "specCount": 16
+  },
+  {
+    "id": "cat_in_2",
+    "cat": "may_in",
+    "presetKey": "in_hp_m404dn",
+    "name": "Máy in laser trắng đen HP LaserJet Pro M404dn (In 2 mặt/LAN)",
+    "model": "M404dn",
+    "brand": "HP",
+    "origin": "Việt Nam",
+    "price": 0,
+    "qty": 1,
+    "warranty": "12 tháng",
+    "unit": "Chiếc",
+    "specCount": 15
+  },
+  {
+    "id": "cat_in_3",
+    "cat": "may_in",
+    "presetKey": "in_brother_l2321d",
+    "name": "Máy in laser Brother HL-L2321D (In 2 mặt)",
+    "model": "HL-L2321D",
+    "brand": "Brother",
+    "origin": "Việt Nam",
+    "price": 0,
+    "qty": 1,
+    "warranty": "12 tháng",
+    "unit": "Chiếc",
+    "specCount": 9
+  },
+  {
+    "id": "cat_in_4",
+    "cat": "may_in",
+    "presetKey": "in_epson_l3250",
+    "name": "Máy in phun màu đa năng Epson EcoTank L3250 (Wi-Fi)",
+    "model": "EcoTank L3250",
+    "brand": "Epson",
+    "origin": "Philippines",
+    "price": 0,
+    "qty": 1,
+    "warranty": "24 tháng",
+    "unit": "Chiếc",
+    "specCount": 9
   }
 ];
 
@@ -4746,7 +5287,12 @@ function renderCatalogGrid() {
   var html = filtered.map(function (item) {
     var isSel = !!selectedCatalogItems[item.id];
     var curQ = isSel ? selectedCatalogItems[item.id].qty : 1;
-    var catLabel = item.cat === 'may_in' ? '🖨️ Máy in Laser A4' : item.cat === 'photocopy' ? '📠 Photocopy A3' : item.cat === 'may_scan' ? '📄 Máy Scan' : item.cat === 'may_tinh' ? '💻 Mini PC / Desktop' : '🔋 Thiết bị khác';
+    var catLabel = item.cat === 'dien_thoai' ? '📱 Điện thoại' :
+      item.cat === 'man_hinh' ? '🖥️ Màn hình' :
+      item.cat === 'may_tinh' ? '💻 Máy tính' :
+      item.cat === 'may_in' ? '🖨️ Máy in' :
+      item.cat === 'photocopy' ? '📠 Photocopy' :
+      item.cat === 'may_scan' ? '📄 Máy Scan' : '🌐 Thiết bị khác';
 
     return '<div class="cat-card' + (isSel ? ' selected' : '') + '" id="cc_' + item.id + '">' +
       '<div>' +
@@ -4837,8 +5383,53 @@ function scrapeSmart26Specs(name, model, brand) {
   var nL = (name + ' ' + (model || '') + ' ' + (brand || '')).toLowerCase();
   var sp = [];
 
+  // 0. ĐIỆN THOẠI THÔNG MINH & ĐIỆN THOẠI IP (SMARTPHONES / IP PHONES)
+  if (nL.includes('điện thoại') || nL.includes('phone') || nL.includes('smartphone') || nL.includes('iphone') || nL.includes('galaxy') || nL.includes('s24') || nL.includes('s23') || nL.includes('xiaomi') || nL.includes('oppo') || nL.includes('yealink') || nL.includes('grp26') || nL.includes('sip-t') || nL.includes('redmi')) {
+    var isIpPhone = nL.includes('yealink') || nL.includes('grandstream') || nL.includes('sip') || nL.includes('ip phone') || nL.includes('cisco');
+    if (isIpPhone) {
+      sp = [
+        { key: 'Chủng loại', value: 'Điện thoại IP để bàn chất lượng cao cho doanh nghiệp' },
+        { key: 'Màn hình hiển thị', value: 'Màn hình màu LCD 2.8 - 4.3 inch có đèn nền' },
+        { key: 'Tài khoản SIP', value: 'Hỗ trợ 4 - 16 tài khoản SIP độc lập' },
+        { key: 'Chất lượng âm thanh', value: 'Âm thanh chuẩn Yealink Optima HD Voice / Grandstream HD, lọc ồn thông minh' },
+        { key: 'Cổng mạng LAN', value: '2 cổng Gigabit Ethernet 10/100/1000Mbps tích hợp cấp nguồn PoE' },
+        { key: 'Cổng USB mở rộng', value: 'Cổng USB 2.0 (hỗ trợ Wi-Fi Dongle, Bluetooth, Tai nghe USB, Ghi âm)' },
+        { key: 'Phím chức năng', value: 'Phím Line LED 2 màu, phím điều hướng và phím gọi nhanh BLF' },
+        { key: 'Bộ giải mã âm thanh', value: 'Opus, G.722, G.711(A/u), G.729AB, iLBC' },
+        { key: 'Tính năng thoại nâng cao', value: 'Hội nghị đàm thoại đa bên, chuyển cuộc gọi, giữ cuộc gọi, danh bạ 1000 số' },
+        { key: 'Bảo mật mạng', value: 'SIP over TLS/SRTP, HTTPS, OpenVPN, 802.1x' },
+        { key: 'Bảo hành', value: '12 tháng chính hãng' },
+        { key: 'Năm sản xuất', value: 'Từ 2024 tới nay' },
+        { key: 'Hãng sản xuất', value: brand || 'Yealink / Grandstream / Cisco' },
+        { key: 'Nước sản xuất', value: 'Trung Quốc' }
+      ];
+    } else {
+      var isIphone = nL.includes('iphone') || nL.includes('apple');
+      var isSamsung = nL.includes('samsung') || nL.includes('galaxy');
+      sp = [
+        { key: 'Chủng loại', value: 'Điện thoại thông minh (Smartphone) cao cấp' },
+        { key: 'Màn hình hiển thị', value: isIphone ? 'Super Retina XDR OLED 120Hz ProMotion sắc nét' : 'Dynamic AMOLED 2X 120Hz chống chói' },
+        { key: 'Bộ vi xử lý (Chipset / CPU)', value: isIphone ? 'Apple A-Series Pro tiến trình 3nm hiệu năng vượt trội' : 'Qualcomm Snapdragon 8 Gen 3 for Galaxy (4nm)' },
+        { key: 'Bộ nhớ RAM', value: '8GB - 12GB LPDDR5X tốc độ cao' },
+        { key: 'Bộ nhớ lưu trữ trong (ROM)', value: '256GB / 512GB UFS 4.0 / NVMe' },
+        { key: 'Hệ thống Camera chính sau', value: 'Cụm đa camera 48MP - 200MP chống rung quang học OIS, quay phim 4K/8K' },
+        { key: 'Camera trước', value: '12MP sắc nét hỗ trợ tự động lấy nét PDAF' },
+        { key: 'Dung lượng Pin & Công nghệ sạc', value: 'Pin dung lượng lớn 4.500 - 5.000 mAh, sạc nhanh công suất cao và sạc không dây' },
+        { key: 'Cổng giao tiếp kết nối', value: 'USB Type-C tốc độ cao' },
+        { key: 'Chuẩn kết nối không dây', value: '5G siêu tốc, Wi-Fi 6E/Wi-Fi 7, Bluetooth 5.3, NFC' },
+        { key: 'Tiêu chuẩn kháng nước & bụi', value: 'Đạt chuẩn IP68 chống nước ở độ sâu 1.5m - 6m trong 30 phút' },
+        { key: 'Hệ thống bảo mật', value: isIphone ? 'Nhận diện khuôn mặt Face ID 3D siêu bảo mật' : 'Cảm biến vân tay siêu âm dưới màn hình & Nhận diện khuôn mặt' },
+        { key: 'Hệ điều hành', value: isIphone ? 'iOS 17 / iOS 18 bản quyền mới nhất' : 'Android 14 (One UI 6.1) hỗ trợ cập nhật lâu dài' },
+        { key: 'Chất liệu khung vỏ', value: 'Khung Titanium / Hợp kim nhôm cao cấp kết hợp mặt kính cường lực' },
+        { key: 'Bảo hành', value: '12 tháng chính hãng' },
+        { key: 'Năm sản xuất', value: 'Từ 2024 tới nay' },
+        { key: 'Hãng sản xuất', value: brand || (isIphone ? 'Apple' : isSamsung ? 'Samsung' : 'Chính hãng') },
+        { key: 'Nước sản xuất', value: isSamsung ? 'Việt Nam' : 'Trung Quốc' }
+      ];
+    }
+  }
   // 1. MÀN HÌNH MÁY TÍNH (MONITORS / DISPLAYS)
-  if (nL.includes('màn hình') || nL.includes('monitor') || nL.includes('display') || nL.includes('lcd') || nL.includes('inch') || nL.includes('24mp') || nL.includes('27mp') || nL.includes('p24') || nL.includes('p27') || nL.includes('e24') || nL.includes('e27') || nL.includes('se24') || nL.includes('se27')) {
+  else if (nL.includes('màn hình') || nL.includes('monitor') || nL.includes('display') || nL.includes('lcd') || nL.includes('inch') || nL.includes('24mp') || nL.includes('27mp') || nL.includes('p24') || nL.includes('p27') || nL.includes('e24') || nL.includes('e27') || nL.includes('se24') || nL.includes('se27')) {
     var size = '23.8 inch (Chuẩn 24 inch)';
     if (nL.includes('27 inch') || nL.includes('27in') || nL.includes('27"')) size = '27 inch';
     else if (nL.includes('32 inch') || nL.includes('32in') || nL.includes('32"')) size = '32 inch';
@@ -5387,35 +5978,51 @@ function renderEditForm(idx) {
     '<div style="background:rgba(31,111,235,0.08);border:1px solid rgba(31,111,235,0.25);border-radius:8px;padding:10px 14px;margin-bottom:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center">' +
     '<span style="font-weight:700;font-size:13px;color:var(--foc)">⚡ Chọn mẫu & Model để tự động điền:</span>' +
     '<select id="selPreset" style="max-width:320px;font-size:12.5px" onchange="applyModelPreset(' + d.id + ', this.value)">' +
-    '<option value="">-- Chọn Model / Loại máy mẫu --</option>' +
-    '<optgroup label="🖨️ Mẫu Model Có Sẵn (Đầy Đủ 100% Thông Số Chi Tiết)">' +
-    '<option value="msi_cubi_nuc">💻 Mini PC MSI Cubi NUC 1M (37 thông số siêu chi tiết)</option>' +
-    '<option value="msi_dp180">💻 Máy vi tính MSI PRO DP180 AI 8HG</option>' +
-    '<option value="oki_b433dn">🖨️ Máy in OKI B433DN (31 thông số chuẩn thầu)</option>' +
-    '<option value="oki_b513dn">🖨️ Máy in OKI B513DN (23 thông số)</option>' +
-    '<option value="canon_lbp2900">🖨️ Máy in Canon LBP2900</option>' +
-    '<option value="hp_m404dn">🖨️ Máy in HP LaserJet M404dn</option>' +
-    '<option value="ricoh_im2500">📠 Photocopy đa chức năng Ricoh IM 2500</option>' +
-    '<option value="ricoh_fi8170">📄 Máy scan RICOH Fi-8170</option>' +
-    '<option value="ricoh_sp2240n">📄 Máy scan tài liệu Ricoh SP-2240N</option>' +
-    '<option value="switch_gwn7813">🌐 Switch Layer 3 Grandstream GWN7813</option>' +
-    '<option value="dau_doc_the_tu">💳 Đầu đọc thẻ từ uTrust 4701 F</option>' +
-    '<option value="doc_the_nho">💾 Đọc thẻ nhớ ATEN UH3240</option>' +
-    '<option value="man_hinh_24">🖥️ Màn hình 23.8 inch IPS Full HD</option>' +
-    '<option value="ups_santak_1000">🔋 Bộ lưu điện UPS Santak 1000VA</option>' +
-    '<option value="canon_eos_r6">📷 Máy ảnh Canon EOS R6 Mark II</option>' +
+    '<option value="">-- Chọn Model / Khung thông số mẫu --</option>' +
+    '<optgroup label="📱 Điện thoại & IP Phone (Đầy đủ 100% thông số)">' +
+    '<option value="dt_iphone_15_pro_max">📱 iPhone 15 Pro Max 256GB Titanium</option>' +
+    '<option value="dt_samsung_s24_ultra">📱 Samsung Galaxy S24 Ultra 5G (AI/S-Pen)</option>' +
+    '<option value="dt_yealink_t46u">☎️ Điện thoại IP Yealink SIP-T46U Gigabit</option>' +
+    '<option value="dt_grandstream_2614">☎️ Điện thoại IP Grandstream GRP2614 Wi-Fi</option>' +
     '</optgroup>' +
-    '<optgroup label="📋 Khung Sườn Thông Số Theo Loại Thiết Bị">' +
-    '<option value="khung_man_hinh">🖥️ Khung thông số Màn hình máy tính (26 thông số)</option>' +
-    '<option value="khung_laptop">💻 Khung thông số Laptop / Máy xách tay (26 thông số)</option>' +
-    '<option value="khung_may_in">🖨️ Khung thông số Máy in Laser A4 (26 thông số)</option>' +
-    '<option value="khung_photocopy">📠 Khung thông số Máy photocopy / Đa năng A3 (26 thông số)</option>' +
-    '<option value="khung_may_scan">📄 Khung thông số Máy scan tài liệu (26 thông số)</option>' +
-    '<option value="khung_may_tinh">🖥️ Khung thông số Máy tính để bàn (26 thông số)</option>' +
-    '<option value="khung_may_chieu">📽️ Khung thông số Máy chiếu văn phòng (26 thông số)</option>' +
-    '<option value="khung_ups">🔋 Khung thông số Bộ lưu điện UPS (26 thông số)</option>' +
-    '<option value="khung_mang">🌐 Khung thông số Thiết bị mạng / Switch (26 thông số)</option>' +
-    '<option value="khung_camera">📷 Khung thông số Camera giám sát / Hội nghị (26 thông số)</option>' +
+    '<optgroup label="🖥️ Màn hình máy tính">' +
+    '<option value="mh_dell_u2424h">🖥️ Dell UltraSharp 23.8\" U2424H (120Hz/IPS)</option>' +
+    '<option value="mh_lg_27up850">🖥️ Màn hình đồ họa LG 27\" 4K 27UP850N-W</option>' +
+    '<option value="mh_samsung_24">🖥️ Màn hình Samsung 24\" IPS 75Hz</option>' +
+    '</optgroup>' +
+    '<optgroup label="💻 Máy tính để bàn & Laptop">' +
+    '<option value="pc_dell_optiplex_7010">💻 Dell OptiPlex 7010 SFF (Core i5/16GB/512GB)</option>' +
+    '<option value="pc_hp_prodesk_400">💻 HP ProDesk 400 G9 SFF (Core i5/16GB)</option>' +
+    '<option value="lt_dell_latitude_3440">💻 Laptop Dell Latitude 3440 (14\" FHD)</option>' +
+    '<option value="hw_full_1">💻 Mini PC MSI Cubi NUC 1M (35 thông số)</option>' +
+    '<option value="hw_full_2">💻 Laptop MSI Commercial 14 B1MG</option>' +
+    '</optgroup>' +
+    '<optgroup label="🖨️ Máy in & Photocopy">' +
+    '<option value="in_canon_2900">🖨️ Máy in Canon LBP2900 laser đen trắng</option>' +
+    '<option value="in_hp_m404dn">🖨️ Máy in HP LaserJet Pro M404dn (Đảo mặt/LAN)</option>' +
+    '<option value="in_brother_l2321d">🖨️ Máy in Brother HL-L2321D</option>' +
+    '<option value="in_epson_l3250">🖨️ Máy in phun màu đa năng Epson L3250</option>' +
+    '<option value="hw_full_3">🖨️ Máy in OKI B433DN</option>' +
+    '<option value="hw_full_17">📠 Photocopy đa năng Ricoh IM 3500</option>' +
+    '<option value="hw_full_4">📄 Máy scan RICOH SP-2240N</option>' +
+    '</optgroup>' +
+    '<optgroup label="🌐 Thiết bị mạng, UPS & Khác">' +
+    '<option value="hw_full_5">🌐 Switch Cisco CBS350-24S</option>' +
+    '<option value="hw_full_6">🌐 Switch Cisco WS-C2960L</option>' +
+    '<option value="hw_full_10">🛡️ Tường lửa Sophos XGS 128</option>' +
+    '<option value="hw_full_8">📹 Họp trực tuyến Aver VC520 PRO3</option>' +
+    '</optgroup>' +
+    '<optgroup label="📋 Áp Dụng Khung Sườn Thông Số Theo Loại">' +
+    '<option value="khung_dien_thoai">📱 Khung thông số Điện thoại thông minh & IP Phone (24 mục)</option>' +
+    '<option value="khung_man_hinh">🖥️ Khung thông số Màn hình máy tính (20 mục)</option>' +
+    '<option value="khung_may_tinh">🖥️ Khung thông số Máy tính để bàn (22 mục)</option>' +
+    '<option value="khung_laptop">💻 Khung thông số Máy tính xách tay Laptop (22 mục)</option>' +
+    '<option value="khung_may_in">🖨️ Khung thông số Máy in Laser & Phun màu (24 mục)</option>' +
+    '<option value="khung_photocopy">📠 Khung thông số Máy photocopy / Đa năng (20 mục)</option>' +
+    '<option value="khung_may_scan">📄 Khung thông số Máy scan tài liệu số hóa (18 mục)</option>' +
+    '<option value="khung_mang">🌐 Khung thông số Thiết bị mạng / Switch (12 mục)</option>' +
+    '<option value="khung_ups">🔋 Khung thông số Bộ lưu điện UPS (15 mục)</option>' +
+    '<option value="khung_camera">📷 Khung thông số Camera an ninh giám sát (14 mục)</option>' +
     '</optgroup>' +
     '</select>' +
     '<button class="btn btn-sm btn-o" onclick="applyStandard26Specs(' + d.id + ')" title="Áp dụng 26 mục thông số kỹ thuật chuẩn">📋 Áp dụng 26 thông số chuẩn</button>' +
@@ -7737,870 +8344,222 @@ function exportComplianceExcel() {
 }
 
 
+
+
+
+
 /* ═══════════════════════════════════════════
-   MODULE BÁO GIÁ (ADMIN ONLY - SCAN & PHOTO)
+   MODULE BÁO GIÁ THUẬN PHÁT (CHUẨN MẪU BGThuanPhat.xlsx)
 ═══════════════════════════════════════════ */
-var BAOGIA_SAMPLE_ITEMS = [
+
+// Hàm chuyển đổi số tiền thành chữ Tiếng Việt chuẩn 100%
+function docSoThanhChu(so) {
+  if (!so || isNaN(so) || so <= 0) return 'Không đồng./.';
+  var chuSo = ['không', 'một', 'hai', 'ba', 'bốn', 'năm', 'sáu', 'bảy', 'tám', 'chín'];
+  var hang = ['', 'nghìn', 'triệu', 'tỷ', 'nghìn tỷ', 'triệu tỷ'];
+
+  function docBaSo(baso, dayDu) {
+    var tram = Math.floor(baso / 100);
+    var chuc = Math.floor((baso % 100) / 10);
+    var donvi = baso % 10;
+    var kq = '';
+
+    if (tram > 0 || dayDu) {
+      kq += chuSo[tram] + ' trăm ';
+    }
+    if (chuc > 1) {
+      kq += chuSo[chuc] + ' mươi ';
+      if (donvi === 1) kq += 'mốt ';
+      else if (donvi === 5) kq += 'lăm ';
+      else if (donvi > 0) kq += chuSo[donvi] + ' ';
+    } else if (chuc === 1) {
+      kq += 'mười ';
+      if (donvi === 5) kq += 'lăm ';
+      else if (donvi > 0) kq += chuSo[donvi] + ' ';
+    } else if (chuc === 0 && (tram > 0 || dayDu)) {
+      if (donvi > 0) kq += 'linh ' + chuSo[donvi] + ' ';
+    } else if (donvi > 0) {
+      kq += chuSo[donvi] + ' ';
+    }
+    return kq;
+  }
+
+  var strSo = Math.round(so).toString();
+  var arrBlock = [];
+  while (strSo.length > 0) {
+    arrBlock.unshift(parseInt(strSo.slice(-3), 10));
+    strSo = strSo.slice(0, -3);
+  }
+
+  var kq = '';
+  for (var i = 0; i < arrBlock.length; i++) {
+    var baso = arrBlock[i];
+    var dayDu = i > 0;
+    if (baso > 0) {
+      var s = docBaSo(baso, dayDu);
+      var idxHang = arrBlock.length - 1 - i;
+      kq += s + hang[idxHang] + ' ';
+    }
+  }
+
+  kq = kq.trim().replace(/\s+/g, ' ');
+  if (!kq) return 'Không đồng./.';
+  return kq.charAt(0).toUpperCase() + kq.slice(1) + ' đồng./.';
+}
+
+var BAOGIA_THUANPHAT_ITEMS = [
   {
-    "stt": 1,
-    "name": "Máy in A4 đen trắng 2 mặt",
-    "model": "PA4000x",
-    "brand": "KYOCERA",
-    "origin": "Việt Nam",
-    "unit": "Chiếc",
-    "qty": 1,
-    "price": "",
-    "specs": [
-      {
-        "key": "Chức năng chuẩn",
-        "value": "In"
-      },
-      {
-        "key": "CPU",
-        "value": "1.0 Ghz"
-      },
-      {
-        "key": "Phương thức in",
-        "value": "Laser"
-      },
-      {
-        "key": "Tốc độ in",
-        "value": "40 trang/phút(A4)"
-      },
-      {
-        "key": "Bảng điều khiển",
-        "value": "LCD 5 dòng"
-      },
-      {
-        "key": "Bộ nhớ RAM tiêu chuẩn",
-        "value": "512MB"
-      },
-      {
-        "key": "Thời gian khởi động máy",
-        "value": "Khoảng 15 giây"
-      },
-      {
-        "key": "Ngôn ngữ",
-        "value": "Tiếng Việt"
-      },
-      {
-        "key": "Khổ giấy",
-        "value": "A6R-A4"
-      },
-      {
-        "key": "Trữ lượng giấy (chuẩn)",
-        "value": "01 khay gầm x 250 tờ"
-      },
-      {
-        "key": "",
-        "value": "01 khay tay x 100 tờ"
-      },
-      {
-        "key": "Định lượng giấy tiêu chuẩn",
-        "value": "Khay gầm: 60 – 163 g/m2"
-      },
-      {
-        "key": "",
-        "value": "Khay tay: 60 – 220 g/m2"
-      },
-      {
-        "key": "Khay giấy ra",
-        "value": "250 tờ úp mặt"
-      },
-      {
-        "key": "Công suất tiêu thụ",
-        "value": "Chế độ hoạt động: 555,9W"
-      },
-      {
-        "key": "",
-        "value": "Chế độ chờ: 6W"
-      },
-      {
-        "key": "",
-        "value": "Chế độ nghỉ/ tiết kiệm:  0,3W"
-      },
-      {
-        "key": "Độ phân giải",
-        "value": "300 x 300 dpi, 600 x 600 dpi, Fast1200, Fine1200"
-      },
-      {
-        "key": "Thời gian bản in đầu tiên",
-        "value": "6,4 giây hoặc ít hơn"
-      },
-      {
-        "key": "In 2 mặt (Duplex)",
-        "value": "Tiêu chuẩn"
-      },
-      {
-        "key": "In di động",
-        "value": "AirPrint, Mopria, KYOCERA Mobile Print"
-      },
-      {
-        "key": "Giao diện",
-        "value": "USB 2.0 High Speedx1; Ethernet 10BASE-T/100BASE-TX/1,000BASE-T;\r\nUSB Host Interface (USB Host)x1"
-      },
-      {
-        "key": "Giao thức hỗ trợ",
-        "value": "TCP/IP, FTP, LPR, Port9100, NetBEUI, Apple Bonjour"
-      },
-      {
-        "key": "Ngôn ngữ in",
-        "value": "PCL6 (PCL5e, PCL-XL), KPDL3 (Postscript 3 compatible), PRESCRIBE, Line Printer, IBM Proprinter, Epson LQ-850, PDF Direct Print"
-      },
-      {
-        "key": "Hộp mực",
-        "value": "7.200 trang A4"
-      },
-      {
-        "key": "",
-        "value": "Mực khởi động 3.600 trang"
-      },
-      {
-        "key": "Tuổi thọ cụm trống",
-        "value": "70.000 trang A4"
-      },
-      {
-        "key": "Bảo hành",
-        "value": "100.000 bản hoặc 12 tháng tuỳ theo điều kiện nào tới trước"
-      }
-    ]
+    stt: 1,
+    name: 'Dịch vụ trực tuyến Microsoft 365 Business Basic (no Teams) - Annual - 12 Months',
+    model: 'Office',
+    brand: 'Microsoft',
+    origin: '',
+    unit: 'Người dùng',
+    qty: 54,
+    price: 1350000
   },
   {
-    "stt": 2,
-    "name": "Máy scan A3",
-    "model": "Fi-7460",
-    "brand": "RICOH",
-    "origin": "Indonesia",
-    "unit": "Chiếc",
-    "qty": 1,
-    "price": "",
-    "specs": [
-      {
-        "key": "Kiểu máy",
-        "value": "Quét 2 mặt tự động"
-      },
-      {
-        "key": "Đèn quét",
-        "value": "Color CCD (Charge-coupled device) x 2"
-      },
-      {
-        "key": "Khổ giấy",
-        "value": "Tối đa: 304,8 x 431,8 mm; Tối thiểu: 50.8 x 69 mm"
-      },
-      {
-        "key": "",
-        "value": "Kéo giấy dài: 304,8 x 5.588 mm"
-      },
-      {
-        "key": "",
-        "value": "Khả năng quét thẻ nhựa chữ nổi, độ dày tối đa 1,4mm"
-      },
-      {
-        "key": "",
-        "value": "Khả năng quét tài liệu khổ A2 bằng cách gập đôi tài liệu"
-      },
-      {
-        "key": "Định lượng giấy",
-        "value": "27 - 413 g/m2"
-      },
-      {
-        "key": "Tốc độ quét (A4 ngang, quét màu, 300dpi)",
-        "value": "Một mặt: 60 ppm, Hai mặt: 120 ipm"
-      },
-      {
-        "key": "Khay giấy",
-        "value": "100 tờ (A4: 80 g/m2)"
-      },
-      {
-        "key": "Công suất",
-        "value": "18000 trang/ ngày"
-      },
-      {
-        "key": "Phát hiện kéo đúp, kẹt giấy",
-        "value": "Bằng cảm biến siêu âm & Cảm biến giấy & iSOP"
-      },
-      {
-        "key": "Chức năng quản lý máy",
-        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
-      },
-      {
-        "key": "Định dạng file",
-        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
-      },
-      {
-        "key": "Hỗ trợ Index file",
-        "value": "XML, CSV, TXT"
-      },
-      {
-        "key": "Tính năng tách trường văn bản (Metadata fields)",
-        "value": "20 trường, hỗ trợ font tiếng Việt, Anh, Hàn Quốc, Nhật Bản, Trung Quốc. Người dùng có thể tự định nghĩa trường văn bản."
-      },
-      {
-        "key": "Phần mềm số hóa tiếng Việt đi kèm",
-        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
-      },
-      {
-        "key": "",
-        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
-      },
-      {
-        "key": "",
-        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
-      },
-      {
-        "key": "",
-        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
-      }
-    ]
-  },
-  {
-    "stt": 3,
-    "name": "Máy scan A3",
-    "model": "Fi-7480",
-    "brand": "RICOH",
-    "origin": "Indonesia",
-    "unit": "Chiếc",
-    "qty": 1,
-    "price": "",
-    "specs": [
-      {
-        "key": "Kiểu máy",
-        "value": "Quét 2 mặt tự động"
-      },
-      {
-        "key": "Đèn quét",
-        "value": "Color CCD (Charge-coupled device) x 2"
-      },
-      {
-        "key": "Khổ giấy",
-        "value": "Tối đa: 304,8 x 431,8 mm; Tối thiểu: 50.8 x 69 mm"
-      },
-      {
-        "key": "",
-        "value": "Kéo giấy dài: 304,8 x 5.588 mm"
-      },
-      {
-        "key": "",
-        "value": "Khả năng quét thẻ nhựa chữ nổi, độ dày tối đa 1,4mm"
-      },
-      {
-        "key": "",
-        "value": "Khả năng quét tài liệu khổ A2 bằng cách gập đôi tài liệu"
-      },
-      {
-        "key": "Định lượng giấy",
-        "value": "27 - 413 g/m2"
-      },
-      {
-        "key": "Tốc độ quét (A4 ngang, quét màu, 300dpi)",
-        "value": "Một mặt: 80 ppm, Hai mặt: 160 ipm"
-      },
-      {
-        "key": "Khay giấy",
-        "value": "100 tờ (A4: 80 g/m2)"
-      },
-      {
-        "key": "Công suất",
-        "value": "24000 trang/ ngày"
-      },
-      {
-        "key": "Cổng kết nối",
-        "value": "USB 3.0 / USB 2.0 / USB 1.1"
-      },
-      {
-        "key": "Phát hiện kéo đúp, kẹt giấy",
-        "value": "Bằng cảm biến siêu âm & Cảm biến giấy & iSOP"
-      },
-      {
-        "key": "Chức năng quản lý máy",
-        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
-      },
-      {
-        "key": "Định dạng file",
-        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
-      },
-      {
-        "key": "Hỗ trợ Index file",
-        "value": "XML, CSV, TXT"
-      },
-      {
-        "key": "Tính năng tách trường văn bản (Metadata fields)",
-        "value": "20 trường, hỗ trợ font tiếng Việt, Anh, Hàn Quốc, Nhật Bản, Trung Quốc. Người dùng có thể tự định nghĩa trường văn bản."
-      },
-      {
-        "key": "Phần mềm số hóa tiếng Việt đi kèm",
-        "value": "Phần mềm số hóa tiếng Việt:"
-      },
-      {
-        "key": "",
-        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
-      },
-      {
-        "key": "",
-        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
-      },
-      {
-        "key": "",
-        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
-      },
-      {
-        "key": "",
-        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
-      }
-    ]
-  },
-  {
-    "stt": 4,
-    "name": "Máy scan A4",
-    "model": "SP-2230N",
-    "brand": "RICOH",
-    "origin": "Thái Lan",
-    "unit": "Chiếc",
-    "qty": 1,
-    "price": "",
-    "specs": [
-      {
-        "key": "Kiểu máy",
-        "value": "Quét 2 mặt tự động"
-      },
-      {
-        "key": "Đèn quét",
-        "value": "CIS x 2"
-      },
-      {
-        "key": "Khổ giấy",
-        "value": "Tối đa: 210 x 297 mm; Tối thiểu: 50,8 x 50,8 mm"
-      },
-      {
-        "key": "",
-        "value": "Kéo giấy dài: 6.096 mm"
-      },
-      {
-        "key": "Định lượng giấy",
-        "value": "27 - 413 g/m2"
-      },
-      {
-        "key": "",
-        "value": "Thẻ nhựa: 1,4 mm"
-      },
-      {
-        "key": "Tốc độ quét",
-        "value": "Một mặt: 30 ppm, Hai mặt: 60 ipm (A4, quét màu, 300dpi)\\"
-      },
-      {
-        "key": "Độ phân giải",
-        "value": "600 dpi, tối đa 1200 dpi"
-      },
-      {
-        "key": "Khay giấy",
-        "value": "80 tờ (A4: 80 g/m2)"
-      },
-      {
-        "key": "Công suất",
-        "value": "4500 trang/ ngày"
-      },
-      {
-        "key": "Cổng kết nối",
-        "value": "USB type C (3.2 Gen1x1 / USB 2.0 / USB 1.1)"
-      },
-      {
-        "key": "",
-        "value": "LAN: 10BASE-T, 100BASE-TX, 1000BASE-T"
-      },
-      {
-        "key": "Bộ nhớ",
-        "value": "2048 MB"
-      },
-      {
-        "key": "Chức năng Direct Scan (Quét trực tiếp, không cần qua máy tính",
-        "value": "Quét vào thư mục mạng, Quét vào email, Quét vào FTP server"
-      },
-      {
-        "key": "Chức năng quản lý máy",
-        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
-      },
-      {
-        "key": "Định dạng file",
-        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
-      },
-      {
-        "key": "Hỗ trợ Index file",
-        "value": "XML, CSV, TXT"
-      },
-      {
-        "key": "Tính năng tách trường văn bản (Metadata fields)",
-        "value": "20 trường"
-      },
-      {
-        "key": "Phần mềm số hóa tiếng Việt đi kèm",
-        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
-      },
-      {
-        "key": "",
-        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
-      },
-      {
-        "key": "",
-        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
-      },
-      {
-        "key": "",
-        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
-      }
-    ]
-  },
-  {
-    "stt": 5,
-    "name": "Máy scan A4",
-    "model": "SP-2240N",
-    "brand": "Ricoh",
-    "origin": "Thái Lan",
-    "unit": "Cái",
-    "qty": 1,
-    "price": "",
-    "specs": [
-      {
-        "key": "Kiểu máy",
-        "value": "Quét 2 mặt tự động"
-      },
-      {
-        "key": "Đèn quét",
-        "value": "CIS x 2"
-      },
-      {
-        "key": "Khổ giấy",
-        "value": "Tối đa: 215,9 x 360 mm; Tối thiểu: 50,8 x 50,8 mm"
-      },
-      {
-        "key": "",
-        "value": "Kéo giấy dài: 6.096 mm"
-      },
-      {
-        "key": "Định lượng giấy",
-        "value": "27 - 413 g/m2"
-      },
-      {
-        "key": "Tốc độ quét",
-        "value": "Một mặt: 40 ppm, Hai mặt: 80 ipm (A4, quét màu, 300dpi)\\"
-      },
-      {
-        "key": "Độ phân giải",
-        "value": "600 dpi, tối đa 1200 dpi"
-      },
-      {
-        "key": "Khay giấy",
-        "value": "80 tờ (A4: 80 g/m2)"
-      },
-      {
-        "key": "Công suất",
-        "value": "6.000 trang/ ngày"
-      },
-      {
-        "key": "Cổng kết nối",
-        "value": "USB 3.2 Gen1x1 / USB 2.0 / USB 1.1\r\nLAN: 10BASE-T, 100BASE-TX, 1000BASE-T"
-      },
-      {
-        "key": "Chức năng quản lý máy",
-        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
-      },
-      {
-        "key": "Định dạng file",
-        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
-      },
-      {
-        "key": "Hỗ trợ Index file",
-        "value": "XML, CSV, TXT"
-      },
-      {
-        "key": "Tính năng tách trường văn bản (Metadata fields)",
-        "value": "20 trường"
-      },
-      {
-        "key": "Phần mềm số hóa tiếng Việt đi kèm",
-        "value": "Phần mềm số hóa tiếng Việt :\r\nTự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản\r\nChuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)\r\nTự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký.\r\nNguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
-      }
-    ]
-  },
-  {
-    "stt": 6,
-    "name": "Máy scan A4",
-    "model": "Fi-8150",
-    "brand": "Ricoh",
-    "origin": "Indonesia",
-    "unit": "Cái",
-    "qty": 1,
-    "price": "",
-    "specs": [
-      {
-        "key": "Kiểu máy",
-        "value": "Quét 2 mặt tự động, có chức năng quét hộ chiếu và và khổ A3 gập đôi"
-      },
-      {
-        "key": "Đèn quét",
-        "value": "CIS x 2"
-      },
-      {
-        "key": "Khổ giấy",
-        "value": "Tối đa: 215,9 x 355,6 mm; Tối thiểu: 48 x 50 mm"
-      },
-      {
-        "key": "",
-        "value": "Kéo giấy dài: 6.096 mm"
-      },
-      {
-        "key": "",
-        "value": "Khả năng quét thẻ nhựa chữ nổi, độ dày tối đa 1,4mm"
-      },
-      {
-        "key": "",
-        "value": "Quét sổ/ Hộ chiếu: tối đa dày 7 mm"
-      },
-      {
-        "key": "Định lượng giấy",
-        "value": "20 - 465 g/m2"
-      },
-      {
-        "key": "Tốc độ quét",
-        "value": "Một mặt: 50 ppm, Hai mặt: 100 ipm (A4, quét màu, 300dpi)\\"
-      },
-      {
-        "key": "Độ phân giải",
-        "value": "600 x 600 dpi, tối đa 1200 dpi"
-      },
-      {
-        "key": "Khay giấy",
-        "value": "100 tờ (A4: 80 g/m2)"
-      },
-      {
-        "key": "Công suất",
-        "value": "8000 trang/ ngày"
-      },
-      {
-        "key": "Cổng kết nối",
-        "value": "USB 3.2 Gen1x1 / USB 2.0 / USB 1.1"
-      },
-      {
-        "key": "",
-        "value": "LAN: 10BASE-T, 100BASE-TX, 1000BASE-T"
-      },
-      {
-        "key": "Chức năng quét khổ A3, bì thư, hộ chiếu",
-        "value": "Có khả năng quét giấy khổ A3 bằng cách gập đôi và quét bì thư, hộ chiếu mà không cần sử dụng phụ kiện"
-      },
-      {
-        "key": "Chức năng quản lý máy",
-        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
-      },
-      {
-        "key": "Định dạng file",
-        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
-      },
-      {
-        "key": "Hỗ trợ Index file",
-        "value": "XML, CSV, TXT"
-      },
-      {
-        "key": "Tính năng tách trường văn bản (Metadata fields)",
-        "value": "20 trường, hỗ trợ font tiếng Việt, Anh, Hàn Quốc, Nhật Bản, Trung Quốc. Người dùng có thể tự định nghĩa trường văn bản."
-      },
-      {
-        "key": "Phần mềm số hóa tiếng Việt đi kèm",
-        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
-      },
-      {
-        "key": "",
-        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
-      },
-      {
-        "key": "",
-        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
-      },
-      {
-        "key": "",
-        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
-      }
-    ]
-  },
-  {
-    "stt": 7,
-    "name": "Máy scan A4",
-    "model": "Fi-8150U",
-    "brand": "Ricoh",
-    "origin": "Indonesia",
-    "unit": "Cái",
-    "qty": 1,
-    "price": "",
-    "specs": [
-      {
-        "key": "Kiểu máy",
-        "value": "Quét 2 mặt tự động, có chức năng quét hộ chiếu và và khổ A3 gập đôi"
-      },
-      {
-        "key": "Đèn quét",
-        "value": "CIS x 2"
-      },
-      {
-        "key": "Khổ giấy",
-        "value": "Tối đa: 215,9 x 355,6 mm; Tối thiểu: 48 x 50 mm"
-      },
-      {
-        "key": "",
-        "value": "Kéo giấy dài: 6.096 mm"
-      },
-      {
-        "key": "",
-        "value": "Khả năng quét thẻ nhựa chữ nổi, độ dày tối đa 1,4mm"
-      },
-      {
-        "key": "",
-        "value": "Quét sổ/ Hộ chiếu: tối đa dày 7 mm"
-      },
-      {
-        "key": "Định lượng giấy",
-        "value": "20 - 465 g/m2"
-      },
-      {
-        "key": "Tốc độ quét",
-        "value": "Một mặt: 50 ppm, Hai mặt: 100 ipm (A4, quét màu, 300dpi)\\"
-      },
-      {
-        "key": "Khay giấy",
-        "value": "100 tờ (A4: 80 g/m2)"
-      },
-      {
-        "key": "Công suất",
-        "value": "8000 trang/ ngày"
-      },
-      {
-        "key": "Cổng kết nối",
-        "value": "USB 3.2 Gen1x1 / USB 2.0 / USB 1.1"
-      },
-      {
-        "key": "Chức năng quét khổ A3, bì thư",
-        "value": "Có khả năng quét giấy khổ A3 bằng cách gập đôi và quét bì thư mà không cần sử dụng phụ kiện"
-      },
-      {
-        "key": "Chức năng quản lý máy",
-        "value": "Đi kèm phần mềm quản lý cấu hình, theo dõi nhiều máy từ xa cùng lúc dưới dạng phần mềm server - client"
-      },
-      {
-        "key": "Định dạng file",
-        "value": "Hỗ trợ các định dạng file: Bitmap, TIFF, Multi-TIFF, JPEG, JPEG2000, Searchable PDF, PDF, PDF/A, PNG, RTF, Word, Excel, PowerPoint"
-      },
-      {
-        "key": "Hỗ trợ Index file",
-        "value": "XML, CSV, TXT"
-      },
-      {
-        "key": "Tính năng tách trường văn bản (Metadata fields)",
-        "value": "20 trường, hỗ trợ font tiếng Việt, Anh, Hàn Quốc, Nhật Bản, Trung Quốc. Người dùng có thể tự định nghĩa trường văn bản."
-      },
-      {
-        "key": "Phần mềm số hóa tiếng Việt đi kèm",
-        "value": "- Tự động tách file và đặt tên file theo loại văn bản, ngày trên văn bản, số văn bản"
-      },
-      {
-        "key": "",
-        "value": "- Chuyển đổi chữ in và chữ viết tay tiếng Việt sang file dạng văn bản (Word)"
-      },
-      {
-        "key": "",
-        "value": "- Tự động bóc tách các trường trên văn bản hành chính: Số văn bản, ngày văn bản, tiêu đề, kính gửi, cơ quan ban hành, nơi nhận, người ký."
-      },
-      {
-        "key": "",
-        "value": "Nguồn tài liệu đầu vào từ máy scan hoặc từ file ảnh."
-      }
-    ]
-  },
-  {
-    "stt": 8,
-    "name": "Máy đa chức năng đen trắng IM 3500",
-    "model": "IM 3500",
-    "brand": "Ricoh",
-    "origin": "Thái Lan",
-    "unit": "Cái",
-    "qty": 1,
-    "price": "",
-    "specs": [
-      {
-        "key": "",
-        "value": "(Cấu hình copy + in + scan)"
-      },
-      {
-        "key": "Tốc độ sao chụp / in",
-        "value": "35 bản/phút"
-      },
-      {
-        "key": "Tốc độ scan",
-        "value": "80 ipm"
-      },
-      {
-        "key": "Độ phân giải sao chụp",
-        "value": "600 x 600 dpi"
-      },
-      {
-        "key": "Độ phân giải scan",
-        "value": "100 dpi, 200dpi, 300 dpi, 400 dpi, 600 dpi"
-      },
-      {
-        "key": "Thời gian ra bản chụp đầu tiên",
-        "value": "3.8 giây,"
-      },
-      {
-        "key": "Copy liên tục",
-        "value": "999 bản một lần"
-      },
-      {
-        "key": "Thời gian khởi động máy",
-        "value": "18.6 giây"
-      },
-      {
-        "key": "Phóng to/ Thu nhỏ",
-        "value": "25% ~ 400% điều chỉnh 1%"
-      },
-      {
-        "key": "Bộ phận tự động nạp và đảo bản gốc",
-        "value": "ARDF có sẵn"
-      },
-      {
-        "key": "Chia bộ điện tử và sao chụp hai mặt",
-        "value": "có sẵn"
-      },
-      {
-        "key": "Chia bản chụp theo 2 chế độ",
-        "value": "so le và dọc ngang"
-      },
-      {
-        "key": "Chế độ tự động ngủ khi không sử dụng",
-        "value": "có sẵn"
-      },
-      {
-        "key": "Kích cỡ giấy",
-        "value": "B6 - A3"
-      },
-      {
-        "key": "Định lượng giấy",
-        "value": "52 ~ 300 g/m2"
-      },
-      {
-        "key": "Khay giấy",
-        "value": "2 khay x 550 tờ, khay tay x 100 tờ"
-      },
-      {
-        "key": "Khay giấy ra",
-        "value": "500 tờ"
-      },
-      {
-        "key": "Bộ nhớ tiêu chuẩn",
-        "value": "2 GB, HDD : 320 GB"
-      },
-      {
-        "key": "Ngôn ngữ in",
-        "value": "PCL5e/PCL6, PDF Driect, PS3 (Emulation)"
-      },
-      {
-        "key": "Kết nối",
-        "value": "Ethernet 10Base-T/100Base-TX/1000Base-T, USB Host I/F"
-      },
-      {
-        "key": "Hệ điều hành hỗ trợ",
-        "value": "Windows Vista/7/8/8.1/10, Windows server/2008/2008 R2/2012/2012 R2"
-      },
-      {
-        "key": "Hỗ trợ scan",
-        "value": "scan to email, scan to USB/SD, scan to Folder,"
-      },
-      {
-        "key": "Định dạng scan",
-        "value": "PDF, TIFF, JPEG,High Compression PDF, PDF-A"
-      },
-      {
-        "key": "Chân kê: có sẵn",
-        "value": "có sẵn"
-      }
-    ]
+    stt: 2,
+    name: 'Dịch vụ trực tuyến Microsoft 365 Business Standard (no Teams) - Annual - 12 Months',
+    model: '',
+    brand: '',
+    origin: '',
+    unit: 'Người dùng',
+    qty: 54,
+    price: 3250000
   }
 ];
-var bgItems = JSON.parse(JSON.stringify(BAOGIA_SAMPLE_ITEMS));
+
+var bgItems = JSON.parse(JSON.stringify(BAOGIA_THUANPHAT_ITEMS));
+
+function bgFillCustomer(type) {
+  var comp = document.getElementById('bg_company');
+  var to = document.getElementById('bg_to');
+  var loc = document.getElementById('bg_delivery_loc');
+
+  if (type === 'hoa_phat') {
+    if (comp) comp.value = 'Công ty Cổ phần Xây dựng và Thương mại Hòa Phát';
+    if (to) to.value = 'Quý khách hàng - Công ty CP XD & TM Hòa Phát';
+    if (loc) loc.value = 'Khu Đô Thị Mới Kiến Hưng, Quận Hà Đông, TP. Hà Nội (Liên hệ: 0787416666)';
+  } else if (type === 'ecoit') {
+    if (comp) comp.value = 'Công ty Cổ phần Công nghệ ECOIT';
+    if (to) to.value = 'Quý khách hàng - Công ty CP Công nghệ ECOIT (Đoàn Văn Ngà)';
+    if (loc) loc.value = 'Imperia Garden, 203 Nguyễn Huy Tưởng, Thanh Xuân, Hà Nội';
+  } else if (type === 'tin_thanh') {
+    if (comp) comp.value = 'Công ty TNHH Thương Mại và Dịch Vụ Tín Thành';
+    if (to) to.value = 'Quý khách hàng - Công ty Tín Thành';
+    if (loc) loc.value = 'Do Nha, Tây Mỗ, Nam Từ Liêm / Cầu Giấy, Hà Nội';
+  } else if (type === 'netsys') {
+    if (comp) comp.value = 'Công ty Cổ phần Công nghệ NETSYS Việt Nam';
+    if (to) to.value = 'Quý khách hàng - NETSYS Việt Nam';
+    if (loc) loc.value = 'Khu Đô Thị Đại Kim, Quận Hoàng Mai, Hà Nội';
+  } else if (type === 'cahcm') {
+    if (comp) comp.value = 'Công an Thành phố Hồ Chí Minh';
+    if (to) to.value = 'Quý Cơ quan - Công an Thành phố Hồ Chí Minh';
+    if (loc) loc.value = 'TP. Hồ Chí Minh';
+  }
+  renderBaogiaForm();
+}
 
 function renderBaogiaForm() {
   var container = document.getElementById('bgTableArea');
   if (!container) return;
 
-  var dtEl = document.getElementById('bg_date');
-  if (dtEl && !dtEl.value) dtEl.valueAsDate = new Date();
+  var vatRate = parseInt(document.getElementById('bg_vat_rate') ? document.getElementById('bg_vat_rate').value : 10) || 0;
+  var toName = (document.getElementById('bg_to') && document.getElementById('bg_to').value) || 'Quý khách hàng';
+  var sellerName = (document.getElementById('bg_seller') && document.getElementById('bg_seller').value) || 'Công ty TNHH Thương Mại Đầu tư và Sản xuất Thuận Phát';
+  var dTime = (document.getElementById('bg_delivery_time') && document.getElementById('bg_delivery_time').value) || 'Trong vòng 03 - 05 ngày làm việc';
+  var dLoc = (document.getElementById('bg_delivery_loc') && document.getElementById('bg_delivery_loc').value) || 'Tại kho bên mua';
+  var dVal = (document.getElementById('bg_validity') && document.getElementById('bg_validity').value) || 'trong vòng 20 ngày kể từ ngày phát hành báo giá.';
 
-  var grandTotal = 0;
+  var totalTruocThue = 0;
   var totalQty = 0;
 
   var html = '<table class="excel-table" style="width:100%">' +
     '<thead>' +
     '<tr>' +
     '<th style="width:40px">STT</th>' +
-    '<th>Mô Tả Sản Phẩm &amp; Thông Số Kỹ Thuật</th>' +
+    '<th>SẢN PHẨM / DỊCH VỤ</th>' +
     '<th style="width:110px">Model</th>' +
-    '<th style="width:90px">Hãng</th>' +
-    '<th style="width:90px">Xuất xứ</th>' +
-    '<th style="width:65px">ĐVT</th>' +
-    '<th style="width:60px">SL</th>' +
-    '<th style="width:120px">Đơn giá (VNĐ)</th>' +
-    '<th style="width:130px">Thành tiền</th>' +
+    '<th style="width:100px">Hãng</th>' +
+    '<th style="width:85px">ĐVT</th>' +
+    '<th style="width:70px">SL</th>' +
+    '<th style="width:130px">Đơn giá (VNĐ)</th>' +
+    '<th style="width:140px">Thành tiền (VNĐ)</th>' +
     '<th style="width:45px">Xóa</th>' +
     '</tr>' +
     '</thead><tbody>';
 
   if (!bgItems || bgItems.length === 0) {
-    html += '<tr><td colspan="10" class="ctr" style="padding:30px;color:var(--t2);background:#fff">' +
-      '<div style="font-size:32px;margin-bottom:8px">💰</div>' +
+    html += '<tr><td colspan="9" class="ctr" style="padding:32px;color:var(--t2);background:#fff">' +
+      '<div style="font-size:32px;margin-bottom:8px">📄</div>' +
       '<div style="font-weight:700;margin-bottom:4px;color:#0f172a">Bảng báo giá hiện đang trống</div>' +
-      '<div style="font-size:12.5px;margin-bottom:12px">Bấm nút bên dưới để nạp lại dữ liệu 8 mẫu máy Scan &amp; Photo từ file gốc hoặc thêm thiết bị mới</div>' +
-      '<button class="btn btn-p btn-sm" onclick="bgLoadOriginal8Items()">🔄 Nạp 8 mẫu máy Scan &amp; Photo gốc</button>' +
+      '<div style="font-size:12.5px;margin-bottom:12px">Bạn có thể nạp mẫu BGThuanPhat.xlsx, đồng bộ từ Dự toán hoặc thêm sản phẩm mới</div>' +
+      '<button class="btn btn-p btn-sm" onclick="bgLoadSampleThuanPhat()">✨ Nạp mẫu BGThuanPhat.xlsx</button>' +
       '</td></tr>';
   } else {
     bgItems.forEach(function (d, idx) {
       var qty = parseInt(d.qty) || 1;
       var price = d.price === '' ? 0 : (typeof d.price === 'number' ? d.price : parseNum(d.price));
       var total = qty * price;
-      grandTotal += total;
+      totalTruocThue += total;
       totalQty += qty;
 
       html += '<tr style="background:#fafbfc">' +
         '<td class="ctr" style="font-weight:700">' + (idx + 1) + '</td>' +
-        '<td><input type="text" class="cell-inp" style="font-weight:700;color:var(--b2)" value="' + escH(d.name || '') + '" onchange="bgUpdateField(' + idx + ', \'name\', this.value)"/></td>' +
+        '<td><input type="text" class="cell-inp" style="font-weight:700;color:var(--t1)" value="' + escH(d.name || '') + '" onchange="bgUpdateField(' + idx + ', \'name\', this.value)"/></td>' +
         '<td><input type="text" class="cell-inp ctr" value="' + escH(d.model || '') + '" onchange="bgUpdateField(' + idx + ', \'model\', this.value)"/></td>' +
         '<td><input type="text" class="cell-inp ctr" value="' + escH(d.brand || '') + '" onchange="bgUpdateField(' + idx + ', \'brand\', this.value)"/></td>' +
-        '<td><input type="text" class="cell-inp ctr" value="' + escH(d.origin || '') + '" onchange="bgUpdateField(' + idx + ', \'origin\', this.value)"/></td>' +
         '<td><input type="text" class="cell-inp ctr" value="' + escH(d.unit || 'Chiếc') + '" onchange="bgUpdateField(' + idx + ', \'unit\', this.value)"/></td>' +
         '<td><input type="number" min="1" class="cell-inp ctr" style="font-weight:700" value="' + qty + '" onchange="bgUpdateField(' + idx + ', \'qty\', this.value)"/></td>' +
         '<td><input type="text" class="cell-inp text-r" placeholder="Tự điền giá..." value="' + (price > 0 ? fmtMoney(price) : '') + '" onchange="bgUpdateField(' + idx + ', \'price\', this.value)"/></td>' +
         '<td class="text-r" style="font-weight:700;color:var(--gr)">' + (total > 0 ? fmtMoney(total) + ' đ' : '-') + '</td>' +
         '<td class="ctr"><button style="background:none;border:none;cursor:pointer;color:var(--re);font-size:15px" onclick="bgDelProduct(' + idx + ')" title="Xóa dòng">✕</button></td>' +
         '</tr>';
-
-      // Specs rows
-      if (d.specs && d.specs.length > 0) {
-        d.specs.forEach(function (sp) {
-          html += '<tr style="font-size:12px;background:#ffffff">' +
-            '<td></td>' +
-            '<td style="padding-left:24px;color:#475569"><span style="font-weight:600;color:#1e293b">' + (sp.key ? escH(sp.key) + ': ' : '') + '</span>' + escH(sp.value || '') + '</td>' +
-            '<td colspan="8" style="color:#94a3b8;font-size:11px">-</td>' +
-            '</tr>';
-        });
-      }
     });
 
-    // Summary row
-    html += '<tr style="background:#f1f5f9;font-weight:800;border-top:2px solid #cbd5e1">' +
-      '<td colspan="6" class="text-r" style="padding:10px 14px;color:#0f172a">TỔNG CỘNG TIỀN HÀNG (CHƯA VAT):</td>' +
+    var tienVat = Math.round(totalTruocThue * vatRate / 100);
+    var totalSauThue = totalTruocThue + tienVat;
+    var strBangChu = docSoThanhChu(totalSauThue);
+
+    // Summary rows matching BGThuanPhat.xlsx exactly
+    html += '<tr style="background:#f8fafc;font-weight:800;border-top:2px solid #cbd5e1">' +
+      '<td colspan="5" class="text-r" style="padding:10px 14px;color:#0f172a">TỔNG CỘNG TRƯỚC THUẾ:</td>' +
       '<td class="ctr" style="color:var(--b2)">' + totalQty + '</td>' +
       '<td></td>' +
-      '<td class="text-r" style="color:var(--gr);font-size:14px">' + (grandTotal > 0 ? fmtMoney(grandTotal) + ' đ' : '0 đ') + '</td>' +
+      '<td class="text-r" style="color:var(--t1);font-size:13.5px">' + (totalTruocThue > 0 ? fmtMoney(totalTruocThue) + ' đ' : '0 đ') + '</td>' +
       '<td></td>' +
+      '</tr>';
+
+    html += '<tr style="background:#f8fafc;font-weight:800">' +
+      '<td colspan="7" class="text-r" style="padding:8px 14px;color:#0f172a">THUẾ ' + vatRate + '%:</td>' +
+      '<td class="text-r" style="color:var(--go);font-size:13.5px">' + (tienVat > 0 ? fmtMoney(tienVat) + ' đ' : '0 đ') + '</td>' +
+      '<td></td>' +
+      '</tr>';
+
+    html += '<tr style="background:#f1f5f9;font-weight:900;border-bottom:2px solid #cbd5e1">' +
+      '<td colspan="7" class="text-r" style="padding:10px 14px;color:var(--re);font-size:14px">TỔNG TIỀN SAU THUẾ:</td>' +
+      '<td class="text-r" style="color:var(--gr);font-size:15px">' + (totalSauThue > 0 ? fmtMoney(totalSauThue) + ' đ' : '0 đ') + '</td>' +
+      '<td></td>' +
+      '</tr>';
+
+    html += '<tr style="background:#ffffff;font-style:italic">' +
+      '<td colspan="9" style="padding:10px 14px;color:#1e293b;font-size:13px"><b style="color:var(--b2)">Bằng chữ:</b> ' + escH(strBangChu) + '</td>' +
       '</tr>';
   }
 
   html += '</tbody></table>';
+
+  // Notes section simulation
+  html += '<div style="margin-top:14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px 16px;font-size:12.5px;line-height:1.7;color:#334155">' +
+    '<div style="font-weight:700;color:#0f172a;margin-bottom:4px">📝 Ghi chú báo giá:</div>' +
+    '<div>• Giá trên đã bao gồm thuế VAT ' + vatRate + '%</div>' +
+    '<div>• Tình trạng hàng hóa: hàng mới 100% chưa qua sử dụng</div>' +
+    '<div>• Thời gian giao hàng: ' + escH(dTime) + '</div>' +
+    '<div>• Địa điểm giao hàng: ' + escH(dLoc) + '</div>' +
+    '<div>• Hiệu lực của báo giá: ' + escH(dVal) + '</div>' +
+    '</div>';
+
   container.innerHTML = html;
 }
 
@@ -8619,34 +8578,124 @@ function bgUpdateField(idx, field, val) {
 function bgAddProduct() {
   bgItems.push({
     stt: bgItems.length + 1,
-    name: 'Thiết bị mới',
+    name: 'SẢN PHẨM / DỊCH VỤ MỚI',
     model: '',
     brand: '',
     origin: 'Việt Nam',
     unit: 'Chiếc',
     qty: 1,
-    price: '',
-    specs: [
-      { key: 'Chức năng chuẩn', value: '...' },
-      { key: 'Bảo hành', value: '12 tháng' }
-    ]
+    price: 0
   });
   renderBaogiaForm();
-  toast('➕ Đã thêm dòng thiết bị báo giá mới!', 'ok');
+  toast('➕ Đã thêm dòng sản phẩm báo giá mới!', 'ok');
 }
 
 function bgDelProduct(idx) {
-  if (confirm('Bạn có chắc muốn xóa thiết bị này khỏi bảng báo giá?')) {
+  if (confirm('Bạn có chắc muốn xóa dòng này khỏi bảng báo giá?')) {
     bgItems.splice(idx, 1);
     renderBaogiaForm();
-    toast('🗑️ Đã xóa thiết bị!', 'ok');
+    toast('🗑️ Đã xóa dòng sản phẩm!', 'ok');
   }
 }
 
-function bgLoadOriginal8Items() {
-  bgItems = JSON.parse(JSON.stringify(BAOGIA_SAMPLE_ITEMS));
+function bgLoadSampleThuanPhat() {
+  bgItems = JSON.parse(JSON.stringify(BAOGIA_THUANPHAT_ITEMS));
+  if (document.getElementById('bg_company')) document.getElementById('bg_company').value = 'Quý khách hàng';
+  if (document.getElementById('bg_vat_rate')) document.getElementById('bg_vat_rate').value = '10';
   renderBaogiaForm();
-  toast('🔄 Đã nạp lại đủ 8 dòng máy Scan & Photo gốc!', 'ok');
+  toast('✨ Đã nạp thành công dữ liệu mẫu BGThuanPhat.xlsx!', 'ok');
+}
+
+function bgSyncFromDuToan() {
+  if (!devs || devs.length === 0) {
+    toast('⚠️ Chưa có thiết bị nào bên tab Dự Toán để đồng bộ!', 'err');
+    return;
+  }
+  bgItems = devs.map(function (d, i) {
+    return {
+      stt: i + 1,
+      name: d.name || 'Thiết bị ' + (i + 1),
+      model: d.model || '',
+      brand: d.brand || '',
+      origin: d.origin || '',
+      unit: d.unit || 'Bộ',
+      qty: parseInt(d.qty) || 1,
+      price: d.price || 0
+    };
+  });
+  renderBaogiaForm();
+  toast('🔄 Đã đồng bộ thành công ' + bgItems.length + ' thiết bị từ Dự Toán sang Báo Giá!', 'ok');
+}
+
+function bgImportExcel(e) {
+  var file = e.target.files && e.target.files[0];
+  if (!file) return;
+
+  var reader = new FileReader();
+  reader.onload = function (evt) {
+    try {
+      var data = new Uint8Array(evt.target.result);
+      var wb = XLSX.read(data, { type: 'array' });
+      var sName = wb.SheetNames[0];
+      var ws = wb.Sheets[sName];
+      var rows = XLSX.utils.sheet_to_json(ws, { header: 1, defval: '' });
+
+      var imported = [];
+      var startRow = -1;
+
+      for (var i = 0; i < rows.length; i++) {
+        var r = rows[i];
+        var rStr = (r.join(' ')).toLowerCase();
+        if (rStr.includes('stt') && (rStr.includes('sản phẩm') || rStr.includes('tên') || rStr.includes('mô tả'))) {
+          startRow = i + 1;
+          break;
+        }
+      }
+
+      if (startRow === -1) startRow = 6; // default index 6 (row 7)
+
+      for (var j = startRow; j < rows.length; j++) {
+        var row = rows[j];
+        if (!row || row.length === 0) continue;
+        var rStr = (row.join(' ')).toLowerCase();
+        if (rStr.includes('tổng cộng') || rStr.includes('thuế') || rStr.includes('bằng chữ') || rStr.includes('ghi chú')) {
+          break;
+        }
+        var name = String(row[1] || row[0] || '').trim();
+        if (!name || name === 'STT') continue;
+
+        var model = String(row[3] || row[2] || '').trim();
+        var brand = String(row[4] || '').trim();
+        var unit = String(row[5] || 'Chiếc').trim();
+        var qty = parseInt(row[6]) || 1;
+        var price = parseNum(row[7]) || 0;
+
+        imported.push({
+          stt: imported.length + 1,
+          name: name,
+          model: model,
+          brand: brand,
+          origin: '',
+          unit: unit,
+          qty: qty,
+          price: price
+        });
+      }
+
+      if (imported.length > 0) {
+        bgItems = imported;
+        renderBaogiaForm();
+        toast('✅ Đã nhập thành công ' + imported.length + ' sản phẩm từ file Excel!', 'ok');
+      } else {
+        toast('⚠️ Không tìm thấy bảng sản phẩm hợp lệ trong file Excel tải lên!', 'err');
+      }
+    } catch (err) {
+      console.error(err);
+      toast('❌ Lỗi đọc file Excel: ' + err.message, 'err');
+    }
+  };
+  reader.readAsArrayBuffer(file);
+  e.target.value = '';
 }
 
 function bgClearAll() {
@@ -8657,6 +8706,7 @@ function bgClearAll() {
   }
 }
 
+// Hàm xuất file Excel chuẩn 100% từng cell theo mẫu BGThuanPhat.xlsx
 function exportBaogiaExcel() {
   if (!bgItems || bgItems.length === 0) {
     toast('⚠️ Bảng báo giá đang trống, không thể xuất file!', 'err');
@@ -8668,156 +8718,222 @@ function exportBaogiaExcel() {
     var ws = {};
     ws["!cols"] = [
       { wch: 6 },  // A: STT
-      { wch: 42 }, // B: MÔ TẢ / Key
-      { wch: 38 }, // C: Value
+      { wch: 38 }, // B: SẢN PHẨM (Merge B:C)
+      { wch: 38 }, // C: Sản phẩm mở rộng
       { wch: 18 }, // D: Model
-      { wch: 15 }, // E: Hãng
-      { wch: 15 }, // F: Xuất xứ
-      { wch: 10 }, // G: ĐVT
-      { wch: 8 },  // H: SL
-      { wch: 16 }, // I: Đơn giá
-      { wch: 18 }  // J: Thành tiền
+      { wch: 16 }, // E: Hãng
+      { wch: 12 }, // F: ĐVT
+      { wch: 8 },  // G: SL
+      { wch: 18 }, // H: Đơn giá
+      { wch: 22 }  // I: Thành tiền
     ];
     ws["!rows"] = [];
     var mg = [];
 
-    var SCompany = { font: { bold: true, name: 'Times New Roman', sz: 12, color: { rgb: '002060' } } };
-    var SDate = { font: { italic: true, name: 'Times New Roman', sz: 11 }, alignment: { horizontal: 'right' } };
-    var STitle = { font: { bold: true, name: 'Times New Roman', sz: 18, color: { rgb: 'C00000' } }, alignment: { horizontal: 'center' } };
+    var BORD = {
+      top: { style: 'thin', color: { rgb: '000000' } },
+      bottom: { style: 'thin', color: { rgb: '000000' } },
+      left: { style: 'thin', color: { rgb: '000000' } },
+      right: { style: 'thin', color: { rgb: '000000' } }
+    };
+
+    var SDate = { font: { italic: true, name: 'Times New Roman', sz: 11 }, alignment: { horizontal: 'right', vertical: 'center' } };
+    var STitle = { font: { bold: true, name: 'Times New Roman', sz: 16, color: { rgb: '000000' } }, alignment: { horizontal: 'center', vertical: 'center' } };
     var SHead = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, fill: { fgColor: { rgb: 'D9E1F2' } }, alignment: { horizontal: 'center', vertical: 'center', wrapText: true }, border: BORD };
-    var SDevRow = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '002060' } }, fill: { fgColor: { rgb: 'F2F2F2' } }, border: BORD };
-    var SText = { font: { name: 'Times New Roman', sz: 10.5 }, border: BORD, alignment: { vertical: 'center', wrapText: true } };
-    var SCtr = { font: { name: 'Times New Roman', sz: 10.5 }, border: BORD, alignment: { horizontal: 'center', vertical: 'center' } };
-    var SNum = { font: { name: 'Times New Roman', sz: 10.5 }, border: BORD, alignment: { horizontal: 'right', vertical: 'center' }, numFmt: '#,##0' };
-    var STotal = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: 'C00000' } }, fill: { fgColor: { rgb: 'FFF2CC' } }, border: BORD, alignment: { horizontal: 'right', vertical: 'center' }, numFmt: '#,##0' };
+    var STextL = { font: { name: 'Times New Roman', sz: 11 }, border: BORD, alignment: { horizontal: 'left', vertical: 'center', wrapText: true } };
+    var SCtr = { font: { name: 'Times New Roman', sz: 11 }, border: BORD, alignment: { horizontal: 'center', vertical: 'center' } };
+    var SNum = { font: { name: 'Times New Roman', sz: 11 }, border: BORD, alignment: { horizontal: 'right', vertical: 'center' }, numFmt: '#,##0.00' };
+    var STotalLabel = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, border: BORD, alignment: { horizontal: 'left', vertical: 'center' } };
+    var STotalNum = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, border: BORD, alignment: { horizontal: 'right', vertical: 'center' }, numFmt: '#,##0' };
 
     var r = 0;
-    var seller = (document.getElementById('bg_seller') && document.getElementById('bg_seller').value) || 'CÔNG TY TNHH THƯƠNG MẠI ĐẦU TƯ VÀ SẢN XUẤT THUẬN PHÁT';
-    setCell(ws, r, 0, seller, SCompany);
-    mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 5 } });
-    ws["!rows"][r] = { hpt: 20 }; r++;
+    ws["!rows"][r] = { hpt: 15 }; r++; // Row 1 blank
 
-    setCell(ws, r, 0, 'Địa chỉ: Thôn Dục Nội, Xã Đông Anh, TP. Hà Nội, Việt Nam', { font: { name: 'Times New Roman', sz: 10.5 } });
-    mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 5 } });
-    ws["!rows"][r] = { hpt: 18 }; r++;
-
-    r++; // Blank
+    // Row 2: Date
     var dateVal = (document.getElementById('bg_date') && document.getElementById('bg_date').value) || new Date().toISOString().slice(0, 10);
     var dtParts = dateVal.split('-');
     var dateText = 'Hà Nội, Ngày ' + (dtParts[2] || '...') + ' tháng ' + (dtParts[1] || '...') + ' năm ' + (dtParts[0] || '2026');
     setCell(ws, r, 5, dateText, SDate);
-    mg.push({ s: { r: r, c: 5 }, e: { r: r, c: 9 } });
+    mg.push({ s: { r: r, c: 5 }, e: { r: r, c: 8 } });
     ws["!rows"][r] = { hpt: 20 }; r++;
 
-    // Title
-    setCell(ws, r, 0, 'BẢNG BÁO GIÁ SẢN PHẨM', STitle);
-    mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 9 } });
-    ws["!rows"][r] = { hpt: 28 }; r++;
+    // Row 3: BÁO GIÁ Title
+    setCell(ws, r, 0, 'BÁO GIÁ', STitle);
+    mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 8 } });
+    ws["!rows"][r] = { hpt: 26 }; r++;
 
+    // Row 4: Kính gửi
     var toName = (document.getElementById('bg_to') && document.getElementById('bg_to').value) || 'Quý khách hàng';
     var toComp = (document.getElementById('bg_company') && document.getElementById('bg_company').value) || '';
-    var toAddr = (document.getElementById('bg_address') && document.getElementById('bg_address').value) || '';
+    var fullTo = '          Kính gửi: ' + toName + (toComp ? ' - ' + toComp : '');
+    setCell(ws, r, 0, fullTo, { font: { bold: true, name: 'Times New Roman', sz: 11 }, alignment: { vertical: 'center' } });
+    mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 8 } });
+    ws["!rows"][r] = { hpt: 20 }; r++;
 
-    setCell(ws, r, 0, 'Kính gửi: ' + toName, { font: { bold: true, name: 'Times New Roman', sz: 11 } }); r++;
-    if (toComp) { setCell(ws, r, 0, 'Công ty / Đơn vị: ' + toComp, { font: { name: 'Times New Roman', sz: 11 } }); r++; }
-    if (toAddr) { setCell(ws, r, 0, 'Địa chỉ: ' + toAddr, { font: { name: 'Times New Roman', sz: 11 } }); r++; }
+    // Row 5: Thư cảm ơn Thuận Phát
+    var seller = (document.getElementById('bg_seller') && document.getElementById('bg_seller').value) || 'Công ty TNHH Thương Mại Đầu tư và Sản xuất Thuận Phát';
+    var introText = '         Trân trọng cảm ơn quý khách hàng đã quan tâm đến sản phẩm và dịch vụ của chúng tôi. ' + seller + ' xin gửi tới Quý khách bảng báo giá sản phẩm như sau:';
+    setCell(ws, r, 0, introText, { font: { name: 'Times New Roman', sz: 11 }, alignment: { vertical: 'center', wrapText: true } });
+    mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 8 } });
+    ws["!rows"][r] = { hpt: 32 }; r++;
 
-    setCell(ws, r, 0, 'Trân trọng cảm ơn quý khách hàng đã quan tâm đến sản phẩm và dịch vụ của chúng tôi. Chúng tôi xin gửi tới Quý khách bảng báo giá sản phẩm như sau:', { font: { italic: true, name: 'Times New Roman', sz: 10.5 } });
-    mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 9 } });
-    ws["!rows"][r] = { hpt: 22 }; r++;
-    r++; // Blank
-
-    // Header Table
+    // Row 6: Header Table (STT, SẢN PHẨM, Model, Hãng, ĐVT, SL, Đơn giá, Thành tiền)
     setCell(ws, r, 0, 'STT', SHead);
-    setCell(ws, r, 1, 'MÔ TẢ SẢN PHẨM', SHead);
+    setCell(ws, r, 1, 'SẢN PHẨM', SHead);
     setCell(ws, r, 2, '', SHead);
     mg.push({ s: { r: r, c: 1 }, e: { r: r, c: 2 } });
     setCell(ws, r, 3, 'Model', SHead);
     setCell(ws, r, 4, 'Hãng', SHead);
-    setCell(ws, r, 5, 'Xuất xứ', SHead);
-    setCell(ws, r, 6, 'ĐVT', SHead);
-    setCell(ws, r, 7, 'SL', SHead);
-    setCell(ws, r, 8, 'Đơn giá', SHead);
-    setCell(ws, r, 9, 'Thành tiền', SHead);
-    ws["!rows"][r] = { hpt: 26 }; r++;
+    setCell(ws, r, 5, 'ĐVT', SHead);
+    setCell(ws, r, 6, 'SL', SHead);
+    setCell(ws, r, 7, 'Đơn giá', SHead);
+    setCell(ws, r, 8, 'Thành tiền', SHead);
+    ws["!rows"][r] = { hpt: 24 }; r++;
 
-    var grandTotal = 0;
-    var totalQty = 0;
+    var startDataRow = r + 1; // 1-indexed for formula
+    var totalTruocThue = 0;
 
     bgItems.forEach(function (d, idx) {
+      var rowIdx = r + 1; // Excel row 1-indexed
       var qty = parseInt(d.qty) || 1;
       var price = d.price === '' ? 0 : (typeof d.price === 'number' ? d.price : parseNum(d.price));
-      var total = qty * price;
-      grandTotal += total;
-      totalQty += qty;
+      var lineTotal = qty * price;
+      totalTruocThue += lineTotal;
 
       setCell(ws, r, 0, idx + 1, SCtr);
-      setCell(ws, r, 1, d.name || '', SDevRow);
-      setCell(ws, r, 2, '', SDevRow);
+      setCell(ws, r, 1, d.name || '', STextL);
+      setCell(ws, r, 2, '', STextL);
       mg.push({ s: { r: r, c: 1 }, e: { r: r, c: 2 } });
       setCell(ws, r, 3, d.model || '', SCtr);
       setCell(ws, r, 4, d.brand || '', SCtr);
-      setCell(ws, r, 5, d.origin || '', SCtr);
-      setCell(ws, r, 6, d.unit || 'Chiếc', SCtr);
-      setCell(ws, r, 7, qty, SCtr);
-      setCell(ws, r, 8, price > 0 ? price : '', SNum);
-      setCell(ws, r, 9, total > 0 ? total : 0, SNum);
-      ws["!rows"][r] = { hpt: 22 }; r++;
+      setCell(ws, r, 5, d.unit || 'Chiếc', SCtr);
+      setCell(ws, r, 6, qty, SCtr);
+      setCell(ws, r, 7, price, SNum);
 
-      if (d.specs && d.specs.length > 0) {
-        d.specs.forEach(function (sp) {
-          setCell(ws, r, 0, '', SCtr);
-          setCell(ws, r, 1, sp.key || '', SText);
-          setCell(ws, r, 2, sp.value || '', SText);
-          setCell(ws, r, 3, '', SCtr);
-          setCell(ws, r, 4, '', SCtr);
-          setCell(ws, r, 5, '', SCtr);
-          setCell(ws, r, 6, '', SCtr);
-          setCell(ws, r, 7, '', SCtr);
-          setCell(ws, r, 8, '', SCtr);
-          setCell(ws, r, 9, '', SCtr);
-          ws["!rows"][r] = { hpt: 20 }; r++;
-        });
-      }
+      // Formula: =G7*H7
+      var formulaCell = {
+        t: 'n',
+        f: 'G' + rowIdx + '*H' + rowIdx,
+        v: lineTotal,
+        s: SNum
+      };
+      var cellRef = XLSX.utils.encode_cell({ r: r, c: 8 });
+      ws[cellRef] = formulaCell;
+
+      ws["!rows"][r] = { hpt: 28 }; r++;
     });
 
-    // Summary Total
-    setCell(ws, r, 0, '', STotal);
-    setCell(ws, r, 1, 'TỔNG CỘNG TIỀN HÀNG (CHƯA VAT):', STotal);
-    setCell(ws, r, 2, '', STotal);
-    mg.push({ s: { r: r, c: 1 }, e: { r: r, c: 6 } });
-    for (var c = 3; c <= 6; c++) setCell(ws, r, c, '', STotal);
-    setCell(ws, r, 7, totalQty, STotal);
-    setCell(ws, r, 8, '', STotal);
-    setCell(ws, r, 9, grandTotal, STotal);
+    var endDataRow = r; // Excel 1-indexed of last item
+
+    // Row Tổng cộng trước thuế
+    var rPreTax = r + 1; // 1-indexed
+    setCell(ws, r, 0, '', STotalLabel);
+    setCell(ws, r, 1, 'TỔNG CỘNG TRƯỚC THUẾ: ', STotalLabel);
+    for (var c = 2; c <= 7; c++) setCell(ws, r, c, '', STotalLabel);
+    mg.push({ s: { r: r, c: 1 }, e: { r: r, c: 7 } });
+
+    // Formula sum: =SUM(I7:I8)
+    var cellSumRef = XLSX.utils.encode_cell({ r: r, c: 8 });
+    ws[cellSumRef] = {
+      t: 'n',
+      f: 'SUM(I' + startDataRow + ':I' + endDataRow + ')',
+      v: totalTruocThue,
+      s: STotalNum
+    };
     ws["!rows"][r] = { hpt: 24 }; r++;
 
-    // Footer signatures
-    r += 2;
-    setCell(ws, r, 1, 'NGƯỜI LẬP BÁO GIÁ', { font: { bold: true, name: 'Times New Roman', sz: 11 }, alignment: { horizontal: 'center' } });
-    setCell(ws, r, 7, 'ĐẠI DIỆN CÔNG TY', { font: { bold: true, name: 'Times New Roman', sz: 11 }, alignment: { horizontal: 'center' } });
-    mg.push({ s: { r: r, c: 7 }, e: { r: r, c: 9 } });
+    // Row Thuế VAT
+    var vatRate = parseInt(document.getElementById('bg_vat_rate') ? document.getElementById('bg_vat_rate').value : 10) || 0;
+    var rVat = r + 1;
+    var vatVal = Math.round(totalTruocThue * vatRate / 100);
+
+    setCell(ws, r, 0, 'THUẾ ' + vatRate + '%:', STotalLabel);
+    for (var c = 1; c <= 7; c++) setCell(ws, r, c, '', STotalLabel);
+    mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 7 } });
+
+    // Formula VAT: =I9*10%
+    var cellVatRef = XLSX.utils.encode_cell({ r: r, c: 8 });
+    ws[cellVatRef] = {
+      t: 'n',
+      f: 'I' + rPreTax + '*' + vatRate + '%',
+      v: vatVal,
+      s: STotalNum
+    };
+    ws["!rows"][r] = { hpt: 24 }; r++;
+
+    // Row Tổng tiền sau thuế
+    var rPostTax = r + 1;
+    var postTaxVal = totalTruocThue + vatVal;
+
+    setCell(ws, r, 0, 'TỔNG TIỀN SAU THUẾ', STotalLabel);
+    for (var c = 1; c <= 7; c++) setCell(ws, r, c, '', STotalLabel);
+    mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 7 } });
+
+    // Formula Total: =I9+I10
+    var cellPostRef = XLSX.utils.encode_cell({ r: r, c: 8 });
+    ws[cellPostRef] = {
+      t: 'n',
+      f: 'I' + rPreTax + '+I' + rVat,
+      v: postTaxVal,
+      s: STotalNum
+    };
+    ws["!rows"][r] = { hpt: 26 }; r++;
+
+    // Row Bằng chữ
+    var bangChuText = 'Bằng chữ: ' + docSoThanhChu(postTaxVal);
+    setCell(ws, r, 0, bangChuText, { font: { bold: true, italic: true, name: 'Times New Roman', sz: 11 }, alignment: { vertical: 'center' } });
+    mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 8 } });
+    ws["!rows"][r] = { hpt: 24 }; r++;
+
+    // Ghi chú
+    setCell(ws, r, 0, 'Ghi chú:', { font: { bold: true, name: 'Times New Roman', sz: 11 } });
+    mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 8 } });
+    ws["!rows"][r] = { hpt: 20 }; r++;
+
+    var dTime = (document.getElementById('bg_delivery_time') && document.getElementById('bg_delivery_time').value) || 'Trong vòng 03 - 05 ngày làm việc';
+    var dLoc = (document.getElementById('bg_delivery_loc') && document.getElementById('bg_delivery_loc').value) || 'Tại kho bên mua';
+    var dVal = (document.getElementById('bg_validity') && document.getElementById('bg_validity').value) || 'trong vòng 20 ngày kể từ ngày phát hành báo giá.';
+
+    var noteList = [
+      '- Giá trên đã bao gồm VAT ' + vatRate + '%',
+      '- Tình trạng hàng hóa: hàng mới 100% chưa qua sử dụng',
+      '- Thời gian giao hàng: ' + dTime,
+      '- Địa điểm: ' + dLoc,
+      '- Hiệu lực của báo giá: ' + dVal
+    ];
+
+    noteList.forEach(function (nt) {
+      setCell(ws, r, 0, nt, { font: { name: 'Times New Roman', sz: 11 } });
+      mg.push({ s: { r: r, c: 0 }, e: { r: r, c: 8 } });
+      ws["!rows"][r] = { hpt: 19 }; r++;
+    });
+
+    // Signature Area
+    r++;
+    setCell(ws, r, 5, 'ĐẠI DIỆN CÔNG TY', { font: { bold: true, name: 'Times New Roman', sz: 11 }, alignment: { horizontal: 'center' } });
+    mg.push({ s: { r: r, c: 5 }, e: { r: r, c: 8 } });
     ws["!rows"][r] = { hpt: 20 }; r++;
 
     ws["!merges"] = mg;
-    ws["!ref"] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: r + 3, c: 9 } });
-    XLSX.utils.book_append_sheet(wb, ws, 'BaoGia');
+    ws["!ref"] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: r + 3, c: 8 } });
+    XLSX.utils.book_append_sheet(wb, ws, 'Báo giá TP');
 
-    var fileName = 'Bang_Bao_Gia_May_Scan_Photo_' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '.xlsx';
+    var safeComp = (toComp || toName || 'ThuanPhat').replace(/[^a-zA-Z0-9_\u00C0-\u1EF9]/g, '_').slice(0, 30);
+    var fileName = 'Bao_Gia_Thuan_Phat_' + safeComp + '_' + new Date().toISOString().slice(0, 10).replace(/-/g, '') + '.xlsx';
     XLSX.writeFile(wb, fileName);
-    // === GHI LỊCH SỬ ===
-    var bgCompany = (document.getElementById('bg_company') && document.getElementById('bg_company').value) || '';
-    var bgTotal2 = bgItems.reduce(function(s,d){ return s + (parseInt(d.qty)||1) * (d.price === '' ? 0 : (typeof d.price==='number' ? d.price : parseNum(d.price))); }, 0);
+
+    // === GHI LỊCH SỬ FILE ===
     lsAddEntry('baogia',
-      bgCompany || 'Báo Giá Máy Scan & Photo',
+      (toComp || toName || 'Báo Giá Thuận Phát'),
       fileName,
       {
-        customer: bgCompany,
+        customer: toComp || toName,
         devices: bgItems.length,
-        total: bgTotal2 > 0 ? bgTotal2.toLocaleString('vi-VN') + ' ₫' : ''
+        total: postTaxVal > 0 ? postTaxVal.toLocaleString('vi-VN') + ' ₫' : ''
       }
     );
-    toast('✅ Đã xuất file Excel Bảng Báo Giá (' + bgItems.length + ' thiết bị) thành công!', 'ok');
+
+    toast('✅ Đã xuất file Excel Báo Giá Thuận Phát (' + bgItems.length + ' sản phẩm) thành công!', 'ok');
   } catch (err) {
     console.error(err);
     toast('❌ Lỗi xuất file báo giá: ' + err.message, 'err');
@@ -8826,7 +8942,9 @@ function exportBaogiaExcel() {
 
 // Init
 document.getElementById('dtN').valueAsDate = new Date();
+if (document.getElementById('bg_date')) document.getElementById('bg_date').valueAsDate = new Date();
 onProviderChange();
 renderCatalogGrid();
+renderBaogiaForm();
 updateAiStatusBadge();
-updateLichSuTabBadge(); // Cập nhật badge lịch sử khi tải trang
+updateLichSuTabBadge();
