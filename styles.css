@@ -2180,43 +2180,62 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   transition: transform 0.3s ease;
 }
 /* ================================================================
-   DARK MODE THEME SYSTEM (Obsidian & Cyber Slate)
+   DARK MODE THEME SYSTEM (Obsidian & Ultra High Contrast)
    ================================================================ */
 [data-theme="dark"] {
   /* Surfaces & Backgrounds */
-  --bg:        #0b0f19;  /* Nền tối sâu thẳm, chống mỏi mắt */
-  --bg2:       #111827;  /* Nền phụ tối */
-  --card:      #151d2e;  /* Thẻ giao diện màu xanh đen cao cấp */
+  --bg:        #090d16;  /* Nền tối sâu thẳm, chống mỏi mắt */
+  --bg2:       #0f172a;  /* Nền phụ tối */
+  --card:      #131b2e;  /* Thẻ giao diện màu xanh đen cao cấp */
   --card2:     #1e293b;  /* Thẻ con phụ */
-  --inp:       #1a2337;  /* Ô nhập liệu tối */
-  --bdr:       #29354d;  /* Đường viền thanh mảnh */
-  --bdr2:      #3b4c6b;  /* Đường viền nổi bật */
+  --inp:       #182235;  /* Ô nhập liệu tối */
+  --bdr:       #2a3b5c;  /* Đường viền thanh mảnh */
+  --bdr2:      #3d527a;  /* Đường viền nổi bật */
   --foc:       #3b82f6;  /* Điểm nhấn xanh dương sáng */
-  --b1:        #f8fafc;  /* Chữ tiêu đề trắng sáng */
+  --b1:        #ffffff;  /* Chữ tiêu đề trắng sáng 100% */
   --b2:        #60a5fa;  /* Accent xanh dương sáng */
-  --glow:      rgba(59, 130, 246, .20);
+  --glow:      rgba(59, 130, 246, .25);
 
-  /* Typography */
-  --t1:  #f8fafc;  /* Chữ chính trắng sáng */
-  --t2:  #cbd5e1;  /* Chữ phụ xám bạc */
+  /* Typography (High Contrast) */
+  --t1:  #ffffff;  /* Chữ chính trắng sáng 100% */
+  --t2:  #e2e8f0;  /* Chữ phụ xám bạc sáng */
   --t3:  #94a3b8;  /* Chữ mờ */
-  --go:  #fbbf24;  /* Giá tiền vàng kim */
+  --go:  #fbbf24;  /* Giá tiền vàng kim nổi bật */
   --gr:  #34d399;  /* Xanh ngọc thành công */
   --re:  #f87171;  /* Đỏ cảnh báo */
-  --ai:  #a855f7;  /* Tím AI */
-  --aib: rgba(168, 85, 247, .25);
+  --ai:  #c084fc;  /* Tím AI sáng */
+  --aib: rgba(192, 132, 252, .25);
+}
+
+/* Background Pattern */
+[data-theme="dark"] body {
+  background-color: #090d16 !important;
+  color: #ffffff !important;
 }
 
 [data-theme="dark"] body::before {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
+/* Header & Titles */
+[data-theme="dark"] .hdr h1 {
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+[data-theme="dark"] .hdr .badge {
+  background: rgba(59, 130, 246, 0.15) !important;
+  color: #93c5fd !important;
+  border-color: rgba(59, 130, 246, 0.4) !important;
+}
+
+/* Main Navigation Tabs */
 [data-theme="dark"] .main-tabs {
-  background: #151d2e !important;
-  border-color: #29354d !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+  background: #131b2e !important;
+  border-color: #2a3b5c !important;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4) !important;
 }
 
 [data-theme="dark"] .mtab {
@@ -2225,37 +2244,107 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 
 [data-theme="dark"] .mtab:hover:not(.active) {
   background: #1e293b !important;
-  color: #f8fafc !important;
+  color: #ffffff !important;
 }
 
+[data-theme="dark"] .mtab.active {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4) !important;
+}
+
+/* Cards & Containers */
 [data-theme="dark"] .card {
-  background: #151d2e !important;
-  border-color: #29354d !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+  background: #131b2e !important;
+  border-color: #2a3b5c !important;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.35) !important;
+  color: #ffffff !important;
 }
 
 [data-theme="dark"] .card:hover {
-  border-color: #3b4c6b !important;
+  border-color: #3d527a !important;
+}
+
+[data-theme="dark"] .ct {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .cs {
+  color: #cbd5e1 !important;
+}
+
+/* Labels & Form Elements */
+[data-theme="dark"] label,
+[data-theme="dark"] .lbl,
+[data-theme="dark"] .sec-lbl,
+[data-theme="dark"] .fgrid label {
+  color: #93c5fd !important;
+  font-weight: 600;
 }
 
 [data-theme="dark"] input,
 [data-theme="dark"] select,
-[data-theme="dark"] textarea {
-  background: #1a2337 !important;
-  color: #f8fafc !important;
-  border-color: #29354d !important;
+[data-theme="dark"] textarea,
+[data-theme="dark"] .inp {
+  background: #182235 !important;
+  color: #ffffff !important;
+  border-color: #2a3b5c !important;
+}
+
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+  color: #64748b !important;
 }
 
 [data-theme="dark"] input:focus,
 [data-theme="dark"] select:focus,
 [data-theme="dark"] textarea:focus {
+  background: #1e2a42 !important;
   border-color: #3b82f6 !important;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25) !important;
+  color: #ffffff !important;
 }
 
+[data-theme="dark"] option {
+  background: #131b2e !important;
+  color: #ffffff !important;
+}
+
+/* Catalog Cards (Tab 1) */
+[data-theme="dark"] .cat-card {
+  background: #131b2e !important;
+  border-color: #2a3b5c !important;
+}
+
+[data-theme="dark"] .cat-card:hover {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+}
+
+[data-theme="dark"] .cat-card.selected {
+  background: rgba(37, 99, 235, 0.15) !important;
+  border-color: #3b82f6 !important;
+}
+
+[data-theme="dark"] .cat-name {
+  color: #60a5fa !important;
+  font-weight: 700;
+}
+
+[data-theme="dark"] .cat-desc {
+  color: #cbd5e1 !important;
+}
+
+[data-theme="dark"] .cat-badge {
+  background: #182235 !important;
+  color: #93c5fd !important;
+  border: 1px solid #2a3b5c !important;
+}
+
+/* Excel Tables & Preview */
 [data-theme="dark"] table.excel-table {
-  background: #151d2e !important;
-  border-color: #29354d !important;
+  background: #131b2e !important;
+  border-color: #2a3b5c !important;
 }
 
 [data-theme="dark"] table.excel-table th {
@@ -2265,46 +2354,76 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 }
 
 [data-theme="dark"] table.excel-table td {
-  background: #151d2e !important;
-  color: #f8fafc !important;
-  border-color: #29354d !important;
+  background: #131b2e !important;
+  color: #ffffff !important;
+  border-color: #2a3b5c !important;
 }
 
 [data-theme="dark"] table.excel-table tr:hover td {
-  background: #1e293b !important;
+  background: #1e2a42 !important;
 }
 
-[data-theme="dark"] .cat-card {
-  background: #151d2e !important;
-  border-color: #29354d !important;
-}
-
-[data-theme="dark"] .cat-card:hover {
-  border-color: #3b82f6 !important;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
-}
-
-[data-theme="dark"] .cat-card.selected {
-  background: rgba(37, 99, 235, 0.12) !important;
-  border-color: #3b82f6 !important;
-}
-
+/* Live Preview Boxes */
+[data-theme="dark"] #baogiaPreviewWrap,
+[data-theme="dark"] #livePreview,
+[data-theme="dark"] .preview-box,
 [data-theme="dark"] .expc {
-  background: #111827 !important;
-  border-color: #29354d !important;
+  background: #131b2e !important;
+  color: #ffffff !important;
+  border-color: #2a3b5c !important;
 }
 
+[data-theme="dark"] #baogiaPreviewWrap div,
+[data-theme="dark"] #baogiaPreviewWrap span,
+[data-theme="dark"] #baogiaPreviewWrap p,
+[data-theme="dark"] #baogiaPreviewWrap table,
+[data-theme="dark"] #baogiaPreviewWrap td,
+[data-theme="dark"] #baogiaPreviewWrap th {
+  color: #ffffff !important;
+}
+
+/* History Entry Cards (Tab 5) */
+[data-theme="dark"] [id^="lsentry-"] {
+  background: #131b2e !important;
+  border-color: #2a3b5c !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] [id^="lsentry-"] span,
+[data-theme="dark"] [id^="lsentry-"] div {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] [id^="lsentry-"] code {
+  background: #182235 !important;
+  color: #93c5fd !important;
+  border-color: #2a3b5c !important;
+}
+
+/* Modals */
 [data-theme="dark"] #adminPassModal > div,
 [data-theme="dark"] #aiConfigModal > div {
-  background: #151d2e !important;
-  border-color: #334155 !important;
-  color: #f8fafc !important;
+  background: #131b2e !important;
+  border-color: #3d527a !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6) !important;
 }
 
-[data-theme="dark"] #adminPassInput,
-[data-theme="dark"] #modalApiKey,
-[data-theme="dark"] #modalAiProvider {
-  background: #1a2337 !important;
-  color: #f8fafc !important;
-  border-color: #334155 !important;
+/* Buttons */
+[data-theme="dark"] .btn-o {
+  background: #182235 !important;
+  border-color: #2a3b5c !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-o:hover {
+  background: #1e2a42 !important;
+  border-color: #3b82f6 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] #btnThemeToggle {
+  background: #182235 !important;
+  border-color: #3d527a !important;
+  color: #fbbf24 !important;
 }
