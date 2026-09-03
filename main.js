@@ -5138,17 +5138,8 @@ var CATALOG_ITEMS = [
 ];
 
 function setStep1Mode(mode) {
-  step1Mode = mode;
-  var bUp = document.getElementById('modeBtnUpload');
-  var bCat = document.getElementById('modeBtnCatalog');
-  var vUp = document.getElementById('viewModeUpload');
-  var vCat = document.getElementById('viewModeCatalog');
-
-  if (bUp) bUp.className = 'mode-btn' + (mode === 'upload' ? ' active' : '');
-  if (bCat) bCat.className = 'mode-btn' + (mode === 'catalog' ? ' active' : '');
-  if (vUp) vUp.style.display = mode === 'upload' ? 'block' : 'none';
-  if (vCat) vCat.style.display = mode === 'catalog' ? 'block' : 'none';
-  if (mode === 'catalog') renderCatalogGrid();
+  step1Mode = 'catalog';
+  renderCatalogGrid();
 }
 
 function filterCatType(type) {

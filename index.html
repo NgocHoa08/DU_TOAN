@@ -64,186 +64,53 @@
         <div class="pbar-f" id="pf" style="width:33.33%"></div>
       </div>
 
-      <!-- ══════════════════ STEP 1 ══════════════════ -->
+      <!-- ══════════════════ STEP 1: CHỌN THIẾT BỊ DỰ TOÁN ══════════════════ -->
       <div class="panel on" id="p1">
-
-        <!-- DUAL MODE SWITCHER (LỰA CHỌN 1 HOẶC LỰA CHỌN 2) -->
-        <div class="mode-switch-wrap">
-          <div class="mode-btn" id="modeBtnUpload" onclick="setStep1Mode('upload')">
-            <span class="m-badge">📂 TỰ ĐỘNG BÓC TÁCH</span>
-            <div class="m-hd">📁 LỰA CHỌN 1: TẢI FILE CÓ SẴN</div>
-            <div class="m-desc">Tải lên các file Excel (.xlsx/.xls) hoặc Word (.docx) báo giá &amp; thông số để hệ thống
-              tự ghép nối và bóc tách</div>
-          </div>
-          <div class="mode-btn active" id="modeBtnCatalog" onclick="setStep1Mode('catalog')">
-            <span class="m-badge" style="background:rgba(247,162,59,.2);color:var(--ai);border-color:var(--aib)">⚡ NHANH
-              1
-              GIÂY</span>
-            <div class="m-hd">🛒 LỰA CHỌN 2: CHỌN MẪU MÁY TỪ THƯ VIỆN</div>
-            <div class="m-desc">Tự chọn các con máy cần làm dự toán, hệ thống tự động cào/lấy trọn bộ 26+ thông số chi
-              tiết của từng máy về các sheet riêng</div>
-          </div>
-        </div>
-
-        <!-- ══════════════ VIEW MODE 1: TẢI FILE ══════════════ -->
-        <div id="viewModeUpload" style="display:none">
-          <!-- MULTI-UPLOAD ZONE -->
-          <div class="card">
-            <div class="ch">
-              <div class="ci">📂</div>
-              <div>
-                <div class="ct">1. Tải lên danh sách các tệp tin (Excel / Word)</div>
-                <div class="cs">Chọn nhiều file cùng lúc: ví dụ file báo giá tổng hợp kèm các file thông số kỹ thuật
-                  riêng
-                  lẻ</div>
-              </div>
-            </div>
-
-            <div class="upzone" id="dz">
-              <input type="file" id="fi" accept=".xlsx,.xls,.docx,.doc,.pdf" multiple />
-              <span class="up-ico">📑</span>
-              <h2>Kéo thả nhiều file vào đây hoặc nhấp để chọn</h2>
-              <p>Hỗ trợ tải lên cùng lúc nhiều file Excel (.xlsx/.xls), Word (.docx) và PDF (.pdf)</p>
-              <div class="ftypes">
-                <span class="ft ft-xl">📊 Excel (.xlsx / .xls)</span>
-                <span class="ft ft-wd">📝 Word (.docx)</span>
-                <span class="ft"
-                  style="color:#f85149;border-color:rgba(248,81,73,.35);background:rgba(248,81,73,.08)">📄 PDF
-                  (.pdf)</span>
-                <span class="ft" style="color:var(--ai);border-color:var(--aib);background:rgba(247,162,59,.08)">✨ Chọn
-                  nhiều tệp</span>
-              </div>
-            </div>
-
-            <!-- SELECTED FILES LIST -->
-            <div class="file-list-wrap" id="fileListWrap">
-              <div class="file-list-hd">
-                <span>📁 Danh sách file đã tải lên (<span id="fileCount">0</span> tệp):</span>
-                <button class="btn btn-o btn-sm" onclick="clearAllFiles()" style="font-size:11px;padding:4px 10px">✕ Xóa
-                  tất cả</button>
-              </div>
-              <div class="file-grid" id="fileGrid"></div>
-            </div>
-
-            <div
-              style="margin-top:14px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
-              <span style="font-size:12px;color:var(--t2)">💡 Có thể kéo thả thêm file bất kỳ lúc nào để bổ sung</span>
-              <button class="btn btn-o btn-sm" onclick="loadSample()">✨ Nạp file mẫu Du_toan-V1.xlsx</button>
+        <div class="card" style="margin-top:0">
+          <div class="ch">
+            <div class="ci">🛒</div>
+            <div>
+              <div class="ct">Chọn Thiết Bị Lập Dự Toán (Tự Động Cào 100% Thông Số Kỹ Thuật)</div>
+              <div class="cs">Chọn các mẫu máy có sẵn trong danh mục hoặc thêm model máy mới, hệ thống tự động cào/trích xuất đầy đủ 26+ thông số kỹ thuật chuẩn của từng máy</div>
             </div>
           </div>
 
-          <!-- AI SECTION -->
-          <div class="ai-section">
-            <div class="ai-header">
-              <span class="ai-badge">🤖 TRÍ TUỆ NHÂN TẠO AI</span>
-              <div>
-                <div class="ai-title">Tự Động Đọc &amp; Bóc Tách Bằng AI (Grok xAI / Gemini / ChatGPT)</div>
-                <div class="ai-sub">AI tự phân tích toàn bộ các file đã tải, tự ghép giá và thông số kỹ thuật từng máy
-                </div>
-              </div>
-            </div>
-
-            <div class="key-row">
-              <select class="mdl-sel" id="aiProvider" onchange="onProviderChange()" style="min-width:180px">
-                <option value="grok" selected>🤖 Grok (xAI)</option>
-                <option value="gemini">🌟 Google Gemini (Miễn phí)</option>
-                <option value="openai">🟢 OpenAI (ChatGPT)</option>
-                <option value="deepseek">⚡ DeepSeek</option>
-              </select>
-
-              <input class="key-inp" type="password" id="apiKey" placeholder="🔑 Nhập API Key Grok (xai-xxxxxxxx...)"
-                oninput="saveKey(this.value)" />
-
-              <select class="mdl-sel" id="aiModel">
-                <!-- Populated by JS -->
-              </select>
-
-              <button class="btn-ai" id="btnAI" onclick="runAI()">
-                🤖 AI Tự Đọc &amp; Điền
-              </button>
-            </div>
-
-            <div style="font-size:12px;color:var(--t2);margin-bottom:10px" id="aiHelpText">
-              💡 Lấy API key Grok tại <a href="https://console.x.ai" target="_blank"
-                style="color:var(--ai);text-decoration:none;font-weight:700">console.x.ai</a> (hoặc chọn Google Gemini
-              để
-              dùng miễn phí)
-            </div>
-
-            <!-- AI STATUS LOG -->
-            <div class="ai-log" id="aiLog"></div>
+          <!-- Filter & Search in Catalog -->
+          <div style="display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap">
+            <input type="text" id="catSearch"
+              placeholder="🔍 Tìm kiếm tên máy, model, hãng sản xuất (VD: iPhone, Dell, HP, Canon, Ricoh, Yealink...)"
+              oninput="filterCatalog()" style="flex:1;min-width:240px" />
+            <button class="btn btn-o btn-sm" onclick="resetCatalogFilter()">✕ Xóa lọc</button>
           </div>
 
-          <!-- INSTANT LOCAL MERGE BUTTON -->
-          <div class="card"
-            style="border-color:rgba(63,185,80,.45);background:linear-gradient(135deg,var(--card),rgba(63,185,80,.07))">
-            <div class="ch">
-              <div class="ci"
-                style="background:linear-gradient(135deg,rgba(63,185,80,.35),rgba(31,111,235,.2));border-color:rgba(63,185,80,.5)">
-                ⚡</div>
-              <div>
-                <div class="ct" style="color:var(--gr)">HOẶC: ĐỌC TỨC THÌ (1 GIÂY - KHÔNG CẦN NHẬP API KEY)</div>
-                <div class="cs">Bộ xử lý cục bộ tự động bóc tách giá và ghép nối thông số kỹ thuật ngay lập tức</div>
-              </div>
-            </div>
-            <div class="abar" style="padding-top:0">
-              <button class="btn btn-g btn-lg" id="btnSmartLocal" onclick="processInstant()"
-                style="font-size:15px;width:100%">
-                🚀 ĐỌC VÀ GHÉP NỐI TOÀN BỘ FILE NGAY ➔
-              </button>
+          <div class="cat-nav" id="catNav">
+            <button class="cat-btn active" onclick="filterCatType('all')">Tất cả danh mục</button>
+            <button class="cat-btn" onclick="filterCatType('dien_thoai')">📱 Điện thoại &amp; IP Phone</button>
+            <button class="cat-btn" onclick="filterCatType('may_tinh')">💻 Máy tính &amp; Laptop</button>
+            <button class="cat-btn" onclick="filterCatType('man_hinh')">🖥️ Màn hình máy tính</button>
+            <button class="cat-btn" onclick="filterCatType('may_in')">🖨️ Máy in &amp; Photocopy</button>
+            <button class="cat-btn" onclick="filterCatType('may_scan')">📄 Máy Scan tài liệu</button>
+            <button class="cat-btn" onclick="filterCatType('thiet_bi_khac')">🌐 Mạng, UPS &amp; Khác</button>
+          </div>
+
+          <!-- Catalog Items Grid -->
+          <div class="cat-grid" id="catGrid"></div>
+
+          <!-- Custom Model Adder with AI Spec Scraper -->
+          <div
+            style="background:rgba(247,162,59,.08);border:1px solid rgba(247,162,59,.3);border-radius:var(--rs);padding:12px 16px;margin-top:8px">
+            <div style="font-size:13px;font-weight:700;color:var(--ai);margin-bottom:6px">➕ Thêm dòng máy khác ngoài
+              danh mục &amp; Tự động cào thông số:</div>
+            <div style="display:flex;gap:8px;flex-wrap:wrap">
+              <input type="text" id="custDevName"
+                placeholder="Tên máy &amp; Model (VD: Máy photocopy Ricoh IM 3500, Laptop Dell Latitude 5440, Canon LBP 2900...)"
+                style="flex:2;min-width:220px" />
+              <input type="number" id="custDevPrice" placeholder="Đơn giá (VNĐ)" style="flex:1;min-width:130px" />
+              <input type="number" id="custDevQty" value="1" min="1" placeholder="SL" style="width:65px" />
+              <button class="btn btn-ai btn-sm" onclick="addCustomCatalogDev()">🤖 Thêm &amp; AI Tự Cào Thông
+                Số</button>
             </div>
           </div>
-        </div>
-
-        <!-- ══════════════ VIEW MODE 2: CHỌN MẪU MÁY TỪ THƯ VIỆN ══════════════ -->
-        <div id="viewModeCatalog">
-          <div class="card">
-            <div class="ch">
-              <div class="ci">🛒</div>
-              <div>
-                <div class="ct">Chọn các dòng máy cần lập dự toán (Tự cào 100% thông số)</div>
-                <div class="cs">Hệ thống có sẵn đầy đủ 26 thông số kỹ thuật chuẩn của từng model máy, bạn chỉ cần chọn
-                  máy
-                  và chỉnh số lượng</div>
-              </div>
-            </div>
-
-            <!-- Filter & Search in Catalog -->
-            <div style="display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap">
-              <input type="text" id="catSearch"
-                placeholder="🔍 Tìm kiếm tên máy, model, hãng sản xuất (VD: OKI, Ricoh, Canon, MSI...)"
-                oninput="filterCatalog()" style="flex:1;min-width:240px" />
-              <button class="btn btn-o btn-sm" onclick="resetCatalogFilter()">✕ Xóa lọc</button>
-            </div>
-
-            <div class="cat-nav" id="catNav">
-              <button class="cat-btn active" onclick="filterCatType('all')">Tất cả danh mục</button>
-              <button class="cat-btn" onclick="filterCatType('dien_thoai')">📱 Điện thoại &amp; IP Phone</button>
-              <button class="cat-btn" onclick="filterCatType('may_tinh')">💻 Máy tính &amp; Laptop</button>
-              <button class="cat-btn" onclick="filterCatType('man_hinh')">🖥️ Màn hình máy tính</button>
-              <button class="cat-btn" onclick="filterCatType('may_in')">🖨️ Máy in &amp; Photocopy</button>
-              <button class="cat-btn" onclick="filterCatType('may_scan')">📄 Máy Scan tài liệu</button>
-              <button class="cat-btn" onclick="filterCatType('thiet_bi_khac')">🌐 Mạng, UPS &amp; Khác</button>
-            </div>
-
-            <!-- Catalog Items Grid -->
-            <div class="cat-grid" id="catGrid"></div>
-
-            <!-- Custom Model Adder with AI Spec Scraper -->
-            <div
-              style="background:rgba(247,162,59,.08);border:1px solid rgba(247,162,59,.3);border-radius:var(--rs);padding:12px 16px;margin-top:8px">
-              <div style="font-size:13px;font-weight:700;color:var(--ai);margin-bottom:6px">➕ Thêm dòng máy khác ngoài
-                danh mục &amp; Tự động cào thông số:</div>
-              <div style="display:flex;gap:8px;flex-wrap:wrap">
-                <input type="text" id="custDevName"
-                  placeholder="Tên máy &amp; Model (VD: Máy photocopy Ricoh IM 3500, Canon LBP 6030w...)"
-                  style="flex:2;min-width:220px" />
-                <input type="number" id="custDevPrice" placeholder="Đơn giá (VNĐ)" style="flex:1;min-width:130px" />
-                <input type="number" id="custDevQty" value="1" min="1" placeholder="SL" style="width:65px" />
-                <button class="btn btn-ai btn-sm" onclick="addCustomCatalogDev()">🤖 Thêm &amp; AI Tự Cào Thông
-                  Số</button>
-              </div>
-            </div>
 
             <!-- Cart Summary Bar -->
             <div class="cart-summary-bar" id="cartSummaryBar">
