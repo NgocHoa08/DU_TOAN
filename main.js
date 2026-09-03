@@ -959,10 +959,10 @@ async function testAiConnection() {
 async function callAiApi(prompt) {
   var p = (document.getElementById('modalAiProvider') && document.getElementById('modalAiProvider').value) || localStorage.getItem('ai_provider') || 'gemini';
   var key = getActiveAiKey();
-  if (!key && p !== 'grok') throw new Error('Chưa có API Key! Vui lòng nhập API Key.');
+  if (!key && p !== 'grok') throw new Error('Chưa có API Key! Vui lòng dán API Key vào ô nhập.');
 
   if (p === 'gemini') {
-    var tryModels = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.5-pro', 'gemini-1.0-pro'];
+    var tryModels = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.5-pro'];
     var lastErrMsg = '';
 
     for (var mIdx = 0; mIdx < tryModels.length; mIdx++) {
@@ -974,7 +974,7 @@ async function callAiApi(prompt) {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { temperature: 0.1, maxOutputTokens: 512 }
+            generationConfig: { temperature: 0.1, maxOutputTokens: 256 }
           })
         });
 
@@ -996,15 +996,15 @@ async function callAiApi(prompt) {
     }
 
     if (lastErrMsg.includes('API_KEY_INVALID') || lastErrMsg.includes('API key not valid')) {
-      throw new Error('API Key Google Gemini không hợp lệ! Vui lòng kiểm tra lại key tại aistudio.google.com/app/apikey');
+      throw new Error('API Key Google Gemini không hợp lệ! Vui lòng lấy key miễn phí tại aistudio.google.com/app/apikey');
     } else if (lastErrMsg.includes('RESOURCE_EXHAUSTED') || lastErrMsg.includes('Quota exceeded')) {
-      throw new Error('Tài khoản Google Gemini đã hết hạn mức (Quota) miễn phí.');
+      throw new Error('Tài khoản Google Gemini đã hết hạn mức (Quota) miễn phí trong ngày.');
     }
 
-    throw new Error('Google Gemini: ' + (lastErrMsg || 'Không nhận được phản hồi (kiểm tra lại kết nối mạng hoặc API Key)'));
+    throw new Error('Google Gemini: ' + (lastErrMsg || 'Lỗi kết nối'));
   } else if (p === 'grok') {
     var grokKey = key || DEFAULT_GROK_KEY;
-    var grokModels = ['grok-2-latest', 'grok-beta', 'grok-3-mini'];
+    var grokModels = ['grok-2', 'grok-beta', 'grok-2-1212'];
     var lastGrokErr = '';
 
     for (var gIdx = 0; gIdx < grokModels.length; gIdx++) {
@@ -1018,8 +1018,7 @@ async function callAiApi(prompt) {
           },
           body: JSON.stringify({
             model: gModel,
-            messages: [{ role: 'user', content: prompt }],
-            temperature: 0.1
+            messages: [{ role: 'user', content: prompt }]
           })
         });
 
@@ -1029,11 +1028,17 @@ async function callAiApi(prompt) {
           if (gText) return gText;
         } else {
           var errG = await r.json().catch(function() { return {}; });
-          lastGrokErr = (errG.error && errG.error.message) || ('HTTP ' + r.status);
+          var msg = errG.error || errG.message || ('HTTP ' + r.status);
+          if (typeof msg === 'object') msg = msg.message || JSON.stringify(msg);
+          lastGrokErr = msg;
         }
       } catch (eGrok) {
         lastGrokErr = eGrok.message;
       }
+    }
+
+    if (lastGrokErr.includes('credits') || lastGrokErr.includes('permission-denied')) {
+      throw new Error('Tài khoản Grok (xAI) chưa được nạp Credit! Vui lòng nạp tiền trên console.x.ai hoặc dùng Google Gemini hoàn toàn MIỄN PHÍ.');
     }
 
     throw new Error('Grok (xAI): ' + (lastGrokErr || 'Lỗi kết nối máy chủ'));
@@ -1056,7 +1061,8 @@ async function callAiApi(prompt) {
 
     if (!r.ok) {
       var errObj = await r.json().catch(function () { return {}; });
-      throw new Error(errObj.error ? errObj.error.message : ('HTTP ' + r.status));
+      var eMsg = (errObj.error && errObj.error.message) || errObj.message || ('HTTP ' + r.status);
+      throw new Error(eMsg);
     }
     var rData = await r.json();
     return rData.choices && rData.choices[0] && rData.choices[0].message && rData.choices[0].message.content;
