@@ -841,13 +841,21 @@ function updateAiStatusBadge() {
   if (!btn) return;
   var p = (document.getElementById('aiProvider') && document.getElementById('aiProvider').value) || localStorage.getItem('ai_provider') || 'gemini';
   var key = getActiveAiKey();
-  if (key) {
-    var pName = (AI_CONFIG[p] && AI_CONFIG[p].name) || p;
-    btn.innerHTML = '🟢 ' + pName + ': Sẵn Sàng Cào Hãng';
-    btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
-  } else {
+  var pName = (AI_CONFIG[p] && AI_CONFIG[p].name) || p;
+  var lastStatus = localStorage.getItem('ai_conn_status_' + p);
+
+  if (!key) {
     btn.innerHTML = '⚙️ Cài Đặt AI Cào Hãng';
     btn.style.background = 'linear-gradient(135deg, #7c3aed, #8957e5)';
+  } else if (lastStatus === 'ok') {
+    btn.innerHTML = '🟢 ' + pName + ': Kết Nối Tốt';
+    btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
+  } else if (lastStatus === 'error') {
+    btn.innerHTML = '🔴 ' + pName + ': Lỗi Key / Hạn Mức';
+    btn.style.background = 'linear-gradient(135deg, #dc2626, #ef4444)';
+  } else {
+    btn.innerHTML = '🟡 ' + pName + ': Đã Nhập Key (Bấm để test)';
+    btn.style.background = 'linear-gradient(135deg, #d97706, #f59e0b)';
   }
 }
 
