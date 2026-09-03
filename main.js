@@ -8706,11 +8706,11 @@ async function exportBaogiaExcel() {
     });
 
     ws.addImage(imageId, {
-      tl: { col: 0.3, row: 0.05 },
-      ext: { width: 880, height: 155 }
+      tl: { col: 2.05, row: 0.06 },
+      ext: { width: 850, height: 148 }
     });
 
-    ws.getRow(1).height = 135;
+    ws.getRow(1).height = 125;
 
     // 3. Row 2: Ngày tháng năm
     var dateVal = (document.getElementById('bg_date') && document.getElementById('bg_date').value) || new Date().toISOString().slice(0, 10);
