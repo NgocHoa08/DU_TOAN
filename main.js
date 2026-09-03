@@ -821,34 +821,36 @@ var AI_CONFIG = {
 var DEFAULT_GROK_KEY = atob('eGFpLXhEU1F5SHp1UXFnaWo5b1lKa1BWWnlVYXhseDdtS3lhOGJtcjdpQ3JYTEEybllGdVFISW5ZQnhNQ3NlWmZ3eVQ4SDV4WUE3OGVSZWNpU1V3');
 
 function getActiveAiKey() {
-  var p = (document.getElementById('aiProvider') && document.getElementById('aiProvider').value) || localStorage.getItem('ai_provider') || 'gemini';
+  var p = (document.getElementById('modalAiProvider') && document.getElementById('modalAiProvider').value) || (document.getElementById('aiProvider') && document.getElementById('aiProvider').value) || localStorage.getItem('ai_provider') || 'gemini';
   var key = '';
-  try {
-    key = localStorage.getItem('apiKey_' + p) || sessionStorage.getItem('apiKey_' + p);
-  } catch (e) { }
+  var modalInp = document.getElementById('modalApiKey');
+  if (modalInp && modalInp.value.trim()) {
+    key = modalInp.value.trim();
+  }
   if (!key) {
-    var el = document.getElementById('apiKey');
-    if (el && el.value.trim()) key = el.value.trim();
+    try {
+      key = localStorage.getItem('apiKey_' + p) || sessionStorage.getItem('apiKey_' + p) || '';
+    } catch (e) { }
   }
   if (!key && p === 'grok') {
     key = DEFAULT_GROK_KEY;
   }
-  return key;
+  return (key || '').trim().replace(/^[\"'\s]+|[\"'\s]+$/g, '');
 }
 
 function updateAiStatusBadge() {
   var btn = document.getElementById('btnAiHeaderStatus');
   if (!btn) return;
-  var p = (document.getElementById('aiProvider') && document.getElementById('aiProvider').value) || localStorage.getItem('ai_provider') || 'gemini';
+  var p = (document.getElementById('modalAiProvider') && document.getElementById('modalAiProvider').value) || localStorage.getItem('ai_provider') || 'gemini';
   var key = getActiveAiKey();
   var pName = (AI_CONFIG[p] && AI_CONFIG[p].name) || p;
   var lastStatus = localStorage.getItem('ai_conn_status_' + p);
 
-  if (!key) {
+  if (!key && p !== 'grok') {
     btn.innerHTML = '⚙️ Cài Đặt AI Cào Hãng';
     btn.style.background = 'linear-gradient(135deg, #7c3aed, #8957e5)';
   } else if (lastStatus === 'ok') {
-    btn.innerHTML = '🟢 ' + pName + ': Kết Nối Tốt';
+    btn.innerHTML = '🟢 ' + pName + ': Sẵn Sàng Cào Hãng';
     btn.style.background = 'linear-gradient(135deg, #059669, #10b981)';
   } else if (lastStatus === 'error') {
     btn.innerHTML = '🔴 ' + pName + ': Lỗi Key / Hạn Mức';
@@ -897,41 +899,34 @@ function onModalProviderChange() {
       helpEl.innerHTML = '💡 <b>Cách lấy Google Gemini API Key hoàn toàn miễn phí:</b><br/>' +
         '1. Truy cập <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:#2563eb;font-weight:700">Google AI Studio (aistudio.google.com)</a>.<br/>' +
         '2. Đăng nhập tài khoản Google và bấm <b>"Create API key"</b>.<br/>' +
-        '3. Dán vào ô trên và bấm <b>"Lưu Cài Đặt"</b> để AI tự cào thông số chính hãng!';
+        '3. Dán vào ô trên và bấm <b>"⚡ Kiểm tra kết nối"</b> rồi bấm <b>"💾 Lưu Cài Đặt"</b>!';
     } else if (p === 'openai') {
       helpEl.innerHTML = '💡 Lấy API Key OpenAI ChatGPT tại <a href="https://platform.openai.com/api-keys" target="_blank" style="color:#059669;font-weight:700">platform.openai.com</a>.';
     } else if (p === 'deepseek') {
-      helpEl.innerHTML = '💡 Lấy API Key DeepSeek tại <a href="https://platform.deepseek.com" target="_blank" style="color:#2563eb;font-weight:700">platform.deepseek.com</a>.';
-    } else {
-      helpEl.innerHTML = '💡 Lấy API Key Grok tại <a href="https://console.x.ai" target="_blank" style="color:#7c3aed;font-weight:700">console.x.ai</a> (hoặc dùng key mặc định sẵn có).';
+      helpEl.innerHTML = '💡 Lấy API Key DeepSeek tại <a href="https://platform.deepseek.com/api_keys" target="_blank" style="color:#0284c7;font-weight:700">platform.deepseek.com</a>.';
+    } else if (p === 'grok') {
+      helpEl.innerHTML = '💡 <b>Grok (xAI)</b> đã được tích hợp sẵn Key mẫu dự phòng miễn phí. Bạn có thể bấm <b>"⚡ Kiểm tra kết nối"</b> ngay!';
     }
   }
 }
 
 function saveAiModalSettings() {
   var p = (document.getElementById('modalAiProvider') && document.getElementById('modalAiProvider').value) || 'gemini';
-  var k = document.getElementById('modalApiKey').value.trim();
+  var k = (document.getElementById('modalApiKey') ? document.getElementById('modalApiKey').value : '').trim().replace(/^[\"'\s]+|[\"'\s]+$/g, '');
   try {
     localStorage.setItem('ai_provider', p);
     localStorage.setItem('apiKey_' + p, k);
     sessionStorage.setItem('apiKey_' + p, k);
   } catch (e) { }
-  var mainPSel = document.getElementById('aiProvider');
-  if (mainPSel) {
-    mainPSel.value = p;
-    onProviderChange();
-  }
-  var mainInp = document.getElementById('apiKey');
-  if (mainInp) mainInp.value = k;
   updateAiStatusBadge();
   closeAiSettingsModal();
-  toast('💾 Đã lưu cấu hình AI thành công!', 'ok');
+  toast('💾 Đã lưu cấu hình AI (' + ((AI_CONFIG[p] && AI_CONFIG[p].name) || p) + ') thành công!', 'ok');
 }
 
 async function testAiConnection() {
   var p = (document.getElementById('modalAiProvider') && document.getElementById('modalAiProvider').value) || 'gemini';
-  var k = document.getElementById('modalApiKey').value.trim();
-  if (!k) {
+  var k = (document.getElementById('modalApiKey') ? document.getElementById('modalApiKey').value : '').trim().replace(/^[\"'\s]+|[\"'\s]+$/g, '');
+  if (!k && p !== 'grok') {
     toast('⚠️ Vui lòng nhập API Key trước khi kiểm tra!', 'err');
     return;
   }
@@ -940,78 +935,112 @@ async function testAiConnection() {
     localStorage.setItem('apiKey_' + p, k);
     sessionStorage.setItem('apiKey_' + p, k);
   } catch (e) { }
-  toast('📡 Đang gửi tín hiệu kiểm tra kết nối AI...', 'ai-t');
+
+  toast('📡 Đang gửi tín hiệu kiểm tra kết nối với ' + ((AI_CONFIG[p] && AI_CONFIG[p].name) || p) + '...', 'info');
+
   try {
-    var res = await callAiApi('Trả về chữ OK nếu bạn nhận được tin nhắn.');
+    var res = await callAiApi('Hello, return OK');
     if (res && res.length > 0) {
-      toast('🎉 Kết nối AI thành công! Sẵn sàng cào thông số chính hãng.', 'ok');
+      localStorage.setItem('ai_conn_status_' + p, 'ok');
+      updateAiStatusBadge();
+      toast('🎉 Kết nối AI thành công 100%! Phản hồi: ' + escH(res.slice(0, 30)), 'ok');
     } else {
-      toast('⚠️ AI phản hồi nhưng không có nội dung. Vui lòng kiểm tra lại Key!', 'err');
+      localStorage.setItem('ai_conn_status_' + p, 'error');
+      updateAiStatusBadge();
+      toast('⚠️ AI phản hồi rỗng. Vui lòng kiểm tra lại Key!', 'err');
     }
   } catch (e) {
+    localStorage.setItem('ai_conn_status_' + p, 'error');
+    updateAiStatusBadge();
     toast('❌ Lỗi kết nối: ' + e.message, 'err');
   }
 }
 
 async function callAiApi(prompt) {
-  var provider = (document.getElementById('aiProvider') && document.getElementById('aiProvider').value) || localStorage.getItem('ai_provider') || 'gemini';
+  var p = (document.getElementById('modalAiProvider') && document.getElementById('modalAiProvider').value) || localStorage.getItem('ai_provider') || 'gemini';
   var key = getActiveAiKey();
-  if (!key) throw new Error('Chưa có API Key!');
+  if (!key && p !== 'grok') throw new Error('Chưa có API Key! Vui lòng nhập API Key.');
 
-  var userModel = (document.getElementById('aiModel') && document.getElementById('aiModel').value);
-
-  if (provider === 'gemini') {
-    var tryModels = [userModel, 'gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-1.5-pro'].filter(Boolean);
-    tryModels = tryModels.filter(function (v, i, a) { return a.indexOf(v) === i; });
+  if (p === 'gemini') {
+    var tryModels = ['gemini-1.5-flash', 'gemini-2.0-flash', 'gemini-1.5-pro', 'gemini-1.0-pro'];
+    var lastErrMsg = '';
 
     for (var mIdx = 0; mIdx < tryModels.length; mIdx++) {
-      var curM = tryModels[mIdx].replace(/^models\//, '');
+      var curM = tryModels[mIdx];
       try {
-        var url = 'https://generativelanguage.googleapis.com/v1beta/models/' + curM + ':generateContent?key=' + key;
+        var url = 'https://generativelanguage.googleapis.com/v1beta/models/' + curM + ':generateContent?key=' + encodeURIComponent(key);
         var res = await fetch(url, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { temperature: 0.1 }
+            generationConfig: { temperature: 0.1, maxOutputTokens: 512 }
           })
         });
 
         if (res.ok) {
           var data = await res.json();
-          var content = data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts[0] && data.candidates[0].content.parts[0].text;
+          var content = data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts && data.candidates[0].content.parts[0] && data.candidates[0].content.parts[0].text;
           if (content) return content;
+        } else {
+          var errData = await res.json().catch(function() { return {}; });
+          if (errData.error && errData.error.message) {
+            lastErrMsg = errData.error.message;
+          } else {
+            lastErrMsg = 'HTTP ' + res.status;
+          }
         }
-      } catch (ex) { }
+      } catch (ex) {
+        lastErrMsg = ex.message;
+      }
     }
 
-    // Fallback OpenAI compatibility endpoint for Gemini
-    var gRes = await fetch('https://generativelanguage.googleapis.com/v1beta/openai/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + key
-      },
-      body: JSON.stringify({
-        model: 'gemini-1.5-flash',
-        messages: [{ role: 'user', content: prompt }],
-        temperature: 0.1
-      })
-    });
-    if (gRes.ok) {
-      var gData = await gRes.json();
-      var gContent = gData.choices && gData.choices[0] && gData.choices[0].message && gData.choices[0].message.content;
-      if (gContent) return gContent;
+    if (lastErrMsg.includes('API_KEY_INVALID') || lastErrMsg.includes('API key not valid')) {
+      throw new Error('API Key Google Gemini không hợp lệ! Vui lòng kiểm tra lại key tại aistudio.google.com/app/apikey');
+    } else if (lastErrMsg.includes('RESOURCE_EXHAUSTED') || lastErrMsg.includes('Quota exceeded')) {
+      throw new Error('Tài khoản Google Gemini đã hết hạn mức (Quota) miễn phí.');
     }
 
-    throw new Error('Google Gemini API không phản hồi (vui lòng kiểm tra lại API Key hoặc hạn mức)');
+    throw new Error('Google Gemini: ' + (lastErrMsg || 'Không nhận được phản hồi (kiểm tra lại kết nối mạng hoặc API Key)'));
+  } else if (p === 'grok') {
+    var grokKey = key || DEFAULT_GROK_KEY;
+    var grokModels = ['grok-2-latest', 'grok-beta', 'grok-3-mini'];
+    var lastGrokErr = '';
+
+    for (var gIdx = 0; gIdx < grokModels.length; gIdx++) {
+      var gModel = grokModels[gIdx];
+      try {
+        var r = await fetch('https://api.x.ai/v1/chat/completions', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + grokKey
+          },
+          body: JSON.stringify({
+            model: gModel,
+            messages: [{ role: 'user', content: prompt }],
+            temperature: 0.1
+          })
+        });
+
+        if (r.ok) {
+          var rData = await r.json();
+          var gText = rData.choices && rData.choices[0] && rData.choices[0].message && rData.choices[0].message.content;
+          if (gText) return gText;
+        } else {
+          var errG = await r.json().catch(function() { return {}; });
+          lastGrokErr = (errG.error && errG.error.message) || ('HTTP ' + r.status);
+        }
+      } catch (eGrok) {
+        lastGrokErr = eGrok.message;
+      }
+    }
+
+    throw new Error('Grok (xAI): ' + (lastGrokErr || 'Lỗi kết nối máy chủ'));
   } else {
-    var endpoint = 'https://api.openai.com/v1/chat/completions';
-    var defaultM = 'gpt-4o-mini';
-    if (provider === 'grok') { endpoint = 'https://api.x.ai/v1/chat/completions'; defaultM = 'grok-3-mini'; }
-    if (provider === 'deepseek') { endpoint = 'https://api.deepseek.com/chat/completions'; defaultM = 'deepseek-chat'; }
+    var endpoint = (p === 'deepseek') ? 'https://api.deepseek.com/chat/completions' : 'https://api.openai.com/v1/chat/completions';
+    var defaultM = (p === 'deepseek') ? 'deepseek-chat' : 'gpt-4o-mini';
 
-    var modelChoice = userModel || defaultM;
     var r = await fetch(endpoint, {
       method: 'POST',
       headers: {
@@ -1019,7 +1048,7 @@ async function callAiApi(prompt) {
         'Authorization': 'Bearer ' + key
       },
       body: JSON.stringify({
-        model: modelChoice,
+        model: defaultM,
         messages: [{ role: 'user', content: prompt }],
         temperature: 0.1
       })
