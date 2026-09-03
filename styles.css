@@ -2179,3 +2179,132 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   display: inline-block;
   transition: transform 0.3s ease;
 }
+/* ================================================================
+   DARK MODE THEME SYSTEM (Obsidian & Cyber Slate)
+   ================================================================ */
+[data-theme="dark"] {
+  /* Surfaces & Backgrounds */
+  --bg:        #0b0f19;  /* Nền tối sâu thẳm, chống mỏi mắt */
+  --bg2:       #111827;  /* Nền phụ tối */
+  --card:      #151d2e;  /* Thẻ giao diện màu xanh đen cao cấp */
+  --card2:     #1e293b;  /* Thẻ con phụ */
+  --inp:       #1a2337;  /* Ô nhập liệu tối */
+  --bdr:       #29354d;  /* Đường viền thanh mảnh */
+  --bdr2:      #3b4c6b;  /* Đường viền nổi bật */
+  --foc:       #3b82f6;  /* Điểm nhấn xanh dương sáng */
+  --b1:        #f8fafc;  /* Chữ tiêu đề trắng sáng */
+  --b2:        #60a5fa;  /* Accent xanh dương sáng */
+  --glow:      rgba(59, 130, 246, .20);
+
+  /* Typography */
+  --t1:  #f8fafc;  /* Chữ chính trắng sáng */
+  --t2:  #cbd5e1;  /* Chữ phụ xám bạc */
+  --t3:  #94a3b8;  /* Chữ mờ */
+  --go:  #fbbf24;  /* Giá tiền vàng kim */
+  --gr:  #34d399;  /* Xanh ngọc thành công */
+  --re:  #f87171;  /* Đỏ cảnh báo */
+  --ai:  #a855f7;  /* Tím AI */
+  --aib: rgba(168, 85, 247, .25);
+}
+
+[data-theme="dark"] body::before {
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+[data-theme="dark"] .main-tabs {
+  background: #151d2e !important;
+  border-color: #29354d !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+[data-theme="dark"] .mtab {
+  color: #94a3b8 !important;
+}
+
+[data-theme="dark"] .mtab:hover:not(.active) {
+  background: #1e293b !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] .card {
+  background: #151d2e !important;
+  border-color: #29354d !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25) !important;
+}
+
+[data-theme="dark"] .card:hover {
+  border-color: #3b4c6b !important;
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] select,
+[data-theme="dark"] textarea {
+  background: #1a2337 !important;
+  color: #f8fafc !important;
+  border-color: #29354d !important;
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] select:focus,
+[data-theme="dark"] textarea:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+}
+
+[data-theme="dark"] table.excel-table {
+  background: #151d2e !important;
+  border-color: #29354d !important;
+}
+
+[data-theme="dark"] table.excel-table th {
+  background: #1e293b !important;
+  color: #93c5fd !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] table.excel-table td {
+  background: #151d2e !important;
+  color: #f8fafc !important;
+  border-color: #29354d !important;
+}
+
+[data-theme="dark"] table.excel-table tr:hover td {
+  background: #1e293b !important;
+}
+
+[data-theme="dark"] .cat-card {
+  background: #151d2e !important;
+  border-color: #29354d !important;
+}
+
+[data-theme="dark"] .cat-card:hover {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+[data-theme="dark"] .cat-card.selected {
+  background: rgba(37, 99, 235, 0.12) !important;
+  border-color: #3b82f6 !important;
+}
+
+[data-theme="dark"] .expc {
+  background: #111827 !important;
+  border-color: #29354d !important;
+}
+
+[data-theme="dark"] #adminPassModal > div,
+[data-theme="dark"] #aiConfigModal > div {
+  background: #151d2e !important;
+  border-color: #334155 !important;
+  color: #f8fafc !important;
+}
+
+[data-theme="dark"] #adminPassInput,
+[data-theme="dark"] #modalApiKey,
+[data-theme="dark"] #modalAiProvider {
+  background: #1a2337 !important;
+  color: #f8fafc !important;
+  border-color: #334155 !important;
+}

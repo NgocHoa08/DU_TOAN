@@ -1,3 +1,40 @@
+
+/* ═══════════════════════════════════════════
+   THEME TOGGLE SYSTEM (LIGHT / DARK MODE)
+═══════════════════════════════════════════ */
+function initTheme() {
+  var savedTheme = localStorage.getItem('theme');
+  if (!savedTheme) {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      savedTheme = 'dark';
+    } else {
+      savedTheme = 'light';
+    }
+  }
+  applyTheme(savedTheme);
+}
+
+function applyTheme(theme) {
+  var btn = document.getElementById('btnThemeToggle');
+  if (theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.body.classList.add('dark-theme');
+    if (btn) btn.innerHTML = '☀️ Giao diện Sáng';
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    document.body.classList.remove('dark-theme');
+    if (btn) btn.innerHTML = '🌙 Giao diện Tối';
+  }
+  try { localStorage.setItem('theme', theme); } catch(e) {}
+}
+
+function toggleDarkMode() {
+  var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  var newTheme = isDark ? 'light' : 'dark';
+  applyTheme(newTheme);
+  toast(newTheme === 'dark' ? '🌙 Đã chuyển sang Giao diện Tối!' : '☀️ Đã chuyển sang Giao diện Sáng!', 'ok');
+}
+
 /* ═══════════════════════════════════════════
        STATE
     ═══════════════════════════════════════════ */
@@ -9184,6 +9221,7 @@ async function exportBaogiaExcel() {
 }
 
 // Init
+initTheme();
 document.getElementById('dtN').valueAsDate = new Date();
 if (document.getElementById('bg_date')) document.getElementById('bg_date').valueAsDate = new Date();
 onProviderChange();
