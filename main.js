@@ -231,8 +231,8 @@ function renderLichSu() {
     if (emptyEl) {
       emptyEl.style.display = 'block';
       if (emptyTitle) emptyTitle.textContent = 'Chưa có file nào trong lịch sử';
-      if (emptySub) emptySub.textContent = 'Hãy tạo file ở các tab Dự toán, Biên bản, Tuyên bố hoặc Báo giá, lịch sử sẽ tự động lưu lại ở đây.';
-      if (emptyAction) emptyAction.style.display = 'none';
+      if (emptySub) emptySub.textContent = 'Khi bạn xuất file ở các tab Dự toán, Biên bản, Tuyên bố hoặc Báo giá, toàn bộ lịch sử sẽ tự động lưu lại ở đây.';
+      if (emptyAction) emptyAction.style.display = 'flex';
     }
     listEl.innerHTML = '';
     return;
@@ -8301,6 +8301,13 @@ function docSoThanhChu(so) {
   kq = kq.trim().replace(/\s+/g, ' ');
   if (!kq) return 'Không đồng./.';
   return kq.charAt(0).toUpperCase() + kq.slice(1) + ' đồng./.';
+}
+
+function fmtMoney(n) {
+  if (!n && n !== 0) return '0';
+  var num = typeof n === 'number' ? n : Number(String(n).replace(/[^0-9.-]+/g, ''));
+  if (isNaN(num)) return '0';
+  return num.toLocaleString('vi-VN');
 }
 
 var BAOGIA_THUANPHAT_ITEMS = [

@@ -816,12 +816,13 @@
       </div>
 
       <!-- Empty State -->
-      <div id="lichsuEmpty" style="display:none;text-align:center;padding:50px 20px;color:var(--t2)">
-        <div style="font-size:48px;margin-bottom:10px;opacity:0.4">📂</div>
-        <div id="lichsuEmptyTitle" style="font-size:15px;font-weight:700;margin-bottom:4px;color:var(--t1)">Chưa có file nào trong lịch sử</div>
-        <div id="lichsuEmptySub" style="font-size:12.5px">Hãy tạo file ở các tab khác, lịch sử sẽ tự động lưu lại ở đây</div>
-        <div id="lichsuEmptyAction" style="margin-top:14px;display:none">
-          <button class="btn btn-o btn-sm" onclick="resetAllLsFilters()">🔄 Đặt lại bộ lọc &amp; tìm kiếm</button>
+      <div id="lichsuEmpty" style="display:none;text-align:center;padding:40px 20px;color:var(--t2);background:var(--card);border:1px dashed var(--bdr);border-radius:12px;margin-bottom:16px">
+        <div style="font-size:48px;margin-bottom:10px">📂</div>
+        <div id="lichsuEmptyTitle" style="font-size:16px;font-weight:800;margin-bottom:6px;color:var(--t1)">Chưa có file nào trong lịch sử</div>
+        <div id="lichsuEmptySub" style="font-size:13px;color:var(--t2);max-width:480px;margin:0 auto 18px;line-height:1.6">Khi bạn xuất file ở bất kỳ tab nào (Dự toán, Biên bản bàn giao, Tuyên bố đáp ứng, Báo giá), hệ thống sẽ tự động lưu lại toàn bộ nhật ký tại đây để bạn có thể xem lại hoặc tải lại bất kỳ lúc nào.</div>
+        <div id="lichsuEmptyAction" style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+          <button class="btn btn-p btn-sm" onclick="switchMainTab('dutoan')">📊 Làm Dự Toán Ngay</button>
+          <button class="btn btn-o btn-sm" onclick="switchMainTab('baogia')">🧾 Lập Báo Giá Ngay</button>
         </div>
       </div>
 
