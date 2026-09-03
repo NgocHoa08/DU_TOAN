@@ -933,16 +933,45 @@ function onModalProviderChange() {
   var helpEl = document.getElementById('modalAiHelp');
   if (helpEl) {
     if (p === 'gemini') {
-      helpEl.innerHTML = '💡 <b>Cách lấy Google Gemini API Key hoàn toàn miễn phí:</b><br/>' +
-        '1. Truy cập <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:#2563eb;font-weight:700">Google AI Studio (aistudio.google.com)</a>.<br/>' +
-        '2. Đăng nhập tài khoản Google và bấm <b>"Create API key"</b>.<br/>' +
-        '3. Dán vào ô trên và bấm <b>"⚡ Kiểm tra kết nối"</b> rồi bấm <b>"💾 Lưu Cài Đặt"</b>!';
+      helpEl.innerHTML = '<div style="margin-bottom:8px;font-weight:700;color:var(--t1)">🌟 Hướng dẫn lấy Key Google Gemini (Hoàn toàn Miễn Phí 100%):</div>' +
+        '<a href="https://aistudio.google.com/app/apikey" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#ffffff;padding:7px 14px;border-radius:8px;text-decoration:none;font-weight:700;font-size:12.5px;margin-bottom:10px;box-shadow:0 2px 6px rgba(37,99,235,0.3)">' +
+          '🔗 Bấm vào đây để lấy Key Google Gemini ngay ↗' +
+        '</a>' +
+        '<div style="font-size:12px;color:var(--t2);line-height:1.6">' +
+          '<b>Bước 1:</b> Bấm nút xanh ở trên để mở trang <b>Google AI Studio</b>.<br/>' +
+          '<b>Bước 2:</b> Đăng nhập tài khoản Google (Gmail) và bấm nút <b>"Create API key"</b>.<br/>' +
+          '<b>Bước 3:</b> Copy mã key (dạng <code>AIzaSy...</code>) dán vào ô bên dưới ➔ Bấm <b>"⚡ Kiểm tra kết nối"</b> ➔ <b>"💾 Lưu Cài Đặt"</b>.' +
+        '</div>';
     } else if (p === 'openai') {
-      helpEl.innerHTML = '💡 Lấy API Key OpenAI ChatGPT tại <a href="https://platform.openai.com/api-keys" target="_blank" style="color:#059669;font-weight:700">platform.openai.com</a>.';
+      helpEl.innerHTML = '<div style="margin-bottom:8px;font-weight:700;color:var(--t1)">🟢 Hướng dẫn lấy Key OpenAI (ChatGPT):</div>' +
+        '<a href="https://platform.openai.com/api-keys" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#16a34a,#059669);color:#ffffff;padding:7px 14px;border-radius:8px;text-decoration:none;font-weight:700;font-size:12.5px;margin-bottom:10px;box-shadow:0 2px 6px rgba(22,163,74,0.3)">' +
+          '🔗 Mở trang lấy Key OpenAI (platform.openai.com) ↗' +
+        '</a>' +
+        '<div style="font-size:12px;color:var(--t2);line-height:1.6">' +
+          '<b>Bước 1:</b> Mở trang OpenAI Platform và đăng nhập tài khoản.<br/>' +
+          '<b>Bước 2:</b> Bấm <b>"+ Create new secret key"</b>, đặt tên và sao chép mã key (dạng <code>sk-proj-...</code>).<br/>' +
+          '<b>Bước 3:</b> Dán vào ô bên dưới và bấm <b>"💾 Lưu Cài Đặt"</b>.' +
+        '</div>';
     } else if (p === 'deepseek') {
-      helpEl.innerHTML = '💡 Lấy API Key DeepSeek tại <a href="https://platform.deepseek.com/api_keys" target="_blank" style="color:#0284c7;font-weight:700">platform.deepseek.com</a>.';
+      helpEl.innerHTML = '<div style="margin-bottom:8px;font-weight:700;color:var(--t1)">⚡ Hướng dẫn lấy Key DeepSeek API:</div>' +
+        '<a href="https://platform.deepseek.com/api_keys" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#0284c7,#0369a1);color:#ffffff;padding:7px 14px;border-radius:8px;text-decoration:none;font-weight:700;font-size:12.5px;margin-bottom:10px;box-shadow:0 2px 6px rgba(2,132,199,0.3)">' +
+          '🔗 Mở trang lấy Key DeepSeek (platform.deepseek.com) ↗' +
+        '</a>' +
+        '<div style="font-size:12px;color:var(--t2);line-height:1.6">' +
+          '<b>Bước 1:</b> Đăng nhập tài khoản DeepSeek Platform.<br/>' +
+          '<b>Bước 2:</b> Vào mục <b>API Keys</b> ➔ Bấm <b>"Create API Key"</b>.<br/>' +
+          '<b>Bước 3:</b> Copy mã key (dạng <code>sk-...</code>) dán vào ô bên dưới.' +
+        '</div>';
     } else if (p === 'grok') {
-      helpEl.innerHTML = '💡 <b>Grok (xAI)</b> đã được tích hợp sẵn Key mẫu dự phòng miễn phí. Bạn có thể bấm <b>"⚡ Kiểm tra kết nối"</b> ngay!';
+      helpEl.innerHTML = '<div style="margin-bottom:8px;font-weight:700;color:var(--t1)">🤖 Hướng dẫn lấy Key Grok (xAI):</div>' +
+        '<a href="https://console.x.ai/" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#ffffff;padding:7px 14px;border-radius:8px;text-decoration:none;font-weight:700;font-size:12.5px;margin-bottom:10px;box-shadow:0 2px 6px rgba(124,58,237,0.3)">' +
+          '🔗 Mở trang quản trị Grok xAI Console (console.x.ai) ↗' +
+        '</a>' +
+        '<div style="font-size:12px;color:var(--t2);line-height:1.6">' +
+          '<b>Bước 1:</b> Đăng nhập tài khoản xAI Console.<br/>' +
+          '<b>Bước 2:</b> Vào mục <b>API Keys</b> ➔ Tạo Key mới (dạng <code>xai-...</code>) và nạp credit.<br/>' +
+          '<b>Bước 3:</b> Dán vào ô bên dưới để sử dụng.' +
+        '</div>';
     }
   }
 }
