@@ -46,9 +46,16 @@ var SAMPLE_HISTORY_DATA = [
     id: 'ls_sample_bg_01',
     time: new Date().toISOString(),
     type: 'baogia',
-    label: 'Báo Giá Thuận Phát - Bộ giải pháp Microsoft 365 Standard',
+    label: 'Báo Giá Thuận Phát - Microsoft 365 Standard',
     fileName: 'BaoGia_ThuanPhat_Office365.xlsx',
-    meta: { customer: 'Công ty CP Sách & Thiết Bị Giáo Dục Hòa Phát', total: '273.240.000 ₫' }
+    meta: {
+      customer: 'Công ty CP Sách & Thiết Bị Giáo Dục Hòa Phát',
+      total: '273.240.000 ₫',
+      items: (typeof BAOGIA_THUANPHAT_ITEMS !== 'undefined' ? BAOGIA_THUANPHAT_ITEMS : []),
+      to: 'Quý khách hàng',
+      company: 'Công ty Cổ phần Sách và Thiết bị Giáo dục Hòa Phát',
+      vat: 10
+    }
   },
   {
     id: 'ls_sample_dt_02',
@@ -56,15 +63,30 @@ var SAMPLE_HISTORY_DATA = [
     type: 'dutoan',
     label: 'Dự Toán Thiết Bị Tin Học & Scan RICOH Fi-8170',
     fileName: 'DuToan_ThietBi_CNTT_Scan.xlsx',
-    meta: { project: 'Nâng cấp hạ tầng số và thiết bị CNTT', total: '185.600.000 ₫' }
+    meta: {
+      project: 'Nâng cấp hạ tầng số và thiết bị CNTT',
+      total: '185.600.000 ₫',
+      items: [
+        { name: 'Máy scan RICOH Fi-8170 chính hãng', model: 'Fi-8170', brand: 'RICOH', qty: 2, price: 42500000, specs: [] },
+        { name: 'Máy vi tính để bàn MSI PRO DP180', model: 'PRO DP180', brand: 'MSI', qty: 5, price: 18500000, specs: [] },
+        { name: 'Máy in Laser đơn năng OKI B433DN', model: 'B433DN', brand: 'OKI', qty: 3, price: 6200000, specs: [] }
+      ]
+    }
   },
   {
     id: 'ls_sample_bb_03',
     time: new Date(Date.now() - 7200000).toISOString(),
     type: 'bbbg',
     label: 'Biên Bản Bàn Giao Hàng Hóa - Hòa Phát',
-    fileName: 'BienBanBanGiao_HoaPhat.docx',
-    meta: { customer: 'CÔNG TY CP SÁCH VÀ THIẾT BỊ GIÁO DỤC HÒA PHÁT', total: '54 thiết bị' }
+    fileName: 'BienBanBanGiao_HoaPhat.doc',
+    meta: {
+      customer: 'CÔNG TY CP SÁCH VÀ THIẾT BỊ GIÁO DỤC HÒA PHÁT',
+      total: '10 thiết bị',
+      items: [
+        { name: 'Máy vi tính để bàn MSI PRO DP180', qty: 5, unit: 'Bộ', serials: 'MSI-DP180-001\nMSI-DP180-002\nMSI-DP180-003\nMSI-DP180-004\nMSI-DP180-005' },
+        { name: 'Máy scan RICOH Fi-8170', qty: 5, unit: 'Chiếc', serials: 'RC-8170-A01\nRC-8170-A02\nRC-8170-A03\nRC-8170-A04\nRC-8170-A05' }
+      ]
+    }
   }
 ];
 
@@ -139,6 +161,96 @@ function lsRemoveAccents(str) {
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/đ/g, 'd').replace(/Đ/g, 'D')
     .toLowerCase();
+}
+
+
+// Tải lại file trực tiếp từ bản ghi Lịch Sử
+async function reDownloadLichSuEntry(id) {
+  var all = lsGetHistory();
+  var item = all.find(function(x) { return x.id === id; });
+  if (!item) {
+    toast('❌ Không tìm thấy bản ghi lịch sử!', 'err');
+    return;
+  }
+
+  toast('⏳ Đang chuẩn bị tải lại file ' + (item.fileName || '') + '...', 'info');
+
+  try {
+    if (item.type === 'baogia') {
+      var oldItems = bgItems;
+      if (item.meta && item.meta.items && item.meta.items.length > 0) {
+        bgItems = JSON.parse(JSON.stringify(item.meta.items));
+      }
+      if (item.meta) {
+        if (item.meta.to && document.getElementById('bg_to')) document.getElementById('bg_to').value = item.meta.to;
+        if (item.meta.company && document.getElementById('bg_company')) document.getElementById('bg_company').value = item.meta.company;
+        if (item.meta.vat && document.getElementById('bg_vat_rate')) document.getElementById('bg_vat_rate').value = item.meta.vat;
+      }
+      await exportBaogiaExcel();
+      renderBaogiaForm();
+    } else if (item.type === 'bbbg') {
+      if (item.meta && item.meta.items && item.meta.items.length > 0) {
+        bbDevs = JSON.parse(JSON.stringify(item.meta.items));
+      }
+      exportHandoverWord();
+      renderHandoverForm();
+    } else if (item.type === 'tddu') {
+      if (item.meta && item.meta.items && item.meta.items.length > 0) {
+        tdduDevs = JSON.parse(JSON.stringify(item.meta.items));
+      }
+      exportComplianceExcel();
+    } else if (item.type === 'dutoan') {
+      if (item.meta && item.meta.items && item.meta.items.length > 0) {
+        devs = JSON.parse(JSON.stringify(item.meta.items));
+      }
+      doExport();
+    } else {
+      toast('⚠️ Loại file không hỗ trợ tải lại tự động.', 'err');
+    }
+  } catch (err) {
+    console.error(err);
+    toast('❌ Lỗi khi tải lại file: ' + err.message, 'err');
+  }
+}
+
+// Mở lại file trong form tương ứng để chỉnh sửa tiếp
+function openLichSuEntry(id) {
+  var all = lsGetHistory();
+  var item = all.find(function(x) { return x.id === id; });
+  if (!item) return;
+
+  if (item.type === 'baogia') {
+    if (item.meta && item.meta.items && item.meta.items.length > 0) {
+      bgItems = JSON.parse(JSON.stringify(item.meta.items));
+    }
+    if (item.meta) {
+      if (item.meta.to && document.getElementById('bg_to')) document.getElementById('bg_to').value = item.meta.to;
+      if (item.meta.company && document.getElementById('bg_company')) document.getElementById('bg_company').value = item.meta.company;
+      if (item.meta.vat && document.getElementById('bg_vat_rate')) document.getElementById('bg_vat_rate').value = item.meta.vat;
+    }
+    switchMainTab('baogia');
+    toast('✅ Đã nạp dữ liệu file vào tab Báo Giá Thuận Phát!', 'ok');
+  } else if (item.type === 'bbbg') {
+    if (item.meta && item.meta.items && item.meta.items.length > 0) {
+      bbDevs = JSON.parse(JSON.stringify(item.meta.items));
+    }
+    switchMainTab('bbbg');
+    toast('✅ Đã nạp dữ liệu file vào tab Biên Bản Bàn Giao!', 'ok');
+  } else if (item.type === 'tddu') {
+    if (item.meta && item.meta.items && item.meta.items.length > 0) {
+      tdduDevs = JSON.parse(JSON.stringify(item.meta.items));
+    }
+    switchMainTab('tddu');
+    toast('✅ Đã nạp dữ liệu file vào tab Tuyên Bố Đáp Ứng!', 'ok');
+  } else if (item.type === 'dutoan') {
+    if (item.meta && item.meta.items && item.meta.items.length > 0) {
+      devs = JSON.parse(JSON.stringify(item.meta.items));
+      buildStep2();
+    }
+    switchMainTab('dutoan');
+    goStep(2);
+    toast('✅ Đã nạp dữ liệu file vào tab Dự Toán!', 'ok');
+  }
 }
 
 function renderLichSu() {
@@ -8982,7 +9094,11 @@ async function exportBaogiaExcel() {
     // Ghi lại vào tab Lịch Sử
     lsAddEntry('baogia', 'Báo Giá Thuận Phát - ' + toName, fileName, {
       customer: toComp || toName,
-      total: totalSauThue.toLocaleString('vi-VN') + ' ₫'
+      total: totalSauThue.toLocaleString('vi-VN') + ' ₫',
+      items: JSON.parse(JSON.stringify(bgItems)),
+      to: toName,
+      company: toComp,
+      vat: vatRate
     });
 
     toast('✅ Đã xuất file Excel Báo Giá Thuận Phát CÓ LOGO thành công!', 'ok');
