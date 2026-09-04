@@ -23,7 +23,7 @@
       pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
     }
   </script>
-  <link rel="stylesheet" href="styles.css?v=1788517260000" />
+  <link rel="stylesheet" href="styles.css?v=1788517500000" />
 </head>
 
 <body>
@@ -58,6 +58,9 @@
         </button>
         <button class="mtab" id="mtab-lichsu" onclick="switchMainTab('lichsu')" title="Xem lịch sử các file đã xuất">
           <span>🕐</span> 5. Lịch Sử File <span id="lsBadgeTab" style="display:none;background:#7c3aed;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;margin-left:4px">0</span>
+        </button>
+        <button class="mtab" id="mtab-huongdan" onclick="switchMainTab('huongdan')" title="Cẩm nang hướng dẫn sử dụng toàn bộ tính năng phần mềm">
+          <span>📖</span> 6. Hướng Dẫn
         </button>
       </nav>
 
@@ -1038,6 +1041,392 @@
     </div>
   </div> <!-- end view-lichsu -->
 
+  <!-- ═══════════════ VIEW 6: HƯỚNG DẪN SỬ DỤNG CHI TIẾT ═══════════════ -->
+  <div id="view-huongdan" style="display:none">
+    <!-- Hero Banner -->
+    <div class="guide-hero">
+      <div class="guide-hero-title">
+        <span>📖 Cẩm Nang Hướng Dẫn Sử Dụng Toàn Diện</span>
+        <span style="font-size:11px;background:rgba(59,130,246,0.25);border:1px solid rgba(59,130,246,0.5);color:#93c5fd;padding:3px 10px;border-radius:12px;font-weight:700">Phiên Bản 2026</span>
+      </div>
+      <div class="guide-hero-sub">
+        Hệ thống tích hợp quy trình khép kín: từ <b>Lập Dự Toán Thầu</b>, <b>Báo Giá Thuận Phát</b>, <b>Tuyên Bố Đáp Ứng Kỹ Thuật (HSMT)</b>, <b>Biên Bản Bàn Giao Thiết Bị</b> đến <b>Tự động cào thông số chính hãng bằng AI</b>. Hãy chọn phân hệ cần tra cứu nhanh bên dưới:
+      </div>
+      <div class="guide-quick-pills">
+        <a class="guide-pill-link" href="#guide-dutoan"><span>📊</span> 1. Làm Dự Toán</a>
+        <a class="guide-pill-link" href="#guide-baogia"><span>🧾</span> 2. Báo Giá Thuận Phát</a>
+        <a class="guide-pill-link" href="#guide-tddu"><span>✅</span> 3. Tuyên Bố Đáp Ứng</a>
+        <a class="guide-pill-link" href="#guide-bbbg"><span>📝</span> 4. Biên Bản Bàn Giao</a>
+        <a class="guide-pill-link" href="#guide-ai"><span>🤖</span> 5. Cấu Hình & Cào AI</a>
+        <a class="guide-pill-link" href="#guide-lichsu"><span>🕐</span> 6. Lịch Sử & Sao Lưu</a>
+        <a class="guide-pill-link" href="#guide-faq"><span>❓</span> Câu Hỏi & Phím Tắt</a>
+      </div>
+    </div>
+
+    <!-- Workflow Pipeline -->
+    <div class="guide-pipeline">
+      <div class="guide-pipe-step">
+        <div class="guide-pipe-num">1</div>
+        <div class="guide-pipe-title">Nhập Thiết Bị</div>
+        <div class="guide-pipe-desc">Chọn từ danh mục mẫu hoặc nạp file Excel Dự toán (.xlsx) sẵn có</div>
+      </div>
+      <div class="guide-pipe-step">
+        <div class="guide-pipe-num">2</div>
+        <div class="guide-pipe-title">Chỉnh & Lọc Cấu Hình</div>
+        <div class="guide-pipe-desc">Điều chỉnh RAM, SSD, CPU, giá vốn, % lợi nhuận và đơn giá dự thầu</div>
+      </div>
+      <div class="guide-pipe-step">
+        <div class="guide-pipe-num">3</div>
+        <div class="guide-pipe-title">Báo Giá & Tuyên Bố</div>
+        <div class="guide-pipe-desc">Đồng bộ sang Báo Giá Thuận Phát & tự động khớp chỉ tiêu kỹ thuật HSMT</div>
+      </div>
+      <div class="guide-pipe-step">
+        <div class="guide-pipe-num">4</div>
+        <div class="guide-pipe-title">Bàn Giao Nghiệm Thu</div>
+        <div class="guide-pipe-desc">Chuyển sang Biên bản bàn giao, dán nhanh dải số Serial máy & linh kiện</div>
+      </div>
+      <div class="guide-pipe-step">
+        <div class="guide-pipe-num">5</div>
+        <div class="guide-pipe-title">Xuất File & Lưu Trữ</div>
+        <div class="guide-pipe-desc">Tải Excel / Word chuẩn form, dữ liệu tự động sao lưu vào Lịch sử</div>
+      </div>
+    </div>
+
+    <!-- Section 1: Làm Dự Toán -->
+    <div class="guide-section-block" id="guide-dutoan">
+      <div class="guide-section-hdr">
+        <div class="guide-section-title"><span>📊</span> Phân Hệ 1: Lập Dự Toán & Phân Tích Đơn Giá</div>
+      </div>
+      <div class="guide-card-grid">
+        <div class="guide-feature-card">
+          <div class="guide-card-top">
+            <div class="guide-card-ico">📥</div>
+            <div>
+              <div class="guide-card-t">Bước 1: Nạp Dữ Liệu Thiết Bị</div>
+              <div class="guide-card-sub">Cách đưa sản phẩm vào bảng tính</div>
+            </div>
+          </div>
+          <ol class="guide-steps-list">
+            <li><b>Cách 1 - Nạp file Excel sẵn có:</b> Nhấp ô <i>"Kéo thả hoặc Bấm vào đây để nạp file Excel Dự Toán"</i>. Hệ thống tự động nhận diện các cột Tên, Hãng, Model, Số lượng, Đơn giá.</li>
+            <li><b>Cách 2 - Chọn từ Danh mục mẫu:</b> Sử dụng thanh tìm kiếm sản phẩm và bộ lọc chủng loại (Máy chủ, PC đồng bộ, Laptop, Màn hình, Máy in...). Nhấp chuột để thêm thiết bị vào dự án.</li>
+            <li><b>Cách 3 - Áp dụng Hồ sơ mẫu:</b> Bấm menu <i>"📁 Hồ Sơ Mẫu"</i> để nạp mẫu gói thầu tiêu biểu (Thuận Phát, Bảo An, CA HCM, v.v.).</li>
+          </ol>
+          <div class="guide-tip-box ok-tip">
+            💡 <b>Mẹo:</b> Bạn có thể bấm nút <b>"⚡ Xuất File Ngay (Bỏ qua Bước 2 & 3)"</b> tại Bước 1 để tải ngay file Excel tổng hợp hoàn chỉnh trong 1 giây!
+          </div>
+        </div>
+
+        <div class="guide-feature-card">
+          <div class="guide-card-top">
+            <div class="guide-card-ico">⚙️</div>
+            <div>
+              <div class="guide-card-t">Bước 2 & 3: Tinh Chỉnh & Xuất Bản</div>
+              <div class="guide-card-sub">Lọc cấu hình nâng cấp & xuất Excel V1 chuẩn</div>
+            </div>
+          </div>
+          <ol class="guide-steps-list">
+            <li><b>Kiểm tra & Lọc nâng cấp (Bước 2):</b> Tùy biến thanh trượt hoặc chọn các gói nâng cấp RAM (16GB/32GB/64GB), Ổ cứng NVMe/SSD, Card màn hình theo đúng yêu cầu bài toán.</li>
+            <li><b>Định giá dự thầu:</b> Cài đặt tỷ lệ lợi nhuận (% Margin), chi phí dự phòng, chi phí vận chuyển để ra Đơn giá đề xuất cuối cùng.</li>
+            <li><b>Xuất File Excel (Bước 3):</b> Nhấp <b>"⬇️ Xuất File Excel Dự Toán"</b>. Kết quả là file <code>.xlsx</code> gồm Sheet Tổng Hợp kèm theo từng Sheet Chi Tiết cho từng hạng mục máy có format chuẩn in ấn.</li>
+          </ol>
+          <div class="guide-tip-box">
+            📌 <b>Lưu ý:</b> Các công thức cộng tổng, nhân hệ số đều tự động tính toán chính xác 100% không làm lệch tròn số.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 2: Báo Giá Thuận Phát -->
+    <div class="guide-section-block" id="guide-baogia">
+      <div class="guide-section-hdr">
+        <div class="guide-section-title"><span>🧾</span> Phân Hệ 2: Báo Giá Thuận Phát (BGThuanPhat.xlsx)</div>
+      </div>
+      <div class="guide-card-grid">
+        <div class="guide-feature-card">
+          <div class="guide-card-top">
+            <div class="guide-card-ico">🏢</div>
+            <div>
+              <div class="guide-card-t">Thiết Lập Thông Tin 2 Bên</div>
+              <div class="guide-card-sub">Bên Bán (Nhà cung cấp) & Bên Mua (Khách hàng)</div>
+            </div>
+          </div>
+          <ol class="guide-steps-list">
+            <li><b>Thông tin Đơn vị Bán:</b> Mặc định điền sẵn thông tin Công ty Thuận Phát (hoặc tùy chỉnh Tên công ty, Mã số thuế, Địa chỉ, Số tài khoản ngân hàng, Người đại diện).</li>
+            <li><b>Thông tin Khách hàng / Bên Mua:</b> Nhập Tên cơ quan đơn vị, Người nhận báo giá, Số điện thoại, Email và Địa chỉ giao hàng.</li>
+            <li><b>Số báo giá & Ngày lập:</b> Tự động đánh số báo giá theo định dạng <code>BG-{NĂM}{THÁNG}{NGÀY}-XX</code> giúp lưu trữ chuẩn mực kế toán.</li>
+          </ol>
+          <div class="guide-tip-box ok-tip">
+            ✨ Bạn có thể lưu mẫu công ty mình để lần sau mở lên không phải nhập lại thông tin Bên Bán.
+          </div>
+        </div>
+
+        <div class="guide-feature-card">
+          <div class="guide-card-top">
+            <div class="guide-card-ico">💰</div>
+            <div>
+              <div class="guide-card-t">Bảng Giá, Thuế VAT & Xuất Excel Chuẩn Form</div>
+              <div class="guide-card-sub">Dịch chữ số tiền tự động tiếng Việt & giữ form Thuận Phát</div>
+            </div>
+          </div>
+          <ol class="guide-steps-list">
+            <li><b>Đồng bộ từ Dự Toán:</b> Bấm <i>"🔄 Nhận Dữ Liệu Từ Dự Toán"</i> để lấy toàn bộ danh mục vừa lập sang Báo giá ngay lập tức mà không cần gõ tay.</li>
+            <li><b>Tùy chọn Thuế suất VAT:</b> Lựa chọn 0%, 5%, 8% hoặc 10%. Hệ thống tự động tính Tiền thuế và Tổng thanh toán đã gồm VAT.</li>
+            <li><b>Đọc tiền bằng chữ:</b> Tự động dịch số tiền thành văn bản tiếng Việt chuẩn ngân hàng (Ví dụ: <i>"Một trăm năm mươi triệu đồng chẵn"</i>).</li>
+            <li><b>Xuất Excel Thuận Phát:</b> Tải về file <code>.xlsx</code> giữ nguyên Logo công ty, viền kẻ đôi, chân chữ ký Giám đốc và Người lập biểu.</li>
+          </ol>
+          <div class="guide-tip-box">
+            📎 Phù hợp gửi trực tiếp cho Chủ đầu tư, Trưởng phòng vật tư hoặc Ban giám đốc ký duyệt.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 3: Tuyên Bố Đáp Ứng HSMT -->
+    <div class="guide-section-block" id="guide-tddu">
+      <div class="guide-section-hdr">
+        <div class="guide-section-title"><span>✅</span> Phân Hệ 3: Tuyên Bố Đáp Ứng Hồ Sơ Mời Thầu (HSMT)</div>
+      </div>
+      <div class="guide-card-grid">
+        <div class="guide-feature-card">
+          <div class="guide-card-top">
+            <div class="guide-card-ico">📑</div>
+            <div>
+              <div class="guide-card-t">Bóc Tách Chỉ Tiêu Kỹ Thuật HSMT</div>
+              <div class="guide-card-sub">Hỗ trợ nạp đa định dạng: Word (.docx), PDF, Excel (.xlsx)</div>
+            </div>
+          </div>
+          <ol class="guide-steps-list">
+            <li><b>Nạp Chương V - Yêu cầu kỹ thuật:</b> Bấm <b>"📥 Nạp File HSMT / Bóc Tách Bằng AI"</b>, chọn file Word (.docx), PDF hoặc Excel do bên mời thầu phát hành.</li>
+            <li><b>AI Tự Động Nhận Diện Bảng Biểu:</b> Trí tuệ nhân tạo sẽ quét các bảng tiêu chuẩn kỹ thuật, tự động tách riêng: Chỉ tiêu, Yêu cầu HSMT, Đơn vị tính và Chủng loại thiết bị.</li>
+            <li><b>Xem trước & Chỉnh sửa:</b> Bảng hiển thị trực quan cho phép bạn xem lại, thêm bớt tiêu chí hoặc tinh chỉnh câu chữ trước khi đưa vào bảng chính thức.</li>
+          </ol>
+          <div class="guide-tip-box ai-tip">
+            🤖 <b>Tính năng độc quyền AI:</b> Tự động chuẩn hóa câu chữ viết tắt từ HSMT (VD: "bộ nhớ truy xuất ngẫu nhiên" ➔ "RAM").
+          </div>
+        </div>
+
+        <div class="guide-feature-card">
+          <div class="guide-card-top">
+            <div class="guide-card-ico">🎯</div>
+            <div>
+              <div class="guide-card-t">Khớp Thông Số Chào Thầu & Thẩm Định Đạt</div>
+              <div class="guide-card-sub">Cột Yêu cầu HSMT vs Cột Chào thầu thực tế</div>
+            </div>
+          </div>
+          <ol class="guide-steps-list">
+            <li><b>Đồng bộ từ Dự Toán hoặc Cào AI:</b> Chọn thiết bị chào thầu tương ứng, bấm <i>"Khớp thông số kỹ thuật"</i> để hệ thống tự điền cấu hình máy thực tế sang cột Chào thầu.</li>
+            <li><b>Thẩm định Đạt / Không đạt (AI):</b> Bấm nút <b>"⚖️ AI Thẩm Định Tuyên Bố"</b>. AI sẽ so sánh từng chỉ số (Tần số xung nhịp GHz, dung lượng RAM GB, chuẩn PCIe SSD, công suất W...) và tự động điền kết luận <i>"Đáp ứng / Vượt mức yêu cầu HSMT"</i>.</li>
+            <li><b>Xuất File Excel Tuyên Bố:</b> Xuất file chuẩn cột Hồ sơ dự thầu: TT | Tên hàng hóa | Yêu cầu kỹ thuật HSMT | Thông số kỹ thuật chào thầu | Đánh giá mức độ đáp ứng | Tài liệu chứng minh.</li>
+          </ol>
+          <div class="guide-tip-box ok-tip">
+            🛡️ <b>Đảm bảo an toàn thầu:</b> Tránh 100% lỗi sơ đẳng bị đánh rớt hồ sơ kỹ thuật do thông số chào thầu thấp hơn yêu cầu HSMT.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 4: Biên Bản Bàn Giao -->
+    <div class="guide-section-block" id="guide-bbbg">
+      <div class="guide-section-hdr">
+        <div class="guide-section-title"><span>📝</span> Phân Hệ 4: Biên Bản Bàn Giao & Nghiệm Thu (BBBG.docx)</div>
+      </div>
+      <div class="guide-card-grid">
+        <div class="guide-feature-card">
+          <div class="guide-card-top">
+            <div class="guide-card-ico">👥</div>
+            <div>
+              <div class="guide-card-t">Thông Tin Ban Bàn Giao & Địa Điểm</div>
+              <div class="guide-card-sub">Bên giao, Bên nhận và Cơ sở pháp lý hợp đồng</div>
+            </div>
+          </div>
+          <ol class="guide-steps-list">
+            <li><b>Căn cứ pháp lý:</b> Nhập Số hợp đồng kinh tế, Biên bản nghiệm thu kỹ thuật, hoặc Quyết định phê duyệt mua sắm.</li>
+            <li><b>Đại diện Bên Giao (Bên Bán):</b> Điền thông tin Trưởng đoàn giao nhận, Kỹ sư bàn giao thiết bị, Chức vụ và Đơn vị công tác.</li>
+            <li><b>Đại diện Bên Nhận (Khách hàng):</b> Đại diện Ban lãnh đạo, Cán bộ phụ trách CNTT / Quản trị thiết bị tiếp nhận tại hiện trường.</li>
+            <li><b>Thời gian & Địa điểm:</b> Ghi rõ ngày giờ nghiệm thu và phòng máy / kho bãi nhận hàng.</li>
+          </ol>
+          <div class="guide-tip-box">
+            💡 Bạn có thể bấm nút <b>"🏢 Áp dụng mẫu Công ty"</b> trên menubar để tự động điền nhanh toàn bộ đại diện 2 bên.
+          </div>
+        </div>
+
+        <div class="guide-feature-card">
+          <div class="guide-card-top">
+            <div class="guide-card-ico">🔢</div>
+            <div>
+              <div class="guide-card-t">Quản Lý Dải Serial & Xuất File Word</div>
+              <div class="guide-card-sub">Dán hàng loạt số Serial thông minh & xuất tài liệu .docx</div>
+            </div>
+          </div>
+          <ol class="guide-steps-list">
+            <li><b>Lấy thiết bị từ Dự Toán:</b> Danh sách thiết bị và số lượng được tự động chuyển sang bảng bàn giao.</li>
+            <li><b>Dán Serial hàng loạt (Quick Paste):</b> Bạn có 50 máy tính? Chỉ cần quét mã vạch hoặc copy danh sách mã máy dán vào ô nhập nhanh, hệ thống sẽ tự chia đều theo số lượng từng thiết bị!</li>
+            <li><b>Ghi chú tình trạng:</b> Mặc định điền <i>"Hàng mới 100%, nguyên đai nguyên kiện, hoạt động bình thường"</i> kèm chế độ bảo hành.</li>
+            <li><b>Xuất File Word (.docx):</b> Nhấp <b>"📝 Xuất File Word BBBG"</b>. Tài liệu tạo ra đúng chuẩn thể thức văn bản hành chính Việt Nam, sẵn sàng in ra ký đóng dấu ngay.</li>
+          </ol>
+          <div class="guide-tip-box ok-tip">
+            📄 File Word xuất ra tương thích với Microsoft Word 2013-365 và Google Docs, giữ nguyên bảng biểu và tab thụt lề chuẩn.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 5: Cấu Hình AI -->
+    <div class="guide-section-block" id="guide-ai">
+      <div class="guide-section-hdr">
+        <div class="guide-section-title"><span>🤖</span> Phân Hệ 5: Cấu Hình Trí Tuệ Nhân Tạo (Google Gemini AI)</div>
+      </div>
+      <div class="guide-card-grid">
+        <div class="guide-feature-card">
+          <div class="guide-card-top">
+            <div class="guide-card-ico">🔑</div>
+            <div>
+              <div class="guide-card-t">Hướng Dẫn Lấy API Key Miễn Phí 100%</div>
+              <div class="guide-card-sub">Sử dụng Google Gemini Flash 2.5 cực nhanh & hoàn toàn miễn phí</div>
+            </div>
+          </div>
+          <ol class="guide-steps-list">
+            <li><b>Bước 1:</b> Truy cập trang cung cấp khóa bảo mật chính thức của Google: <a href="https://aistudio.google.com/app/apikey" target="_blank" style="color:var(--foc);font-weight:700;text-decoration:underline">Google AI Studio (aistudio.google.com)</a>.</li>
+            <li><b>Bước 2:</b> Đăng nhập bằng tài khoản Gmail của bạn. Bấm nút màu xanh <b>"Create API key"</b>.</li>
+            <li><b>Bước 3:</b> Sao chép (Copy) chuỗi mã khóa (bắt đầu bằng <code>AIzaSy...</code>).</li>
+            <li><b>Bước 4:</b> Trở lại phần mềm này, bấm nút <b>"⚙️ Cài Đặt AI Cào Hãng"</b> trên thanh tiêu đề góc trên bên phải.</li>
+            <li><b>Bước 5:</b> Dán mã API Key vào ô và bấm <b>"Lưu Cấu Hình"</b>. Trạng thái sẽ chuyển sang đèn xanh sẵn sàng.</li>
+          </ol>
+          <div class="guide-tip-box ok-tip">
+            🔒 <b>Bảo mật tuyệt đối:</b> Mã API Key chỉ được lưu trữ nội bộ trong trình duyệt máy tính của bạn (Local Storage), tuyệt đối không gửi về bất kỳ máy chủ bên thứ ba nào.
+          </div>
+        </div>
+
+        <div class="guide-feature-card">
+          <div class="guide-card-top">
+            <div class="guide-card-ico">🚀</div>
+            <div>
+              <div class="guide-card-t">Các Tính Năng Vượt Trội Khi Kích Hoạt AI</div>
+              <div class="guide-card-sub">Tiết kiệm 80% thời gian tra cứu Catalog và Datasheet</div>
+            </div>
+          </div>
+          <ol class="guide-steps-list">
+            <li><b>Cào thông số chính hãng tự động:</b> Chỉ cần nhập tên model (Ví dụ: <i>HP Pro Tower 280 G9</i>), AI sẽ tự động truy vấn thông số chuẩn: Socket CPU, Chuẩn Bus RAM, Khe cắm M.2 NVMe, Cổng kết nối, Công suất nguồn 80 Plus...</li>
+            <li><b>Bóc tách file HSMT phức tạp:</b> Đọc hiểu file Word/PDF HSMT hàng chục trang và trích xuất nguyên vẹn bảng tiêu chuẩn kỹ thuật.</li>
+            <li><b>Thẩm định tính tương thích:</b> Đánh giá cấu hình phần cứng có đáp ứng tiêu chuẩn phần mềm đòi hỏi hay không.</li>
+            <li><b>Tự động dịch thuật thông số:</b> Chuẩn hóa thuật ngữ tiếng Anh trong Datasheet sang tiếng Việt kỹ thuật chuẩn quy chuẩn đấu thầu Việt Nam.</li>
+          </ol>
+          <div class="guide-tip-box ai-tip">
+            ⚡ Bạn có thể bấm nút <b>"🔍 Test Thử Kết Nối AI"</b> trong bảng cài đặt để kiểm tra tốc độ phản hồi của mạng.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 6: Lịch Sử & Sao Lưu -->
+    <div class="guide-section-block" id="guide-lichsu">
+      <div class="guide-section-hdr">
+        <div class="guide-section-title"><span>🕐</span> Phân Hệ 6: Lịch Sử Xuất File & Cơ Chế Sao Lưu Độc Lập</div>
+      </div>
+      <div class="guide-card-grid">
+        <div class="guide-feature-card">
+          <div class="guide-card-top">
+            <div class="guide-card-ico">💾</div>
+            <div>
+              <div class="guide-card-t">Tự Động Lưu Trữ Khi Xuất File</div>
+              <div class="guide-card-sub">Không lo mất số liệu, xem lại bất cứ lúc nào</div>
+            </div>
+          </div>
+          <ol class="guide-steps-list">
+            <li>Mỗi lần bạn xuất bất kỳ file nào (Excel Dự toán, Excel Báo giá, Excel Tuyên bố hoặc Word BBBG), một bản ghi nhớ đầy đủ các hạng mục và tổng tiền sẽ được lưu tự động vào Tab <b>"🕐 5. Lịch Sử File"</b>.</li>
+            <li>Bạn có thể xem lại tóm tắt nội dung gói thầu, số lượng thiết bị, thời gian tạo và tải lại file một cách tức thì.</li>
+            <li>Hỗ trợ bộ lọc tìm kiếm theo tên gói thầu, tên khách hàng hoặc chủng loại thiết bị.</li>
+          </ol>
+          <div class="guide-tip-box">
+            💡 Dữ liệu được lưu trữ an toàn trong IndexedDB/LocalStorage của trình duyệt, không tốn dung lượng ổ cứng.
+          </div>
+        </div>
+
+        <div class="guide-feature-card">
+          <div class="guide-card-top">
+            <div class="guide-card-ico">🔄</div>
+            <div>
+              <div class="guide-card-t">Sao Lưu & Chuyển Đổi Sang Máy Tính Khác</div>
+              <div class="guide-card-sub">Bảo toàn dữ liệu dự án khi thay đổi thiết bị làm việc</div>
+            </div>
+          </div>
+          <ol class="guide-steps-list">
+            <li><b>Xuất Sao Lưu (Backup):</b> Vào menu <i>"🛠️ Dữ Liệu & Quản Trị"</i> ➔ Chọn <b>"Xuất Sao Lưu Toàn Bộ Lịch Sử"</b> để tải về file <code>.json</code> chứa toàn bộ dự toán và lịch sử.</li>
+            <li><b>Khôi Phục (Restore):</b> Trên máy tính mới hoặc trình duyệt mới, chọn <b>"Khôi Phục Dữ Liệu Từ File Sao Lưu"</b> và chọn file <code>.json</code> vừa tải. Mọi dữ liệu sẽ được phục hồi nguyên trạng 100%.</li>
+            <li><b>Hoạt Động Hoàn Toàn Ngoại Tuyến (Offline):</b> Phần mềm có thể chạy mượt mà ngay cả khi không có mạng Internet (trừ tính năng cào AI).</li>
+          </ol>
+          <div class="guide-tip-box ok-tip">
+            🛡️ Tuyệt đối không sợ bị rò rỉ giá thầu nội bộ ra ngoài Internet.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 7: FAQ & Phím Tắt -->
+    <div class="guide-section-block" id="guide-faq">
+      <div class="guide-section-hdr">
+        <div class="guide-section-title"><span>❓</span> Câu Hỏi Thường Gặp & Phím Tắt Hữu Ích</div>
+      </div>
+
+      <div class="guide-faq-card">
+        <div class="guide-faq-q" onclick="var a=this.nextElementSibling;a.style.display=(a.style.display==='none'?'block':'none')">
+          <span>1. Khi cập nhật phiên bản mới, làm sao để trình duyệt tải ngay giao diện mới nhất?</span>
+          <span style="font-size:16px">▾</span>
+        </div>
+        <div class="guide-faq-a">
+          Do trình duyệt thường lưu bộ nhớ đệm (cache) để tăng tốc, bạn chỉ cần bấm tổ hợp phím <b>Ctrl + F5</b> (hoặc <b>Ctrl + Shift + R</b> trên Google Chrome / Cốc Cốc / Edge). Trang web sẽ xóa sạch bộ nhớ tạm và nạp ngay bản cập nhật mới nhất với đầy đủ các tính năng.
+        </div>
+      </div>
+
+      <div class="guide-faq-card">
+        <div class="guide-faq-q" onclick="var a=this.nextElementSibling;a.style.display=(a.style.display==='none'?'block':'none')">
+          <span>2. Tôi có thể xuất file Báo Giá Thuận Phát trên điện thoại hoặc máy tính bảng không?</span>
+          <span style="font-size:16px">▾</span>
+        </div>
+        <div class="guide-faq-a">
+          Có. Giao diện phần mềm được tối ưu hoàn toàn Responsive (tự co giãn) trên cả Màn hình máy tính để bàn (PC), Laptop, Máy tính bảng (iPad/Tablet) và Điện thoại di động (Smartphone). File xuất ra là định dạng chuẩn Microsoft Excel (.xlsx) nên có thể mở tốt trên mọi ứng dụng văn phòng di động.
+        </div>
+      </div>
+
+      <div class="guide-faq-card">
+        <div class="guide-faq-q" onclick="var a=this.nextElementSibling;a.style.display=(a.style.display==='none'?'block':'none')">
+          <span>3. File Word Biên Bản Bàn Giao (.docx) khi in có bị lệch khung hoặc tràn trang không?</span>
+          <span style="font-size:16px">▾</span>
+        </div>
+        <div class="guide-faq-a">
+          Không. Bộ xuất tài liệu của phần mềm sử dụng thư viện tạo file Word chuẩn với lề trang căn chuẩn: Trên 2cm, Dưới 2cm, Trái 3cm, Phải 1.5cm (theo Nghị định 30/2020/NĐ-CP về công tác văn thư), bảng biểu có độ rộng co giãn 100% nên khi mở bằng Microsoft Word để in ấn sẽ vừa khít khổ giấy A4.
+        </div>
+      </div>
+
+      <div class="guide-faq-card">
+        <div class="guide-faq-q" onclick="var a=this.nextElementSibling;a.style.display=(a.style.display==='none'?'block':'none')">
+          <span>4. Các tổ hợp phím tắt nhanh được hỗ trợ trong phần mềm?</span>
+          <span style="font-size:16px">▾</span>
+        </div>
+        <div class="guide-faq-a">
+          <ul style="margin:0;padding-left:20px;line-height:1.7">
+            <li><b>Ctrl + F5:</b> Tải lại trang và xóa cache trình duyệt để cập nhật bản mới nhất.</li>
+            <li><b>Esc:</b> Đóng nhanh các cửa sổ Modal thông số sản phẩm, cài đặt AI hoặc thông báo.</li>
+            <li><b>Enter trong ô mật khẩu Admin:</b> Xác nhận mở khóa quyền Quản trị Báo giá.</li>
+            <li><b>Tab / Shift + Tab:</b> Di chuyển nhanh giữa các ô nhập liệu trong bảng báo giá và bảng serial.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Quick Action Jump Button -->
+      <div style="text-align:center;margin-top:30px;padding:24px;background:var(--card);border:1px solid var(--bdr2);border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,0.04)">
+        <div style="font-size:16px;font-weight:800;color:var(--t1);margin-bottom:6px">Bạn đã nắm rõ toàn bộ quy trình?</div>
+        <div style="font-size:13px;color:var(--t2);margin-bottom:16px">Bắt đầu ngay với một gói dự toán hoặc báo giá mới cho khách hàng:</div>
+        <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+          <button class="btn btn-p" onclick="switchMainTab('dutoan')">📊 1. Lập Dự Toán Mới</button>
+          <button class="btn btn-o" onclick="switchMainTab('baogia')">🧾 2. Tạo Báo Giá Thuận Phát</button>
+          <button class="btn btn-s" onclick="switchMainTab('tddu')">✅ 3. Tuyên Bố Đáp Ứng HSMT</button>
+          <button class="btn btn-s" onclick="switchMainTab('bbbg')">📝 4. Biên Bản Bàn Giao</button>
+        </div>
+      </div>
+    </div>
+  </div> <!-- end view-huongdan -->
+
   <!-- ADMIN PASSWORD MODAL -->
   <div id="adminPassModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(15,23,42,0.6);z-index:99999;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(6px)">
     <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;max-width:420px;width:100%;padding:28px 24px;box-shadow:0 20px 50px rgba(0,0,0,0.15);text-align:center">
@@ -1225,7 +1614,7 @@
   <div id="toast"><span id="ti">✅</span><span id="tm">OK</span></div>
 
   <script src="exceljs.min.js"></script>
-  <script src="main.js?v=1788517260000"></script>
+  <script src="main.js?v=1788517500000"></script>
 </body>
 
 </html>

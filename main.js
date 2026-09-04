@@ -653,12 +653,15 @@ function switchMainTab(tab) {
   if (bgView) bgView.style.display = 'none';
   var lsView = document.getElementById('view-lichsu');
   if (lsView) lsView.style.display = 'none';
+  var hdView = document.getElementById('view-huongdan');
+  if (hdView) hdView.style.display = 'none';
 
   var tabD = document.getElementById('mtab-dutoan');
   var tabB = document.getElementById('mtab-bbbg');
   var tabT = document.getElementById('mtab-tddu');
   var tabG = document.getElementById('mtab-baogia');
   var tabL = document.getElementById('mtab-lichsu');
+  var tabH = document.getElementById('mtab-huongdan');
 
   var statusEl = document.getElementById('menubarActiveTabStatus');
   var quickBtn = document.getElementById('btnMenuQuickAction');
@@ -705,6 +708,11 @@ function switchMainTab(tab) {
     if (typeof renderLichSu === 'function') {
       renderLichSu();
     }
+  } else if (tab === 'huongdan') {
+    if (tabH) tabH.classList.add('active');
+    if (hdView) hdView.style.display = 'block';
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot"></span> Đang ở: <b>📖 Hướng Dẫn Sử Dụng</b>';
+    if (quickBtn) quickBtn.innerHTML = '📊 Bắt Đầu Làm Dự Toán';
   }
   try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(e) {}
 }
@@ -4829,6 +4837,8 @@ function menuQuickExport() {
     exportHandoverWord();
   } else if (currentActiveTab === 'lichsu') {
     exportLichSuJson();
+  } else if (currentActiveTab === 'huongdan') {
+    switchMainTab('dutoan');
   }
 }
 
