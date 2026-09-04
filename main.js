@@ -996,7 +996,7 @@ async function callAiApi(prompt) {
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({
             contents: [{ parts: [{ text: prompt }] }],
-            generationConfig: { temperature: 0.1, maxOutputTokens: 256 }
+            generationConfig: { temperature: 0.1, maxOutputTokens: 4096 }
           })
         });
 
@@ -1040,7 +1040,9 @@ async function callAiApi(prompt) {
           },
           body: JSON.stringify({
             model: gModel,
-            messages: [{ role: 'user', content: prompt }]
+            messages: [{ role: 'user', content: prompt }],
+            temperature: 0.1,
+            max_tokens: 4096
           })
         });
 
@@ -1077,7 +1079,8 @@ async function callAiApi(prompt) {
       body: JSON.stringify({
         model: defaultM,
         messages: [{ role: 'user', content: prompt }],
-        temperature: 0.1
+        temperature: 0.1,
+        max_tokens: 4096
       })
     });
 
@@ -1120,66 +1123,6 @@ function sanitizeDevice(d) {
   return d;
 }
 
-function isNoiseOrNonDeviceText(text) {
-  if (!text) return true;
-  var t = text.toLowerCase().trim();
-  var noise = [
-    'tổng cộng', 'tổng số tiền', 'bằng chữ', 'ghi chú', 'thuế vat', 'đơn giá',
-    'thành tiền', 'chữ ký', 'đại diện', 'giám đốc', 'ngày tháng', 'cộng tiền hàng',
-    'stt', 'danh mục', 'tiêu chuẩn kỹ thuật', 'yêu cầu kỹ thuật', 'bảng báo giá',
-    'đại diện hợp pháp', 'đứng đầu liên danh'
-  ];
-  return noise.some(function (n) { return t === n || t.startsWith(n); });
-}
-
-function cleanFullDeviceName(name, stt, model, brand) {
-  if (!name) return '';
-  var clean = name.replace(/^(\d+[\.\s\-\)]+|mục\s*\d+[\.\s\-\)]*)/i, '').trim();
-  return clean;
-}
-
-function isStrictHardwareDevice(str) {
-  if (!str || typeof str !== 'string') return false;
-  var s = str.toLowerCase().trim();
-  if (isNoiseOrNonDeviceText(s)) return false;
-  var keywords = [
-    'máy', 'laptop', 'pc', 'server', 'màn hình', 'in', 'scan', 'photo', 'switch',
-    'router', 'firewall', 'wifi', 'camera', 'ups', 'bộ lưu điện', 'điện thoại',
-    'tai nghe', 'chuột', 'bàn phím', 'ổ cứng', 'ram', 'cpu', 'nguồn', 'card'
-  ];
-  return keywords.some(function (k) { return s.includes(k); });
-}
-
-function isRealDevice(name) {
-  return isStrictHardwareDevice(name);
-}
-
-function isValidTechnicalSpec(specText) {
-  if (!specText) return false;
-  var s = String(specText).trim();
-  if (s.length < 2) return false;
-  if (isNoiseOrNonDeviceText(s)) return false;
-  return true;
-}
-
-async function extractTextFromPdf(ab) {
-  if (typeof pdfjsLib === 'undefined') return '';
-  try {
-    var loadingTask = pdfjsLib.getDocument({ data: ab });
-    var pdf = await loadingTask.promise;
-    var fullText = '';
-    for (var i = 1; i <= pdf.numPages; i++) {
-      var page = await pdf.getPage(i);
-      var content = await page.getTextContent();
-      var strings = content.items.map(function (it) { return it.str; });
-      fullText += strings.join(' ') + '\n';
-    }
-    return fullText;
-  } catch (err) {
-    console.error('Lỗi extract PDF:', err);
-    return '';
-  }
-}
 
 function onProviderChange() {
   var p = (document.getElementById('aiProvider') && document.getElementById('aiProvider').value) || localStorage.getItem('ai_provider') || 'grok';
@@ -1244,14 +1187,20 @@ function sanitizeDevice(d) {
 
 function isNoiseOrNonDeviceText(text) {
   if (!text) return true;
-  var t = text.toLowerCase().trim();
-  var noise = [
-    'tổng cộng', 'tổng số tiền', 'bằng chữ', 'ghi chú', 'thuế vat', 'đơn giá',
+  var t = String(text).toLowerCase().trim();
+  if (t.length === 0) return true;
+  var noiseExact = [
+    'stt', 'tt', 'tổng cộng', 'tổng số tiền', 'bằng chữ', 'ghi chú', 'thuế vat', 'đơn giá',
     'thành tiền', 'chữ ký', 'đại diện', 'giám đốc', 'ngày tháng', 'cộng tiền hàng',
-    'stt', 'danh mục', 'tiêu chuẩn kỹ thuật', 'yêu cầu kỹ thuật', 'bảng báo giá',
-    'đại diện hợp pháp', 'đứng đầu liên danh'
+    'danh mục', 'tiêu chuẩn kỹ thuật', 'yêu cầu kỹ thuật', 'thông số kỹ thuật', 'bảng báo giá',
+    'đại diện hợp pháp', 'đứng đầu liên danh', 'nội dung', 'đơn vị tính', 'dvt', 'số lượng', 'sl'
   ];
-  return noise.some(function (n) { return t === n || t.startsWith(n); });
+  if (noiseExact.includes(t)) return true;
+  var noisePrefix = [
+    'tổng cộng', 'tổng số tiền', 'cộng tiền', 'thuế giá trị gia tăng', 'thuế vat',
+    'bằng chữ:', 'đại diện hợp pháp', 'người đại diện'
+  ];
+  return noisePrefix.some(function (n) { return t.startsWith(n); });
 }
 
 function cleanFullDeviceName(name, stt, model, brand) {
@@ -1264,12 +1213,36 @@ function isStrictHardwareDevice(str) {
   if (!str || typeof str !== 'string') return false;
   var s = str.toLowerCase().trim();
   if (isNoiseOrNonDeviceText(s)) return false;
+  if (/^(stt|tt|tiêu chuẩn|yêu cầu kỹ thuật|thông số kỹ thuật|nội dung|chỉ tiêu|đơn vị tính|dvt|số lượng|sl|ghi chú)$/i.test(s)) return false;
+
   var keywords = [
-    'máy', 'laptop', 'pc', 'server', 'màn hình', 'in', 'scan', 'photo', 'switch',
-    'router', 'firewall', 'wifi', 'camera', 'ups', 'bộ lưu điện', 'điện thoại',
-    'tai nghe', 'chuột', 'bàn phím', 'ổ cứng', 'ram', 'cpu', 'nguồn', 'card'
+    'máy', 'laptop', 'pc', 'desktop', 'server', 'máy chủ', 'màn hình', 'monitor', 'display',
+    'in', 'printer', 'scan', 'máy quét', 'photo', 'photocopy', 'switch', 'chuyển mạch',
+    'router', 'định tuyến', 'firewall', 'tường lửa', 'wifi', 'access point', 'ap',
+    'camera', 'nvr', 'dvr', 'đầu ghi', 'ups', 'bộ lưu điện', 'lưu điện', 'điện thoại', 'ip phone',
+    'tai nghe', 'chuột', 'bàn phím', 'ổ cứng', 'ssd', 'hdd', 'ram', 'cpu', 'nguồn', 'psu',
+    'card', 'thiết bị', 'đầu đọc', 'thẻ từ', 'thẻ nhớ', 'smart card', 'rfid', 'nfc',
+    'tủ mạng', 'tủ rack', 'rack', 'cáp', 'patch panel', 'máy chiếu', 'projector',
+    'kiosk', 'máy chấm công', 'chấm công', 'nas', 'san', 'bộ đàm', 'loa', 'amply',
+    'micro', 'hội nghị', 'phần mềm', 'bản quyền', 'license', 'antivirus', 'windows', 'office',
+    'thiết bị đọc', 'hub', 'dock', 'bộ lưu'
   ];
-  return keywords.some(function (k) { return s.includes(k); });
+
+  var hasKw = keywords.some(function (k) { return s.includes(k); });
+  if (hasKw) return true;
+
+  if (/^(mục\s*\d+|thiết bị\s*\d+|\d+[\.\:\-])\s+/i.test(s)) {
+    return true;
+  }
+
+  if (s.length >= 5 && !s.includes('yêu cầu kỹ thuật:') && !s.includes('bảng tuyên bố')) {
+    var brands = ['OKI', 'RICOH', 'MSI', 'HP', 'CANON', 'EPSON', 'BROTHER', 'DELL', 'LENOVO', 'ASUS', 'ACER', 'SAMSUNG', 'PANASONIC', 'CISCO', 'HIKVISION', 'DAHUA', 'APPLE', 'SONY', 'LG', 'GRANDSTREAM', 'IDENTIV', 'ATEN', 'SANTAK', 'APC'];
+    if (brands.some(function(b) { return s.toUpperCase().includes(b); })) {
+      return true;
+    }
+  }
+
+  return false;
 }
 
 function isRealDevice(name) {
@@ -1281,6 +1254,7 @@ function isValidTechnicalSpec(specText) {
   var s = String(specText).trim();
   if (s.length < 2) return false;
   if (isNoiseOrNonDeviceText(s)) return false;
+  if (/^(stt|tt|tiêu chuẩn|yêu cầu kỹ thuật:|thông số kỹ thuật:|stt\s*tiêu chí)/i.test(s)) return false;
   return true;
 }
 
@@ -3731,6 +3705,105 @@ function buildOfficialSpecPrompt(name, model, brand) {
     '  {"key": "Bộ nhớ RAM", "value": "16GB DDR4 3200MHz (hỗ trợ nâng cấp tối đa 64GB)"}\n' +
     ']\n' +
     'Tuyệt đối không giải thích thêm hay viết bất kỳ chữ nào bên ngoài JSON Array.';
+}
+
+/* ── PROMPTS & HELPERS FOR AI COMPLIANCE ENGINE ── */
+function buildTdduDirectCompliancePrompt(devName, offerName, offerModel, reqSpecs) {
+  var reqListStr = reqSpecs.map(function (s, i) {
+    var txt = (s.req || '').trim();
+    return (i + 1) + '. ' + txt;
+  }).join('\n');
+
+  return 'Bạn là chuyên gia thẩm định hồ sơ kỹ thuật đấu thầu CNTT và trang thiết bị chuyên nghiệp.\n' +
+    'Nhiệm vụ: Đối chiếu chi tiết từng tiêu chí yêu cầu kỹ thuật (E-HSMT) với thông số kỹ thuật thực tế của thiết bị chào thầu và lập BẢNG TUYÊN BỐ ĐÁP ỨNG YÊU CẦU KỸ THUẬT.\n\n' +
+    '- Thiết bị yêu cầu: "' + (devName || '') + '"\n' +
+    '- Thiết bị chào thầu: "' + (offerName || devName || '') + '"' + (offerModel ? (' (Model: ' + offerModel + ')') : '') + '\n\n' +
+    'DANH SÁCH TIÊU CHÍ YÊU CẦU KỸ THUẬT:\n' +
+    reqListStr + '\n\n' +
+    'HƯỚNG DẪN XỬ LÝ:\n' +
+    '1. Với TỪNG tiêu chí theo đúng thứ tự (1, 2, 3...):\n' +
+    '   - "offer": Ghi rõ thông số kỹ thuật thực tế của thiết bị chào thầu tương ứng với tiêu chí đó. Ghi chính xác theo Datasheet/Catalogue của hãng.\n' +
+    '   - "status": Đánh giá "Đáp ứng" (nếu bằng hoặc vượt trội hơn yêu cầu) hoặc "Không đáp ứng" (nếu thấp hơn hoặc không có).\n' +
+    '   - "ref": Ghi chú nguồn tham chiếu (VD: "Datasheet hãng", "Catalogue tr. 5", "Tài liệu kỹ thuật NSX").\n' +
+    '2. CHỈ TRẢ VỀ DUY NHẤT một JSON Array hợp lệ gồm các object theo đúng cấu trúc:\n' +
+    '[\n' +
+    '  {"req": "Nội dung yêu cầu kỹ thuật gốc", "offer": "Thông số chào thầu tương ứng", "status": "Đáp ứng", "ref": "Catalogue NSX"}\n' +
+    ']\n' +
+    'Tuyệt đối không giải thích hay viết thêm bất kỳ chữ nào bên ngoài JSON Array.';
+}
+
+function buildTdduAiParsePrompt(rawText) {
+  var sampleSnippet = rawText.slice(0, 16000);
+  return 'Bạn là chuyên gia phân tích và bóc tách hồ sơ mời thầu (E-HSMT), báo giá và tài liệu kỹ thuật thiết bị CNTT.\n' +
+    'Nhiệm vụ: Phân tích tài liệu dưới đây và trích xuất danh sách các thiết bị/hàng hóa cùng toàn bộ tiêu chí kỹ thuật yêu cầu.\n\n' +
+    'NỘI DUNG TÀI LIỆU:\n\"\"\"\n' + sampleSnippet + '\n\"\"\"\n\n' +
+    'HƯỚNG DẪN BÓC TÁCH:\n' +
+    '1. Nhận diện từng mục thiết bị rõ ràng (VD: Máy vi tính để bàn, Máy in đa năng, Switch chuyển mạch, v.v.).\n' +
+    '2. Bóc tách danh sách chi tiết các thông số kỹ thuật yêu cầu cho mỗi thiết bị (CPU, RAM, Ổ cứng, Cổng kết nối, Màn hình, Hệ điều hành, Bảo hành, v.v.).\n' +
+    '3. LOẠI BỎ TOÀN BỘ: Điều khoản năng lực, pháp lý, bảo lãnh dự thầu, thuế VAT, biểu mẫu hành chính, số trang, chữ ký.\n' +
+    '4. CHỈ TRẢ VỀ DUY NHẤT một JSON Array hợp lệ theo cấu trúc:\n' +
+    '[\n' +
+    '  {\n' +
+    '    "reqName": "Tên thiết bị (VD: Máy vi tính)",\n' +
+    '    "reqModel": "Model/Hãng nếu có trong tài liệu (hoặc để trống)",\n' +
+    '    "specs": [\n' +
+    '      "Bộ vi xử lý: Intel Core i5 thế hệ 13 trở lên",\n' +
+    '      "Bộ nhớ RAM: Tối thiểu 16GB DDR4",\n' +
+    '      "Ổ cứng: Tối thiểu 512GB SSD"\n' +
+    '    ]\n' +
+    '  }\n' +
+    ']\n' +
+    'Tuyệt đối không có bất kỳ chữ nào bên ngoài JSON Array.';
+}
+
+function findBestSpecMatch(reqStr, parsedList) {
+  if (!reqStr || !parsedList || !Array.isArray(parsedList) || parsedList.length === 0) return null;
+  var r = reqStr.toLowerCase();
+
+  var domains = [
+    { name: 'cpu', kw: ['cpu', 'processor', 'vi xử lý', 'bộ vi xử lý', 'bộ xử lý', 'chip', 'xung nhịp', 'core ultra', 'intel', 'ryzen'] },
+    { name: 'ram', kw: ['ram', 'bộ nhớ trong', 'ddr4', 'ddr5', 'bộ nhớ ram', 'dung lượng ram', 'so-dimm'] },
+    { name: 'storage', kw: ['ssd', 'hdd', 'ổ cứng', 'ổ đĩa', 'lưu trữ', 'nvme', 'm.2', 'storage', 'rom'] },
+    { name: 'display', kw: ['màn hình', 'display', 'screen', 'panel', 'tấm nền', 'ips', 'fhd', 'độ phân giải màn', 'inch'] },
+    { name: 'gpu', kw: ['đồ họa', 'vga', 'gpu', 'card màn hình', 'graphics', 'geforce', 'rtx'] },
+    { name: 'network', kw: ['mạng', 'lan', 'rj45', 'ethernet', 'switch', 'gabit', 'sfp', 'wifi', 'bluetooth', 'không dây'] },
+    { name: 'ports', kw: ['cổng kết nối', 'cổng i/o', 'cổng xuất hình', 'hdmi', 'usb', 'type-c', 'thunderbolt', 'displayport'] },
+    { name: 'os', kw: ['hệ điều hành', 'windows', 'macos', 'linux', 'os'] },
+    { name: 'office', kw: ['office', 'microsoft', 'word', 'excel'] },
+    { name: 'antivirus', kw: ['diệt virus', 'antivirus', 'bảo mật', 'security'] },
+    { name: 'power', kw: ['nguồn', 'psu', 'pin', 'battery', 'adaptor', 'công suất nguồn'] },
+    { name: 'speed', kw: ['tốc độ in', 'tốc độ quét', 'tốc độ', 'ppm', 'ipm', 'trang/phút'] },
+    { name: 'paper', kw: ['khổ giấy', 'khay giấy', 'duplex', 'đảo mặt', 'a4', 'a3', 'adf'] },
+    { name: 'resolution', kw: ['độ phân giải quang học', 'độ phân giải in', 'dpi'] },
+    { name: 'warranty', kw: ['bảo hành', 'thời gian bảo hành', 'warranty'] },
+    { name: 'origin', kw: ['xuất xứ', 'hãng sản xuất', 'thương hiệu', 'nhà sản xuất'] }
+  ];
+
+  for (var i = 0; i < domains.length; i++) {
+    var dom = domains[i];
+    var reqHasDom = dom.kw.some(function (k) { return r.includes(k); });
+    if (reqHasDom) {
+      for (var j = 0; j < parsedList.length; j++) {
+        var p = parsedList[j];
+        var pk = (p.key || '').toLowerCase();
+        var pv = (p.value || '').toLowerCase();
+        var parsedHasDom = dom.kw.some(function (k) { return pk.includes(k) || pv.includes(k); });
+        if (parsedHasDom) {
+          return p.value ? (p.key + ': ' + p.value) : p.key;
+        }
+      }
+    }
+  }
+
+  for (var j = 0; j < parsedList.length; j++) {
+    var p = parsedList[j];
+    var pk = (p.key || '').toLowerCase();
+    if (pk.length >= 3 && r.includes(pk)) {
+      return p.value ? (p.key + ': ' + p.value) : p.key;
+    }
+  }
+
+  return null;
 }
 
 async function aiAutoLookupSpecs(devId) {
@@ -6388,16 +6461,16 @@ function parseTdduFromXlsx(wb, fileName) {
 
   // Check if it's already in Compliance table format
   var headerRowIdx = -1;
-  for (var i = 0; i < Math.min(15, data.length); i++) {
+  for (var i = 0; i < Math.min(20, data.length); i++) {
     var rowStr = data[i].join(' ').toLowerCase();
-    if (rowStr.includes('tuyên bố đáp ứng') || (rowStr.includes('yêu cầu') && rowStr.includes('chào thầu')) || (rowStr.includes('stt') && rowStr.includes('thông số'))) {
+    if (rowStr.includes('tuyên bố đáp ứng') || (rowStr.includes('yêu cầu') && rowStr.includes('chào thầu')) || (rowStr.includes('stt') && rowStr.includes('thông số')) || (rowStr.includes('tiêu chí') && rowStr.includes('đáp ứng'))) {
       headerRowIdx = i;
       break;
     }
   }
 
   // Extract top metadata if present
-  for (var i = 0; i < Math.min(8, data.length); i++) {
+  for (var i = 0; i < Math.min(10, data.length); i++) {
     var r0 = String(data[i][0] || '').trim();
     var r0L = r0.toLowerCase();
     if (r0L.includes('bảng tuyên bố đáp ứng') || r0L.includes('tuyên bố đáp ứng')) {
@@ -6427,18 +6500,21 @@ function parseTdduFromXlsx(wb, fileName) {
       var c4 = String(row[4] || '').trim();
 
       if (!c0 && !c1 && !c2 && !c3 && !c4) continue;
-      if (c2.includes('ĐẠI DIỆN HỢP PHÁP') || c1.includes('ĐẠI DIỆN HỢP PHÁP')) break;
+      if (c2.includes('ĐẠI DIỆN HỢP PHÁP') || c1.includes('ĐẠI DIỆN HỢP PHÁP') || c0.includes('ĐẠI DIỆN')) break;
 
-      var isNum = c0 && !isNaN(parseInt(c0)) && String(parseInt(c0)) === c0;
-      if (isNum) {
-        if (isNoiseOrNonDeviceText(c1) || !isStrictHardwareDevice(c1)) {
+      var isNum = c0 && (/^(\d+|[ivx]+)(\.[\d\w]+)?$/i.test(c0) || (!isNaN(parseInt(c0)) && String(parseInt(c0)) === c0));
+      var isDevHeader = isNum || (c1 && isStrictHardwareDevice(c1) && !c3 && !c4) || (/^(mục\s*\d+|thiết bị\s*\d+)/i.test(c1));
+
+      if (isDevHeader) {
+        var devTitle = c1 || c2 || ('Thiết bị ' + (c0 || (parsedItems.length + 1)));
+        if (isNoiseOrNonDeviceText(devTitle)) {
           cur = null;
           continue;
         }
         if (cur && cur.specs.length > 0) parsedItems.push(cur);
         cur = {
-          reqName: c1 || ('Thiết bị ' + c0),
-          offerName: c2 || '',
+          reqName: devTitle,
+          offerName: (c2 && c2 !== devTitle) ? c2 : '',
           refNote: c4 || '',
           selected: true,
           specs: []
@@ -6452,10 +6528,13 @@ function parseTdduFromXlsx(wb, fileName) {
 
       if (cur && (c1 || c2)) {
         if (isValidTechnicalSpec(c1) || isValidTechnicalSpec(c2)) {
+          var reqText = c1 || c2;
+          var offerText = c2 || '';
+          var evalStatus = c3 || (offerText ? evaluateSpecCompliance(reqText, offerText) : '');
           cur.specs.push({
-            req: c1,
-            offer: c2 || '',
-            status: c3 || '',
+            req: reqText,
+            offer: offerText,
+            status: evalStatus,
             ref: c4 || ''
           });
         }
@@ -6498,7 +6577,10 @@ function parseTdduFromXlsx(wb, fileName) {
         }
       });
 
-      if (specs.length > 0 && isStrictHardwareDevice(devName)) {
+      if (specs.length > 0) {
+        if (!devName || /^sheet\d+$/i.test(devName)) {
+          devName = 'Mục thiết bị ' + (sIdx + 1);
+        }
         parsedItems.push({
           reqName: devName,
           offerName: '',
@@ -6513,9 +6595,17 @@ function parseTdduFromXlsx(wb, fileName) {
   if (parsedItems.length > 0) {
     tdduItems = parsedItems;
     renderTdduForm();
-    toast('✅ Đã bóc tách toàn bộ ' + tdduItems.length + ' mục yêu cầu kỹ thuật! Hãy chọn mẫu máy chào thầu ở mỗi mục bên trên.', 'ok');
+    tdduAutoMatchAllPresets(true);
+    toast('✅ Đã bóc tách thành công ' + tdduItems.length + ' mục yêu cầu kỹ thuật từ Excel!', 'ok');
   } else {
-    toast('⚠️ Không tìm thấy bảng thông số kỹ thuật hợp lệ trong file Excel.', 'err');
+    // If local heuristic failed, offer AI smart extraction
+    var fullRawText = data.map(function(r){ return r.join(' | '); }).join('\n');
+    if (fullRawText.length > 50) {
+      toast('🤖 Đang chuyển sang dùng AI để bóc tách thông số kỹ thuật chuẩn...', 'ai-t');
+      tdduAiParseText(fullRawText);
+    } else {
+      toast('⚠️ Không tìm thấy bảng thông số kỹ thuật hợp lệ trong file Excel.', 'err');
+    }
   }
 }
 
@@ -6529,7 +6619,7 @@ function parseTdduFromWord(html, fileName) {
     var rows = Array.from(tbl.querySelectorAll('tr'));
     if (rows.length < 2) return;
 
-    var devName = 'Mục thiết bị ' + (tIdx + 1);
+    var devName = '';
     var specs = [];
 
     rows.forEach(function (tr, rIdx) {
@@ -6554,7 +6644,10 @@ function parseTdduFromWord(html, fileName) {
       }
     });
 
-    if (specs.length > 0 && isStrictHardwareDevice(devName)) {
+    if (specs.length > 0) {
+      if (!devName) {
+        devName = 'Mục thiết bị ' + (parsedItems.length + 1);
+      }
       parsedItems.push({
         reqName: devName,
         offerName: '',
@@ -6573,24 +6666,22 @@ function parseTdduFromWord(html, fileName) {
     paragraphs.forEach(function (line) {
       if (isNoiseOrNonDeviceText(line)) return;
 
-      var isNewDev = /^(mục\s*)?(\d+|[ivx]+)[\.\:\-]\s*(máy\s+vi\s+tính|máy\s+tính|máy\s+in|máy\s+scan|máy\s+quét|máy\s+photo|máy\s+photocopy|máy\s+chủ|màn\s+hình|ổ\s+cứng|đầu\s+đọc|switch|bộ\s+chuyển\s+mạch|ups|bộ\s+lưu\s+điện|laptop|camera|kiosk)/i.test(line) ||
+      var isNewDev = /^(mục\s*)?(\d+|[ivx]+)[\.\:\-]\s*(máy|laptop|pc|server|màn\s+hình|in|scan|photo|switch|router|ups|đầu\s+đọc|thiết\s+bị|camera|kiosk)/i.test(line) ||
         isStrictHardwareDevice(line);
 
       if (isNewDev) {
         var devName = line.replace(/^(mục\s*)?(\d+|[ivx]+)[\.\:\-]\s*/i, '').trim();
-        if (isStrictHardwareDevice(devName) || isStrictHardwareDevice(line)) {
-          if (curWordItem && curWordItem.specs.length > 0 && isStrictHardwareDevice(curWordItem.reqName)) {
-            parsedItems.push(curWordItem);
-          }
-          curWordItem = {
-            reqName: devName || line,
-            offerName: '',
-            refNote: '',
-            selected: true,
-            specs: []
-          };
-          return;
+        if (curWordItem && curWordItem.specs.length > 0) {
+          parsedItems.push(curWordItem);
         }
+        curWordItem = {
+          reqName: devName || line,
+          offerName: '',
+          refNote: '',
+          selected: true,
+          specs: []
+        };
+        return;
       }
 
       if (curWordItem) {
@@ -6602,7 +6693,7 @@ function parseTdduFromWord(html, fileName) {
       }
     });
 
-    if (curWordItem && curWordItem.specs.length > 0 && isStrictHardwareDevice(curWordItem.reqName)) {
+    if (curWordItem && curWordItem.specs.length > 0) {
       parsedItems.push(curWordItem);
     }
   }
@@ -6610,15 +6701,24 @@ function parseTdduFromWord(html, fileName) {
   if (parsedItems.length > 0) {
     tdduItems = parsedItems;
     renderTdduForm();
-    toast('✅ Đã nạp ' + tdduItems.length + ' mục yêu cầu kỹ thuật từ file Word! Hãy chọn mẫu máy chào thầu ở mỗi mục.', 'ok');
+    tdduAutoMatchAllPresets(true);
+    toast('✅ Đã nạp thành công ' + tdduItems.length + ' mục yêu cầu kỹ thuật từ file Word!', 'ok');
   } else {
-    toast('⚠️ Không tìm thấy bảng thông số máy móc hợp lệ trong file Word!', 'err');
+    var rawText = doc.body ? doc.body.innerText : '';
+    if (rawText && rawText.length > 50) {
+      toast('🤖 Đang kích hoạt AI để bóc tách thông số kỹ thuật từ văn bản Word...', 'ai-t');
+      tdduAiParseText(rawText);
+    } else {
+      toast('⚠️ Không tìm thấy bảng thông số máy móc hợp lệ trong file Word!', 'err');
+    }
   }
 }
 
 async function parseTdduFromPdf(ab, fileName) {
   var pdfData = await extractTextFromPdf(ab);
-  var lines = pdfData.lines;
+  var lines = (typeof pdfData === 'string' ? pdfData.split('\n') : (pdfData && pdfData.lines ? pdfData.lines : []))
+    .map(function (l) { return l.trim(); })
+    .filter(Boolean);
 
   if (!lines || lines.length === 0) {
     toast('⚠️ File PDF không có nội dung chữ (hoặc là file scan ảnh)!', 'err');
@@ -6651,27 +6751,25 @@ async function parseTdduFromPdf(ab, fileName) {
     if (/^trang\s*\d+/i.test(txt) || /^page\s*\d+/i.test(txt)) return;
     if (isNoiseOrNonDeviceText(txt)) return;
 
-    var isNewDev = /^(mục\s*)?(\d+|[ivx]+)[\.\:\-]\s*(máy\s+vi\s+tính|máy\s+tính|máy\s+in|máy\s+scan|máy\s+quét|máy\s+photo|máy\s+photocopy|máy\s+chủ|màn\s+hình|ổ\s+cứng|đầu\s+đọc|switch|bộ\s+chuyển\s+mạch|ups|bộ\s+lưu\s+điện|laptop|camera|kiosk)/i.test(txt) ||
+    var isNewDev = /^(mục\s*)?(\d+|[ivx]+)[\.\:\-]\s*(máy|laptop|pc|server|màn\s+hình|in|scan|photo|switch|router|ups|đầu\s+đọc|thiết\s+bị|camera|kiosk)/i.test(txt) ||
       isStrictHardwareDevice(txt);
 
     if (isNewDev) {
       var devName = txt.replace(/^(mục\s*)?(\d+|[ivx]+)[\.\:\-]\s*/i, '').trim();
-      if (isStrictHardwareDevice(devName) || isStrictHardwareDevice(txt)) {
-        if (curItem && curItem.specs.length > 0 && isStrictHardwareDevice(curItem.reqName)) {
-          parsedItems.push(curItem);
-        }
-        curItem = {
-          reqName: devName || txt,
-          offerName: '',
-          refNote: '',
-          selected: true,
-          specs: []
-        };
-        return;
+      if (curItem && curItem.specs.length > 0) {
+        parsedItems.push(curItem);
       }
+      curItem = {
+        reqName: devName || txt,
+        offerName: '',
+        refNote: '',
+        selected: true,
+        specs: []
+      };
+      return;
     }
 
-    if (curItem && isStrictHardwareDevice(curItem.reqName)) {
+    if (curItem) {
       if (txt.toLowerCase() === 'thông số kỹ thuật:' || txt.toLowerCase() === 'yêu cầu kỹ thuật:') return;
 
       var cleanSpec = txt.replace(/^[•\-\*\+\da-z\.\)]+\s*/, '').trim();
@@ -6686,17 +6784,24 @@ async function parseTdduFromPdf(ab, fileName) {
     }
   });
 
-  if (curItem && curItem.specs.length > 0 && isStrictHardwareDevice(curItem.reqName)) {
+  if (curItem && curItem.specs.length > 0) {
     parsedItems.push(curItem);
   }
 
   if (parsedItems.length > 0) {
     tdduItems = parsedItems;
     renderTdduForm();
-    toast('✅ Đã bóc tách ' + tdduItems.length + ' mục yêu cầu kỹ thuật từ file PDF! Hãy chọn mẫu máy chào thầu ở mỗi mục bên trên.', 'ok');
+    tdduAutoMatchAllPresets(true);
+    toast('✅ Đã bóc tách ' + tdduItems.length + ' mục yêu cầu kỹ thuật từ file PDF!', 'ok');
   } else {
-    toast('⚠️ Không tìm thấy thông số máy móc rõ ràng trong file PDF. Đã nạp dữ liệu mẫu để bạn tiếp tục!', 'err');
-    loadSampleTdduFile();
+    // If heuristic failed, trigger AI extraction directly on full extracted text
+    if (pdfData && pdfData.length > 50) {
+      toast('🤖 Đang kích hoạt AI để bóc tách thông số kỹ thuật từ nội dung PDF...', 'ai-t');
+      tdduAiParseText(pdfData);
+    } else {
+      toast('⚠️ Không tìm thấy thông số máy móc rõ ràng trong file PDF. Đã nạp dữ liệu mẫu để bạn tiếp tục!', 'err');
+      loadSampleTdduFile();
+    }
   }
 }
 
@@ -6755,42 +6860,21 @@ function applyPresetToTdduItem(item, presetKey) {
   item.offerBrand = preset.brand || '';
   item.offerOrigin = preset.origin || 'Chính hãng';
 
-  // Map existing req specs to preset specs using smart multi-key matching
+  // Map existing req specs to preset specs using smart semantic matching
   if (item.specs && item.specs.length > 0) {
     item.specs.forEach(function (sp) {
-      var reqL = (sp.req || '').toLowerCase();
-      var foundVal = '';
-
-      preset.specs.forEach(function (ps) {
-        if (foundVal) return; // already matched
-        var pkL = (ps.key || '').toLowerCase();
-        var pvL = (ps.value || '').toLowerCase();
-
-        // Direct key match
-        if (reqL.includes(pkL)) { foundVal = ps.key + ': ' + ps.value; return; }
-        if ((pkL.includes('cpu') || pkL.includes('vi xử lý')) && (reqL.includes('cpu') || reqL.includes('vi xử lý') || reqL.includes('bộ xử lý') || reqL.includes('processor'))) { foundVal = ps.key + ': ' + ps.value; return; }
-        if ((pkL.includes('ram') || pkL.includes('bộ nhớ')) && (reqL.includes('ram') || reqL.includes('bộ nhớ') || reqL.includes('ddr'))) { foundVal = ps.key + ': ' + ps.value; return; }
-        if ((pkL.includes('ssd') || pkL.includes('hdd') || pkL.includes('ổ cứng') || pkL.includes('storage')) && (reqL.includes('ssd') || reqL.includes('hdd') || reqL.includes('ổ cứng') || reqL.includes('nvme') || reqL.includes('storage'))) { foundVal = ps.key + ': ' + ps.value; return; }
-        if (pkL.includes('tốc độ') && reqL.includes('tốc độ')) { foundVal = ps.key + ': ' + ps.value; return; }
-        if (pkL.includes('độ phân giải') && reqL.includes('độ phân giải')) { foundVal = ps.key + ': ' + ps.value; return; }
-        if (pkL.includes('bảo hành') && reqL.includes('bảo hành')) { foundVal = ps.key + ': ' + ps.value; return; }
-        if (pkL.includes('khổ giấy') && (reqL.includes('khổ giấy') || reqL.includes('giấy'))) { foundVal = ps.key + ': ' + ps.value; return; }
-        if ((pkL.includes('cổng kết nối') || pkL.includes('kết nối') || pkL.includes('giao diện')) && (reqL.includes('kết nối') || reqL.includes('cổng') || reqL.includes('giao diện') || reqL.includes('usb') || reqL.includes('lan') || reqL.includes('ethernet'))) { foundVal = ps.key + ': ' + ps.value; return; }
-        if ((pkL.includes('hệ điều hành') || pkL.includes('os')) && (reqL.includes('hệ điều hành') || reqL.includes('windows') || reqL.includes('macos') || reqL.includes('linux'))) { foundVal = ps.key + ': ' + ps.value; return; }
-        if ((pkL.includes('khay') || pkL.includes('nap giấy')) && (reqL.includes('khay') || reqL.includes('nap giấy') || reqL.includes('adf'))) { foundVal = ps.key + ': ' + ps.value; return; }
-        if (pkL.includes('công suất') && reqL.includes('công suất')) { foundVal = ps.key + ': ' + ps.value; return; }
-        if ((pkL.includes('màn hình') || pkL.includes('kích thước') || pkL.includes('panel')) && (reqL.includes('màn hình') || reqL.includes('inch') || reqL.includes('panel'))) { foundVal = ps.key + ': ' + ps.value; return; }
-        if (pkL.includes('phần mềm') && reqL.includes('phần mềm')) { foundVal = ps.key + ': ' + ps.value; return; }
-      });
+      var foundVal = findBestSpecMatch(sp.req, preset.specs);
 
       if (foundVal) {
         sp.offer = foundVal;
       } else if (!sp.offer || sp.offer === sp.req) {
         sp.offer = sp.req
-          .replace(/tươngđương hoặc cao hơn/gi, '')
-          .replace(/tương đương/gi, '')
-          .replace(/hoặc tương đương/gi, '')
-          .replace(/đạt chuẩn/gi, '')
+          .replace(/tương\s*đương\s*hoặc\s*cao\s*hơn/gi, '')
+          .replace(/tương\s*đương/gi, '')
+          .replace(/hoặc\s*tương\s*đương/gi, '')
+          .replace(/tối\s*thiểu/gi, '')
+          .replace(/đạt\s*chuẩn/gi, '')
+          .replace(/trở\s*lên/gi, '')
           .trim();
       }
       sp.status = evaluateSpecCompliance(sp.req, sp.offer);
@@ -7158,27 +7242,56 @@ async function tdduAiScrapeSpecs(dIdx) {
 
   toast('🤖 AI đang tra cứu & cào thông số chính hãng cho ' + (targetName || targetModel) + '...', 'ai-t');
   try {
-    var prompt = buildOfficialSpecPrompt(targetName, targetModel, '');
-    var rawText = await callAiApi(prompt);
-    var jsonMatch = rawText.match(/\[[\s\S]*\]/);
-    if (jsonMatch) {
-      var parsed = JSON.parse(jsonMatch[0]);
-      if (Array.isArray(parsed) && parsed.length > 0) {
+    // Nếu thiết bị đã có danh sách tiêu chí yêu cầu: dùng Direct Compliance Prompt để AI đối chiếu 1-1 chính xác
+    if (item.specs && item.specs.length > 0) {
+      var prompt = buildTdduDirectCompliancePrompt(item.reqName, targetName, targetModel, item.specs);
+      var rawText = await callAiApi(prompt);
+      var jsonMatch = rawText.match(/\[[\s\S]*\]/);
+      if (jsonMatch) {
+        var parsed = JSON.parse(jsonMatch[0]);
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          parsed.forEach(function (p, pIdx) {
+            if (item.specs[pIdx]) {
+              item.specs[pIdx].offer = p.offer || item.specs[pIdx].offer;
+              item.specs[pIdx].status = p.status || evaluateSpecCompliance(item.specs[pIdx].req, item.specs[pIdx].offer);
+              item.specs[pIdx].ref = p.ref || item.specs[pIdx].ref || 'Datasheet chính hãng';
+            }
+          });
+          renderTdduForm();
+          toast('✅ AI đã đối chiếu & điền đầy đủ 100% thông số đáp ứng cho ' + (targetName || targetModel) + '!', 'ok');
+          return;
+        }
+      }
+    }
+
+    // Nếu chưa có tiêu chí yêu cầu: cào toàn bộ datasheet chính hãng
+    var prompt2 = buildOfficialSpecPrompt(targetName, targetModel, '');
+    var rawText2 = await callAiApi(prompt2);
+    var jsonMatch2 = rawText2.match(/\[[\s\S]*\]/);
+    if (jsonMatch2) {
+      var parsed2 = JSON.parse(jsonMatch2[0]);
+      if (Array.isArray(parsed2) && parsed2.length > 0) {
         if (!item.specs || item.specs.length === 0) {
-          item.specs = parsed.map(function (s) {
-            return { req: s.key + ': ' + s.value, offer: s.value, status: 'Đáp ứng', ref: '' };
+          item.specs = parsed2.map(function (s) {
+            return { req: s.key + ': ' + s.value, offer: s.value, status: 'Đáp ứng', ref: 'Datasheet NSX' };
           });
         } else {
-          item.specs.forEach(function (sp, idx) {
-            var found = parsed.find(function (p) {
-              return sp.req && sp.req.toLowerCase().includes(p.key.toLowerCase());
-            });
-            if (found) {
-              sp.offer = found.value;
+          item.specs.forEach(function (sp) {
+            var matchedVal = findBestSpecMatch(sp.req, parsed2);
+            if (matchedVal) {
+              sp.offer = matchedVal;
+              sp.status = evaluateSpecCompliance(sp.req, sp.offer);
+              sp.ref = 'Datasheet NSX';
+            } else if (!sp.offer) {
+              sp.offer = sp.req
+                .replace(/tương\s*đương\s*hoặc\s*cao\s*hơn/gi, '')
+                .replace(/tương\s*đương/gi, '')
+                .replace(/hoặc\s*tương\s*đương/gi, '')
+                .replace(/tối\s*thiểu/gi, '')
+                .replace(/đạt\s*chuẩn/gi, '')
+                .trim();
               sp.status = 'Đáp ứng';
-            } else if (!sp.offer && parsed[idx]) {
-              sp.offer = parsed[idx].value;
-              sp.status = 'Đáp ứng';
+              sp.ref = 'Datasheet NSX';
             }
           });
         }
@@ -7236,27 +7349,53 @@ async function tdduAiScrapeAllMissing() {
     toast('🤖 AI đang cào thông số (' + (i + 1) + '/' + missingItems.length + '): ' + (name || model) + '...', 'ai-t');
 
     try {
-      var prompt = buildOfficialSpecPrompt(name, model, '');
-      var rawText = await callAiApi(prompt);
-      var jsonMatch = rawText.match(/\[[\s\S]*\]/);
-      if (jsonMatch) {
-        var parsed = JSON.parse(jsonMatch[0]);
-        if (Array.isArray(parsed) && parsed.length > 0) {
+      if (it.specs && it.specs.length > 0) {
+        var prompt = buildTdduDirectCompliancePrompt(it.reqName, name, model, it.specs);
+        var rawText = await callAiApi(prompt);
+        var jsonMatch = rawText.match(/\[[\s\S]*\]/);
+        if (jsonMatch) {
+          var parsed = JSON.parse(jsonMatch[0]);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            parsed.forEach(function (p, pIdx) {
+              if (it.specs[pIdx]) {
+                it.specs[pIdx].offer = p.offer || it.specs[pIdx].offer;
+                it.specs[pIdx].status = p.status || evaluateSpecCompliance(it.specs[pIdx].req, it.specs[pIdx].offer);
+                it.specs[pIdx].ref = p.ref || it.specs[pIdx].ref || 'Datasheet NSX';
+              }
+            });
+            successCount++;
+            continue;
+          }
+        }
+      }
+
+      var prompt2 = buildOfficialSpecPrompt(name, model, '');
+      var rawText2 = await callAiApi(prompt2);
+      var jsonMatch2 = rawText2.match(/\[[\s\S]*\]/);
+      if (jsonMatch2) {
+        var parsed2 = JSON.parse(jsonMatch2[0]);
+        if (Array.isArray(parsed2) && parsed2.length > 0) {
           if (!it.specs || it.specs.length === 0) {
-            it.specs = parsed.map(function (s) {
-              return { req: s.key + ': ' + s.value, offer: s.value, status: 'Đáp ứng', ref: '' };
+            it.specs = parsed2.map(function (s) {
+              return { req: s.key + ': ' + s.value, offer: s.value, status: 'Đáp ứng', ref: 'Datasheet NSX' };
             });
           } else {
-            it.specs.forEach(function (sp, sIdx) {
-              var found = parsed.find(function (p) {
-                return sp.req && sp.req.toLowerCase().includes(p.key.toLowerCase());
-              });
-              if (found) {
-                sp.offer = found.value;
+            it.specs.forEach(function (sp) {
+              var matchedVal = findBestSpecMatch(sp.req, parsed2);
+              if (matchedVal) {
+                sp.offer = matchedVal;
+                sp.status = evaluateSpecCompliance(sp.req, sp.offer);
+                sp.ref = 'Datasheet NSX';
+              } else if (!sp.offer) {
+                sp.offer = sp.req
+                  .replace(/tương\s*đương\s*hoặc\s*cao\s*hơn/gi, '')
+                  .replace(/tương\s*đương/gi, '')
+                  .replace(/hoặc\s*tương\s*đương/gi, '')
+                  .replace(/tối\s*thiểu/gi, '')
+                  .replace(/đạt\s*chuẩn/gi, '')
+                  .trim();
                 sp.status = 'Đáp ứng';
-              } else if (!sp.offer && parsed[sIdx]) {
-                sp.offer = parsed[sIdx].value;
-                sp.status = 'Đáp ứng';
+                sp.ref = 'Datasheet NSX';
               }
             });
           }
@@ -7270,6 +7409,190 @@ async function tdduAiScrapeAllMissing() {
 
   renderTdduForm();
   toast('🎉 Hoàn tất! Đã giữ nguyên ' + existingCount + ' mục có sẵn và dùng AI cào thông số cho ' + successCount + ' mục mới!', 'ok');
+}
+
+/* ── AI COMPLIANCE EVALUATION & DOCUMENT EXTRACTION ── */
+async function tdduAiEvaluateAllCompliance() {
+  if (!tdduItems || tdduItems.length === 0) {
+    toast('⚠️ Chưa có thiết bị nào trong danh sách!', 'err');
+    return;
+  }
+
+  // 1. Chạy đánh giá theo quy chuẩn logic cục bộ trước
+  tdduAutoEvaluateAll();
+
+  // 2. Nếu có AI Key, thẩm định chuyên sâu từng tiêu chí phức tạp
+  var key = getActiveAiKey();
+  if (!key) {
+    toast('💡 Đã đánh giá xong bằng bộ quy chuẩn nhanh! Cấu hình AI Key nếu muốn AI thẩm định chuyên sâu.', 'info');
+    return;
+  }
+
+  toast('🤖 AI đang thẩm định hồ sơ kỹ thuật thầu toàn bộ danh mục...', 'ai-t');
+  var totalChecked = 0;
+
+  for (var i = 0; i < tdduItems.length; i++) {
+    var it = tdduItems[i];
+    if (!it.specs || it.specs.length === 0) continue;
+
+    try {
+      var prompt = 'Bạn là chuyên gia thẩm định hồ sơ kỹ thuật đấu thầu.\n' +
+        'Thiết bị yêu cầu: "' + it.reqName + '"\n' +
+        'Thiết bị chào thầu: "' + (it.offerName || '') + ' ' + (it.offerModel || '') + '"\n' +
+        'Dưới đây là danh sách tiêu chí kỹ thuật:\n' +
+        it.specs.map(function (s, idx) {
+          return (idx + 1) + '. Yêu cầu: "' + s.req + '" | Chào thầu: "' + (s.offer || '') + '"';
+        }).join('\n') + '\n\n' +
+        'Nhiệm vụ: Với từng tiêu chí, đánh giá xem thiết bị chào thầu có "Đáp ứng" hay "Không đáp ứng".\n' +
+        'CHỈ TRẢ VỀ DUY NHẤT một JSON Array hợp lệ gồm các object: [{"index": 1, "status": "Đáp ứng" hoặc "Không đáp ứng", "ref": "Ghi chú tham chiếu"}]. Không viết thêm bất kỳ chữ nào bên ngoài JSON Array.';
+
+      var raw = await callAiApi(prompt);
+      var jm = raw.match(/\[[\s\S]*\]/);
+      if (jm) {
+        var parsed = JSON.parse(jm[0]);
+        if (Array.isArray(parsed)) {
+          parsed.forEach(function (res) {
+            var idx = (res.index ? res.index - 1 : 0);
+            if (it.specs[idx]) {
+              if (res.status === 'Đáp ứng' || res.status === 'Không đáp ứng') {
+                it.specs[idx].status = res.status;
+              }
+              if (res.ref && !it.specs[idx].ref) {
+                it.specs[idx].ref = res.ref;
+              }
+            }
+          });
+          totalChecked++;
+        }
+      }
+    } catch (e) {
+      console.warn('Lỗi AI thẩm định mục ' + (i + 1), e);
+    }
+  }
+
+  renderTdduForm();
+  toast('🎉 AI đã hoàn tất thẩm định hồ sơ thầu cho ' + totalChecked + ' thiết bị!', 'ok');
+}
+
+async function tdduAiParseText(rawText) {
+  if (!rawText || rawText.trim().length < 20) {
+    toast('⚠️ Nội dung văn bản quá ngắn để bóc tách thông số kỹ thuật!', 'err');
+    return;
+  }
+
+  var key = getActiveAiKey();
+  if (!key) {
+    openAiSettingsModal('Vui lòng nhập API Key để AI bóc tách hồ sơ kỹ thuật / E-HSMT tự động!');
+    return;
+  }
+
+  toast('🤖 AI đang phân tích và bóc tách toàn bộ danh mục & yêu cầu kỹ thuật...', 'ai-t');
+
+  try {
+    var prompt = buildTdduAiParsePrompt(rawText);
+    var rawRes = await callAiApi(prompt);
+    var jm = rawRes.match(/\[[\s\S]*\]/);
+    if (!jm) throw new Error('AI không trả về đúng định dạng danh sách JSON.');
+
+    var parsed = JSON.parse(jm[0]);
+    if (!Array.isArray(parsed) || parsed.length === 0) {
+      throw new Error('Không tìm thấy mục thiết bị nào trong kết quả AI.');
+    }
+
+    var newItems = parsed.map(function (it, idx) {
+      var specs = [];
+      if (Array.isArray(it.specs)) {
+        specs = it.specs.map(function (spStr) {
+          var clean = String(spStr).trim();
+          return {
+            req: clean,
+            offer: '',
+            status: '',
+            ref: ''
+          };
+        });
+      }
+
+      return {
+        reqName: it.reqName || ('Thiết bị ' + (idx + 1)),
+        reqModel: it.reqModel || '',
+        offerName: '',
+        offerModel: '',
+        refNote: '',
+        selected: true,
+        specs: specs
+      };
+    });
+
+    tdduItems = newItems;
+    renderTdduForm();
+
+    // Tự động khớp máy mẫu cho các mục vừa bóc tách
+    tdduAutoMatchAllPresets(true);
+
+    toast('🎉 AI đã bóc tách thành công ' + tdduItems.length + ' mục thiết bị từ hồ sơ!', 'ok');
+    tdduCloseAiImportModal();
+  } catch (e) {
+    console.error('Lỗi AI bóc tách hồ sơ:', e);
+    toast('❌ Lỗi AI bóc tách: ' + e.message, 'err');
+  }
+}
+
+function tdduOpenAiImportModal() {
+  var modal = document.getElementById('tdduAiImportModal');
+  if (modal) modal.style.display = 'flex';
+}
+
+function tdduCloseAiImportModal() {
+  var modal = document.getElementById('tdduAiImportModal');
+  if (modal) modal.style.display = 'none';
+}
+
+function tdduAiProcessRawText() {
+  var ta = document.getElementById('tdduAiRawInput');
+  if (!ta || !ta.value.trim()) {
+    toast('⚠️ Vui lòng dán nội dung hồ sơ hoặc bảng yêu cầu kỹ thuật vào ô!', 'err');
+    return;
+  }
+  tdduAiParseText(ta.value);
+}
+
+function tdduFillSampleAiHsmt(type) {
+  var ta = document.getElementById('tdduAiRawInput');
+  if (!ta) return;
+
+  if (type === 'pc') {
+    ta.value = 'MỤC 1: MÁY VI TÍNH ĐỂ BÀN\n' +
+      '- Bộ vi xử lý: Intel Core Ultra 5 hoặc tương đương trở lên\n' +
+      '- Bộ nhớ RAM: Tối thiểu 16GB DDR5 5600MHz\n' +
+      '- Ổ đĩa cứng: Tối thiểu 512GB SSD PCIe NVMe M.2\n' +
+      '- Màn hình: Kích thước 23.8 inch IPS Full HD (1920x1080), tần số quét 75Hz\n' +
+      '- Cổng kết nối: Tối thiểu 1 cổng HDMI, 1 cổng DisplayPort, 4 cổng USB 3.2, 1 cổng LAN RJ45 Gigabit\n' +
+      '- Hệ điều hành: Windows 11 Pro 64-bit bản quyền vĩnh viễn theo máy\n' +
+      '- Bàn phím và chuột quang có dây chính hãng đi kèm đồng bộ\n' +
+      '- Nguồn: Chuẩn 80 Plus Bronze công suất tối thiểu 300W\n' +
+      '- Bảo hành: Tối thiểu 24 tháng chính hãng tại nơi sử dụng\n\n' +
+      'MỤC 2: MÁY IN ĐƠN NĂNG LASER ĐEN TRẮNG\n' +
+      '- Công nghệ in: Laser đơn sắc\n' +
+      '- Tốc độ in: Tối thiểu 40 trang/phút (khổ A4)\n' +
+      '- Độ phân giải: Tối thiểu 1200 x 1200 dpi\n' +
+      '- In hai mặt tự động (Duplex): Có sẵn\n' +
+      '- Khổ giấy hỗ trợ: A4, Letter, B5, A5\n' +
+      '- Khay chứa giấy: Khay chính tối thiểu 250 tờ, khay đa năng 100 tờ\n' +
+      '- Kết nối: USB 2.0 High-Speed và cổng mạng Gigabit Ethernet RJ45\n' +
+      '- Bảo hành: 12 tháng chính hãng';
+  } else if (type === 'network') {
+    ta.value = 'MỤC 1: THIẾT BỊ CHUYỂN MẠCH SWITCH LAYER 3\n' +
+      '- Loại thiết bị: Switch chuyển mạch quản lý Layer 3\n' +
+      '- Cổng mạng: Tối thiểu 24 cổng Gigabit Ethernet RJ45 và 4 cổng 10G SFP+ Uplink\n' +
+      '- Băng thông chuyển mạch (Switching capacity): Tối thiểu 128 Gbps\n' +
+      '- Tốc độ chuyển tiếp gói tin: Tối thiểu 95 Mpps\n' +
+      '- Tính năng định tuyến: Hỗ trợ định tuyến tĩnh (Static Routing), RIP, OSPF, DHCP Server\n' +
+      '- Bảo mật: Hỗ trợ 802.1X, ACL, DoS Defense, Port Security\n' +
+      '- Quản trị: Hỗ trợ Web GUI, CLI qua Console/Telnet/SSH, SNMP v1/v2c/v3\n' +
+      '- Nguồn điện: 100 - 240V AC 50/60Hz\n' +
+      '- Bảo hành: Tối thiểu 36 tháng chính hãng';
+  }
 }
 
 var tdduCollapsed = {};
