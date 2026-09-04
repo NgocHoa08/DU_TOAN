@@ -4103,63 +4103,7 @@ var CATALOG_ITEMS = [
     "unit": "Chiếc",
     "specCount": 24
   },
-  // ── SẢN PHẨM MỚI BỔ SUNG: ĐIỆN THOẠI, MÀN HÌNH, MÁY TÍNH, MÁY IN ──
-  {
-    "id": "cat_dt_1",
-    "cat": "dien_thoai",
-    "presetKey": "dt_iphone_15_pro_max",
-    "name": "Điện thoại thông minh Apple iPhone 15 Pro Max 256GB",
-    "model": "iPhone 15 Pro Max",
-    "brand": "Apple",
-    "origin": "Trung Quốc",
-    "price": 0,
-    "qty": 1,
-    "warranty": "12 tháng",
-    "unit": "Chiếc",
-    "specCount": 17
-  },
-  {
-    "id": "cat_dt_2",
-    "cat": "dien_thoai",
-    "presetKey": "dt_samsung_s24_ultra",
-    "name": "Điện thoại thông minh Samsung Galaxy S24 Ultra 5G 256GB",
-    "model": "Galaxy S24 Ultra",
-    "brand": "Samsung",
-    "origin": "Việt Nam",
-    "price": 0,
-    "qty": 1,
-    "warranty": "12 tháng",
-    "unit": "Chiếc",
-    "specCount": 14
-  },
-  {
-    "id": "cat_dt_3",
-    "cat": "dien_thoai",
-    "presetKey": "dt_yealink_t46u",
-    "name": "Điện thoại IP Doanh Nghiệp Yealink SIP-T46U",
-    "model": "SIP-T46U",
-    "brand": "Yealink",
-    "origin": "Trung Quốc",
-    "price": 0,
-    "qty": 1,
-    "warranty": "12 tháng",
-    "unit": "Chiếc",
-    "specCount": 11
-  },
-  {
-    "id": "cat_dt_4",
-    "cat": "dien_thoai",
-    "presetKey": "dt_grandstream_2614",
-    "name": "Điện thoại IP Grandstream GRP2614 Carrier-Grade",
-    "model": "GRP2614",
-    "brand": "Grandstream",
-    "origin": "Trung Quốc",
-    "price": 0,
-    "qty": 1,
-    "warranty": "12 tháng",
-    "unit": "Chiếc",
-    "specCount": 7
-  },
+  // ── SẢN PHẨM MỚI BỔ SUNG: MÀN HÌNH, MÁY TÍNH, MÁY IN ──
   {
     "id": "cat_mh_1",
     "cat": "man_hinh",

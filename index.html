@@ -293,7 +293,7 @@
           <div class="cat-toolbar">
             <div class="cat-toolbar-left">
               <input type="text" id="catSearch"
-                placeholder="🔍 Tìm nhanh tên máy, model, hãng sản xuất (VD: iPhone, Dell, HP, Canon, Ricoh, Yealink...)"
+                placeholder="🔍 Tìm nhanh tên máy, model, hãng sản xuất (VD: Dell, HP, Canon, Ricoh, Brother, Epson, MSI...)"
                 oninput="filterCatalog()" style="flex:2;min-width:240px" />
               
               <select id="catBrandFilter" onchange="filterCatBrand(this.value)" style="flex:1;min-width:140px;padding:8px 10px;border-radius:8px;border:1px solid var(--bdr2);background:var(--card);color:var(--t1);font-size:12.5px;font-weight:600;cursor:pointer">
@@ -301,15 +301,15 @@
                 <option value="Dell">Dell</option>
                 <option value="HP">HP</option>
                 <option value="Canon">Canon</option>
-                <option value="Samsung">Samsung</option>
-                <option value="Apple">Apple</option>
                 <option value="Ricoh">Ricoh</option>
                 <option value="Brother">Brother</option>
                 <option value="Epson">Epson</option>
-                <option value="Yealink">Yealink</option>
-                <option value="Grandstream">Grandstream</option>
                 <option value="MSI">MSI</option>
                 <option value="LG">LG</option>
+                <option value="Samsung">Samsung</option>
+                <option value="TP-Link">TP-Link</option>
+                <option value="Cisco">Cisco</option>
+                <option value="OKI">OKI</option>
               </select>
 
               <label class="spec-search-toggle" title="Tìm kiếm từ khóa trong toàn bộ nội dung của 26+ thông số kỹ thuật chi tiết">
@@ -422,7 +422,6 @@
           <!-- Category Chips -->
           <div class="cat-nav" id="catNav">
             <button class="cat-btn active" onclick="filterCatType('all')">Tất cả danh mục</button>
-            <button class="cat-btn" onclick="filterCatType('dien_thoai')">📱 Điện thoại &amp; IP Phone</button>
             <button class="cat-btn" onclick="filterCatType('may_tinh')">💻 Máy tính &amp; Laptop</button>
             <button class="cat-btn" onclick="filterCatType('man_hinh')">🖥️ Màn hình máy tính</button>
             <button class="cat-btn" onclick="filterCatType('may_in')">🖨️ Máy in &amp; Photocopy</button>
