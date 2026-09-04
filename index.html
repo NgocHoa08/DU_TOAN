@@ -333,6 +333,92 @@
             </div>
           </div>
 
+          <!-- Bộ Lọc Chuyên Sâu Theo Thông Số Kỹ Thuật (GB, Tốc độ in, Khay giấy, Khổ giấy...) -->
+          <div class="cat-spec-filter-panel" id="catSpecFilterPanel">
+            <div class="csfp-header">
+              <div class="csfp-title">
+                <span>🎛️ <b>Lọc Chi Tiết Theo Thông Số:</b></span>
+                <span class="csfp-hint">Lọc tức thì theo RAM/GB, tốc độ in (ppm), số lượng tờ/khay, khổ giấy...</span>
+              </div>
+              <button class="csfp-toggle-btn" id="btnToggleSpecPanel" onclick="toggleSpecFilterPanel()" title="Thu gọn/Mở rộng bộ lọc thông số">
+                <span id="txtToggleSpecPanel">Thu gọn</span> ▴
+              </button>
+            </div>
+
+            <div class="csfp-body" id="csfpBody">
+              <div class="csfp-grid">
+                <!-- Dropdown 1: RAM & Bộ nhớ GB -->
+                <div class="csfp-col">
+                  <label>💾 Dung Lượng RAM / Bộ Nhớ</label>
+                  <select id="specFilterRam" onchange="applyParametricFilter()">
+                    <option value="">-- Tất cả RAM / Bộ nhớ --</option>
+                    <option value="ram_8gb">RAM 8 GB</option>
+                    <option value="ram_12_16gb">RAM 12 GB - 16 GB</option>
+                    <option value="storage_256gb">Ổ cứng / ROM 256 GB</option>
+                    <option value="storage_512gb">Ổ cứng SSD 512 GB</option>
+                    <option value="storage_1tb">Ổ cứng dung lượng lớn (≥ 1 TB)</option>
+                  </select>
+                </div>
+
+                <!-- Dropdown 2: Tốc độ in / quét -->
+                <div class="csfp-col">
+                  <label>⚡ Tốc Độ In / Quét (trang/phút)</label>
+                  <select id="specFilterSpeed" onchange="applyParametricFilter()">
+                    <option value="">-- Tất cả tốc độ --</option>
+                    <option value="speed_lt25">&lt; 25 trang/phút (Tiêu chuẩn)</option>
+                    <option value="speed_25_35">25 - 35 trang/phút (Trung bình)</option>
+                    <option value="speed_gt35">&gt; 35 trang/phút (Tốc độ cao)</option>
+                  </select>
+                </div>
+
+                <!-- Dropdown 3: Số lượng tờ / Trữ lượng khay giấy -->
+                <div class="csfp-col">
+                  <label>📥 Số Lượng Tờ / Khay Giấy</label>
+                  <select id="specFilterPaper" onchange="applyParametricFilter()">
+                    <option value="">-- Tất cả khay giấy --</option>
+                    <option value="paper_lt150">Khay nạp &lt; 150 tờ (Nhỏ gọn)</option>
+                    <option value="paper_gte250">Khay nạp ≥ 250 tờ (Chuẩn văn phòng)</option>
+                    <option value="paper_gte500">Khay nạp ≥ 500 tờ (Dung lượng lớn)</option>
+                  </select>
+                </div>
+
+                <!-- Dropdown 4: Khổ giấy & Tính năng đặc thù -->
+                <div class="csfp-col">
+                  <label>📄 Khổ Giấy &amp; Tính Năng</label>
+                  <select id="specFilterFeature" onchange="applyParametricFilter()">
+                    <option value="">-- Tất cả khổ / tính năng --</option>
+                    <option value="paper_a3">Khổ A3 (In / Quét khổ lớn)</option>
+                    <option value="duplex">In 2 mặt tự động (Duplex)</option>
+                    <option value="wifi">Kết nối Wi-Fi / Không dây</option>
+                    <option value="lan">Cổng mạng LAN / Gigabit</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Quick Filter Chips -->
+              <div class="csfp-chips-wrap">
+                <span class="csfp-chips-label">Gợi ý lọc nhanh:</span>
+                <button type="button" class="spec-chip" data-type="ram" data-val="ram_12_16gb" onclick="toggleSpecChip(this, 'ram', 'ram_12_16gb')">🚀 RAM 16GB</button>
+                <button type="button" class="spec-chip" data-type="ram" data-val="storage_512gb" onclick="toggleSpecChip(this, 'ram', 'storage_512gb')">💾 SSD 512GB</button>
+                <button type="button" class="spec-chip" data-type="speed" data-val="speed_gt35" onclick="toggleSpecChip(this, 'speed', 'speed_gt35')">🖨️ Tốc độ &gt; 35 tr/phút</button>
+                <button type="button" class="spec-chip" data-type="paper" data-val="paper_gte250" onclick="toggleSpecChip(this, 'paper', 'paper_gte250')">📥 Khay ≥ 250 tờ</button>
+                <button type="button" class="spec-chip" data-type="feature" data-val="duplex" onclick="toggleSpecChip(this, 'feature', 'duplex')">🔄 In 2 mặt (Duplex)</button>
+                <button type="button" class="spec-chip" data-type="feature" data-val="paper_a3" onclick="toggleSpecChip(this, 'feature', 'paper_a3')">📄 Khổ A3</button>
+                <button type="button" class="spec-chip" data-type="feature" data-val="wifi" onclick="toggleSpecChip(this, 'feature', 'wifi')">📶 Wi-Fi</button>
+
+                <button type="button" class="btn-clear-spec-filters" id="btnClearSpecFilters" onclick="resetParametricFilters()" style="display:none" title="Đặt lại tất cả bộ lọc thông số">
+                  ✕ Bỏ lọc thông số (<span id="activeSpecFilterCount">0</span>)
+                </button>
+              </div>
+
+              <!-- Active Filters Summary Banner -->
+              <div id="specFilterActiveBanner" class="spec-active-banner" style="display:none">
+                <span>🔍 Đang lọc theo: <b id="specFilterActiveText">...</b></span>
+                <span class="spec-match-badge" id="specFilterResultBadge">Tìm thấy 0 máy</span>
+              </div>
+            </div>
+          </div>
+
           <!-- Category Chips -->
           <div class="cat-nav" id="catNav">
             <button class="cat-btn active" onclick="filterCatType('all')">Tất cả danh mục</button>
@@ -1040,6 +1126,18 @@
           <button class="btn btn-o btn-sm" onclick="clearModalSpecFilter()" title="Xóa bộ lọc thông số">✕ Xóa</button>
         </div>
         <div id="specMatchCounter" class="spec-match-counter">26 / 26 thông số</div>
+      </div>
+
+      <!-- Quick Spec Filtering Pills in Modal -->
+      <div class="modal-spec-quick-pills">
+        <span style="font-size:11.5px;font-weight:700;color:var(--t3);margin-right:4px">Lọc nhanh thông số:</span>
+        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('RAM|Bộ nhớ|GB')">💾 RAM / GB</button>
+        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Tốc độ|ppm|ipm|trang/phút')">⚡ Tốc độ in/quét</button>
+        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Khay|Trữ lượng|tờ')">📥 Số lượng tờ / Khay</button>
+        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Khổ|A4|A3')">📄 Khổ giấy A4/A3</button>
+        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Duplex|2 mặt|hai mặt')">🔄 In 2 mặt (Duplex)</button>
+        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Cổng|Giao diện|USB|LAN|Wi-Fi|Bluetooth')">🔌 Cổng kết nối</button>
+        <button type="button" class="modal-spec-pill" onclick="clearModalSpecFilter()" style="color:var(--foc);font-weight:700">✕ Xem tất cả</button>
       </div>
 
       <!-- Spec Table Container -->

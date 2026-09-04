@@ -4336,6 +4336,81 @@ function filterCatType(type) {
 
 function filterCatalog() { renderCatalogGrid(); }
 
+var specFilters = {
+  ram: '',       // 'ram_8gb', 'ram_12_16gb', 'storage_256gb', 'storage_512gb', 'storage_1tb'
+  speed: '',     // 'speed_lt25', 'speed_25_35', 'speed_gt35'
+  paper: '',     // 'paper_lt150', 'paper_gte250', 'paper_gte500'
+  feature: ''    // 'paper_a3', 'duplex', 'wifi', 'lan'
+};
+
+function matchParametricSpecFilter(item) {
+  if (!specFilters.ram && !specFilters.speed && !specFilters.paper && !specFilters.feature) {
+    return true;
+  }
+  var specs = getDeviceSpecs(item);
+  var fullText = (item.name + ' ' + (item.model || '') + ' ' + (item.brand || '') + ' ' + specs.map(function (s) { return s.key + ': ' + s.value; }).join(' ')).toLowerCase();
+
+  // 1. Check RAM / Storage (GB)
+  if (specFilters.ram) {
+    var matchRam = false;
+    if (specFilters.ram === 'ram_8gb') {
+      matchRam = /8\s*gb\s*(ram|ddr|so-dimm|lpddr)|bộ nhớ ram:\s*8gb|8gb\s*ddr/i.test(fullText);
+    } else if (specFilters.ram === 'ram_12_16gb') {
+      matchRam = /(12|16)\s*gb\s*(ram|ddr|so-dimm|lpddr)|\(1x16gb\)|16gb\s*ddr/i.test(fullText);
+    } else if (specFilters.ram === 'storage_256gb') {
+      matchRam = /256\s*gb\s*(ssd|m\.2|nvme|rom|bộ nhớ trong)|256gb/i.test(fullText);
+    } else if (specFilters.ram === 'storage_512gb') {
+      matchRam = /512\s*gb\s*(ssd|m\.2|nvme|pcie)|512gb\s*ssd/i.test(fullText);
+    } else if (specFilters.ram === 'storage_1tb') {
+      matchRam = /(1|2)\s*tb\s*(hdd|ssd)|1tb/i.test(fullText);
+    }
+    if (!matchRam) return false;
+  }
+
+  // 2. Check Speed (ppm / trang/phút)
+  if (specFilters.speed) {
+    var matchSpeed = false;
+    if (specFilters.speed === 'speed_lt25') {
+      matchSpeed = /(1[0-9]|2[0-4])\s*(trang\/phút|ppm|ipm)/i.test(fullText);
+    } else if (specFilters.speed === 'speed_25_35') {
+      matchSpeed = /(2[5-9]|3[0-5])\s*(trang\/phút|ppm|ipm)/i.test(fullText);
+    } else if (specFilters.speed === 'speed_gt35') {
+      matchSpeed = /(3[6-9]|[4-9]\d|\d{3})\s*(trang\/phút|ppm|ipm)/i.test(fullText);
+    }
+    if (!matchSpeed) return false;
+  }
+
+  // 3. Check Paper Tray / Capacity (số lượng tờ)
+  if (specFilters.paper) {
+    var matchPaper = false;
+    if (specFilters.paper === 'paper_lt150') {
+      matchPaper = /([5-9]\d|1[0-4]\d)\s*tờ/i.test(fullText);
+    } else if (specFilters.paper === 'paper_gte250') {
+      matchPaper = /(25[0-9]|[3-9]\d{2}|\d{4})\s*tờ/i.test(fullText);
+    } else if (specFilters.paper === 'paper_gte500') {
+      matchPaper = /(500|[6-9]\d{2}|\d{4})\s*tờ/i.test(fullText);
+    }
+    if (!matchPaper) return false;
+  }
+
+  // 4. Check Feature / Paper Size
+  if (specFilters.feature) {
+    var matchFeat = false;
+    if (specFilters.feature === 'paper_a3') {
+      matchFeat = /khổ\s*a3|a3\s*gập|\ba3\b/i.test(fullText);
+    } else if (specFilters.feature === 'duplex') {
+      matchFeat = /duplex|in\s*2\s*mặt|hai\s*mặt|2\s*mặt\s*tự\s*động/i.test(fullText);
+    } else if (specFilters.feature === 'wifi') {
+      matchFeat = /wi-fi|wifi|không\s*dây|wireless|802\.11/i.test(fullText);
+    } else if (specFilters.feature === 'lan') {
+      matchFeat = /rj-45|ethernet|gigabit|cổng\s*lan|mạng\s*lan|lan\s*10\/100/i.test(fullText);
+    }
+    if (!matchFeat) return false;
+  }
+
+  return true;
+}
+
 function resetCatalogFilter() {
   var inp = document.getElementById('catSearch');
   if (inp) inp.value = '';
@@ -4347,7 +4422,7 @@ function resetCatalogFilter() {
   curCatType = 'all';
   var btns = document.querySelectorAll('#catNav .cat-btn');
   btns.forEach(function (b, i) { b.className = 'cat-btn' + (i === 0 ? ' active' : ''); });
-  renderCatalogGrid();
+  resetParametricFilters();
 }
 
 function getFilteredCatalogItems() {
@@ -4371,7 +4446,9 @@ function getFilteredCatalogItems() {
       }
     }
 
-    return mType && mBrand && mKw;
+    var mParametric = matchParametricSpecFilter(item);
+
+    return mType && mBrand && mKw && mParametric;
   });
 }
 
@@ -8610,9 +8687,19 @@ function highlightSpecText(text, query) {
   if (!text) return '';
   var escaped = escH(text);
   if (!query) return escaped.replace(/\r\n|\n/g, '<br/>');
-  var qEsc = escH(query).replace(/[.*+?^$\{\}()|[\]\\]/g, '\\$&');
-  var regex = new RegExp('(' + qEsc + ')', 'gi');
-  return escaped.replace(regex, '<mark class="spec-highlight">$1</mark>').replace(/\r\n|\n/g, '<br/>');
+  var parts = query.split('|').map(function (p) { return p.trim(); }).filter(Boolean);
+  if (parts.length === 0) return escaped.replace(/\r\n|\n/g, '<br/>');
+
+  var pattern = parts.map(function (p) {
+    return escH(p).replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  }).join('|');
+
+  try {
+    var regex = new RegExp('(' + pattern + ')', 'gi');
+    return escaped.replace(regex, '<mark class="spec-highlight">$1</mark>').replace(/\r\n|\n/g, '<br/>');
+  } catch (e) {
+    return escaped.replace(/\r\n|\n/g, '<br/>');
+  }
 }
 
 function renderModalSpecTable(specs, query) {
@@ -8621,11 +8708,15 @@ function renderModalSpecTable(specs, query) {
   if (!tbody) return;
 
   var q = (query || '').toLowerCase().trim();
+  var qParts = q ? q.split('|').map(function (p) { return p.trim(); }).filter(Boolean) : [];
+
   var filtered = specs.filter(function (s) {
-    if (!q) return true;
+    if (!q || qParts.length === 0) return true;
     var k = (s.key || '').toLowerCase();
     var v = (s.value || '').toLowerCase();
-    return k.includes(q) || v.includes(q);
+    return qParts.some(function (p) {
+      return k.includes(p) || v.includes(p);
+    });
   });
 
   if (counter) {
@@ -8724,3 +8815,148 @@ window.addEventListener('keydown', function (e) {
     if (typeof closeAllMenus === 'function') closeAllMenus();
   }
 });
+
+
+// ══════════════════════════════════════════════════════════════════════════════
+// PARAMETRIC SPECIFICATION FILTER CONTROLLERS (GB, Tốc độ, Khay giấy, Khổ A3...)
+// ══════════════════════════════════════════════════════════════════════════════
+
+function applyParametricFilter() {
+  var ramEl = document.getElementById('specFilterRam');
+  var speedEl = document.getElementById('specFilterSpeed');
+  var paperEl = document.getElementById('specFilterPaper');
+  var featEl = document.getElementById('specFilterFeature');
+
+  specFilters.ram = ramEl ? ramEl.value : '';
+  specFilters.speed = speedEl ? speedEl.value : '';
+  specFilters.paper = paperEl ? paperEl.value : '';
+  specFilters.feature = featEl ? featEl.value : '';
+
+  updateSpecChipsUi();
+  renderCatalogGrid();
+  updateSpecFilterBanner();
+}
+
+function toggleSpecChip(btn, type, val) {
+  var currentVal = specFilters[type];
+  if (currentVal === val) {
+    specFilters[type] = '';
+  } else {
+    specFilters[type] = val;
+  }
+
+  var selId = type === 'ram' ? 'specFilterRam' :
+    type === 'speed' ? 'specFilterSpeed' :
+    type === 'paper' ? 'specFilterPaper' : 'specFilterFeature';
+  var selEl = document.getElementById(selId);
+  if (selEl) selEl.value = specFilters[type];
+
+  updateSpecChipsUi();
+  renderCatalogGrid();
+  updateSpecFilterBanner();
+}
+
+function updateSpecChipsUi() {
+  var chips = document.querySelectorAll('.spec-chip');
+  chips.forEach(function (chip) {
+    var t = chip.getAttribute('data-type');
+    var v = chip.getAttribute('data-val');
+    if (specFilters[t] === v) {
+      chip.classList.add('active');
+    } else {
+      chip.classList.remove('active');
+    }
+  });
+
+  var clearBtn = document.getElementById('btnClearSpecFilters');
+  var countEl = document.getElementById('activeSpecFilterCount');
+  var activeCount = (specFilters.ram ? 1 : 0) + (specFilters.speed ? 1 : 0) + (specFilters.paper ? 1 : 0) + (specFilters.feature ? 1 : 0);
+  if (countEl) countEl.textContent = activeCount;
+  if (clearBtn) clearBtn.style.display = activeCount > 0 ? 'inline-flex' : 'none';
+}
+
+function updateSpecFilterBanner() {
+  var banner = document.getElementById('specFilterActiveBanner');
+  var textEl = document.getElementById('specFilterActiveText');
+  var badgeEl = document.getElementById('specFilterResultBadge');
+  if (!banner || !textEl) return;
+
+  var activeLabels = [];
+  var ramNames = {
+    'ram_8gb': 'RAM 8GB',
+    'ram_12_16gb': 'RAM 12-16GB',
+    'storage_256gb': 'Ổ cứng/ROM 256GB',
+    'storage_512gb': 'Ổ cứng SSD 512GB',
+    'storage_1tb': 'Ổ cứng ≥ 1TB'
+  };
+  var speedNames = {
+    'speed_lt25': 'Tốc độ < 25 tr/phút',
+    'speed_25_35': 'Tốc độ 25-35 tr/phút',
+    'speed_gt35': 'Tốc độ > 35 tr/phút'
+  };
+  var paperNames = {
+    'paper_lt150': 'Khay < 150 tờ',
+    'paper_gte250': 'Khay ≥ 250 tờ',
+    'paper_gte500': 'Khay ≥ 500 tờ'
+  };
+  var featNames = {
+    'paper_a3': 'Khổ in/quét A3',
+    'duplex': 'In 2 mặt Duplex',
+    'wifi': 'Kết nối Wi-Fi',
+    'lan': 'Cổng mạng LAN'
+  };
+
+  if (specFilters.ram) activeLabels.push(ramNames[specFilters.ram] || specFilters.ram);
+  if (specFilters.speed) activeLabels.push(speedNames[specFilters.speed] || specFilters.speed);
+  if (specFilters.paper) activeLabels.push(paperNames[specFilters.paper] || specFilters.paper);
+  if (specFilters.feature) activeLabels.push(featNames[specFilters.feature] || specFilters.feature);
+
+  if (activeLabels.length === 0) {
+    banner.style.display = 'none';
+  } else {
+    banner.style.display = 'flex';
+    textEl.textContent = activeLabels.join(' + ');
+    var filtered = getFilteredCatalogItems();
+    if (badgeEl) badgeEl.textContent = 'Tìm thấy ' + filtered.length + ' máy';
+  }
+}
+
+function resetParametricFilters() {
+  specFilters.ram = '';
+  specFilters.speed = '';
+  specFilters.paper = '';
+  specFilters.feature = '';
+
+  ['specFilterRam', 'specFilterSpeed', 'specFilterPaper', 'specFilterFeature'].forEach(function (id) {
+    var el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+
+  updateSpecChipsUi();
+  renderCatalogGrid();
+  updateSpecFilterBanner();
+}
+
+function toggleSpecFilterPanel() {
+  var body = document.getElementById('csfpBody');
+  var btnTxt = document.getElementById('txtToggleSpecPanel');
+  var btn = document.getElementById('btnToggleSpecPanel');
+  if (!body) return;
+  if (body.style.display === 'none') {
+    body.style.display = 'block';
+    if (btnTxt) btnTxt.textContent = 'Thu gọn';
+    if (btn) btn.innerHTML = '<span id="txtToggleSpecPanel">Thu gọn</span> ▴';
+  } else {
+    body.style.display = 'none';
+    if (btnTxt) btnTxt.textContent = 'Mở bộ lọc';
+    if (btn) btn.innerHTML = '<span id="txtToggleSpecPanel">Mở bộ lọc</span> ▾';
+  }
+}
+
+function quickFilterModalSpec(pattern) {
+  var filterInp = document.getElementById('specFilterInput');
+  if (filterInp) {
+    filterInp.value = pattern;
+  }
+  filterModalSpecs(pattern);
+}
