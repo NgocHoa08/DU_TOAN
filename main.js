@@ -4341,6 +4341,8 @@ function resetCatalogFilter() {
   if (inp) inp.value = '';
   var brandSel = document.getElementById('catBrandFilter');
   if (brandSel) brandSel.value = '';
+  var deepChk = document.getElementById('catDeepSpecSearch');
+  if (deepChk) deepChk.checked = false;
   curCatBrand = '';
   curCatType = 'all';
   var btns = document.querySelectorAll('#catNav .cat-btn');
@@ -4350,10 +4352,25 @@ function resetCatalogFilter() {
 
 function getFilteredCatalogItems() {
   var kw = (document.getElementById('catSearch') ? document.getElementById('catSearch').value : '').toLowerCase().trim();
+  var deepSpec = !!(document.getElementById('catDeepSpecSearch') && document.getElementById('catDeepSpecSearch').checked);
+
   return CATALOG_ITEMS.filter(function (item) {
     var mType = curCatType === 'all' || item.cat === curCatType || (curCatType === 'thiet_bi_khac' && (item.cat === 'thiet_bi_khac' || item.cat === 'khac'));
     var mBrand = !curCatBrand || (item.brand && item.brand.toLowerCase() === curCatBrand.toLowerCase());
     var mKw = !kw || item.name.toLowerCase().includes(kw) || item.model.toLowerCase().includes(kw) || item.brand.toLowerCase().includes(kw);
+
+    if (!mKw && deepSpec && kw) {
+      var specs = getDeviceSpecs(item);
+      for (var i = 0; i < specs.length; i++) {
+        var sK = (specs[i].key || '').toLowerCase();
+        var sV = (specs[i].value || '').toLowerCase();
+        if (sK.includes(kw) || sV.includes(kw)) {
+          mKw = true;
+          break;
+        }
+      }
+    }
+
     return mType && mBrand && mKw;
   });
 }
@@ -4471,13 +4488,18 @@ function renderCatalogGrid() {
           '</td>' +
           '<td style="text-align:center;font-weight:700;color:var(--t3)">' + (idx + 1) + '</td>' +
           '<td>' +
-          '<div class="cat-dev-name">' + escH(item.name) + '</div>' +
-          '<div class="cat-dev-meta">' +
-          '<span><b>Model:</b> ' + escH(item.model) + '</span>' +
-          '<span>• <b>Hãng:</b> ' + escH(item.brand) + '</span>' +
-          '<span>• <b>Xuất xứ:</b> ' + escH(item.origin) + '</span>' +
-          '<span>• <b>Bảo hành:</b> ' + escH(item.warranty) + '</span>' +
-          '<span style="color:var(--gr);font-weight:700">• ✨ ' + item.specCount + ' thông số</span>' +
+          '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">' +
+          '  <div style="flex:1">' +
+          '    <div class="cat-dev-name">' + escH(item.name) + '</div>' +
+          '    <div class="cat-dev-meta">' +
+          '      <span><b>Model:</b> ' + escH(item.model) + '</span>' +
+          '      <span>• <b>Hãng:</b> ' + escH(item.brand) + '</span>' +
+          '      <span>• <b>Xuất xứ:</b> ' + escH(item.origin) + '</span>' +
+          '      <span>• <b>Bảo hành:</b> ' + escH(item.warranty) + '</span>' +
+          '      <span style="color:var(--gr);font-weight:700;cursor:pointer" onclick="openProductSpecModal(\'' + item.id + '\', event)" title="Bấm để xem và lọc chi tiết thông số">• ✨ ' + item.specCount + ' thông số</span>' +
+          '    </div>' +
+          '  </div>' +
+          '  <button class="btn-view-spec" onclick="openProductSpecModal(\'' + item.id + '\', event)" title="Xem và lọc chi tiết 26+ thông số kỹ thuật máy này">👁️ Xem thông số</button>' +
           '</div>' +
           '</td>' +
           '<td>' + catBadge + '</td>' +
@@ -4520,7 +4542,7 @@ function renderCatalogGrid() {
         '<div>' +
         '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">' +
         '<span class="cc-badge">' + catLabel + '</span>' +
-        '<span style="font-size:11px;font-weight:700;color:var(--gr)">✨ ' + item.specCount + ' thông số</span>' +
+        '<button class="btn-view-spec" onclick="openProductSpecModal(\'' + item.id + '\', event)" title="Xem và lọc chi tiết thông số kỹ thuật" style="font-size:11px;padding:2px 7px">👁️ ' + item.specCount + ' thông số</button>' +
         '</div>' +
         '<div class="cc-name">' + escH(item.name) + '</div>' +
         '<div class="cc-meta">' +
@@ -4551,7 +4573,7 @@ function renderCatalogGrid() {
 
 function handleRowClick(event, id) {
   var tag = event.target.tagName.toLowerCase();
-  if (tag === 'input' || tag === 'button' || tag === 'a' || tag === 'select' || event.target.closest('.qty-control')) {
+  if (tag === 'input' || tag === 'button' || tag === 'a' || tag === 'select' || event.target.closest('.qty-control') || event.target.closest('.btn-view-spec')) {
     return;
   }
   toggleCatalogItem(id);
@@ -8460,3 +8482,245 @@ renderCatalogGrid();
 renderBaogiaForm();
 updateAiStatusBadge();
 updateLichSuTabBadge();
+
+// ══════════════════════════════════════════════════════════════════════════════
+// PRODUCT SPECIFICATION INSPECTOR MODAL & DEEP FILTERING
+// ══════════════════════════════════════════════════════════════════════════════
+
+var currentSpecModalItemId = null;
+var currentSpecModalList = [];
+
+function getDeviceSpecs(item) {
+  if (!item) return [];
+  if (item.presetKey && typeof MODEL_PRESETS !== 'undefined' && MODEL_PRESETS[item.presetKey] && MODEL_PRESETS[item.presetKey].specs && MODEL_PRESETS[item.presetKey].specs.length) {
+    return MODEL_PRESETS[item.presetKey].specs;
+  }
+  if (typeof MODEL_PRESETS !== 'undefined' && MODEL_PRESETS[item.id] && MODEL_PRESETS[item.id].specs && MODEL_PRESETS[item.id].specs.length) {
+    return MODEL_PRESETS[item.id].specs;
+  }
+  if (item.specs && item.specs.length) {
+    return item.specs;
+  }
+  if (typeof scrapeSmart26Specs === 'function') {
+    return scrapeSmart26Specs(item.name || '', item.model || '', item.brand || '');
+  }
+  return [];
+}
+
+function openProductSpecModal(id, ev) {
+  if (ev) {
+    if (typeof ev.stopPropagation === 'function') ev.stopPropagation();
+    if (typeof ev.preventDefault === 'function') ev.preventDefault();
+  }
+  var item = CATALOG_ITEMS.find(function (x) { return x.id === id; });
+  if (!item) {
+    if (CATALOG_ITEMS.length > 0) item = CATALOG_ITEMS[0];
+    else return;
+  }
+  currentSpecModalItemId = item.id;
+
+  // Populate or sync device dropdown
+  var sel = document.getElementById('specModalDeviceSelect');
+  if (sel) {
+    if (sel.options.length !== CATALOG_ITEMS.length) {
+      sel.innerHTML = CATALOG_ITEMS.map(function (it) {
+        return '<option value="' + it.id + '">' + escH(it.name) + ' (' + escH(it.model || 'N/A') + ')</option>';
+      }).join('');
+    }
+    sel.value = item.id;
+  }
+
+  // Update header elements
+  var badgeEl = document.getElementById('specModalBadge');
+  if (badgeEl) {
+    var catLabels = {
+      'dien_thoai': '📱 Điện thoại',
+      'man_hinh': '🖥️ Màn hình',
+      'may_tinh': '💻 Máy tính',
+      'may_in': '🖨️ Máy in',
+      'photocopy': '📠 Photocopy',
+      'may_scan': '📄 Máy Scan'
+    };
+    badgeEl.textContent = catLabels[item.cat] || '🌐 Thiết bị khác';
+  }
+
+  var brandEl = document.getElementById('specModalBrand');
+  if (brandEl) brandEl.textContent = item.brand || 'Chính hãng';
+
+  var titleEl = document.getElementById('specModalTitle');
+  if (titleEl) titleEl.textContent = item.name;
+
+  var metaEl = document.getElementById('specModalMeta');
+  if (metaEl) {
+    metaEl.innerHTML = '<b>Model:</b> ' + escH(item.model || 'N/A') +
+      ' | <b>Xuất xứ:</b> ' + escH(item.origin || 'N/A') +
+      ' | <b>Bảo hành:</b> ' + escH(item.warranty || '12 tháng') +
+      ' | <b>Đơn giá:</b> <span style="color:var(--go);font-weight:700">' + (item.price ? fmtVN(item.price) + ' VNĐ' : 'Chưa có giá') + '</span>';
+  }
+
+  // Update toggle select button
+  updateSpecModalSelectButton();
+
+  // Load specs
+  currentSpecModalList = getDeviceSpecs(item);
+
+  // Clear filter input
+  var filterInp = document.getElementById('specFilterInput');
+  if (filterInp) filterInp.value = '';
+
+  // Render spec table
+  renderModalSpecTable(currentSpecModalList, '');
+
+  // Display modal
+  var modal = document.getElementById('productSpecModal');
+  if (modal) {
+    modal.style.display = 'flex';
+    if (filterInp) setTimeout(function () { filterInp.focus(); }, 150);
+  }
+}
+
+function updateSpecModalSelectButton() {
+  var btn = document.getElementById('specModalToggleSelectBtn');
+  if (!btn || !currentSpecModalItemId) return;
+  var isSel = typeof selectedCatalogItems !== 'undefined' && !!selectedCatalogItems[currentSpecModalItemId];
+  var q = (isSel && selectedCatalogItems[currentSpecModalItemId]) ? selectedCatalogItems[currentSpecModalItemId].qty : 1;
+  btn.textContent = isSel ? '✕ Bỏ Chọn Khỏi Dự Toán (' + q + ')' : '✓ Chọn Vào Dự Toán';
+  btn.className = isSel ? 'btn btn-d btn-sm' : 'btn btn-p btn-sm';
+}
+
+function closeProductSpecModal() {
+  var modal = document.getElementById('productSpecModal');
+  if (modal) modal.style.display = 'none';
+}
+
+function filterModalSpecs(query) {
+  renderModalSpecTable(currentSpecModalList, query);
+}
+
+function clearModalSpecFilter() {
+  var filterInp = document.getElementById('specFilterInput');
+  if (filterInp) {
+    filterInp.value = '';
+    filterInp.focus();
+  }
+  renderModalSpecTable(currentSpecModalList, '');
+}
+
+function highlightSpecText(text, query) {
+  if (!text) return '';
+  var escaped = escH(text);
+  if (!query) return escaped.replace(/\r\n|\n/g, '<br/>');
+  var qEsc = escH(query).replace(/[.*+?^$\{\}()|[\]\\]/g, '\\$&');
+  var regex = new RegExp('(' + qEsc + ')', 'gi');
+  return escaped.replace(regex, '<mark class="spec-highlight">$1</mark>').replace(/\r\n|\n/g, '<br/>');
+}
+
+function renderModalSpecTable(specs, query) {
+  var tbody = document.getElementById('specModalTableBody');
+  var counter = document.getElementById('specMatchCounter');
+  if (!tbody) return;
+
+  var q = (query || '').toLowerCase().trim();
+  var filtered = specs.filter(function (s) {
+    if (!q) return true;
+    var k = (s.key || '').toLowerCase();
+    var v = (s.value || '').toLowerCase();
+    return k.includes(q) || v.includes(q);
+  });
+
+  if (counter) {
+    counter.textContent = filtered.length + ' / ' + specs.length + ' thông số' + (q ? ' (khớp lọc)' : '');
+    counter.style.background = q && filtered.length === 0 ? '#fee2e2' : 'var(--p-light)';
+    counter.style.color = q && filtered.length === 0 ? '#b91c1c' : 'var(--p)';
+  }
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;padding:28px;color:var(--t2)">' +
+      '🔍 Không tìm thấy thông số nào khớp với từ khóa "<b>' + escH(query) + '</b>".' +
+      '<br/><button class="btn btn-o btn-sm" onclick="clearModalSpecFilter()" style="margin-top:10px">✕ Xóa bộ lọc</button>' +
+      '</td></tr>';
+    return;
+  }
+
+  var html = filtered.map(function (s, idx) {
+    var keyH = highlightSpecText(s.key, q);
+    var valH = highlightSpecText(s.value, q);
+    return '<tr>' +
+      '<td style="text-align:center;font-weight:700;color:var(--t3)">' + (idx + 1) + '</td>' +
+      '<td style="font-weight:600;color:var(--t1)">' + keyH + '</td>' +
+      '<td style="color:var(--t2);line-height:1.55">' + valH + '</td>' +
+      '</tr>';
+  }).join('');
+
+  tbody.innerHTML = html;
+}
+
+function toggleSpecModalSelect() {
+  if (!currentSpecModalItemId) return;
+  toggleCatalogItem(currentSpecModalItemId);
+  updateSpecModalSelectButton();
+}
+
+function copyProductSpecsToClipboard() {
+  if (!currentSpecModalItemId || !currentSpecModalList || currentSpecModalList.length === 0) {
+    if (typeof toast === 'function') toast('Không có thông số để sao chép', '⚠️');
+    return;
+  }
+  var item = CATALOG_ITEMS.find(function (x) { return x.id === currentSpecModalItemId; });
+  var title = item ? item.name : 'Thiết bị';
+  var model = item ? item.model : '';
+  var brand = item ? item.brand : '';
+
+  var textLines = [];
+  textLines.push('THÔNG SỐ KỸ THUẬT: ' + title);
+  if (model || brand) textLines.push('Model: ' + model + ' | Hãng: ' + brand);
+  textLines.push('--------------------------------------------------');
+
+  currentSpecModalList.forEach(function (s, idx) {
+    textLines.push((idx + 1) + '. ' + s.key + ': ' + (s.value || '').replace(/\r\n|\n/g, '; '));
+  });
+
+  var fullText = textLines.join('\n');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(fullText).then(function () {
+      if (typeof toast === 'function') toast('Đã copy toàn bộ ' + currentSpecModalList.length + ' thông số kỹ thuật vào clipboard!', '✅');
+    }).catch(function () {
+      fallbackCopyText(fullText);
+    });
+  } else {
+    fallbackCopyText(fullText);
+  }
+}
+
+function fallbackCopyText(text) {
+  var ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.left = '-9999px';
+  document.body.appendChild(ta);
+  ta.select();
+  try {
+    document.execCommand('copy');
+    if (typeof toast === 'function') toast('Đã copy thông số kỹ thuật!', '✅');
+  } catch (e) {
+    if (typeof toast === 'function') toast('Không thể copy tự động, vui lòng chọn thủ công', '❌');
+  }
+  document.body.removeChild(ta);
+}
+
+function menuOpenSpecInspector() {
+  var id = currentSpecModalItemId || (CATALOG_ITEMS.length > 0 ? CATALOG_ITEMS[0].id : null);
+  if (id) {
+    openProductSpecModal(id);
+  } else {
+    if (typeof toast === 'function') toast('Chưa có danh sách thiết bị để tra cứu', '⚠️');
+  }
+}
+
+// Global keydown handler for Escape key closing modals
+window.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape') {
+    closeProductSpecModal();
+    if (typeof closeAllMenus === 'function') closeAllMenus();
+  }
+});
