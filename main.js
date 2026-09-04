@@ -8647,24 +8647,19 @@ function openProductSpecModal(id, ev) {
   // Reset view mode to grid default
   setSpecDisplayMode(specDisplayMode || 'grid');
 
-  // Display modal & position overlay directly over the clicked row/card
+  // Display modal centered in the middle of screen
   var modal = document.getElementById('productSpecModal');
   var card = document.getElementById('specModalCard');
   if (modal) {
     modal.style.display = 'flex';
     document.body.style.overflow = 'hidden'; // prevent background scrolling
 
-    if (card && targetRow) {
-      var rect = targetRow.getBoundingClientRect();
-      var cardH = 500;
-      var targetCenterY = rect.top + rect.height / 2;
-      var idealTop = targetCenterY - cardH / 2;
-      var clampedTop = Math.max(16, Math.min(window.innerHeight - cardH - 16, idealTop));
-      card.style.position = 'relative';
-      card.style.top = clampedTop + 'px';
-    } else if (card) {
-      card.style.position = 'relative';
-      card.style.top = '24px';
+    if (card) {
+      card.style.position = '';
+      card.style.top = '';
+      card.style.transform = '';
+      var modalBody = (card && card.querySelector) ? card.querySelector('.spec-modal-body') : null;
+      if (modalBody) modalBody.scrollTop = 0;
     }
 
     if (filterInp) setTimeout(function () { filterInp.focus(); }, 150);
@@ -8683,6 +8678,11 @@ function updateSpecModalSelectButton() {
 function closeProductSpecModal() {
   var modal = document.getElementById('productSpecModal');
   if (modal) modal.style.display = 'none';
+  var card = document.getElementById('specModalCard');
+  if (card) {
+    card.style.position = '';
+    card.style.top = '';
+  }
   document.body.style.overflow = ''; // restore scrolling
   document.querySelectorAll('.cat-table tr').forEach(function (r) { r.classList.remove('spec-active-row'); });
 }
