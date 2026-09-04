@@ -1098,71 +1098,88 @@
     </div>
   </div>
 
-  <!-- Modal Xem & Lọc Chi Tiết Thông Số Kỹ Thuật Sản Phẩm -->
-  <div id="productSpecModal" class="modal-overlay" style="display:none;" onclick="if(event.target===this)closeProductSpecModal()">
-    <div class="modal-box spec-modal-box">
+  <!-- Modal/Thẻ Nổi Xem & Lọc Thông Số Kỹ Thuật Đè Lên Sản Phẩm -->
+  <div id="productSpecModal" class="modal-overlay spec-popover-backdrop" style="display:none;" onclick="if(event.target===this)closeProductSpecModal()">
+    <div class="modal-box spec-modal-box" id="specModalCard">
       <div class="spec-modal-header">
         <div style="flex:1;min-width:200px">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap">
             <span id="specModalBadge" class="cat-pill-cat">Thiết bị</span>
             <span id="specModalBrand" class="cat-pill-brand">Hãng</span>
+            <span id="specModalMeta" class="spec-modal-meta-pill">Model: ---</span>
           </div>
           <h3 id="specModalTitle" class="spec-modal-title">Chi Tiết Thông Số Kỹ Thuật</h3>
-          <div id="specModalMeta" class="spec-modal-meta">Model: --- | Đơn giá: --- VNĐ</div>
         </div>
-        <button class="modal-close-btn" onclick="closeProductSpecModal()" title="Đóng cửa sổ (Esc)">✕</button>
+        <div style="display:flex;align-items:center;gap:8px">
+          <button id="specModalToggleSelectBtn" class="btn btn-p btn-sm" onclick="toggleSpecModalSelect()">✓ Chọn Vào Dự Toán</button>
+          <button class="btn btn-o btn-sm" onclick="copyProductSpecsToClipboard()" title="Sao chép toàn bộ thông số vào Clipboard để dán Word/Excel">📋 Copy</button>
+          <button class="modal-close-btn" onclick="closeProductSpecModal()" title="Đóng thẻ (Esc)">✕</button>
+        </div>
       </div>
 
-      <!-- Quick Switcher & Spec Filter Bar -->
+      <!-- Quick Key Specs Highlights Bar (Tóm tắt nhanh thông số cốt lõi không phải cuộn) -->
+      <div id="specModalKeyHighlights" class="spec-key-highlights">
+        <!-- Dynamic key spec pills -->
+      </div>
+
+      <!-- Quick Switcher, Filter Bar & View Toggle -->
       <div class="spec-modal-search-bar">
-        <div style="display:flex;align-items:center;gap:8px;flex:1;min-width:240px">
-          <label style="font-size:12px;font-weight:700;color:var(--t2);white-space:nowrap">Chọn máy:</label>
-          <select id="specModalDeviceSelect" onchange="openProductSpecModal(this.value)" style="flex:1;padding:6px 10px;border-radius:6px;border:1px solid var(--bdr2);background:var(--card);color:var(--t1);font-size:12.5px;font-weight:600">
+        <div style="display:flex;align-items:center;gap:6px;flex:1;min-width:190px">
+          <label style="font-size:11.5px;font-weight:700;color:var(--t2);white-space:nowrap">Đổi máy:</label>
+          <select id="specModalDeviceSelect" onchange="openProductSpecModal(this.value)" style="flex:1;padding:5px 8px;border-radius:6px;border:1px solid var(--bdr2);background:var(--card);color:var(--t1);font-size:12px;font-weight:600">
           </select>
         </div>
-        <div style="display:flex;align-items:center;gap:8px;flex:1.2;min-width:260px">
-          <input type="text" id="specFilterInput" placeholder="🔍 Lọc thông số (VD: RAM, CPU, Khổ giấy, Tốc độ, Duplex...)" oninput="filterModalSpecs(this.value)" style="flex:1;padding:6px 10px;border-radius:6px;border:1px solid var(--bdr2);background:var(--card);color:var(--t1);font-size:12.5px" />
-          <button class="btn btn-o btn-sm" onclick="clearModalSpecFilter()" title="Xóa bộ lọc thông số">✕ Xóa</button>
+        <div style="display:flex;align-items:center;gap:6px;flex:1.2;min-width:220px">
+          <input type="text" id="specFilterInput" placeholder="🔍 Lọc từ khóa (VD: RAM, CPU, tốc độ, khay, duplex...)" oninput="filterModalSpecs(this.value)" style="flex:1;padding:5px 8px;border-radius:6px;border:1px solid var(--bdr2);background:var(--card);color:var(--t1);font-size:12px" />
+          <button class="btn btn-o btn-sm" onclick="clearModalSpecFilter()" title="Xóa bộ lọc" style="padding:4px 8px;font-size:11px">✕</button>
         </div>
-        <div id="specMatchCounter" class="spec-match-counter">26 / 26 thông số</div>
+        <div class="spec-view-toggle">
+          <button type="button" class="spec-view-btn active" id="btnSpecViewGrid" onclick="setSpecDisplayMode('grid')" title="Hiển thị lưới 2 cột gọn gàng">⊞ Lưới 2 cột</button>
+          <button type="button" class="spec-view-btn" id="btnSpecViewTable" onclick="setSpecDisplayMode('table')" title="Hiển thị dạng bảng truyền thống">📋 Bảng</button>
+        </div>
+        <div id="specMatchCounter" class="spec-match-counter">26 thông số</div>
       </div>
 
       <!-- Quick Spec Filtering Pills in Modal -->
       <div class="modal-spec-quick-pills">
-        <span style="font-size:11.5px;font-weight:700;color:var(--t3);margin-right:4px">Lọc nhanh thông số:</span>
+        <span style="font-size:11px;font-weight:700;color:var(--t3);margin-right:2px">Lọc nhanh:</span>
         <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('RAM|Bộ nhớ|GB')">💾 RAM / GB</button>
-        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Tốc độ|ppm|ipm|trang/phút')">⚡ Tốc độ in/quét</button>
-        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Khay|Trữ lượng|tờ')">📥 Số lượng tờ / Khay</button>
-        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Khổ|A4|A3')">📄 Khổ giấy A4/A3</button>
-        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Duplex|2 mặt|hai mặt')">🔄 In 2 mặt (Duplex)</button>
-        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Cổng|Giao diện|USB|LAN|Wi-Fi|Bluetooth')">🔌 Cổng kết nối</button>
-        <button type="button" class="modal-spec-pill" onclick="clearModalSpecFilter()" style="color:var(--foc);font-weight:700">✕ Xem tất cả</button>
+        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Tốc độ|ppm|ipm|trang/phút')">⚡ Tốc độ</button>
+        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Khay|Trữ lượng|tờ')">📥 Khay giấy</button>
+        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Khổ|A4|A3')">📄 Khổ A4/A3</button>
+        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Duplex|2 mặt|hai mặt')">🔄 In 2 mặt</button>
+        <button type="button" class="modal-spec-pill" onclick="quickFilterModalSpec('Cổng|Giao diện|USB|LAN|Wi-Fi|Bluetooth')">🔌 Kết nối</button>
+        <button type="button" class="modal-spec-pill" onclick="clearModalSpecFilter()" style="color:var(--foc);font-weight:700">✕ Tất cả</button>
       </div>
 
-      <!-- Spec Table Container -->
-      <div class="spec-modal-body" style="max-height:58vh;overflow-y:auto;margin:12px 0;border:1px solid var(--bdr);border-radius:8px">
-        <table class="spec-detail-table">
-          <thead>
-            <tr>
-              <th style="width:45px;text-align:center">STT</th>
-              <th style="width:28%">Tên Thông Số Kỹ Thuật</th>
-              <th>Giá Trị / Cấu Hình Chi Tiết</th>
-            </tr>
-          </thead>
-          <tbody id="specModalTableBody">
-            <!-- Dynamic rows rendered by JS -->
-          </tbody>
-        </table>
+      <!-- Spec Content Body (Compact 2-Column Grid or Table) -->
+      <div class="spec-modal-body" id="specModalBody">
+        <div id="specCompactGrid" class="spec-compact-grid">
+          <!-- Dynamic 2-column compact cards -->
+        </div>
+        <div id="specTableWrap" style="display:none">
+          <table class="spec-detail-table">
+            <thead>
+              <tr>
+                <th style="width:40px;text-align:center">STT</th>
+                <th style="width:28%">Tên Thông Số Kỹ Thuật</th>
+                <th>Giá Trị / Cấu Hình Chi Tiết</th>
+              </tr>
+            </thead>
+            <tbody id="specModalTableBody">
+              <!-- Dynamic rows rendered by JS -->
+            </tbody>
+          </table>
+        </div>
       </div>
 
       <!-- Footer Buttons -->
       <div class="spec-modal-footer">
-        <div style="display:flex;gap:8px">
-          <button class="btn btn-o btn-sm" onclick="copyProductSpecsToClipboard()" title="Sao chép toàn bộ thông số vào Clipboard để dán Word/Excel">📋 Copy Thông Số</button>
+        <div style="font-size:11.5px;color:var(--t3)">
+          💡 <i>Bấm <b>Esc</b> hoặc click ra ngoài để đóng thẻ thông số</i>
         </div>
         <div style="display:flex;gap:8px;align-items:center">
-          <button id="specModalToggleSelectBtn" class="btn btn-p btn-sm" onclick="toggleSpecModalSelect()">✓ Chọn Vào Dự Toán</button>
-          <button class="btn btn-s btn-sm" onclick="closeProductSpecModal()">Đóng</button>
+          <button class="btn btn-s btn-sm" onclick="closeProductSpecModal()">Đóng thẻ (Esc)</button>
         </div>
       </div>
     </div>

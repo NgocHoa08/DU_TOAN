@@ -8528,6 +8528,55 @@ function getDeviceSpecs(item) {
   return [];
 }
 
+var specDisplayMode = 'grid'; // 'grid' (2-column compact) or 'table'
+
+function setSpecDisplayMode(mode) {
+  specDisplayMode = mode;
+  var btnGrid = document.getElementById('btnSpecViewGrid');
+  var btnTable = document.getElementById('btnSpecViewTable');
+  var gridWrap = document.getElementById('specCompactGrid');
+  var tableWrap = document.getElementById('specTableWrap');
+
+  if (btnGrid) btnGrid.className = 'spec-view-btn' + (mode === 'grid' ? ' active' : '');
+  if (btnTable) btnTable.className = 'spec-view-btn' + (mode === 'table' ? ' active' : '');
+
+  if (gridWrap && tableWrap) {
+    if (mode === 'grid') {
+      gridWrap.style.display = 'grid';
+      tableWrap.style.display = 'none';
+    } else {
+      gridWrap.style.display = 'none';
+      tableWrap.style.display = 'block';
+    }
+  }
+}
+
+function extractKeyHighlights(specs) {
+  var list = [];
+  specs.forEach(function (sp) {
+    var k = (sp.key || '').toLowerCase();
+    var v = (sp.value || '').trim();
+    if (list.length >= 6) return;
+
+    if (/processor|cpu/i.test(k) && !list.some(function (x) { return x.key === 'CPU'; })) {
+      list.push({ icon: '⚡', key: 'CPU', val: v.split('\n')[0].split(',')[0].substring(0, 40) });
+    } else if (/(^ram|\bram\b|dung lượng ram|bộ nhớ ram)/i.test(k) && !list.some(function (x) { return x.key === 'RAM'; })) {
+      list.push({ icon: '🚀', key: 'RAM', val: v.split('\n')[0].split(',')[0].substring(0, 30) });
+    } else if (/(ổ đĩa|ổ cứng|storage|ssd|hdd)/i.test(k) && !list.some(function (x) { return x.key === 'Ổ cứng'; })) {
+      list.push({ icon: '💾', key: 'Ổ cứng', val: v.split('\n')[0].split(',')[0].substring(0, 30) });
+    } else if (/tốc độ in/i.test(k) && !list.some(function (x) { return x.key === 'Tốc độ'; })) {
+      list.push({ icon: '🖨️', key: 'Tốc độ', val: v.split('\n')[0].split(';')[0].substring(0, 30) });
+    } else if (/khổ giấy/i.test(k) && !list.some(function (x) { return x.key === 'Khổ in'; })) {
+      list.push({ icon: '📄', key: 'Khổ in', val: v.split('\n')[0].split(';')[0].substring(0, 30) });
+    } else if (/(khay giấy|trữ lượng)/i.test(k) && !list.some(function (x) { return x.key === 'Khay giấy'; })) {
+      list.push({ icon: '📥', key: 'Khay giấy', val: v.split('\n')[0].split(';')[0].substring(0, 30) });
+    } else if (/duplex|in 2 mặt/i.test(k) && !list.some(function (x) { return x.key === 'In 2 mặt'; })) {
+      list.push({ icon: '🔄', key: 'In 2 mặt', val: v.split('\n')[0].substring(0, 25) });
+    }
+  });
+  return list;
+}
+
 function openProductSpecModal(id, ev) {
   if (ev) {
     if (typeof ev.stopPropagation === 'function') ev.stopPropagation();
@@ -8539,6 +8588,11 @@ function openProductSpecModal(id, ev) {
     else return;
   }
   currentSpecModalItemId = item.id;
+
+  // Highlight active row in catalog table
+  document.querySelectorAll('.cat-table tr').forEach(function (r) { r.classList.remove('spec-active-row'); });
+  var targetRow = ev && ev.target ? ev.target.closest('tr, .cat-card') : null;
+  if (targetRow) targetRow.classList.add('spec-active-row');
 
   // Populate or sync device dropdown
   var sel = document.getElementById('specModalDeviceSelect');
@@ -8555,9 +8609,8 @@ function openProductSpecModal(id, ev) {
   var badgeEl = document.getElementById('specModalBadge');
   if (badgeEl) {
     var catLabels = {
-      'dien_thoai': '📱 Điện thoại',
-      'man_hinh': '🖥️ Màn hình',
       'may_tinh': '💻 Máy tính',
+      'man_hinh': '🖥️ Màn hình',
       'may_in': '🖨️ Máy in',
       'photocopy': '📠 Photocopy',
       'may_scan': '📄 Máy Scan'
@@ -8574,9 +8627,8 @@ function openProductSpecModal(id, ev) {
   var metaEl = document.getElementById('specModalMeta');
   if (metaEl) {
     metaEl.innerHTML = '<b>Model:</b> ' + escH(item.model || 'N/A') +
-      ' | <b>Xuất xứ:</b> ' + escH(item.origin || 'N/A') +
       ' | <b>Bảo hành:</b> ' + escH(item.warranty || '12 tháng') +
-      ' | <b>Đơn giá:</b> <span style="color:var(--go);font-weight:700">' + (item.price ? fmtVN(item.price) + ' VNĐ' : 'Chưa có giá') + '</span>';
+      (item.price ? ' | <b>Đơn giá:</b> <b style="color:var(--go)">' + fmtVN(item.price) + 'đ</b>' : '');
   }
 
   // Update toggle select button
@@ -8589,13 +8641,32 @@ function openProductSpecModal(id, ev) {
   var filterInp = document.getElementById('specFilterInput');
   if (filterInp) filterInp.value = '';
 
-  // Render spec table
+  // Render spec compact grid & table
   renderModalSpecTable(currentSpecModalList, '');
 
-  // Display modal
+  // Reset view mode to grid default
+  setSpecDisplayMode(specDisplayMode || 'grid');
+
+  // Display modal & position overlay directly over the clicked row/card
   var modal = document.getElementById('productSpecModal');
+  var card = document.getElementById('specModalCard');
   if (modal) {
     modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden'; // prevent background scrolling
+
+    if (card && targetRow) {
+      var rect = targetRow.getBoundingClientRect();
+      var cardH = 500;
+      var targetCenterY = rect.top + rect.height / 2;
+      var idealTop = targetCenterY - cardH / 2;
+      var clampedTop = Math.max(16, Math.min(window.innerHeight - cardH - 16, idealTop));
+      card.style.position = 'relative';
+      card.style.top = clampedTop + 'px';
+    } else if (card) {
+      card.style.position = 'relative';
+      card.style.top = '24px';
+    }
+
     if (filterInp) setTimeout(function () { filterInp.focus(); }, 150);
   }
 }
@@ -8605,13 +8676,15 @@ function updateSpecModalSelectButton() {
   if (!btn || !currentSpecModalItemId) return;
   var isSel = typeof selectedCatalogItems !== 'undefined' && !!selectedCatalogItems[currentSpecModalItemId];
   var q = (isSel && selectedCatalogItems[currentSpecModalItemId]) ? selectedCatalogItems[currentSpecModalItemId].qty : 1;
-  btn.textContent = isSel ? '✕ Bỏ Chọn Khỏi Dự Toán (' + q + ')' : '✓ Chọn Vào Dự Toán';
+  btn.textContent = isSel ? '✕ Bỏ Chọn (' + q + ')' : '✓ Chọn Vào Dự Toán';
   btn.className = isSel ? 'btn btn-d btn-sm' : 'btn btn-p btn-sm';
 }
 
 function closeProductSpecModal() {
   var modal = document.getElementById('productSpecModal');
   if (modal) modal.style.display = 'none';
+  document.body.style.overflow = ''; // restore scrolling
+  document.querySelectorAll('.cat-table tr').forEach(function (r) { r.classList.remove('spec-active-row'); });
 }
 
 function filterModalSpecs(query) {
@@ -8648,11 +8721,26 @@ function highlightSpecText(text, query) {
 
 function renderModalSpecTable(specs, query) {
   var tbody = document.getElementById('specModalTableBody');
+  var gridWrap = document.getElementById('specCompactGrid');
+  var highlightsBar = document.getElementById('specModalKeyHighlights');
   var counter = document.getElementById('specMatchCounter');
-  if (!tbody) return;
 
   var q = (query || '').toLowerCase().trim();
   var qParts = q ? q.split('|').map(function (p) { return p.trim(); }).filter(Boolean) : [];
+
+  // Render Key Highlights Bar
+  if (highlightsBar) {
+    var keyHighlights = extractKeyHighlights(specs);
+    if (keyHighlights.length > 0) {
+      highlightsBar.style.display = 'flex';
+      highlightsBar.innerHTML = '<span style="font-size:11px;font-weight:700;color:var(--t3);margin-right:2px">✨ Cấu hình nổi bật:</span>' +
+        keyHighlights.map(function (hl) {
+          return '<span class="spec-hl-pill">' + hl.icon + ' <b>' + escH(hl.key) + ':</b> ' + escH(hl.val) + '</span>';
+        }).join('');
+    } else {
+      highlightsBar.style.display = 'none';
+    }
+  }
 
   var filtered = specs.filter(function (s) {
     if (!q || qParts.length === 0) return true;
@@ -8664,30 +8752,48 @@ function renderModalSpecTable(specs, query) {
   });
 
   if (counter) {
-    counter.textContent = filtered.length + ' / ' + specs.length + ' thông số' + (q ? ' (khớp lọc)' : '');
+    counter.textContent = filtered.length + ' / ' + specs.length + ' thông số' + (q ? ' (khớp)' : '');
     counter.style.background = q && filtered.length === 0 ? '#fee2e2' : 'var(--p-light)';
     counter.style.color = q && filtered.length === 0 ? '#b91c1c' : 'var(--p)';
   }
 
   if (filtered.length === 0) {
-    tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;padding:28px;color:var(--t2)">' +
+    var emptyHtml = '<div style="grid-column:1/-1;text-align:center;padding:24px;color:var(--t2)">' +
       '🔍 Không tìm thấy thông số nào khớp với từ khóa "<b>' + escH(query) + '</b>".' +
       '<br/><button class="btn btn-o btn-sm" onclick="clearModalSpecFilter()" style="margin-top:10px">✕ Xóa bộ lọc</button>' +
-      '</td></tr>';
+      '</div>';
+    if (gridWrap) gridWrap.innerHTML = emptyHtml;
+    if (tbody) tbody.innerHTML = '<tr><td colspan="3" style="text-align:center;padding:24px;color:var(--t2)">' + emptyHtml + '</td></tr>';
     return;
   }
 
-  var html = filtered.map(function (s, idx) {
-    var keyH = highlightSpecText(s.key, q);
-    var valH = highlightSpecText(s.value, q);
-    return '<tr>' +
-      '<td style="text-align:center;font-weight:700;color:var(--t3)">' + (idx + 1) + '</td>' +
-      '<td style="font-weight:600;color:var(--t1)">' + keyH + '</td>' +
-      '<td style="color:var(--t2);line-height:1.55">' + valH + '</td>' +
-      '</tr>';
-  }).join('');
+  // 1. Render 2-Column Compact Grid (Gọn gàng không phải cuộn)
+  if (gridWrap) {
+    gridWrap.innerHTML = filtered.map(function (s, idx) {
+      var keyH = highlightSpecText(s.key, q);
+      var valH = highlightSpecText(s.value, q);
+      return '<div class="spec-grid-card">' +
+        '<div class="spec-gc-hdr">' +
+        '<span class="spec-gc-idx">' + (idx + 1) + '</span>' +
+        '<span class="spec-gc-key">' + keyH + '</span>' +
+        '</div>' +
+        '<div class="spec-gc-val">' + valH + '</div>' +
+        '</div>';
+    }).join('');
+  }
 
-  tbody.innerHTML = html;
+  // 2. Render Traditional Table (Khi chuyển sang tab Bảng)
+  if (tbody) {
+    tbody.innerHTML = filtered.map(function (s, idx) {
+      var keyH = highlightSpecText(s.key, q);
+      var valH = highlightSpecText(s.value, q);
+      return '<tr>' +
+        '<td style="text-align:center;font-weight:700;color:var(--t3)">' + (idx + 1) + '</td>' +
+        '<td style="font-weight:600;color:var(--t1)">' + keyH + '</td>' +
+        '<td style="color:var(--t2);line-height:1.55">' + valH + '</td>' +
+        '</tr>';
+    }).join('');
+  }
 }
 
 function toggleSpecModalSelect() {
