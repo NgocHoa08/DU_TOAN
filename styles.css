@@ -3900,6 +3900,109 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   padding: 10px;
 }
 
+/* Thuận Phát Excel Table Sheet Preview (Chuẩn Form BGThuanPhat.xlsx) */
+.tp-sheet-paper {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 14px;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+  padding: 28px 32px;
+  font-family: 'Times New Roman', Times, serif;
+  color: #0f172a;
+  overflow-x: auto;
+  margin-bottom: 20px;
+}
+
+.tp-sheet-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px;
+  margin-bottom: 18px;
+}
+
+.tp-sheet-table th {
+  background-color: #D9E1F2 !important;
+  color: #000000 !important;
+  font-weight: 700;
+  border: 1px solid #8ea9db;
+  padding: 9px 8px;
+  text-align: center;
+  font-size: 13.5px;
+  letter-spacing: 0.2px;
+}
+
+.tp-sheet-table td {
+  border: 1px solid #c0c0c0;
+  padding: 7px 8px;
+  font-size: 13px;
+  vertical-align: middle;
+  background: #ffffff;
+  color: #0f172a;
+}
+
+.tp-sheet-table tr:hover td {
+  background: #f8fafc;
+}
+
+.tp-sheet-table tr.tp-sum-row td {
+  background-color: #D9E1F2 !important;
+  border-color: #8ea9db !important;
+  color: #000000 !important;
+  font-weight: 700;
+}
+
+.tp-sheet-table .cell-inp {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 13px;
+  color: #0f172a;
+  background: transparent;
+  border: none;
+  border-bottom: 1px dashed #cbd5e1;
+  width: 100%;
+  padding: 3px 4px;
+  outline: none;
+}
+
+.tp-sheet-table .cell-inp:focus {
+  background: rgba(37, 99, 235, 0.08);
+  border-bottom-color: #2563eb;
+}
+
+[data-theme="dark"] .tp-sheet-paper {
+  background: #141414 !important;
+  border-color: #262626 !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.5) !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .tp-sheet-table th {
+  background-color: #1e293b !important;
+  color: #93c5fd !important;
+  border-color: #334155 !important;
+}
+
+[data-theme="dark"] .tp-sheet-table td {
+  background-color: #161616 !important;
+  border-color: #2e2e2e !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .tp-sheet-table tr:hover td {
+  background: #1f1f1f !important;
+}
+
+[data-theme="dark"] .tp-sheet-table tr.tp-sum-row td {
+  background-color: #1e293b !important;
+  border-color: #334155 !important;
+  color: #f1f5f9 !important;
+}
+
+[data-theme="dark"] .tp-sheet-table .cell-inp {
+  color: #f1f5f9 !important;
+  border-bottom-color: #334155;
+}
+
 /* ================================================================
    USER GUIDE / HƯỚNG DẪN SỬ DỤNG (TAB HUONG DAN)
    ================================================================ */

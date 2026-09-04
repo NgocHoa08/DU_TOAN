@@ -8189,8 +8189,8 @@ var BAOGIA_THUANPHAT_ITEMS = [
   {
     stt: 2,
     name: 'Dịch vụ trực tuyến Microsoft 365 Business Standard (no Teams) - Annual - 12 Months',
-    model: '',
-    brand: '',
+    model: 'Office',
+    brand: 'Microsoft',
     origin: '',
     unit: 'Người dùng',
     qty: 54,
@@ -8247,33 +8247,31 @@ function renderBaogiaForm() {
   var totalTruocThue = 0;
   var totalQty = 0;
 
-    var html = '<div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:10px 10px 0 0;padding:20px;border-bottom:none">' +
-    '<div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;margin-bottom:14px">' +
-    '  <img src="logo_thuanphat.png" alt="Thuận Phát Logo" style="height:64px;object-fit:contain;border-radius:4px" />' +
-    '  <div style="font-size:12.5px;font-style:italic;color:#475569;text-align:right">' + dateFormatted + '</div>' +
+  var html = '<div class="tp-sheet-paper">' +
+    '<!-- Letterhead Top -->' +
+    '<div style="text-align:center;margin-bottom:18px">' +
+    '  <img src="logo_thuanphat.png" alt="Công ty Thuận Phát" style="height:76px;max-width:92%;object-fit:contain;margin:0 auto 12px auto;display:block" />' +
+    '  <div style="text-align:right;font-size:12.5px;font-style:italic;color:#475569;margin-bottom:8px">' + escH(dateFormatted) + '</div>' +
+    '  <div style="font-size:22px;font-weight:900;color:#000000;letter-spacing:1px;margin-bottom:14px">BÁO GIÁ</div>' +
     '</div>' +
-    '<div style="text-align:center;margin-bottom:12px">' +
-    '  <div style="font-size:22px;font-weight:900;color:#0f172a;letter-spacing:1px">BÁO GIÁ</div>' +
+    '<div style="font-size:13.5px;color:#1e293b;line-height:1.6;margin-bottom:8px">' +
+    '  <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kính gửi:</span> <b style="font-size:14px;color:#0f172a">' + escH(toName + (toComp ? ' - ' + toComp : '')) + '</b>' +
     '</div>' +
-    '<div style="font-size:13px;color:#1e293b;line-height:1.6;margin-bottom:6px">' +
-    '  <b>Kính gửi:</b> <span style="font-weight:700;color:#0369a1">' + escH(toName + (toComp ? ' - ' + toComp : '')) + '</span>' +
-    '</div>' +
-    '<div style="font-size:12.5px;color:#475569;line-height:1.5">' +
-    '  Trân trọng cảm ơn quý khách hàng đã quan tâm đến sản phẩm và dịch vụ của chúng tôi. <b>' + escH(sellerName) + '</b> xin gửi tới Quý khách bảng báo giá sản phẩm như sau:' +
-    '</div>' +
+    '<div style="font-size:13px;font-style:italic;color:#334155;line-height:1.6;margin-bottom:20px">' +
+    '  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Trân trọng cảm ơn quý khách hàng đã quan tâm đến sản phẩm và dịch vụ của chúng tôi. <b>' + escH(sellerName) + '</b> xin gửi tới Quý khách bảng báo giá sản phẩm như sau:' +
     '</div>';
 
-  html += '<table class="excel-table" style="width:100%">';
+  html += '<table class="tp-sheet-table">' +
     '<thead>' +
     '<tr>' +
-    '<th style="width:40px">STT</th>' +
-    '<th>SẢN PHẨM / DỊCH VỤ</th>' +
+    '<th style="width:45px">STT</th>' +
+    '<th style="min-width:300px;text-align:left">SẢN PHẨM</th>' +
     '<th style="width:110px">Model</th>' +
-    '<th style="width:100px">Hãng</th>' +
-    '<th style="width:85px">ĐVT</th>' +
-    '<th style="width:70px">SL</th>' +
-    '<th style="width:130px">Đơn giá (VNĐ)</th>' +
-    '<th style="width:140px">Thành tiền (VNĐ)</th>' +
+    '<th style="width:110px">Hãng</th>' +
+    '<th style="width:90px">ĐVT</th>' +
+    '<th style="width:65px">SL</th>' +
+    '<th style="width:135px;text-align:right">Đơn giá</th>' +
+    '<th style="width:145px;text-align:right">Thành tiền</th>' +
     '<th style="width:45px">Xóa</th>' +
     '</tr>' +
     '</thead><tbody>';
@@ -8293,16 +8291,16 @@ function renderBaogiaForm() {
       totalTruocThue += total;
       totalQty += qty;
 
-      html += '<tr style="background:#fafbfc">' +
-        '<td class="ctr" style="font-weight:700">' + (idx + 1) + '</td>' +
-        '<td><input type="text" class="cell-inp" style="font-weight:700;color:var(--t1)" value="' + escH(d.name || '') + '" onchange="bgUpdateField(' + idx + ', \'name\', this.value)"/></td>' +
-        '<td><input type="text" class="cell-inp ctr" value="' + escH(d.model || '') + '" onchange="bgUpdateField(' + idx + ', \'model\', this.value)"/></td>' +
-        '<td><input type="text" class="cell-inp ctr" value="' + escH(d.brand || '') + '" onchange="bgUpdateField(' + idx + ', \'brand\', this.value)"/></td>' +
-        '<td><input type="text" class="cell-inp ctr" value="' + escH(d.unit || 'Chiếc') + '" onchange="bgUpdateField(' + idx + ', \'unit\', this.value)"/></td>' +
-        '<td><input type="number" min="1" class="cell-inp ctr" style="font-weight:700" value="' + qty + '" onchange="bgUpdateField(' + idx + ', \'qty\', this.value)"/></td>' +
-        '<td><input type="text" class="cell-inp text-r" placeholder="Tự điền giá..." value="' + (price > 0 ? fmtMoney(price) : '') + '" onchange="bgUpdateField(' + idx + ', \'price\', this.value)"/></td>' +
-        '<td class="text-r" style="font-weight:700;color:var(--gr)">' + (total > 0 ? fmtMoney(total) + ' đ' : '-') + '</td>' +
-        '<td class="ctr"><button style="background:none;border:none;cursor:pointer;color:var(--re);font-size:15px" onclick="bgDelProduct(' + idx + ')" title="Xóa dòng">✕</button></td>' +
+      html += '<tr>' +
+        '<td class="ctr" style="font-weight:700;text-align:center">' + (idx + 1) + '</td>' +
+        '<td><input type="text" class="cell-inp" style="font-weight:700;color:#000000" value="' + escH(d.name || '') + '" onchange="bgUpdateField(' + idx + ', \'name\', this.value)" placeholder="Tên sản phẩm / dịch vụ..."/></td>' +
+        '<td><input type="text" class="cell-inp" style="text-align:center" value="' + escH(d.model || '') + '" onchange="bgUpdateField(' + idx + ', \'model\', this.value)" placeholder="Model"/></td>' +
+        '<td><input type="text" class="cell-inp" style="text-align:center" value="' + escH(d.brand || '') + '" onchange="bgUpdateField(' + idx + ', \'brand\', this.value)" placeholder="Hãng"/></td>' +
+        '<td><input type="text" class="cell-inp" style="text-align:center" value="' + escH(d.unit || 'Chiếc') + '" onchange="bgUpdateField(' + idx + ', \'unit\', this.value)" placeholder="ĐVT"/></td>' +
+        '<td><input type="number" min="1" class="cell-inp" style="font-weight:700;text-align:center" value="' + qty + '" onchange="bgUpdateField(' + idx + ', \'qty\', this.value)"/></td>' +
+        '<td><input type="text" class="cell-inp" style="text-align:right" placeholder="0" value="' + (price > 0 ? fmtMoney(price) : '') + '" onchange="bgUpdateField(' + idx + ', \'price\', this.value)"/></td>' +
+        '<td style="text-align:right;font-weight:700;color:#047857">' + (total > 0 ? fmtMoney(total) + ' đ' : '-') + '</td>' +
+        '<td class="ctr" style="text-align:center"><button style="background:none;border:none;cursor:pointer;color:var(--re);font-size:15px" onclick="bgDelProduct(' + idx + ')" title="Xóa dòng">✕</button></td>' +
         '</tr>';
     });
 
@@ -8310,43 +8308,56 @@ function renderBaogiaForm() {
     var totalSauThue = totalTruocThue + tienVat;
     var strBangChu = docSoThanhChu(totalSauThue);
 
-    // Summary rows matching BGThuanPhat.xlsx exactly
-    html += '<tr style="background:#f8fafc;font-weight:800;border-top:2px solid #cbd5e1">' +
-      '<td colspan="5" class="text-r" style="padding:10px 14px;color:#0f172a">TỔNG CỘNG TRƯỚC THUẾ:</td>' +
-      '<td class="ctr" style="color:var(--b2)">' + totalQty + '</td>' +
-      '<td></td>' +
-      '<td class="text-r" style="color:var(--t1);font-size:13.5px">' + (totalTruocThue > 0 ? fmtMoney(totalTruocThue) + ' đ' : '0 đ') + '</td>' +
+    // Summary rows matching BGThuanPhat.xlsx exactly (fill #D9E1F2, bold)
+    html += '<tr class="tp-sum-row">' +
+      '<td colspan="7" style="text-align:right;padding:8px 14px;font-weight:700;font-size:13px">TỔNG CỘNG TRƯỚC THUẾ:</td>' +
+      '<td style="text-align:right;padding:8px 14px;font-weight:700;font-size:13.5px">' + (totalTruocThue > 0 ? fmtMoney(totalTruocThue) + ' đ' : '0 đ') + '</td>' +
       '<td></td>' +
       '</tr>';
 
-    html += '<tr style="background:#f8fafc;font-weight:800">' +
-      '<td colspan="7" class="text-r" style="padding:8px 14px;color:#0f172a">THUẾ ' + vatRate + '%:</td>' +
-      '<td class="text-r" style="color:var(--go);font-size:13.5px">' + (tienVat > 0 ? fmtMoney(tienVat) + ' đ' : '0 đ') + '</td>' +
+    html += '<tr class="tp-sum-row">' +
+      '<td colspan="7" style="text-align:right;padding:8px 14px;font-weight:700;font-size:13px">THUẾ ' + vatRate + '%:</td>' +
+      '<td style="text-align:right;padding:8px 14px;font-weight:700;font-size:13.5px">' + (tienVat > 0 ? fmtMoney(tienVat) + ' đ' : '0 đ') + '</td>' +
       '<td></td>' +
       '</tr>';
 
-    html += '<tr style="background:#f1f5f9;font-weight:900;border-bottom:2px solid #cbd5e1">' +
-      '<td colspan="7" class="text-r" style="padding:10px 14px;color:var(--re);font-size:14px">TỔNG TIỀN SAU THUẾ:</td>' +
-      '<td class="text-r" style="color:var(--gr);font-size:15px">' + (totalSauThue > 0 ? fmtMoney(totalSauThue) + ' đ' : '0 đ') + '</td>' +
+    html += '<tr class="tp-sum-row">' +
+      '<td colspan="7" style="text-align:right;padding:8px 14px;font-weight:700;font-size:13px;color:#b91c1c">TỔNG TIỀN SAU THUẾ</td>' +
+      '<td style="text-align:right;padding:8px 14px;font-weight:700;font-size:14px;color:#047857">' + (totalSauThue > 0 ? fmtMoney(totalSauThue) + ' đ' : '0 đ') + '</td>' +
       '<td></td>' +
       '</tr>';
 
-    html += '<tr style="background:#ffffff;font-style:italic">' +
-      '<td colspan="9" style="padding:10px 14px;color:#1e293b;font-size:13px"><b style="color:var(--b2)">Bằng chữ:</b> ' + escH(strBangChu) + '</td>' +
+    html += '<tr class="tp-sum-row">' +
+      '<td colspan="9" style="padding:9px 14px;font-size:13px">' +
+      '  <span style="font-weight:700;text-decoration:underline">Bằng chữ:</span> ' +
+      '  <span style="font-weight:700;font-style:italic">' + escH(strBangChu) + '</span>' +
+      '</td>' +
       '</tr>';
   }
 
   html += '</tbody></table>';
 
-  // Notes section simulation
-  html += '<div style="margin-top:14px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:12px 16px;font-size:12.5px;line-height:1.7;color:#334155">' +
-    '<div style="font-weight:700;color:#0f172a;margin-bottom:4px">📝 Ghi chú báo giá:</div>' +
-    '<div>• Giá trên đã bao gồm thuế VAT ' + vatRate + '%</div>' +
-    '<div>• Tình trạng hàng hóa: hàng mới 100% chưa qua sử dụng</div>' +
-    '<div>• Thời gian giao hàng: ' + escH(dTime) + '</div>' +
-    '<div>• Địa điểm giao hàng: ' + escH(dLoc) + '</div>' +
-    '<div>• Hiệu lực của báo giá: ' + escH(dVal) + '</div>' +
+  // Notes section matching BGThuanPhat.xlsx lines 13-18
+  html += '<div style="margin-top:16px;font-size:12.5px;font-style:italic;line-height:1.7;color:#334155">' +
+    '<div style="font-weight:700;font-style:normal;color:#0f172a">Ghi chú:</div>' +
+    '<div>- Giá trên đã bao gồm VAT ' + vatRate + '%</div>' +
+    '<div>- Tình trạng hàng hóa: hàng mới 100% chưa qua sử dụng</div>' +
+    '<div>- Thời gian giao hàng: ' + escH(dTime) + '</div>' +
+    '<div>- Địa điểm: ' + escH(dLoc) + '</div>' +
+    '<div>- Hiệu lực của báo giá: ' + escH(dVal) + '</div>' +
     '</div>';
+
+  // Signatures section matching BGThuanPhat.xlsx F20:I20
+  html += '<div style="display:flex;justify-content:flex-end;margin-top:24px;text-align:center">' +
+    '<div style="min-width:280px">' +
+    '  <div style="font-size:13px;font-weight:700;color:#000000;text-transform:uppercase">ĐẠI DIỆN CÔNG TY</div>' +
+    '  <div style="font-size:12.5px;font-weight:700;color:#1e293b;margin-top:4px">' + escH(sellerName) + '</div>' +
+    '  <div style="height:65px"></div>' +
+    '  <div style="font-size:12px;color:#64748b;font-style:italic">(Ký, ghi rõ họ tên và đóng dấu)</div>' +
+    '</div>' +
+    '</div>';
+
+  html += '</div>'; // end tp-sheet-paper
 
   container.innerHTML = html;
 }
@@ -8675,22 +8686,27 @@ async function exportBaogiaExcel() {
     var endDataRow = curRow - 1;
 
     // 9. Dòng Tổng cộng trước thuế
+    var fillThuanPhat = { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFD9E1F2' } };
+    var numFmtThuanPhat = '_-* #,##0 _₫_-;-* #,##0 _₫_-;_-* "-"?? _₫_-;_-@_-';
+
     var rowPreTax = ws.getRow(curRow);
     rowPreTax.height = 24;
     ws.mergeCells('B' + curRow + ':H' + curRow);
     var cPreLabel = rowPreTax.getCell(2);
     cPreLabel.value = 'TỔNG CỘNG TRƯỚC THUẾ: ';
-    cPreLabel.font = { name: 'Times New Roman', size: 11, bold: true };
-    cPreLabel.alignment = { horizontal: 'left', vertical: 'middle' };
+    cPreLabel.font = { name: 'Times New Roman', size: 10, bold: true };
+    cPreLabel.alignment = { horizontal: 'right', vertical: 'middle' };
 
     var cPreVal = rowPreTax.getCell(9);
     cPreVal.value = { formula: 'SUM(I' + startDataRow + ':I' + endDataRow + ')', result: totalTruocThue };
-    cPreVal.font = { name: 'Times New Roman', size: 11, bold: true };
-    cPreVal.numFmt = '#,##0';
+    cPreVal.font = { name: 'Times New Roman', size: 12, bold: true };
+    cPreVal.numFmt = numFmtThuanPhat;
     cPreVal.alignment = { horizontal: 'right', vertical: 'middle' };
 
     for (var col = 1; col <= 9; col++) {
-      rowPreTax.getCell(col).border = borderStyle;
+      var cell = rowPreTax.getCell(col);
+      cell.border = borderStyle;
+      cell.fill = fillThuanPhat;
     }
     var rowPreIdx = curRow;
     curRow++;
@@ -8700,20 +8716,22 @@ async function exportBaogiaExcel() {
     var tienVat = Math.round(totalTruocThue * vatRate / 100);
     var rowVat = ws.getRow(curRow);
     rowVat.height = 24;
-    ws.mergeCells('B' + curRow + ':H' + curRow);
-    var cVatLabel = rowVat.getCell(2);
+    ws.mergeCells('A' + curRow + ':H' + curRow);
+    var cVatLabel = rowVat.getCell(1);
     cVatLabel.value = 'THUẾ ' + vatRate + '%:';
-    cVatLabel.font = { name: 'Times New Roman', size: 11, bold: true };
-    cVatLabel.alignment = { horizontal: 'left', vertical: 'middle' };
+    cVatLabel.font = { name: 'Times New Roman', size: 10, bold: true };
+    cVatLabel.alignment = { horizontal: 'right', vertical: 'middle' };
 
     var cVatVal = rowVat.getCell(9);
     cVatVal.value = { formula: 'I' + rowPreIdx + '*' + vatRate + '%', result: tienVat };
-    cVatVal.font = { name: 'Times New Roman', size: 11, bold: true };
-    cVatVal.numFmt = '#,##0';
+    cVatVal.font = { name: 'Times New Roman', size: 12, bold: true };
+    cVatVal.numFmt = numFmtThuanPhat;
     cVatVal.alignment = { horizontal: 'right', vertical: 'middle' };
 
     for (var col = 1; col <= 9; col++) {
-      rowVat.getCell(col).border = borderStyle;
+      var cell = rowVat.getCell(col);
+      cell.border = borderStyle;
+      cell.fill = fillThuanPhat;
     }
     var rowVatIdx = curRow;
     curRow++;
@@ -8722,20 +8740,22 @@ async function exportBaogiaExcel() {
     var totalSauThue = totalTruocThue + tienVat;
     var rowPost = ws.getRow(curRow);
     rowPost.height = 26;
-    ws.mergeCells('B' + curRow + ':H' + curRow);
-    var cPostLabel = rowPost.getCell(2);
+    ws.mergeCells('A' + curRow + ':H' + curRow);
+    var cPostLabel = rowPost.getCell(1);
     cPostLabel.value = 'TỔNG TIỀN SAU THUẾ';
-    cPostLabel.font = { name: 'Times New Roman', size: 11, bold: true, color: { argb: 'FFFF0000' } };
-    cPostLabel.alignment = { horizontal: 'left', vertical: 'middle' };
+    cPostLabel.font = { name: 'Times New Roman', size: 10, bold: true };
+    cPostLabel.alignment = { horizontal: 'right', vertical: 'middle' };
 
     var cPostVal = rowPost.getCell(9);
     cPostVal.value = { formula: 'I' + rowPreIdx + '+I' + rowVatIdx, result: totalSauThue };
-    cPostVal.font = { name: 'Times New Roman', size: 11, bold: true, color: { argb: 'FF008000' } };
-    cPostVal.numFmt = '#,##0';
+    cPostVal.font = { name: 'Times New Roman', size: 12, bold: true };
+    cPostVal.numFmt = numFmtThuanPhat;
     cPostVal.alignment = { horizontal: 'right', vertical: 'middle' };
 
     for (var col = 1; col <= 9; col++) {
-      rowPost.getCell(col).border = borderStyle;
+      var cell = rowPost.getCell(col);
+      cell.border = borderStyle;
+      cell.fill = fillThuanPhat;
     }
     curRow++;
 
@@ -8745,15 +8765,22 @@ async function exportBaogiaExcel() {
     rowWord.height = 24;
     ws.mergeCells('A' + curRow + ':I' + curRow);
     var cWord = rowWord.getCell(1);
-    cWord.value = '         Bằng chữ: ' + strBangChu;
-    cWord.font = { name: 'Times New Roman', size: 11, italic: true };
-    cWord.alignment = { horizontal: 'left', vertical: 'middle' };
+    cWord.value = {
+      richText: [
+        { font: { name: 'Times New Roman', size: 12, bold: true, underline: true }, text: 'Bằng chữ:' },
+        { font: { name: 'Times New Roman', size: 12, bold: true }, text: ' ' },
+        { font: { name: 'Times New Roman', size: 12, bold: true, italic: true }, text: strBangChu }
+      ]
+    };
+    cWord.alignment = { horizontal: 'left', vertical: 'middle', wrapText: true };
     for (var col = 1; col <= 9; col++) {
-      rowWord.getCell(col).border = borderStyle;
+      var cell = rowWord.getCell(col);
+      cell.border = borderStyle;
+      cell.fill = fillThuanPhat;
     }
     curRow++;
 
-    // 13. Ghi chú
+    // 13. Ghi chú (Khớp chuẩn mẫu BGThuanPhat.xlsx A13:A18)
     curRow++; // 1 row gap
     var dTime = (document.getElementById('bg_delivery_time') && document.getElementById('bg_delivery_time').value) || 'Trong vòng 03 - 05 ngày làm việc';
     var dLoc = (document.getElementById('bg_delivery_loc') && document.getElementById('bg_delivery_loc').value) || 'Tại kho bên mua hoặc địa điểm chỉ định';
@@ -8771,18 +8798,18 @@ async function exportBaogiaExcel() {
     notes.forEach(function(n) {
       var row = ws.getRow(curRow);
       row.height = 18;
-      var cell = row.getCell(2);
+      var cell = row.getCell(1); // Column A
       cell.value = n;
-      cell.font = { name: 'Times New Roman', size: 11, bold: n === 'Ghi chú:' };
+      cell.font = { name: 'Times New Roman', size: 12, italic: true };
       curRow++;
     });
 
-    // 14. Đại diện Thuận Phát ký
+    // 14. Đại diện Thuận Phát ký (Khớp chuẩn F20:I20)
     curRow++;
     var rowSignTitle = ws.getRow(curRow);
     rowSignTitle.height = 22;
-    ws.mergeCells('G' + curRow + ':I' + curRow);
-    var cSignT = rowSignTitle.getCell(7);
+    ws.mergeCells('F' + curRow + ':I' + curRow);
+    var cSignT = rowSignTitle.getCell(6);
     cSignT.value = 'ĐẠI DIỆN CÔNG TY';
     cSignT.font = { name: 'Times New Roman', size: 11, bold: true };
     cSignT.alignment = { horizontal: 'center', vertical: 'middle' };
@@ -8790,8 +8817,8 @@ async function exportBaogiaExcel() {
     curRow++;
     var rowSignSub = ws.getRow(curRow);
     rowSignSub.height = 20;
-    ws.mergeCells('G' + curRow + ':I' + curRow);
-    var cSignS = rowSignSub.getCell(7);
+    ws.mergeCells('F' + curRow + ':I' + curRow);
+    var cSignS = rowSignSub.getCell(6);
     cSignS.value = sellerName;
     cSignS.font = { name: 'Times New Roman', size: 11, bold: true };
     cSignS.alignment = { horizontal: 'center', vertical: 'middle' };
