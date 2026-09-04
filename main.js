@@ -4526,7 +4526,7 @@ function renderCatalogGrid() {
           '<td>' + catBadge + '</td>' +
           '<td onclick="event.stopPropagation()">' +
           '<div style="display:flex;align-items:center;gap:4px">' +
-          '<input type="number" min="0" placeholder="0" value="' + (item.price || '') + '" oninput="updateCatalogPrice(\'' + item.id + '\',+this.value)" style="width:100%;padding:5px 8px;font-size:12.5px;font-weight:700;color:var(--go);border:1px solid var(--bdr2);border-radius:6px;background:var(--inp)" />' +
+          '<input type="number" min="0" class="cat-price-input" placeholder="0" value="' + (item.price || '') + '" oninput="updateCatalogPrice(\'' + item.id + '\',+this.value)" />' +
           '</div>' +
           '</td>' +
           '<td style="text-align:center" onclick="event.stopPropagation()">' +
@@ -8735,7 +8735,7 @@ function renderModalSpecTable(specs, query) {
       highlightsBar.style.display = 'flex';
       highlightsBar.innerHTML = '<span style="font-size:11px;font-weight:700;color:var(--t3);margin-right:2px">✨ Cấu hình nổi bật:</span>' +
         keyHighlights.map(function (hl) {
-          return '<span class="spec-hl-pill">' + hl.icon + ' <b>' + escH(hl.key) + ':</b> ' + escH(hl.val) + '</span>';
+          return '<span class="spec-hl-pill ' + (hl.theme || '') + '">' + hl.icon + ' <b>' + escH(hl.key) + ':</b> ' + escH(hl.val) + '</span>';
         }).join('');
     } else {
       highlightsBar.style.display = 'none';
