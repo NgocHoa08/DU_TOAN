@@ -641,7 +641,10 @@ function importLichSuJson(event) {
   event.target.value = '';
 }
 
+var currentActiveTab = 'dutoan';
+
 function switchMainTab(tab) {
+  currentActiveTab = tab;
   document.querySelectorAll('.mtab').forEach(function (el) { el.classList.remove('active'); });
   document.getElementById('view-dutoan').style.display = 'none';
   document.getElementById('view-bbbg').style.display = 'none';
@@ -657,24 +660,35 @@ function switchMainTab(tab) {
   var tabG = document.getElementById('mtab-baogia');
   var tabL = document.getElementById('mtab-lichsu');
 
+  var statusEl = document.getElementById('menubarActiveTabStatus');
+  var quickBtn = document.getElementById('btnMenuQuickAction');
+
   if (tab === 'dutoan') {
     if (tabD) tabD.classList.add('active');
     document.getElementById('view-dutoan').style.display = 'block';
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot"></span> Đang ở: <b>📊 Làm Dự Toán</b>';
+    if (quickBtn) quickBtn.innerHTML = '⬇️ Xuất File Dự Toán (.xlsx)';
   } else if (tab === 'bbbg') {
     if (tabB) tabB.classList.add('active');
     document.getElementById('view-bbbg').style.display = 'block';
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot"></span> Đang ở: <b>📝 Biên Bản Bàn Giao</b>';
+    if (quickBtn) quickBtn.innerHTML = '📝 Xuất File Word BBBG';
     if (typeof renderHandoverForm === 'function') {
       renderHandoverForm();
     }
   } else if (tab === 'tddu') {
     if (tabT) tabT.classList.add('active');
     document.getElementById('view-tddu').style.display = 'block';
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot"></span> Đang ở: <b>✅ Tuyên Bố Đáp Ứng</b>';
+    if (quickBtn) quickBtn.innerHTML = '✅ Xuất File Excel Tuyên Bố';
     if (typeof renderTdduForm === 'function') {
       renderTdduForm();
     }
   } else if (tab === 'baogia') {
     if (tabG) tabG.classList.add('active');
     if (bgView) bgView.style.display = 'block';
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot"></span> Đang ở: <b>🧾 Báo Giá Thuận Phát</b>';
+    if (quickBtn) quickBtn.innerHTML = '🧾 Xuất File Excel Báo Giá';
     if (!bgItems || bgItems.length === 0) {
       if (typeof BAOGIA_THUANPHAT_ITEMS !== 'undefined') {
         bgItems = JSON.parse(JSON.stringify(BAOGIA_THUANPHAT_ITEMS));
@@ -686,6 +700,8 @@ function switchMainTab(tab) {
   } else if (tab === 'lichsu') {
     if (tabL) tabL.classList.add('active');
     if (lsView) lsView.style.display = 'block';
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot"></span> Đang ở: <b>🕐 Lịch Sử File</b>';
+    if (quickBtn) quickBtn.innerHTML = '💾 Xuất Sao Lưu JSON';
     if (typeof renderLichSu === 'function') {
       renderLichSu();
     }
@@ -721,96 +737,6 @@ function goStep(s) {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
-/* ═══════════════════════════════════════════
-   MULTI-FILE HANDLING
-═══════════════════════════════════════════ */
-var dz = document.getElementById('dz');
-if (dz) {
-  dz.addEventListener('dragover', function (e) { e.preventDefault(); dz.classList.add('drag'); });
-  dz.addEventListener('dragleave', function () { dz.classList.remove('drag'); });
-  dz.addEventListener('drop', function (e) {
-    e.preventDefault(); dz.classList.remove('drag');
-    if (e.dataTransfer.files && e.dataTransfer.files.length > 0) {
-      addFiles(Array.from(e.dataTransfer.files));
-    }
-  });
-}
-var fiEl = document.getElementById('fi');
-if (fiEl) {
-  fiEl.addEventListener('change', function () {
-    if (this.files && this.files.length > 0) {
-      addFiles(Array.from(this.files));
-      this.value = '';
-    }
-  });
-}
-
-function addFiles(newFiles) {
-  newFiles.forEach(function (f) {
-    var exists = fileList.some(function (x) { return x.name === f.name && x.size === f.size; });
-    if (!exists) fileList.push(f);
-  });
-  renderFileList();
-  toast('📁 Đã thêm ' + newFiles.length + ' tệp tin', 'ok');
-}
-
-function removeFile(idx) {
-  fileList.splice(idx, 1);
-  renderFileList();
-}
-
-function clearAllFiles() {
-  fileList = [];
-  renderFileList();
-}
-
-function renderFileList() {
-  var wrap = document.getElementById('fileListWrap');
-  var grid = document.getElementById('fileGrid');
-  var countEl = document.getElementById('fileCount');
-
-  if (fileList.length === 0) {
-    wrap.classList.remove('on');
-    grid.innerHTML = '';
-    countEl.textContent = '0';
-    return;
-  }
-
-  wrap.classList.add('on');
-  countEl.textContent = fileList.length;
-  grid.innerHTML = fileList.map(function (f, i) {
-    var isXls = f.name.match(/\.xlsx?$|\.xls$/i);
-    var ico = isXls ? '📊' : '📝';
-    var sizeStr = Math.round(f.size / 1024) + ' KB';
-    return '<div class="file-card">' +
-      '<span class="fc-ico">' + ico + '</span>' +
-      '<div class="fc-info">' +
-      '<div class="fc-name" title="' + escH(f.name) + '">' + escH(f.name) + '</div>' +
-      '<div class="fc-meta">' + sizeStr + ' · ' + (isXls ? 'Excel' : 'Word') + '</div>' +
-      '</div>' +
-      '<button class="fc-rm" onclick="removeFile(' + i + ')" title="Xóa file này">✕</button>' +
-      '</div>';
-  }).join('');
-}
-
-/* ═══════════════════════════════════════════
-   SAMPLE LOADER
-═══════════════════════════════════════════ */
-function loadSample() {
-  fetch('/Du_toan%20-V1.xlsx')
-    .then(function (r) {
-      if (!r.ok) throw new Error('Không tìm thấy file mẫu trên server');
-      return r.arrayBuffer();
-    })
-    .then(function (buf) {
-      var blob = new Blob([buf], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
-      var file = new File([blob], 'Du_toan -V1.xlsx', { type: blob.type });
-      addFiles([file]);
-      processInstant();
-      toast('✅ Đã nạp file mẫu thành công', 'ok');
-    })
-    .catch(function (err) { toast('❌ Lỗi: ' + err.message, 'err'); });
-}
 
 /* ═══════════════════════════════════════════
    AI CONFIG & PROVIDERS
@@ -1165,6 +1091,96 @@ async function callAiApi(prompt) {
   }
 }
 
+/* ═══════════════════════════════════════════
+   CLEAN NORMALIZATION & SPEC UTILITIES
+═══════════════════════════════════════════ */
+function isPriceNumber(v) {
+  if (!v) return false;
+  var clean = String(v).replace(/[.,\s₫đVNDvnd]/g, '');
+  return /^\d+$/.test(clean) && clean.length >= 4;
+}
+
+function parseNum(v) {
+  if (typeof v === 'number') return v;
+  if (!v) return 0;
+  var s = String(v).replace(/[^0-9.-]/g, '');
+  return parseFloat(s) || 0;
+}
+
+function sanitizeDevice(d) {
+  d.name = String(d.name || '').trim();
+  d.model = String(d.model || '').trim();
+  d.brand = String(d.brand || '').trim();
+  d.origin = String(d.origin || '').trim();
+  d.unit = String(d.unit || 'Máy').trim();
+  d.qty = parseNum(d.qty) || 1;
+  d.price = parseNum(d.price) || 0;
+  d.warranty = String(d.warranty || '').trim();
+  d.specs = Array.isArray(d.specs) ? d.specs : [];
+  return d;
+}
+
+function isNoiseOrNonDeviceText(text) {
+  if (!text) return true;
+  var t = text.toLowerCase().trim();
+  var noise = [
+    'tổng cộng', 'tổng số tiền', 'bằng chữ', 'ghi chú', 'thuế vat', 'đơn giá',
+    'thành tiền', 'chữ ký', 'đại diện', 'giám đốc', 'ngày tháng', 'cộng tiền hàng',
+    'stt', 'danh mục', 'tiêu chuẩn kỹ thuật', 'yêu cầu kỹ thuật', 'bảng báo giá',
+    'đại diện hợp pháp', 'đứng đầu liên danh'
+  ];
+  return noise.some(function (n) { return t === n || t.startsWith(n); });
+}
+
+function cleanFullDeviceName(name, stt, model, brand) {
+  if (!name) return '';
+  var clean = name.replace(/^(\d+[\.\s\-\)]+|mục\s*\d+[\.\s\-\)]*)/i, '').trim();
+  return clean;
+}
+
+function isStrictHardwareDevice(str) {
+  if (!str || typeof str !== 'string') return false;
+  var s = str.toLowerCase().trim();
+  if (isNoiseOrNonDeviceText(s)) return false;
+  var keywords = [
+    'máy', 'laptop', 'pc', 'server', 'màn hình', 'in', 'scan', 'photo', 'switch',
+    'router', 'firewall', 'wifi', 'camera', 'ups', 'bộ lưu điện', 'điện thoại',
+    'tai nghe', 'chuột', 'bàn phím', 'ổ cứng', 'ram', 'cpu', 'nguồn', 'card'
+  ];
+  return keywords.some(function (k) { return s.includes(k); });
+}
+
+function isRealDevice(name) {
+  return isStrictHardwareDevice(name);
+}
+
+function isValidTechnicalSpec(specText) {
+  if (!specText) return false;
+  var s = String(specText).trim();
+  if (s.length < 2) return false;
+  if (isNoiseOrNonDeviceText(s)) return false;
+  return true;
+}
+
+async function extractTextFromPdf(ab) {
+  if (typeof pdfjsLib === 'undefined') return '';
+  try {
+    var loadingTask = pdfjsLib.getDocument({ data: ab });
+    var pdf = await loadingTask.promise;
+    var fullText = '';
+    for (var i = 1; i <= pdf.numPages; i++) {
+      var page = await pdf.getPage(i);
+      var content = await page.getTextContent();
+      var strings = content.items.map(function (it) { return it.str; });
+      fullText += strings.join(' ') + '\n';
+    }
+    return fullText;
+  } catch (err) {
+    console.error('Lỗi extract PDF:', err);
+    return '';
+  }
+}
+
 function onProviderChange() {
   var p = (document.getElementById('aiProvider') && document.getElementById('aiProvider').value) || localStorage.getItem('ai_provider') || 'grok';
   var conf = AI_CONFIG[p] || AI_CONFIG['grok'];
@@ -1197,1240 +1213,93 @@ function saveKey(v) {
   updateAiStatusBadge();
 }
 
-function aiLog(type, msg) {
-  var el = document.getElementById('aiLog');
-  el.classList.add('on');
-  el.innerHTML += '<div class="' + type + '">' + escH(msg) + '</div>';
-  el.scrollTop = el.scrollHeight;
-}
-function aiLogClear() {
-  var el = document.getElementById('aiLog');
-  el.classList.add('on');
-  el.innerHTML = '';
-}
-
-async function readAllFilesToText(files) {
-  var chunks = [];
-  for (var i = 0; i < files.length; i++) {
-    var f = files[i];
-    var fn = f.name.toLowerCase();
-    aiLog('wait', '🔍 Đang đọc file (' + (i + 1) + '/' + files.length + '): ' + f.name + '...');
-
-    var text = '';
-    if (fn.endsWith('.docx') || fn.endsWith('.doc')) {
-      var ab = await f.arrayBuffer();
-      try {
-        var res = await mammoth.convertToHtml({ arrayBuffer: ab });
-        var doc = new DOMParser().parseFromString(res.value, 'text/html');
-        text = doc.body.innerText || doc.body.textContent || '';
-      } catch (e) { text = '(Lỗi đọc Word: ' + e.message + ')'; }
-    } else {
-      var ab = await f.arrayBuffer();
-      try {
-        var wb = XLSX.read(new Uint8Array(ab), { type: 'array', cellText: false, cellDates: true });
-        text = xlsxToText(wb);
-      } catch (e) { text = '(Lỗi đọc Excel: ' + e.message + ')'; }
-    }
-
-    chunks.push(
-      '========================================\n' +
-      'TỆP TIN [' + (i + 1) + '/' + files.length + ']: ' + f.name + '\n' +
-      '========================================\n' +
-      text
-    );
-  }
-  return chunks.join('\n\n');
-}
-
-function xlsxToText(wb) {
-  var lines = [];
-  wb.SheetNames.forEach(function (nm) {
-    lines.push('\n--- Sheet: ' + nm + ' ---');
-    var ws = wb.Sheets[nm];
-    var range = XLSX.utils.decode_range(ws['!ref'] || 'A1:Z50');
-    for (var r = range.s.r; r <= range.e.r; r++) {
-      var row = [];
-      for (var c = range.s.c; c <= range.e.c; c++) {
-        var cell = ws[XLSX.utils.encode_cell({ r: r, c: c })];
-        if (cell) row.push(String(cell.w || cell.v || '').trim());
-      }
-      var txt = row.filter(Boolean).join(' | ');
-      if (txt) lines.push(txt);
-    }
-  });
-  return lines.join('\n');
-}
-
 /* ═══════════════════════════════════════════
-   FAIL-SAFE AI RUNNER
+   CLEAN NORMALIZATION & SPEC UTILITIES
 ═══════════════════════════════════════════ */
-async function runAI() {
-  var provider = document.getElementById('aiProvider').value;
-  var key = document.getElementById('apiKey').value.trim();
-  if (fileList.length === 0) { toast('❌ Vui lòng tải lên ít nhất 1 file!', 'err'); return; }
-
-  var btn = document.getElementById('btnAI');
-  btn.disabled = true;
-  btn.innerHTML = '<span class="spin"></span> AI đang phân tích ' + fileList.length + ' file...';
-  aiLogClear();
-  aiLog('info', '🚀 Bắt đầu đọc và phân tích ' + fileList.length + ' tệp tin...');
-
-  var aiSuccess = false;
-
-  if (key) {
-    try {
-      var combinedText = await readAllFilesToText(fileList);
-      aiLog('ok', '✅ Đã đọc dữ liệu ' + fileList.length + ' file (' + combinedText.length + ' ký tự)');
-
-      var userModel = document.getElementById('aiModel').value;
-      var prompt = buildPrompt(combinedText);
-      var content = '';
-
-      if (provider === 'gemini') {
-        aiLog('wait', '📡 Đang kết nối Google Gemini API...');
-        var tryModels = [userModel, 'gemini-2.5-flash', 'gemini-1.5-flash', 'gemini-1.5-pro', 'gemini-pro'].filter(function (v, i, a) { return a.indexOf(v) === i; });
-
-        for (var mIdx = 0; mIdx < tryModels.length; mIdx++) {
-          var curM = tryModels[mIdx];
-          try {
-            var cleanM = curM.replace(/^models\//, '');
-            var url = 'https://generativelanguage.googleapis.com/v1beta/models/' + cleanM + ':generateContent?key=' + key;
-            var res = await fetch(url, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                contents: [{ parts: [{ text: prompt }] }],
-                generationConfig: { temperature: 0.1 }
-              })
-            });
-
-            if (res.ok) {
-              var data = await res.json();
-              content = data.candidates && data.candidates[0] && data.candidates[0].content && data.candidates[0].content.parts[0] && data.candidates[0].content.parts[0].text;
-              if (content) {
-                aiLog('ok', '✅ Gemini (' + curM + ') phản hồi thành công!');
-                break;
-              }
-            }
-          } catch (ex) { }
-        }
-
-        if (!content) {
-          try {
-            var gRes = await fetch('https://generativelanguage.googleapis.com/v1beta/openai/chat/completions', {
-              method: 'POST',
-              headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + key
-              },
-              body: JSON.stringify({
-                model: 'gemini-1.5-flash',
-                messages: [{ role: 'user', content: prompt }],
-                temperature: 0.1
-              })
-            });
-            if (gRes.ok) {
-              var gData = await gRes.json();
-              content = gData.choices && gData.choices[0] && gData.choices[0].message && gData.choices[0].message.content;
-            }
-          } catch (ex) { }
-        }
-
-      } else {
-        aiLog('wait', '📡 Đang gửi dữ liệu đến ' + AI_CONFIG[provider].name + '...');
-        var endpoint = 'https://api.openai.com/v1/chat/completions';
-        if (provider === 'grok') endpoint = 'https://api.x.ai/v1/chat/completions';
-        if (provider === 'deepseek') endpoint = 'https://api.deepseek.com/chat/completions';
-
-        var res = await fetch(endpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + key
-          },
-          body: JSON.stringify({
-            model: userModel,
-            messages: [{ role: 'user', content: prompt }],
-            temperature: 0.1
-          })
-        });
-        if (res.ok) {
-          var data = await res.json();
-          content = data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
-        }
-      }
-
-      if (content) {
-        parseAIResponse(content);
-        aiSuccess = true;
-      }
-    } catch (err) {
-      console.warn('External AI call failed, engaging smart local fallback:', err);
-    }
-  }
-
-  if (!aiSuccess) {
-    aiLog('info', '⚡ Đang kích hoạt bộ máy phân tích &amp; ghép nối thông minh...');
-    await processInstantInternal();
-    aiLog('ok', '🎉 Đã hoàn tất bóc tách &amp; ghép nối dữ liệu thành công!');
-    toast('🤖 Đã xử lý & điền xong dữ liệu!', 'ai-t');
-  }
-
-  btn.disabled = false;
-  btn.innerHTML = '🤖 AI Tự Đọc &amp; Điền';
-}
-
-function buildPrompt(text) {
-  return `Bạn là chuyên gia phân tích dự toán thiết bị công nghệ thông tin và máy văn phòng.
-
-Dưới đây là nội dung từ một hoặc nhiều tệp tin được tải lên cùng lúc:
----DỮ LIỆU CÁC TỆP TIN BẮT ĐẦU---
-${text.substring(0, 16000)}
----DỮ LIỆU CÁC TỆP TIN KẾT THÚC---
-
-Nhiệm vụ của bạn:
-1. Xác định Tên dự án / gói thầu (nếu có)
-2. Xác định Nhóm hạng mục / thiết bị (nếu có)
-3. Trích xuất TOÀN BỘ danh sách thiết bị. Với mỗi thiết bị cần có:
-   - Tên đầy đủ của thiết bị
-   - Model (không để số tiền vào đây)
-   - Hãng sản xuất (không để số tiền vào đây)
-   - Xuất xứ / Nước sản xuất (không để số tiền vào đây)
-   - Đơn vị tính (Máy / Cái / Bộ...)
-   - Số lượng (số nguyên)
-   - Đơn giá đã gồm VAT (số nguyên VNĐ, ví dụ: 4950000)
-   - Thời hạn bảo hành
-   - Toàn bộ thông số kỹ thuật chi tiết của thiết bị đó (dưới dạng danh sách key-value)
-
-QUY TẮC PHẢN HỒI:
-- BẮT BUỘC trả về DUY NHẤT một chuỗi JSON hợp lệ theo cấu trúc sau:
-
-{
-  "projectName": "Tên dự án hoặc gói thầu",
-  "groupName": "Tên nhóm thiết bị",
-  "devices": [
-    {
-      "name": "Máy in A4 đen trắng OKI B433DN",
-      "model": "B433DN",
-      "brand": "OKI",
-      "origin": "Thái Lan",
-      "unit": "Máy",
-      "qty": 1,
-      "price": 0,
-      "warranty": "12 tháng",
-      "specs": [
-        {"key": "Chức năng chuẩn", "value": "Máy in đen trắng đảo mặt tự động"},
-        {"key": "Tốc độ in", "value": "40 trang/phút (A4)"}
-      ]
-    }
-  ]
-}`;
-}
-
-function parseAIResponse(content) {
-  try {
-    var clean = content.replace(/```json\s*/gi, '').replace(/```\s*/gi, '').trim();
-    var start = clean.indexOf('{');
-    var end = clean.lastIndexOf('}');
-    if (start < 0 || end < 0) throw new Error('Không tìm thấy JSON hợp lệ');
-    var obj = JSON.parse(clean.substring(start, end + 1));
-
-    if (!obj.devices || !obj.devices.length) throw new Error('Không tìm thấy thiết bị');
-
-    devs = []; devCnt = 0;
-    if (obj.projectName) document.getElementById('pjN').value = obj.projectName;
-    if (obj.groupName) document.getElementById('gpN').value = obj.groupName;
-
-    obj.devices.forEach(function (d, i) {
-      var specs = (d.specs || []).map(function (s) {
-        return { key: String(s.key || ''), value: String(s.value || '') };
-      });
-      var devObj = {
-        id: ++devCnt, stt: i + 1,
-        name: String(d.name || ''),
-        model: String(d.model || ''),
-        brand: String(d.brand || ''),
-        origin: String(d.origin || ''),
-        unit: String(d.unit || 'Máy'),
-        qty: Number(d.qty) || 1,
-        price: Number(d.price) || 0,
-        warranty: String(d.warranty || ''),
-        specs: specs
-      };
-      devs.push(sanitizeDevice(devObj));
-    });
-
-    var totV = devs.reduce(function (s, d) { return s + (d.qty || 0) * (d.price || 0); }, 0);
-    aiLog('ok', '🎉 Đã bóc tách thành công ' + devs.length + ' thiết bị! Tổng dự toán: ' + fmtV(totV));
-
-    buildStep2();
-    goStep(2);
-    toast('🤖 AI đã điền xong ' + devs.length + ' thiết bị!', 'ai-t');
-
-  } catch (err) {
-    console.warn(err);
-    throw err;
-  }
-}
-
-/* ═══════════════════════════════════════════
-   INSTANT SMART MULTI-FILE MERGER
-═══════════════════════════════════════════ */
-async function processInstant() {
-  if (fileList.length === 0) { toast('❌ Vui lòng tải lên ít nhất 1 file!', 'err'); return; }
-  var b = document.getElementById('btnSmartLocal');
-  b.disabled = true;
-  b.innerHTML = '<span class="spin-w"></span> Đang xử lý ' + fileList.length + ' file...';
-
-  try {
-    await processInstantInternal();
-    toast('✅ Đã ghép nối xong ' + fileList.length + ' file — ' + devs.length + ' thiết bị', 'ok');
-  } catch (err) {
-    console.error(err);
-    toast('❌ Lỗi khi đọc file: ' + err.message, 'err');
-  }
-
-  b.disabled = false;
-  b.innerHTML = '🚀 ĐỌC VÀ GHÉP NỐI TOÀN BỘ FILE NGAY ➔';
-}
-
-async function processInstantInternal() {
-  devs = []; devCnt = 0;
-  var allSpecs = [];
-
-  for (var i = 0; i < fileList.length; i++) {
-    var f = fileList[i];
-    var fn = f.name.toLowerCase();
-    var ab = await f.arrayBuffer();
-
-    if (fn.endsWith('.docx') || fn.endsWith('.doc')) {
-      var res = await mammoth.convertToHtml({ arrayBuffer: ab });
-      parseWordSmart(res.value, f.name, allSpecs);
-    } else if (fn.endsWith('.pdf')) {
-      await parsePdfSmart(ab, f.name, allSpecs);
-    } else {
-      var wb = XLSX.read(new Uint8Array(ab), { type: 'array', cellText: false, cellDates: true });
-      parseXlsxSmart(wb, f.name, allSpecs);
-    }
-  }
-
-  linkSpecsToDevices(allSpecs);
-
-  if (devs.length === 0 && allSpecs.length > 0) {
-    allSpecs.forEach(function (sp, idx) {
-      devs.push({
-        id: ++devCnt, stt: idx + 1,
-        name: sp.name || ('Thiết bị ' + (idx + 1)),
-        model: sp.model || '',
-        brand: sp.brand || '',
-        origin: sp.origin || '',
-        unit: 'Máy', qty: 1, price: 0,
-        warranty: sp.warranty || '',
-        specs: sp.specs || []
-      });
-    });
-  }
-
-  if (devs.length === 0) {
-    devs.push({
-      id: ++devCnt, stt: 1, name: 'Thiết bị mẫu',
-      model: '', brand: '', origin: '', unit: 'Máy', qty: 1, price: 0, warranty: '',
-      specs: [{ key: 'Ghi chú', value: 'Vui lòng kiểm tra lại cấu trúc file' }]
-    });
-  }
-
-  buildStep2();
-  goStep(2);
-}
-
-function gv(ws, r, c) { var cl = ws[XLSX.utils.encode_cell({ r: r, c: c })]; if (!cl) return ''; return String(cl.w || cl.v || '').trim(); }
-function gn(ws, r, c) { var cl = ws[XLSX.utils.encode_cell({ r: r, c: c })]; if (!cl) return 0; if (cl.t === 'n') return Number(cl.v) || 0; return parseFloat(String(cl.v || '').replace(/[^0-9.]/g, '')) || 0; }
-
-function isNumericOnly(v) {
-  if (v === null || v === undefined || v === '') return false;
-  return /^[0-9.,\s₫đđVNĐvnd]+$/i.test(String(v).trim());
-}
-
 function isPriceNumber(v) {
-  if (!v && v !== 0) return false;
-  var s = String(v).replace(/[^0-9.]/g, '');
-  var num = parseFloat(s);
-  return !isNaN(num) && num >= 1000;
+  if (!v) return false;
+  var clean = String(v).replace(/[.,\s₫đVNDvnd]/g, '');
+  return /^\d+$/.test(clean) && clean.length >= 4;
 }
 
 function parseNum(v) {
   if (typeof v === 'number') return v;
-  return parseFloat(String(v || '').replace(/[^0-9.]/g, '')) || 0;
+  if (!v) return 0;
+  var s = String(v).replace(/[^0-9.-]/g, '');
+  return parseFloat(s) || 0;
 }
 
 function sanitizeDevice(d) {
-  if (d && d.name) d.name = cleanDeviceName(d.name, d.model, d.brand);
-  if (isNumericOnly(d.brand)) {
-    var nb = parseNum(d.brand);
-    if (nb >= 1000 && !d.price) d.price = nb;
-    else if (nb > 0 && nb <= 500 && d.qty <= 1) d.qty = nb;
-    d.brand = '';
-  }
-  if (isNumericOnly(d.origin)) {
-    var no = parseNum(d.origin);
-    if (no >= 1000 && !d.price) d.price = no;
-    else if (no > 0 && no <= 500 && d.qty <= 1) d.qty = no;
-    d.origin = '';
-  }
-  if (isNumericOnly(d.model) && parseNum(d.model) >= 1000) {
-    if (!d.price) d.price = parseNum(d.model);
-    d.model = '';
-  }
-  if (typeof d.unit === 'number' || isNumericOnly(d.unit)) {
-    var nu = parseNum(d.unit);
-    if (nu >= 1000 && !d.price) d.price = nu;
-    else if (nu > 0 && nu <= 500 && d.qty <= 1) d.qty = nu;
-    d.unit = 'Máy';
-  }
+  d.name = String(d.name || '').trim();
+  d.model = String(d.model || '').trim();
+  d.brand = String(d.brand || '').trim();
+  d.origin = String(d.origin || '').trim();
+  d.unit = String(d.unit || 'Máy').trim();
+  d.qty = parseNum(d.qty) || 1;
+  d.price = parseNum(d.price) || 0;
+  d.warranty = String(d.warranty || '').trim();
+  d.specs = Array.isArray(d.specs) ? d.specs : [];
   return d;
 }
 
-function parseXlsxSmart(wb, fileName, allSpecs) {
-  var fileNameL = (fileName || '').toLowerCase();
-  var isTuyenBoFile = fileNameL.includes('tuyẻn bố') || fileNameL.includes('tuyen bo') ||
-    fileNameL.includes('đáp ứng') || fileNameL.includes('dap ung') ||
-    fileNameL.includes('kỹ thuật') || fileNameL.includes('ky thuat');
-
-  wb.SheetNames.forEach(function (nm) {
-    var ws = wb.Sheets[nm];
-    var nmL = nm.toLowerCase().replace(/\s+/g, '');
-    var isSummarySheet = nmL.includes('tonghop') || nmL.includes('tổnghợp') || nmL.includes('baogia') || nmL.includes('báogiá') || nmL.includes('dutoan') || nmL.includes('dựtoán');
-
-    var range = XLSX.utils.decode_range(ws['!ref'] || 'A1:Z60');
-    var hasSummaryHeader = false;
-    var hdrRow = -1;
-
-    // First: check if this is a Tuyên bố đáp ứng sheet
-    if (isTuyenBoFile || isTuyenBoSheet(ws, range)) {
-      parseTuyenBoSheet(ws, range, allSpecs);
-      return;
-    }
-
-    for (var r = range.s.r; r <= Math.min(range.e.r, range.s.r + 8); r++) {
-      var c0 = String(gv(ws, r, 0)).toLowerCase();
-      var c1 = String(gv(ws, r, 1)).toLowerCase();
-      if (c0.includes('stt') || c0 === 'tt' || c1.includes('danh mục') || c1.includes('tên thiết bị') || c1.includes('tên hàng')) {
-        hasSummaryHeader = true; hdrRow = r; break;
-      }
-    }
-
-    if (isSummarySheet || hasSummaryHeader) {
-      parseSummaryRows(ws, range, hdrRow);
-    } else {
-      var parsedSpec = parseSingleSpecSheet(ws, nm);
-      if (parsedSpec && parsedSpec.specs.length > 0) {
-        allSpecs.push(parsedSpec);
-      }
-    }
-  });
-}
-
-function parseSummaryRows(ws, range, hdrRow) {
-  var ds = hdrRow >= 0 ? hdrRow + 1 : range.s.r + 1;
-
-  var colMap = { stt: -1, name: -1, model: -1, brand: -1, origin: -1, unit: -1, qty: -1, price: -1, total: -1 };
-  if (hdrRow >= 0) {
-    for (var c = range.s.c; c <= range.e.c; c++) {
-      var h = String(gv(ws, hdrRow, c)).toLowerCase().replace(/\s+/g, ' ');
-      if (!h) continue;
-      if ((h.includes('stt') || h === 'tt') && colMap.stt === -1) colMap.stt = c;
-      else if ((h.includes('hạng mục') || h.includes('danh mục') || h.includes('tên thiết bị') || h.includes('tên máy') || h.includes('tên hàng') || h.includes('hàng hóa') || h.includes('nội dung')) && colMap.name === -1) colMap.name = c;
-      else if ((h.includes('model') || h.includes('mã hiệu') || h.includes('ký hiệu')) && colMap.model === -1) colMap.model = c;
-      else if ((h.includes('hãng') || h.includes('thương hiệu') || h.includes('nhà sản xuất') || h.includes('nsx')) && colMap.brand === -1) colMap.brand = c;
-      else if ((h.includes('xuất xứ') || h.includes('nước sản xuất') || h.includes('nơi sản xuất')) && colMap.origin === -1) colMap.origin = c;
-      else if ((h.includes('đvt') || h.includes('đơn vị tính') || h === 'đơn vị') && colMap.unit === -1) colMap.unit = c;
-      else if ((h.includes('số lượng') || h === 'sl' || h.includes('qty')) && colMap.qty === -1) colMap.qty = c;
-      else if (colMap.price === -1 && (h.includes('đơn giá') || h.includes('đơn gia') || h.includes('giá bán') || (h.includes('giá') && !h.includes('đánh giá') && !h.includes('thành tiền')))) colMap.price = c;
-      else if ((h.includes('thành tiền') || h.includes('tổng tiền') || h.includes('tổng cộng')) && colMap.total === -1) colMap.total = c;
-    }
-  }
-
-  for (var r2 = range.s.r; r2 <= Math.min(range.e.r, range.s.r + 7); r2++) {
-    var a = String(gv(ws, r2, 0)).trim().toUpperCase();
-    var b = gv(ws, r2, 1);
-    if (a === 'A' && b && document.getElementById('pjN') && !document.getElementById('pjN').value) document.getElementById('pjN').value = String(b);
-    if ((a === 'I' || a === '1') && b && document.getElementById('gpN') && !document.getElementById('gpN').value) document.getElementById('gpN').value = String(b);
-  }
-
-  for (var row = ds; row <= range.e.r; row++) {
-    var sttColIdx = colMap.stt >= 0 ? colMap.stt : 0;
-    var sv = String(gv(ws, row, sttColIdx)).trim().toUpperCase();
-    if (['', 'A', 'B', 'C', 'I', 'II', 'III', 'IV', 'V', 'TỔNG CỘNG', 'TOTAL', 'TỔNG'].indexOf(sv) >= 0) continue;
-
-    var rawName = colMap.name >= 0 ? gv(ws, row, colMap.name) : gv(ws, row, 1);
-    if (!rawName || rawName.toUpperCase().startsWith('TỔNG')) continue;
-
-    // Strictly filter out non-hardware items (license, internet line, services...)
-    if (!isStrictHardwareDevice(rawName)) continue;
-
-    var sttNum = parseInt(sv);
-    var model = colMap.model >= 0 ? gv(ws, row, colMap.model) : '';
-    var brand = colMap.brand >= 0 ? gv(ws, row, colMap.brand) : '';
-    var origin = colMap.origin >= 0 ? gv(ws, row, colMap.origin) : '';
-    var unit = colMap.unit >= 0 ? gv(ws, row, colMap.unit) : 'Máy';
-    var qty = colMap.qty >= 0 ? (gn(ws, row, colMap.qty) || 1) : 1;
-    var price = 0;
-
-    var name = cleanFullDeviceName(rawName, sttNum, model, brand);
-
-    if (!price) {
-      for (var fc = range.s.c; fc <= range.e.c; fc++) {
-        if (fc === colMap.name || fc === colMap.stt || fc === colMap.qty) continue;
-        var cellVal = gn(ws, row, fc);
-        // No default prices
-        price = 0;
-      }
-    }
-
-    var devObj = {
-      id: ++devCnt,
-      stt: !isNaN(sttNum) && sttNum > 0 ? sttNum : (devs.length + 1),
-      origStt: !isNaN(sttNum) && sttNum > 0 ? sttNum : (devs.length + 1),
-      name: name, model: model, brand: brand,
-      origin: origin, unit: unit || 'Máy', qty: qty, price: price,
-      warranty: '12 tháng', specs: []
-    };
-
-    devs.push(sanitizeDevice(devObj));
-  }
-}
-
 function isNoiseOrNonDeviceText(text) {
-  if (!text || typeof text !== 'string') return true;
-  var s = text.trim().toLowerCase();
-  if (s.length < 2) return true;
-
-  // Ưu tiên giữ lại nếu chứa tên thiết bị phần cứng
-  if (s.includes('camera') || s.includes('switch') || s.includes('máy ') || s.includes('máy vi tính') || s.includes('máy in') || s.includes('scan') || s.includes('license') || s.includes('cáp') || s.includes('cân bằng tải') || s.includes('hub') || s.includes('router') || s.includes('tường lửa') || s.includes('server') || s.includes('kiosk') || s.includes('ipad') || s.includes('tivi') || s.includes('ổ cứng') || s.includes('chiếu') || s.includes('photo')) {
-    return false;
-  }
-
-  // 1. Safety, Fire protection, PCCC, Labor safety, Environment, Method statements, Acceptance
-  var noiseSafetyKeywords = [
-    'pccc', 'phòng cháy', 'chữa cháy', 'an toàn', 'vệ sinh lao động', 'bảo hộ lao động',
-    'thuyết minh', 'biện pháp tổ chức', 'biện pháp thi công', 'giải pháp kỹ thuật',
-    'tổ chức cung cấp', 'phương án', 'nghiệm thu', 'bàn giao', 'thủ tục nghiệm thu',
-    'quy chuẩn xây dựng', 'quy chuẩn việt nam', 'quy định pháp luật', 'văn bản pháp lý',
-    'tài liệu pháp lý', 'áp dụng trong quá trình', 'yêu cầu đối với nhà thầu',
-    'yêu cầu khác', 'tài liệu pháp lý khác', 'trong quá trình đăng tải', 'thông báo mời thầu',
-    'làm rõ e-hsmt', 'khói bụi', 'tiếng ồn', 'bảo vệ môi trường', 'trật tự',
-    'thực hiện đúng theo quy định', 'mọi thủ tục nghiệm thu'
+  if (!text) return true;
+  var t = text.toLowerCase().trim();
+  var noise = [
+    'tổng cộng', 'tổng số tiền', 'bằng chữ', 'ghi chú', 'thuế vat', 'đơn giá',
+    'thành tiền', 'chữ ký', 'đại diện', 'giám đốc', 'ngày tháng', 'cộng tiền hàng',
+    'stt', 'danh mục', 'tiêu chuẩn kỹ thuật', 'yêu cầu kỹ thuật', 'bảng báo giá',
+    'đại diện hợp pháp', 'đứng đầu liên danh'
   ];
-  if (noiseSafetyKeywords.some(function (kw) { return s.includes(kw); })) {
-    return true;
-  }
-
-  // 2. People, Personnel, Roles, Signatures, Organizations
-  var noisePeopleKeywords = [
-    'đại diện', 'người đại diện', 'ông/bà', 'họ và tên', 'họ tên', 'chức vụ',
-    'giám đốc', 'phó giám đốc', 'trưởng phòng', 'kỹ sư', 'kỹ thuật viên', 'cán bộ',
-    'kế toán', 'thủ quỹ', 'chỉ huy trưởng', 'nhân sự', 'nhân lực', 'nhân viên',
-    'người giao', 'người nhận', 'bên giao', 'bên nhận', 'bên a', 'bên b',
-    'bên mời thầu', 'chủ đầu tư', 'nhà thầu', 'liên danh', 'thành viên liên danh',
-    'tổ chuyên gia', 'tổ chấm thầu', 'chữ ký', 'ký tên', 'đóng dấu', 'ký, ghi rõ',
-    'người lập biểu', 'người duyệt', 'trưởng ban', 'đoàn kiểm tra'
-  ];
-  if (noisePeopleKeywords.some(function (kw) {
-    return s.startsWith(kw) || s === kw || s.includes('chức vụ:') || s.includes('họ và tên:');
-  })) {
-    return true;
-  }
-
-  // 3. Geographical names, distribution tables, allocation of communes/wards/districts
-  var noiseGeoKeywords = [
-    'tên xã', 'tên phường', 'tên thị trấn', 'tên huyện', 'tên quận', 'tên tỉnh',
-    'tên đặc khu', 'xã/phường', 'phường/xã', 'xã, phường', 'phường, xã', 'quận/huyện', 'huyện/quận',
-    'địa bàn', 'đặc khu', 'phân bổ', 'bảng phân bổ', 'danh sách phân bổ', 'địa điểm giao',
-    'nơi nhận', 'đơn vị nhận', 'đơn vị thụ hưởng', 'điểm giao hàng', 'danh sách địa điểm',
-    'công an xã', 'công an phường', 'công an thị trấn', 'công an huyện', 'công an quận',
-    'công an tỉnh', 'công an thành phố', 'công an tp', 'đội cảnh sát', 'đồn công an',
-    'xã ', 'phường ', 'thị trấn ', 'thị xã ', 'thôn ', 'ấp ', 'bản ', 'buôn ', 'khu phố '
-  ];
-  if (noiseGeoKeywords.some(function (kw) {
-    return s.startsWith(kw) || s.includes(kw);
-  })) {
-    return true;
-  }
-
-  // 4. Matrix count rows like "| 12 | 6 | 18 | 4 | 0 | 0" or "100: Xã Nam Đà | 12..."
-  if (/(\b0\s*\|\s*0\b|\b\d+\s*\|\s*\d+\s*\|\s*\d+\b)/.test(s) && !/(gb|tb|hz|ghz|dpi|ppm|ipm|watt|mah|inch)/.test(s)) {
-    return true;
-  }
-
-  // 5. Legal, Administrative, Contractual, General clauses
-  var noiseAdminKeywords = [
-    'cộng hòa xã hội', 'độc lập - tự do', 'độc lập tự do', 'hạnh phúc', 'kính gửi',
-    'căn cứ luật', 'căn cứ nghị định', 'căn cứ quyết định', 'căn cứ thông tư',
-    'điều khoản', 'điều kiện hợp đồng', 'bảo đảm dự thầu', 'bảo lãnh dự thầu',
-    'hiệu lực của e-hsdt', 'hiệu lực e-hsdt', 'năng lực tài chính', 'kinh nghiệm hợp đồng',
-    'doanh thu bình quân', 'nghị quyết số', 'kế hoạch số', 'quyết định số', 'báo cáo đánh giá',
-    'phần 1', 'phần 2', 'chương i', 'chương ii', 'chương iii', 'chương iv', 'chương v',
-    'mục lục', 'danh mục viết tắt', 'bảng biểu', 'lời nói đầu', 'phụ lục hợp đồng',
-    'tổng cộng', 'tổng số tiền', 'bằng chữ', 'thời gian thực hiện', 'địa điểm giao hàng'
-  ];
-  if (noiseAdminKeywords.some(function (kw) { return s.includes(kw); })) {
-    return true;
-  }
-
-  return false;
-}
-
-function cleanDeviceName(rawName) {
-  if (!rawName) return '';
-  var s = String(rawName).replace(/[\u00a0\s]+/g, ' ').trim();
-  s = s.replace(/phụ lục\s*\d*[:\s-]*(tổng hợp[^(]*)?(\([^)]*\))?/gi, '').trim();
-  s = s.replace(/^[0-9]+[.\-\s:]+/, '').trim();
-  s = s.replace(/hoặc\s+tương\s+đương/gi, '').trim();
-  s = s.replace(/tương\s+đương/gi, '').trim();
-  s = s.replace(/\(có chế độ scan\)/gi, '').trim();
-  s = s.replace(/\(máy scan\)/gi, '').trim();
-  s = s.replace(/\s{2,}/g, ' ').trim();
-  return s;
+  return noise.some(function (n) { return t === n || t.startsWith(n); });
 }
 
 function cleanFullDeviceName(name, stt, model, brand) {
   if (!name) return '';
-  var s = String(name).replace(/[\u00a0\s]+/g, ' ').trim();
-  s = s.replace(/phụ lục\s*\d*[:\s-]*(tổng hợp[^(]*)?(\([^)]*\))?/gi, '').trim();
-  s = s.replace(/^[0-9]+[.\-\s:]+/, '').trim();
-  s = s.replace(/hoặc\s+tương\s+đương/gi, '').trim();
-  s = s.replace(/tương\s+đương/gi, '').trim();
-  s = s.replace(/\(có chế độ scan\)/gi, '').trim();
-  s = s.replace(/\(máy scan\)/gi, '').trim();
-  s = s.replace(/\s{2,}/g, ' ').trim();
-
-  var sttNum = parseInt(stt);
-  if (sttNum === 1 || s.includes('Cubi')) return 'Máy vi tính để bàn MSI Cubi NUC 1M';
-  if (sttNum === 2 || s.includes('MS-14S1') || s.includes('Commercial 14')) return 'Máy tính xách tay MSI Commercial 14 B1MG (MS-14S1)';
-  if (sttNum === 3 || s.includes('B433DN') || s.includes('OKI')) return 'Máy in A4 đen trắng OKI B433DN';
-  if (sttNum === 4 || s.includes('SP-2240') || s.includes('RICOH SP') || s.includes('SP-2240N')) return 'Máy quét tài liệu số hóa RICOH SP-2240N';
-  if (sttNum === 6 || s.includes('CBS350')) return 'Thiết bị mạng Switch Cisco CBS350-24S';
-  if (sttNum === 7 || s.includes('WS-C2960L')) return 'Thiết bị mạng Switch Cisco WS-C2960L';
-  if (sttNum === 8 || s.includes('CBS250')) return 'Thiết bị mạng Switch Cisco CBS250-48PP';
-  if (sttNum === 9 || s.includes('VC520')) return 'Thiết bị phòng họp trực tuyến Aver VC520 PRO3';
-  if (sttNum === 10 || (s.includes('Switch Cisco') && !s.includes('CBS'))) return 'Thiết bị mạng Switch Cisco 24 Port Gigabit';
-  if (sttNum === 12 || s.includes('Sophos') || s.includes('XGS') || s.includes('tường lửa')) return 'Thiết bị tường lửa Sophos XGS 128';
-  if (sttNum === 13 || s.includes('1200')) return 'Switch Cisco Catalyst 1200 Series';
-  if (sttNum === 14 || s.includes('Camera')) return 'Camera an ninh IP';
-  if (sttNum === 15 || s.includes('P162') || s.includes('chiếu')) return 'Máy chiếu INFOCUS P162 + phụ kiện';
-  if (sttNum === 16 || s.includes('CAT6') || s.includes('Việt Hàn') || s.includes('COMMSCOPE')) return 'Cáp mạng CAT 6 Việt Hàn CAT6';
-  if (sttNum === 17 || s.includes('ER707') || s.includes('Draytek') || s.includes('cân bằng tải')) return 'Thiết bị cân bằng tải TP-Link Omada ER707-M2';
-  if (sttNum === 18 || s.includes('M706n') || s.includes('Máy in A3')) return 'Máy in A3 HP LaserJet Pro M706n';
-  if (sttNum === 19 || s.includes('IM 3500') || s.includes('photocopy')) return 'Máy photocopy Ricoh IM 3500';
-
-  return s;
-}
-
-function cleanDeviceName(rawName) {
-  return cleanFullDeviceName(rawName);
-}
-
-function cleanFullDeviceName(name, stt, model, brand) {
-  if (!name) return '';
-  var s = String(name).replace(/[\u00a0\s]+/g, ' ').trim();
-  s = s.replace(/phụ lục\s*\d*[:\s-]*(tổng hợp[^(]*)?(\([^)]*\))?/gi, '').trim();
-  s = s.replace(/^[0-9]+[.\-\s:]+/, '').trim();
-  s = s.replace(/hoặc\s+tương\s+đương/gi, '').trim();
-  s = s.replace(/tương\s+đương/gi, '').trim();
-  s = s.replace(/\(có chế độ scan\)/gi, '').trim();
-  s = s.replace(/\(máy scan\)/gi, '').trim();
-  s = s.replace(/\s{2,}/g, ' ').trim();
-
-  var sttNum = parseInt(stt);
-  if (sttNum === 1 || s.includes('Cubi')) return 'Máy vi tính để bàn MSI Cubi NUC 1M';
-  if (sttNum === 2 || s.includes('MS-14S1') || s.includes('Commercial 14')) return 'Máy tính xách tay MSI Commercial 14 B1MG (MS-14S1)';
-  if (sttNum === 3 || s.includes('B433DN') || s.includes('OKI')) return 'Máy in A4 đen trắng OKI B433DN';
-  if (sttNum === 4 || s.includes('SP-2240') || s.includes('RICOH SP') || s.includes('SP-2240N')) return 'Máy quét tài liệu số hóa RICOH SP-2240N';
-  if (sttNum === 6 || s.includes('CBS350')) return 'Thiết bị mạng Switch Cisco CBS350-24S';
-  if (sttNum === 7 || s.includes('WS-C2960L') || s.includes('2960L')) return 'Thiết bị mạng Switch Cisco WS-C2960L';
-  if (sttNum === 8 || s.includes('CBS250')) return 'Thiết bị mạng Switch Cisco CBS250-48PP';
-  if (sttNum === 9 || s.includes('VC520')) return 'Thiết bị phòng họp trực tuyến Aver VC520 PRO3';
-  if (sttNum === 13 || s.includes('1200') || s.includes('catalyst')) return 'Switch Cisco Catalyst 1200 Series';
-  if (sttNum === 10 || s.includes('Switch Cisco')) return 'Thiết bị mạng Switch Cisco 24 Port Gigabit';
-  if (sttNum === 12 || s.includes('Sophos') || s.includes('XGS') || s.includes('tường lửa')) return 'Thiết bị tường lửa Sophos XGS 128';
-  if (sttNum === 14 || s.includes('Camera')) return 'Camera an ninh IP';
-  if (sttNum === 15 || s.includes('P162') || s.includes('chiếu')) return 'Máy chiếu INFOCUS P162 + phụ kiện';
-  if (sttNum === 16 || s.includes('CAT6') || s.includes('Việt Hàn') || s.includes('COMMSCOPE')) return 'Cáp mạng CAT 6 Việt Hàn CAT6';
-  if (sttNum === 17 || s.includes('ER707') || s.includes('Draytek') || s.includes('cân bằng tải')) return 'Thiết bị cân bằng tải TP-Link Omada ER707-M2';
-  if (sttNum === 18 || s.includes('M706n') || s.includes('Máy in A3')) return 'Máy in A3 HP LaserJet Pro M706n';
-  if (sttNum === 19 || s.includes('IM 3500') || s.includes('photocopy')) return 'Máy photocopy Ricoh IM 3500';
-
-  return s;
-}
-
-function cleanDeviceName(rawName) {
-  return cleanFullDeviceName(rawName);
+  var clean = name.replace(/^(\d+[\.\s\-\)]+|mục\s*\d+[\.\s\-\)]*)/i, '').trim();
+  return clean;
 }
 
 function isStrictHardwareDevice(str) {
   if (!str || typeof str !== 'string') return false;
-  var s = str.trim().toLowerCase().replace(/[\u00a0\s]+/g, ' ');
-  if (s.length < 3) return false;
-
-  // 1. Blacklist: Non-hardware items (licenses, services, internet lines, maintenance, trainings, legal)
-  var nonHardware = [
-    'license', 'gia hạn', 'bản quyền', 'thuê đường truyền', 'thuê kênh', 'thuê mạng',
-    'đường truyền', 'số liệu chuyên dùng', 'chuyên dùng', 'dịch vụ', 'chi phí', 'đào tạo',
-    'bảo trì', 'bảo dưỡng', 'vận chuyển', 'lắp đặt', 'nhân công', 'tháo dỡ', 'kiểm định',
-    'chuyển giao', 'bảo hiểm', 'thuyết minh', 'pccc', 'phòng cháy', 'vệ sinh', 'nghiệm thu',
-    'kế hoạch', 'hợp đồng', 'bảo lãnh', 'e-hsdt', 'e-hsmt', 'năng lực', 'kinh nghiệm', 'tài chính',
-    'đại diện', 'ông/bà', 'họ và tên', 'chức vụ', 'kỹ sư', 'cán bộ', 'kế toán',
-    'mục lục', 'tổng cộng', 'bằng chữ', 'thời gian thực hiện', 'tiêu chuẩn đánh giá',
-    'phạm vi cung cấp', 'danh mục hàng hóa', 'bảng tổng hợp', 'chương ', 'phần '
+  var s = str.toLowerCase().trim();
+  if (isNoiseOrNonDeviceText(s)) return false;
+  var keywords = [
+    'máy', 'laptop', 'pc', 'server', 'màn hình', 'in', 'scan', 'photo', 'switch',
+    'router', 'firewall', 'wifi', 'camera', 'ups', 'bộ lưu điện', 'điện thoại',
+    'tai nghe', 'chuột', 'bàn phím', 'ổ cứng', 'ram', 'cpu', 'nguồn', 'card'
   ];
-  if (nonHardware.some(function (bw) { return s.includes(bw); })) {
-    return false;
-  }
-
-  // 2. Whitelist: MUST contain explicit hardware device keywords
-  var hardwareKeywords = [
-    'máy vi tính', 'máy tính', 'pc', 'desktop', 'laptop', 'máy chủ', 'server',
-    'máy in', 'máy scan', 'máy quét', 'máy photo', 'máy photocopy', 'máy đa chức năng',
-    'màn hình', 'switch', 'bộ chuyển mạch', 'hub', 'router', 'access point', 'wifi',
-    'đầu đọc thẻ', 'thẻ từ', 'thẻ nhớ', 'đầu đọc', 'bộ lưu điện', 'ups',
-    'máy ảnh', 'camera', 'kiosk', 'ipad', 'tablet', 'ổ cứng', 'tủ rack',
-    'máy chiếu', 'loa', 'amply', 'micro', 'webcam', 'bàn phím', 'chuột',
-    'cáp mạng', 'cáp', 'cân bằng tải', 'tường lửa', 'firewall', 'phòng họp trực tuyến',
-    'hội nghị truyền hình', 'thiết bị mạng', 'thiết bị phòng họp', 'thiết bị'
-  ];
-
-  return hardwareKeywords.some(function (hw) { return s.includes(hw); });
+  return keywords.some(function (k) { return s.includes(k); });
 }
 
 function isRealDevice(name) {
   return isStrictHardwareDevice(name);
 }
 
-function isGenericHeaderOrNoiseSpec(text) {
-  if (!text || typeof text !== 'string') return true;
-  var s = text.trim().toLowerCase();
-  if (s.length < 2) return true;
-
-  var genericHeaders = [
-    'hạng mục', 'chi tiết', 'đặc điểm kỹ thuật', 'đặc điểm', 'thông số kỹ thuật',
-    'thông số', 'yêu cầu kỹ thuật', 'yêu cầu', 'yêu cầu chung', 'tiêu chí', 'chỉ tiêu',
-    'chỉ tiêu kỹ thuật', 'nội dung', 'mô tả', 'mô tả kỹ thuật', 'tính năng', 'chức năng',
-    'stt', 'tt', 'tên hàng hóa', 'tên thiết bị', 'danh mục', 'chủng loại', 'đơn vị tính',
-    'đvt', 'số lượng', 'ghi chú', 'mức yêu cầu', 'thông số chào thầu', 'chào thầu',
-    'đáp ứng', 'tham chiếu', 'quy cách', 'cấu hình', 'cấu hình kỹ thuật', 'thông số cơ bản',
-    'thông số chi tiết', 'yêu cầu cấu hình', 'tiêu chuẩn áp dụng', 'tiêu chuẩn'
-  ];
-
-  // If text exactly matches or is just a generic header with punctuation
-  if (genericHeaders.some(function (h) {
-    return s === h || s === (h + ':') || s === (h + ' :') || s === ('- ' + h) || s === ('• ' + h);
-  })) {
-    return true;
-  }
-
-  // Check if text is just numbers / punctuation
-  if (/^[:\-\.\s\d\*\+•]+$/.test(s)) return true;
-
-  return false;
-}
-
 function isValidTechnicalSpec(specText) {
-  if (!specText || typeof specText !== 'string') return false;
-  if (isNoiseOrNonDeviceText(specText)) return false;
-  if (isGenericHeaderOrNoiseSpec(specText)) return false;
-  var s = specText.trim().toLowerCase();
-  if (s.length < 3) return false;
-  if (/^(\d+\s*:\s*)?(xã|phường|thị trấn|quận|huyện|tỉnh|đội|đồn|công an)/i.test(s)) return false;
+  if (!specText) return false;
+  var s = String(specText).trim();
+  if (s.length < 2) return false;
+  if (isNoiseOrNonDeviceText(s)) return false;
   return true;
 }
 
-function isDeviceHeader(k, v) {
-  var kL = (k || '').toLowerCase().trim();
-  var vL = (v || '').toLowerCase().trim();
-  var full = (kL + ' ' + vL).trim();
-
-  if (!kL && !vL) return false;
-  if (isNoiseOrNonDeviceText(kL) || isNoiseOrNonDeviceText(vL) || isNoiseOrNonDeviceText(full)) return false;
-  if (kL.includes('quay lại') || kL.includes('stt') || kL === 'tt') return false;
-
-  return isRealDevice(full) || isRealDevice(kL) || isRealDevice(vL);
-}
-
-// ── Detect & parse "Bảng tuyên bố đáp ứng" format ──
-// Col A = STT, Col B = Yêu cầu, Col C = Đề xuất
-// Items in USE_COL_C_ITEMS will use col C specs; others use col B specs (full)
-var USE_COL_C_ITEMS = [15, 16, 17]; // mục lấy thông số từ cột Đề xuất
-
-function parseSpecSheetUniversal(ws, sheetName) {
-  var range = XLSX.utils.decode_range(ws['!ref'] || 'A1:Z500');
-  function gvLocal(r, c) {
-    if (c < 0) return '';
-    var cell = ws[XLSX.utils.encode_cell({ r: r, c: c })];
-    return cell ? String(cell.w || cell.v || '').trim() : '';
-  }
-
-  var hdrRow = -1;
-  var colMap = { stt: -1, name: -1, req: -1, offer: -1, compare: -1 };
-
-  for (var r = range.s.r; r <= Math.min(range.e.r, range.s.r + 15); r++) {
-    var hasStt = false;
-    var hasSpecOrOffer = false;
-    var tempMap = { stt: -1, name: -1, req: -1, offer: -1, compare: -1 };
-
-    for (var c = range.s.c; c <= range.e.c; c++) {
-      var val = gvLocal(r, c).toLowerCase().replace(/\s+/g, ' ');
-      if (!val) continue;
-      if ((val === 'stt' || val === 'tt' || val.startsWith('stt ')) && tempMap.stt === -1) {
-        tempMap.stt = c; hasStt = true;
-      }
-      if ((val.includes('hạng mục') || val.includes('danh mục') || val.includes('tên hàng') || val.includes('tên thiết bị')) && !val.includes('thông số') && tempMap.name === -1) {
-        tempMap.name = c;
-      }
-      if ((val.includes('thông số') || val.includes('yêu cầu') || val.includes('e-hsmt') || val.includes('hsmt')) && tempMap.req === -1) {
-        tempMap.req = c; hasSpecOrOffer = true;
-      }
-      if ((val.includes('đề xuất') || val.includes('chào thầu') || val.includes('hàng hóa chào')) && tempMap.offer === -1) {
-        tempMap.offer = c; hasSpecOrOffer = true;
-      }
-      if ((val.includes('so sánh') || val.includes('tuyên bố') || val.includes('đáp ứng')) && tempMap.compare === -1) {
-        tempMap.compare = c;
-      }
-    }
-
-    if (hasStt && hasSpecOrOffer) {
-      hdrRow = r;
-      colMap = tempMap;
-      break;
-    }
-  }
-
-  if (hdrRow === -1) return null;
-
-  if (colMap.name === -1 && colMap.stt !== -1 && colMap.req > colMap.stt + 1) {
-    colMap.name = colMap.stt + 1;
-  }
-
-  var sections = [];
-  var curDev = null;
-  var USE_OFFER_ITEMS = [16, 17];
-
-  function finalize() {
-    if (curDev && (curDev.specs.length > 0 || curDev.name)) {
-      while (curDev.specs.length > 0) {
-        var last = curDev.specs[curDev.specs.length - 1];
-        var full = (last.key + ' ' + last.value).toLowerCase();
-        if (full.includes('đại diện') || full.includes('đứng đầu') || full.includes('liên danh') || full.includes('ký tên')) {
-          curDev.specs.pop();
-        } else break;
-      }
-      autoDetectDeviceInfo(curDev);
-      sections.push(curDev);
-    }
-  }
-
-  for (var r2 = hdrRow + 1; r2 <= range.e.r; r2++) {
-    var sttRaw = gvLocal(r2, colMap.stt);
-    var nameRaw = gvLocal(r2, colMap.name);
-    var reqRaw = gvLocal(r2, colMap.req);
-    var offerRaw = gvLocal(r2, colMap.offer);
-
-    var sttNum = parseInt(sttRaw);
-    if (!isNaN(sttNum) && sttNum > 0 && String(sttRaw).trim() !== '' && (nameRaw || reqRaw || offerRaw)) {
-      finalize();
-      var isOfferItem = USE_OFFER_ITEMS.indexOf(sttNum) >= 0;
-      var devName = isOfferItem ? (offerRaw || nameRaw || reqRaw) : (nameRaw || reqRaw || offerRaw);
-
-      curDev = {
-        sheetName: sheetName,
-        stt: sttNum,
-        name: cleanFullDeviceName(devName, sttNum),
-        isOfferItem: isOfferItem,
-        model: '', brand: '', origin: '', warranty: '',
-        specs: []
-      };
-      continue;
-    }
-
-    if (!curDev) continue;
-
-    var isOffer = curDev.isOfferItem;
-    var specKey = (colMap.name !== -1 && colMap.name !== colMap.req) ? nameRaw : '';
-    var specVal = isOffer ? (offerRaw || reqRaw) : (reqRaw || offerRaw);
-
-    if (!specKey && !specVal) continue;
-    var rowText = (specKey + ' ' + specVal).toLowerCase();
-    if (rowText.startsWith('thông số kỹ thuật') || rowText === 'thông số kỹ thuật:') continue;
-    if (rowText.includes('đại diện hợp pháp') || rowText.includes('đứng đầu liên danh') || rowText.includes('ký tên')) continue;
-
-    if (!specKey && specVal.includes(':') && specVal.length < 80) {
-      var parts = specVal.split(':');
-      specKey = parts[0].trim();
-      specVal = parts.slice(1).join(':').trim();
-    } else if (specKey && !specVal && specKey.includes(':')) {
-      var parts2 = specKey.split(':');
-      specKey = parts2[0].trim();
-      specVal = parts2.slice(1).join(':').trim();
-    }
-
-    if (specKey) {
-      var kL = specKey.toLowerCase();
-      if (!curDev.model && (kL.includes('model') || kL.includes('mã hiệu'))) curDev.model = specVal;
-      if (!curDev.brand && (kL.includes('hãng') || kL.includes('thương hiệu') || kL.includes('nhà sản xuất'))) curDev.brand = specVal;
-      if (!curDev.origin && (kL.includes('xuất xứ') || kL.includes('nước sản xuất') || kL.includes('sản xuất tại'))) curDev.origin = specVal;
-      if (!curDev.warranty && kL.includes('bảo hành')) curDev.warranty = specVal;
-
-      curDev.specs.push({ key: specKey, value: specVal });
-    } else if (specVal) {
-      // If no specKey, merge into previous spec item instead of creating a generic 'Thông số' row!
-      if (curDev.specs.length > 0) {
-        curDev.specs[curDev.specs.length - 1].value += '\n' + specVal;
-      } else {
-        curDev.specs.push({ key: 'Mô tả chung', value: specVal });
-      }
-    }
-  }
-  finalize();
-
-  return sections;
-}
-
-function isTuyenBoSheet(ws, range) {
-  return parseSpecSheetUniversal(ws, '') !== null;
-}
-
-function parseTuyenBoSheet(ws, range, allSpecs) {
-  var parsed = parseSpecSheetUniversal(ws, '');
-  if (parsed && parsed.length > 0) {
-    parsed.forEach(function (sec) { allSpecs.push(sec); });
-  }
-}
-
-function parseXlsxSmart(wb, fileName, allSpecs) {
-  wb.SheetNames.forEach(function (nm) {
-    var ws = wb.Sheets[nm];
-    var nmL = nm.toLowerCase().replace(/\s+/g, '');
-    var isSummarySheet = nmL.includes('tonghop') || nmL.includes('tổnghợp') || nmL.includes('baogia') || nmL.includes('báogiá') || nmL.includes('dutoan') || nmL.includes('dựtoán');
-
-    var range = XLSX.utils.decode_range(ws['!ref'] || 'A1:Z500');
-
-    // 1. Try Universal Spec Sheet Parser first (e.g. TSKT, Tuyên bố đáp ứng)
-    var specSections = parseSpecSheetUniversal(ws, nm);
-    if (specSections && specSections.length > 0) {
-      specSections.forEach(function (sec) { allSpecs.push(sec); });
-      return;
-    }
-
-    // 2. Check if this is a Summary Sheet
-    var hasSummaryHeader = false;
-    var hdrRow = -1;
-    for (var r = range.s.r; r <= Math.min(range.e.r, range.s.r + 8); r++) {
-      var c0 = String(gv(ws, r, 0)).toLowerCase();
-      var c1 = String(gv(ws, r, 1)).toLowerCase();
-      if (c0.includes('stt') || c0 === 'tt' || c1.includes('stt') || c1 === 'tt' || c1.includes('danh mục') || c1.includes('tên thiết bị') || c1.includes('tên hàng') || c1.includes('hạng mục')) {
-        hasSummaryHeader = true; hdrRow = r; break;
-      }
-    }
-
-    if (isSummarySheet || hasSummaryHeader) {
-      parseSummaryRows(ws, range, hdrRow);
-    } else {
-      var parsedSections = parseSingleSpecSheet(ws, nm);
-      parsedSections.forEach(function (sec) {
-        if (sec && (sec.specs.length > 0 || sec.name)) {
-          allSpecs.push(sec);
-        }
-      });
-    }
-  });
-}
-
-function parseSingleSpecSheet(ws, sheetName) {
-  var sections = [];
-  var currentSection = {
-    sheetName: sheetName,
-    name: '',
-    model: '', brand: '', origin: '', warranty: '',
-    specs: []
-  };
-
-  // Decode full range of sheet without artificial limits
-  var range = XLSX.utils.decode_range(ws['!ref'] || 'A1:Z500');
-
-  for (var r = range.s.r; r <= range.e.r; r++) {
-    // Scan all columns in this row to ensure no text is missed
-    var nonBlankCells = [];
-    for (var c = range.s.c; c <= Math.min(range.e.c, 12); c++) {
-      var cellTxt = String(gv(ws, r, c)).trim();
-      if (cellTxt) nonBlankCells.push({ col: c, text: cellTxt });
-    }
-
-    if (nonBlankCells.length === 0) continue;
-
-    var k = '';
-    var v = '';
-
-    if (nonBlankCells.length === 1) {
-      k = nonBlankCells[0].text;
-      v = '';
-    } else if (nonBlankCells.length === 2) {
-      k = nonBlankCells[0].text;
-      v = nonBlankCells[1].text;
-    } else {
-      k = nonBlankCells[0].text;
-      v = nonBlankCells.slice(1).map(function (x) { return x.text; }).join(' | ');
-    }
-
-    if (k.toUpperCase().includes('QUAY LẠI') || k.toUpperCase() === 'STT' || k.toUpperCase() === 'TT') continue;
-
-    // Check if this row represents a new machine header (e.g. Máy scan A3, Máy scan A4...)
-    if (isDeviceHeader(k, v) && currentSection.specs.length >= 3) {
-      sections.push(currentSection);
-      currentSection = {
-        sheetName: sheetName + '_' + (sections.length + 1),
-        name: v || k,
-        model: '', brand: '', origin: '', warranty: '',
-        specs: []
-      };
-      continue;
-    }
-
-    // Capture device name if not set yet
-    if (!currentSection.name && (isDeviceHeader(k, v) || r <= range.s.r + 2)) {
-      var candidate = v || k;
-      if (candidate.length > 5 && !candidate.toLowerCase().includes('thông số')) {
-        currentSection.name = candidate;
-      }
-    }
-
-    var kl = k.toLowerCase();
-    if (kl.includes('model') && !isPriceNumber(v)) currentSection.model = v;
-    if ((kl.includes('hãng') || kl.includes('thương hiệu') || kl.includes('nhà sản xuất')) && !isPriceNumber(v)) currentSection.brand = v;
-    if ((kl.includes('xuất xứ') || kl.includes('nước sản xuất') || kl.includes('sản xuất tại')) && !isPriceNumber(v)) currentSection.origin = v;
-    if (kl.includes('bảo hành')) currentSection.warranty = v;
-
-    if (k && k !== currentSection.name) {
-      currentSection.specs.push({ key: k, value: v });
-    }
-  }
-
-  if (currentSection.specs.length > 0 || currentSection.name) {
-    sections.push(currentSection);
-  }
-
-  return sections;
-}
-
-function parseWordSmart(html, fileName, allSpecs) {
-  var doc = new DOMParser().parseFromString(html, 'text/html');
-  var tables = Array.from(doc.querySelectorAll('table'));
-
-  // 1. Parse tables
-  tables.forEach(function (tbl) {
-    var rows = Array.from(tbl.querySelectorAll('tr'));
-    if (rows.length < 2) return;
-    var hdrCells = Array.from(rows[0].querySelectorAll('td,th')).map(function (c) { return c.innerText.trim().toLowerCase(); });
-    var hdrTxt = hdrCells.join(' ');
-
-    if (hdrTxt.includes('stt') || hdrTxt.includes('danh mục') || hdrTxt.includes('đơn giá') || hdrTxt.includes('tên hàng')) {
-      var colName = -1, colModel = -1, colBrand = -1, colOrigin = -1, colUnit = -1, colQty = -1, colPrice = -1;
-      hdrCells.forEach(function (h, c) {
-        if (h.includes('danh mục') || h.includes('tên thiết bị') || h.includes('tên hàng') || h.includes('nội dung')) colName = c;
-        else if (h.includes('model') || h.includes('mã hiệu')) colModel = c;
-        else if (h.includes('hãng') || h.includes('nhà sản xuất')) colBrand = c;
-        else if (h.includes('xuất xứ') || h.includes('nước')) colOrigin = c;
-        else if (h.includes('đvt') || h.includes('đơn vị')) colUnit = c;
-        else if (h.includes('số lượng') || h === 'sl') colQty = c;
-        else if (h.includes('đơn giá') || (h.includes('giá') && !h.includes('thành tiền'))) colPrice = c;
-      });
-
-      rows.slice(1).forEach(function (tr) {
-        var cells = Array.from(tr.querySelectorAll('td,th')).map(function (c) { return c.innerText.trim(); });
-        if (cells.length < 2) return;
-        var name = colName >= 0 ? cells[colName] : cells[1];
-        if (!name || name.toUpperCase().includes('TỔNG')) return;
-
-        var price = colPrice >= 0 ? parseNum(cells[colPrice]) : 0;
-        if (!price) {
-          cells.forEach(function (cv) {
-            var num = parseNum(cv);
-            if (num >= 1000 && !price) price = num;
-          });
-        }
-
-        var devObj = {
-          id: ++devCnt, stt: devs.length + 1,
-          name: name,
-          model: colModel >= 0 ? cells[colModel] : '',
-          brand: colBrand >= 0 ? cells[colBrand] : '',
-          origin: colOrigin >= 0 ? cells[colOrigin] : '',
-          unit: colUnit >= 0 ? cells[colUnit] : 'Máy',
-          qty: colQty >= 0 ? (parseInt(cells[colQty]) || 1) : 1,
-          price: price, warranty: '', specs: []
-        };
-        devs.push(sanitizeDevice(devObj));
-      });
-    } else {
-      var currentWordSec = {
-        name: rows[0].innerText.trim(),
-        model: '', brand: '', origin: '', warranty: '',
-        specs: []
-      };
-
-      rows.forEach(function (tr, rIdx) {
-        var cells = Array.from(tr.querySelectorAll('td,th')).map(function (c) { return c.innerText.trim(); });
-        if (cells.length >= 2 && cells[0] && cells[1]) {
-          var k = cells[0], v = cells[1];
-
-          if (isDeviceHeader(k, v) && currentWordSec.specs.length >= 3 && rIdx > 1) {
-            allSpecs.push(currentWordSec);
-            currentWordSec = {
-              name: v || k,
-              model: '', brand: '', origin: '', warranty: '',
-              specs: []
-            };
-            return;
-          }
-
-          var kl = k.toLowerCase();
-          if (kl.includes('model') && !isPriceNumber(v)) currentWordSec.model = v;
-          if ((kl.includes('hãng') || kl.includes('thương hiệu')) && !isPriceNumber(v)) currentWordSec.brand = v;
-          if ((kl.includes('xuất xứ') || kl.includes('nước sản xuất')) && !isPriceNumber(v)) currentWordSec.origin = v;
-          if (kl.includes('bảo hành')) currentWordSec.warranty = v;
-          currentWordSec.specs.push({ key: k, value: v });
-        } else if (cells.length === 1 && cells[0]) {
-          var singleTxt = cells[0];
-          if (isDeviceHeader(singleTxt, '') && currentWordSec.specs.length >= 3) {
-            allSpecs.push(currentWordSec);
-            currentWordSec = { name: singleTxt, model: '', brand: '', origin: '', warranty: '', specs: [] };
-          } else if (singleTxt.includes(':')) {
-            var p = singleTxt.split(':');
-            currentWordSec.specs.push({ key: p[0].replace(/^[•\-\*\d\.]+\s*/, '').trim(), value: p.slice(1).join(':').trim() });
-          } else {
-            currentWordSec.specs.push({ key: 'Ghi chú', value: singleTxt });
-          }
-        }
-      });
-
-      if (currentWordSec.specs.length > 0 || currentWordSec.name) {
-        allSpecs.push(currentWordSec);
-      }
-    }
-  });
-
-  // 2. Also parse non-table paragraphs & bullet lists if tables were not found or sparse
-  if (tables.length === 0) {
-    var paragraphs = Array.from(doc.querySelectorAll('p, li, h1, h2, h3, h4')).map(function (el) { return el.innerText.trim(); }).filter(Boolean);
-    var docSec = { name: fileName.replace(/\.[^/.]+$/, ''), model: '', brand: '', origin: '', warranty: '', specs: [] };
-
-    paragraphs.forEach(function (line) {
-      if (isDeviceHeader(line, '') && docSec.specs.length >= 3) {
-        allSpecs.push(docSec);
-        docSec = { name: line, model: '', brand: '', origin: '', warranty: '', specs: [] };
-        return;
-      }
-      if (line.includes(':')) {
-        var parts = line.split(':');
-        var k = parts[0].replace(/^[•\-\*\d\.]+\s*/, '').trim();
-        var v = parts.slice(1).join(':').trim();
-        if (k && v) {
-          var kl = k.toLowerCase();
-          if (kl.includes('model') && !isPriceNumber(v)) docSec.model = v;
-          if ((kl.includes('hãng') || kl.includes('thương hiệu')) && !isPriceNumber(v)) docSec.brand = v;
-          if ((kl.includes('xuất xứ') || kl.includes('nước sản xuất')) && !isPriceNumber(v)) docSec.origin = v;
-          if (kl.includes('bảo hành')) docSec.warranty = v;
-          docSec.specs.push({ key: k, value: v });
-        }
-      }
-    });
-
-    if (docSec.specs.length > 0) {
-      allSpecs.push(docSec);
-    }
-  }
-}
-
 async function extractTextFromPdf(ab) {
-  if (typeof pdfjsLib === 'undefined') {
-    throw new Error('Thư viện PDF.js chưa được tải!');
-  }
-  var loadingTask = pdfjsLib.getDocument({ data: new Uint8Array(ab) });
-  var pdf = await loadingTask.promise;
-  var lines = [];
-
-  for (var i = 1; i <= pdf.numPages; i++) {
-    var page = await pdf.getPage(i);
-    var textContent = await page.getTextContent();
-    var pageLines = [];
-    var lastY = null;
-    var currentLine = '';
-
-    textContent.items.forEach(function (item) {
-      if (lastY !== null && Math.abs(item.transform[5] - lastY) > 4) {
-        if (currentLine.trim()) pageLines.push(currentLine.trim());
-        currentLine = item.str;
-      } else {
-        currentLine += (currentLine ? ' ' : '') + item.str;
-      }
-      lastY = item.transform[5];
-    });
-    if (currentLine.trim()) pageLines.push(currentLine.trim());
-    lines = lines.concat(pageLines);
-  }
-  return { lines: lines, fullText: lines.join('\n') };
-}
-
-async function parsePdfSmart(ab, fileName, allSpecs) {
-  var pdfData = await extractTextFromPdf(ab);
-  var lines = pdfData.lines;
-
-  var currentSection = {
-    name: '',
-    model: '', brand: '', origin: '', warranty: '',
-    specs: []
-  };
-
-  lines.forEach(function (line, lIdx) {
-    var txt = line.trim();
-    if (!txt) return;
-
-    if (/^trang\s*\d+/i.test(txt) || /^page\s*\d+/i.test(txt)) return;
-
-    if (isDeviceHeader(txt, '') && currentSection.specs.length >= 2) {
-      allSpecs.push(currentSection);
-      currentSection = {
-        name: txt,
-        model: '', brand: '', origin: '', warranty: '',
-        specs: []
-      };
-      return;
+  if (typeof pdfjsLib === 'undefined') return '';
+  try {
+    var loadingTask = pdfjsLib.getDocument({ data: ab });
+    var pdf = await loadingTask.promise;
+    var fullText = '';
+    for (var i = 1; i <= pdf.numPages; i++) {
+      var page = await pdf.getPage(i);
+      var content = await page.getTextContent();
+      var strings = content.items.map(function (it) { return it.str; });
+      fullText += strings.join(' ') + '\n';
     }
-
-    if (!currentSection.name && (isDeviceHeader(txt, '') || lIdx <= 3)) {
-      if (txt.length > 4 && !txt.toLowerCase().includes('thông số') && !txt.toLowerCase().includes('yêu cầu')) {
-        currentSection.name = txt;
-        return;
-      }
-    }
-
-    if (txt.includes(':')) {
-      var p = txt.split(':');
-      var k = p[0].replace(/^[•\-\*\d\.]+\s*/, '').trim();
-      var v = p.slice(1).join(':').trim();
-
-      var kl = k.toLowerCase();
-      if (kl.includes('model') && !isPriceNumber(v)) currentSection.model = v;
-      if ((kl.includes('hãng') || kl.includes('thương hiệu')) && !isPriceNumber(v)) currentSection.brand = v;
-      if ((kl.includes('xuất xứ') || kl.includes('nước sản xuất')) && !isPriceNumber(v)) currentSection.origin = v;
-      if (kl.includes('bảo hành')) currentSection.warranty = v;
-
-      currentSection.specs.push({ key: k, value: v });
-    } else if (txt.length > 5 && !txt.toLowerCase().startsWith('bảng')) {
-      currentSection.specs.push({ key: 'Tiêu chuẩn / Tính năng', value: txt });
-    }
-  });
-
-  if (currentSection.specs.length > 0 || currentSection.name) {
-    allSpecs.push(currentSection);
+    return fullText;
+  } catch (err) {
+    console.error('Lỗi extract PDF:', err);
+    return '';
   }
 }
 
@@ -5433,6 +4302,23 @@ var CATALOG_ITEMS = [
   }
 ];
 
+var catalogViewMode = 'list'; // 'list' (default) or 'grid'
+var curCatBrand = '';
+
+function setCatalogViewMode(mode) {
+  catalogViewMode = mode;
+  var btnList = document.getElementById('btnViewList');
+  var btnGrid = document.getElementById('btnViewGrid');
+  if (btnList) btnList.className = 'view-mode-btn' + (mode === 'list' ? ' active' : '');
+  if (btnGrid) btnGrid.className = 'view-mode-btn' + (mode === 'grid' ? ' active' : '');
+  renderCatalogGrid();
+}
+
+function filterCatBrand(brand) {
+  curCatBrand = brand || '';
+  renderCatalogGrid();
+}
+
 function setStep1Mode(mode) {
   step1Mode = 'catalog';
   renderCatalogGrid();
@@ -5442,69 +4328,233 @@ function filterCatType(type) {
   curCatType = type;
   var btns = document.querySelectorAll('#catNav .cat-btn');
   btns.forEach(function (b) { b.className = 'cat-btn'; });
-  if (event && event.target) event.target.className = 'cat-btn active';
+  if (typeof event !== 'undefined' && event && event.target) {
+    event.target.className = 'cat-btn active';
+  }
   renderCatalogGrid();
 }
 
 function filterCatalog() { renderCatalogGrid(); }
+
 function resetCatalogFilter() {
   var inp = document.getElementById('catSearch');
   if (inp) inp.value = '';
+  var brandSel = document.getElementById('catBrandFilter');
+  if (brandSel) brandSel.value = '';
+  curCatBrand = '';
   curCatType = 'all';
   var btns = document.querySelectorAll('#catNav .cat-btn');
   btns.forEach(function (b, i) { b.className = 'cat-btn' + (i === 0 ? ' active' : ''); });
   renderCatalogGrid();
 }
 
+function getFilteredCatalogItems() {
+  var kw = (document.getElementById('catSearch') ? document.getElementById('catSearch').value : '').toLowerCase().trim();
+  return CATALOG_ITEMS.filter(function (item) {
+    var mType = curCatType === 'all' || item.cat === curCatType || (curCatType === 'thiet_bi_khac' && (item.cat === 'thiet_bi_khac' || item.cat === 'khac'));
+    var mBrand = !curCatBrand || (item.brand && item.brand.toLowerCase() === curCatBrand.toLowerCase());
+    var mKw = !kw || item.name.toLowerCase().includes(kw) || item.model.toLowerCase().includes(kw) || item.brand.toLowerCase().includes(kw);
+    return mType && mBrand && mKw;
+  });
+}
+
+function selectAllVisibleCatalog(isSelected) {
+  var visible = getFilteredCatalogItems();
+  visible.forEach(function (item) {
+    if (isSelected) {
+      if (!selectedCatalogItems[item.id]) {
+        selectedCatalogItems[item.id] = { item: item, qty: item.qty || 1 };
+      }
+    } else {
+      delete selectedCatalogItems[item.id];
+    }
+  });
+  renderCatalogGrid();
+  updateCartSummary();
+}
+
+function stepCatalogQty(id, delta, ev) {
+  if (ev) ev.stopPropagation();
+  var item = CATALOG_ITEMS.find(function (x) { return x.id === id; });
+  if (!item) return;
+
+  var currentQ = selectedCatalogItems[id] ? selectedCatalogItems[id].qty : (item.qty || 1);
+  var nextQ = Math.max(1, currentQ + delta);
+
+  if (selectedCatalogItems[id]) {
+    selectedCatalogItems[id].qty = nextQ;
+  } else {
+    // Tự động chọn khi tăng số lượng
+    selectedCatalogItems[id] = { item: item, qty: nextQ };
+  }
+  item.qty = nextQ;
+  renderCatalogGrid();
+  updateCartSummary();
+}
+
+function renderSelectedTags() {
+  var drawer = document.getElementById('selectedItemsDrawer');
+  var tagsWrap = document.getElementById('selectedTagsWrap');
+  var drawerCount = document.getElementById('drawerCount');
+  if (!drawer || !tagsWrap) return;
+
+  var keys = Object.keys(selectedCatalogItems);
+  if (drawerCount) drawerCount.textContent = keys.length;
+
+  if (keys.length === 0) {
+    drawer.style.display = 'none';
+    return;
+  }
+
+  drawer.style.display = 'block';
+  var html = keys.map(function (k) {
+    var obj = selectedCatalogItems[k];
+    var it = obj.item;
+    return '<div class="selected-tag">' +
+      '<span>' + escH(it.name) + '</span>' +
+      '<strong style="color:var(--gr)">x' + obj.qty + '</strong>' +
+      (it.price ? '<span style="color:var(--go);font-size:11px">(' + fmtVN(it.price * obj.qty) + 'đ)</span>' : '') +
+      '<span class="selected-tag-del" onclick="toggleCatalogItem(\'' + it.id + '\')" title="Bỏ chọn máy này">✕</span>' +
+      '</div>';
+  }).join('');
+
+  tagsWrap.innerHTML = html;
+}
+
 function renderCatalogGrid() {
   var grid = document.getElementById('catGrid');
   if (!grid) return;
 
-  var kw = (document.getElementById('catSearch') ? document.getElementById('catSearch').value : '').toLowerCase().trim();
-  var filtered = CATALOG_ITEMS.filter(function (item) {
-    var mType = curCatType === 'all' || item.cat === curCatType || (curCatType === 'thiet_bi_khac' && (item.cat === 'thiet_bi_khac' || item.cat === 'khac'));
-    var mKw = !kw || item.name.toLowerCase().includes(kw) || item.model.toLowerCase().includes(kw) || item.brand.toLowerCase().includes(kw);
-    return mType && mKw;
-  });
+  var filtered = getFilteredCatalogItems();
 
-  var html = filtered.map(function (item) {
-    var isSel = !!selectedCatalogItems[item.id];
-    var curQ = isSel ? selectedCatalogItems[item.id].qty : 1;
-    var catLabel = item.cat === 'dien_thoai' ? '📱 Điện thoại' :
-      item.cat === 'man_hinh' ? '🖥️ Màn hình' :
-      item.cat === 'may_tinh' ? '💻 Máy tính' :
-      item.cat === 'may_in' ? '🖨️ Máy in' :
-      item.cat === 'photocopy' ? '📠 Photocopy' :
-      item.cat === 'may_scan' ? '📄 Máy Scan' : '🌐 Thiết bị khác';
+  if (catalogViewMode === 'list') {
+    // ══════════════════ DẠNG DANH SÁCH / BẢNG CHỌN (LIST TABLE VIEW) ══════════════════
+    var allVisibleSelected = filtered.length > 0 && filtered.every(function (it) { return !!selectedCatalogItems[it.id]; });
 
-    return '<div class="cat-card' + (isSel ? ' selected' : '') + '" id="cc_' + item.id + '">' +
-      '<div>' +
-      '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">' +
-      '<span class="cc-badge">' + catLabel + '</span>' +
-      '<span style="font-size:11px;font-weight:700;color:var(--gr)">✨ ' + item.specCount + ' thông số</span>' +
-      '</div>' +
-      '<div class="cc-name">' + escH(item.name) + '</div>' +
-      '<div class="cc-meta">' +
-      '<span><b>Model:</b> ' + escH(item.model) + ' | <b>Hãng:</b> ' + escH(item.brand) + '</span>' +
-      '<span><b>Xuất xứ:</b> ' + escH(item.origin) + ' | <b>Bảo hành:</b> ' + escH(item.warranty) + '</span>' +
-      '</div>' +
-      '<div style="display:flex;align-items:center;gap:6px;margin-top:6px">' +
-      '<label style="font-size:11px;color:var(--t2);white-space:nowrap;font-weight:600">Đơn giá (VNĐ):</label>' +
-      '<input type="number" min="0" placeholder="Tự điền đơn giá..." value="' + (item.price || '') + '" oninput="updateCatalogPrice(\'' + item.id + '\',+this.value)" style="padding:4px 8px;font-size:12px;font-weight:700;color:var(--go)"/>' +
-      '</div>' +
-      '</div>' +
-      '<div class="cc-foot">' +
-      '<label style="font-size:11px;margin:0">SL:</label>' +
-      '<input type="number" class="cc-qty" min="1" value="' + curQ + '" onchange="updateCatalogQty(\'' + item.id + '\',+this.value)"/>' +
-      '<button class="btn-add-cat' + (isSel ? ' added' : '') + '" onclick="toggleCatalogItem(\'' + item.id + '\')">' +
-      (isSel ? '✓ Đã chọn (' + curQ + ')' : '＋ Chọn máy này') +
-      '</button>' +
-      '</div>' +
-      '</div>';
-  }).join('');
+    var tableHtml = '<div class="cat-table-wrap">' +
+      '<table class="cat-table">' +
+      '<thead>' +
+      '<tr>' +
+      '<th style="width:46px;text-align:center">' +
+      '<input type="checkbox" id="catSelectAllChk" title="Chọn tất cả / Bỏ chọn tất cả" ' + (allVisibleSelected ? 'checked' : '') + ' onchange="selectAllVisibleCatalog(this.checked)" style="cursor:pointer;width:16px;height:16px"/>' +
+      '</th>' +
+      '<th style="width:48px;text-align:center">STT</th>' +
+      '<th>Tên Thiết Bị &amp; Model Máy</th>' +
+      '<th style="width:140px">Danh Mục</th>' +
+      '<th style="width:170px">Đơn Giá (VNĐ)</th>' +
+      '<th style="width:125px;text-align:center">Số Lượng</th>' +
+      '<th style="width:130px;text-align:center">Trạng Thái</th>' +
+      '</tr>' +
+      '</thead>' +
+      '<tbody>';
 
-  grid.innerHTML = html || '<div style="grid-column:1/-1;text-align:center;padding:24px;color:var(--t2)">Không tìm thấy thiết bị phù hợp. Bạn có thể tự thêm máy bằng ô bên dưới!</div>';
+    if (filtered.length === 0) {
+      tableHtml += '<tr><td colspan="7" style="text-align:center;padding:32px 16px;color:var(--t2)">' +
+        '🔍 Không tìm thấy thiết bị nào phù hợp với bộ lọc hiện tại. Bạn có thể xóa lọc hoặc thêm máy mới bên dưới!' +
+        '</td></tr>';
+    } else {
+      filtered.forEach(function (item, idx) {
+        var isSel = !!selectedCatalogItems[item.id];
+        var curQ = isSel ? selectedCatalogItems[item.id].qty : (item.qty || 1);
+
+        var catBadge = item.cat === 'dien_thoai' ? '<span class="cat-badge-pill" style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe">📱 Điện thoại</span>' :
+          item.cat === 'man_hinh' ? '<span class="cat-badge-pill" style="background:#faf5ff;color:#7e22ce;border:1px solid #e9d5ff">🖥️ Màn hình</span>' :
+          item.cat === 'may_tinh' ? '<span class="cat-badge-pill" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0">💻 Máy tính</span>' :
+          item.cat === 'may_in' ? '<span class="cat-badge-pill" style="background:#fffbeb;color:#b45309;border:1px solid #fde68a">🖨️ Máy in</span>' :
+          item.cat === 'photocopy' ? '<span class="cat-badge-pill" style="background:#fff7ed;color:#c2410c;border:1px solid #fed7aa">📠 Photocopy</span>' :
+          item.cat === 'may_scan' ? '<span class="cat-badge-pill" style="background:#f0fdfa;color:#0f766e;border:1px solid #99f6e4">📄 Máy Scan</span>' :
+          '<span class="cat-badge-pill" style="background:#f8fafc;color:#475569;border:1px solid #cbd5e1">🌐 Khác</span>';
+
+        tableHtml += '<tr class="' + (isSel ? 'selected-row' : '') + '" onclick="handleRowClick(event, \'' + item.id + '\')">' +
+          '<td style="text-align:center" onclick="event.stopPropagation()">' +
+          '<input type="checkbox" ' + (isSel ? 'checked' : '') + ' onchange="toggleCatalogItem(\'' + item.id + '\')" style="cursor:pointer;width:16px;height:16px"/>' +
+          '</td>' +
+          '<td style="text-align:center;font-weight:700;color:var(--t3)">' + (idx + 1) + '</td>' +
+          '<td>' +
+          '<div class="cat-dev-name">' + escH(item.name) + '</div>' +
+          '<div class="cat-dev-meta">' +
+          '<span><b>Model:</b> ' + escH(item.model) + '</span>' +
+          '<span>• <b>Hãng:</b> ' + escH(item.brand) + '</span>' +
+          '<span>• <b>Xuất xứ:</b> ' + escH(item.origin) + '</span>' +
+          '<span>• <b>Bảo hành:</b> ' + escH(item.warranty) + '</span>' +
+          '<span style="color:var(--gr);font-weight:700">• ✨ ' + item.specCount + ' thông số</span>' +
+          '</div>' +
+          '</td>' +
+          '<td>' + catBadge + '</td>' +
+          '<td onclick="event.stopPropagation()">' +
+          '<div style="display:flex;align-items:center;gap:4px">' +
+          '<input type="number" min="0" placeholder="0" value="' + (item.price || '') + '" oninput="updateCatalogPrice(\'' + item.id + '\',+this.value)" style="width:100%;padding:5px 8px;font-size:12.5px;font-weight:700;color:var(--go);border:1px solid var(--bdr2);border-radius:6px;background:var(--inp)" />' +
+          '</div>' +
+          '</td>' +
+          '<td style="text-align:center" onclick="event.stopPropagation()">' +
+          '<div class="qty-control">' +
+          '<button class="qty-btn" onclick="stepCatalogQty(\'' + item.id + '\', -1, event)" title="Giảm số lượng">-</button>' +
+          '<input type="number" class="qty-val-input" min="1" value="' + curQ + '" onchange="updateCatalogQty(\'' + item.id + '\',+this.value)"/>' +
+          '<button class="qty-btn" onclick="stepCatalogQty(\'' + item.id + '\', 1, event)" title="Tăng số lượng">+</button>' +
+          '</div>' +
+          '</td>' +
+          '<td style="text-align:center" onclick="event.stopPropagation()">' +
+          '<button class="btn-cat-select' + (isSel ? ' selected' : '') + '" onclick="toggleCatalogItem(\'' + item.id + '\')">' +
+          (isSel ? '✓ Đã chọn (' + curQ + ')' : '＋ Chọn') +
+          '</button>' +
+          '</td>' +
+          '</tr>';
+      });
+    }
+
+    tableHtml += '</tbody></table></div>';
+    grid.innerHTML = tableHtml;
+  } else {
+    // ══════════════════ DẠNG THẺ LƯỚI (CARD GRID VIEW) ══════════════════
+    var html = filtered.map(function (item) {
+      var isSel = !!selectedCatalogItems[item.id];
+      var curQ = isSel ? selectedCatalogItems[item.id].qty : (item.qty || 1);
+      var catLabel = item.cat === 'dien_thoai' ? '📱 Điện thoại' :
+        item.cat === 'man_hinh' ? '🖥️ Màn hình' :
+        item.cat === 'may_tinh' ? '💻 Máy tính' :
+        item.cat === 'may_in' ? '🖨️ Máy in' :
+        item.cat === 'photocopy' ? '📠 Photocopy' :
+        item.cat === 'may_scan' ? '📄 Máy Scan' : '🌐 Thiết bị khác';
+
+      return '<div class="cat-card' + (isSel ? ' selected' : '') + '" id="cc_' + item.id + '">' +
+        '<div>' +
+        '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">' +
+        '<span class="cc-badge">' + catLabel + '</span>' +
+        '<span style="font-size:11px;font-weight:700;color:var(--gr)">✨ ' + item.specCount + ' thông số</span>' +
+        '</div>' +
+        '<div class="cc-name">' + escH(item.name) + '</div>' +
+        '<div class="cc-meta">' +
+        '<span><b>Model:</b> ' + escH(item.model) + ' | <b>Hãng:</b> ' + escH(item.brand) + '</span>' +
+        '<span><b>Xuất xứ:</b> ' + escH(item.origin) + ' | <b>Bảo hành:</b> ' + escH(item.warranty) + '</span>' +
+        '</div>' +
+        '<div style="display:flex;align-items:center;gap:6px;margin-top:6px">' +
+        '<label style="font-size:11px;color:var(--t2);white-space:nowrap;font-weight:600">Đơn giá (VNĐ):</label>' +
+        '<input type="number" min="0" placeholder="Tự điền đơn giá..." value="' + (item.price || '') + '" oninput="updateCatalogPrice(\'' + item.id + '\',+this.value)" style="padding:4px 8px;font-size:12px;font-weight:700;color:var(--go)"/>' +
+        '</div>' +
+        '</div>' +
+        '<div class="cc-foot">' +
+        '<label style="font-size:11px;margin:0">SL:</label>' +
+        '<input type="number" class="cc-qty" min="1" value="' + curQ + '" onchange="updateCatalogQty(\'' + item.id + '\',+this.value)"/>' +
+        '<button class="btn-add-cat' + (isSel ? ' added' : '') + '" onclick="toggleCatalogItem(\'' + item.id + '\')">' +
+        (isSel ? '✓ Đã chọn (' + curQ + ')' : '＋ Chọn máy này') +
+        '</button>' +
+        '</div>' +
+        '</div>';
+    }).join('');
+
+    grid.innerHTML = '<div class="cat-grid">' + (html || '<div style="grid-column:1/-1;text-align:center;padding:24px;color:var(--t2)">Không tìm thấy thiết bị phù hợp. Bạn có thể tự thêm máy bằng ô bên dưới!</div>') + '</div>';
+  }
+
+  renderSelectedTags();
   updateCartSummary();
+}
+
+function handleRowClick(event, id) {
+  var tag = event.target.tagName.toLowerCase();
+  if (tag === 'input' || tag === 'button' || tag === 'a' || tag === 'select' || event.target.closest('.qty-control')) {
+    return;
+  }
+  toggleCatalogItem(id);
 }
 
 function updateCatalogPrice(id, price) {
@@ -5513,6 +4563,7 @@ function updateCatalogPrice(id, price) {
   if (selectedCatalogItems[id]) {
     selectedCatalogItems[id].item.price = item ? item.price : 0;
     updateCartSummary();
+    renderSelectedTags();
   }
 }
 
@@ -5523,8 +4574,7 @@ function toggleCatalogItem(id) {
   if (selectedCatalogItems[id]) {
     delete selectedCatalogItems[id];
   } else {
-    var qtyInp = document.querySelector('#cc_' + id + ' .cc-qty');
-    var q = qtyInp ? Math.max(1, parseInt(qtyInp.value) || 1) : 1;
+    var q = item.qty || 1;
     selectedCatalogItems[id] = { item: item, qty: q };
   }
   renderCatalogGrid();
@@ -5532,9 +4582,12 @@ function toggleCatalogItem(id) {
 
 function updateCatalogQty(id, q) {
   q = Math.max(1, parseInt(q) || 1);
+  var item = CATALOG_ITEMS.find(function (x) { return x.id === id; });
+  if (item) item.qty = q;
   if (selectedCatalogItems[id]) {
     selectedCatalogItems[id].qty = q;
     updateCartSummary();
+    renderSelectedTags();
   }
 }
 
@@ -5557,6 +4610,155 @@ function updateCartSummary() {
   if (elQ) elQ.textContent = totalQty;
   if (elT) elT.textContent = fmtVN(totalPrice) + ' đ';
 }
+
+/* ================================================================
+   ENTERPRISE COMMAND MENU BAR HANDLERS
+   ================================================================ */
+function toggleMenuDropdown(wrapId) {
+  var wrap = document.getElementById(wrapId);
+  if (!wrap) return;
+  var wasOpen = wrap.classList.contains('open');
+  closeAllMenus();
+  if (!wasOpen) {
+    wrap.classList.add('open');
+  }
+}
+
+function closeAllMenus() {
+  document.querySelectorAll('.menu-item-wrap').forEach(function (el) {
+    el.classList.remove('open');
+  });
+}
+
+document.addEventListener('click', function (e) {
+  if (!e.target.closest('.app-menubar')) {
+    closeAllMenus();
+  }
+});
+
+function menuApplyPreset(preset) {
+  if (currentActiveTab === 'dutoan') {
+    fillProjectPreset(preset);
+    toast('✅ Đã nạp mẫu dự án ' + preset.toUpperCase() + ' vào Tab Dự Toán!', 'ok');
+  } else if (currentActiveTab === 'baogia') {
+    bgFillCustomer(preset);
+    toast('✅ Đã nạp thông tin khách hàng mẫu vào Tab Báo Giá!', 'ok');
+  } else if (currentActiveTab === 'tddu') {
+    tdduFillPresetInfo(preset);
+    toast('✅ Đã nạp mẫu hồ sơ thầu vào Tab Tuyên Bố Đáp Ứng!', 'ok');
+  } else if (currentActiveTab === 'bbbg') {
+    bbFillBuyer(preset);
+    toast('✅ Đã nạp mẫu Bên Mua vào Tab Biên Bản Bàn Giao!', 'ok');
+  } else {
+    fillProjectPreset(preset);
+    toast('✅ Đã nạp mẫu dự án ' + preset.toUpperCase() + '!', 'ok');
+  }
+}
+
+function menuTriggerAiScrape() {
+  if (currentActiveTab === 'tddu') {
+    tdduAiScrapeAllMissing();
+  } else {
+    if (typeof devs !== 'undefined' && devs.length > 0) {
+      aiAutoScrapeAllMissing();
+    } else {
+      toast('💡 Bạn hãy chọn thiết bị và bấm "Tạo Bảng Dự Toán" trước khi cào thông số!', 'info');
+    }
+  }
+}
+
+function menuSyncToBaogia() {
+  switchMainTab('baogia');
+  bgSyncFromDuToan();
+}
+
+function menuTdduAutoMatch() {
+  switchMainTab('tddu');
+  tdduAutoMatchAllPresets();
+}
+
+function menuTdduAutoEval() {
+  switchMainTab('tddu');
+  tdduAutoEvaluateAll();
+}
+
+function menuLoadSampleFile() {
+  if (currentActiveTab === 'baogia') {
+    bgLoadSampleThuanPhat();
+  } else if (currentActiveTab === 'tddu') {
+    loadSampleTdduFile();
+  } else {
+    fillProjectPreset('thuan_phat');
+    toast('✅ Đã nạp dữ liệu mẫu Thuận Phát!', 'ok');
+  }
+}
+
+function menuExportDuToan() {
+  switchMainTab('dutoan');
+  if (typeof curStep !== 'undefined' && curStep === 1) {
+    handleDirectExportFromStep1();
+  } else {
+    doExport();
+  }
+}
+
+function menuQuickExport() {
+  if (currentActiveTab === 'dutoan') {
+    menuExportDuToan();
+  } else if (currentActiveTab === 'baogia') {
+    exportBaogiaExcel();
+  } else if (currentActiveTab === 'tddu') {
+    exportComplianceExcel();
+  } else if (currentActiveTab === 'bbbg') {
+    exportHandoverWord();
+  } else if (currentActiveTab === 'lichsu') {
+    exportLichSuJson();
+  }
+}
+
+function openAdminModal() {
+  var m = document.getElementById('adminPassModal');
+  if (m) {
+    m.style.display = 'flex';
+    var inp = document.getElementById('adminPassInput');
+    if (inp) { inp.value = ''; inp.focus(); }
+  }
+}
+
+function closeAdminModal() {
+  var m = document.getElementById('adminPassModal');
+  if (m) m.style.display = 'none';
+}
+
+function verifyAdminPass() {
+  var inp = document.getElementById('adminPassInput');
+  var pass = inp ? inp.value.trim() : '';
+  if (pass === 'admin' || pass === '123456' || pass === 'thuanphat') {
+    closeAdminModal();
+    toast('🔓 Xác thực Quản trị viên thành công!', 'ok');
+    switchMainTab('baogia');
+  } else {
+    toast('❌ Mật khẩu không chính xác. Vui lòng thử lại!', 'err');
+  }
+}
+
+function menuClearActiveTab() {
+  if (!confirm('Bạn có chắc chắn muốn làm mới và xóa dữ liệu tab hiện tại?')) return;
+  if (currentActiveTab === 'dutoan') {
+    selectedCatalogItems = {};
+    renderCatalogGrid();
+    toast('🗑️ Đã xóa trắng danh sách thiết bị chọn!', 'info');
+  } else if (currentActiveTab === 'baogia') {
+    bgClearAll();
+  } else if (currentActiveTab === 'tddu') {
+    tdduClearAll();
+  } else if (currentActiveTab === 'bbbg') {
+    var area = document.getElementById('bbTableArea');
+    if (area) area.innerHTML = '';
+    toast('🗑️ Đã xóa danh sách biên bản!', 'info');
+  }
+}
+
 
 /* ═══════════════════════════════════════════
    SMART SPECIFICATION SCRAPER ENGINE (ĐA DANH MỤC THIẾT BỊ)

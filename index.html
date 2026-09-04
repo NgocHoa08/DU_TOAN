@@ -29,32 +29,236 @@
 <body>
   <div class="wrap">
 
-    <div class="hdr" style="position:relative">
-      <div style="position:absolute;top:0;right:0;display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-        <button class="btn btn-sm" onclick="toggleDarkMode()" id="btnThemeToggle" style="font-size:12.5px;font-weight:700;display:inline-flex;align-items:center;gap:6px;background:var(--card);border:1px solid var(--bdr2);color:var(--t1);padding:6px 12px;border-radius:10px;cursor:pointer;transition:all .18s;box-shadow:0 1px 4px rgba(0,0,0,0.05)" title="Chuyển đổi giao diện Sáng / Tối">
-          🌙 Giao diện Tối
+    <!-- ═══════════════ APP TOP HEADER BAR ═══════════════ -->
+    <header class="app-topbar">
+      <div class="app-brand">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">
+          <div class="brand-title">
+            DỰ TOÁN PRO
+            <span class="brand-badge">v3.2 Enterprise</span>
+          </div>
+          <div class="brand-sub">Hệ Thống Lập Dự Toán &amp; Bóc Tách Báo Giá Chuẩn Mẫu Excel V1</div>
+        </div>
+      </div>
+
+      <!-- MAIN NAVIGATION TABS (5 PHÂN HỆ CHÍNH) -->
+      <nav class="app-nav-tabs" id="mainTabsBar">
+        <button class="mtab active" id="mtab-dutoan" onclick="switchMainTab('dutoan')">
+          <span>📊</span> 1. Làm Dự Toán
         </button>
-        <button class="btn btn-ai btn-sm" onclick="openAiSettingsModal()" id="btnAiHeaderStatus" title="Cài đặt API Key để AI cào thông số chính hãng từ nhà sản xuất">
+        <button class="mtab" id="mtab-baogia" onclick="switchMainTab('baogia')" title="Lập Bảng Báo Giá Chuẩn Mẫu Thuận Phát (BGThuanPhat.xlsx)">
+          <span>🧾</span> 2. Báo Giá Thuận Phát
+        </button>
+        <button class="mtab" id="mtab-tddu" onclick="switchMainTab('tddu')">
+          <span>✅</span> 3. Tuyên Bố Đáp Ứng
+        </button>
+        <button class="mtab" id="mtab-bbbg" onclick="switchMainTab('bbbg')">
+          <span>📝</span> 4. Biên Bản Bàn Giao
+        </button>
+        <button class="mtab" id="mtab-lichsu" onclick="switchMainTab('lichsu')" title="Xem lịch sử các file đã xuất">
+          <span>🕐</span> 5. Lịch Sử File <span id="lsBadgeTab" style="display:none;background:#7c3aed;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;margin-left:4px">0</span>
+        </button>
+      </nav>
+
+      <!-- SYSTEM CONTROLS (RIGHT) -->
+      <div class="app-sys-controls">
+        <button class="btn btn-ai btn-sm" onclick="openAiSettingsModal()" id="btnAiHeaderStatus" title="Cài đặt API Key AI để cào 100% thông số chính hãng từ NSX">
           ⚙️ Cài Đặt AI Cào Hãng
         </button>
+        <button class="btn btn-sm" onclick="toggleDarkMode()" id="btnThemeToggle" title="Chuyển đổi giao diện Sáng / Tối OLED">
+          🌙 Giao diện Tối
+        </button>
       </div>
-      <div class="badge">🤖 AI &amp; Đa File · Chuẩn Mẫu Excel V1 · v3.1</div>
-      <h1>Tạo Mẫu Dự Toán Tự Động Từ Nhiều File</h1>
-    </div>
+    </header>
 
-    <!-- MAIN TABS: 5 CHỨC NĂNG -->
-    <div class="main-tabs" id="mainTabsBar">
-      <div class="mtab active" id="mtab-dutoan" onclick="switchMainTab('dutoan')">📊 1. Làm Dự Toán</div>
-      <div class="mtab" id="mtab-bbbg" onclick="switchMainTab('bbbg')">📝 2. Biên Bản Bàn Giao</div>
-      <div class="mtab" id="mtab-tddu" onclick="switchMainTab('tddu')">✅ 3. Tuyên Bố Đáp Ứng</div>
-      <div class="mtab" id="mtab-baogia" onclick="switchMainTab('baogia')" style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.4);color:#b45309;font-weight:700" title="Lập Bảng Báo Giá Chuẩn Mẫu Thuận Phát (BGThuanPhat.xlsx)">🧾 4. Báo Giá Thuận Phát</div>
-      <div class="mtab" id="mtab-lichsu" onclick="switchMainTab('lichsu')" style="background:rgba(124,58,237,0.08);border:1px solid rgba(124,58,237,0.4);color:#7c3aed;font-weight:700" title="Xem lịch sử các file đã xuất">🕐 5. Lịch Sử File <span id="lsBadgeTab" style="display:none;background:#7c3aed;color:#fff;font-size:10px;padding:2px 6px;border-radius:10px;margin-left:4px">0</span></div>
+    <!-- ═══════════════ COMMAND MENU BAR (THANH MENU LỆNH TẬP TRUNG) ═══════════════ -->
+    <div class="app-menubar" id="appMenuBar">
+      <div class="menubar-left">
+        <!-- Menu 1: Hồ Sơ Mẫu -->
+        <div class="menu-item-wrap" id="menuWrapPresets">
+          <button class="menu-btn" onclick="toggleMenuDropdown('menuWrapPresets')">
+            📁 Hồ Sơ Mẫu <span class="caret">▾</span>
+          </button>
+          <div class="menu-dropdown">
+            <div class="menu-drop-hdr">CHỌN NHANH HỒ SƠ MẪU CÔNG TY &amp; GÓI THẦU</div>
+            <a class="menu-drop-link" onclick="menuApplyPreset('thuan_phat');closeAllMenus()">
+              <span class="item-icon">🏢</span>
+              <div>
+                <div class="item-title">Công ty Thuận Phát</div>
+                <div class="item-desc">Nâng cấp hạ tầng số &amp; thiết bị CNTT</div>
+              </div>
+            </a>
+            <a class="menu-drop-link" onclick="menuApplyPreset('bao_an');closeAllMenus()">
+              <span class="item-icon">🏢</span>
+              <div>
+                <div class="item-title">Công ty Bảo An</div>
+                <div class="item-desc">Mua sắm trang thiết bị tỉnh - xã</div>
+              </div>
+            </a>
+            <a class="menu-drop-link" onclick="menuApplyPreset('cahcm');closeAllMenus()">
+              <span class="item-icon">👮</span>
+              <div>
+                <div class="item-title">Công an TP. Hồ Chí Minh</div>
+                <div class="item-desc">Chuyển đổi số theo Nghị quyết 57-NQ/TW</div>
+              </div>
+            </a>
+            <a class="menu-drop-link" onclick="menuApplyPreset('hoa_phat');closeAllMenus()">
+              <span class="item-icon">📚</span>
+              <div>
+                <div class="item-title">Công ty Hòa Phát</div>
+                <div class="item-desc">Hợp đồng mua sắm thiết bị giáo dục 1308</div>
+              </div>
+            </a>
+            <a class="menu-drop-link" onclick="menuApplyPreset('ecoit');closeAllMenus()">
+              <span class="item-icon">🏢</span>
+              <div>
+                <div class="item-title">Công ty ECOIT / NETSYS</div>
+                <div class="item-desc">Triển khai cung cấp &amp; bàn giao thiết bị</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu 2: Công Cụ & AI -->
+        <div class="menu-item-wrap" id="menuWrapTools">
+          <button class="menu-btn" onclick="toggleMenuDropdown('menuWrapTools')">
+            ⚡ Công Cụ &amp; AI <span class="caret">▾</span>
+          </button>
+          <div class="menu-dropdown">
+            <div class="menu-drop-hdr">CÔNG CỤ TỰ ĐỘNG HÓA &amp; TRÍ TUỆ NHÂN TẠO</div>
+            <a class="menu-drop-link" onclick="menuTriggerAiScrape();closeAllMenus()">
+              <span class="item-icon">🤖</span>
+              <div>
+                <div class="item-title">AI Cào Thông Số Hãng</div>
+                <div class="item-desc">Tự động tra cứu và điền đầy đủ specs chính hãng cho các máy thiếu</div>
+              </div>
+            </a>
+            <a class="menu-drop-link" onclick="menuSyncToBaogia();closeAllMenus()">
+              <span class="item-icon">🔄</span>
+              <div>
+                <div class="item-title">Đồng Bộ Dự Toán ➔ Báo Giá</div>
+                <div class="item-desc">Chuyển danh sách thiết bị sang Tab Báo Giá Thuận Phát</div>
+              </div>
+            </a>
+            <a class="menu-drop-link" onclick="menuTdduAutoMatch();closeAllMenus()">
+              <span class="item-icon">⚡</span>
+              <div>
+                <div class="item-title">Khớp Mẫu Máy Chào Thầu</div>
+                <div class="item-desc">Tự động nhận diện danh mục và gán máy chào thầu chuẩn (Tab Tuyên Bố)</div>
+              </div>
+            </a>
+            <a class="menu-drop-link" onclick="menuTdduAutoEval();closeAllMenus()">
+              <span class="item-icon">⚖️</span>
+              <div>
+                <div class="item-title">Đánh Giá So Sánh Thực Tế</div>
+                <div class="item-desc">So sánh từng thông số Yêu cầu vs Chào thầu và đánh giá Đạt/Không đạt</div>
+              </div>
+            </a>
+            <div class="menu-divider"></div>
+            <a class="menu-drop-link" onclick="menuLoadSampleFile();closeAllMenus()">
+              <span class="item-icon">✨</span>
+              <div>
+                <div class="item-title">Nạp File Mẫu Gốc</div>
+                <div class="item-desc">Nạp dữ liệu mẫu BGThuanPhat.xlsx hoặc Bảng Tuyên Bố Đáp Ứng</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu 3: Xuất Báo Cáo -->
+        <div class="menu-item-wrap" id="menuWrapExport">
+          <button class="menu-btn" onclick="toggleMenuDropdown('menuWrapExport')">
+            💾 Xuất Báo Cáo <span class="caret">▾</span>
+          </button>
+          <div class="menu-dropdown">
+            <div class="menu-drop-hdr">XUẤT HỒ SƠ CHUẨN MẪU EXCEL &amp; WORD</div>
+            <a class="menu-drop-link" onclick="menuExportDuToan();closeAllMenus()">
+              <span class="item-icon">📊</span>
+              <div>
+                <div class="item-title">Xuất File Excel Dự Toán (.xlsx)</div>
+                <div class="item-desc">Chuẩn mẫu V1: Sheet Tổng hợp + Các sheet thông số chi tiết</div>
+              </div>
+            </a>
+            <a class="menu-drop-link" onclick="switchMainTab('baogia');exportBaogiaExcel();closeAllMenus()">
+              <span class="item-icon">🧾</span>
+              <div>
+                <div class="item-title">Xuất File Excel Báo Giá Thuận Phát (.xlsx)</div>
+                <div class="item-desc">Chuẩn mẫu BGThuanPhat.xlsx có Logo công ty, thuế VAT &amp; dịch chữ</div>
+              </div>
+            </a>
+            <a class="menu-drop-link" onclick="switchMainTab('tddu');exportComplianceExcel();closeAllMenus()">
+              <span class="item-icon">✅</span>
+              <div>
+                <div class="item-title">Xuất File Excel Tuyên Bố Đáp Ứng (.xlsx)</div>
+                <div class="item-desc">Chuẩn hồ sơ thầu, so sánh yêu cầu kỹ thuật và chào thầu</div>
+              </div>
+            </a>
+            <a class="menu-drop-link" onclick="switchMainTab('bbbg');exportHandoverWord();closeAllMenus()">
+              <span class="item-icon">📝</span>
+              <div>
+                <div class="item-title">Xuất File Word Biên Bản Bàn Giao (.docx)</div>
+                <div class="item-desc">Điền đầy đủ Bên Bán, Bên Mua và danh sách Serial thiết bị</div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Menu 4: Dữ Liệu & Quản Trị -->
+        <div class="menu-item-wrap" id="menuWrapData">
+          <button class="menu-btn" onclick="toggleMenuDropdown('menuWrapData')">
+            🛠️ Dữ Liệu &amp; Quản Trị <span class="caret">▾</span>
+          </button>
+          <div class="menu-dropdown">
+            <div class="menu-drop-hdr">QUẢN LÝ DỮ LIỆU &amp; BẢO MẬT</div>
+            <a class="menu-drop-link" onclick="exportLichSuJson();closeAllMenus()">
+              <span class="item-icon">💾</span>
+              <div>
+                <div class="item-title">Xuất Sao Lưu Toàn Bộ Lịch Sử</div>
+                <div class="item-desc">Tải file JSON backup về máy để lưu trữ hoặc chuyển máy</div>
+              </div>
+            </a>
+            <a class="menu-drop-link" onclick="document.getElementById('lsImportFileInput').click();closeAllMenus()">
+              <span class="item-icon">📥</span>
+              <div>
+                <div class="item-title">Khôi Phục Dữ Liệu Từ File Sao Lưu</div>
+                <div class="item-desc">Nhập lại lịch sử file và dự toán từ file JSON đã lưu</div>
+              </div>
+            </a>
+            <div class="menu-divider"></div>
+            <a class="menu-drop-link" onclick="openAdminModal();closeAllMenus()">
+              <span class="item-icon">🔒</span>
+              <div>
+                <div class="item-title">Mở Khóa Quản Trị Báo Giá (Admin)</div>
+                <div class="item-desc">Nhập mật khẩu quản trị nội bộ để cấp quyền</div>
+              </div>
+            </a>
+            <a class="menu-drop-link" onclick="menuClearActiveTab();closeAllMenus()">
+              <span class="item-icon" style="color:var(--re)">🗑️</span>
+              <div>
+                <div class="item-title" style="color:var(--re)">Làm Mới Dữ Liệu Tab Hiện Tại</div>
+                <div class="item-desc">Xóa trắng các mục để nhập lại từ đầu</div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menubar Right: Contextual Quick Status & Action -->
+      <div class="menubar-right">
+        <span class="menubar-status" id="menubarActiveTabStatus">
+          <span class="pulse-dot"></span> Đang ở: <b>📊 Làm Dự Toán</b>
+        </span>
+        <button class="btn btn-p btn-sm" id="btnMenuQuickAction" onclick="menuQuickExport()" title="Xuất file nhanh theo tab đang xem">
+          ⬇️ Xuất File Nhanh
+        </button>
+      </div>
     </div>
 
     <div id="view-dutoan">
       <div class="steps">
         <div class="stab active" id="tab1" onclick="goStep(1)">
-          <div class="snum" id="sn1">1</div><span class="slb">Tải File &amp; Đọc Dữ Liệu</span>
+          <div class="snum" id="sn1">1</div><span class="slb">Chọn Thiết Bị</span>
         </div>
         <div class="stab" id="tab2" onclick="goStep(2)">
           <div class="snum" id="sn2">2</div><span class="slb">Kiểm Tra &amp; Lọc</span>
@@ -73,19 +277,51 @@
           <div class="ch">
             <div class="ci">🛒</div>
             <div>
-              <div class="ct">Chọn Thiết Bị Lập Dự Toán (Tự Động Cào 100% Thông Số Kỹ Thuật)</div>
-              <div class="cs">Chọn các mẫu máy có sẵn trong danh mục hoặc thêm model máy mới, hệ thống tự động cào/trích xuất đầy đủ 26+ thông số kỹ thuật chuẩn của từng máy</div>
+              <div class="ct">Danh Sách Chọn Thiết Bị Lập Dự Toán (Tự Động Cào 100% Thông Số)</div>
+              <div class="cs">Tích chọn các thiết bị cần làm dự toán, chỉnh sửa đơn giá &amp; số lượng trực tiếp trên danh sách, hệ thống tự động trích xuất đầy đủ 26+ thông số kỹ thuật chuẩn</div>
             </div>
           </div>
 
-          <!-- Filter & Search in Catalog -->
-          <div style="display:flex;gap:10px;margin-bottom:12px;flex-wrap:wrap">
-            <input type="text" id="catSearch"
-              placeholder="🔍 Tìm kiếm tên máy, model, hãng sản xuất (VD: iPhone, Dell, HP, Canon, Ricoh, Yealink...)"
-              oninput="filterCatalog()" style="flex:1;min-width:240px" />
-            <button class="btn btn-o btn-sm" onclick="resetCatalogFilter()">✕ Xóa lọc</button>
+          <!-- Filter & Search Toolbar in Catalog -->
+          <div class="cat-toolbar">
+            <div class="cat-toolbar-left">
+              <input type="text" id="catSearch"
+                placeholder="🔍 Tìm nhanh tên máy, model, hãng sản xuất (VD: iPhone, Dell, HP, Canon, Ricoh, Yealink...)"
+                oninput="filterCatalog()" style="flex:2;min-width:240px" />
+              
+              <select id="catBrandFilter" onchange="filterCatBrand(this.value)" style="flex:1;min-width:140px;padding:8px 10px;border-radius:8px;border:1px solid var(--bdr2);background:var(--card);color:var(--t1);font-size:12.5px;font-weight:600;cursor:pointer">
+                <option value="">🏢 Tất cả hãng SX</option>
+                <option value="Dell">Dell</option>
+                <option value="HP">HP</option>
+                <option value="Canon">Canon</option>
+                <option value="Samsung">Samsung</option>
+                <option value="Apple">Apple</option>
+                <option value="Ricoh">Ricoh</option>
+                <option value="Brother">Brother</option>
+                <option value="Epson">Epson</option>
+                <option value="Yealink">Yealink</option>
+                <option value="Grandstream">Grandstream</option>
+                <option value="MSI">MSI</option>
+                <option value="LG">LG</option>
+              </select>
+
+              <button class="btn btn-o btn-sm" onclick="resetCatalogFilter()" title="Xóa toàn bộ tìm kiếm và bộ lọc">✕ Xóa lọc</button>
+            </div>
+
+            <div class="cat-toolbar-right">
+              <!-- Quick select all buttons -->
+              <button class="btn btn-o btn-sm" onclick="selectAllVisibleCatalog(true)" title="Chọn tất cả các thiết bị đang hiển thị">✓ Chọn tất cả</button>
+              <button class="btn btn-o btn-sm" onclick="selectAllVisibleCatalog(false)" title="Bỏ chọn tất cả thiết bị">✕ Bỏ chọn</button>
+
+              <!-- View mode switcher -->
+              <div class="view-mode-toggle" title="Chuyển chế độ hiển thị danh sách hoặc lưới thẻ">
+                <button class="view-mode-btn active" id="btnViewList" onclick="setCatalogViewMode('list')">📋 Danh sách</button>
+                <button class="view-mode-btn" id="btnViewGrid" onclick="setCatalogViewMode('grid')">🎴 Thẻ lưới</button>
+              </div>
+            </div>
           </div>
 
+          <!-- Category Chips -->
           <div class="cat-nav" id="catNav">
             <button class="cat-btn active" onclick="filterCatType('all')">Tất cả danh mục</button>
             <button class="cat-btn" onclick="filterCatType('dien_thoai')">📱 Điện thoại &amp; IP Phone</button>
@@ -96,22 +332,28 @@
             <button class="cat-btn" onclick="filterCatType('thiet_bi_khac')">🌐 Mạng, UPS &amp; Khác</button>
           </div>
 
-          <!-- Catalog Items Grid -->
-          <div class="cat-grid" id="catGrid"></div>
+          <!-- Interactive Selected Items Drawer -->
+          <div id="selectedItemsDrawer" class="selected-drawer" style="display:none">
+            <div class="selected-drawer-hdr">
+              <span>🛒 THIẾT BỊ ĐÃ CHỌN (<span id="drawerCount">0</span> loại):</span>
+              <button onclick="selectAllVisibleCatalog(false)" style="background:none;border:none;color:var(--re);font-size:11.5px;font-weight:700;cursor:pointer">✕ Xóa tất cả</button>
+            </div>
+            <div class="selected-tags-wrap" id="selectedTagsWrap"></div>
+          </div>
+
+          <!-- Catalog Items Container (Renders List Table or Cards Grid) -->
+          <div id="catGrid"></div>
 
           <!-- Custom Model Adder with AI Spec Scraper -->
-          <div
-            style="background:rgba(247,162,59,.08);border:1px solid rgba(247,162,59,.3);border-radius:var(--rs);padding:12px 16px;margin-top:8px">
-            <div style="font-size:13px;font-weight:700;color:var(--ai);margin-bottom:6px">➕ Thêm dòng máy khác ngoài
-              danh mục &amp; Tự động cào thông số:</div>
+          <div style="background:rgba(247,162,59,.08);border:1px solid rgba(247,162,59,.3);border-radius:var(--rs);padding:12px 16px;margin-top:8px">
+            <div style="font-size:13px;font-weight:700;color:var(--ai);margin-bottom:6px">➕ Thêm dòng máy khác ngoài danh mục &amp; Tự động cào thông số:</div>
             <div style="display:flex;gap:8px;flex-wrap:wrap">
               <input type="text" id="custDevName"
                 placeholder="Tên máy &amp; Model (VD: Máy photocopy Ricoh IM 3500, Laptop Dell Latitude 5440, Canon LBP 2900...)"
                 style="flex:2;min-width:220px" />
               <input type="number" id="custDevPrice" placeholder="Đơn giá (VNĐ)" style="flex:1;min-width:130px" />
               <input type="number" id="custDevQty" value="1" min="1" placeholder="SL" style="width:65px" />
-              <button class="btn btn-ai btn-sm" onclick="addCustomCatalogDev()">🤖 Thêm &amp; AI Tự Cào Thông
-                Số</button>
+              <button class="btn btn-ai btn-sm" onclick="addCustomCatalogDev()">🤖 Thêm &amp; AI Tự Cào Thông Số</button>
             </div>
           </div>
 
