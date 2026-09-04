@@ -284,7 +284,7 @@
           <div class="ch">
             <div class="ci">🛒</div>
             <div>
-              <div class="ct">Danh Sách Chọn Thiết Bị Lập Dự Toán (Tự Động Cào 100% Thông Số)</div>
+              <div class="ct"><span class="sec-badge blue">PHẦN 1</span> Danh Sách Chọn Thiết Bị Lập Dự Toán (Tự Động Cào 100% Thông Số)</div>
               <div class="cs">Tích chọn các thiết bị cần làm dự toán, chỉnh sửa đơn giá &amp; số lượng trực tiếp trên danh sách, hệ thống tự động trích xuất đầy đủ 26+ thông số kỹ thuật chuẩn</div>
             </div>
           </div>
@@ -442,9 +442,9 @@
           <div id="catGrid"></div>
 
           <!-- Custom Model Adder with AI Spec Scraper -->
-          <div style="background:rgba(247,162,59,.08);border:1px solid rgba(247,162,59,.3);border-radius:var(--rs);padding:12px 16px;margin-top:8px">
-            <div style="font-size:13px;font-weight:700;color:var(--ai);margin-bottom:6px">➕ Thêm dòng máy khác ngoài danh mục &amp; Tự động cào thông số:</div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap">
+          <div class="custom-dev-adder">
+            <div class="custom-dev-adder-title">➕ Thêm dòng máy khác ngoài danh mục &amp; AI Tự động cào thông số chính hãng:</div>
+            <div style="display:flex;gap:10px;flex-wrap:wrap">
               <input type="text" id="custDevName"
                 placeholder="Tên máy &amp; Model (VD: Máy photocopy Ricoh IM 3500, Laptop Dell Latitude 5440, Canon LBP 2900...)"
                 style="flex:2;min-width:220px" />
@@ -477,7 +477,7 @@
           <div class="ch">
             <div class="ci">📋</div>
             <div>
-              <div class="ct">2. Thông tin dự án / gói thầu</div>
+              <div class="ct"><span class="sec-badge green">PHẦN 2</span> Thông Tin Dự Án / Gói Thầu</div>
               <div class="cs">Điền tiêu đề bảng tổng hợp dự toán (hoặc chọn mẫu hồ sơ có sẵn)</div>
             </div>
           </div>
@@ -524,7 +524,7 @@
         <div class="ch">
           <div class="ci">📊</div>
           <div>
-            <div class="ct">Trình Xem Bảng Dự Toán (Mô Phỏng Excel 100% Chuẩn Mẫu V1)</div>
+            <div class="ct"><span class="sec-badge purple">BƯỚC 2</span> Trình Xem Bảng Dự Toán (Mô Phỏng Excel Chuẩn Mẫu V1)</div>
             <div class="cs">Bấm chuyển đổi giữa Sheet "Tổng hợp" và các Sheet thông số "1, 2, 3, 4" ở thanh tab phía
               dưới
             </div>
@@ -577,7 +577,7 @@
         <div class="ch">
           <div class="ci">✏️</div>
           <div>
-            <div class="ct">Chỉnh Sửa Nhanh Thông Số &amp; Giá Cả Từng Thiết Bị</div>
+            <div class="ct"><span class="sec-badge amber">TÙY CHỈNH</span> Chỉnh Sửa Nhanh Thông Số &amp; Giá Cả Từng Thiết Bị</div>
             <div class="cs">Chọn thiết bị để chỉnh sửa chi tiết nếu cần</div>
           </div>
         </div>
@@ -599,7 +599,7 @@
         <div class="ch">
           <div class="ci">📑</div>
           <div>
-            <div class="ct">Xem Trước Dự Toán Cuối Cùng</div>
+            <div class="ct"><span class="sec-badge green">BƯỚC 3</span> Xem Trước &amp; Xuất Dự Toán Chuẩn Mẫu V1</div>
             <div class="cs">Bảng tổng hợp chuẩn bị xuất ra file Excel</div>
           </div>
         </div>
@@ -635,8 +635,8 @@
       <div class="ch">
         <div class="ci">📝</div>
         <div>
-          <div class="ct">Lập Biên Bản Bàn Giao Hàng Hóa</div>
-          <div class="cs">Điền thông tin và Serial thiết bị để xuất file Word</div>
+          <div class="ct"><span class="sec-badge blue">PHÂN HỆ 4</span> Lập Biên Bản Bàn Giao Hàng Hóa</div>
+          <div class="cs">Điền thông tin và Serial thiết bị để xuất file Word chuẩn chỉnh</div>
         </div>
       </div>
 
@@ -647,12 +647,12 @@
         </div>
       </div>
 
-      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:16px">
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:18px">
         <!-- BÊN BÁN (BÊN A) -->
-        <div style="flex:1;min-width:300px;background:var(--inp);padding:14px;border:1px solid var(--bdr);border-radius:var(--rs)">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-            <div style="font-weight:700;color:var(--b2)">BÊN BÁN (BÊN A)</div>
-            <select onchange="bbFillSeller(this.value);this.value='';" style="font-size:12px;padding:5px 8px;border-radius:6px;border:1px solid var(--bdr2);background:var(--card);color:var(--t1);cursor:pointer;max-width:210px">
+        <div class="bb-side-box seller">
+          <div class="bb-side-header">
+            <div class="bb-side-title">🏢 BÊN BÁN (BÊN A)</div>
+            <select onchange="bbFillSeller(this.value);this.value='';" style="font-size:12px;padding:5px 8px;border-radius:6px;border:1.5px solid var(--bdr2);background:var(--card);color:var(--t1);cursor:pointer;max-width:210px">
               <option value="">📋 Chọn mẫu bên bán ▾</option>
               <option value="thuan_phat_hoa">🏢 Thuận Phát (Trương Ngọc Hoà - KT)</option>
               <option value="thuan_phat_khue">🏢 Thuận Phát (Bà Nguyễn Thị Khuê - GĐ)</option>
@@ -673,10 +673,10 @@
         </div>
 
         <!-- BÊN MUA (BÊN B) -->
-        <div style="flex:1;min-width:300px;background:var(--inp);padding:14px;border:1px solid var(--bdr);border-radius:var(--rs)">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px">
-            <div style="font-weight:700;color:var(--gr)">BÊN MUA (BÊN B)</div>
-            <select onchange="bbFillBuyer(this.value);this.value='';" style="font-size:12px;padding:5px 8px;border-radius:6px;border:1px solid var(--bdr2);background:var(--card);color:var(--t1);cursor:pointer;max-width:220px">
+        <div class="bb-side-box buyer">
+          <div class="bb-side-header">
+            <div class="bb-side-title">🏢 BÊN MUA (BÊN B)</div>
+            <select onchange="bbFillBuyer(this.value);this.value='';" style="font-size:12px;padding:5px 8px;border-radius:6px;border:1.5px solid var(--bdr2);background:var(--card);color:var(--t1);cursor:pointer;max-width:220px">
               <option value="">📋 Chọn mẫu bên mua ▾</option>
               <option value="hoa_phat">🏢 Hòa Phát (Kiến Hưng Hà Đông - Nghiêm Văn Cường)</option>
               <option value="ecoit">🏢 ECOIT (Imperia Garden Thanh Xuân - Đoàn Văn Ngà)</option>
@@ -715,7 +715,7 @@
       <div class="ch">
         <div class="ci">📂</div>
         <div>
-          <div class="ct">1. Tải lên File Yêu Cầu Kỹ Thuật ( Báo giá / File thông số kỹ thuật)</div>
+          <div class="ct"><span class="sec-badge green">BƯỚC 1</span> Tải lên File Yêu Cầu Kỹ Thuật (Báo giá / File thông số kỹ thuật)</div>
           <div class="cs">Hệ thống sẽ tự động bóc tách toàn bộ danh mục và thông số yêu cầu vào cột trái, sau đó gợi ý
             các mẫu máy chào thầu phù hợp vào cột phải</div>
         </div>
@@ -755,7 +755,7 @@
       <div class="ch">
         <div class="ci">📋</div>
         <div>
-          <div class="ct">2. Thông tin chung gói thầu &amp; Nhà thầu</div>
+          <div class="ct"><span class="sec-badge blue">BƯỚC 2</span> Thông Tin Chung Gói Thầu &amp; Nhà Thầu</div>
           <div class="cs">Điền tiêu đề và thông tin các bên theo hồ sơ mời thầu (hoặc chọn mẫu gói thầu có sẵn)
           </div>
         </div>
@@ -806,7 +806,7 @@
       <div class="ch">
         <div class="ci">⚖️</div>
         <div>
-          <div class="ct">3. Bảng so sánh Yêu cầu vs Hàng hóa chào thầu</div>
+          <div class="ct"><span class="sec-badge purple">BƯỚC 3</span> Bảng So Sánh Yêu Cầu vs Hàng Hóa Chào Thầu</div>
           <div class="cs">Chọn mẫu máy chào thầu để hệ thống tự động điền đầy đủ 100% thông số tương ứng và đánh giá đáp
             ứng</div>
         </div>
@@ -862,7 +862,7 @@
       <div class="ch">
         <div class="ci">📑</div>
         <div>
-          <div class="ct">4. Xem trước &amp; Xuất Excel Bảng Tuyên Bố Đáp Ứng</div>
+          <div class="ct"><span class="sec-badge green">BƯỚC 4</span> Xem Trước &amp; Xuất Excel Bảng Tuyên Bố Đáp Ứng</div>
           <div class="cs">Bảng so sánh chi tiết mô phỏng 100% định dạng file Excel xuất ra</div>
         </div>
       </div>
@@ -889,19 +889,19 @@
   <!-- ══════════════════ VIEW BAO GIA (ADMIN - THUẬN PHÁT) ══════════════════ -->
   <div id="view-baogia" style="display:none">
     <div class="card" style="margin-top:0">
-      <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;background:#ffffff;border:1px solid #e2e8f0;border-radius:14px;padding:24px 30px;margin-bottom:18px;box-shadow:0 4px 14px rgba(0,0,0,0.04);text-align:center">
+      <div class="baogia-header-card">
         <div style="width:100%;display:flex;justify-content:center;align-items:center;margin-bottom:14px">
           <img src="logo_thuanphat.png" alt="Logo Công ty Thuận Phát" style="height:120px;max-width:95%;width:auto;object-fit:contain;display:block;margin:0 auto" />
         </div>
-        <div style="font-size:18px;font-weight:900;color:#0f172a;letter-spacing:0.5px">BẢNG BÁO GIÁ THUẬN PHÁT CHUẨN MẪU</div>
-        <div style="font-size:13px;color:#64748b;margin-top:4px">BGThuanPhat.xlsx • Tự động tính thuế VAT &amp; dịch số thành chữ tiếng Việt</div>
+        <div style="font-size:19px;font-weight:900;color:var(--t1);letter-spacing:0.5px">BẢNG BÁO GIÁ THUẬN PHÁT CHUẨN MẪU</div>
+        <div style="font-size:13px;color:var(--t2);margin-top:4px;font-weight:500">BGThuanPhat.xlsx • Tự động tính thuế VAT &amp; dịch số thành chữ tiếng Việt</div>
       </div>
 
       <!-- CUSTOMER & SETTINGS INFO FORM -->
-      <div style="background:var(--card2);border:1px solid var(--bdr);border-radius:var(--rs);padding:16px;margin-bottom:16px">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
-          <div style="font-weight:800;font-size:14px;color:var(--t1)">🏢 THÔNG TIN BẢNG BÁO GIÁ THUẬN PHÁT</div>
-          <select onchange="bgFillCustomer(this.value);this.value='';" style="font-size:12px;padding:5px 10px;border-radius:6px;border:1px solid var(--bdr2);background:var(--card);color:var(--t1);cursor:pointer;max-width:320px">
+      <div class="baogia-settings-box">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+          <div style="font-weight:800;font-size:14px;color:var(--t1);display:flex;align-items:center;gap:8px"><span class="sec-badge amber">MỤC 1</span> 🏢 THÔNG TIN BẢNG BÁO GIÁ THUẬN PHÁT</div>
+          <select onchange="bgFillCustomer(this.value);this.value='';" style="font-size:12px;padding:6px 12px;border-radius:8px;border:1.5px solid var(--bdr2);background:var(--card);color:var(--t1);cursor:pointer;max-width:320px;font-weight:600">
             <option value="">📋 Chọn mẫu khách hàng nhanh ▾</option>
             <option value="hoa_phat">🏢 Hòa Phát (Kiến Hưng Hà Đông - 0787416666)</option>
             <option value="ecoit">🏢 ECOIT (Imperia Garden - Đoàn Văn Ngà)</option>
@@ -930,8 +930,8 @@
       </div>
 
       <!-- TOOLBAR & QUICK ACTIONS -->
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
-        <div style="font-weight:700;font-size:14px;color:var(--t1)">Danh Mục Sản Phẩm &amp; Bảng Giá</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;flex-wrap:wrap;gap:8px">
+        <div style="font-weight:800;font-size:14.5px;color:var(--t1);display:flex;align-items:center;gap:8px"><span class="sec-badge blue">MỤC 2</span> Danh Mục Sản Phẩm &amp; Bảng Giá</div>
         <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
           <button class="btn btn-p btn-sm" onclick="bgAddProduct()">➕ Thêm dòng sản phẩm</button>
           <button class="btn btn-o btn-sm" onclick="bgSyncFromDuToan()" title="Lấy tất cả thiết bị từ tab Dự Toán sang đây">🔄 Lấy từ tab Dự Toán</button>
@@ -969,7 +969,7 @@
         <div style="display:flex;align-items:center;gap:12px">
           <div style="width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#2563eb);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;box-shadow:0 4px 12px rgba(124,58,237,0.3)">🕐</div>
           <div>
-            <div style="font-size:18px;font-weight:800;color:var(--t1)">Lịch Sử File Đã Xuất <span id="lichsuCount" style="background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;padding:2px 10px;border-radius:20px;font-size:11.5px;font-weight:700">0 file</span></div>
+            <div style="font-size:18px;font-weight:800;color:var(--t1);display:flex;align-items:center;gap:8px"><span class="sec-badge purple">PHÂN HỆ 5</span> Lịch Sử File Đã Xuất <span id="lichsuCount" style="background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;padding:2px 10px;border-radius:20px;font-size:11.5px;font-weight:700">0 file</span></div>
             <div style="font-size:12.5px;color:var(--t2);margin-top:2px">Quản lý, tìm kiếm, sao lưu và theo dõi các file Excel / Word đã tạo</div>
           </div>
         </div>
