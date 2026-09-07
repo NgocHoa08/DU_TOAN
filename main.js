@@ -1694,7 +1694,7 @@ var MODEL_PRESETS = {
       },
       {
         "key": "Tốc độ in A4 trắng đen",
-        "value": "A4: 36 trang màu/phút;"
+        "value": "A4: 36 trang trắng đen/phút;"
       },
       {
         "key": "Ngôn ngữ in",
@@ -1828,7 +1828,7 @@ var MODEL_PRESETS = {
       },
       {
         "key": "Tốc độ in A4 trắng đen",
-        "value": "A4: 35 trang màu/phút; A3: 20 trang màu/ phút"
+        "value": "A4: 35 trang trắng đen/phút; A3: 20 trang trắng đen/phút"
       },
       {
         "key": "Ngôn ngữ in",
@@ -1974,7 +1974,7 @@ var MODEL_PRESETS = {
       },
       {
         "key": "Thời gian sẵn sàng in",
-        "value": "17 giấy"
+        "value": "17 giây"
       },
       {
         "key": "In đảo mặt tự động",
@@ -2904,11 +2904,11 @@ var MODEL_PRESETS = {
     "specs": [
       {
         "key": "Tốc độ in A4 Màu",
-        "value": "34 trang màu/phút"
+        "value": "26 trang màu/phút"
       },
       {
         "key": "Tốc độ in A4 trắng đen",
-        "value": "236 trang trắng đen/phút"
+        "value": "30 trang trắng đen/phút"
       },
       {
         "key": "Ngôn ngữ in",
@@ -3150,7 +3150,7 @@ var MODEL_PRESETS = {
       },
       {
         "key": "Thời gian sẵn sàng in",
-        "value": "17 giấy"
+        "value": "17 giây"
       },
       {
         "key": "In đảo mặt tự động",
@@ -3272,7 +3272,7 @@ var MODEL_PRESETS = {
       },
       {
         "key": "Thời gian sẵn sàng in",
-        "value": "17 giấy"
+        "value": "17 giây"
       },
       {
         "key": "In đảo mặt tự động",
@@ -30446,7 +30446,7 @@ var CATALOG_ITEMS = [
       },
       {
         "key": "Thời gian sẵn sàng in",
-        "value": "17 giấy"
+        "value": "17 giây"
       },
       {
         "key": "In đảo mặt tự động",
@@ -31670,7 +31670,7 @@ var CATALOG_ITEMS = [
       },
       {
         "key": "Thời gian sẵn sàng in",
-        "value": "17 giấy"
+        "value": "17 giây"
       },
       {
         "key": "In đảo mặt tự động",
@@ -31798,7 +31798,7 @@ var CATALOG_ITEMS = [
       },
       {
         "key": "Thời gian sẵn sàng in",
-        "value": "17 giấy"
+        "value": "17 giây"
       },
       {
         "key": "In đảo mặt tự động",
