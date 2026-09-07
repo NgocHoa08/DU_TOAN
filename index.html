@@ -283,12 +283,59 @@
 
       <!-- ══════════════════ STEP 1: CHỌN THIẾT BỊ DỰ TOÁN ══════════════════ -->
       <div class="panel on" id="p1">
+
+        <!-- PROJECT INFO (PHẦN 1) -->
         <div class="card" style="margin-top:0">
+          <div class="ch">
+            <div class="ci">📋</div>
+            <div>
+              <div class="ct"><span class="sec-badge green">PHẦN 1</span> Thông Tin Dự Án / Gói Thầu</div>
+              <div class="cs">Điền tiêu đề bảng tổng hợp dự toán (hoặc chọn mẫu hồ sơ có sẵn)</div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+            <span style="font-size:12px;color:var(--t2)">💡 Bạn có thể chọn nhanh mẫu thông tin công ty &amp; dự án:</span>
+            <select onchange="fillProjectPreset(this.value);this.value='';" style="font-size:12px;padding:5px 10px;border-radius:6px;border:1px solid var(--bdr2);background:var(--card);color:var(--t1);cursor:pointer;max-width:320px">
+              <option value="">📋 Chọn mẫu dự án ▾</option>
+              <option value="thuan_phat">🏢 Thuận Phát - Nâng cấp hạ tầng số &amp; CNTT</option>
+              <option value="bao_an">🏢 Bảo An - Mua sắm trang thiết bị tỉnh - xã</option>
+              <option value="cahcm">🏢 CAHCM - Dự toán chuyển đổi số theo NQ 57</option>
+              <option value="hoa_phat">🏢 Hòa Phát - Hợp đồng thiết bị giáo dục 1308</option>
+            </select>
+          </div>
+          <div class="fgrid">
+            <div class="fg full">
+              <label>Tên dự án / gói thầu <span class="req">*</span></label>
+              <input id="pjN" type="text"
+                value="Đầu tư nâng cấp hạ tầng số, thiết bị phát triển khoa học và công nghệ"
+                placeholder="VD: Đầu tư nâng cấp hạ tầng số, thiết bị phát triển khoa học và công nghệ" />
+            </div>
+            <div class="fg full">
+              <label>Tên nhóm danh mục thiết bị</label>
+              <input id="gpN" type="text"
+                value="Hệ thống trang thiết bị CNTT, thiết bị ngoại vi…"
+                placeholder="VD: Hệ thống trang thiết bị CNTT, thiết bị ngoại vi…" />
+            </div>
+            <div class="fg">
+              <label>Đơn vị lập dự toán</label>
+              <input id="orgN" type="text"
+                value="CÔNG TY TNHH THƯƠNG MẠI ĐẦU TƯ VÀ SẢN XUẤT THUẬN PHÁT"
+                placeholder="VD: CÔNG TY TNHH THƯƠNG MẠI ĐẦU TƯ VÀ SẢN XUẤT THUẬN PHÁT" />
+            </div>
+            <div class="fg">
+              <label>Ngày lập</label>
+              <input id="dtN" type="date" />
+            </div>
+          </div>
+        </div>
+
+        <!-- CATALOG (PHẦN 2) -->
+        <div class="card">
           <div class="ch">
             <div class="ci">🛒</div>
             <div>
-              <div class="ct"><span class="sec-badge blue">PHẦN 1</span> Danh Sách Chọn Thiết Bị Lập Dự Toán (Tự Động Cào 100% Thông Số)</div>
-              <div class="cs">Tích chọn các thiết bị cần làm dự toán, chỉnh sửa đơn giá &amp; số lượng trực tiếp trên danh sách, hệ thống tự động trích xuất đầy đủ 26+ thông số kỹ thuật chuẩn</div>
+              <div class="ct"><span class="sec-badge blue">PHẦN 2</span> Danh Sách Chọn Thiết Bị Lập Dự Toán</div>
+              <div class="cs">Tích chọn các thiết bị cần làm dự toán, chỉnh sửa đơn giá &amp; số lượng trực tiếp trên danh sách</div>
             </div>
           </div>
 
@@ -314,13 +361,6 @@
                 <option value="Cisco">Cisco</option>
                 <option value="OKI">OKI</option>
               </select>
-
-              <label class="spec-search-toggle" title="Tìm kiếm từ khóa trong toàn bộ nội dung của 26+ thông số kỹ thuật chi tiết">
-                <input type="checkbox" id="catDeepSpecSearch" onchange="filterCatalog()"/>
-                <span>🔬 Lọc theo thông số</span>
-              </label>
-
-              <button class="btn btn-o btn-sm" onclick="resetCatalogFilter()" title="Xóa toàn bộ tìm kiếm và bộ lọc">✕ Xóa lọc</button>
             </div>
 
             <div class="cat-toolbar-right">
@@ -334,102 +374,6 @@
                 <button class="view-mode-btn" id="btnViewGrid" onclick="setCatalogViewMode('grid')">🎴 Thẻ lưới</button>
               </div>
             </div>
-          </div>
-
-          <!-- Bộ Lọc Chuyên Sâu Theo Thông Số Kỹ Thuật (GB, Tốc độ in, Khay giấy, Khổ giấy...) -->
-          <div class="cat-spec-filter-panel" id="catSpecFilterPanel">
-            <div class="csfp-header">
-              <div class="csfp-title">
-                <span>🎛️ <b>Lọc Chi Tiết Theo Thông Số:</b></span>
-                <span class="csfp-hint">Lọc tức thì theo RAM/GB, tốc độ in (ppm), số lượng tờ/khay, khổ giấy...</span>
-              </div>
-              <button class="csfp-toggle-btn" id="btnToggleSpecPanel" onclick="toggleSpecFilterPanel()" title="Thu gọn/Mở rộng bộ lọc thông số">
-                <span id="txtToggleSpecPanel">Thu gọn</span> ▴
-              </button>
-            </div>
-
-            <div class="csfp-body" id="csfpBody">
-              <div class="csfp-grid">
-                <!-- Dropdown 1: RAM & Bộ nhớ GB -->
-                <div class="csfp-col">
-                  <label>💾 Dung Lượng RAM / Bộ Nhớ</label>
-                  <select id="specFilterRam" onchange="applyParametricFilter()">
-                    <option value="">-- Tất cả RAM / Bộ nhớ --</option>
-                    <option value="ram_8gb">RAM 8 GB</option>
-                    <option value="ram_12_16gb">RAM 12 GB - 16 GB</option>
-                    <option value="storage_256gb">Ổ cứng / ROM 256 GB</option>
-                    <option value="storage_512gb">Ổ cứng SSD 512 GB</option>
-                    <option value="storage_1tb">Ổ cứng dung lượng lớn (≥ 1 TB)</option>
-                  </select>
-                </div>
-
-                <!-- Dropdown 2: Tốc độ in / quét -->
-                <div class="csfp-col">
-                  <label>⚡ Tốc Độ In / Quét (trang/phút)</label>
-                  <select id="specFilterSpeed" onchange="applyParametricFilter()">
-                    <option value="">-- Tất cả tốc độ --</option>
-                    <option value="speed_lt25">&lt; 25 trang/phút (Tiêu chuẩn)</option>
-                    <option value="speed_25_35">25 - 35 trang/phút (Trung bình)</option>
-                    <option value="speed_gt35">&gt; 35 trang/phút (Tốc độ cao)</option>
-                  </select>
-                </div>
-
-                <!-- Dropdown 3: Số lượng tờ / Trữ lượng khay giấy -->
-                <div class="csfp-col">
-                  <label>📥 Số Lượng Tờ / Khay Giấy</label>
-                  <select id="specFilterPaper" onchange="applyParametricFilter()">
-                    <option value="">-- Tất cả khay giấy --</option>
-                    <option value="paper_lt150">Khay nạp &lt; 150 tờ (Nhỏ gọn)</option>
-                    <option value="paper_gte250">Khay nạp ≥ 250 tờ (Chuẩn văn phòng)</option>
-                    <option value="paper_gte500">Khay nạp ≥ 500 tờ (Dung lượng lớn)</option>
-                  </select>
-                </div>
-
-                <!-- Dropdown 4: Khổ giấy & Tính năng đặc thù -->
-                <div class="csfp-col">
-                  <label>📄 Khổ Giấy &amp; Tính Năng</label>
-                  <select id="specFilterFeature" onchange="applyParametricFilter()">
-                    <option value="">-- Tất cả khổ / tính năng --</option>
-                    <option value="paper_a3">Khổ A3 (In / Quét khổ lớn)</option>
-                    <option value="duplex">In 2 mặt tự động (Duplex)</option>
-                    <option value="wifi">Kết nối Wi-Fi / Không dây</option>
-                    <option value="lan">Cổng mạng LAN / Gigabit</option>
-                  </select>
-                </div>
-              </div>
-
-              <!-- Quick Filter Chips -->
-              <div class="csfp-chips-wrap">
-                <span class="csfp-chips-label">Gợi ý lọc nhanh:</span>
-                <button type="button" class="spec-chip" data-type="ram" data-val="ram_12_16gb" onclick="toggleSpecChip(this, 'ram', 'ram_12_16gb')">🚀 RAM 16GB</button>
-                <button type="button" class="spec-chip" data-type="ram" data-val="storage_512gb" onclick="toggleSpecChip(this, 'ram', 'storage_512gb')">💾 SSD 512GB</button>
-                <button type="button" class="spec-chip" data-type="speed" data-val="speed_gt35" onclick="toggleSpecChip(this, 'speed', 'speed_gt35')">🖨️ Tốc độ &gt; 35 tr/phút</button>
-                <button type="button" class="spec-chip" data-type="paper" data-val="paper_gte250" onclick="toggleSpecChip(this, 'paper', 'paper_gte250')">📥 Khay ≥ 250 tờ</button>
-                <button type="button" class="spec-chip" data-type="feature" data-val="duplex" onclick="toggleSpecChip(this, 'feature', 'duplex')">🔄 In 2 mặt (Duplex)</button>
-                <button type="button" class="spec-chip" data-type="feature" data-val="paper_a3" onclick="toggleSpecChip(this, 'feature', 'paper_a3')">📄 Khổ A3</button>
-                <button type="button" class="spec-chip" data-type="feature" data-val="wifi" onclick="toggleSpecChip(this, 'feature', 'wifi')">📶 Wi-Fi</button>
-
-                <button type="button" class="btn-clear-spec-filters" id="btnClearSpecFilters" onclick="resetParametricFilters()" style="display:none" title="Đặt lại tất cả bộ lọc thông số">
-                  ✕ Bỏ lọc thông số (<span id="activeSpecFilterCount">0</span>)
-                </button>
-              </div>
-
-              <!-- Active Filters Summary Banner -->
-              <div id="specFilterActiveBanner" class="spec-active-banner" style="display:none">
-                <span>🔍 Đang lọc theo: <b id="specFilterActiveText">...</b></span>
-                <span class="spec-match-badge" id="specFilterResultBadge">Tìm thấy 0 máy</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Category Chips -->
-          <div class="cat-nav" id="catNav">
-            <button class="cat-btn active" onclick="filterCatType('all')">Tất cả danh mục</button>
-            <button class="cat-btn" onclick="filterCatType('may_tinh')">💻 Máy tính &amp; Laptop</button>
-            <button class="cat-btn" onclick="filterCatType('man_hinh')">🖥️ Màn hình máy tính</button>
-            <button class="cat-btn" onclick="filterCatType('may_in')">🖨️ Máy in &amp; Photocopy</button>
-            <button class="cat-btn" onclick="filterCatType('may_scan')">📄 Máy Scan tài liệu</button>
-            <button class="cat-btn" onclick="filterCatType('thiet_bi_khac')">🌐 Mạng, UPS &amp; Khác</button>
           </div>
 
           <!-- Interactive Selected Items Drawer -->
@@ -451,7 +395,7 @@
               <input type="text" id="custDevName"
                 placeholder="Tên máy &amp; Model (VD: Máy photocopy Ricoh IM 3500, Laptop Dell Latitude 5440, Canon LBP 2900...)"
                 style="flex:2;min-width:220px" />
-              <input type="number" id="custDevPrice" placeholder="Đơn giá (VNĐ)" style="flex:1;min-width:130px" />
+              <input type="text" id="custDevPrice" placeholder="Đơn giá (VNĐ)" oninput="formatMoneyInput(this)" style="flex:1;min-width:130px;text-align:right" />
               <input type="number" id="custDevQty" value="1" min="1" placeholder="SL" style="width:65px" />
               <button class="btn btn-ai btn-sm" onclick="addCustomCatalogDev()">🤖 Thêm &amp; AI Tự Cào Thông Số</button>
             </div>
@@ -472,46 +416,6 @@
               style="font-size:14.5px;font-weight:800">
               🚀 TẠO NGAY BẢNG DỰ TOÁN &amp; CHI TIẾT TỪNG SHEET ➔
             </button>
-          </div>
-        </div>
-
-        <!-- PROJECT INFO -->
-        <div class="card">
-          <div class="ch">
-            <div class="ci">📋</div>
-            <div>
-              <div class="ct"><span class="sec-badge green">PHẦN 2</span> Thông Tin Dự Án / Gói Thầu</div>
-              <div class="cs">Điền tiêu đề bảng tổng hợp dự toán (hoặc chọn mẫu hồ sơ có sẵn)</div>
-            </div>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
-            <span style="font-size:12px;color:var(--t2)">💡 Bạn có thể chọn nhanh mẫu thông tin công ty &amp; dự án:</span>
-            <select onchange="fillProjectPreset(this.value);this.value='';" style="font-size:12px;padding:5px 10px;border-radius:6px;border:1px solid var(--bdr2);background:var(--card);color:var(--t1);cursor:pointer;max-width:320px">
-              <option value="">📋 Chọn mẫu dự án ▾</option>
-              <option value="thuan_phat">🏢 Thuận Phát - Nâng cấp hạ tầng số &amp; CNTT</option>
-              <option value="bao_an">🏢 Bảo An - Mua sắm trang thiết bị tỉnh - xã</option>
-              <option value="cahcm">🏢 CAHCM - Dự toán chuyển đổi số theo NQ 57</option>
-              <option value="hoa_phat">🏢 Hòa Phát - Hợp đồng thiết bị giáo dục 1308</option>
-            </select>
-          </div>
-          <div class="fgrid">
-            <div class="fg full">
-              <label>Tên dự án / gói thầu <span class="req">*</span></label>
-              <input id="pjN" type="text"
-                placeholder="VD: Đầu tư nâng cấp hạ tầng số, thiết bị phát triển khoa học và công nghệ" />
-            </div>
-            <div class="fg full">
-              <label>Tên nhóm danh mục thiết bị</label>
-              <input id="gpN" type="text" placeholder="VD: Hệ thống trang thiết bị CNTT, thiết bị ngoại vi…" />
-            </div>
-            <div class="fg">
-              <label>Đơn vị lập dự toán</label>
-              <input id="orgN" type="text" placeholder="VD: Công ty CP Công nghệ ABC" />
-            </div>
-            <div class="fg">
-              <label>Ngày lập</label>
-              <input id="dtN" type="date" />
-            </div>
           </div>
         </div>
 

@@ -2875,6 +2875,7 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   padding: 7px 11px;
   font-size: 13px;
   font-weight: 800;
+  text-align: right;
   color: #b45309;
   border: 1.5px solid #fde68a;
   border-radius: 8px;
@@ -3345,6 +3346,7 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 [data-theme="dark"] .cat-table tbody tr:hover { background-color: rgba(37, 99, 235, 0.18) !important; }
 [data-theme="dark"] .cat-table thead th { background: linear-gradient(180deg, #1e1e1e 0%, #161616 100%) !important; color: #e2e8f0 !important; border-color: #333333 !important; }
 [data-theme="dark"] .btn-cat-select { background: #1f1f1f !important; border-color: #383838 !important; color: #e2e8f0 !important; }
+[data-theme="dark"] .btn-cat-select.selected { background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%) !important; border-color: #15803d !important; color: #ffffff !important; }
 
 .spec-highlight {
   background: #fef08a;
