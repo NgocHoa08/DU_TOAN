@@ -57495,11 +57495,18 @@ function xlsSP(wb, dev, num) {
   var dtShort = (dtParts.length === 3 && dtParts[0].length === 4) ? (dtParts[2] + '/' + dtParts[1] + '/' + dtParts[0]) : dtRaw;
 
   var SINFO = { font: { italic: true, name: 'Times New Roman', sz: 9.5, color: { rgb: '555555' } }, alignment: { vertical: 'center' } };
-  var SH = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, alignment: { horizontal: 'center', vertical: 'center' }, border: mkB('000000') };
-  var SHL = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, alignment: { vertical: 'center', wrapText: true }, border: mkB('000000') };
-  var SK = { font: { bold: true, name: 'Times New Roman', sz: 11 }, border: mkB('000000'), alignment: { vertical: 'center', wrapText: true } };
-  var SV = { font: { name: 'Times New Roman', sz: 11 }, border: mkB('000000'), alignment: { vertical: 'center', wrapText: true } };
-  var SQ = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, fill: { patternType: 'solid', fgColor: { rgb: 'FFFF00' } }, alignment: { horizontal: 'center', vertical: 'center' }, border: mkB('000000') };
+  // Header row: same D9E1F2 fill as Tổng hợp sheet
+  var SH  = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, fill: { patternType: 'solid', fgColor: { rgb: 'D9E1F2' } }, alignment: { horizontal: 'center', vertical: 'center' }, border: mkB('000000') };
+  // Device name row: slightly lighter fill
+  var SHL = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '1F3864' } }, fill: { patternType: 'solid', fgColor: { rgb: 'D9E1F2' } }, alignment: { vertical: 'center', wrapText: true }, border: mkB('000000') };
+  // Spec key: dark teal text on light blue
+  var SK  = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '1F3864' } }, fill: { patternType: 'solid', fgColor: { rgb: 'EBF0FA' } }, border: mkB('000000'), alignment: { vertical: 'center', wrapText: true } };
+  // Spec key odd rows: white background
+  var SKW = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '1F3864' } }, fill: { patternType: 'solid', fgColor: { rgb: 'FFFFFF' } }, border: mkB('000000'), alignment: { vertical: 'center', wrapText: true } };
+  // Spec value: plain
+  var SV  = { font: { name: 'Times New Roman', sz: 11 }, fill: { patternType: 'solid', fgColor: { rgb: 'EBF0FA' } }, border: mkB('000000'), alignment: { vertical: 'center', wrapText: true } };
+  var SVW = { font: { name: 'Times New Roman', sz: 11 }, fill: { patternType: 'solid', fgColor: { rgb: 'FFFFFF' } }, border: mkB('000000'), alignment: { vertical: 'center', wrapText: true } };
+  var SQ  = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, fill: { patternType: 'solid', fgColor: { rgb: 'FFFF00' } }, alignment: { horizontal: 'center', vertical: 'center' }, border: mkB('000000') };
 
   // Columns: A (Key/Spec name: 38), B (Value 1: 38), C (Value 2: 38), D (Spacer: 4), E (QUAY LẠI: 16)
   ws['!cols'] = [{ wch: 38 }, { wch: 38 }, { wch: 38 }, { wch: 4 }, { wch: 16 }];
@@ -57534,12 +57541,16 @@ function xlsSP(wb, dev, num) {
   var dNameLines = Math.ceil(String(dev.name || '').length / 60);
   ws['!rows'][r] = { hpt: Math.max(26, dNameLines * 18 + 6) }; r++;
 
-  // 4. Specs rows: Col A: Key | Col B..C: Value merged
+  // 4. Specs rows: Col A: Key | Col B..C: Value merged (alternating row colors)
+  var specRowIdx = 0;
   dev.specs.forEach(function (sp) {
     if (!sp.key && !sp.value) return;
-    setCell(ws, r, 0, sp.key || '', SK);
-    setCell(ws, r, 1, sp.value || '', SV);
-    setCell(ws, r, 2, '', SV);
+    var isEven = (specRowIdx % 2 === 0);
+    var skStyle = isEven ? SK : SKW;
+    var svStyle = isEven ? SV : SVW;
+    setCell(ws, r, 0, sp.key || '', skStyle);
+    setCell(ws, r, 1, sp.value || '', svStyle);
+    setCell(ws, r, 2, '', svStyle);
     mg.push({ s: { r: r, c: 1 }, e: { r: r, c: 2 } });
 
     // Dynamic height calculation so no text is cut off
@@ -57551,6 +57562,7 @@ function xlsSP(wb, dev, num) {
     var totalLines = Math.max(1, keyLines, valLines);
     ws['!rows'][r] = { hpt: Math.max(22, Math.min(260, totalLines * 16 + 8)) };
     r++;
+    specRowIdx++;
   });
 
   ws['!merges'] = mg;
