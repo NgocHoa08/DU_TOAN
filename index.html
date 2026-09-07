@@ -42,8 +42,10 @@
       min-width: 260px !important;
       max-width: 260px !important;
       height: 100vh !important;
-      position: sticky !important;
+      position: fixed !important;
       top: 0 !important;
+      left: 0 !important;
+      bottom: 0 !important;
       display: flex !important;
       flex-direction: column !important;
       background: #ffffff !important;
@@ -55,7 +57,7 @@
       overflow-y: auto !important;
       overflow-x: hidden !important;
       flex-shrink: 0 !important;
-      transition: width 0.22s ease, min-width 0.22s ease !important;
+      transition: width 0.22s ease, min-width 0.22s ease, max-width 0.22s ease !important;
     }
     [data-theme="dark"] .app-sidebar {
       background: #141414 !important;
@@ -277,6 +279,9 @@
       display: flex !important;
       flex-direction: column !important;
       background: var(--bg, #f8fafc) !important;
+      margin-left: 260px !important;
+      width: calc(100% - 260px) !important;
+      transition: margin-left 0.22s ease, width 0.22s ease !important;
     }
     .main-topbar {
       display: flex !important;
@@ -314,6 +319,29 @@
       min-width: 62px !important;
       max-width: 62px !important;
       padding: 14px 7px !important;
+    }
+    .app-sidebar.collapsed ~ .app-main-wrapper,
+    .app-sidebar.collapsed + .app-main-wrapper {
+      margin-left: 62px !important;
+      width: calc(100% - 62px) !important;
+    }
+    @media (max-width: 860px) {
+      .app-layout {
+        flex-direction: column !important;
+      }
+      .app-sidebar {
+        position: relative !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+      }
+      .app-main-wrapper,
+      .app-sidebar.collapsed ~ .app-main-wrapper,
+      .app-sidebar.collapsed + .app-main-wrapper {
+        margin-left: 0 !important;
+        width: 100% !important;
+      }
     }
     .app-sidebar.collapsed .brand-info,
     .app-sidebar.collapsed .sidebar-section-title,
