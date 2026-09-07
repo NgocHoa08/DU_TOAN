@@ -61143,3 +61143,18 @@ function quickFilterModalSpec(pattern) {
   }
   filterModalSpecs(pattern);
 }
+
+function toggleSidebar() {
+  var sb = document.getElementById('appSidebar');
+  if (!sb) return;
+  sb.classList.toggle('collapsed');
+  var isCol = sb.classList.contains('collapsed');
+  try { localStorage.setItem('sidebar_collapsed', isCol ? '1' : '0'); } catch(e){}
+}
+
+try {
+  if (typeof localStorage !== 'undefined' && localStorage.getItem('sidebar_collapsed') === '1') {
+    var sb = document.getElementById('appSidebar');
+    if (sb) sb.classList.add('collapsed');
+  }
+} catch(e){}
