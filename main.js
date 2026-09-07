@@ -81052,42 +81052,49 @@ function renderBrandAndSubNav() {
     brandNav.innerHTML = bHtml;
   }
 
-  // 2. Render Sub-Category / Series Chips
+  // 2. Render Sub-Category / Series Chips (ONLY when a specific brand is selected!)
   if (subNav) {
-    var subMap = {};
-    CATALOG_ITEMS.forEach(function (it) {
-      var info = classifyCatalogItem(it);
-      var itemBrand = it.brand || '';
-      var mBrand = !curCatBrand || (itemBrand.toLowerCase() === curCatBrand.toLowerCase()) || (curCatBrand === 'Cisco' && ['cisco','tp-link','sophos','aver','infocus','việt hàn','lg','samsung','chính hãng'].includes(itemBrand.toLowerCase()));
-      if (mBrand) {
-        if (!subMap[info.subCatId]) {
-          subMap[info.subCatId] = { id: info.subCatId, name: info.subCatName, count: 0 };
-        }
-        subMap[info.subCatId].count++;
-      }
-    });
-
-    var subList = Object.values(subMap);
-    if (subList.length <= 1 && curCatBrand === '') {
+    if (!curCatBrand) {
+      // When viewing all brands, HIDE the sub-category chips completely as requested by user
       subNav.innerHTML = '';
       subNav.style.display = 'none';
     } else {
-      subNav.style.display = 'flex';
-      var allCount = subList.reduce(function(acc, s) { return acc + s.count; }, 0);
-      var sHtml = '<div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--t2);margin-right:4px">🏷️ Dòng máy:</div>' +
-        '<button class="subcat-chip-btn' + (curCatSub === '' ? ' active' : '') + '" onclick="filterCatSub(\'\')">' +
-        'Tất cả (' + allCount + ')' +
-        '</button>' +
-        subList.map(function (s) {
-          var isActive = curCatSub === s.id;
-          return '<button class="subcat-chip-btn' + (isActive ? ' active' : '') + '" onclick="filterCatSub(\'' + s.id + '\')" title="Lọc theo dòng máy ' + s.name + '">' +
-            s.name + ' <span class="subcat-chip-count">' + s.count + '</span>' +
-            '</button>';
-        }).join('');
-      subNav.innerHTML = sHtml;
+      var subMap = {};
+      CATALOG_ITEMS.forEach(function (it) {
+        var info = classifyCatalogItem(it);
+        var itemBrand = it.brand || '';
+        var mBrand = (itemBrand.toLowerCase() === curCatBrand.toLowerCase()) || (curCatBrand === 'Cisco' && ['cisco','tp-link','sophos','aver','infocus','việt hàn','lg','samsung','chính hãng'].includes(itemBrand.toLowerCase()));
+        if (mBrand) {
+          if (!subMap[info.subCatId]) {
+            subMap[info.subCatId] = { id: info.subCatId, name: info.subCatName, count: 0 };
+          }
+          subMap[info.subCatId].count++;
+        }
+      });
+
+      var subList = Object.values(subMap);
+      if (subList.length === 0) {
+        subNav.innerHTML = '';
+        subNav.style.display = 'none';
+      } else {
+        subNav.style.display = 'flex';
+        var allCount = subList.reduce(function(acc, s) { return acc + s.count; }, 0);
+        var sHtml = '<div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--t2);margin-right:4px">🏷️ Dòng máy:</div>' +
+          '<button class="subcat-chip-btn' + (curCatSub === '' ? ' active' : '') + '" onclick="filterCatSub(\'\')">' +
+          'Tất cả (' + allCount + ')' +
+          '</button>' +
+          subList.map(function (s) {
+            var isActive = curCatSub === s.id;
+            return '<button class="subcat-chip-btn' + (isActive ? ' active' : '') + '" onclick="filterCatSub(\'' + s.id + '\')" title="Lọc theo dòng máy ' + s.name + '">' +
+              s.name + ' <span class="subcat-chip-count">' + s.count + '</span>' +
+              '</button>';
+          }).join('');
+        subNav.innerHTML = sHtml;
+      }
     }
   }
 }
+
 
 function selectAllInGroup(subCatId, isSelect) {
   var items = getFilteredCatalogItems().filter(function(it) {
@@ -81202,6 +81209,14 @@ function getFilteredCatalogItems() {
 
     return mBrand && mSub && mType && mKw && mParametric;
   });
+}
+
+
+function filterCatalog() {
+  var s = document.getElementById('catSearch');
+  var b = document.getElementById('btnClearCatSearch');
+  if (s && b) b.style.display = (s.value && s.value.trim()) ? 'inline-block' : 'none';
+  renderCatalogGrid();
 }
 
 function renderCatalogGrid() {
