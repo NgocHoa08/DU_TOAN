@@ -341,6 +341,176 @@
       justify-content: center !important;
       padding: 8px 0 !important;
     }
+  
+    /* ══════ CATALOG BRAND & SERIES GROUPING STYLES ══════ */
+    .brand-nav-wrap {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 4px 2px 10px 2px;
+      margin-bottom: 8px;
+      scrollbar-width: thin;
+    }
+    .brand-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 14px;
+      border-radius: 20px;
+      border: 1.5px solid var(--bdr2);
+      background: var(--card);
+      color: var(--t1);
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+    }
+    .brand-pill-btn:hover {
+      border-color: var(--gr);
+      color: var(--gr);
+      transform: translateY(-1px);
+      box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    }
+    .brand-pill-btn.active {
+      background: var(--gr);
+      border-color: var(--gr);
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+    }
+    .brand-pill-count {
+      display: inline-block;
+      padding: 1px 7px;
+      border-radius: 12px;
+      font-size: 11px;
+      font-weight: 800;
+      background: rgba(0,0,0,0.07);
+      color: inherit;
+    }
+    .brand-pill-btn.active .brand-pill-count {
+      background: rgba(255,255,255,0.28);
+      color: #fff;
+    }
+
+    .subcat-nav-wrap {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 4px 2px 10px 2px;
+      margin-bottom: 12px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .subcat-chip-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 11px;
+      border-radius: 8px;
+      border: 1px solid var(--bdr);
+      background: var(--bg2, #f8fafc);
+      color: var(--t2);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+    }
+    .subcat-chip-btn:hover {
+      border-color: var(--gr);
+      color: var(--t1);
+      background: var(--card);
+    }
+    .subcat-chip-btn.active {
+      background: #eff6ff;
+      border-color: #3b82f6;
+      color: #1d4ed8;
+      font-weight: 700;
+    }
+    .subcat-chip-count {
+      font-size: 10.5px;
+      padding: 0 5px;
+      border-radius: 6px;
+      background: rgba(0,0,0,0.06);
+      font-weight: 800;
+    }
+    .subcat-chip-btn.active .subcat-chip-count {
+      background: #bfdbfe;
+      color: #1e40af;
+    }
+
+    /* Category Group Section Header */
+    .cat-group-section-tr td {
+      background: linear-gradient(90deg, #f1f5f9 0%, #f8fafc 100%) !important;
+      border-top: 2px solid #cbd5e1 !important;
+      border-bottom: 2px solid #e2e8f0 !important;
+      padding: 10px 14px !important;
+    }
+    [data-theme="dark"] .cat-group-section-tr td,
+    .dark-theme .cat-group-section-tr td {
+      background: linear-gradient(90deg, #1e293b 0%, #0f172a 100%) !important;
+      border-top: 2px solid #334155 !important;
+      border-bottom: 2px solid #1e293b !important;
+    }
+    .cat-group-header-flex {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .cat-group-title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      color: var(--t1);
+      letter-spacing: -0.01em;
+    }
+    .cat-group-badge-count {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 10px;
+      background: #3b82f6;
+      color: #fff;
+      font-size: 11px;
+      font-weight: 800;
+    }
+    .cat-group-actions {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .cat-group-btn {
+      padding: 4px 9px;
+      border-radius: 6px;
+      font-size: 11.5px;
+      font-weight: 700;
+      border: 1px solid var(--bdr2);
+      background: var(--card);
+      color: var(--t1);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .cat-group-btn:hover {
+      background: var(--gr);
+      color: #fff;
+      border-color: var(--gr);
+    }
+    .series-tag-pill {
+      display: inline-block;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-size: 10.5px;
+      font-weight: 700;
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+      margin-left: 6px;
+    }
+
   </style>
 </head>
 
@@ -527,6 +697,13 @@
           </div>
 
           <!-- Filter & Search Toolbar in Catalog -->
+          
+          <!-- Dynamic Brand Navigation Pills (Hãng sản xuất) -->
+          <div id="catBrandNav" class="brand-nav-wrap"></div>
+
+          <!-- Dynamic Sub-category / Series Chips (Dòng máy theo hãng) -->
+          <div id="catSubNav" class="subcat-nav-wrap"></div>
+
           <div class="cat-toolbar">
             <div class="cat-toolbar-left">
               <input type="text" id="catSearch"

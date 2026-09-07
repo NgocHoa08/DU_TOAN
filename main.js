@@ -80872,27 +80872,240 @@ function setCatalogViewMode(mode) {
   renderCatalogGrid();
 }
 
+
+/* ══════════════════════════════════════════════════════════════
+   CATALOG CLASSIFICATION & BRAND / SERIES GROUPING ENGINE
+══════════════════════════════════════════════════════════════ */
+var curCatSub = ''; // Currently selected sub-category / series
+
+function isColorModel(item) {
+  if (item.isColor !== undefined) return !!item.isColor;
+  var n = (item.name || '').toLowerCase();
+  var m = (item.model || '').toLowerCase();
+  if (m.endsWith('ci') || m.endsWith('cfx') || m.endsWith('cwfx') || m.endsWith('cwx') || m.endsWith('cix') || m.endsWith('cidn') || m.endsWith('cdn') || m.endsWith('cx') || m.endsWith('c')) return true;
+  if (n.includes('màu') || n.includes('color')) return true;
+  return false;
+}
+
+function classifyCatalogItem(item) {
+  var b = (item.brand || item.manufacturer || '').trim();
+  var bL = b.toLowerCase();
+  var m = (item.model || '').toLowerCase();
+  var n = (item.name || '').toLowerCase();
+  var c = item.cat || '';
+  var color = isColorModel(item);
+
+  // 1. KYOCERA
+  if (bL === 'kyocera') {
+    if (m.includes('kip') || m.includes('15000') || n.includes('production') || n.includes('khổ rộng')) {
+      return { brandGroup: "Kyocera", brandIcon: "🇯🇵", brandLabel: "Kyocera", subCatId: "kyocera_prod", subCatName: "🏭 Máy Production & Khổ rộng (Pro / KIP)", seriesName: m.includes('15000') ? "TASKalfa Pro Production" : "KIP Wide Format" };
+    }
+    if (m.startsWith('taskalfa') || n.includes('taskalfa')) {
+      var isNext = m.includes('mz');
+      var is54 = m.includes('54');
+      var is53 = m.includes('53');
+      var sName = isNext ? "EvolutionNext 2026" : (is54 ? "TASKalfa 54ci/04i" : (is53 ? "TASKalfa Heavy Duty" : "TASKalfa Series"));
+      if (color || m.endsWith('ci')) {
+        return { brandGroup: "Kyocera", brandIcon: "🇯🇵", brandLabel: "Kyocera", subCatId: "kyocera_a3_color", subCatName: "🌈 Máy photocopy A3 Màu (TASKalfa Color)", seriesName: sName };
+      } else {
+        return { brandGroup: "Kyocera", brandIcon: "🇯🇵", brandLabel: "Kyocera", subCatId: "kyocera_a3_mono", subCatName: "📄 Máy photocopy A3 Đen trắng (TASKalfa Mono)", seriesName: sName };
+      }
+    }
+    if (m.startsWith('ecosys pa') || m.startsWith('ecosys p') || c === 'may_in' || n.includes('đơn năng')) {
+      return { brandGroup: "Kyocera", brandIcon: "🇯🇵", brandLabel: "Kyocera", subCatId: "kyocera_printer", subCatName: "🖨️ Máy in laser đơn năng (ECOSYS PA / P)", seriesName: m.includes('p8060') || m.includes('p4060') ? "ECOSYS A3 Laser" : "ECOSYS PA Color" };
+    }
+    if (m.startsWith('ecosys ma') || m.startsWith('ecosys m') || n.includes('ecosys')) {
+      if (m.includes('m8124') || m.includes('m8130')) {
+        return { brandGroup: "Kyocera", brandIcon: "🇯🇵", brandLabel: "Kyocera", subCatId: "kyocera_a3_color", subCatName: "🌈 Máy photocopy A3 Màu (TASKalfa / ECOSYS A3)", seriesName: "ECOSYS A3 Compact Color" };
+      }
+      if (m.includes('m4125') || m.includes('m4132')) {
+        return { brandGroup: "Kyocera", brandIcon: "🇯🇵", brandLabel: "Kyocera", subCatId: "kyocera_a3_mono", subCatName: "📄 Máy photocopy A3 Đen trắng (TASKalfa / ECOSYS A3)", seriesName: "ECOSYS A3 Compact Mono" };
+      }
+      if (color) {
+        return { brandGroup: "Kyocera", brandIcon: "🇯🇵", brandLabel: "Kyocera", subCatId: "kyocera_a4_color", subCatName: "🎨 Đa chức năng A4 Màu (ECOSYS MA Color)", seriesName: m.includes('3500') || m.includes('4000') || m.includes('6635') ? "ECOSYS MA Touch" : "ECOSYS MA Color" };
+      } else {
+        return { brandGroup: "Kyocera", brandIcon: "🇯🇵", brandLabel: "Kyocera", subCatId: "kyocera_a4_mono", subCatName: "⚡ Đa chức năng A4 Đen trắng (ECOSYS MA Mono)", seriesName: m.includes('5500') || m.includes('6000') || m.includes('3860') ? "ECOSYS High-Speed" : (m.includes('4500') ? "ECOSYS MA Touch" : "ECOSYS MA Mono") };
+      }
+    }
+    return { brandGroup: "Kyocera", brandIcon: "🇯🇵", brandLabel: "Kyocera", subCatId: "kyocera_other", subCatName: "📑 Thiết bị Kyocera khác", seriesName: "Kyocera Device" };
+  }
+
+  // 2. RICOH
+  if (bL === 'ricoh') {
+    if (n.includes('màn hình tương tác') || m.includes('a65') || m.includes('a75') || m.includes('a86') || m.includes('d55') || m.includes('d65') || m.includes('d75') || m.includes('d86') || c === 'man_hinh') {
+      return { brandGroup: "Ricoh", brandIcon: "🔴", brandLabel: "Ricoh", subCatId: "ricoh_screen", subCatName: "🖥️ Màn hình tương tác thông minh (IWB)", seriesName: "Ricoh Interactive Screen" };
+    }
+    if (m.includes('pro ') || m.includes('cw') || m.includes('w6700') || n.includes('production') || n.includes('khổ rộng')) {
+      return { brandGroup: "Ricoh", brandIcon: "🔴", brandLabel: "Ricoh", subCatId: "ricoh_prod", subCatName: "🏭 Máy in siêu tốc Production & Khổ rộng", seriesName: m.includes('pro') ? "Ricoh Pro Production" : "Ricoh Wide Format" };
+    }
+    if (c === 'photocopy' || n.includes('photocopy') || n.includes('đa chức năng')) {
+      if (m.includes('im c') || m.includes('mp c') || color) {
+        if (n.includes('a4') || m.includes('c300') || m.includes('c400')) {
+          return { brandGroup: "Ricoh", brandIcon: "🔴", brandLabel: "Ricoh", subCatId: "ricoh_a4_color", subCatName: "🎨 Đa chức năng A4 Màu (IM C Series A4)", seriesName: "IM C Series A4" };
+        }
+        return { brandGroup: "Ricoh", brandIcon: "🔴", brandLabel: "Ricoh", subCatId: "ricoh_a3_color", subCatName: "🌈 Máy photocopy A3 Màu (IM C Series A3)", seriesName: "IM C Series Color" };
+      } else {
+        if (n.includes('a4') || m.includes('im 350') || m.includes('im 430') || m.includes('mp 301') || m.includes('mp 401') || m.includes('sp 3710')) {
+          return { brandGroup: "Ricoh", brandIcon: "🔴", brandLabel: "Ricoh", subCatId: "ricoh_a4_mono", subCatName: "⚡ Đa chức năng A4 Đen trắng (IM / SP Series)", seriesName: "IM / SP Series A4" };
+        }
+        return { brandGroup: "Ricoh", brandIcon: "🔴", brandLabel: "Ricoh", subCatId: "ricoh_a3_mono", subCatName: "📄 Máy photocopy A3 Đen trắng (IM / MP Series A3)", seriesName: "IM Series Mono" };
+      }
+    }
+    if (c === 'may_in' || n.includes('máy in')) {
+      if (color) {
+        return { brandGroup: "Ricoh", brandIcon: "🔴", brandLabel: "Ricoh", subCatId: "ricoh_print_color", subCatName: "🖨️ Máy in Laser Màu Ricoh (P / SP Color)", seriesName: "Ricoh P Color" };
+      }
+      return { brandGroup: "Ricoh", brandIcon: "🔴", brandLabel: "Ricoh", subCatId: "ricoh_print_mono", subCatName: "🖨️ Máy in Laser Đen trắng Ricoh (P / SP Mono)", seriesName: "Ricoh P / SP Mono" };
+    }
+    return { brandGroup: "Ricoh", brandIcon: "🔴", brandLabel: "Ricoh", subCatId: "ricoh_other", subCatName: "📑 Thiết bị Ricoh khác", seriesName: "Ricoh Device" };
+  }
+
+  // 3. OKI
+  if (bL === 'oki') {
+    if (m.startsWith('c8') || m.startsWith('c9') || n.includes('a3')) {
+      return { brandGroup: "OKI", brandIcon: "🔵", brandLabel: "OKI", subCatId: "oki_a3_color", subCatName: "🌈 Máy in Laser Màu A3 (C800 / C900 Series)", seriesName: "OKI A3 LED Color" };
+    }
+    if (m.startsWith('mc') || n.includes('đa chức năng')) {
+      return { brandGroup: "OKI", brandIcon: "🔵", brandLabel: "OKI", subCatId: "oki_mfp", subCatName: "📠 Đa chức năng Laser Màu & Đen trắng (MC / MB Series)", seriesName: "OKI MFP Multi-function" };
+    }
+    if (m.startsWith('c') || color) {
+      return { brandGroup: "OKI", brandIcon: "🔵", brandLabel: "OKI", subCatId: "oki_a4_color", subCatName: "🎨 Máy in Laser Màu A4 (C300 / C500 / C600 / C700 Series)", seriesName: "OKI A4 LED Color" };
+    }
+    if (m.startsWith('b') || m.startsWith('es') || n.includes('trắng đen') || n.includes('đơn sắc')) {
+      return { brandGroup: "OKI", brandIcon: "🔵", brandLabel: "OKI", subCatId: "oki_mono", subCatName: "⚡ Máy in Laser Đen trắng (B Series)", seriesName: "OKI B Series Mono" };
+    }
+    if (m.startsWith('ml') || m.includes('microline') || n.includes('in kim')) {
+      return { brandGroup: "OKI", brandIcon: "🔵", brandLabel: "OKI", subCatId: "oki_dot", subCatName: "🖨️ Máy in kim hóa đơn (Microline / Dot Matrix)", seriesName: "OKI Microline Dot Matrix" };
+    }
+    return { brandGroup: "OKI", brandIcon: "🔵", brandLabel: "OKI", subCatId: "oki_other", subCatName: "📑 Thiết bị OKI khác", seriesName: "OKI Device" };
+  }
+
+  // 4. HP / DELL / CANON / BROTHER / EPSON / MSI
+  if (['hp', 'dell', 'canon', 'brother', 'epson', 'msi'].includes(bL)) {
+    var icon = (bL === 'hp' || bL === 'dell' || bL === 'msi') ? '💻' : '🖨️';
+    if (c === 'may_tinh') return { brandGroup: b, brandIcon: icon, brandLabel: b, subCatId: bL + "_pc", subCatName: "💻 Máy tính & Laptop (" + b + ")", seriesName: b + " PC / Laptop" };
+    if (c === 'man_hinh') return { brandGroup: b, brandIcon: "🖥️", brandLabel: b, subCatId: bL + "_screen", subCatName: "🖥️ Màn hình hiển thị (" + b + ")", seriesName: b + " Monitor" };
+    if (c === 'may_in' || c === 'photocopy') return { brandGroup: b, brandIcon: "🖨️", brandLabel: b, subCatId: bL + "_print", subCatName: "🖨️ Máy in & Photocopy (" + b + ")", seriesName: b + " Printer" };
+    return { brandGroup: b, brandIcon: icon, brandLabel: b, subCatId: bL + "_dev", subCatName: "📑 Thiết bị (" + b + ")", seriesName: b + " Device" };
+  }
+
+  // 5. MẠNG & HỘI NGHỊ (Cisco, TP-Link, Sophos, Aver, LG, Samsung, v.v.)
+  return { brandGroup: "Thiết bị mạng & Hội nghị", brandIcon: "🌐", brandLabel: "Mạng & Hội nghị", subCatId: "network_av", subCatName: "🌐 Thiết bị mạng & Hội nghị (" + b + ")", seriesName: b + " Network / AV" };
+}
+
 function filterCatBrand(brand) {
   curCatBrand = brand || '';
+  curCatSub = ''; // Reset sub-category when brand changes
+  var sel = document.getElementById('catBrandFilter');
+  if (sel) sel.value = curCatBrand;
+  renderBrandAndSubNav();
   renderCatalogGrid();
 }
 
-function setStep1Mode(mode) {
-  step1Mode = 'catalog';
+function filterCatSub(subId) {
+  curCatSub = (curCatSub === subId) ? '' : (subId || '');
+  renderBrandAndSubNav();
   renderCatalogGrid();
 }
 
-function filterCatType(type) {
-  curCatType = type;
-  var btns = document.querySelectorAll('#catNav .cat-btn');
-  btns.forEach(function (b) { b.className = 'cat-btn'; });
-  if (typeof event !== 'undefined' && event && event.target) {
-    event.target.className = 'cat-btn active';
+function renderBrandAndSubNav() {
+  var brandNav = document.getElementById('catBrandNav');
+  var subNav = document.getElementById('catSubNav');
+  if (!brandNav && !subNav) return;
+
+  // 1. Render Brand Nav Pills
+  if (brandNav) {
+    var brandDefs = [
+      { id: "", name: "Tất cả hãng", icon: "🏢" },
+      { id: "Kyocera", name: "Kyocera", icon: "🇯🇵" },
+      { id: "Ricoh", name: "Ricoh", icon: "🔴" },
+      { id: "OKI", name: "OKI", icon: "🔵" },
+      { id: "HP", name: "HP", icon: "💻" },
+      { id: "Dell", name: "Dell", icon: "💻" },
+      { id: "Canon", name: "Canon", icon: "🖨️" },
+      { id: "Brother", name: "Brother", icon: "🖨️" },
+      { id: "Epson", name: "Epson", icon: "🖨️" },
+      { id: "MSI", name: "MSI", icon: "🖥️" },
+      { id: "Cisco", name: "Mạng & Khác", icon: "🌐" }
+    ];
+
+    // Compute counts
+    var brandCounts = {};
+    CATALOG_ITEMS.forEach(function (it) {
+      var b = it.brand || '';
+      brandCounts[b] = (brandCounts[b] || 0) + 1;
+      if (['cisco','tp-link','sophos','aver','infocus','việt hàn','lg','samsung','chính hãng'].includes(b.toLowerCase())) {
+        brandCounts['Cisco'] = (brandCounts['Cisco'] || 0) + 1;
+      }
+    });
+
+    var bHtml = brandDefs.map(function (b) {
+      var count = b.id === "" ? CATALOG_ITEMS.length : (brandCounts[b.id] || 0);
+      var isActive = (!curCatBrand && b.id === "") || (curCatBrand.toLowerCase() === b.id.toLowerCase()) || (b.id === "Cisco" && curCatBrand === "Cisco");
+      return '<button class="brand-pill-btn' + (isActive ? ' active' : '') + '" onclick="filterCatBrand(\'' + b.id + '\')" title="Lọc theo hãng ' + b.name + '">' +
+        '<span class="brand-pill-icon">' + b.icon + '</span> ' +
+        '<span>' + b.name + '</span> ' +
+        '<span class="brand-pill-count">' + count + '</span>' +
+        '</button>';
+    }).join('');
+
+    brandNav.innerHTML = bHtml;
   }
-  renderCatalogGrid();
+
+  // 2. Render Sub-Category / Series Chips
+  if (subNav) {
+    var subMap = {};
+    CATALOG_ITEMS.forEach(function (it) {
+      var info = classifyCatalogItem(it);
+      var itemBrand = it.brand || '';
+      var mBrand = !curCatBrand || (itemBrand.toLowerCase() === curCatBrand.toLowerCase()) || (curCatBrand === 'Cisco' && ['cisco','tp-link','sophos','aver','infocus','việt hàn','lg','samsung','chính hãng'].includes(itemBrand.toLowerCase()));
+      if (mBrand) {
+        if (!subMap[info.subCatId]) {
+          subMap[info.subCatId] = { id: info.subCatId, name: info.subCatName, count: 0 };
+        }
+        subMap[info.subCatId].count++;
+      }
+    });
+
+    var subList = Object.values(subMap);
+    if (subList.length <= 1 && curCatBrand === '') {
+      subNav.innerHTML = '';
+      subNav.style.display = 'none';
+    } else {
+      subNav.style.display = 'flex';
+      var allCount = subList.reduce(function(acc, s) { return acc + s.count; }, 0);
+      var sHtml = '<div style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--t2);margin-right:4px">🏷️ Dòng máy:</div>' +
+        '<button class="subcat-chip-btn' + (curCatSub === '' ? ' active' : '') + '" onclick="filterCatSub(\'\')">' +
+        'Tất cả (' + allCount + ')' +
+        '</button>' +
+        subList.map(function (s) {
+          var isActive = curCatSub === s.id;
+          return '<button class="subcat-chip-btn' + (isActive ? ' active' : '') + '" onclick="filterCatSub(\'' + s.id + '\')" title="Lọc theo dòng máy ' + s.name + '">' +
+            s.name + ' <span class="subcat-chip-count">' + s.count + '</span>' +
+            '</button>';
+        }).join('');
+      subNav.innerHTML = sHtml;
+    }
+  }
 }
 
-function filterCatalog() { renderCatalogGrid(); }
+function selectAllInGroup(subCatId, isSelect) {
+  var items = getFilteredCatalogItems().filter(function(it) {
+    var info = classifyCatalogItem(it);
+    return info.subCatId === subCatId;
+  });
+  items.forEach(function(it) {
+    if (isSelect) {
+      selectedCatalogItems[it.id] = { qty: it.qty || 1, price: it.price || 0 };
+    } else {
+      delete selectedCatalogItems[it.id];
+    }
+  });
+  updateSelectedDrawer();
+  renderCatalogGrid();
+  toast((isSelect ? 'Đã chọn ' : 'Đã bỏ chọn ') + items.length + ' sản phẩm trong nhóm', 'ok');
+}
+
 
 var specFilters = {
   ram: '',       // 'ram_8gb', 'ram_12_16gb', 'storage_256gb', 'storage_512gb', 'storage_1tb'
@@ -80906,81 +81119,48 @@ function matchParametricSpecFilter(item) {
     return true;
   }
   var specs = getDeviceSpecs(item);
-  var fullText = (item.name + ' ' + (item.model || '') + ' ' + (item.brand || '') + ' ' + specs.map(function (s) { return s.key + ': ' + s.value; }).join(' ')).toLowerCase();
+  var specText = specs.map(function (s) { return (s.key || '') + ' ' + (s.value || ''); }).join(' ').toLowerCase();
 
-  // 1. Check RAM / Storage (GB)
+  // 1. RAM / Storage Filter
   if (specFilters.ram) {
-    var matchRam = false;
-    if (specFilters.ram === 'ram_8gb') {
-      matchRam = /8\s*gb\s*(ram|ddr|so-dimm|lpddr)|bộ nhớ ram:\s*8gb|8gb\s*ddr/i.test(fullText);
-    } else if (specFilters.ram === 'ram_12_16gb') {
-      matchRam = /(12|16)\s*gb\s*(ram|ddr|so-dimm|lpddr)|\(1x16gb\)|16gb\s*ddr/i.test(fullText);
-    } else if (specFilters.ram === 'storage_256gb') {
-      matchRam = /256\s*gb\s*(ssd|m\.2|nvme|rom|bộ nhớ trong)|256gb/i.test(fullText);
-    } else if (specFilters.ram === 'storage_512gb') {
-      matchRam = /512\s*gb\s*(ssd|m\.2|nvme|pcie)|512gb\s*ssd/i.test(fullText);
-    } else if (specFilters.ram === 'storage_1tb') {
-      matchRam = /(1|2)\s*tb\s*(hdd|ssd)|1tb/i.test(fullText);
-    }
-    if (!matchRam) return false;
+    if (specFilters.ram === 'ram_8gb' && !specText.includes('8 gb') && !specText.includes('8gb')) return false;
+    if (specFilters.ram === 'ram_12_16gb' && !specText.includes('12 gb') && !specText.includes('16 gb') && !specText.includes('12gb') && !specText.includes('16gb')) return false;
+    if (specFilters.ram === 'storage_256gb' && !specText.includes('256 gb') && !specText.includes('256gb')) return false;
+    if (specFilters.ram === 'storage_512gb' && !specText.includes('512 gb') && !specText.includes('512gb')) return false;
+    if (specFilters.ram === 'storage_1tb' && !specText.includes('1 tb') && !specText.includes('1tb') && !specText.includes('1000 gb')) return false;
   }
 
-  // 2. Check Speed (ppm / trang/phút)
+  // 2. Speed Filter
   if (specFilters.speed) {
-    var matchSpeed = false;
-    if (specFilters.speed === 'speed_lt25') {
-      matchSpeed = /(1[0-9]|2[0-4])\s*(trang\/phút|ppm|ipm)/i.test(fullText);
-    } else if (specFilters.speed === 'speed_25_35') {
-      matchSpeed = /(2[5-9]|3[0-5])\s*(trang\/phút|ppm|ipm)/i.test(fullText);
-    } else if (specFilters.speed === 'speed_gt35') {
-      matchSpeed = /(3[6-9]|[4-9]\d|\d{3})\s*(trang\/phút|ppm|ipm)/i.test(fullText);
-    }
-    if (!matchSpeed) return false;
+    var speedVal = 0;
+    var speedMatch = specText.match(/(\d+)\s*(?:trang|bản|ppm|ipm)/i);
+    if (speedMatch) speedVal = parseInt(speedMatch[1], 10);
+
+    if (specFilters.speed === 'speed_lt25' && (speedVal >= 25 || speedVal === 0)) return false;
+    if (specFilters.speed === 'speed_25_35' && (speedVal < 25 || speedVal > 35)) return false;
+    if (specFilters.speed === 'speed_gt35' && speedVal <= 35) return false;
   }
 
-  // 3. Check Paper Tray / Capacity (số lượng tờ)
+  // 3. Paper Capacity Filter
   if (specFilters.paper) {
-    var matchPaper = false;
-    if (specFilters.paper === 'paper_lt150') {
-      matchPaper = /([5-9]\d|1[0-4]\d)\s*tờ/i.test(fullText);
-    } else if (specFilters.paper === 'paper_gte250') {
-      matchPaper = /(25[0-9]|[3-9]\d{2}|\d{4})\s*tờ/i.test(fullText);
-    } else if (specFilters.paper === 'paper_gte500') {
-      matchPaper = /(500|[6-9]\d{2}|\d{4})\s*tờ/i.test(fullText);
-    }
-    if (!matchPaper) return false;
+    var capVal = 0;
+    var capMatch = specText.match(/(\d{3,5})\s*tờ/i);
+    if (capMatch) capVal = parseInt(capMatch[1], 10);
+
+    if (specFilters.paper === 'paper_lt150' && (capVal >= 150 || capVal === 0)) return false;
+    if (specFilters.paper === 'paper_gte250' && capVal < 250) return false;
+    if (specFilters.paper === 'paper_gte500' && capVal < 500) return false;
   }
 
-  // 4. Check Feature / Paper Size
+  // 4. Feature Filter
   if (specFilters.feature) {
-    var matchFeat = false;
-    if (specFilters.feature === 'paper_a3') {
-      matchFeat = /khổ\s*a3|a3\s*gập|\ba3\b/i.test(fullText);
-    } else if (specFilters.feature === 'duplex') {
-      matchFeat = /duplex|in\s*2\s*mặt|hai\s*mặt|2\s*mặt\s*tự\s*động/i.test(fullText);
-    } else if (specFilters.feature === 'wifi') {
-      matchFeat = /wi-fi|wifi|không\s*dây|wireless|802\.11/i.test(fullText);
-    } else if (specFilters.feature === 'lan') {
-      matchFeat = /rj-45|ethernet|gigabit|cổng\s*lan|mạng\s*lan|lan\s*10\/100/i.test(fullText);
-    }
-    if (!matchFeat) return false;
+    if (specFilters.feature === 'paper_a3' && !specText.includes('a3') && !specText.includes('sra3')) return false;
+    if (specFilters.feature === 'duplex' && !specText.includes('đảo mặt') && !specText.includes('duplex') && !specText.includes('2 mặt')) return false;
+    if (specFilters.feature === 'wifi' && !specText.includes('wi-fi') && !specText.includes('wifi') && !specText.includes('wireless')) return false;
+    if (specFilters.feature === 'lan' && !specText.includes('ethernet') && !specText.includes('gigabit') && !specText.includes('rj-45') && !specText.includes('baset') && !specText.includes('mạng')) return false;
   }
 
   return true;
-}
-
-function resetCatalogFilter() {
-  var inp = document.getElementById('catSearch');
-  if (inp) inp.value = '';
-  var brandSel = document.getElementById('catBrandFilter');
-  if (brandSel) brandSel.value = '';
-  var deepChk = document.getElementById('catDeepSpecSearch');
-  if (deepChk) deepChk.checked = false;
-  curCatBrand = '';
-  curCatType = 'all';
-  var btns = document.querySelectorAll('#catNav .cat-btn');
-  btns.forEach(function (b, i) { b.className = 'cat-btn' + (i === 0 ? ' active' : ''); });
-  resetParametricFilters();
 }
 
 function getFilteredCatalogItems() {
@@ -80988,10 +81168,23 @@ function getFilteredCatalogItems() {
   var deepSpec = !!(document.getElementById('catDeepSpecSearch') && document.getElementById('catDeepSpecSearch').checked);
 
   return CATALOG_ITEMS.filter(function (item) {
-    var mType = curCatType === 'all' || item.cat === curCatType || (curCatType === 'may_in' && (item.cat === 'may_in' || item.cat === 'photocopy')) || (curCatType === 'thiet_bi_khac' && (item.cat === 'thiet_bi_khac' || item.cat === 'khac'));
+    var info = classifyCatalogItem(item);
     var itemBrand = item.brand || item.manufacturer || '';
-    var mBrand = !curCatBrand || (itemBrand && itemBrand.toLowerCase() === curCatBrand.toLowerCase());
-    var mKw = !kw || item.name.toLowerCase().includes(kw) || item.model.toLowerCase().includes(kw) || itemBrand.toLowerCase().includes(kw);
+    
+    // Brand filter matching
+    var mBrand = !curCatBrand || (itemBrand.toLowerCase() === curCatBrand.toLowerCase());
+    if (!mBrand && curCatBrand === 'Cisco') {
+      mBrand = ['cisco','tp-link','sophos','aver','infocus','việt hàn','lg','samsung','chính hãng'].includes(itemBrand.toLowerCase());
+    }
+
+    // Subcategory filter matching
+    var mSub = !curCatSub || info.subCatId === curCatSub;
+
+    // Type filter matching
+    var mType = curCatType === 'all' || item.cat === curCatType || (curCatType === 'may_in' && (item.cat === 'may_in' || item.cat === 'photocopy')) || (curCatType === 'thiet_bi_khac' && (item.cat === 'thiet_bi_khac' || item.cat === 'khac'));
+
+    // Keyword search matching
+    var mKw = !kw || item.name.toLowerCase().includes(kw) || item.model.toLowerCase().includes(kw) || itemBrand.toLowerCase().includes(kw) || info.subCatName.toLowerCase().includes(kw) || (info.seriesName && info.seriesName.toLowerCase().includes(kw));
 
     if (!mKw && deepSpec && kw) {
       var specs = getDeviceSpecs(item);
@@ -81007,77 +81200,15 @@ function getFilteredCatalogItems() {
 
     var mParametric = matchParametricSpecFilter(item);
 
-    return mType && mBrand && mKw && mParametric;
+    return mBrand && mSub && mType && mKw && mParametric;
   });
-}
-
-function selectAllVisibleCatalog(isSelected) {
-  var visible = getFilteredCatalogItems();
-  visible.forEach(function (item) {
-    if (isSelected) {
-      if (!selectedCatalogItems[item.id]) {
-        selectedCatalogItems[item.id] = { item: item, qty: item.qty || 1 };
-      }
-    } else {
-      delete selectedCatalogItems[item.id];
-    }
-  });
-  renderCatalogGrid();
-  updateCartSummary();
-}
-
-function stepCatalogQty(id, delta, ev) {
-  if (ev) ev.stopPropagation();
-  var item = CATALOG_ITEMS.find(function (x) { return x.id === id; });
-  if (!item) return;
-
-  var currentQ = selectedCatalogItems[id] ? selectedCatalogItems[id].qty : (item.qty || 1);
-  var nextQ = Math.max(1, currentQ + delta);
-
-  if (selectedCatalogItems[id]) {
-    selectedCatalogItems[id].qty = nextQ;
-  } else {
-    // Tự động chọn khi tăng số lượng
-    selectedCatalogItems[id] = { item: item, qty: nextQ };
-  }
-  item.qty = nextQ;
-  renderCatalogGrid();
-  updateCartSummary();
-}
-
-function renderSelectedTags() {
-  var drawer = document.getElementById('selectedItemsDrawer');
-  var tagsWrap = document.getElementById('selectedTagsWrap');
-  var drawerCount = document.getElementById('drawerCount');
-  if (!drawer || !tagsWrap) return;
-
-  var keys = Object.keys(selectedCatalogItems);
-  if (drawerCount) drawerCount.textContent = keys.length;
-
-  if (keys.length === 0) {
-    drawer.style.display = 'none';
-    return;
-  }
-
-  drawer.style.display = 'block';
-  var html = keys.map(function (k) {
-    var obj = selectedCatalogItems[k];
-    var it = obj.item;
-    return '<div class="selected-tag">' +
-      '<span>' + escH(it.name) + '</span>' +
-      '<strong style="color:var(--gr)">x' + obj.qty + '</strong>' +
-      (it.price ? '<span style="color:var(--go);font-size:11px">(' + fmtVN(it.price * obj.qty) + 'đ)</span>' : '') +
-      '<span class="selected-tag-del" onclick="toggleCatalogItem(\'' + it.id + '\')" title="Bỏ chọn máy này">✕</span>' +
-      '</div>';
-  }).join('');
-
-  tagsWrap.innerHTML = html;
 }
 
 function renderCatalogGrid() {
   var grid = document.getElementById('catGrid');
   if (!grid) return;
 
+  renderBrandAndSubNav();
   var filtered = getFilteredCatalogItems();
 
   if (catalogViewMode === 'list') {
@@ -81093,7 +81224,7 @@ function renderCatalogGrid() {
       '</th>' +
       '<th style="width:48px;text-align:center">STT</th>' +
       '<th>Tên Thiết Bị &amp; Model Máy</th>' +
-      '<th style="width:140px">Danh Mục</th>' +
+      '<th style="width:140px">Danh Mục / Dòng Máy</th>' +
       '<th style="width:170px">Đơn Giá (VNĐ)</th>' +
       '<th style="width:125px;text-align:center">Số Lượng</th>' +
       '<th style="width:160px;text-align:center">Trạng Thái</th>' +
@@ -81106,66 +81237,109 @@ function renderCatalogGrid() {
         '🔍 Không tìm thấy thiết bị nào phù hợp với bộ lọc hiện tại. Bạn có thể xóa lọc hoặc thêm máy mới bên dưới!' +
         '</td></tr>';
     } else {
-      filtered.forEach(function (item, idx) {
-        var isSel = !!selectedCatalogItems[item.id];
-        var curQ = isSel ? selectedCatalogItems[item.id].qty : (item.qty || 1);
+      // Group items by subCatName
+      var groups = [];
+      var groupMap = {};
 
-        var catBadge = item.cat === 'dien_thoai' ? '<span class="cat-badge-pill" style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe">📱 Điện thoại</span>' :
-          item.cat === 'man_hinh' ? '<span class="cat-badge-pill" style="background:#faf5ff;color:#7e22ce;border:1px solid #e9d5ff">🖥️ Màn hình</span>' :
-          item.cat === 'may_tinh' ? '<span class="cat-badge-pill" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0">💻 Máy tính</span>' :
-          item.cat === 'may_in' ? '<span class="cat-badge-pill" style="background:#fffbeb;color:#b45309;border:1px solid #fde68a">🖨️ Máy in</span>' :
-          item.cat === 'photocopy' ? '<span class="cat-badge-pill" style="background:#fff7ed;color:#c2410c;border:1px solid #fed7aa">📠 Photocopy</span>' :
-          item.cat === 'may_scan' ? '<span class="cat-badge-pill" style="background:#f0fdfa;color:#0f766e;border:1px solid #99f6e4">📄 Máy Scan</span>' :
-          '<span class="cat-badge-pill" style="background:#f8fafc;color:#475569;border:1px solid #cbd5e1">🌐 Khác</span>';
+      filtered.forEach(function (item) {
+        var info = classifyCatalogItem(item);
+        if (!groupMap[info.subCatId]) {
+          groupMap[info.subCatId] = {
+            id: info.subCatId,
+            name: info.subCatName,
+            brand: info.brandGroup,
+            icon: info.brandIcon,
+            items: []
+          };
+          groups.push(groupMap[info.subCatId]);
+        }
+        groupMap[info.subCatId].items.push(item);
+      });
 
-        tableHtml += '<tr class="' + (isSel ? 'selected-row' : '') + '" onclick="handleRowClick(event, \'' + item.id + '\')">' +
-          '<td style="text-align:center" onclick="event.stopPropagation()">' +
-          '<input type="checkbox" ' + (isSel ? 'checked' : '') + ' onchange="toggleCatalogItem(\'' + item.id + '\')" style="cursor:pointer;width:16px;height:16px"/>' +
-          '</td>' +
-          '<td style="text-align:center;font-weight:700;color:var(--t3)">' + (idx + 1) + '</td>' +
-          '<td>' +
-          '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">' +
-          '  <div style="flex:1">' +
-          '    <div class="cat-dev-name">' + escH(item.name) + '</div>' +
-          '    <div class="cat-dev-meta">' +
-          '      <span><b>Model:</b> ' + escH(item.model) + '</span>' +
-          '      <span>• <b>Hãng:</b> ' + escH(item.brand) + '</span>' +
-          '      <span>• <b>Xuất xứ:</b> ' + escH(item.origin) + '</span>' +
-          '      <span>• <b>Bảo hành:</b> ' + escH(item.warranty) + '</span>' +
-          '      <span style="color:var(--gr);font-weight:700;cursor:pointer" onclick="openProductSpecModal(\'' + item.id + '\', event)" title="Bấm để xem và lọc chi tiết thông số">• ✨ ' + item.specCount + ' thông số</span>' +
+      var globalIdx = 0;
+      groups.forEach(function (grp) {
+        // Render Group Section Header
+        tableHtml += '<tr class="cat-group-section-tr">' +
+          '<td colspan="7">' +
+          '  <div class="cat-group-header-flex">' +
+          '    <div class="cat-group-title">' +
+          '      <span>' + grp.name + '</span>' +
+          '      <span class="cat-group-badge-count">' + grp.items.length + ' sản phẩm</span>' +
+          '    </div>' +
+          '    <div class="cat-group-actions">' +
+          '      <button class="cat-group-btn" onclick="selectAllInGroup(\'' + grp.id + '\', true)" title="Chọn tất cả các thiết bị trong nhóm này">✓ Chọn cả nhóm (' + grp.items.length + ')</button>' +
+          '      <button class="cat-group-btn" onclick="selectAllInGroup(\'' + grp.id + '\', false)" title="Bỏ chọn tất cả trong nhóm">✕ Bỏ chọn nhóm</button>' +
           '    </div>' +
           '  </div>' +
-          '  <button class="btn-view-spec" onclick="openProductSpecModal(\'' + item.id + '\', event)" title="Xem và lọc chi tiết 26+ thông số kỹ thuật máy này">👁️ Xem thông số</button>' +
-          '</div>' +
-          '</td>' +
-          '<td>' + catBadge + '</td>' +
-          '<td onclick="event.stopPropagation()">' +
-          '<div style="display:flex;align-items:center;gap:4px">' +
-          '<input type="text" class="cat-price-input" placeholder="0" value="' + (item.price ? fmtVN(item.price) : '') + '" oninput="handleCatPriceInput(this, \'' + item.id + '\')" />' +
-          '</div>' +
-          '</td>' +
-          '<td style="text-align:center" onclick="event.stopPropagation()">' +
-          '<div class="qty-control">' +
-          '<button class="qty-btn" onclick="stepCatalogQty(\'' + item.id + '\', -1, event)" title="Giảm số lượng">-</button>' +
-          '<input type="number" class="qty-val-input" min="1" value="' + curQ + '" onchange="updateCatalogQty(\'' + item.id + '\',+this.value)"/>' +
-          '<button class="qty-btn" onclick="stepCatalogQty(\'' + item.id + '\', 1, event)" title="Tăng số lượng">+</button>' +
-          '</div>' +
-          '</td>' +
-          '<td style="text-align:center" onclick="event.stopPropagation()">' +
-          (isSel ?
-            '<div style="display:inline-flex;align-items:center;justify-content:center;gap:5px">' +
-            '<button class="btn-cat-select selected" onclick="createSheetForCatalogItem(\'' + item.id + '\')" title="Tạo ngay bảng dự toán và chi tiết từng sheet cho thiết bị này">' +
-            '🚀 Tạo sheet luôn' + (curQ > 1 ? ' (' + curQ + ')' : '') +
-            '</button>' +
-            '<button onclick="toggleCatalogItem(\'' + item.id + '\')" title="Bỏ chọn máy này" style="padding:6px 9px;border-radius:8px;border:1.5px solid #cbd5e1;background:#fff;color:#ef4444;font-weight:800;font-size:12px;cursor:pointer;line-height:1;transition:all .15s" onmouseover="this.style.background=\'#fee2e2\'" onmouseout="this.style.background=\'#fff\'">✕</button>' +
-            '</div>'
-            :
-            '<button class="btn-cat-select" onclick="toggleCatalogItem(\'' + item.id + '\')" title="Chọn thiết bị này">' +
-            '＋ Chọn' +
-            '</button>'
-          ) +
           '</td>' +
           '</tr>';
+
+        // Render items in this group
+        grp.items.forEach(function (item) {
+          globalIdx++;
+          var isSel = !!selectedCatalogItems[item.id];
+          var curQ = isSel ? selectedCatalogItems[item.id].qty : (item.qty || 1);
+          var info = classifyCatalogItem(item);
+
+          var catBadge = item.cat === 'dien_thoai' ? '<span class="cat-badge-pill" style="background:#eff6ff;color:#1d4ed8;border:1px solid #bfdbfe">📱 Điện thoại</span>' :
+            item.cat === 'man_hinh' ? '<span class="cat-badge-pill" style="background:#faf5ff;color:#7e22ce;border:1px solid #e9d5ff">🖥️ Màn hình</span>' :
+            item.cat === 'may_tinh' ? '<span class="cat-badge-pill" style="background:#f0fdf4;color:#15803d;border:1px solid #bbf7d0">💻 Máy tính</span>' :
+            item.cat === 'may_in' ? '<span class="cat-badge-pill" style="background:#fffbeb;color:#b45309;border:1px solid #fde68a">🖨️ Máy in</span>' :
+            item.cat === 'photocopy' ? '<span class="cat-badge-pill" style="background:#fff7ed;color:#c2410c;border:1px solid #fed7aa">📠 Photocopy</span>' :
+            item.cat === 'may_scan' ? '<span class="cat-badge-pill" style="background:#f0fdfa;color:#0f766e;border:1px solid #99f6e4">📄 Máy Scan</span>' :
+            '<span class="cat-badge-pill" style="background:#f8fafc;color:#475569;border:1px solid #cbd5e1">🌐 Khác</span>';
+
+          var seriesPill = info.seriesName ? '<span class="series-tag-pill">' + escH(info.seriesName) + '</span>' : '';
+
+          tableHtml += '<tr class="' + (isSel ? 'selected-row' : '') + '" onclick="handleRowClick(event, \'' + item.id + '\')">' +
+            '<td style="text-align:center" onclick="event.stopPropagation()">' +
+            '<input type="checkbox" ' + (isSel ? 'checked' : '') + ' onchange="toggleCatalogItem(\'' + item.id + '\')" style="cursor:pointer;width:16px;height:16px"/>' +
+            '</td>' +
+            '<td style="text-align:center;font-weight:700;color:var(--t3)">' + globalIdx + '</td>' +
+            '<td>' +
+            '<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:8px">' +
+            '  <div style="flex:1">' +
+            '    <div class="cat-dev-name">' + escH(item.name) + seriesPill + '</div>' +
+            '    <div class="cat-dev-meta">' +
+            '      <span><b>Model:</b> ' + escH(item.model) + '</span>' +
+            '      <span>• <b>Hãng:</b> ' + escH(item.brand) + '</span>' +
+            '      <span>• <b>Xuất xứ:</b> ' + escH(item.origin) + '</span>' +
+            '      <span>• <b>Bảo hành:</b> ' + escH(item.warranty) + '</span>' +
+            '      <span style="color:var(--gr);font-weight:700;cursor:pointer" onclick="openProductSpecModal(\'' + item.id + '\', event)" title="Bấm để xem và lọc chi tiết thông số">• ✨ ' + item.specCount + ' thông số</span>' +
+            '    </div>' +
+            '  </div>' +
+            '  <button class="btn-view-spec" onclick="openProductSpecModal(\'' + item.id + '\', event)" title="Xem và lọc chi tiết thông số kỹ thuật máy này">👁️ Xem thông số</button>' +
+            '</div>' +
+            '</td>' +
+            '<td>' + catBadge + '</td>' +
+            '<td onclick="event.stopPropagation()">' +
+            '<div style="display:flex;align-items:center;gap:4px">' +
+            '<input type="text" class="cat-price-input" placeholder="0" value="' + (item.price ? fmtVN(item.price) : '') + '" oninput="handleCatPriceInput(this, \'' + item.id + '\')" />' +
+            '</div>' +
+            '</td>' +
+            '<td style="text-align:center" onclick="event.stopPropagation()">' +
+            '<div class="qty-control">' +
+            '<button class="qty-btn" onclick="stepCatalogQty(\'' + item.id + '\', -1, event)" title="Giảm số lượng">-</button>' +
+            '<input type="number" class="qty-val-input" min="1" value="' + curQ + '" onchange="updateCatalogQty(\'' + item.id + '\',+this.value)"/>' +
+            '<button class="qty-btn" onclick="stepCatalogQty(\'' + item.id + '\', 1, event)" title="Tăng số lượng">+</button>' +
+            '</div>' +
+            '</td>' +
+            '<td style="text-align:center" onclick="event.stopPropagation()">' +
+            (isSel ?
+              '<div style="display:inline-flex;align-items:center;justify-content:center;gap:5px">' +
+              '<button class="btn-cat-select selected" onclick="createSheetForCatalogItem(\'' + item.id + '\')" title="Tạo ngay bảng dự toán và chi tiết từng sheet cho thiết bị này">' +
+              '🚀 Tạo sheet luôn' + (curQ > 1 ? ' (' + curQ + ')' : '') +
+              '</button>' +
+              '<button onclick="toggleCatalogItem(\'' + item.id + '\')" title="Bỏ chọn máy này" style="padding:6px 9px;border-radius:8px;border:1.5px solid #cbd5e1;background:#fff;color:#ef4444;font-weight:800;font-size:12px;cursor:pointer;line-height:1;transition:all .15s" onmouseover="this.style.background=\'#fee2e2\'" onmouseout="this.style.background=\'#fff\'">✕</button>' +
+              '</div>'
+              :
+              '<button class="btn-cat-select" onclick="toggleCatalogItem(\'' + item.id + '\')" title="Chọn thiết bị này">' +
+              '＋ Chọn' +
+              '</button>'
+            ) +
+            '</td>' +
+            '</tr>';
+        });
       });
     }
 
@@ -81173,57 +81347,86 @@ function renderCatalogGrid() {
     grid.innerHTML = tableHtml;
   } else {
     // ══════════════════ DẠNG THẺ LƯỚI (CARD GRID VIEW) ══════════════════
-    var html = filtered.map(function (item) {
-      var isSel = !!selectedCatalogItems[item.id];
-      var curQ = isSel ? selectedCatalogItems[item.id].qty : (item.qty || 1);
-      var catLabel = item.cat === 'dien_thoai' ? '📱 Điện thoại' :
-        item.cat === 'man_hinh' ? '🖥️ Màn hình' :
-        item.cat === 'may_tinh' ? '💻 Máy tính' :
-        item.cat === 'may_in' ? '🖨️ Máy in' :
-        item.cat === 'photocopy' ? '📠 Photocopy' :
-        item.cat === 'may_scan' ? '📄 Máy Scan' : '🌐 Thiết bị khác';
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div style="grid-column:1/-1;text-align:center;padding:48px 16px;color:var(--t2);background:var(--card);border-radius:12px;border:1px dashed var(--bdr2)">' +
+        '🔍 Không tìm thấy thiết bị nào phù hợp với bộ lọc hiện tại.' +
+        '</div>';
+      return;
+    }
 
-      return '<div class="cat-card' + (isSel ? ' selected' : '') + '" id="cc_' + item.id + '">' +
-        '<div>' +
-        '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:4px">' +
-        '<span class="cc-badge">' + catLabel + '</span>' +
-        '<button class="btn-view-spec" onclick="openProductSpecModal(\'' + item.id + '\', event)" title="Xem và lọc chi tiết thông số kỹ thuật" style="font-size:11px;padding:2px 7px">👁️ ' + item.specCount + ' thông số</button>' +
-        '</div>' +
-        '<div class="cc-name">' + escH(item.name) + '</div>' +
-        '<div class="cc-meta">' +
-        '<span><b>Model:</b> ' + escH(item.model) + ' | <b>Hãng:</b> ' + escH(item.brand) + '</span>' +
-        '<span><b>Xuất xứ:</b> ' + escH(item.origin) + ' | <b>Bảo hành:</b> ' + escH(item.warranty) + '</span>' +
-        '</div>' +
-        '<div style="display:flex;align-items:center;gap:6px;margin-top:6px">' +
-        '<label style="font-size:11px;color:var(--t2);white-space:nowrap;font-weight:600">Đơn giá (VNĐ):</label>' +
-        '<input type="text" placeholder="Tự điền đơn giá..." value="' + (item.price ? fmtVN(item.price) : '') + '" oninput="handleCatPriceInput(this, \'' + item.id + '\')" style="padding:4px 8px;font-size:12px;font-weight:700;color:var(--go);text-align:right"/>' +
-        '</div>' +
-        '</div>' +
-        '<div class="cc-foot">' +
-        '<label style="font-size:11px;margin:0">SL:</label>' +
-        '<input type="number" class="cc-qty" min="1" value="' + curQ + '" onchange="updateCatalogQty(\'' + item.id + '\',+this.value)"/>' +
-        (isSel ?
-          '<div style="display:flex;align-items:center;gap:6px;width:100%">' +
-          '<button class="btn-add-cat added" onclick="createSheetForCatalogItem(\'' + item.id + '\')" title="Tạo ngay bảng dự toán và chi tiết từng sheet cho thiết bị này" style="flex:1;background:linear-gradient(180deg,#22c55e,#16a34a);border-color:#15803d;color:#fff!important;font-weight:800;cursor:pointer">' +
-          '🚀 Tạo sheet luôn' + (curQ > 1 ? ' (' + curQ + ')' : '') +
-          '</button>' +
-          '<button onclick="toggleCatalogItem(\'' + item.id + '\')" title="Bỏ chọn máy này" style="padding:6px 10px;border-radius:8px;border:1.5px solid #cbd5e1;background:#fff;color:#ef4444;font-weight:800;font-size:12px;cursor:pointer" onmouseover="this.style.background=\'#fee2e2\'" onmouseout="this.style.background=\'#fff\'">✕</button>' +
-          '</div>'
-          :
-          '<button class="btn-add-cat" onclick="toggleCatalogItem(\'' + item.id + '\')">' +
-          '＋ Chọn máy này' +
-          '</button>'
-        ) +
+    // Group items for card grid
+    var groups = [];
+    var groupMap = {};
+    filtered.forEach(function (item) {
+      var info = classifyCatalogItem(item);
+      if (!groupMap[info.subCatId]) {
+        groupMap[info.subCatId] = {
+          id: info.subCatId,
+          name: info.subCatName,
+          items: []
+        };
+        groups.push(groupMap[info.subCatId]);
+      }
+      groupMap[info.subCatId].items.push(item);
+    });
+
+    var gridHtml = '';
+    groups.forEach(function(grp) {
+      gridHtml += '<div style="grid-column:1/-1;margin-top:16px;margin-bottom:8px;padding:8px 12px;border-radius:8px;background:var(--bg2, #f1f5f9);display:flex;align-items:center;justify-content:space-between;border-left:4px solid var(--gr)">' +
+        '<div style="font-weight:800;font-size:13.5px;color:var(--t1)">' + grp.name + ' (' + grp.items.length + ')</div>' +
+        '<div style="display:flex;gap:6px">' +
+        '  <button class="cat-group-btn" onclick="selectAllInGroup(\'' + grp.id + '\', true)">✓ Chọn nhóm</button>' +
+        '  <button class="cat-group-btn" onclick="selectAllInGroup(\'' + grp.id + '\', false)">✕ Bỏ chọn</button>' +
         '</div>' +
         '</div>';
-    }).join('');
 
-    grid.innerHTML = '<div class="cat-grid">' + (html || '<div style="grid-column:1/-1;text-align:center;padding:24px;color:var(--t2)">Không tìm thấy thiết bị phù hợp. Bạn có thể tự thêm máy bằng ô bên dưới!</div>') + '</div>';
+      grp.items.forEach(function(item) {
+        var isSel = !!selectedCatalogItems[item.id];
+        var curQ = isSel ? selectedCatalogItems[item.id].qty : (item.qty || 1);
+        var info = classifyCatalogItem(item);
+        var catLabel = item.cat === 'dien_thoai' ? '📱 Điện thoại' :
+          item.cat === 'man_hinh' ? '🖥️ Màn hình' :
+          item.cat === 'may_tinh' ? '💻 Máy tính' :
+          item.cat === 'may_in' ? '🖨️ Máy in' :
+          item.cat === 'photocopy' ? '📠 Photocopy' :
+          item.cat === 'may_scan' ? '📄 Máy Scan' : '🌐 Khác';
+
+        gridHtml += '<div class="cat-card ' + (isSel ? 'selected' : '') + '" onclick="toggleCatalogItem(\'' + item.id + '\')">' +
+          '<div class="cat-card-top">' +
+          '<span class="cat-card-cat">' + catLabel + '</span>' +
+          '<span class="cat-card-brand">' + escH(item.brand) + '</span>' +
+          '</div>' +
+          '<div class="cat-card-name">' + escH(item.name) + '</div>' +
+          '<div class="cat-card-model">Model: ' + escH(item.model) + (info.seriesName ? ' • <span style="color:#0284c7">' + escH(info.seriesName) + '</span>' : '') + '</div>' +
+          '<div style="display:flex;gap:6px;margin:8px 0;align-items:center;justify-content:space-between">' +
+          '<span style="font-size:11.5px;color:var(--t3)">✨ ' + item.specCount + ' thông số</span>' +
+          '<button class="btn-view-spec" onclick="openProductSpecModal(\'' + item.id + '\', event)" title="Xem chi tiết thông số">👁️ Chi tiết</button>' +
+          '</div>' +
+          '<div class="cat-card-meta">' +
+          '<span>Xuất xứ: ' + escH(item.origin) + '</span> • <span>BH: ' + escH(item.warranty) + '</span>' +
+          '</div>' +
+          '<div class="cat-card-price">' +
+          '<input type="text" class="cat-price-input" placeholder="Nhập giá..." value="' + (item.price ? fmtVN(item.price) : '') + '" ' +
+          'onclick="event.stopPropagation()" oninput="handleCatPriceInput(this, \'' + item.id + '\')" />' +
+          '</div>' +
+          '<div class="cat-card-footer" onclick="event.stopPropagation()">' +
+          '<div class="qty-control">' +
+          '<button class="qty-btn" onclick="stepCatalogQty(\'' + item.id + '\', -1, event)">-</button>' +
+          '<input type="number" class="qty-val-input" min="1" value="' + curQ + '" onchange="updateCatalogQty(\'' + item.id + '\',+this.value)"/>' +
+          '<button class="qty-btn" onclick="stepCatalogQty(\'' + item.id + '\', 1, event)">+</button>' +
+          '</div>' +
+          '<button class="btn-cat-select ' + (isSel ? 'selected' : '') + '" onclick="toggleCatalogItem(\'' + item.id + '\')">' +
+          (isSel ? '✓ Đã chọn (' + curQ + ')' : '＋ Chọn') +
+          '</button>' +
+          '</div>' +
+          '</div>';
+      });
+    });
+
+    grid.innerHTML = gridHtml;
   }
-
-  renderSelectedTags();
-  updateCartSummary();
 }
+
 
 function createSheetForCatalogItem(id) {
   if (id) {
