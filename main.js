@@ -2996,11 +2996,11 @@ var MODEL_PRESETS = {
       },
       {
         "key": "Tốc độ copy màu",
-        "value": "22 trang màu / phút"
+        "value": "26 trang màu / phút"
       },
       {
         "key": "Tốc độ copy mono",
-        "value": "24 trang trắng đen / phút"
+        "value": "30 trang trắng đen / phút"
       },
       {
         "key": "Copy đảo 02 mặt tự động",
@@ -3025,10 +3025,6 @@ var MODEL_PRESETS = {
       {
         "key": "Tốc độ FAX",
         "value": "33,6 Kb/giây, 3 giây/trang"
-      },
-      {
-        "key": "Tốc độ copy mono",
-        "value": "24 trang trắng đen / phút"
       },
       {
         "key": "Phím tắt gửi Fax",
@@ -6315,10 +6311,6 @@ var MODEL_PRESETS = {
         "value": "22 trang màu / phút"
       },
       {
-        "key": "Tốc độ copy mono",
-        "value": "24 trang trắng đen / phút"
-      },
-      {
         "key": "Copy đảo 02 mặt tự động",
         "value": "Có (đầu vào và đầu ra)"
       },
@@ -6341,10 +6333,6 @@ var MODEL_PRESETS = {
       {
         "key": "Tốc độ FAX",
         "value": "33,6 Kb/giây, 3 giây/trang"
-      },
-      {
-        "key": "Tốc độ copy mono",
-        "value": "24 trang trắng đen / phút"
       },
       {
         "key": "Phím tắt gửi Fax",
@@ -6763,10 +6751,6 @@ var MODEL_PRESETS = {
         "value": "22 trang màu / phút"
       },
       {
-        "key": "Tốc độ copy mono",
-        "value": "24 trang trắng đen / phút"
-      },
-      {
         "key": "Copy đảo 02 mặt tự động",
         "value": "Có (đầu vào và đầu ra)"
       },
@@ -6789,10 +6773,6 @@ var MODEL_PRESETS = {
       {
         "key": "Tốc độ FAX",
         "value": "33,6 Kb/giây, 3 giây/trang"
-      },
-      {
-        "key": "Tốc độ copy mono",
-        "value": "24 trang trắng đen / phút"
       },
       {
         "key": "Phím tắt gửi Fax",
@@ -24421,7 +24401,7 @@ var MODEL_PRESETS = {
       },
       {
         "key": "Tỷ lệ tái tạo",
-        "value": "12/30/1899 1:01:00 AM"
+        "value": "1:1"
       },
       {
         "key": "Phương pháp cắt giấy",
@@ -29321,7 +29301,7 @@ var MODEL_PRESETS = {
       },
       {
         "key": "Tỷ lệ khung hình",
-        "value": "12/30/1899 4:09:00 PM"
+        "value": "16:9"
       },
       {
         "key": "Độ tương phản",
@@ -29449,7 +29429,7 @@ var MODEL_PRESETS = {
       },
       {
         "key": "Tỷ lệ khung hình",
-        "value": "12/30/1899 4:09:00 PM"
+        "value": "16:9"
       },
       {
         "key": "Độ tương phản",
@@ -29577,7 +29557,7 @@ var MODEL_PRESETS = {
       },
       {
         "key": "Tỷ lệ khung hình",
-        "value": "12/30/1899 4:09:00 PM"
+        "value": "16:9"
       },
       {
         "key": "Độ tương phản",
@@ -29656,7 +29636,12365 @@ var MODEL_PRESETS = {
         "value": "Nhiệt độ0–42&ordm;C—hoạt động-10–50&ordm;C—lưu trữĐộ ẩm—độ ẩm tương đối20–80%—hoạt động 15–80%—lưu trữ"
       }
     ]
-  }
+  },
+  "kyocera_taskalfa_mz2501ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ2501ci",
+    "model": "TASKalfa MZ2501ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext 2026"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "25 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "25 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "12 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "12 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "25 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "25 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi, đa mức tương đương 4800 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "8.5 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "6.4 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 18 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn SSD 320 GB / 1 TB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch đa điểm tùy biến xoay góc"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3 (320 x 450 mm), Banner 305 x 1.220 mm"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + Khay tay 150 tờ (Tổng 1.150 tờ)"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt bản in tiêu chuẩn (52 - 256 g/m²)"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF / RADF nạp và đảo bản gốc tự động lên đến 320 tờ (tùy chọn)"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét 1 mặt: 100 ipm, Quét 2 mặt: lên đến 200 ipm (300 dpi)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan-to-Email, FTP, SMB 3.0, USB Host, Box, TWAIN, WSD"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3 (PostScript 3), PDF Direct Print, XPS"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, 4 cổng USB 2.0, 1 cổng USB 3.0, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Windows Server 2022/2019, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256-bit, Secure Boot, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 100.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống quang học Amorphous Silicon 200.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 510 W, Chế độ chờ: 40 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 90 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Dòng đa chức năng EvolutionNext thế hệ mới nhất, tích hợp AI tối ưu hóa chất lượng in màu."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz3501ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ3501ci",
+    "model": "TASKalfa MZ3501ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext 2026"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "17 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "17 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi, tương đương 4800 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "7.7 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "5.3 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 18 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn SSD 320 GB / 1 TB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner 305 x 1.220 mm"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + Khay tay 150 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF / RADF tùy chọn lên tới 320 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm (2 mặt)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct, XPS"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi Direct"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Windows Server 2022/2019, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 125.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 200.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 600 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 90 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 35 ppm A4 màu/mono, đáp ứng nhu cầu văn phòng cao cấp."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz4001ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ4001ci",
+    "model": "TASKalfa MZ4001ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext 2026"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "40 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "20 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "20 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "40 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi, tương đương 4800 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "6.5 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "5.1 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn SSD 320 GB / 1 TB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + Khay tay 150 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF / RADF tùy chọn lên tới 320 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm (2 mặt)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, Box"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 150.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 200.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 660 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 95 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 40 ppm A4, xử lý tài liệu màu tốc độ cao."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz5001ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ5001ci",
+    "model": "TASKalfa MZ5001ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext 2026"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "50 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "50 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "25 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "25 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "50 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "50 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "5.9 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "4.3 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn SSD 320 GB / 1 TB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + Khay tay 150 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 320 tờ quét 2 mặt siêu tốc"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm (2 mặt)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, Box"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 175.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 780 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 95 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 50 ppm, trống từ siêu bền 600.000 bản in."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz6001ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ6001ci",
+    "model": "TASKalfa MZ6001ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext 2026"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "60 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "30 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "30 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "60 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "5.1 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.7 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn SSD 320 GB / 1 TB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + Khay tay 150 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 320 tờ quét 2 mặt siêu tốc"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm (2 mặt)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, Box"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 200.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 850 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 95 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 60 ppm A4, xử lý in màu công suất lớn."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz7001ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ7001ci",
+    "model": "TASKalfa MZ7001ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext 2026 Flagship"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "70 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "70 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "70 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "70 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "4.8 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.4 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn SSD 320 GB / 1 TB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + Khay tay 150 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 320 tờ tiêu chuẩn"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm (2 mặt)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, Box"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 250.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 990 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 95 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 70 ppm A4, dòng cao cấp nhất phân khúc văn phòng."
+        }
+    ]
+},
+  "kyocera_taskalfa_2554ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 2554ci",
+    "model": "TASKalfa 2554ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "TASKalfa 54ci Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "25 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "25 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "12 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "12 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "25 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "25 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "9.2 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "7.0 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 18 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn HDD 320 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 150 tờ khay tay"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF / RADF tùy chọn"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct, XPS"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 3.0, Wi-Fi Direct"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "Mã hóa AES 256, TPM, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 100.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống quang học 200.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 510 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 90 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Dòng đa chức năng màu phổ biến, bền bỉ, tiết kiệm chi phí mực in."
+        }
+    ]
+},
+  "kyocera_taskalfa_3554ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 3554ci",
+    "model": "TASKalfa 3554ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "TASKalfa 54ci Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "17 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "17 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "7.7 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "5.3 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 18 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn 320 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 150 tờ khay tay"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF / RADF tùy chọn"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "Mã hóa AES 256, TPM"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 125.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống quang học 200.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 600 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 90 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 35 ppm, hỗ trợ AI nâng cao chất lượng văn bản và hình ảnh."
+        }
+    ]
+},
+  "kyocera_taskalfa_4054ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 4054ci",
+    "model": "TASKalfa 4054ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "TASKalfa 54ci Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "40 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "20 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "20 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "40 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "6.5 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "5.1 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn 320 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 150 tờ khay tay"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF tùy chọn"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "Mã hóa AES 256, TPM"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 150.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống quang học 200.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 660 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 95 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 40 ppm, xử lý tài liệu màu mượt mà."
+        }
+    ]
+},
+  "kyocera_taskalfa_5054ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 5054ci",
+    "model": "TASKalfa 5054ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "TASKalfa 54ci Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "50 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "50 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "25 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "25 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "50 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "50 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "5.9 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "4.3 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn 320 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 150 tờ khay tay"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF tùy chọn"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "Mã hóa AES 256, TPM"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 175.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 780 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 95 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 50 ppm, trống từ 600.000 trang, chất lượng màu đỉnh cao."
+        }
+    ]
+},
+  "kyocera_taskalfa_6054ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 6054ci",
+    "model": "TASKalfa 6054ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "TASKalfa 54ci Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "60 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "30 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "30 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "60 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "5.1 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.7 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn 320 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 150 tờ khay tay"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF tiêu chuẩn"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "Mã hóa AES 256, TPM"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 200.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 850 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 95 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 60 ppm, hiệu suất in màu mạnh mẽ và ổn định."
+        }
+    ]
+},
+  "kyocera_taskalfa_7054ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 7054ci",
+    "model": "TASKalfa 7054ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "TASKalfa 54ci Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "70 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "70 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "70 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "70 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "4.8 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.4 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn 320 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 150 tờ khay tay"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF tiêu chuẩn"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "Mã hóa AES 256, TPM"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 250.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 990 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 95 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 70 ppm, model hàng đầu phân khúc văn phòng chuyên nghiệp."
+        }
+    ]
+},
+  "kyocera_taskalfa_7353ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 7353ci",
+    "model": "TASKalfa 7353ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "TASKalfa Heavy Duty Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "65 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "73 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "32 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "65 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "73 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi, tương đương 4800 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "6.2 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "5.4 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 44 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Freescale QorIQ T1024 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4.5 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 8 GB + HDD 320 GB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình màu cảm ứng 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner 305 x 1.220 mm"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 2 khay x 1.500 tờ + Khay tay 150 tờ (Tổng 4.150 tờ)"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.650 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 270 tờ quét 220 ipm"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét 1 mặt: 120 ipm, Quét 2 mặt: 220 ipm"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, Searchable PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct, XPS"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 3.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "Data Security Kit, TPM, AES 256"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 300.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống quang học 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 1.360 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "685 x 780 x 1.056 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 182 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Dòng Heavy Duty tải nặng, khay giấy 4.150 tờ, nạp DADF 270 tờ quét 220 ipm."
+        }
+    ]
+},
+  "kyocera_taskalfa_8353ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 8353ci",
+    "model": "TASKalfa 8353ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "TASKalfa Heavy Duty Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "70 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "83 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "70 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "83 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "5.4 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "4.8 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 44 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Freescale QorIQ T1024 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4.5 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 8 GB + HDD 320 GB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình màu cảm ứng 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "4.150 tờ tiêu chuẩn (2x500 + 2x1500 + 150 tờ khay tay)"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.650 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 270 tờ quét 220 ipm"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét 1 mặt: 120 ipm, Quét 2 mặt: 220 ipm"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, Searchable PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "Data Security Kit, TPM, AES 256"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 400.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống quang học 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 1.450 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "685 x 780 x 1.056 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 182 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 83 ppm mono / 70 ppm màu, dòng tải nặng công nghiệp văn phòng."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz7500ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ7500ci",
+    "model": "TASKalfa MZ7500ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext High-Speed 2026"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "75 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "75 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "37 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "37 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "75 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "75 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi, tương đương 4800 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "4.8 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.5 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 30 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "6 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 320 GB (Tùy chọn 1 TB SSD)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình màu cảm ứng 10.1 inch thế hệ mới"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner 1.220 mm"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "4.150 tờ tiêu chuẩn"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 8.000 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 320 tờ quét 240 ipm"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét 2 mặt: 240 ipm (300 dpi)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, SMB, FTP, USB, Box"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct, Fiery"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi 6"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server 2022/2019, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 400.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống quang học Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 1.500 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "685 x 780 x 1.056 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 185 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Dòng High-Speed 2026 EvolutionNext, tốc độ in màu 75 ppm, nạp DADF 320 tờ 240 ipm."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz8500ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ8500ci",
+    "model": "TASKalfa MZ8500ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext High-Speed 2026"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "85 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "85 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "42 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "42 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "85 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "85 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "4.3 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.2 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 30 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "6 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 320 GB (Tùy chọn 1 TB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình màu cảm ứng 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "4.150 tờ tiêu chuẩn"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 8.000 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 320 tờ quét 240 ipm"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "240 ipm (2 mặt)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, SMB, FTP, USB, Box"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct, Fiery"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi 6"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 450.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống quang học 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 1.600 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "685 x 780 x 1.056 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 185 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 85 ppm, bộ điều khiển in ấn hiệu năng cao cho trung tâm dữ liệu/in ấn."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz9500ci": {
+    "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ9500ci",
+    "model": "TASKalfa MZ9500ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext Production Light 2026"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "95 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "95 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "47 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "47 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "95 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "95 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "3.9 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "2.9 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 30 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "6 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 512 GB / 1 TB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình màu cảm ứng 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner 1.220 mm"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "4.150 tờ tiêu chuẩn"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 8.500 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 320 tờ quét 240 ipm"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "240 ipm (2 mặt)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, SMB, FTP, USB, Box"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct, Fiery"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi 6"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 500.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống quang học 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 1.700 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "685 x 780 x 1.056 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 190 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ in màu đỉnh cao 95 trang/phút, giải pháp Light Production siêu bền bỉ."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz4001i": {
+    "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ4001i",
+    "model": "TASKalfa MZ4001i",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext 2026"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "20 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "4.2 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn SSD 320 GB / 1 TB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + Khay tay 150 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF / RADF nạp bản gốc tự động lên đến 320 tờ (tùy chọn)"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét 1 mặt: 100 ipm, Quét 2 mặt: 200 ipm (300 dpi)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, Box, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 3.0, Wi-Fi Direct"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 150.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống quang học Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 600 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 83 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Dòng đa chức năng EvolutionNext đơn sắc thế hệ mới, tiết kiệm năng lượng, trống từ 600.000 trang."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz5001i": {
+    "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ5001i",
+    "model": "TASKalfa MZ5001i",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext 2026"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "50 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "25 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "50 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.7 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn 320 GB / 1 TB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 150 tờ khay tay"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 320 tờ quét 2 mặt siêu tốc"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "200 ipm (2 mặt)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, Box"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 175.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 680 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 83 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 50 ppm A4 mono, độ tin cậy tuyệt đối."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz6001i": {
+    "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ6001i",
+    "model": "TASKalfa MZ6001i",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext 2026"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "30 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.4 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn 320 GB / 1 TB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 150 tờ khay tay"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 320 tờ tiêu chuẩn"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "200 ipm (2 mặt)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, Box"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 225.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 780 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 83 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 60 ppm A4 mono, giải pháp photocopy văn phòng tốc độ cao."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz7001i": {
+    "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ7001i",
+    "model": "TASKalfa MZ7001i",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext 2026 Flagship"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "70 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "70 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.2 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn 320 GB / 1 TB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 150 tờ khay tay"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 320 tờ tiêu chuẩn"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "200 ipm (2 mặt)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, Box"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 250.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 880 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 83 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 70 ppm A4 mono, model hàng đầu phân khúc máy đen trắng văn phòng."
+        }
+    ]
+},
+  "kyocera_taskalfa_5004i": {
+    "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa 5004i",
+    "model": "TASKalfa 5004i",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "TASKalfa 04i Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "50 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "25 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "50 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.7 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn 320 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 150 tờ khay tay"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF / RADF tùy chọn"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "Mã hóa AES 256, TPM"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 175.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 680 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 83 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 50 ppm, trống từ 600.000 bản in siêu bền."
+        }
+    ]
+},
+  "kyocera_taskalfa_6004i": {
+    "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa 6004i",
+    "model": "TASKalfa 6004i",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "TASKalfa 04i Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "30 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.4 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn 320 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 150 tờ khay tay"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF tiêu chuẩn"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "Mã hóa AES 256, TPM"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 225.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 780 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 83 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 60 ppm, hiệu suất sao chụp đen trắng cao."
+        }
+    ]
+},
+  "kyocera_taskalfa_7004i": {
+    "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa 7004i",
+    "model": "TASKalfa 7004i",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "TASKalfa 04i Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "70 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "70 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.2 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn 320 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 150 tờ khay tay"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF tiêu chuẩn"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "Mã hóa AES 256, TPM"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 250.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 880 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 83 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 70 ppm, model hàng đầu dòng 04i."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz3200i": {
+    "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ3200i",
+    "model": "TASKalfa MZ3200i",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "TASKalfa MZ Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "32 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "17 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "32 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "4.9 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 18 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn 320 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "45 - 256 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 100 tờ khay tay (Tổng 1.100 tờ)"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 4.100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF / RADF tùy chọn"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm (DADF)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi Direct"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 100.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 510 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "594 x 696 x 683 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 58 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Dòng đa chức năng văn phòng nhỏ gọn, tốc độ 32 ppm, trống từ 600.000 bản in."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz4000i": {
+    "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ4000i",
+    "model": "TASKalfa MZ4000i",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "TASKalfa MZ Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "21 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "4.2 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 18 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 32 GB (Tùy chọn 320 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "45 - 256 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + 100 tờ khay tay"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 4.100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF / RADF tùy chọn"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 200 ipm"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi Direct"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 125.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 590 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "594 x 696 x 683 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 58 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 40 ppm A4 mono, độ phân giải 1200 dpi sắc nét."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz7500i": {
+    "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ7500i",
+    "model": "TASKalfa MZ7500i",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext High-Speed 2026"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "75 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "37 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "75 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.2 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 25 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "6 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 320 GB (Tùy chọn 1 TB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "4.150 tờ tiêu chuẩn"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 8.000 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 320 tờ quét 240 ipm"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "240 ipm (2 mặt)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, SMB, FTP, USB, Box"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi 6"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 400.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 1.300 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "685 x 780 x 1.056 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 175 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 75 ppm A4 mono, dòng High-Speed 2026."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz8500i": {
+    "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ8500i",
+    "model": "TASKalfa MZ8500i",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext High-Speed 2026"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "85 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "42 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "85 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "2.9 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 25 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "6 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 320 GB (Tùy chọn 1 TB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "4.150 tờ tiêu chuẩn"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 8.000 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 320 tờ quét 240 ipm"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "240 ipm (2 mặt)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, SMB, FTP, USB, Box"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi 6"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 450.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 1.400 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "685 x 780 x 1.056 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 175 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 85 ppm A4 mono, công suất cực lớn."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz9500i": {
+    "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ9500i",
+    "model": "TASKalfa MZ9500i",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext High-Speed 2026"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "95 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "47 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "95 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "2.7 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 25 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "6 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 512 GB / 1 TB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "4.150 tờ tiêu chuẩn"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 8.500 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 320 tờ quét 240 ipm"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "240 ipm (2 mặt)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, SMB, FTP, USB, Box"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi 6"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 500.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 1.500 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "685 x 780 x 1.056 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 180 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 95 ppm A4 mono, xử lý khối lượng in ấn tài liệu đồ sộ."
+        }
+    ]
+},
+  "kyocera_taskalfa_mz10500i": {
+    "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ10500i",
+    "model": "TASKalfa MZ10500i",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "EvolutionNext Production Flagship 2026"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "105 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "52 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "105 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "2.5 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 25 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "6 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 512 GB / 1 TB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 10.1 inch thế hệ mới"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner 1.220 mm"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "4.150 tờ tiêu chuẩn"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 8.500 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 320 tờ quét 240 ipm"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "240 ipm (2 mặt)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, SMB, FTP, USB, Box"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct, Fiery"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0, Wi-Fi 6"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server 2022/2019, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0, AES 256, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 600.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống Amorphous Silicon siêu bền 1.000.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 1.650 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "685 x 780 x 1.056 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 185 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Flagship đơn sắc mới nhất 2026 với tốc độ kỷ lục 105 ppm A4, trống từ 1 triệu bản in."
+        }
+    ]
+},
+  "kyocera_ecosys_ma2100cfx": {
+    "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS MA2100cfx",
+    "model": "ECOSYS MA2100cfx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Color Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "21 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "21 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "21 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "21 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi (in), 600 x 600 dpi (scan/copy)"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "12.5 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "10.5 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 32 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Cortex-A9 800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB (Mở rộng 1.5 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng phím bấm"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4, Legal, Letter"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay nạp giấy 250 tờ + Khay tay 50 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "550 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt bản in tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "ADF nạp bản gốc tự động 50 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "30 ipm (mono), 23 ipm (color)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3 (PostScript 3), PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT Ethernet, USB 2.0 High-Speed, USB Host"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 65.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS siêu bền 100.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 345 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "417 x 429 x 495 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 26 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa chức năng 4-trong-1 (In/Copy/Scan/Fax), màu sắc trung thực, đảo mặt tự động."
+        }
+    ]
+},
+  "kyocera_ecosys_ma2100cwfx": {
+    "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS MA2100cwfx",
+    "model": "ECOSYS MA2100cwfx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Color Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "21 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "21 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "21 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "21 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "12.5 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "10.5 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 32 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Cortex-A9 800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB (Mở rộng 1.5 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 50 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "550 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "ADF 50 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "30 ipm (mono), 23 ipm (color)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, Wi-Fi (IEEE 802.11b/g/n), Wi-Fi Direct, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 65.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS 100.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 345 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "417 x 429 x 495 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 26 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tích hợp Wi-Fi không dây, Wi-Fi Direct, hỗ trợ AirPrint & Mopria."
+        }
+    ]
+},
+  "kyocera_ecosys_ma2101cfx": {
+    "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS MA2101cfx",
+    "model": "ECOSYS MA2101cfx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "21 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "21 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "21 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "21 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 50 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "ADF 50 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "30 ipm mono / 23 ipm color"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "65.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "100.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Model đa chức năng màu A4 tối ưu hóa hiệu quả chi phí cho văn phòng."
+        }
+    ]
+},
+  "kyocera_ecosys_ma2101cwfx": {
+    "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS MA2101cwfx",
+    "model": "ECOSYS MA2101cwfx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "21 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "21 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "21 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "21 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 50 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "ADF 50 tờ"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Wi-Fi không dây, Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "65.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "100.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa chức năng màu tích hợp Wifi không dây tiện lợi."
+        }
+    ]
+},
+  "kyocera_ecosys_ma2600cfx": {
+    "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS MA2600cfx",
+    "model": "ECOSYS MA2600cfx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Color Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "26 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "26 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "26 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "26 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "10.5 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "9.5 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 29 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Cortex-A9 Dual core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB (Mở rộng 1.5 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 4.3 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 50 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "550 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF nạp & đảo bản gốc tự động 50 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "30 ipm (mono), 23 ipm (color)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 65.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS 100.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 375 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "417 x 429 x 495 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 26 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 26 ppm, màn cảm ứng 4.3 inch, nạp bản gốc RADF đảo mặt tự động."
+        }
+    ]
+},
+  "kyocera_ecosys_ma2600cwx": {
+    "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS MA2600cwx",
+    "model": "ECOSYS MA2600cwx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Color Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "26 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "26 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "26 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "26 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Cortex-A9 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 4.3 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 50 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF 50 tờ"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Wi-Fi không dây, Gigabit LAN, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "65.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "100.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa chức năng 3-trong-1 (Print/Copy/Scan) tốc độ 26 ppm, Wi-Fi tích hợp."
+        }
+    ]
+},
+  "kyocera_ecosys_ma2600cwfx": {
+    "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS MA2600cwfx",
+    "model": "ECOSYS MA2600cwfx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Color Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "26 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "26 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "26 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "26 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Cortex-A9 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB (Mở rộng 1.5 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 4.3 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 50 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF 50 tờ"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Wi-Fi không dây, Gigabit LAN, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "65.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "100.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa chức năng 4-trong-1 (Print/Copy/Scan/Fax) 26 ppm có Wi-Fi & RADF."
+        }
+    ]
+},
+  "kyocera_ecosys_ma3500cifx": {
+    "name": "Máy photocopy đa chức năng màu A4 Kyocera ECOSYS MA3500cifx",
+    "model": "ECOSYS MA3500cifx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA High-End Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "7.0 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "6.0 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 26 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1.5 GB RAM (Mở rộng 3.5 GB)"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "Tùy chọn SSD 32 GB / 64 GB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch đa điểm xoay góc"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4, Legal"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay nạp 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 2.000 tờ với khay mở rộng"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 100 tờ quét 2 mặt 1 lần siêu tốc lên đến 120 ipm mono / 80 ipm color"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét 1 mặt: 60 ipm mono / 40 ipm color; Quét 2 mặt: 120 ipm mono / 80 ipm color"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, Encrypted PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, Box, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3 (PostScript 3), PDF Direct Print, XPS"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0, USB Host, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "HyPAS mở rộng, Data Security Kit, TPM, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 100.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS gốm siêu bền 200.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 532 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "480 x 577 x 619 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 36.5 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Dòng đa năng màu cao cấp A4, màn cảm ứng 7 inch, nạp DADF 100 tờ quét 120 ipm, hỗ trợ nền tảng giải pháp HyPAS."
+        }
+    ]
+},
+  "kyocera_ecosys_ma3500cix": {
+    "name": "Máy photocopy đa chức năng màu A4 Kyocera ECOSYS MA3500cix",
+    "model": "ECOSYS MA3500cix",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1.5 GB RAM"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 100 tờ quét 2 mặt 1 lần"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "120 ipm mono / 80 ipm color"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "100.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "200.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa chức năng 3-trong-1 (Print/Copy/Scan) 35 ppm màu với màn cảm ứng 7 inch và DADF 100 tờ."
+        }
+    ]
+},
+  "kyocera_ecosys_ma3500ci": {
+    "name": "Máy photocopy đa chức năng màu A4 Kyocera ECOSYS MA3500ci",
+    "model": "ECOSYS MA3500ci",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1.5 GB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF nạp bản gốc tự động"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit LAN, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "100.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "200.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa chức năng màu tốc độ cao, hỗ trợ HyPAS."
+        }
+    ]
+},
+  "kyocera_ecosys_ma4000cifx": {
+    "name": "Máy photocopy đa chức năng màu A4 Kyocera ECOSYS MA4000cifx",
+    "model": "ECOSYS MA4000cifx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA High-End Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "40 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "40 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "6.5 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "5.5 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 26 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "2 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "Tùy chọn SSD 64 GB / 128 GB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4, Legal"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 2.000 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 100 tờ quét 2 mặt 1 lần siêu tốc (120 ipm)"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét 2 mặt: 120 ipm mono / 80 ipm color"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, Box, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 2.0, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "HyPAS, TPM, AES 256"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 120.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS 200.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 575 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "480 x 577 x 619 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 36.5 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 40 ppm màu/mono, nạp DADF 100 tờ quét kép 120 ipm, hiệu năng in ấn xuất sắc."
+        }
+    ]
+},
+  "kyocera_ecosys_ma4000cix": {
+    "name": "Máy photocopy đa chức năng màu A4 Kyocera ECOSYS MA4000cix",
+    "model": "ECOSYS MA4000cix",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "40 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "40 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "2 GB RAM"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 100 tờ quét 2 mặt 1 lần"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "120 ipm mono / 80 ipm color"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "120.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "200.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa chức năng màu 3-trong-1 tốc độ 40 ppm, xử lý tài liệu tốc độ cao."
+        }
+    ]
+},
+  "kyocera_ecosys_m6630cidn": {
+    "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS M6630cidn",
+    "model": "ECOSYS M6630cidn",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS M Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "30 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "30 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "30 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "30 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "7.5 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "6.5 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 26 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1 GB RAM (Mở rộng 3 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4, Legal"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "1.850 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF nạp bản gốc tự động 75 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "62 ipm (mono), 46 ipm (color)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0, USB Host"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "HyPAS, Data Security Kit, TPM"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 100.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS gốm 200.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 496 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "475 x 558 x 616 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 35.4 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa năng 4-trong-1 (Print/Copy/Scan/Fax) 30 ppm, hỗ trợ giải pháp HyPAS."
+        }
+    ]
+},
+  "kyocera_ecosys_m6635cidn": {
+    "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS M6635cidn",
+    "model": "ECOSYS M6635cidn",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS M Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "35 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "7.5 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "6.0 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 25 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1 GB RAM (Mở rộng 3 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4, Legal"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "1.850 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 100 tờ quét 2 mặt 1 lần (120 ipm mono / 80 ipm color)"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét 2 mặt: 120 ipm mono / 80 ipm color"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0, USB Host"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "HyPAS, Data Security Kit, TPM"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 100.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS gốm 200.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 532 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "480 x 577 x 619 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 36.5 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 35 ppm, nạp DADF 100 tờ quét 2 mặt 1 lần 120 ipm, màn cảm ứng 7 inch."
+        }
+    ]
+},
+  "kyocera_ecosys_m8124cidn": {
+    "name": "Máy photocopy màu đa chức năng A3 compact Kyocera ECOSYS M8124cidn",
+    "model": "ECOSYS M8124cidn",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS A3 Compact Color Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "24 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "24 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "12 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "12 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "24 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "24 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "10.2 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "7.5 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 30 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1.5 GB RAM (Mở rộng 3 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 4.3 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 256 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "1.600 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF nạp & đảo bản gốc tự động 50 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "50 ipm (mono/color, 300 dpi)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0, USB Host, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "HyPAS, TPM, AES 256"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 100.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS siêu bền 200.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 550 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "590 x 590 x 753 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 76 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Dòng đa chức năng A3 màu thiết kế Compact nhỏ gọn, độ bền cao, chi phí bản in cực thấp."
+        }
+    ]
+},
+  "kyocera_ecosys_m8130cidn": {
+    "name": "Máy photocopy màu đa chức năng A3 compact Kyocera ECOSYS M8130cidn",
+    "model": "ECOSYS M8130cidn",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS A3 Compact Color Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "30 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "30 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "15 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "15 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "30 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "30 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "8.5 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "6.5 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 30 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1.5 GB RAM (Mở rộng 3 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 256 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "1.600 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF nạp & đảo bản gốc tự động 50 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "50 ipm (mono/color, 300 dpi)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0, USB Host, Wi-Fi Direct"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "HyPAS, TPM, AES 256"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 100.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS siêu bền 200.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 600 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "590 x 590 x 753 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 76 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 30 ppm A4 / 15 ppm A3 màu, màn cảm ứng 7 inch, hỗ trợ nền tảng HyPAS."
+        }
+    ]
+},
+  "kyocera_ecosys_ma2000": {
+    "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA2000",
+    "model": "ECOSYS MA2000",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS Compact Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "20 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "20 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 dpi quality (1800 x 600 dpi)"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "8.0 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 20 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "450MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "32 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LED hiển thị trạng thái"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4, Letter"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "65 - 105 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay nạp giấy 150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Đảo mặt thủ công (Manual Duplex)"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét màu & đen trắng qua phần mềm Kyocera Client Tool"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan-to-PC (USB)"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "USB 2.0 High-Speed"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 15.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS 10.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 340 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "370 x 320 x 240 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 6.2 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Máy đa chức năng 3-trong-1 nhỏ gọn, tiện lợi cho bàn làm việc cá nhân."
+        }
+    ]
+},
+  "kyocera_ecosys_ma2000w": {
+    "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA2000w",
+    "model": "ECOSYS MA2000w",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS Compact Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "20 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "20 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 dpi quality"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "8.0 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "450MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "64 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LED"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn (Tự động in 2 mặt, hỗ trợ khổ A5R - A3/SRA3)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Wi-Fi (IEEE 802.11 b/g/n), USB 2.0 High-Speed"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux, Kyocera Mobile Print"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "15.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "10.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tích hợp Wi-Fi không dây in ấn trực tiếp từ smartphone và laptop."
+        }
+    ]
+},
+  "kyocera_ecosys_ma3500x": {
+    "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA3500x",
+    "model": "ECOSYS MA3500x",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "6.8 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Cortex-A9 800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "850 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF nạp bản gốc 50 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "40 ipm (mono), 23 ipm (color)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "50.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "100.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa năng 3-trong-1 (Print/Copy/Scan) 35 ppm tốc độ cao."
+        }
+    ]
+},
+  "kyocera_ecosys_ma3500fx": {
+    "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA3500fx",
+    "model": "ECOSYS MA3500fx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Cortex-A9 800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF 50 tờ"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "50.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "100.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa năng 4-trong-1 (Print/Copy/Scan/Fax) 35 ppm."
+        }
+    ]
+},
+  "kyocera_ecosys_ma3500wfx": {
+    "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA3500wfx",
+    "model": "ECOSYS MA3500wfx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "35 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Cortex-A9 800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF 50 tờ"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Wi-Fi không dây, Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "50.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "100.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa năng 4-trong-1 (Print/Copy/Scan/Fax) 35 ppm có kết nối Wi-Fi."
+        }
+    ]
+},
+  "kyocera_ecosys_ma4000x": {
+    "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA4000x",
+    "model": "ECOSYS MA4000x",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Cortex-A9 800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF 50 tờ"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "80.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "100.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa năng 3-trong-1 tốc độ 40 ppm."
+        }
+    ]
+},
+  "kyocera_ecosys_ma4000fx": {
+    "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA4000fx",
+    "model": "ECOSYS MA4000fx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF 50 tờ"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "80.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "100.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa năng 4-trong-1 tốc độ 40 ppm."
+        }
+    ]
+},
+  "kyocera_ecosys_ma4000wifx": {
+    "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA4000wifx",
+    "model": "ECOSYS MA4000wifx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF 50 tờ"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Wi-Fi không dây, Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "80.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "100.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa năng 4-trong-1 tốc độ 40 ppm có Wi-Fi."
+        }
+    ]
+},
+  "kyocera_ecosys_ma4500x": {
+    "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA4500x",
+    "model": "ECOSYS MA4500x",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA High-Speed Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "45 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "45 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "5.3 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1 GB RAM"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4, Legal"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "2.600 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF nạp bản gốc 75 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "60 ipm (mono), 40 ipm (color)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "150.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống gốm siêu bền 300.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 45 ppm, khay giấy 500 tờ tiêu chuẩn, trống từ 300.000 trang."
+        }
+    ]
+},
+  "kyocera_ecosys_ma4500fx": {
+    "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA4500fx",
+    "model": "ECOSYS MA4500fx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "45 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "45 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1 GB RAM"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF 75 tờ"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "150.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "300.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa năng 4-trong-1 tốc độ 45 ppm."
+        }
+    ]
+},
+  "kyocera_ecosys_ma4500ix": {
+    "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS MA4500ix",
+    "model": "ECOSYS MA4500ix",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Smart Touch Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "45 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "45 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "5.3 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1.5 GB RAM"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 100 tờ quét 2 mặt 1 lần siêu tốc lên đến 120 ipm"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét 2 mặt: 120 ipm mono / 80 ipm color"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0, USB Host"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "HyPAS, TPM, AES 256"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "150.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống gốm 300.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Màn cảm ứng 7 inch, DADF quét 2 mặt 1 lần 120 ipm, hỗ trợ HyPAS."
+        }
+    ]
+},
+  "kyocera_ecosys_ma4500ifx": {
+    "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS MA4500ifx",
+    "model": "ECOSYS MA4500ifx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA Smart Touch Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "45 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "45 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "5.3 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1.5 GB RAM"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 100 tờ quét 2 mặt 1 lần (120 ipm)"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "120 ipm mono / 80 ipm color"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0, USB Host"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "HyPAS, TPM, AES 256"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "150.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "300.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa năng 4-trong-1 (Print/Copy/Scan/Fax) 45 ppm màn cảm ứng 7 inch."
+        }
+    ]
+},
+  "kyocera_ecosys_ma5500ifx": {
+    "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS MA5500ifx",
+    "model": "ECOSYS MA5500ifx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA High-Speed Touch Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "55 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "55 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "4.5 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 25 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1.5 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "Tùy chọn SSD 64 GB / 128 GB / 512 GB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4, Legal"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "2.600 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 100 tờ quét 2 mặt 1 lần siêu tốc 120 ipm"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét 2 mặt: 120 ipm mono / 80 ipm color"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0, USB Host"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "HyPAS, Data Security Kit, TPM, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 250.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống gốm siêu bền 500.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 711 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "480 x 495 x 590 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 24.1 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 55 ppm siêu nhanh, màn cảm ứng 7 inch, trống gốm 500.000 trang."
+        }
+    ]
+},
+  "kyocera_ecosys_ma6000ifx": {
+    "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS MA6000ifx",
+    "model": "ECOSYS MA6000ifx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS MA High-Speed Touch Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "4.5 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 25 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1.5 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "Tùy chọn SSD 64 GB / 128 GB / 512 GB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4, Legal"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "2.600 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 100 tờ quét 2 mặt 1 lần siêu tốc 120 ipm"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét 2 mặt: 120 ipm mono / 80 ipm color"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0, USB Host"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "HyPAS, Data Security Kit, TPM, TLS 1.3"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 300.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống gốm siêu bền 500.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 749 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "480 x 495 x 590 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 24.1 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 60 ppm A4 hàng đầu phân khúc máy để bàn, trống gốm 500.000 trang."
+        }
+    ]
+},
+  "kyocera_ecosys_m2040dn": {
+    "name": "Máy in đa chức năng A4 Kyocera ECOSYS M2040dn",
+    "model": "ECOSYS M2040dn",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS M Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "6.4 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB (Mở rộng 1.5 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4, Legal"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "850 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF nạp bản gốc 2 mặt 1 lần 50 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét 2 mặt: 40 ipm (mono), 23 ipm (color)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0, USB Host"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 50.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS 100.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 661 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "417 x 412 x 437 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 19 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Dòng đa năng 3-trong-1 (Print/Copy/Scan) tốc độ 40 ppm được ưa chuộng nhất của Kyocera."
+        }
+    ]
+},
+  "kyocera_ecosys_m2540dn": {
+    "name": "Máy in đa chức năng A4 Kyocera ECOSYS M2540dn",
+    "model": "ECOSYS M2540dn",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS M Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "6.4 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB (Mở rộng 1.5 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4, Legal"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "850 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF nạp bản gốc 2 mặt 1 lần 50 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "40 ipm (mono), 23 ipm (color)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 50.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS 100.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 661 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "417 x 412 x 437 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 19 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa năng 4-trong-1 (Print/Copy/Scan/Fax) 40 ppm, nạp DADF 2 mặt 1 lần."
+        }
+    ]
+},
+  "kyocera_ecosys_m2640idw": {
+    "name": "Máy in đa chức năng A4 Kyocera ECOSYS M2640idw",
+    "model": "ECOSYS M2640idw",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS M Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "40 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "6.4 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB (Mở rộng 1.5 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 4.3 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF nạp bản gốc 2 mặt 1 lần 50 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "40 ipm (mono), 23 ipm (color)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Wi-Fi (IEEE 802.11b/g/n), Wi-Fi Direct, Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, macOS, Linux, Kyocera Mobile Print"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 50.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS 100.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 661 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "417 x 412 x 437 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 19 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa năng 4-trong-1 có màn cảm ứng 4.3 inch, Wi-Fi không dây, DADF 50 tờ."
+        }
+    ]
+},
+  "kyocera_ecosys_m3145dn": {
+    "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS M3145dn",
+    "model": "ECOSYS M3145dn",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS M Heavy-Duty Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "45 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "45 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "5.9 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 16 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1 GB RAM (Mở rộng 3 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4, Legal"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ (Tổng 600 tờ)"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "2.600 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF nạp bản gốc tự động 75 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "60 ipm (mono), 40 ipm (color)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0, USB Host"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 150.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống gốm ECOSYS 300.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 652 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "475 x 476 x 575 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 22.3 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Dòng tải nặng A4, tốc độ 45 ppm, khay giấy 500 tờ, trống gốm 300.000 trang."
+        }
+    ]
+},
+  "kyocera_ecosys_m3645dn": {
+    "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS M3645dn",
+    "model": "ECOSYS M3645dn",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS M Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "45 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "45 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1 GB RAM"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 5 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF 75 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "60 ipm mono / 40 ipm color"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "150.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "300.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa năng 4-trong-1 (Print/Copy/Scan/Fax) 45 ppm dòng ECOSYS chịu tải cao."
+        }
+    ]
+},
+  "kyocera_ecosys_m3645idn": {
+    "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS M3645idn",
+    "model": "ECOSYS M3645idn",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS M Touch Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "45 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "45 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1 GB RAM (Mở rộng 3 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF 75 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "60 ipm mono / 40 ipm color"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "HyPAS, TPM"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "150.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "300.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa năng 4-trong-1 45 ppm có màn cảm ứng 7 inch, hỗ trợ nền tảng HyPAS."
+        }
+    ]
+},
+  "kyocera_ecosys_m3860idn": {
+    "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS M3860idn",
+    "model": "ECOSYS M3860idn",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS M Flagship Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "4.5 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 25 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1 GB RAM (Mở rộng 3 GB)"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "Tùy chọn SSD 64 GB / 128 GB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4, Legal"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "2.600 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 100 tờ quét 2 mặt 1 lần siêu tốc (120 ipm)"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét 2 mặt: 120 ipm mono / 80 ipm color"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0, USB Host"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "HyPAS, Data Security Kit, TPM"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 300.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống gốm siêu bền 500.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 749 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "480 x 495 x 590 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 24.1 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ siêu nhanh 60 ppm, màn cảm ứng 7 inch, nạp DADF 100 tờ quét kép 120 ipm, trống gốm 500.000 trang."
+        }
+    ]
+},
+  "kyocera_ecosys_m3860idnf": {
+    "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS M3860idnf",
+    "model": "ECOSYS M3860idnf",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS M Flagship Series (Finisher)"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1 GB RAM"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "DADF 100 tờ (120 ipm)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Tốc độ Modem FAX",
+            "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+        },
+        {
+            "key": "Bộ nhớ FAX",
+            "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+        },
+        {
+            "key": "Tính năng FAX mở rộng",
+            "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "300.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "500.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Model 60 ppm A4 tích hợp sẵn bộ hoàn tất dập ghim nội bộ (Internal Finisher 250 tờ) và FAX."
+        }
+    ]
+},
+  "kyocera_ecosys_m4125idn": {
+    "name": "Máy photocopy đa chức năng A3 compact Kyocera ECOSYS M4125idn",
+    "model": "ECOSYS M4125idn",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS A3 Compact Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "25 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "12 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "25 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "5.8 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 20 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1 GB RAM (Mở rộng 3 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 4.3 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 256 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "1.600 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF nạp & đảo bản gốc tự động 50 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "50 ipm (mono/color, 300 dpi)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0, USB Host, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "HyPAS, TPM, AES 256"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 80.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS siêu bền 300.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 410 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "590 x 590 x 688 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 49 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đa chức năng A3 đơn sắc nhỏ gọn, màn hình cảm ứng 4.3 inch, trống từ 300.000 trang."
+        }
+    ]
+},
+  "kyocera_ecosys_m4132idn": {
+    "name": "Máy photocopy đa chức năng A3 compact Kyocera ECOSYS M4132idn",
+    "model": "ECOSYS M4132idn",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy photocopy đa chức năng kỹ thuật số"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS A3 Compact Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "32 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "17 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "32 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "5.2 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 20 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "1 GB RAM (Mở rộng 3 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 7 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 256 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 500 tờ + Khay tay 100 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "1.600 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động đảo mặt tiêu chuẩn"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "RADF nạp & đảo bản gốc tự động 50 tờ"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "50 ipm (mono/color, 300 dpi)"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, TWAIN"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0, USB Host, Wi-Fi Direct"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "HyPAS, TPM, AES 256"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 100.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS siêu bền 300.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 490 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "590 x 590 x 688 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 52 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Tốc độ 32 ppm A4 / 17 ppm A3 mono, màn hình cảm ứng màu 7 inch, hỗ trợ giải pháp HyPAS."
+        }
+    ]
+},
+  "kyocera_ecosys_pa2100cwx": {
+    "name": "Máy in laser màu A4 Kyocera ECOSYS PA2100cwx",
+    "model": "ECOSYS PA2100cwx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy in laser đơn chức năng"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In laser (Print)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS PA Color Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "21 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "21 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "12.5 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "11.0 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 32 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Cortex-A9 800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 2 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6 - A4, Letter"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "60 - 220 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 50 tờ"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "550 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động in 2 mặt tiêu chuẩn (60 - 120 g/m², A5 - A4)"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3 (PostScript 3), PDF Direct"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Wi-Fi (IEEE 802.11b/g/n), Wi-Fi Direct, 10/100/1000BaseT Gigabit Ethernet, USB 2.0 High-Speed, USB Host"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux, AirPrint, Mopria"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 65.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống ECOSYS 100.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 345 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "410 x 410 x 329 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 21 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Máy in laser màu A4 đơn năng có sẵn Duplex đảo mặt tự động và kết nối Wi-Fi không dây."
+        }
+    ]
+},
+  "kyocera_ecosys_pa2101cx": {
+    "name": "Máy in laser màu A4 Kyocera ECOSYS PA2101cx",
+    "model": "ECOSYS PA2101cx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy in laser đơn chức năng"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In laser (Print)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS PA Color Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "21 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "21 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 2 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 50 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "65.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "100.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Máy in laser màu đơn năng 21 ppm kết nối mạng LAN Gigabit."
+        }
+    ]
+},
+  "kyocera_ecosys_pa2101cwx": {
+    "name": "Máy in laser màu A4 Kyocera ECOSYS PA2101cwx",
+    "model": "ECOSYS PA2101cwx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy in laser đơn chức năng"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In laser (Print)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS PA Color Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "21 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "21 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "800MHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 2 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 50 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Wi-Fi không dây, Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "65.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "100.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Máy in laser màu đơn năng 21 ppm tích hợp Wi-Fi không dây."
+        }
+    ]
+},
+  "kyocera_ecosys_pa2600cx": {
+    "name": "Máy in laser màu A4 Kyocera ECOSYS PA2600cx",
+    "model": "ECOSYS PA2600cx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy in laser đơn chức năng"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In laser (Print)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS PA Color Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "26 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "26 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "10.5 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "9.5 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Cortex-A9 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 2 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 50 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "65.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "100.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Máy in màu 26 ppm tốc độ cao, độ phân giải 1200 dpi."
+        }
+    ]
+},
+  "kyocera_ecosys_pa2600cwx": {
+    "name": "Máy in laser màu A4 Kyocera ECOSYS PA2600cwx",
+    "model": "ECOSYS PA2600cwx",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "12 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy in laser đơn chức năng"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In laser (Print)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS PA Color Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "26 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "26 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "512 MB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình LCD 2 dòng"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay 250 tờ + Khay tay 50 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Wi-Fi không dây, Gigabit Ethernet, USB 2.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "65.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "100.000 trang"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Máy in màu 26 ppm tích hợp Wi-Fi không dây và Duplex đảo mặt tự động."
+        }
+    ]
+},
+  "kyocera_ecosys_p4060dn": {
+    "name": "Máy in laser đơn sắc A3/A4 Kyocera ECOSYS P4060dn",
+    "model": "ECOSYS P4060dn",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy in laser đơn chức năng"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In laser (Print)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS A3 High-Speed Series"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "30 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.8 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Freescale QorIQ T1024 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 8 GB (Tùy chọn HDD 320 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 9 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3, Banner lên đến 305 x 1.220 mm"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + Khay tay 150 tờ (Tổng 1.150 tờ)"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động in 2 mặt tiêu chuẩn (A5R - SRA3, 60 - 256 g/m²)"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3 (PostScript 3), PDF Direct Print, XPS"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT Gigabit Ethernet, 4 cổng USB 2.0, USB 3.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "Data Security Kit, TPM, Mã hóa AES 256"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 300.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống quang học Amorphous Silicon 500.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 820 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 77.2 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Máy in laser A3 đơn sắc tốc độ siêu cao 60 ppm, màn hình cảm ứng 9 inch, trống từ 500.000 trang."
+        }
+    ]
+},
+  "kyocera_ecosys_p8060cdn": {
+    "name": "Máy in laser màu A3/A4 tốc độ cao Kyocera ECOSYS P8060cdn",
+    "model": "ECOSYS P8060cdn",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Máy in laser đơn chức năng"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In laser (Print)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "ECOSYS A3 High-End Color Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "55 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "60 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "27 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "30 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "1200 x 1200 dpi, độ sâu 2-bit tương đương 4800 x 1200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "4.8 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "3.8 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 17 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Freescale QorIQ T1024 Dual Core 1.2GHz"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 8 GB (Tùy chọn HDD 320 GB)"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 9 inch xoay góc"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - SRA3 (320 x 450 mm), Banner 305 x 1.220 mm"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "52 - 300 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "2 khay x 500 tờ + Khay tay 150 tờ (Tổng 1.150 tờ)"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 7.150 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Tự động in 2 mặt tiêu chuẩn"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "PRESCRIBE, PCL6, KPDL3 (PostScript 3), PDF Direct Print, XPS, Fiery (tùy chọn)"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "10/100/1000BaseT Gigabit Ethernet, 4 cổng USB 2.0, USB 3.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "Data Security Kit, TPM, AES 256"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 300.000 trang/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống quang học Amorphous Silicon siêu bền 600.000 trang"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; In ấn: 960 W"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "602 x 665 x 790 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 89 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Máy in laser màu A3 tốc độ cao nhất (60 ppm mono / 55 ppm color), chất lượng in ấn đồ họa đỉnh cao, trống từ 600.000 trang."
+        }
+    ]
+},
+  "kyocera_taskalfa_pro_15000c": {
+    "name": "Máy in phun màu công nghiệp siêu tốc Kyocera TASKalfa Pro 15000c",
+    "model": "TASKalfa Pro 15000c",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera Nhật Bản",
+    "warranty": "36 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Hệ thống máy in phun màu công nghiệp siêu tốc (Production Inkjet)"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In phun màu công nghiệp tốc độ siêu cao (Print/Copy/Scan with optional Fiery)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "Production Inkjet Flagship"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "150 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "150 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 Màu",
+            "value": "75 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "75 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "150 trang màu/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "150 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "600 x 600 dpi, 600 x 1200 dpi (công nghệ hạt mực siêu nhỏ Piezo Drop-on-Demand)"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Màu)",
+            "value": "5.5 giây"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "5.5 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 120 giây (sẵn sàng in ngay lập tức không cần sấy nhiệt lô ép)"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Hệ thống vi xử lý đa nhân công nghiệp Kyocera Controller / Fiery Print Server"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "32 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 1 TB + HDD 2 TB lưu trữ bản in"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 9 inch + Màn hình điều khiển máy chủ Fiery"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - 330 x 487 mm (13 x 19.2 inch), Banner lên đến 330 x 1.220 mm"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "56 - 360 g/m² (giấy thường, giấy dày, giấy mỹ thuật, phong bì, decal)"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Khay nạp tiêu chuẩn 4.150 tờ (hỗ trợ nạp chân không hút giấy)"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 14.310 tờ với các bộ nạp giấy công nghiệp dung lượng lớn (Vacuum Feeders)"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "In 2 mặt tự động siêu tốc 150 trang/phút (56 - 300 g/m²)"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "Bộ nạp bản gốc DADF 270 tờ quét 220 ipm (tùy chọn)"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét 2 mặt: 220 ipm"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, Searchable PDF, JPEG"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, Fiery Server"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "Adobe PostScript 3, PDF 2.0, PCL6, PPML, PDF/VT, IPDS (tùy chọn)"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Dual 1000Base-T / 10GBase-T Ethernet, USB 3.0, Fiery Interface"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, Server, macOS, Linux, UNIX"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "Data Security Kit, IPsec, TLS 1.3, Xóa dữ liệu chuẩn quân đội DoD"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Định mức thiết kế: 1.000.000 bản in/tháng (Tối đa 3.000.000 trang)"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Đầu phun Piezo độ bền vĩnh cửu công nghiệp (tuổi thọ hàng chục triệu bản in)"
+        },
+        {
+            "key": "Mực in tương thích",
+            "value": "Mực in gốc nước sắc tố cao cấp Water-based Pigment Ink (4 bình dung tích siêu lớn K/C/M/Y)"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V, 50/60 Hz; Mức tiêu thụ điện năng cực thấp chỉ 1.5 kW khi in đầy tải (tiết kiệm 70% so với máy in laser công nghiệp)"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "1.498 x 1.018 x 1.144 mm (thân máy chính)"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 308 kg (Thân máy chính chưa kèm bộ nạp và hoàn tất)"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Đỉnh cao công nghệ in phun màu công nghiệp siêu tốc của Kyocera, tốc độ 150 trang/phút, chi phí bản in cực rẻ, tiêu thụ điện chỉ bằng 1/3 laser."
+        }
+    ]
+},
+  "kyocera_taskalfa_pro_15000b": {
+    "name": "Máy in phun đen trắng công nghiệp siêu tốc Kyocera TASKalfa Pro 15000b",
+    "model": "TASKalfa Pro 15000b",
+    "brand": "Kyocera",
+    "origin": "Chính hãng Kyocera Nhật Bản",
+    "warranty": "36 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Hệ thống máy in phun đen trắng công nghiệp siêu tốc (Monochrome Production Inkjet)"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In phun đen trắng công nghiệp siêu tốc (Print/Copy/Scan with High-Duty Controller)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "Production Monochrome Inkjet 2026"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "150 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ in A3 trắng đen",
+            "value": "75 trang trắng đen/phút"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "150 trang trắng đen/phút"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "600 x 600 dpi, 600 x 1200 dpi (công nghệ hạt mực Piezo)"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "5.5 giây"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 120 giây (không dùng nhiệt ép lô sấy)"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "Bộ xử lý in ấn công nghiệp tốc độ cao"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "16 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 512 GB + HDD 1 TB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 9 inch"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "A6R - 330 x 487 mm, Banner 1.220 mm"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "56 - 360 g/m²"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "4.150 tờ tiêu chuẩn"
+        },
+        {
+            "key": "Khay chứa giấy tối đa",
+            "value": "Tối đa 14.310 tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "In 2 mặt tự động siêu tốc 150 trang/phút"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (dung sai 1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "Adobe PostScript 3, PDF 2.0, PCL6, PPML, IPDS"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Dual Gigabit Ethernet, USB 3.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows, Server, macOS, Linux"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Định mức thiết kế: 1.000.000 bản in/tháng"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Đầu phun Piezo độ bền vĩnh cửu"
+        },
+        {
+            "key": "Mực in tương thích",
+            "value": "Mực in gốc nước Pigment Black dung tích công nghiệp"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V; Tiêu thụ điện năng cực thấp dưới 1.2 kW"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "1.498 x 1.018 x 1.144 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 300 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Thế hệ máy in phun đơn sắc công nghiệp 2026 mới nhất, siêu tiết kiệm điện, năng suất 150 trang/phút."
+        }
+    ]
+},
+  "kyocera_kip_7170": {
+    "name": "Máy in / photocopy / quét khổ rộng A0/A1 đa chức năng KIP 7170",
+    "model": "KIP 7170",
+    "brand": "Kyocera",
+    "origin": "KIP Nhật Bản (Kyocera phân phối)",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Hệ thống in, sao chụp và quét khổ rộng A0/A1 kỹ thuật số (Wide Format MFP)"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In khổ lớn, Sao chụp khổ lớn, Quét màu khổ lớn (Print, Copy, Color Scan)"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "KIP Wide Format Digital System"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "6 bản D/phút (hoặc 3.3 bản A0/phút)"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "6 bản D/phút (hoặc 3.3 bản A0/phút)"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "600 x 2400 dpi (công nghệ in hạt từ KIP High Definition Print)"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi (Công nghệ cảm biến CIS quét màu trung thực)"
+        },
+        {
+            "key": "Thời gian in bản đầu tiên (Đen trắng)",
+            "value": "Dưới 20 giây cho bản vẽ A0"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 120 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "KIP System K Controller tích hợp"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "4 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 256 GB / HDD 500 GB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu đa điểm 12.1 inch KIP Touch Screen"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "Khổ rộng từ 297 mm đến 914 mm (36 inch), Chiều dài bản in tối đa 6.000 mm (6 mét)"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "Giấy cuộn 60 - 100 g/m², Giấy tờ rời lên đến 150 g/m² (Bond, Film, Tracing)"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Hệ thống 2 cuộn giấy tự động (2 Rolls) + Khay nạp tay dạng tờ"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn (Tự động in 2 mặt, hỗ trợ khổ A5R - A3/SRA3)"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "Bộ quét màu khổ rộng 36 inch tích hợp trên thân máy với tính năng Face-up / Face-down"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Quét đen trắng: lên đến 10 m/phút, Quét màu: lên đến 5 m/phút"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, DWF, JPEG, CALS"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Scan to Email, Scan to FTP, Scan to SMB Network, Scan to USB, Cloud Print"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400% (bước nhảy 0.1%)"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "KIP Script, HP-GL/2, HP-RTL, Calcomp 906/907, PostScript 3, PDF Direct, TIFF, DWF"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet (1000Base-T), USB 2.0 Host"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10/8.1, Windows Server, AutoCAD HDI Driver, Mac OS"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Tối đa 50.000 mét vuông/năm"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Trống quang học khổ lớn siêu bền 100.000 mét"
+        },
+        {
+            "key": "Mực in tương thích",
+            "value": "Hộp mực khô đơn sắc KIP 100% không phát thải rác thải độc hại"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V, 50/60 Hz; Công suất tiêu thụ 1.5 kW khi in ấn"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "1.525 x 740 x 1.500 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 244 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Hệ thống máy in và sao chụp bản vẽ công trình kỹ thuật khổ A0/A1 hàng đầu, độ phân giải 600 x 2400 dpi sắc nét từng nét vẽ CAD."
+        }
+    ]
+},
+  "kyocera_kip_660": {
+    "name": "Máy in màu & đen trắng khổ rộng A0 kỹ thuật số KIP 660 / KIP 600 Series",
+    "model": "KIP 660",
+    "brand": "Kyocera",
+    "origin": "KIP Nhật Bản (Kyocera phân phối)",
+    "warranty": "24 tháng",
+    "price": 0,
+    "specs": [
+        {
+            "key": "Loại máy",
+            "value": "Hệ thống máy in & scan màu khổ rộng A0 kỹ thuật số thế hệ mới"
+        },
+        {
+            "key": "Chức năng",
+            "value": "In màu khổ lớn, In đen trắng, Quét màu khổ lớn 36 inch"
+        },
+        {
+            "key": "Dòng máy",
+            "value": "KIP 600 Color Series"
+        },
+        {
+            "key": "Tốc độ in A4 Màu",
+            "value": "360 mét vuông/giờ (hoặc 6 bản D/phút màu & đen trắng)"
+        },
+        {
+            "key": "Tốc độ in A4 trắng đen",
+            "value": "360 mét vuông/giờ (hoặc 6 bản D/phút)"
+        },
+        {
+            "key": "Tốc độ copy màu",
+            "value": "360 mét vuông/giờ (hoặc 6 bản D/phút màu & đen trắng)"
+        },
+        {
+            "key": "Tốc độ copy mono",
+            "value": "360 mét vuông/giờ (hoặc 6 bản D/phút)"
+        },
+        {
+            "key": "Độ phân giải in",
+            "value": "600 x 2400 dpi (Công nghệ in màu hạt khô KIP Contact Control Technology)"
+        },
+        {
+            "key": "Độ phân giải copy / scan",
+            "value": "600 x 600 dpi màu CIS"
+        },
+        {
+            "key": "Thời gian khởi động",
+            "value": "Khoảng 120 giây"
+        },
+        {
+            "key": "Bộ xử lý (CPU)",
+            "value": "KIP System K Controller thế hệ mới"
+        },
+        {
+            "key": "Bộ nhớ (RAM)",
+            "value": "8 GB RAM"
+        },
+        {
+            "key": "Ổ lưu trữ (SSD/HDD)",
+            "value": "SSD 512 GB"
+        },
+        {
+            "key": "Màn hình điều khiển",
+            "value": "Màn hình cảm ứng màu 12.1 inch KIP System K"
+        },
+        {
+            "key": "Khổ giấy hỗ trợ",
+            "value": "Khổ rộng từ 297 mm đến 914 mm (36 inch), chiều dài lên đến 6.000 mm"
+        },
+        {
+            "key": "Định lượng giấy",
+            "value": "64 - 150 g/m² (Bond paper, Film, Vellum, Matte paper)"
+        },
+        {
+            "key": "Khay chứa giấy tiêu chuẩn",
+            "value": "Hệ thống 2 cuộn giấy màu/đen trắng tự động cắt + Khay nạp đơn"
+        },
+        {
+            "key": "Tự động đảo mặt bản in (Duplex)",
+            "value": "Có sẵn (Tự động in 2 mặt, hỗ trợ khổ A5R - A3/SRA3)"
+        },
+        {
+            "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+            "value": "Bộ quét màu khổ rộng 36 inch tích hợp"
+        },
+        {
+            "key": "Tốc độ scan",
+            "value": "Lên đến 10 m/phút"
+        },
+        {
+            "key": "Định dạng file scan",
+            "value": "TIFF, PDF, PDF/A, DWF, JPEG"
+        },
+        {
+            "key": "Chế độ quét (Scan Destinations)",
+            "value": "Email, FTP, SMB, USB, Cloud"
+        },
+        {
+            "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+            "value": "25% - 400%"
+        },
+        {
+            "key": "Số bản sao chụp liên tục",
+            "value": "1 - 9.999 bản"
+        },
+        {
+            "key": "Tính năng copy nâng cao",
+            "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+        },
+        {
+            "key": "Ngôn ngữ in (Emulations)",
+            "value": "KIP Script, Adobe PostScript 3, HP-GL/2, PDF Direct, TIFF"
+        },
+        {
+            "key": "Cổng kết nối tiêu chuẩn",
+            "value": "Gigabit Ethernet, USB 3.0"
+        },
+        {
+            "key": "Kết nối không dây & Di động",
+            "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+        },
+        {
+            "key": "Hệ điều hành tương thích",
+            "value": "Windows 11/10, AutoCAD, Mac OS"
+        },
+        {
+            "key": "Bảo mật thông tin",
+            "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+        },
+        {
+            "key": "Công suất in hàng tháng",
+            "value": "Thiết kế in ấn bản vẽ kiến trúc, bản đồ GIS và đồ họa màu khổ lớn"
+        },
+        {
+            "key": "Tuổi thọ trống quang học (Drum)",
+            "value": "Cụm tạo ảnh màu chuyên dụng tuổi thọ cao"
+        },
+        {
+            "key": "Mực in tương thích",
+            "value": "Hệ thống mực in 4 màu K/C/M/Y chống nước và chống phai màu ngoài trời"
+        },
+        {
+            "key": "Nguồn điện & Tiêu thụ điện",
+            "value": "AC 220 - 240 V, 50/60 Hz; In ấn: 1.8 kW"
+        },
+        {
+            "key": "Kích thước (R x S x C)",
+            "value": "1.500 x 1.080 x 1.220 mm"
+        },
+        {
+            "key": "Trọng lượng",
+            "value": "Khoảng 260 kg"
+        },
+        {
+            "key": "Ghi chú công nghệ",
+            "value": "Dòng máy in màu khổ lớn A0 đa năng, mực in kháng nước cực tốt, chuyên dụng cho bản đồ GIS, bản vẽ thiết kế xây dựng và quảng cáo ngoài trời."
+        }
+    ]
+}
 };
 
 function applyModelPreset(devId, presetKey) {
@@ -31513,10 +43851,6 @@ var CATALOG_ITEMS = [
         "value": "22 trang màu / phút"
       },
       {
-        "key": "Tốc độ copy mono",
-        "value": "24 trang trắng đen / phút"
-      },
-      {
         "key": "Copy đảo 02 mặt tự động",
         "value": "Có (đầu vào và đầu ra)"
       },
@@ -31539,10 +43873,6 @@ var CATALOG_ITEMS = [
       {
         "key": "Tốc độ FAX",
         "value": "33,6 Kb/giây, 3 giây/trang"
-      },
-      {
-        "key": "Tốc độ copy mono",
-        "value": "24 trang trắng đen / phút"
       },
       {
         "key": "Phím tắt gửi Fax",
@@ -34985,10 +47315,6 @@ var CATALOG_ITEMS = [
         "value": "22 trang màu / phút"
       },
       {
-        "key": "Tốc độ copy mono",
-        "value": "24 trang trắng đen / phút"
-      },
-      {
         "key": "Copy đảo 02 mặt tự động",
         "value": "Có (đầu vào và đầu ra)"
       },
@@ -35011,10 +47337,6 @@ var CATALOG_ITEMS = [
       {
         "key": "Tốc độ FAX",
         "value": "33,6 Kb/giây, 3 giây/trang"
-      },
-      {
-        "key": "Tốc độ copy mono",
-        "value": "24 trang trắng đen / phút"
       },
       {
         "key": "Phím tắt gửi Fax",
@@ -35445,10 +47767,6 @@ var CATALOG_ITEMS = [
         "value": "22 trang màu / phút"
       },
       {
-        "key": "Tốc độ copy mono",
-        "value": "24 trang trắng đen / phút"
-      },
-      {
         "key": "Copy đảo 02 mặt tự động",
         "value": "Có (đầu vào và đầu ra)"
       },
@@ -35471,10 +47789,6 @@ var CATALOG_ITEMS = [
       {
         "key": "Tốc độ FAX",
         "value": "33,6 Kb/giây, 3 giây/trang"
-      },
-      {
-        "key": "Tốc độ copy mono",
-        "value": "24 trang trắng đen / phút"
       },
       {
         "key": "Phím tắt gửi Fax",
@@ -50404,7 +62718,7 @@ var CATALOG_ITEMS = [
       },
       {
         "key": "Tỷ lệ tái tạo",
-        "value": "12/30/1899 1:01:00 AM"
+        "value": "1:1"
       },
       {
         "key": "Phương pháp cắt giấy",
@@ -55356,7 +67670,7 @@ var CATALOG_ITEMS = [
       },
       {
         "key": "Tỷ lệ khung hình",
-        "value": "12/30/1899 4:09:00 PM"
+        "value": "16:9"
       },
       {
         "key": "Độ tương phản",
@@ -55488,7 +67802,7 @@ var CATALOG_ITEMS = [
       },
       {
         "key": "Tỷ lệ khung hình",
-        "value": "12/30/1899 4:09:00 PM"
+        "value": "16:9"
       },
       {
         "key": "Độ tương phản",
@@ -55620,7 +67934,7 @@ var CATALOG_ITEMS = [
       },
       {
         "key": "Tỷ lệ khung hình",
-        "value": "12/30/1899 4:09:00 PM"
+        "value": "16:9"
       },
       {
         "key": "Độ tương phản",
@@ -55699,7 +68013,12851 @@ var CATALOG_ITEMS = [
         "value": "Nhiệt độ0–42&ordm;C—hoạt động-10–50&ordm;C—lưu trữĐộ ẩm—độ ẩm tương đối20–80%—hoạt động 15–80%—lưu trữ"
       }
     ]
-  }
+  },
+  {
+  "id": "kyocera_taskalfa_mz2501ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz2501ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ2501ci",
+  "model": "TASKalfa MZ2501ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext 2026"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "25 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "25 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "12 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "12 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "25 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "25 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi, đa mức tương đương 4800 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "8.5 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "6.4 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 18 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn SSD 320 GB / 1 TB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch đa điểm tùy biến xoay góc"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3 (320 x 450 mm), Banner 305 x 1.220 mm"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + Khay tay 150 tờ (Tổng 1.150 tờ)"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt bản in tiêu chuẩn (52 - 256 g/m²)"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF / RADF nạp và đảo bản gốc tự động lên đến 320 tờ (tùy chọn)"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét 1 mặt: 100 ipm, Quét 2 mặt: lên đến 200 ipm (300 dpi)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan-to-Email, FTP, SMB 3.0, USB Host, Box, TWAIN, WSD"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3 (PostScript 3), PDF Direct Print, XPS"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, 4 cổng USB 2.0, 1 cổng USB 3.0, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Windows Server 2022/2019, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256-bit, Secure Boot, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 100.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống quang học Amorphous Silicon 200.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 510 W, Chế độ chờ: 40 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 90 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Dòng đa chức năng EvolutionNext thế hệ mới nhất, tích hợp AI tối ưu hóa chất lượng in màu."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz3501ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz3501ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ3501ci",
+  "model": "TASKalfa MZ3501ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext 2026"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "17 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "17 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi, tương đương 4800 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "7.7 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "5.3 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 18 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn SSD 320 GB / 1 TB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner 305 x 1.220 mm"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + Khay tay 150 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF / RADF tùy chọn lên tới 320 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm (2 mặt)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct, XPS"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi Direct"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Windows Server 2022/2019, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 125.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 200.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 600 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 90 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 35 ppm A4 màu/mono, đáp ứng nhu cầu văn phòng cao cấp."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz4001ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz4001ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ4001ci",
+  "model": "TASKalfa MZ4001ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext 2026"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "40 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "20 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "20 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "40 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi, tương đương 4800 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "6.5 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "5.1 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn SSD 320 GB / 1 TB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + Khay tay 150 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF / RADF tùy chọn lên tới 320 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm (2 mặt)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, Box"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 150.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 200.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 660 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 95 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 40 ppm A4, xử lý tài liệu màu tốc độ cao."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz5001ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz5001ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ5001ci",
+  "model": "TASKalfa MZ5001ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext 2026"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "50 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "50 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "25 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "25 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "50 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "50 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "5.9 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "4.3 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn SSD 320 GB / 1 TB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + Khay tay 150 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 320 tờ quét 2 mặt siêu tốc"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm (2 mặt)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, Box"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 175.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 780 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 95 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 50 ppm, trống từ siêu bền 600.000 bản in."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz6001ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz6001ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ6001ci",
+  "model": "TASKalfa MZ6001ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext 2026"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "60 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "30 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "30 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "60 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "5.1 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.7 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn SSD 320 GB / 1 TB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + Khay tay 150 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 320 tờ quét 2 mặt siêu tốc"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm (2 mặt)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, Box"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 200.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 850 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 95 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 60 ppm A4, xử lý in màu công suất lớn."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz7001ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz7001ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ7001ci",
+  "model": "TASKalfa MZ7001ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext 2026 Flagship"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "70 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "70 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "70 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "70 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "4.8 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.4 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn SSD 320 GB / 1 TB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + Khay tay 150 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 320 tờ tiêu chuẩn"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm (2 mặt)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, Box"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 250.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 990 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 95 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 70 ppm A4, dòng cao cấp nhất phân khúc văn phòng."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_2554ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_2554ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 2554ci",
+  "model": "TASKalfa 2554ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "TASKalfa 54ci Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "25 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "25 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "12 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "12 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "25 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "25 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "9.2 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "7.0 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 18 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn HDD 320 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 150 tờ khay tay"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF / RADF tùy chọn"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct, XPS"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 3.0, Wi-Fi Direct"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "Mã hóa AES 256, TPM, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 100.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống quang học 200.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 510 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 90 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Dòng đa chức năng màu phổ biến, bền bỉ, tiết kiệm chi phí mực in."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_3554ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_3554ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 3554ci",
+  "model": "TASKalfa 3554ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "TASKalfa 54ci Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "17 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "17 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "7.7 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "5.3 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 18 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn 320 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 150 tờ khay tay"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF / RADF tùy chọn"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "Mã hóa AES 256, TPM"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 125.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống quang học 200.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 600 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 90 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 35 ppm, hỗ trợ AI nâng cao chất lượng văn bản và hình ảnh."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_4054ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_4054ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 4054ci",
+  "model": "TASKalfa 4054ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "TASKalfa 54ci Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "40 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "20 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "20 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "40 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "6.5 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "5.1 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn 320 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 150 tờ khay tay"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF tùy chọn"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "Mã hóa AES 256, TPM"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 150.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống quang học 200.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 660 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 95 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 40 ppm, xử lý tài liệu màu mượt mà."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_5054ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_5054ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 5054ci",
+  "model": "TASKalfa 5054ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "TASKalfa 54ci Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "50 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "50 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "25 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "25 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "50 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "50 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "5.9 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "4.3 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn 320 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 150 tờ khay tay"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF tùy chọn"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "Mã hóa AES 256, TPM"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 175.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 780 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 95 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 50 ppm, trống từ 600.000 trang, chất lượng màu đỉnh cao."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_6054ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_6054ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 6054ci",
+  "model": "TASKalfa 6054ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "TASKalfa 54ci Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "60 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "30 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "30 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "60 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "5.1 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.7 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn 320 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 150 tờ khay tay"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF tiêu chuẩn"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "Mã hóa AES 256, TPM"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 200.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 850 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 95 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 60 ppm, hiệu suất in màu mạnh mẽ và ổn định."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_7054ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_7054ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 7054ci",
+  "model": "TASKalfa 7054ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "TASKalfa 54ci Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "70 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "70 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "70 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "70 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "4.8 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.4 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn 320 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 150 tờ khay tay"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF tiêu chuẩn"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "Mã hóa AES 256, TPM"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 250.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 990 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 95 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 70 ppm, model hàng đầu phân khúc văn phòng chuyên nghiệp."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_7353ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_7353ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 7353ci",
+  "model": "TASKalfa 7353ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "TASKalfa Heavy Duty Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "65 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "73 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "32 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "65 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "73 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi, tương đương 4800 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "6.2 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "5.4 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 44 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Freescale QorIQ T1024 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4.5 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 8 GB + HDD 320 GB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình màu cảm ứng 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner 305 x 1.220 mm"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 2 khay x 1.500 tờ + Khay tay 150 tờ (Tổng 4.150 tờ)"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.650 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 270 tờ quét 220 ipm"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét 1 mặt: 120 ipm, Quét 2 mặt: 220 ipm"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, Searchable PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct, XPS"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 3.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "Data Security Kit, TPM, AES 256"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 300.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống quang học 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 1.360 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "685 x 780 x 1.056 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 182 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Dòng Heavy Duty tải nặng, khay giấy 4.150 tờ, nạp DADF 270 tờ quét 220 ipm."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_8353ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_8353ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa 8353ci",
+  "model": "TASKalfa 8353ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "TASKalfa Heavy Duty Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "70 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "83 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "70 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "83 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "5.4 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "4.8 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 44 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Freescale QorIQ T1024 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4.5 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 8 GB + HDD 320 GB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình màu cảm ứng 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "4.150 tờ tiêu chuẩn (2x500 + 2x1500 + 150 tờ khay tay)"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.650 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 270 tờ quét 220 ipm"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét 1 mặt: 120 ipm, Quét 2 mặt: 220 ipm"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, Searchable PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "Data Security Kit, TPM, AES 256"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 400.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống quang học 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 1.450 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "685 x 780 x 1.056 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 182 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 83 ppm mono / 70 ppm màu, dòng tải nặng công nghiệp văn phòng."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz7500ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz7500ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ7500ci",
+  "model": "TASKalfa MZ7500ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext High-Speed 2026"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "75 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "75 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "37 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "37 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "75 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "75 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi, tương đương 4800 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "4.8 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.5 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 30 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "6 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 320 GB (Tùy chọn 1 TB SSD)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình màu cảm ứng 10.1 inch thế hệ mới"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner 1.220 mm"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "4.150 tờ tiêu chuẩn"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 8.000 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 320 tờ quét 240 ipm"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét 2 mặt: 240 ipm (300 dpi)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, SMB, FTP, USB, Box"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct, Fiery"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi 6"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server 2022/2019, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 400.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống quang học Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 1.500 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "685 x 780 x 1.056 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 185 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Dòng High-Speed 2026 EvolutionNext, tốc độ in màu 75 ppm, nạp DADF 320 tờ 240 ipm."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz8500ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz8500ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ8500ci",
+  "model": "TASKalfa MZ8500ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext High-Speed 2026"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "85 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "85 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "42 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "42 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "85 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "85 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "4.3 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.2 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 30 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "6 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 320 GB (Tùy chọn 1 TB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình màu cảm ứng 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "4.150 tờ tiêu chuẩn"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 8.000 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 320 tờ quét 240 ipm"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "240 ipm (2 mặt)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, SMB, FTP, USB, Box"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct, Fiery"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi 6"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 450.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống quang học 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 1.600 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "685 x 780 x 1.056 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 185 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 85 ppm, bộ điều khiển in ấn hiệu năng cao cho trung tâm dữ liệu/in ấn."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz9500ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz9500ci",
+  "name": "Máy photocopy màu đa chức năng Kyocera TASKalfa MZ9500ci",
+  "model": "TASKalfa MZ9500ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext Production Light 2026"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "95 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "95 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "47 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "47 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "95 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "95 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "3.9 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "2.9 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 30 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "6 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 512 GB / 1 TB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình màu cảm ứng 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner 1.220 mm"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "4.150 tờ tiêu chuẩn"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 8.500 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 320 tờ quét 240 ipm"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "240 ipm (2 mặt)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, SMB, FTP, USB, Box"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct, Fiery"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi 6"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 500.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống quang học 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 1.700 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "685 x 780 x 1.056 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 190 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ in màu đỉnh cao 95 trang/phút, giải pháp Light Production siêu bền bỉ."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz4001i",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz4001i",
+  "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ4001i",
+  "model": "TASKalfa MZ4001i",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 37,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext 2026"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "20 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "4.2 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn SSD 320 GB / 1 TB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + Khay tay 150 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF / RADF nạp bản gốc tự động lên đến 320 tờ (tùy chọn)"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét 1 mặt: 100 ipm, Quét 2 mặt: 200 ipm (300 dpi)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, Box, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 3.0, Wi-Fi Direct"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 150.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống quang học Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 600 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 83 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Dòng đa chức năng EvolutionNext đơn sắc thế hệ mới, tiết kiệm năng lượng, trống từ 600.000 trang."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz5001i",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz5001i",
+  "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ5001i",
+  "model": "TASKalfa MZ5001i",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 37,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext 2026"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "50 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "25 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "50 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.7 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn 320 GB / 1 TB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 150 tờ khay tay"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 320 tờ quét 2 mặt siêu tốc"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "200 ipm (2 mặt)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, Box"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 175.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 680 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 83 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 50 ppm A4 mono, độ tin cậy tuyệt đối."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz6001i",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz6001i",
+  "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ6001i",
+  "model": "TASKalfa MZ6001i",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 37,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext 2026"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "30 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.4 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn 320 GB / 1 TB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 150 tờ khay tay"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 320 tờ tiêu chuẩn"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "200 ipm (2 mặt)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, Box"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 225.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 780 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 83 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 60 ppm A4 mono, giải pháp photocopy văn phòng tốc độ cao."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz7001i",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz7001i",
+  "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ7001i",
+  "model": "TASKalfa MZ7001i",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 37,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext 2026 Flagship"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "70 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "70 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.2 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn 320 GB / 1 TB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 150 tờ khay tay"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 320 tờ tiêu chuẩn"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "200 ipm (2 mặt)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, Box"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 250.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 880 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 83 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 70 ppm A4 mono, model hàng đầu phân khúc máy đen trắng văn phòng."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_5004i",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_5004i",
+  "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa 5004i",
+  "model": "TASKalfa 5004i",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 37,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "TASKalfa 04i Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "50 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "25 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "50 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.7 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn 320 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 150 tờ khay tay"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF / RADF tùy chọn"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "Mã hóa AES 256, TPM"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 175.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 680 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 83 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 50 ppm, trống từ 600.000 bản in siêu bền."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_6004i",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_6004i",
+  "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa 6004i",
+  "model": "TASKalfa 6004i",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 37,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "TASKalfa 04i Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "30 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.4 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn 320 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 150 tờ khay tay"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF tiêu chuẩn"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "Mã hóa AES 256, TPM"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 225.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 780 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 83 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 60 ppm, hiệu suất sao chụp đen trắng cao."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_7004i",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_7004i",
+  "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa 7004i",
+  "model": "TASKalfa 7004i",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 37,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "TASKalfa 04i Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "70 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "70 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.2 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn 320 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 150 tờ khay tay"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF tiêu chuẩn"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "Mã hóa AES 256, TPM"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 250.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 880 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 83 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 70 ppm, model hàng đầu dòng 04i."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz3200i",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz3200i",
+  "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ3200i",
+  "model": "TASKalfa MZ3200i",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 37,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "TASKalfa MZ Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "32 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "17 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "32 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "4.9 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 18 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn 320 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "45 - 256 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 100 tờ khay tay (Tổng 1.100 tờ)"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 4.100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF / RADF tùy chọn"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm (DADF)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi Direct"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 100.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 510 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "594 x 696 x 683 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 58 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Dòng đa chức năng văn phòng nhỏ gọn, tốc độ 32 ppm, trống từ 600.000 bản in."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz4000i",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz4000i",
+  "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ4000i",
+  "model": "TASKalfa MZ4000i",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 37,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "TASKalfa MZ Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "21 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "4.2 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 18 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 32 GB (Tùy chọn 320 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "45 - 256 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + 100 tờ khay tay"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 4.100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF / RADF tùy chọn"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 200 ipm"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi Direct"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 125.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 590 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "594 x 696 x 683 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 58 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 40 ppm A4 mono, độ phân giải 1200 dpi sắc nét."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz7500i",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz7500i",
+  "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ7500i",
+  "model": "TASKalfa MZ7500i",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 37,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext High-Speed 2026"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "75 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "37 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "75 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.2 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 25 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "6 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 320 GB (Tùy chọn 1 TB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "4.150 tờ tiêu chuẩn"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 8.000 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 320 tờ quét 240 ipm"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "240 ipm (2 mặt)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, SMB, FTP, USB, Box"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi 6"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 400.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 1.300 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "685 x 780 x 1.056 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 175 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 75 ppm A4 mono, dòng High-Speed 2026."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz8500i",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz8500i",
+  "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ8500i",
+  "model": "TASKalfa MZ8500i",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 37,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext High-Speed 2026"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "85 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "42 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "85 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "2.9 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 25 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "6 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 320 GB (Tùy chọn 1 TB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "4.150 tờ tiêu chuẩn"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 8.000 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 320 tờ quét 240 ipm"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "240 ipm (2 mặt)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, SMB, FTP, USB, Box"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi 6"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 450.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 1.400 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "685 x 780 x 1.056 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 175 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 85 ppm A4 mono, công suất cực lớn."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz9500i",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz9500i",
+  "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ9500i",
+  "model": "TASKalfa MZ9500i",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 37,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext High-Speed 2026"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "95 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "47 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "95 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "2.7 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 25 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "6 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 512 GB / 1 TB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "4.150 tờ tiêu chuẩn"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 8.500 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 320 tờ quét 240 ipm"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "240 ipm (2 mặt)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, SMB, FTP, USB, Box"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi 6"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 500.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 1.500 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "685 x 780 x 1.056 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 180 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 95 ppm A4 mono, xử lý khối lượng in ấn tài liệu đồ sộ."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_mz10500i",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_mz10500i",
+  "name": "Máy photocopy đơn sắc đa chức năng Kyocera TASKalfa MZ10500i",
+  "model": "TASKalfa MZ10500i",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 37,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "EvolutionNext Production Flagship 2026"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "105 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "52 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "105 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "2.5 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 25 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A53 Quad-core 1.6GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "6 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 512 GB / 1 TB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 10.1 inch thế hệ mới"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner 1.220 mm"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "4.150 tờ tiêu chuẩn"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 8.500 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 320 tờ quét 240 ipm"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "240 ipm (2 mặt)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, SMB, FTP, USB, Box"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct, Fiery"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0, Wi-Fi 6"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server 2022/2019, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0, AES 256, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 600.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống Amorphous Silicon siêu bền 1.000.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 1.650 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "685 x 780 x 1.056 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 185 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Flagship đơn sắc mới nhất 2026 với tốc độ kỷ lục 105 ppm A4, trống từ 1 triệu bản in."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma2100cfx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma2100cfx",
+  "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS MA2100cfx",
+  "model": "ECOSYS MA2100cfx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Color Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "21 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "21 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "21 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "21 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi (in), 600 x 600 dpi (scan/copy)"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "12.5 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "10.5 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 32 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Cortex-A9 800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB (Mở rộng 1.5 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng phím bấm"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4, Legal, Letter"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay nạp giấy 250 tờ + Khay tay 50 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "550 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt bản in tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "ADF nạp bản gốc tự động 50 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "30 ipm (mono), 23 ipm (color)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3 (PostScript 3), PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT Ethernet, USB 2.0 High-Speed, USB Host"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 65.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS siêu bền 100.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 345 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "417 x 429 x 495 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 26 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa chức năng 4-trong-1 (In/Copy/Scan/Fax), màu sắc trung thực, đảo mặt tự động."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma2100cwfx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma2100cwfx",
+  "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS MA2100cwfx",
+  "model": "ECOSYS MA2100cwfx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Color Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "21 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "21 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "21 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "21 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "12.5 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "10.5 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 32 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Cortex-A9 800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB (Mở rộng 1.5 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 50 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "550 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "ADF 50 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "30 ipm (mono), 23 ipm (color)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, Wi-Fi (IEEE 802.11b/g/n), Wi-Fi Direct, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 65.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS 100.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 345 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "417 x 429 x 495 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 26 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tích hợp Wi-Fi không dây, Wi-Fi Direct, hỗ trợ AirPrint & Mopria."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma2101cfx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma2101cfx",
+  "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS MA2101cfx",
+  "model": "ECOSYS MA2101cfx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 34,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "21 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "21 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "21 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "21 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 50 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "ADF 50 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "30 ipm mono / 23 ipm color"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "65.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "100.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Model đa chức năng màu A4 tối ưu hóa hiệu quả chi phí cho văn phòng."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma2101cwfx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma2101cwfx",
+  "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS MA2101cwfx",
+  "model": "ECOSYS MA2101cwfx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 33,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "21 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "21 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "21 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "21 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 50 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "ADF 50 tờ"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Wi-Fi không dây, Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "65.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "100.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa chức năng màu tích hợp Wifi không dây tiện lợi."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma2600cfx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma2600cfx",
+  "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS MA2600cfx",
+  "model": "ECOSYS MA2600cfx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Color Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "26 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "26 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "26 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "26 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "10.5 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "9.5 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 29 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Cortex-A9 Dual core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB (Mở rộng 1.5 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 4.3 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 50 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "550 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF nạp & đảo bản gốc tự động 50 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "30 ipm (mono), 23 ipm (color)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 65.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS 100.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 375 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "417 x 429 x 495 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 26 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 26 ppm, màn cảm ứng 4.3 inch, nạp bản gốc RADF đảo mặt tự động."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma2600cwx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma2600cwx",
+  "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS MA2600cwx",
+  "model": "ECOSYS MA2600cwx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 30,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Color Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "26 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "26 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "26 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "26 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Cortex-A9 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 4.3 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 50 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF 50 tờ"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Wi-Fi không dây, Gigabit LAN, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "65.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "100.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa chức năng 3-trong-1 (Print/Copy/Scan) tốc độ 26 ppm, Wi-Fi tích hợp."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma2600cwfx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma2600cwfx",
+  "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS MA2600cwfx",
+  "model": "ECOSYS MA2600cwfx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 33,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Color Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "26 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "26 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "26 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "26 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Cortex-A9 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB (Mở rộng 1.5 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 4.3 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 50 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF 50 tờ"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Wi-Fi không dây, Gigabit LAN, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "65.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "100.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa chức năng 4-trong-1 (Print/Copy/Scan/Fax) 26 ppm có Wi-Fi & RADF."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma3500cifx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma3500cifx",
+  "name": "Máy photocopy đa chức năng màu A4 Kyocera ECOSYS MA3500cifx",
+  "model": "ECOSYS MA3500cifx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 42,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA High-End Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "7.0 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "6.0 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 26 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1.5 GB RAM (Mở rộng 3.5 GB)"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "Tùy chọn SSD 32 GB / 64 GB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch đa điểm xoay góc"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4, Legal"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay nạp 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 2.000 tờ với khay mở rộng"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 100 tờ quét 2 mặt 1 lần siêu tốc lên đến 120 ipm mono / 80 ipm color"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét 1 mặt: 60 ipm mono / 40 ipm color; Quét 2 mặt: 120 ipm mono / 80 ipm color"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, Encrypted PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, Box, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3 (PostScript 3), PDF Direct Print, XPS"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0, USB Host, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "HyPAS mở rộng, Data Security Kit, TPM, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 100.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS gốm siêu bền 200.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 532 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "480 x 577 x 619 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 36.5 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Dòng đa năng màu cao cấp A4, màn cảm ứng 7 inch, nạp DADF 100 tờ quét 120 ipm, hỗ trợ nền tảng giải pháp HyPAS."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma3500cix",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma3500cix",
+  "name": "Máy photocopy đa chức năng màu A4 Kyocera ECOSYS MA3500cix",
+  "model": "ECOSYS MA3500cix",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 31,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1.5 GB RAM"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 100 tờ quét 2 mặt 1 lần"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "120 ipm mono / 80 ipm color"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "100.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "200.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa chức năng 3-trong-1 (Print/Copy/Scan) 35 ppm màu với màn cảm ứng 7 inch và DADF 100 tờ."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma3500ci",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma3500ci",
+  "name": "Máy photocopy đa chức năng màu A4 Kyocera ECOSYS MA3500ci",
+  "model": "ECOSYS MA3500ci",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 30,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1.5 GB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF nạp bản gốc tự động"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit LAN, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "100.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "200.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa chức năng màu tốc độ cao, hỗ trợ HyPAS."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma4000cifx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma4000cifx",
+  "name": "Máy photocopy đa chức năng màu A4 Kyocera ECOSYS MA4000cifx",
+  "model": "ECOSYS MA4000cifx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 42,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA High-End Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "40 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "40 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "6.5 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "5.5 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 26 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "2 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "Tùy chọn SSD 64 GB / 128 GB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4, Legal"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 2.000 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 100 tờ quét 2 mặt 1 lần siêu tốc (120 ipm)"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét 2 mặt: 120 ipm mono / 80 ipm color"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, Box, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 2.0, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "HyPAS, TPM, AES 256"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 120.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS 200.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 575 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "480 x 577 x 619 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 36.5 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 40 ppm màu/mono, nạp DADF 100 tờ quét kép 120 ipm, hiệu năng in ấn xuất sắc."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma4000cix",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma4000cix",
+  "name": "Máy photocopy đa chức năng màu A4 Kyocera ECOSYS MA4000cix",
+  "model": "ECOSYS MA4000cix",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 31,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "40 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "40 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "2 GB RAM"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 100 tờ quét 2 mặt 1 lần"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "120 ipm mono / 80 ipm color"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "120.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "200.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa chức năng màu 3-trong-1 tốc độ 40 ppm, xử lý tài liệu tốc độ cao."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_m6630cidn",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_m6630cidn",
+  "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS M6630cidn",
+  "model": "ECOSYS M6630cidn",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS M Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "30 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "30 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "30 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "30 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "7.5 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "6.5 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 26 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1 GB RAM (Mở rộng 3 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4, Legal"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "1.850 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF nạp bản gốc tự động 75 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "62 ipm (mono), 46 ipm (color)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0, USB Host"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "HyPAS, Data Security Kit, TPM"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 100.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS gốm 200.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 496 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "475 x 558 x 616 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 35.4 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa năng 4-trong-1 (Print/Copy/Scan/Fax) 30 ppm, hỗ trợ giải pháp HyPAS."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_m6635cidn",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_m6635cidn",
+  "name": "Máy in đa chức năng màu A4 Kyocera ECOSYS M6635cidn",
+  "model": "ECOSYS M6635cidn",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 41,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS M Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "35 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "7.5 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "6.0 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 25 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1 GB RAM (Mở rộng 3 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4, Legal"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "1.850 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 100 tờ quét 2 mặt 1 lần (120 ipm mono / 80 ipm color)"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét 2 mặt: 120 ipm mono / 80 ipm color"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0, USB Host"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "HyPAS, Data Security Kit, TPM"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 100.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS gốm 200.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 532 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "480 x 577 x 619 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 36.5 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 35 ppm, nạp DADF 100 tờ quét 2 mặt 1 lần 120 ipm, màn cảm ứng 7 inch."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_m8124cidn",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_m8124cidn",
+  "name": "Máy photocopy màu đa chức năng A3 compact Kyocera ECOSYS M8124cidn",
+  "model": "ECOSYS M8124cidn",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 40,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS A3 Compact Color Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "24 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "24 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "12 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "12 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "24 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "24 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "10.2 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "7.5 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 30 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1.5 GB RAM (Mở rộng 3 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 4.3 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 256 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "1.600 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF nạp & đảo bản gốc tự động 50 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "50 ipm (mono/color, 300 dpi)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0, USB Host, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "HyPAS, TPM, AES 256"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 100.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS siêu bền 200.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 550 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "590 x 590 x 753 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 76 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Dòng đa chức năng A3 màu thiết kế Compact nhỏ gọn, độ bền cao, chi phí bản in cực thấp."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_m8130cidn",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_m8130cidn",
+  "name": "Máy photocopy màu đa chức năng A3 compact Kyocera ECOSYS M8130cidn",
+  "model": "ECOSYS M8130cidn",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 40,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS A3 Compact Color Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "30 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "30 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "15 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "15 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "30 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "30 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "8.5 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "6.5 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 30 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1.5 GB RAM (Mở rộng 3 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 256 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "1.600 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF nạp & đảo bản gốc tự động 50 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "50 ipm (mono/color, 300 dpi)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0, USB Host, Wi-Fi Direct"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "HyPAS, TPM, AES 256"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 100.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS siêu bền 200.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 600 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "590 x 590 x 753 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 76 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 30 ppm A4 / 15 ppm A3 màu, màn cảm ứng 7 inch, hỗ trợ nền tảng HyPAS."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma2000",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma2000",
+  "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA2000",
+  "model": "ECOSYS MA2000",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 33,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS Compact Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "20 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "20 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 dpi quality (1800 x 600 dpi)"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "8.0 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 20 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "450MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "32 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LED hiển thị trạng thái"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4, Letter"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "65 - 105 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay nạp giấy 150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Đảo mặt thủ công (Manual Duplex)"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét màu & đen trắng qua phần mềm Kyocera Client Tool"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan-to-PC (USB)"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "USB 2.0 High-Speed"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 15.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS 10.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 340 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "370 x 320 x 240 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 6.2 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Máy đa chức năng 3-trong-1 nhỏ gọn, tiện lợi cho bàn làm việc cá nhân."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma2000w",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma2000w",
+  "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA2000w",
+  "model": "ECOSYS MA2000w",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 28,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS Compact Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "20 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "20 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 dpi quality"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "8.0 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "450MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "64 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LED"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn (Tự động in 2 mặt, hỗ trợ khổ A5R - A3/SRA3)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Wi-Fi (IEEE 802.11 b/g/n), USB 2.0 High-Speed"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux, Kyocera Mobile Print"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "15.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "10.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tích hợp Wi-Fi không dây in ấn trực tiếp từ smartphone và laptop."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma3500x",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma3500x",
+  "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA3500x",
+  "model": "ECOSYS MA3500x",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 31,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "6.8 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Cortex-A9 800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "850 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF nạp bản gốc 50 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "40 ipm (mono), 23 ipm (color)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "50.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "100.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa năng 3-trong-1 (Print/Copy/Scan) 35 ppm tốc độ cao."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma3500fx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma3500fx",
+  "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA3500fx",
+  "model": "ECOSYS MA3500fx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 31,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Cortex-A9 800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF 50 tờ"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "50.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "100.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa năng 4-trong-1 (Print/Copy/Scan/Fax) 35 ppm."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma3500wfx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma3500wfx",
+  "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA3500wfx",
+  "model": "ECOSYS MA3500wfx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 31,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "35 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Cortex-A9 800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF 50 tờ"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Wi-Fi không dây, Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "50.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "100.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa năng 4-trong-1 (Print/Copy/Scan/Fax) 35 ppm có kết nối Wi-Fi."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma4000x",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma4000x",
+  "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA4000x",
+  "model": "ECOSYS MA4000x",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 28,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Cortex-A9 800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF 50 tờ"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "80.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "100.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa năng 3-trong-1 tốc độ 40 ppm."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma4000fx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma4000fx",
+  "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA4000fx",
+  "model": "ECOSYS MA4000fx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 31,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF 50 tờ"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "80.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "100.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa năng 4-trong-1 tốc độ 40 ppm."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma4000wifx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma4000wifx",
+  "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA4000wifx",
+  "model": "ECOSYS MA4000wifx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 31,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF 50 tờ"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Wi-Fi không dây, Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "80.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "100.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa năng 4-trong-1 tốc độ 40 ppm có Wi-Fi."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma4500x",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma4500x",
+  "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA4500x",
+  "model": "ECOSYS MA4500x",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 31,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA High-Speed Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "45 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "45 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "5.3 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1 GB RAM"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4, Legal"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "2.600 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF nạp bản gốc 75 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "60 ipm (mono), 40 ipm (color)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "150.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống gốm siêu bền 300.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 45 ppm, khay giấy 500 tờ tiêu chuẩn, trống từ 300.000 trang."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma4500fx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma4500fx",
+  "name": "Máy in đa chức năng A4 Kyocera ECOSYS MA4500fx",
+  "model": "ECOSYS MA4500fx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 31,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "45 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "45 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1 GB RAM"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF 75 tờ"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "150.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "300.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa năng 4-trong-1 tốc độ 45 ppm."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma4500ix",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma4500ix",
+  "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS MA4500ix",
+  "model": "ECOSYS MA4500ix",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 30,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Smart Touch Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "45 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "45 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "5.3 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1.5 GB RAM"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 100 tờ quét 2 mặt 1 lần siêu tốc lên đến 120 ipm"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét 2 mặt: 120 ipm mono / 80 ipm color"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0, USB Host"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "HyPAS, TPM, AES 256"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "150.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống gốm 300.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Màn cảm ứng 7 inch, DADF quét 2 mặt 1 lần 120 ipm, hỗ trợ HyPAS."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma4500ifx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma4500ifx",
+  "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS MA4500ifx",
+  "model": "ECOSYS MA4500ifx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 33,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA Smart Touch Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "45 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "45 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "5.3 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1.5 GB RAM"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 100 tờ quét 2 mặt 1 lần (120 ipm)"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "120 ipm mono / 80 ipm color"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0, USB Host"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "HyPAS, TPM, AES 256"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "150.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "300.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa năng 4-trong-1 (Print/Copy/Scan/Fax) 45 ppm màn cảm ứng 7 inch."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma5500ifx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma5500ifx",
+  "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS MA5500ifx",
+  "model": "ECOSYS MA5500ifx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 39,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA High-Speed Touch Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "55 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "55 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "4.5 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 25 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1.5 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "Tùy chọn SSD 64 GB / 128 GB / 512 GB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4, Legal"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "2.600 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 100 tờ quét 2 mặt 1 lần siêu tốc 120 ipm"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét 2 mặt: 120 ipm mono / 80 ipm color"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0, USB Host"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "HyPAS, Data Security Kit, TPM, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 250.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống gốm siêu bền 500.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 711 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "480 x 495 x 590 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 24.1 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 55 ppm siêu nhanh, màn cảm ứng 7 inch, trống gốm 500.000 trang."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_ma6000ifx",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_ma6000ifx",
+  "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS MA6000ifx",
+  "model": "ECOSYS MA6000ifx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 39,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS MA High-Speed Touch Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "4.5 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 25 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1.5 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "Tùy chọn SSD 64 GB / 128 GB / 512 GB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4, Legal"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "2.600 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 100 tờ quét 2 mặt 1 lần siêu tốc 120 ipm"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét 2 mặt: 120 ipm mono / 80 ipm color"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0, USB Host"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "HyPAS, Data Security Kit, TPM, TLS 1.3"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 300.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống gốm siêu bền 500.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 749 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "480 x 495 x 590 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 24.1 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 60 ppm A4 hàng đầu phân khúc máy để bàn, trống gốm 500.000 trang."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_m2040dn",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_m2040dn",
+  "name": "Máy in đa chức năng A4 Kyocera ECOSYS M2040dn",
+  "model": "ECOSYS M2040dn",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 35,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS M Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "6.4 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB (Mở rộng 1.5 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4, Legal"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "850 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF nạp bản gốc 2 mặt 1 lần 50 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét 2 mặt: 40 ipm (mono), 23 ipm (color)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0, USB Host"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 50.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS 100.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 661 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "417 x 412 x 437 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 19 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Dòng đa năng 3-trong-1 (Print/Copy/Scan) tốc độ 40 ppm được ưa chuộng nhất của Kyocera."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_m2540dn",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_m2540dn",
+  "name": "Máy in đa chức năng A4 Kyocera ECOSYS M2540dn",
+  "model": "ECOSYS M2540dn",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 38,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS M Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "6.4 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB (Mở rộng 1.5 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4, Legal"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "850 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF nạp bản gốc 2 mặt 1 lần 50 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "40 ipm (mono), 23 ipm (color)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PCL6, KPDL3, PRESCRIBE, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 50.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS 100.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 661 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "417 x 412 x 437 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 19 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa năng 4-trong-1 (Print/Copy/Scan/Fax) 40 ppm, nạp DADF 2 mặt 1 lần."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_m2640idw",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_m2640idw",
+  "name": "Máy in đa chức năng A4 Kyocera ECOSYS M2640idw",
+  "model": "ECOSYS M2640idw",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 36,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS M Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "40 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "6.4 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB (Mở rộng 1.5 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 4.3 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF nạp bản gốc 2 mặt 1 lần 50 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "40 ipm (mono), 23 ipm (color)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Wi-Fi (IEEE 802.11b/g/n), Wi-Fi Direct, Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, macOS, Linux, Kyocera Mobile Print"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 50.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS 100.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 661 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "417 x 412 x 437 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 19 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa năng 4-trong-1 có màn cảm ứng 4.3 inch, Wi-Fi không dây, DADF 50 tờ."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_m3145dn",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_m3145dn",
+  "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS M3145dn",
+  "model": "ECOSYS M3145dn",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 35,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS M Heavy-Duty Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "45 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "45 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "5.9 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 16 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1 GB RAM (Mở rộng 3 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4, Legal"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ (Tổng 600 tờ)"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "2.600 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF nạp bản gốc tự động 75 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "60 ipm (mono), 40 ipm (color)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0, USB Host"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 150.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống gốm ECOSYS 300.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 652 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "475 x 476 x 575 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 22.3 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Dòng tải nặng A4, tốc độ 45 ppm, khay giấy 500 tờ, trống gốm 300.000 trang."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_m3645dn",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_m3645dn",
+  "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS M3645dn",
+  "model": "ECOSYS M3645dn",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 32,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS M Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "45 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "45 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1 GB RAM"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 5 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF 75 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "60 ipm mono / 40 ipm color"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "150.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "300.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa năng 4-trong-1 (Print/Copy/Scan/Fax) 45 ppm dòng ECOSYS chịu tải cao."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_m3645idn",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_m3645idn",
+  "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS M3645idn",
+  "model": "ECOSYS M3645idn",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 32,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS M Touch Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "45 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "45 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1 GB RAM (Mở rộng 3 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF 75 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "60 ipm mono / 40 ipm color"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "HyPAS, TPM"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "150.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "300.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa năng 4-trong-1 45 ppm có màn cảm ứng 7 inch, hỗ trợ nền tảng HyPAS."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_m3860idn",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_m3860idn",
+  "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS M3860idn",
+  "model": "ECOSYS M3860idn",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 36,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS M Flagship Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "4.5 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 25 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1 GB RAM (Mở rộng 3 GB)"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "Tùy chọn SSD 64 GB / 128 GB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4, Legal"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "2.600 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 100 tờ quét 2 mặt 1 lần siêu tốc (120 ipm)"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét 2 mặt: 120 ipm mono / 80 ipm color"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0, USB Host"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "HyPAS, Data Security Kit, TPM"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 300.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống gốm siêu bền 500.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 749 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "480 x 495 x 590 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 24.1 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ siêu nhanh 60 ppm, màn cảm ứng 7 inch, nạp DADF 100 tờ quét kép 120 ipm, trống gốm 500.000 trang."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_m3860idnf",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_m3860idnf",
+  "name": "Máy photocopy đa chức năng A4 Kyocera ECOSYS M3860idnf",
+  "model": "ECOSYS M3860idnf",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 31,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan), Fax"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS M Flagship Series (Finisher)"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1 GB RAM"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "DADF 100 tờ (120 ipm)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Tốc độ Modem FAX",
+      "value": "33.6 kbps (Super G3), tốc độ truyền < 3 giây/trang"
+    },
+    {
+      "key": "Bộ nhớ FAX",
+      "value": "Chuẩn 12 MB (lưu tối đa 1.000 trang)"
+    },
+    {
+      "key": "Tính năng FAX mở rộng",
+      "value": "Network FAX, Internet FAX (tùy chọn), Gửi và nhận FAX trực tiếp từ PC, Chuyển tiếp FAX tự động đến Email/SMB"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "300.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "500.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Model 60 ppm A4 tích hợp sẵn bộ hoàn tất dập ghim nội bộ (Internal Finisher 250 tờ) và FAX."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_m4125idn",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_m4125idn",
+  "name": "Máy photocopy đa chức năng A3 compact Kyocera ECOSYS M4125idn",
+  "model": "ECOSYS M4125idn",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 36,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS A3 Compact Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "25 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "12 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "25 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "5.8 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 20 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1 GB RAM (Mở rộng 3 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 4.3 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 256 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "1.600 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF nạp & đảo bản gốc tự động 50 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "50 ipm (mono/color, 300 dpi)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0, USB Host, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "HyPAS, TPM, AES 256"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 80.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS siêu bền 300.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 410 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "590 x 590 x 688 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 49 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đa chức năng A3 đơn sắc nhỏ gọn, màn hình cảm ứng 4.3 inch, trống từ 300.000 trang."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_m4132idn",
+  "cat": "photocopy",
+  "presetKey": "kyocera_ecosys_m4132idn",
+  "name": "Máy photocopy đa chức năng A3 compact Kyocera ECOSYS M4132idn",
+  "model": "ECOSYS M4132idn",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 36,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy photocopy đa chức năng kỹ thuật số"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In mạng, Sao chụp (Copy), Quét mạng (Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS A3 Compact Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "32 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "17 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "32 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "5.2 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 20 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "ARM Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "1 GB RAM (Mở rộng 3 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 7 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 256 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 500 tờ + Khay tay 100 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "1.600 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động đảo mặt tiêu chuẩn"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "RADF nạp & đảo bản gốc tự động 50 tờ"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "50 ipm (mono/color, 300 dpi)"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, OCR PDF, JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, TWAIN"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3, PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0, USB Host, Wi-Fi Direct"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "HyPAS, TPM, AES 256"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 100.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS siêu bền 300.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 490 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "590 x 590 x 688 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 52 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Tốc độ 32 ppm A4 / 17 ppm A3 mono, màn hình cảm ứng màu 7 inch, hỗ trợ giải pháp HyPAS."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_pa2100cwx",
+  "cat": "may_in",
+  "presetKey": "kyocera_ecosys_pa2100cwx",
+  "name": "Máy in laser màu A4 Kyocera ECOSYS PA2100cwx",
+  "model": "ECOSYS PA2100cwx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 28,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy in laser đơn chức năng"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In laser (Print)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS PA Color Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "21 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "21 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "12.5 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "11.0 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 32 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Cortex-A9 800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 2 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6 - A4, Letter"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "60 - 220 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 50 tờ"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "550 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động in 2 mặt tiêu chuẩn (60 - 120 g/m², A5 - A4)"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3 (PostScript 3), PDF Direct"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Wi-Fi (IEEE 802.11b/g/n), Wi-Fi Direct, 10/100/1000BaseT Gigabit Ethernet, USB 2.0 High-Speed, USB Host"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux, AirPrint, Mopria"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 65.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống ECOSYS 100.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 345 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "410 x 410 x 329 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 21 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Máy in laser màu A4 đơn năng có sẵn Duplex đảo mặt tự động và kết nối Wi-Fi không dây."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_pa2101cx",
+  "cat": "may_in",
+  "presetKey": "kyocera_ecosys_pa2101cx",
+  "name": "Máy in laser màu A4 Kyocera ECOSYS PA2101cx",
+  "model": "ECOSYS PA2101cx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 21,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy in laser đơn chức năng"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In laser (Print)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS PA Color Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "21 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "21 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 2 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 50 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "65.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "100.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Máy in laser màu đơn năng 21 ppm kết nối mạng LAN Gigabit."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_pa2101cwx",
+  "cat": "may_in",
+  "presetKey": "kyocera_ecosys_pa2101cwx",
+  "name": "Máy in laser màu A4 Kyocera ECOSYS PA2101cwx",
+  "model": "ECOSYS PA2101cwx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 21,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy in laser đơn chức năng"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In laser (Print)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS PA Color Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "21 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "21 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "800MHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 2 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 50 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Wi-Fi không dây, Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "65.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "100.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Máy in laser màu đơn năng 21 ppm tích hợp Wi-Fi không dây."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_pa2600cx",
+  "cat": "may_in",
+  "presetKey": "kyocera_ecosys_pa2600cx",
+  "name": "Máy in laser màu A4 Kyocera ECOSYS PA2600cx",
+  "model": "ECOSYS PA2600cx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 23,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy in laser đơn chức năng"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In laser (Print)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS PA Color Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "26 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "26 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "10.5 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "9.5 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Cortex-A9 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 2 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 50 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "65.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "100.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Máy in màu 26 ppm tốc độ cao, độ phân giải 1200 dpi."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_pa2600cwx",
+  "cat": "may_in",
+  "presetKey": "kyocera_ecosys_pa2600cwx",
+  "name": "Máy in laser màu A4 Kyocera ECOSYS PA2600cwx",
+  "model": "ECOSYS PA2600cwx",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "12 tháng",
+  "unit": "Máy",
+  "specCount": 21,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy in laser đơn chức năng"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In laser (Print)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS PA Color Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "26 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "26 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "512 MB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình LCD 2 dòng"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - A3 / SRA3 (320 x 450 mm), Banner (tối đa 305 x 1.220 mm)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Khay tiêu chuẩn: 52 - 300 g/m²; Khay tay: 52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay 250 tờ + Khay tay 50 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6 (5e/XL), KPDL3 (PostScript 3 tương thích), PDF Direct Print, XPS Direct Print"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Wi-Fi không dây, Gigabit Ethernet, USB 2.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "65.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "100.000 trang"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Máy in màu 26 ppm tích hợp Wi-Fi không dây và Duplex đảo mặt tự động."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_p4060dn",
+  "cat": "may_in",
+  "presetKey": "kyocera_ecosys_p4060dn",
+  "name": "Máy in laser đơn sắc A3/A4 Kyocera ECOSYS P4060dn",
+  "model": "ECOSYS P4060dn",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 28,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy in laser đơn chức năng"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In laser (Print)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS A3 High-Speed Series"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "30 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.8 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Freescale QorIQ T1024 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 8 GB (Tùy chọn HDD 320 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 9 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3, Banner lên đến 305 x 1.220 mm"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + Khay tay 150 tờ (Tổng 1.150 tờ)"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động in 2 mặt tiêu chuẩn (A5R - SRA3, 60 - 256 g/m²)"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3 (PostScript 3), PDF Direct Print, XPS"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT Gigabit Ethernet, 4 cổng USB 2.0, USB 3.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "Data Security Kit, TPM, Mã hóa AES 256"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 300.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống quang học Amorphous Silicon 500.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 820 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 77.2 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Máy in laser A3 đơn sắc tốc độ siêu cao 60 ppm, màn hình cảm ứng 9 inch, trống từ 500.000 trang."
+    }
+  ]
+},
+  {
+  "id": "kyocera_ecosys_p8060cdn",
+  "cat": "may_in",
+  "presetKey": "kyocera_ecosys_p8060cdn",
+  "name": "Máy in laser màu A3/A4 tốc độ cao Kyocera ECOSYS P8060cdn",
+  "model": "ECOSYS P8060cdn",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 31,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Máy in laser đơn chức năng"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In laser (Print)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "ECOSYS A3 High-End Color Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "55 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "60 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "27 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "30 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "1200 x 1200 dpi, độ sâu 2-bit tương đương 4800 x 1200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "4.8 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "3.8 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 17 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Freescale QorIQ T1024 Dual Core 1.2GHz"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 8 GB (Tùy chọn HDD 320 GB)"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 9 inch xoay góc"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - SRA3 (320 x 450 mm), Banner 305 x 1.220 mm"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "52 - 300 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "2 khay x 500 tờ + Khay tay 150 tờ (Tổng 1.150 tờ)"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 7.150 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Tự động in 2 mặt tiêu chuẩn"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "PRESCRIBE, PCL6, KPDL3 (PostScript 3), PDF Direct Print, XPS, Fiery (tùy chọn)"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "10/100/1000BaseT Gigabit Ethernet, 4 cổng USB 2.0, USB 3.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "Data Security Kit, TPM, AES 256"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 300.000 trang/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống quang học Amorphous Silicon siêu bền 600.000 trang"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; In ấn: 960 W"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "602 x 665 x 790 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 89 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Máy in laser màu A3 tốc độ cao nhất (60 ppm mono / 55 ppm color), chất lượng in ấn đồ họa đỉnh cao, trống từ 600.000 trang."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_pro_15000c",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_pro_15000c",
+  "name": "Máy in phun màu công nghiệp siêu tốc Kyocera TASKalfa Pro 15000c",
+  "model": "TASKalfa Pro 15000c",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera Nhật Bản",
+  "price": 0,
+  "qty": 1,
+  "warranty": "36 tháng",
+  "unit": "Máy",
+  "specCount": 42,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Hệ thống máy in phun màu công nghiệp siêu tốc (Production Inkjet)"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In phun màu công nghiệp tốc độ siêu cao (Print/Copy/Scan with optional Fiery)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "Production Inkjet Flagship"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "150 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "150 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 Màu",
+      "value": "75 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "75 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "150 trang màu/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "150 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "600 x 600 dpi, 600 x 1200 dpi (công nghệ hạt mực siêu nhỏ Piezo Drop-on-Demand)"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Màu)",
+      "value": "5.5 giây"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "5.5 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 120 giây (sẵn sàng in ngay lập tức không cần sấy nhiệt lô ép)"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Hệ thống vi xử lý đa nhân công nghiệp Kyocera Controller / Fiery Print Server"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "32 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 1 TB + HDD 2 TB lưu trữ bản in"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 9 inch + Màn hình điều khiển máy chủ Fiery"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - 330 x 487 mm (13 x 19.2 inch), Banner lên đến 330 x 1.220 mm"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "56 - 360 g/m² (giấy thường, giấy dày, giấy mỹ thuật, phong bì, decal)"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Khay nạp tiêu chuẩn 4.150 tờ (hỗ trợ nạp chân không hút giấy)"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 14.310 tờ với các bộ nạp giấy công nghiệp dung lượng lớn (Vacuum Feeders)"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "In 2 mặt tự động siêu tốc 150 trang/phút (56 - 300 g/m²)"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "Bộ nạp bản gốc DADF 270 tờ quét 220 ipm (tùy chọn)"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét 2 mặt: 220 ipm"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, Searchable PDF, JPEG"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, Fiery Server"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "Adobe PostScript 3, PDF 2.0, PCL6, PPML, PDF/VT, IPDS (tùy chọn)"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Dual 1000Base-T / 10GBase-T Ethernet, USB 3.0, Fiery Interface"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, Server, macOS, Linux, UNIX"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "Data Security Kit, IPsec, TLS 1.3, Xóa dữ liệu chuẩn quân đội DoD"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Định mức thiết kế: 1.000.000 bản in/tháng (Tối đa 3.000.000 trang)"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Đầu phun Piezo độ bền vĩnh cửu công nghiệp (tuổi thọ hàng chục triệu bản in)"
+    },
+    {
+      "key": "Mực in tương thích",
+      "value": "Mực in gốc nước sắc tố cao cấp Water-based Pigment Ink (4 bình dung tích siêu lớn K/C/M/Y)"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V, 50/60 Hz; Mức tiêu thụ điện năng cực thấp chỉ 1.5 kW khi in đầy tải (tiết kiệm 70% so với máy in laser công nghiệp)"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "1.498 x 1.018 x 1.144 mm (thân máy chính)"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 308 kg (Thân máy chính chưa kèm bộ nạp và hoàn tất)"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Đỉnh cao công nghệ in phun màu công nghiệp siêu tốc của Kyocera, tốc độ 150 trang/phút, chi phí bản in cực rẻ, tiêu thụ điện chỉ bằng 1/3 laser."
+    }
+  ]
+},
+  {
+  "id": "kyocera_taskalfa_pro_15000b",
+  "cat": "photocopy",
+  "presetKey": "kyocera_taskalfa_pro_15000b",
+  "name": "Máy in phun đen trắng công nghiệp siêu tốc Kyocera TASKalfa Pro 15000b",
+  "model": "TASKalfa Pro 15000b",
+  "brand": "Kyocera",
+  "origin": "Chính hãng Kyocera Nhật Bản",
+  "price": 0,
+  "qty": 1,
+  "warranty": "36 tháng",
+  "unit": "Máy",
+  "specCount": 36,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Hệ thống máy in phun đen trắng công nghiệp siêu tốc (Monochrome Production Inkjet)"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In phun đen trắng công nghiệp siêu tốc (Print/Copy/Scan with High-Duty Controller)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "Production Monochrome Inkjet 2026"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "150 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ in A3 trắng đen",
+      "value": "75 trang trắng đen/phút"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "150 trang trắng đen/phút"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "600 x 600 dpi, 600 x 1200 dpi (công nghệ hạt mực Piezo)"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi, 400 x 400 dpi, 300 x 300 dpi, 200 x 200 dpi"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "5.5 giây"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 120 giây (không dùng nhiệt ép lô sấy)"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "Bộ xử lý in ấn công nghiệp tốc độ cao"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "16 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 512 GB + HDD 1 TB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 9 inch"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "A6R - 330 x 487 mm, Banner 1.220 mm"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "56 - 360 g/m²"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "4.150 tờ tiêu chuẩn"
+    },
+    {
+      "key": "Khay chứa giấy tối đa",
+      "value": "Tối đa 14.310 tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "In 2 mặt tự động siêu tốc 150 trang/phút"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, High Compression PDF, Encrypted PDF, Searchable PDF (OCR), JPEG, XPS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB 3.0, Scan to USB Host, Scan to Box, Network TWAIN, WSD Scan"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (dung sai 1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "Adobe PostScript 3, PDF 2.0, PCL6, PPML, IPDS"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Dual Gigabit Ethernet, USB 3.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows, Server, macOS, Linux"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Định mức thiết kế: 1.000.000 bản in/tháng"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Đầu phun Piezo độ bền vĩnh cửu"
+    },
+    {
+      "key": "Mực in tương thích",
+      "value": "Mực in gốc nước Pigment Black dung tích công nghiệp"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V; Tiêu thụ điện năng cực thấp dưới 1.2 kW"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "1.498 x 1.018 x 1.144 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 300 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Thế hệ máy in phun đơn sắc công nghiệp 2026 mới nhất, siêu tiết kiệm điện, năng suất 150 trang/phút."
+    }
+  ]
+},
+  {
+  "id": "kyocera_kip_7170",
+  "cat": "photocopy",
+  "presetKey": "kyocera_kip_7170",
+  "name": "Máy in / photocopy / quét khổ rộng A0/A1 đa chức năng KIP 7170",
+  "model": "KIP 7170",
+  "brand": "Kyocera",
+  "origin": "KIP Nhật Bản (Kyocera phân phối)",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 36,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Hệ thống in, sao chụp và quét khổ rộng A0/A1 kỹ thuật số (Wide Format MFP)"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In khổ lớn, Sao chụp khổ lớn, Quét màu khổ lớn (Print, Copy, Color Scan)"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "KIP Wide Format Digital System"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "6 bản D/phút (hoặc 3.3 bản A0/phút)"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "6 bản D/phút (hoặc 3.3 bản A0/phút)"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "600 x 2400 dpi (công nghệ in hạt từ KIP High Definition Print)"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi (Công nghệ cảm biến CIS quét màu trung thực)"
+    },
+    {
+      "key": "Thời gian in bản đầu tiên (Đen trắng)",
+      "value": "Dưới 20 giây cho bản vẽ A0"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 120 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "KIP System K Controller tích hợp"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "4 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 256 GB / HDD 500 GB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu đa điểm 12.1 inch KIP Touch Screen"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "Khổ rộng từ 297 mm đến 914 mm (36 inch), Chiều dài bản in tối đa 6.000 mm (6 mét)"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "Giấy cuộn 60 - 100 g/m², Giấy tờ rời lên đến 150 g/m² (Bond, Film, Tracing)"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Hệ thống 2 cuộn giấy tự động (2 Rolls) + Khay nạp tay dạng tờ"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn (Tự động in 2 mặt, hỗ trợ khổ A5R - A3/SRA3)"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "Bộ quét màu khổ rộng 36 inch tích hợp trên thân máy với tính năng Face-up / Face-down"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Quét đen trắng: lên đến 10 m/phút, Quét màu: lên đến 5 m/phút"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, DWF, JPEG, CALS"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Scan to Email, Scan to FTP, Scan to SMB Network, Scan to USB, Cloud Print"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400% (bước nhảy 0.1%)"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "KIP Script, HP-GL/2, HP-RTL, Calcomp 906/907, PostScript 3, PDF Direct, TIFF, DWF"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet (1000Base-T), USB 2.0 Host"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10/8.1, Windows Server, AutoCAD HDI Driver, Mac OS"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Tối đa 50.000 mét vuông/năm"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Trống quang học khổ lớn siêu bền 100.000 mét"
+    },
+    {
+      "key": "Mực in tương thích",
+      "value": "Hộp mực khô đơn sắc KIP 100% không phát thải rác thải độc hại"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V, 50/60 Hz; Công suất tiêu thụ 1.5 kW khi in ấn"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "1.525 x 740 x 1.500 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 244 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Hệ thống máy in và sao chụp bản vẽ công trình kỹ thuật khổ A0/A1 hàng đầu, độ phân giải 600 x 2400 dpi sắc nét từng nét vẽ CAD."
+    }
+  ]
+},
+  {
+  "id": "kyocera_kip_660",
+  "cat": "photocopy",
+  "presetKey": "kyocera_kip_660",
+  "name": "Máy in màu & đen trắng khổ rộng A0 kỹ thuật số KIP 660 / KIP 600 Series",
+  "model": "KIP 660",
+  "brand": "Kyocera",
+  "origin": "KIP Nhật Bản (Kyocera phân phối)",
+  "price": 0,
+  "qty": 1,
+  "warranty": "24 tháng",
+  "unit": "Máy",
+  "specCount": 37,
+  "specs": [
+    {
+      "key": "Loại máy",
+      "value": "Hệ thống máy in & scan màu khổ rộng A0 kỹ thuật số thế hệ mới"
+    },
+    {
+      "key": "Chức năng",
+      "value": "In màu khổ lớn, In đen trắng, Quét màu khổ lớn 36 inch"
+    },
+    {
+      "key": "Dòng máy",
+      "value": "KIP 600 Color Series"
+    },
+    {
+      "key": "Tốc độ in A4 Màu",
+      "value": "360 mét vuông/giờ (hoặc 6 bản D/phút màu & đen trắng)"
+    },
+    {
+      "key": "Tốc độ in A4 trắng đen",
+      "value": "360 mét vuông/giờ (hoặc 6 bản D/phút)"
+    },
+    {
+      "key": "Tốc độ copy màu",
+      "value": "360 mét vuông/giờ (hoặc 6 bản D/phút màu & đen trắng)"
+    },
+    {
+      "key": "Tốc độ copy mono",
+      "value": "360 mét vuông/giờ (hoặc 6 bản D/phút)"
+    },
+    {
+      "key": "Độ phân giải in",
+      "value": "600 x 2400 dpi (Công nghệ in màu hạt khô KIP Contact Control Technology)"
+    },
+    {
+      "key": "Độ phân giải copy / scan",
+      "value": "600 x 600 dpi màu CIS"
+    },
+    {
+      "key": "Thời gian khởi động",
+      "value": "Khoảng 120 giây"
+    },
+    {
+      "key": "Bộ xử lý (CPU)",
+      "value": "KIP System K Controller thế hệ mới"
+    },
+    {
+      "key": "Bộ nhớ (RAM)",
+      "value": "8 GB RAM"
+    },
+    {
+      "key": "Ổ lưu trữ (SSD/HDD)",
+      "value": "SSD 512 GB"
+    },
+    {
+      "key": "Màn hình điều khiển",
+      "value": "Màn hình cảm ứng màu 12.1 inch KIP System K"
+    },
+    {
+      "key": "Khổ giấy hỗ trợ",
+      "value": "Khổ rộng từ 297 mm đến 914 mm (36 inch), chiều dài lên đến 6.000 mm"
+    },
+    {
+      "key": "Định lượng giấy",
+      "value": "64 - 150 g/m² (Bond paper, Film, Vellum, Matte paper)"
+    },
+    {
+      "key": "Khay chứa giấy tiêu chuẩn",
+      "value": "Hệ thống 2 cuộn giấy màu/đen trắng tự động cắt + Khay nạp đơn"
+    },
+    {
+      "key": "Tự động đảo mặt bản in (Duplex)",
+      "value": "Có sẵn (Tự động in 2 mặt, hỗ trợ khổ A5R - A3/SRA3)"
+    },
+    {
+      "key": "Khay nạp & đảo bản gốc (DADF/RADF)",
+      "value": "Bộ quét màu khổ rộng 36 inch tích hợp"
+    },
+    {
+      "key": "Tốc độ scan",
+      "value": "Lên đến 10 m/phút"
+    },
+    {
+      "key": "Định dạng file scan",
+      "value": "TIFF, PDF, PDF/A, DWF, JPEG"
+    },
+    {
+      "key": "Chế độ quét (Scan Destinations)",
+      "value": "Email, FTP, SMB, USB, Cloud"
+    },
+    {
+      "key": "Tỷ lệ phóng to - thu nhỏ (Zoom)",
+      "value": "25% - 400%"
+    },
+    {
+      "key": "Số bản sao chụp liên tục",
+      "value": "1 - 9.999 bản"
+    },
+    {
+      "key": "Tính năng copy nâng cao",
+      "value": "Chia bộ điện tử (Electronic Sort), Tự động chọn khổ giấy (Auto Paper Select), 2 trong 1, 4 trong 1, Copy CMND/Thẻ căn cước, Xóa viền, Đóng dấu mộc ngày tháng"
+    },
+    {
+      "key": "Ngôn ngữ in (Emulations)",
+      "value": "KIP Script, Adobe PostScript 3, HP-GL/2, PDF Direct, TIFF"
+    },
+    {
+      "key": "Cổng kết nối tiêu chuẩn",
+      "value": "Gigabit Ethernet, USB 3.0"
+    },
+    {
+      "key": "Kết nối không dây & Di động",
+      "value": "Hỗ trợ Apple AirPrint, Mopria Print Service, Kyocera Mobile Print, Wi-Fi Direct (tùy chọn)"
+    },
+    {
+      "key": "Hệ điều hành tương thích",
+      "value": "Windows 11/10, AutoCAD, Mac OS"
+    },
+    {
+      "key": "Bảo mật thông tin",
+      "value": "TPM 2.0 (Trusted Platform Module), Mã hóa dữ liệu AES 256-bit, Secure Boot, Run-Time Integrity Check, Hỗ trợ giao thức TLS 1.3, Xóa dữ liệu ổ cứng tự động (Data Overwrite)"
+    },
+    {
+      "key": "Công suất in hàng tháng",
+      "value": "Thiết kế in ấn bản vẽ kiến trúc, bản đồ GIS và đồ họa màu khổ lớn"
+    },
+    {
+      "key": "Tuổi thọ trống quang học (Drum)",
+      "value": "Cụm tạo ảnh màu chuyên dụng tuổi thọ cao"
+    },
+    {
+      "key": "Mực in tương thích",
+      "value": "Hệ thống mực in 4 màu K/C/M/Y chống nước và chống phai màu ngoài trời"
+    },
+    {
+      "key": "Nguồn điện & Tiêu thụ điện",
+      "value": "AC 220 - 240 V, 50/60 Hz; In ấn: 1.8 kW"
+    },
+    {
+      "key": "Kích thước (R x S x C)",
+      "value": "1.500 x 1.080 x 1.220 mm"
+    },
+    {
+      "key": "Trọng lượng",
+      "value": "Khoảng 260 kg"
+    },
+    {
+      "key": "Ghi chú công nghệ",
+      "value": "Dòng máy in màu khổ lớn A0 đa năng, mực in kháng nước cực tốt, chuyên dụng cho bản đồ GIS, bản vẽ thiết kế xây dựng và quảng cáo ngoài trời."
+    }
+  ]
+}
 ];
 
 var catalogViewMode = 'list'; // 'list' (default) or 'grid'
