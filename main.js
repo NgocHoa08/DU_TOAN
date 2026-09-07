@@ -4696,7 +4696,7 @@ var MODEL_PRESETS = {
       },
       {
         "key": "Tốc độ in A4 trắng đen",
-        "value": "A4: 35 trang màu/phút; A3: 20 trang màu/ phút"
+        "value": "A4: 35 trang trắng đen/phút; A3: 20 trang trắng đen/phút"
       },
       {
         "key": "Ngôn ngữ in",
@@ -5224,7 +5224,7 @@ var MODEL_PRESETS = {
       },
       {
         "key": "Tốc độ in A4 trắng đen",
-        "value": "A4: 30 trang màu/phút"
+        "value": "A4: 30 trang trắng đen/phút"
       },
       {
         "key": "Ngôn ngữ in",
@@ -42492,7 +42492,7 @@ var CATALOG_ITEMS = [
       },
       {
         "key": "Tốc độ in A4 trắng đen",
-        "value": "A4: 36 trang màu/phút;"
+        "value": "A4: 36 trang trắng đen/phút;"
       },
       {
         "key": "Ngôn ngữ in",
@@ -42632,7 +42632,7 @@ var CATALOG_ITEMS = [
       },
       {
         "key": "Tốc độ in A4 trắng đen",
-        "value": "A4: 35 trang màu/phút; A3: 20 trang màu/ phút"
+        "value": "A4: 35 trang trắng đen/phút; A3: 20 trang trắng đen/phút"
       },
       {
         "key": "Ngôn ngữ in",
@@ -45628,7 +45628,7 @@ var CATALOG_ITEMS = [
       },
       {
         "key": "Tốc độ in A4 trắng đen",
-        "value": "A4: 35 trang màu/phút; A3: 20 trang màu/ phút"
+        "value": "A4: 35 trang trắng đen/phút; A3: 20 trang trắng đen/phút"
       },
       {
         "key": "Ngôn ngữ in",
@@ -46180,7 +46180,7 @@ var CATALOG_ITEMS = [
       },
       {
         "key": "Tốc độ in A4 trắng đen",
-        "value": "A4: 30 trang màu/phút"
+        "value": "A4: 30 trang trắng đen/phút"
       },
       {
         "key": "Ngôn ngữ in",
