@@ -584,6 +584,11 @@
           <span class="nav-icon">📖</span>
           <span class="nav-label">6. Hướng Dẫn</span>
         </button>
+        <button class="mtab" id="mtab-admin" onclick="switchMainTab('admin')" title="Quản trị &amp; Chỉnh sửa danh mục sản phẩm (Mật khẩu: 2208)">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-label">7. Quản Trị Sản Phẩm</span>
+          <span class="nav-badge" style="background:#ef4444;color:#fff;font-size:10px">2208</span>
+        </button>
       </nav>
 
       <!-- HỒ SƠ MẪU & CÔNG CỤ -->
@@ -1710,6 +1715,9 @@
     </div>
   </div> <!-- end view-huongdan -->
 
+  <!-- ═══════════════ VIEW 7: QUẢN TRỊ SẢN PHẨM (ADMIN 2208) ═══════════════ -->
+  <div id="view-admin" style="display:none"></div>
+
   <!-- ADMIN PASSWORD MODAL -->
   <div id="adminPassModal" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(15,23,42,0.6);z-index:99999;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(6px)">
     <div style="background:#ffffff;border:1px solid #e2e8f0;border-radius:16px;max-width:420px;width:100%;padding:28px 24px;box-shadow:0 20px 50px rgba(0,0,0,0.15);text-align:center">
@@ -1900,6 +1908,7 @@
 
   <script src="exceljs.min.js"></script>
   <script src="main.js?v=20260907_113500"></script>
+  <script src="admin_catalog.js?v=20260908_140000"></script>
 </body>
 
 </html>
