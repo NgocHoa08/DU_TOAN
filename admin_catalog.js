@@ -4,7 +4,7 @@
    Hệ thống Quản Trị Danh Mục Sản Phẩm & Cấu Hình Thông Số Kỹ Thuật
 ═══════════════════════════════════════════════════════════════════ */
 
-var ADMIN_PASSWORD_HASH = '2208';
+var ADMIN_PASSWORD_HASH = '';
 var LS_CUSTOM_CATALOG_KEY = 'dutoan_custom_catalog';
 var adminCurrentSearch = '';
 var adminCurrentBrand = '';

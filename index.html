@@ -772,19 +772,6 @@
           <!-- Catalog Items Container (Renders List Table or Cards Grid) -->
           <div id="catGrid"></div>
 
-          <!-- Custom Model Adder with AI Spec Scraper -->
-          <div class="custom-dev-adder">
-            <div class="custom-dev-adder-title">➕ Thêm dòng máy khác ngoài danh mục &amp; AI Tự động cào thông số chính hãng:</div>
-            <div style="display:flex;gap:10px;flex-wrap:wrap">
-              <input type="text" id="custDevName"
-                placeholder="Tên máy &amp; Model (VD: Máy photocopy Ricoh IM 3500, Laptop Dell Latitude 5440, Canon LBP 2900...)"
-                style="flex:2;min-width:220px" />
-              <input type="text" id="custDevPrice" placeholder="Đơn giá (VNĐ)" oninput="formatMoneyInput(this)" style="flex:1;min-width:130px;text-align:right" />
-              <input type="number" id="custDevQty" value="1" min="1" placeholder="SL" style="width:65px" />
-              <button class="btn btn-ai btn-sm" onclick="addCustomCatalogDev()">🤖 Thêm &amp; AI Tự Cào Thông Số</button>
-            </div>
-          </div>
-
           <!-- Cart Summary Bar -->
           <div class="cart-summary-bar" id="cartSummaryBar">
             <div>
