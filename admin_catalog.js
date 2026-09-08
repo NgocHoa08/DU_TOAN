@@ -3051,7 +3051,7 @@ switchMainTab = function (tab) {
       if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị Hệ Thống</b>';
 
       var quickBtn = document.getElementById('btnMenuQuickAction');
-      if (quickBtn) quickBtn.innerHTML = '💾 Lưu Thay Đổi Sản Phẩm';
+      if (quickBtn) quickBtn.innerHTML = '📊 Xuất Excel Tất Cả Thiết Bị';
     }
 
     try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { }
@@ -3110,7 +3110,7 @@ function adminLogout() {
 var _coreMenuQuickExport = typeof menuQuickExport === 'function' ? menuQuickExport : (typeof window !== 'undefined' ? window.menuQuickExport : null);
 menuQuickExport = function () {
   if (currentActiveTab === 'admin') {
-    adminSaveCatalogChanges();
+    adminExportAllDevicesExcel();
     return;
   }
   if (typeof _coreMenuQuickExport === 'function') {
@@ -3130,6 +3130,7 @@ if (typeof window !== 'undefined') {
   window.submitAdminPassword = submitAdminPassword;
   window.adminLogout = adminLogout;
   window.checkAndRenderAdminView = checkAndRenderAdminView;
+  window.adminExportAllDevicesExcel = adminExportAllDevicesExcel;
 }
 
 /* ── BẢNG ĐIỀU KHIỂN ADMIN QUẢN LÝ SẢN PHẨM ── */
@@ -3178,6 +3179,7 @@ function renderAdminDashboard(container) {
     '    </div>' +
     '    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">' +
     '      <button class="btn btn-p btn-sm" onclick="adminOpenAddProductModal()" style="font-weight:800">➕ Thêm sản phẩm mới</button>' +
+    '      <button class="btn btn-sm" onclick="adminExportAllDevicesExcel()" style="background:#0284c7;color:#fff;font-weight:800;border:none;display:inline-flex;align-items:center;gap:5px;box-shadow:0 2px 6px rgba(2,132,199,0.3)" title="Xuất toàn bộ danh mục thiết bị và thông số kỹ thuật ra file Excel (.xlsx)">📊 Xuất Excel Tất Cả Thiết Bị</button>' +
     '      <button class="btn btn-sm" onclick="adminSaveCatalogChanges()" style="background:#10b981;color:#fff;font-weight:800;border:none" title="Lưu toàn bộ thay đổi vào bộ nhớ trình duyệt">💾 Lưu thay đổi</button>' +
     '      <button class="btn btn-o btn-sm" onclick="adminExportJson()" title="Tải file sao lưu danh mục .json">📤 Xuất JSON</button>' +
     '      <button class="btn btn-o btn-sm" onclick="adminResetToDefault()" title="Khôi phục về danh mục sản phẩm gốc">🔄 Khôi phục gốc</button>' +
@@ -3206,6 +3208,9 @@ function renderAdminDashboard(container) {
     '      </button>' +
     '      <button class="btn btn-o btn-sm" onclick="if(typeof menuSyncToBaogia===\'function\')menuSyncToBaogia()" style="height:38px;font-weight:700;display:inline-flex;align-items:center;gap:6px">' +
     '        <span>🔄</span> Đồng Bộ ➔ Báo Giá' +
+    '      </button>' +
+    '      <button class="btn btn-sm" onclick="adminExportAllDevicesExcel()" style="height:38px;font-weight:800;display:inline-flex;align-items:center;gap:6px;background:#0284c7;color:#fff;border:none">' +
+    '        <span>📊</span> Xuất Tất Cả Thiết Bị (Excel)' +
     '      </button>' +
     '      <button class="btn btn-o btn-sm" onclick="if(typeof exportLichSuJson===\'function\')exportLichSuJson()" style="height:38px;font-weight:700;display:inline-flex;align-items:center;gap:6px">' +
     '        <span>💾</span> Sao Lưu Dữ Liệu' +
@@ -3375,6 +3380,173 @@ function adminResetToDefault() {
   if (confirm('Bạn có chắc muốn khôi phục danh mục về ban đầu? Mọi tùy chỉnh chưa xuất file sẽ bị xóa.')) {
     localStorage.removeItem(LS_CUSTOM_CATALOG_KEY);
     location.reload();
+  }
+}
+
+/* ── XUẤT TẤT CẢ THIẾT BỊ RA FILE EXCEL (.XLSX) ── */
+function adminExportAllDevicesExcel() {
+  if (typeof XLSX === 'undefined') {
+    toast('❌ Thư viện XLSX chưa sẵn sàng, vui lòng thử lại sau giây lát!', 'err');
+    return;
+  }
+
+  var items = CATALOG_ITEMS || [];
+  if (items.length === 0) {
+    toast('⚠️ Danh mục hiện không có thiết bị nào để xuất!', 'warn');
+    return;
+  }
+
+  toast('⏳ Đang tổng hợp dữ liệu ' + items.length + ' thiết bị để xuất file Excel...', 'info');
+
+  try {
+    var wb = XLSX.utils.book_new();
+
+    // ── SHEET 1: DANH MỤC THIẾT BỊ TỔNG HỢP ──
+    var sheet1Data = [];
+    sheet1Data.push([
+      'BẢNG TỔNG HỢP TOÀN BỘ THIẾT BỊ & THÔNG SỐ KỸ THUẬT HỆ THỐNG',
+      '', '', '', '', '', '', '', '', '', '', ''
+    ]);
+    sheet1Data.push([
+      'Ngày xuất file: ' + (new Date().toLocaleDateString('vi-VN')) + ' ' + (new Date().toLocaleTimeString('vi-VN')) + ' | Tổng cộng: ' + items.length + ' dòng thiết bị',
+      '', '', '', '', '', '', '', '', '', '', ''
+    ]);
+    sheet1Data.push([]); // dòng trống
+    sheet1Data.push([
+      'STT',
+      'Tên thiết bị',
+      'Model',
+      'Hãng sản xuất',
+      'Xuất xứ',
+      'Đơn vị tính',
+      'Đơn giá dự toán (VNĐ)',
+      'Thời gian bảo hành',
+      'Phân loại danh mục',
+      'Tài liệu mẫu / Nguồn',
+      'Số chỉ tiêu specs',
+      'Chi tiết toàn bộ thông số kỹ thuật'
+    ]);
+
+    items.forEach(function (it, idx) {
+      var specsSummary = '';
+      if (it.specs && it.specs.length > 0) {
+        specsSummary = it.specs.map(function (s, sIdx) {
+          return (sIdx + 1) + '. ' + (s.key || '') + ': ' + (s.value || '');
+        }).join('\n');
+      }
+
+      var catLabel = it.cat || '';
+      if (it.cat === 'may_scan') catLabel = 'Máy quét (Scanner)';
+      else if (it.cat === 'may_in') catLabel = 'Máy in Laser';
+      else if (it.cat === 'photocopy') catLabel = 'Máy Photocopy';
+      else if (it.cat === 'may_tinh') catLabel = 'Máy vi tính & Laptop';
+      else if (it.cat === 'man_hinh') catLabel = 'Màn hình hiển thị';
+      else if (it.cat === 'network_av') catLabel = 'Thiết bị mạng & Hội nghị';
+
+      sheet1Data.push([
+        idx + 1,
+        it.name || '',
+        it.model || '',
+        it.brand || '',
+        it.origin || '',
+        it.unit || 'Cái',
+        (it.price && it.price > 0) ? it.price : 0,
+        it.warranty || '12 tháng',
+        catLabel,
+        it.file || it.sourceFile || 'Mặc định hệ thống',
+        (it.specs && it.specs.length) || 0,
+        specsSummary
+      ]);
+    });
+
+    var ws1 = XLSX.utils.aoa_to_sheet(sheet1Data);
+    ws1['!cols'] = [
+      { wch: 6 },   // STT
+      { wch: 38 },  // Tên thiết bị
+      { wch: 18 },  // Model
+      { wch: 16 },  // Hãng SX
+      { wch: 14 },  // Xuất xứ
+      { wch: 10 },  // ĐVT
+      { wch: 20 },  // Đơn giá
+      { wch: 16 },  // Bảo hành
+      { wch: 24 },  // Phân loại
+      { wch: 28 },  // Tài liệu mẫu
+      { wch: 16 },  // Số chỉ tiêu
+      { wch: 75 }   // Chi tiết thông số
+    ];
+    XLSX.utils.book_append_sheet(wb, ws1, 'Danh Mục Thiết Bị');
+
+    // ── SHEET 2: CHI TIẾT TỪNG TIÊU CHÍ KỸ THUẬT (SPECS) ──
+    var sheet2Data = [];
+    sheet2Data.push([
+      'BẢNG BÓC TÁCH CHI TIẾT TIÊU CHÍ KỸ THUẬT CỦA TỪNG THIẾT BỊ',
+      '', '', '', '', '', ''
+    ]);
+    sheet2Data.push([]);
+    sheet2Data.push([
+      'STT Máy',
+      'Model',
+      'Tên thiết bị',
+      'Hãng sản xuất',
+      'STT Tiêu chí',
+      'Chỉ tiêu / Đặc tính kỹ thuật',
+      'Thông số chi tiết / Yêu cầu đáp ứng'
+    ]);
+
+    items.forEach(function (it, devIdx) {
+      if (it.specs && it.specs.length > 0) {
+        it.specs.forEach(function (s, spIdx) {
+          sheet2Data.push([
+            devIdx + 1,
+            it.model || '',
+            it.name || '',
+            it.brand || '',
+            spIdx + 1,
+            s.key || '',
+            s.value || ''
+          ]);
+        });
+      } else {
+        sheet2Data.push([
+          devIdx + 1,
+          it.model || '',
+          it.name || '',
+          it.brand || '',
+          1,
+          'Thông số chung',
+          'Đang cập nhật'
+        ]);
+      }
+    });
+
+    var ws2 = XLSX.utils.aoa_to_sheet(sheet2Data);
+    ws2['!cols'] = [
+      { wch: 10 },  // STT Máy
+      { wch: 18 },  // Model
+      { wch: 38 },  // Tên máy
+      { wch: 16 },  // Hãng
+      { wch: 12 },  // STT tiêu chí
+      { wch: 34 },  // Chỉ tiêu
+      { wch: 70 }   // Thông số chi tiết
+    ];
+    XLSX.utils.book_append_sheet(wb, ws2, 'Chi Tiết Specs');
+
+    var fileName = 'TatCa_ThietBi_HeThong_' + (new Date().toISOString().slice(0, 10).replace(/-/g, '')) + '.xlsx';
+    XLSX.writeFile(wb, fileName);
+
+    // Ghi nhận vào nhật ký Lịch Sử File
+    if (typeof lsAddEntry === 'function') {
+      lsAddEntry('dutoan', 'Xuất toàn bộ danh mục thiết bị (' + items.length + ' máy)', fileName, {
+        project: 'Quản trị hệ thống',
+        devices: items.length,
+        total: 'Xuất toàn bộ catalog'
+      });
+    }
+
+    toast('📊 Đã xuất thành công toàn bộ ' + items.length + ' thiết bị ra file Excel (' + fileName + ')!', 'ok');
+  } catch (err) {
+    console.error('Lỗi khi xuất Excel tất cả thiết bị:', err);
+    toast('❌ Lỗi khi xuất file Excel: ' + err.message, 'err');
   }
 }
 
