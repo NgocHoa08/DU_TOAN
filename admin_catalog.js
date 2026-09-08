@@ -4,7 +4,10 @@
    Hệ thống Quản Trị Danh Mục Sản Phẩm & Cấu Hình Thông Số Kỹ Thuật
 ═══════════════════════════════════════════════════════════════════ */
 
-var ADMIN_PASSWORD_HASH = '';
+var ADMIN_PASSWORD_VAL = '2208';
+var adminIsUnlocked = false;
+var adminActiveSubTab = 'catalog';
+var adminPendingSubTab = 'catalog';
 var LS_CUSTOM_CATALOG_KEY = 'dutoan_custom_catalog';
 var adminCurrentSearch = '';
 var adminCurrentBrand = '';
@@ -2994,89 +2997,119 @@ function patchCatalogClassifier() {
 
 /* ── HOOK VÀO SWITCH MAIN TAB ── */
 var _coreSwitchMainTab = typeof switchMainTab === 'function' ? switchMainTab : (typeof window !== 'undefined' ? window.switchMainTab : null);
-switchMainTab = function (tab) {
-  if (tab === 'admin') {
-    currentActiveTab = 'admin';
-    document.querySelectorAll('.mtab').forEach(function (el) { el.classList.remove('active'); });
-    var tabAdmin = document.getElementById('mtab-admin');
-    if (tabAdmin) tabAdmin.classList.add('active');
 
-    // Hide all other views
-    ['view-dutoan', 'view-bbbg', 'view-tddu', 'view-baogia', 'view-lichsu', 'view-huongdan'].forEach(function (vid) {
+switchMainTab = function (tab) {
+  if (tab === 'dutoan') {
+    // Khi thoát khỏi Quản trị về Làm Dự Toán -> tự động KHÓA phiên quản trị
+    adminIsUnlocked = false;
+    sessionStorage.removeItem('admin_authenticated');
+    currentActiveTab = 'dutoan';
+
+    document.querySelectorAll('.mtab').forEach(function (el) { el.classList.remove('active'); });
+    var tabD = document.getElementById('mtab-dutoan');
+    if (tabD) tabD.classList.add('active');
+
+    // Ẩn admin shell và toàn bộ các view nội bộ
+    var adminShell = document.getElementById('admin-shell');
+    if (adminShell) adminShell.style.display = 'none';
+
+    var av = document.getElementById('view-admin');
+    if (av) av.style.display = 'none';
+
+    ['view-bbbg', 'view-tddu', 'view-baogia', 'view-lichsu', 'view-huongdan'].forEach(function (vid) {
       var el = document.getElementById(vid);
       if (el) el.style.display = 'none';
     });
 
-    var adminView = document.getElementById('view-admin');
-    if (adminView) adminView.style.display = 'block';
+    var dtView = document.getElementById('view-dutoan');
+    if (dtView) dtView.style.display = 'block';
 
     var statusEl = document.getElementById('menubarActiveTabStatus');
-    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị Sản Phẩm (Admin)</b>';
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot"></span> Đang ở: <b>📊 Làm Dự Toán</b>';
 
     var quickBtn = document.getElementById('btnMenuQuickAction');
-    if (quickBtn) quickBtn.innerHTML = '💾 Lưu Thay Đổi Sản Phẩm';
+    if (quickBtn) quickBtn.innerHTML = '⬇️ Xuất File Dự Toán (.xlsx)';
 
-    checkAndRenderAdminView();
     try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { }
     return;
   }
 
-  // If switching away from admin, hide admin view
-  var av = document.getElementById('view-admin');
-  if (av) av.style.display = 'none';
-  var tabAdm = document.getElementById('mtab-admin');
-  if (tabAdm) tabAdm.classList.remove('active');
-
-  if (typeof _coreSwitchMainTab === 'function') {
-    _coreSwitchMainTab(tab);
-  }
+  // Vào Quản Trị Hệ Thống hoặc các phân hệ nội bộ (baogia, tddu, bbbg, lichsu, huongdan)
+  var targetSub = (tab === 'admin' || !tab) ? 'catalog' : tab;
+  openAdminSection(targetSub);
 };
 if (typeof window !== 'undefined') {
   window.switchMainTab = switchMainTab;
 }
 
-/* ── KIỂM TRA ĐĂNG NHẬP ADMIN ── */
 function isAdminLoggedIn() {
-  return sessionStorage.getItem('admin_authenticated') === 'true';
+  return adminIsUnlocked === true;
 }
 
-function checkAndRenderAdminView() {
-  var container = document.getElementById('view-admin');
-  if (!container) return;
+/* ── MỞ PHÂN HỆ QUẢN TRỊ (YÊU CẦU MẬT KHẨU 2208) ── */
+function openAdminSection(targetSubTab) {
+  currentActiveTab = 'admin';
+  document.querySelectorAll('.mtab').forEach(function (el) { el.classList.remove('active'); });
+  var tabAdmin = document.getElementById('mtab-admin');
+  if (tabAdmin) tabAdmin.classList.add('active');
 
-  if (!isAdminLoggedIn()) {
-    renderAdminLoginScreen(container);
+  // Ẩn view Làm Dự Toán
+  var dtView = document.getElementById('view-dutoan');
+  if (dtView) dtView.style.display = 'none';
+
+  var adminShell = document.getElementById('admin-shell');
+  if (adminShell) adminShell.style.display = 'block';
+
+  if (!adminIsUnlocked) {
+    // Chưa mở khóa -> Luôn hiện màn hình nhập mật khẩu (không hiện mật khẩu hay gợi ý)
+    adminPendingSubTab = targetSubTab || 'catalog';
+    var lockScreen = document.getElementById('admin-lock-screen');
+    if (lockScreen) lockScreen.style.display = 'block';
+    var workspace = document.getElementById('admin-workspace');
+    if (workspace) workspace.style.display = 'none';
+
+    // Ẩn các view nội dung khác khi đang khóa
+    ['view-bbbg', 'view-tddu', 'view-baogia', 'view-lichsu', 'view-huongdan'].forEach(function (vid) {
+      var el = document.getElementById(vid);
+      if (el) el.style.display = 'none';
+    });
+
+    var statusEl = document.getElementById('menubarActiveTabStatus');
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>🔒 Xác Thực Quản Trị Hệ Thống</b>';
+
+    var quickBtn = document.getElementById('btnMenuQuickAction');
+    if (quickBtn) quickBtn.innerHTML = '🔒 Nhập Mật Khẩu Admin';
+
+    setTimeout(function () {
+      var inp = document.getElementById('adminPagePassInput');
+      if (inp) {
+        inp.value = '';
+        inp.focus();
+      }
+    }, 50);
   } else {
-    renderAdminDashboard(container);
+    // Đã mở khóa -> Vào thẳng workspace và kích hoạt tab tương ứng
+    var lockScreen = document.getElementById('admin-lock-screen');
+    if (lockScreen) lockScreen.style.display = 'none';
+    var workspace = document.getElementById('admin-workspace');
+    if (workspace) workspace.style.display = 'block';
+
+    switchAdminSubTab(targetSubTab || adminActiveSubTab || 'catalog');
   }
 }
 
-/* ── MÀN HÌNH ĐĂNG NHẬP ADMIN ── */
-function renderAdminLoginScreen(container) {
-  container.innerHTML =
-    '<div style="max-width:480px;margin:50px auto;padding:36px 32px;background:var(--card);border:1.5px solid var(--bdr2);border-radius:18px;box-shadow:0 12px 36px rgba(0,0,0,0.08);text-align:center">' +
-    '  <div style="font-size:54px;margin-bottom:12px">🔒</div>' +
-    '  <h2 style="font-size:20px;font-weight:900;color:var(--t1);margin-bottom:6px">XÁC THỰC QUẢN TRỊ VIÊN</h2>' +
-    '  <p style="font-size:13px;color:var(--t2);line-height:1.5;margin-bottom:24px">Vui lòng nhập mật khẩu quản trị để truy cập trang quản lý & chỉnh sửa danh mục sản phẩm và thông số kỹ thuật.</p>' +
-    '  <form onsubmit="event.preventDefault(); submitAdminPassword();">' +
-    '    <div style="margin-bottom:16px;text-align:left">' +
-    '      <label style="display:block;font-size:12px;font-weight:700;color:var(--t2);margin-bottom:6px">MẬT KHẨU ADMIN</label>' +
-    '      <input type="password" id="adminPagePassInput" class="form-control" style="width:100%;height:44px;padding:0 14px;border-radius:10px;border:1.5px solid var(--bdr2);background:var(--bg);color:var(--t1);font-size:15px;letter-spacing:2px" placeholder="" autofocus autocomplete="current-password" />' +
-    '    </div>' +
-    '    <button type="submit" class="btn btn-p" style="width:100%;height:44px;font-size:14px;font-weight:800;border-radius:10px;margin-bottom:14px">🔓 ĐĂNG NHẬP ADMIN</button>' +
-    '    <div style="font-size:12px;color:var(--t3);font-style:italic"> <b style="color:var(--foc)"></b></div>' +
-    '  </form>' +
-    '</div>';
-}
-
+/* ── XÁC THỰC MẬT KHẨU ADMIN ── */
 function submitAdminPassword() {
   var inp = document.getElementById('adminPagePassInput');
   if (!inp) return;
   var val = inp.value.trim();
-  if (val === ADMIN_PASSWORD_HASH) {
+  if (val === '2208' || val === ADMIN_PASSWORD_VAL) {
+    adminIsUnlocked = true;
     sessionStorage.setItem('admin_authenticated', 'true');
-    toast('🔓 Đăng nhập Admin thành công!', 'ok');
-    checkAndRenderAdminView();
+    toast('🔓 Mở khóa Quản trị thành công!', 'ok');
+    var target = adminPendingSubTab || 'catalog';
+    adminPendingSubTab = null;
+    openAdminSection(target);
   } else {
     toast('❌ Mật khẩu không chính xác! Vui lòng thử lại.', 'err');
     inp.value = '';
@@ -3085,14 +3118,135 @@ function submitAdminPassword() {
   }
 }
 
+/* ── KHÓA & ĐĂNG XUẤT ADMIN ── */
 function adminLogout() {
+  adminIsUnlocked = false;
   sessionStorage.removeItem('admin_authenticated');
-  toast('🔒 Đã đăng xuất khỏi phiên Quản trị!', 'ok');
-  checkAndRenderAdminView();
+  toast('🔒 Đã khóa phiên Quản trị hệ thống!', 'ok');
+  switchMainTab('dutoan');
+}
+
+/* ── CHUYỂN SUB-TAB BÊN TRONG QUẢN TRỊ ── */
+function switchAdminSubTab(subTab) {
+  adminActiveSubTab = subTab;
+
+  // Cập nhật nút active trên thanh subtab
+  document.querySelectorAll('.admin-subtab-btn').forEach(function (btn) {
+    btn.classList.remove('active');
+  });
+  var activeBtn = document.getElementById('btn-admin-sub-' + subTab);
+  if (activeBtn) activeBtn.classList.add('active');
+
+  // Ẩn tất cả các subviews
+  var catView = document.getElementById('admin-subview-catalog');
+  if (catView) catView.style.display = 'none';
+  ['view-baogia', 'view-tddu', 'view-bbbg', 'view-lichsu', 'view-huongdan'].forEach(function (vid) {
+    var el = document.getElementById(vid);
+    if (el) el.style.display = 'none';
+  });
+
+  var statusEl = document.getElementById('menubarActiveTabStatus');
+  var quickBtn = document.getElementById('btnMenuQuickAction');
+
+  if (subTab === 'catalog') {
+    if (catView) catView.style.display = 'block';
+    renderAdminDashboard(catView);
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị / Danh Mục Sản Phẩm &amp; Specs</b>';
+    if (quickBtn) quickBtn.innerHTML = '💾 Lưu Thay Đổi Sản Phẩm';
+  } else if (subTab === 'baogia') {
+    var bgView = document.getElementById('view-baogia');
+    if (bgView) bgView.style.display = 'block';
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị / Báo Giá Thuận Phát</b>';
+    if (quickBtn) quickBtn.innerHTML = '🧾 Xuất File Excel Báo Giá';
+    if (typeof bgItems !== 'undefined' && (!bgItems || bgItems.length === 0)) {
+      if (typeof BAOGIA_THUANPHAT_ITEMS !== 'undefined') {
+        bgItems = JSON.parse(JSON.stringify(BAOGIA_THUANPHAT_ITEMS));
+      }
+    }
+    if (typeof renderBaogiaForm === 'function') {
+      renderBaogiaForm();
+    }
+  } else if (subTab === 'tddu') {
+    var tdView = document.getElementById('view-tddu');
+    if (tdView) tdView.style.display = 'block';
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị / Tuyên Bố Đáp Ứng</b>';
+    if (quickBtn) quickBtn.innerHTML = '✅ Xuất File Excel Tuyên Bố';
+    if (typeof renderTdduForm === 'function') {
+      renderTdduForm();
+    }
+  } else if (subTab === 'bbbg') {
+    var bbView = document.getElementById('view-bbbg');
+    if (bbView) bbView.style.display = 'block';
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị / Biên Bản Bàn Giao</b>';
+    if (quickBtn) quickBtn.innerHTML = '📝 Xuất File Word BBBG';
+    if (typeof renderHandoverForm === 'function') {
+      renderHandoverForm();
+    }
+  } else if (subTab === 'lichsu') {
+    var lsView = document.getElementById('view-lichsu');
+    if (lsView) lsView.style.display = 'block';
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị / Lịch Sử File</b>';
+    if (quickBtn) quickBtn.innerHTML = '💾 Xuất Sao Lưu JSON';
+    if (typeof renderLichSu === 'function') {
+      renderLichSu();
+    }
+  } else if (subTab === 'huongdan') {
+    var hdView = document.getElementById('view-huongdan');
+    if (hdView) hdView.style.display = 'block';
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị / Hướng Dẫn Sử Dụng</b>';
+    if (quickBtn) quickBtn.innerHTML = '📊 Về Làm Dự Toán';
+  }
+
+  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { }
+}
+
+/* ── HOOK VÀO MENU QUICK EXPORT ── */
+var _coreMenuQuickExport = typeof menuQuickExport === 'function' ? menuQuickExport : (typeof window !== 'undefined' ? window.menuQuickExport : null);
+menuQuickExport = function () {
+  if (currentActiveTab === 'admin') {
+    if (adminActiveSubTab === 'catalog') {
+      adminSaveCatalogChanges();
+    } else if (adminActiveSubTab === 'baogia') {
+      if (typeof exportBaogiaExcel === 'function') exportBaogiaExcel();
+    } else if (adminActiveSubTab === 'tddu') {
+      if (typeof exportComplianceExcel === 'function') exportComplianceExcel();
+    } else if (adminActiveSubTab === 'bbbg') {
+      if (typeof exportHandoverWord === 'function') exportHandoverWord();
+    } else if (adminActiveSubTab === 'lichsu') {
+      if (typeof exportLichSuJson === 'function') exportLichSuJson();
+    } else if (adminActiveSubTab === 'huongdan') {
+      switchMainTab('dutoan');
+    }
+    return;
+  }
+  if (typeof _coreMenuQuickExport === 'function') {
+    _coreMenuQuickExport();
+  }
+};
+if (typeof window !== 'undefined') {
+  window.menuQuickExport = menuQuickExport;
+}
+
+function checkAndRenderAdminView() {
+  var targetSub = adminActiveSubTab || 'catalog';
+  openAdminSection(targetSub);
+}
+
+if (typeof window !== 'undefined') {
+  window.isAdminLoggedIn = isAdminLoggedIn;
+  window.switchAdminSubTab = switchAdminSubTab;
+  window.submitAdminPassword = submitAdminPassword;
+  window.adminLogout = adminLogout;
+  window.openAdminSection = openAdminSection;
+  window.checkAndRenderAdminView = checkAndRenderAdminView;
 }
 
 /* ── BẢNG ĐIỀU KHIỂN ADMIN QUẢN LÝ SẢN PHẨM ── */
 function renderAdminDashboard(container) {
+  if (!container) {
+    container = document.getElementById('admin-subview-catalog') || document.getElementById('view-admin');
+  }
+  if (!container) return;
   var wordExcelCount = CATALOG_ITEMS.filter(function (it) {
     return it.isFromMauMay || it.file || it.sourceFile;
   }).length;

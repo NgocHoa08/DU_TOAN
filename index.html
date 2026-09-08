@@ -601,6 +601,48 @@
       border: 1px solid #bae6fd;
       margin-left: 6px;
     }
+  
+    /* ── ADMIN SUBTAB STYLES ── */
+    .admin-subtab-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      background: var(--card);
+      padding: 10px;
+      border-radius: 12px;
+      border: 1.5px solid var(--bdr2);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+    }
+
+    .admin-subtab-btn {
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 8px;
+      border: 1.5px solid var(--bdr2);
+      background: var(--bg);
+      color: var(--t2);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .admin-subtab-btn:hover {
+      background: var(--card);
+      color: var(--t1);
+      border-color: var(--foc);
+    }
+
+    .admin-subtab-btn.active {
+      background: var(--p) !important;
+      color: #ffffff !important;
+      border-color: var(--p) !important;
+      box-shadow: 0 2px 8px rgba(30, 64, 175, 0.25);
+    }
+
   </style>
 </head>
 
@@ -626,31 +668,9 @@
           <span class="nav-icon">📊</span>
           <span class="nav-label">1. Làm Dự Toán</span>
         </button>
-        <button class="mtab" id="mtab-baogia" onclick="switchMainTab('baogia')"
-          title="Lập Báo Giá Chuẩn Mẫu Thuận Phát (BGThuanPhat.xlsx)">
-          <span class="nav-icon">🧾</span>
-          <span class="nav-label">2. Báo Giá Thuận Phát</span>
-        </button>
-        <button class="mtab" id="mtab-tddu" onclick="switchMainTab('tddu')" title="Lập Bảng Tuyên Bố Đáp Ứng">
-          <span class="nav-icon">✅</span>
-          <span class="nav-label">3. Tuyên Bố Đáp Ứng</span>
-        </button>
-        <button class="mtab" id="mtab-bbbg" onclick="switchMainTab('bbbg')" title="Lập Biên Bản Bàn Giao">
-          <span class="nav-icon">📝</span>
-          <span class="nav-label">4. Biên Bản Bàn Giao</span>
-        </button>
-        <button class="mtab" id="mtab-lichsu" onclick="switchMainTab('lichsu')" title="Xem lịch sử các file đã xuất">
-          <span class="nav-icon">🕐</span>
-          <span class="nav-label">5. Lịch Sử File</span>
-          <span id="lsBadgeTab" class="nav-badge" style="display:none">0</span>
-        </button>
-        <button class="mtab" id="mtab-huongdan" onclick="switchMainTab('huongdan')" title="Hướng dẫn sử dụng toàn diện">
-          <span class="nav-icon">📖</span>
-          <span class="nav-label">6. Hướng Dẫn</span>
-        </button>
-        <button class="mtab" id="mtab-admin" onclick="switchMainTab('admin')" title="Quản trị hệ thống">
+        <button class="mtab" id="mtab-admin" onclick="switchMainTab('admin')" title="Quản trị hệ thống (Yêu cầu mật khẩu)">
           <span class="nav-icon">⚙️</span>
-          <span class="nav-label">7. Quản Trị Hệ Thống</span>
+          <span class="nav-label">2. Quản Trị Hệ Thống</span>
         </button>
       </nav>
 
@@ -961,6 +981,58 @@
         </div> <!-- end view-dutoan -->
 
         <!-- ══════════════════ VIEW BBBG ══════════════════ -->
+        
+        <!-- ═══════════════ QUẢN TRỊ HỆ THỐNG (ADMIN SHELL) ═══════════════ -->
+        <div id="admin-shell" style="display:none">
+          <!-- ADMIN LOCK SCREEN -->
+          <div id="admin-lock-screen" style="display:block">
+            <div style="max-width:480px;margin:50px auto;padding:36px 32px;background:var(--card);border:1.5px solid var(--bdr2);border-radius:18px;box-shadow:0 12px 36px rgba(0,0,0,0.08);text-align:center">
+              <div style="font-size:54px;margin-bottom:12px">🔒</div>
+              <h2 style="font-size:20px;font-weight:900;color:var(--t1);margin-bottom:6px">XÁC THỰC QUẢN TRỊ HỆ THỐNG</h2>
+              <p style="font-size:13px;color:var(--t2);line-height:1.5;margin-bottom:24px">Khu vực quản trị nội bộ hệ thống. Vui lòng nhập mật khẩu quản trị để tiếp tục.</p>
+              <form onsubmit="event.preventDefault(); submitAdminPassword();">
+                <div style="margin-bottom:16px;text-align:left">
+                  <label style="display:block;font-size:12px;font-weight:700;color:var(--t2);margin-bottom:6px">MẬT KHẨU QUẢN TRỊ</label>
+                  <input type="password" id="adminPagePassInput" class="form-control" style="width:100%;height:44px;padding:0 14px;border-radius:10px;border:1.5px solid var(--bdr2);background:var(--bg);color:var(--t1);font-size:16px;text-align:center;letter-spacing:4px" placeholder="Nhập mật khẩu..." autofocus autocomplete="off" />
+                </div>
+                <button type="submit" class="btn btn-p" style="width:100%;height:44px;font-size:14px;font-weight:800;border-radius:10px;margin-bottom:12px">🔓 MỞ KHÓA QUẢN TRỊ</button>
+                <button type="button" class="btn btn-o" onclick="switchMainTab('dutoan')" style="width:100%;height:38px;font-size:13px;border-radius:8px;font-weight:600">◀ Quay lại Làm Dự Toán</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- ADMIN WORKSPACE (ACTIVE KHI ĐÃ NHẬP MẬT KHẨU) -->
+          <div id="admin-workspace" style="display:none">
+            <div class="admin-page-wrap" style="padding:16px 20px;max-width:1400px;margin:0 auto">
+              <!-- ADMIN HEADER BAR -->
+              <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;padding-bottom:14px;border-bottom:1.5px solid var(--bdr2)">
+                <div>
+                  <div style="font-size:22px;font-weight:900;color:var(--t1);letter-spacing:0.5px">⚙️ TRUNG TÂM QUẢN TRỊ HỆ THỐNG</div>
+                  <div style="font-size:13px;color:var(--t2);margin-top:3px">
+                    Khu vực quản lý tập trung: Báo giá Thuận Phát, Tuyên bố đáp ứng, Biên bản bàn giao, Lịch sử, Hướng dẫn &amp; Danh mục sản phẩm.
+                  </div>
+                </div>
+                <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+                  <button class="btn btn-o btn-sm" onclick="adminLogout()" style="color:#ef4444;border-color:#fca5a5;font-weight:700" title="Khóa phiên quản trị và quay về Làm Dự Toán">🔒 Khóa &amp; Thoát Quản Trị</button>
+                </div>
+              </div>
+
+              <!-- ADMIN SUB-TABS NAVIGATION BAR -->
+              <div class="admin-subtab-bar">
+                <button class="admin-subtab-btn active" id="btn-admin-sub-catalog" onclick="switchAdminSubTab('catalog')">⚙️ 1. Danh Mục Sản Phẩm &amp; Specs</button>
+                <button class="admin-subtab-btn" id="btn-admin-sub-baogia" onclick="switchAdminSubTab('baogia')">🧾 2. Báo Giá Thuận Phát</button>
+                <button class="admin-subtab-btn" id="btn-admin-sub-tddu" onclick="switchAdminSubTab('tddu')">✅ 3. Tuyên Bố Đáp Ứng</button>
+                <button class="admin-subtab-btn" id="btn-admin-sub-bbbg" onclick="switchAdminSubTab('bbbg')">📝 4. Biên Bản Bàn Giao</button>
+                <button class="admin-subtab-btn" id="btn-admin-sub-lichsu" onclick="switchAdminSubTab('lichsu')">🕐 5. Lịch Sử File <span id="lsBadgeTab" class="nav-badge" style="display:none">0</span></button>
+                <button class="admin-subtab-btn" id="btn-admin-sub-huongdan" onclick="switchAdminSubTab('huongdan')">📖 6. Hướng Dẫn Sử Dụng</button>
+              </div>
+
+              <!-- SUBVIEW: 1. DANH MỤC SẢN PHẨM & SPECS -->
+              <div id="admin-subview-catalog" style="display:block"></div>
+            </div>
+          </div>
+        </div>
+
         <div id="view-bbbg" style="display:none">
           <div class="card" style="margin-top:0">
             <div class="ch">
