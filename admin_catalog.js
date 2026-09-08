@@ -3383,170 +3383,261 @@ function adminResetToDefault() {
   }
 }
 
-/* ── XUẤT TẤT CẢ THIẾT BỊ RA FILE EXCEL (.XLSX) ── */
+/* ── XUẤT TẤT CẢ THIẾT BỊ THEO CHUẨN MẪU FILE DỰ TOÁN (SHEET TỔNG HỢP + TỪNG SHEET MÁY) ── */
 function adminExportAllDevicesExcel() {
   if (typeof XLSX === 'undefined') {
     toast('❌ Thư viện XLSX chưa sẵn sàng, vui lòng thử lại sau giây lát!', 'err');
     return;
   }
 
-  var items = CATALOG_ITEMS || [];
-  if (items.length === 0) {
+  var allItems = CATALOG_ITEMS || [];
+  if (allItems.length === 0) {
     toast('⚠️ Danh mục hiện không có thiết bị nào để xuất!', 'warn');
     return;
   }
 
-  toast('⏳ Đang tổng hợp dữ liệu ' + items.length + ' thiết bị để xuất file Excel...', 'info');
+  toast('⏳ Đang tạo file Excel Dự Toán chuẩn cho toàn bộ ' + allItems.length + ' thiết bị...', 'info');
 
   try {
     var wb = XLSX.utils.book_new();
 
-    // ── SHEET 1: DANH MỤC THIẾT BỊ TỔNG HỢP ──
-    var sheet1Data = [];
-    sheet1Data.push([
-      'BẢNG TỔNG HỢP TOÀN BỘ THIẾT BỊ & THÔNG SỐ KỸ THUẬT HỆ THỐNG',
-      '', '', '', '', '', '', '', '', '', '', ''
-    ]);
-    sheet1Data.push([
-      'Ngày xuất file: ' + (new Date().toLocaleDateString('vi-VN')) + ' ' + (new Date().toLocaleTimeString('vi-VN')) + ' | Tổng cộng: ' + items.length + ' dòng thiết bị',
-      '', '', '', '', '', '', '', '', '', '', ''
-    ]);
-    sheet1Data.push([]); // dòng trống
-    sheet1Data.push([
-      'STT',
-      'Tên thiết bị',
-      'Model',
-      'Hãng sản xuất',
-      'Xuất xứ',
-      'Đơn vị tính',
-      'Đơn giá dự toán (VNĐ)',
-      'Thời gian bảo hành',
-      'Phân loại danh mục',
-      'Tài liệu mẫu / Nguồn',
-      'Số chỉ tiêu specs',
-      'Chi tiết toàn bộ thông số kỹ thuật'
-    ]);
+    function adminMkB(c) {
+      var b = { style: 'thin', color: { rgb: c || '000000' } };
+      return { top: b, bottom: b, left: b, right: b };
+    }
 
-    items.forEach(function (it, idx) {
-      var specsSummary = '';
-      if (it.specs && it.specs.length > 0) {
-        specsSummary = it.specs.map(function (s, sIdx) {
-          return (sIdx + 1) + '. ' + (s.key || '') + ': ' + (s.value || '');
-        }).join('\n');
+    function adminSetCell(ws, r, c, val, style) {
+      var ref = XLSX.utils.encode_cell({ r: r, c: c });
+      var t = typeof val === 'number' ? 'n' : 's';
+      ws[ref] = { t: t, v: val, s: style };
+    }
+
+    // STYLES CHUẨN DỰ TOÁN (ĐỒNG BỘ 100% VỚI MẪU DỰ TOÁN)
+    var STITLE = { font: { bold: true, name: 'Times New Roman', sz: 14, color: { rgb: '000000' } }, alignment: { horizontal: 'center', vertical: 'center' } };
+    var SORG = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, alignment: { horizontal: 'left', vertical: 'center' } };
+    var SDATE = { font: { italic: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, alignment: { horizontal: 'right', vertical: 'center' } };
+    var SPJ_LEFT = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, alignment: { horizontal: 'left', vertical: 'center', wrapText: true } };
+    var SGP_LEFT = { font: { italic: true, bold: true, name: 'Times New Roman', sz: 10.5, color: { rgb: '333333' } }, alignment: { horizontal: 'left', vertical: 'center', wrapText: true } };
+
+    var SH = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, fill: { patternType: 'solid', fgColor: { rgb: 'D9E1F2' } }, alignment: { horizontal: 'center', vertical: 'center', wrapText: true }, border: adminMkB('000000') };
+    var SAC = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, alignment: { horizontal: 'center', vertical: 'center', wrapText: true }, border: adminMkB('000000') };
+    var SD = { font: { name: 'Times New Roman', sz: 11 }, border: adminMkB('000000'), alignment: { vertical: 'center', wrapText: true } };
+    var SC = { font: { name: 'Times New Roman', sz: 11 }, border: adminMkB('000000'), alignment: { horizontal: 'center', vertical: 'center', wrapText: true } };
+    var SN = { font: { name: 'Times New Roman', sz: 11 }, border: adminMkB('000000'), alignment: { horizontal: 'right', vertical: 'center' }, numFmt: '#,##0' };
+    var SNT = { font: { bold: true, name: 'Times New Roman', sz: 11 }, border: adminMkB('000000'), alignment: { horizontal: 'right', vertical: 'center' }, numFmt: '#,##0' };
+
+    // ══════════════════════════════════════════════════════
+    // 1. SHEET "Tổng hợp" (BẢNG TỔNG HỢP DỰ TOÁN THIẾT BỊ)
+    // ══════════════════════════════════════════════════════
+    var wsTH = {};
+    var mgTH = [];
+    wsTH['!cols'] = [{ wch: 6 }, { wch: 48 }, { wch: 22 }, { wch: 18 }, { wch: 18 }, { wch: 10 }, { wch: 8 }, { wch: 20 }, { wch: 20 }];
+    wsTH['!rows'] = [];
+    var r = 0;
+
+    var orgEl = document.getElementById('orgN');
+    var orgVal = (orgEl && orgEl.value ? orgEl.value.trim() : '') || 'CÔNG TY TNHH THƯƠNG MẠI ĐẦU TƯ VÀ SẢN XUẤT THUẬN PHÁT';
+    var pjEl = document.getElementById('pjN');
+    var pjVal = (pjEl && pjEl.value ? pjEl.value.trim() : '') || 'BẢNG DỰ TOÁN TOÀN BỘ DANH MỤC THIẾT BỊ HỆ THỐNG';
+    var now = new Date();
+    var dtFormatted = 'Ngày ' + now.getDate() + ' tháng ' + (now.getMonth() + 1) + ' năm ' + now.getFullYear();
+
+    // Hàng 1: ĐƠN VỊ LẬP & NGÀY LẬP
+    adminSetCell(wsTH, r, 0, 'ĐƠN VỊ LẬP: ' + orgVal.toUpperCase(), SORG);
+    for (var c = 1; c <= 5; c++) adminSetCell(wsTH, r, c, '', SORG);
+    mgTH.push({ s: { r: r, c: 0 }, e: { r: r, c: 5 } });
+
+    adminSetCell(wsTH, r, 6, 'NGÀY LẬP: ' + dtFormatted, SDATE);
+    for (var c = 7; c <= 8; c++) adminSetCell(wsTH, r, c, '', SDATE);
+    mgTH.push({ s: { r: r, c: 6 }, e: { r: r, c: 8 } });
+    wsTH['!rows'][r] = { hpt: 22 };
+    r++;
+
+    // Hàng 2: DỰ ÁN / GÓI THẦU
+    adminSetCell(wsTH, r, 0, 'DỰ ÁN / GÓI THẦU: ' + pjVal, SPJ_LEFT);
+    for (var c = 1; c <= 6; c++) adminSetCell(wsTH, r, c, '', SPJ_LEFT);
+    mgTH.push({ s: { r: r, c: 0 }, e: { r: r, c: 6 } });
+    wsTH['!rows'][r] = { hpt: 22 };
+    r++;
+
+    // Hàng 3: NHÓM DANH MỤC
+    adminSetCell(wsTH, r, 0, 'NHÓM DANH MỤC: Toàn bộ ' + allItems.length + ' thiết bị đã chuẩn hóa trong cơ sở dữ liệu', SGP_LEFT);
+    for (var c = 1; c <= 6; c++) adminSetCell(wsTH, r, c, '', SGP_LEFT);
+    mgTH.push({ s: { r: r, c: 0 }, e: { r: r, c: 6 } });
+    wsTH['!rows'][r] = { hpt: 20 };
+    r++;
+
+    // Spacing
+    wsTH['!rows'][r] = { hpt: 8 };
+    r++;
+
+    // Hàng 4: Tiêu đề
+    adminSetCell(wsTH, r, 0, 'BẢNG TỔNG HỢP DỰ TOÁN THIẾT BỊ', STITLE);
+    for (var c = 1; c <= 8; c++) adminSetCell(wsTH, r, c, '', STITLE);
+    mgTH.push({ s: { r: r, c: 0 }, e: { r: r, c: 8 } });
+    wsTH['!rows'][r] = { hpt: 28 };
+    r++;
+
+    // Spacing
+    wsTH['!rows'][r] = { hpt: 8 };
+    r++;
+
+    // Header bảng
+    ['STT', 'Danh mục', 'Model', 'Hãng', 'Xuất xứ', 'ĐVT', 'SL', 'Đơn giá (Đã gồm VAT)', 'Thành tiền'].forEach(function (v, colIdx) {
+      adminSetCell(wsTH, r, colIdx, v, SH);
+    });
+    wsTH['!rows'][r] = { hpt: 32 };
+    r++;
+
+    var dataStartRow = r;
+    allItems.forEach(function (d, i) {
+      var qty = d.qty || 1;
+      var price = Number(d.price) || 0;
+      var t = qty * price;
+
+      adminSetCell(wsTH, r, 0, i + 1, SC);
+      adminSetCell(wsTH, r, 1, d.name || '', SD);
+      adminSetCell(wsTH, r, 2, d.model || '', SC);
+      adminSetCell(wsTH, r, 3, d.brand || '', SC);
+      adminSetCell(wsTH, r, 4, d.origin || '', SC);
+      adminSetCell(wsTH, r, 5, d.unit || 'Máy', SC);
+      adminSetCell(wsTH, r, 6, qty, SC);
+
+      var gR = XLSX.utils.encode_cell({ r: r, c: 6 });
+      var hR = XLSX.utils.encode_cell({ r: r, c: 7 });
+      var iR = XLSX.utils.encode_cell({ r: r, c: 8 });
+
+      if (price > 0) {
+        wsTH[hR] = { t: 'n', v: price, s: SN };
+        wsTH[iR] = { t: 'n', f: gR + '*' + hR, v: t, s: SN };
+      } else {
+        wsTH[hR] = { t: 's', v: '', s: SN };
+        wsTH[iR] = { t: 's', f: 'IF(ISNUMBER(' + hR + '),' + gR + '*' + hR + ',"")', v: '', s: SN };
       }
 
-      var catLabel = it.cat || '';
-      if (it.cat === 'may_scan') catLabel = 'Máy quét (Scanner)';
-      else if (it.cat === 'may_in') catLabel = 'Máy in Laser';
-      else if (it.cat === 'photocopy') catLabel = 'Máy Photocopy';
-      else if (it.cat === 'may_tinh') catLabel = 'Máy vi tính & Laptop';
-      else if (it.cat === 'man_hinh') catLabel = 'Màn hình hiển thị';
-      else if (it.cat === 'network_av') catLabel = 'Thiết bị mạng & Hội nghị';
+      // HYPERLINK nhảy trực tiếp sang Sheet chi tiết số '1', '2', '3'...
+      var targetSheet = String(i + 1);
+      var sttRef = XLSX.utils.encode_cell({ r: r, c: 0 });
+      var nameRef = XLSX.utils.encode_cell({ r: r, c: 1 });
+      if (wsTH[sttRef]) wsTH[sttRef].l = { Target: "#'" + targetSheet + "'!A1" };
+      if (wsTH[nameRef]) wsTH[nameRef].l = { Target: "#'" + targetSheet + "'!A1" };
 
-      sheet1Data.push([
-        idx + 1,
-        it.name || '',
-        it.model || '',
-        it.brand || '',
-        it.origin || '',
-        it.unit || 'Cái',
-        (it.price && it.price > 0) ? it.price : 0,
-        it.warranty || '12 tháng',
-        catLabel,
-        it.file || it.sourceFile || 'Mặc định hệ thống',
-        (it.specs && it.specs.length) || 0,
-        specsSummary
-      ]);
+      var nameLines = Math.ceil(String(d.name || '').length / 42);
+      wsTH['!rows'][r] = { hpt: Math.max(24, nameLines * 18 + 6) };
+      r++;
     });
 
-    var ws1 = XLSX.utils.aoa_to_sheet(sheet1Data);
-    ws1['!cols'] = [
-      { wch: 6 },   // STT
-      { wch: 38 },  // Tên thiết bị
-      { wch: 18 },  // Model
-      { wch: 16 },  // Hãng SX
-      { wch: 14 },  // Xuất xứ
-      { wch: 10 },  // ĐVT
-      { wch: 20 },  // Đơn giá
-      { wch: 16 },  // Bảo hành
-      { wch: 24 },  // Phân loại
-      { wch: 28 },  // Tài liệu mẫu
-      { wch: 16 },  // Số chỉ tiêu
-      { wch: 75 }   // Chi tiết thông số
-    ];
-    XLSX.utils.book_append_sheet(wb, ws1, 'Danh Mục Thiết Bị');
+    // Dòng TỔNG CỘNG
+    var dataEndRow = r - 1;
+    adminSetCell(wsTH, r, 0, '', SAC);
+    adminSetCell(wsTH, r, 1, 'TỔNG CỘNG', SAC);
+    for (var c = 2; c <= 7; c++) adminSetCell(wsTH, r, c, '', SAC);
+    var sumFormula = 'SUM(I' + (dataStartRow + 1) + ':I' + (dataEndRow + 1) + ')';
+    var totalVal = allItems.reduce(function (s, d) { return s + (d.qty || 1) * (d.price || 0); }, 0);
+    var sumRef = XLSX.utils.encode_cell({ r: r, c: 8 });
+    wsTH[sumRef] = { t: 'n', f: sumFormula, v: totalVal, s: SNT };
+    wsTH['!rows'][r] = { hpt: 26 };
+    r++;
 
-    // ── SHEET 2: CHI TIẾT TỪNG TIÊU CHÍ KỸ THUẬT (SPECS) ──
-    var sheet2Data = [];
-    sheet2Data.push([
-      'BẢNG BÓC TÁCH CHI TIẾT TIÊU CHÍ KỸ THUẬT CỦA TỪNG THIẾT BỊ',
-      '', '', '', '', '', ''
-    ]);
-    sheet2Data.push([]);
-    sheet2Data.push([
-      'STT Máy',
-      'Model',
-      'Tên thiết bị',
-      'Hãng sản xuất',
-      'STT Tiêu chí',
-      'Chỉ tiêu / Đặc tính kỹ thuật',
-      'Thông số chi tiết / Yêu cầu đáp ứng'
-    ]);
+    wsTH['!merges'] = mgTH;
+    wsTH['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: r - 1, c: 8 } });
+    XLSX.utils.book_append_sheet(wb, wsTH, 'Tổng hợp');
 
-    items.forEach(function (it, devIdx) {
-      if (it.specs && it.specs.length > 0) {
-        it.specs.forEach(function (s, spIdx) {
-          sheet2Data.push([
-            devIdx + 1,
-            it.model || '',
-            it.name || '',
-            it.brand || '',
-            spIdx + 1,
-            s.key || '',
-            s.value || ''
-          ]);
+    // ══════════════════════════════════════════════════════
+    // 2. CÁC SHEET CHI TIẾT "1", "2", "3"... CHO TỪNG MÁY
+    // ══════════════════════════════════════════════════════
+    var SINFO = { font: { italic: true, name: 'Times New Roman', sz: 9.5, color: { rgb: '555555' } }, alignment: { vertical: 'center' } };
+    var SH_SPEC = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, fill: { patternType: 'solid', fgColor: { rgb: 'D9E1F2' } }, alignment: { horizontal: 'center', vertical: 'center' }, border: adminMkB('000000') };
+    var SHL = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '1F3864' } }, fill: { patternType: 'solid', fgColor: { rgb: 'D9E1F2' } }, alignment: { vertical: 'center', wrapText: true }, border: adminMkB('000000') };
+    var SK = { font: { bold: true, name: 'Times New Roman', sz: 11 }, border: adminMkB('000000'), alignment: { vertical: 'center', wrapText: true } };
+    var SV = { font: { name: 'Times New Roman', sz: 11 }, border: adminMkB('000000'), alignment: { vertical: 'center', wrapText: true } };
+    var SQ = { font: { bold: true, name: 'Times New Roman', sz: 11, color: { rgb: '000000' } }, fill: { patternType: 'solid', fgColor: { rgb: 'FFFF00' } }, alignment: { horizontal: 'center', vertical: 'center' }, border: adminMkB('000000') };
+
+    allItems.forEach(function (dev, idx) {
+      var wsSP = {};
+      var mgSP = [];
+      wsSP['!cols'] = [{ wch: 38 }, { wch: 38 }, { wch: 38 }, { wch: 4 }, { wch: 16 }];
+      wsSP['!rows'] = [];
+      var sr = 0;
+
+      // Header info on top
+      var infoTxt = 'ĐƠN VỊ LẬP: ' + orgVal + '   |   MODEL: ' + (dev.model || 'N/A') + '   |   HÃNG: ' + (dev.brand || 'N/A') + '   |   XUẤT XỨ: ' + (dev.origin || 'N/A');
+      adminSetCell(wsSP, sr, 0, infoTxt, SINFO);
+      for (var c = 1; c <= 2; c++) adminSetCell(wsSP, sr, c, '', SINFO);
+      mgSP.push({ s: { r: sr, c: 0 }, e: { r: sr, c: 2 } });
+      wsSP['!rows'][sr] = { hpt: 20 };
+      sr++;
+
+      // Hàng Tiêu đề bảng: Blank (A) | Thông số kỹ thuật (B:C) | Nút QUAY LẠI (E)
+      adminSetCell(wsSP, sr, 0, '', SH_SPEC);
+      adminSetCell(wsSP, sr, 1, 'Thông số kỹ thuật', SH_SPEC);
+      adminSetCell(wsSP, sr, 2, '', SH_SPEC);
+      mgSP.push({ s: { r: sr, c: 1 }, e: { r: sr, c: 2 } });
+
+      // Nút QUAY LẠI màu vàng nhảy về Sheet 'Tổng hợp'
+      var qRef = XLSX.utils.encode_cell({ r: sr, c: 4 });
+      wsSP[qRef] = { t: 's', v: 'QUAY LẠI', l: { Target: "#'Tổng hợp'!A1" }, s: SQ };
+      wsSP['!rows'][sr] = { hpt: 28 };
+      sr++;
+
+      // Hàng Tên thiết bị (merged A:C)
+      adminSetCell(wsSP, sr, 0, dev.name || '', SHL);
+      adminSetCell(wsSP, sr, 1, '', SHL);
+      adminSetCell(wsSP, sr, 2, '', SHL);
+      mgSP.push({ s: { r: sr, c: 0 }, e: { r: sr, c: 2 } });
+      var dNameLines = Math.ceil(String(dev.name || '').length / 60);
+      wsSP['!rows'][sr] = { hpt: Math.max(26, dNameLines * 18 + 6) };
+      sr++;
+
+      // Hàng Thông số kỹ thuật chi tiết
+      var devSpecs = dev.specs || [];
+      if (devSpecs.length > 0) {
+        devSpecs.forEach(function (sp) {
+          if (!sp.key && !sp.value) return;
+          adminSetCell(wsSP, sr, 0, sp.key || '', SK);
+          adminSetCell(wsSP, sr, 1, sp.value || '', SV);
+          adminSetCell(wsSP, sr, 2, '', SV);
+          mgSP.push({ s: { r: sr, c: 1 }, e: { r: sr, c: 2 } });
+
+          var keyLines = Math.ceil(String(sp.key || '').length / 28);
+          var valLines = 0;
+          String(sp.value || '').split(/\r?\n/).forEach(function (line) {
+            valLines += Math.max(1, Math.ceil((line.length || 1) / 52));
+          });
+          var totalLines = Math.max(1, keyLines, valLines);
+          wsSP['!rows'][sr] = { hpt: Math.max(22, Math.min(260, totalLines * 16 + 8)) };
+          sr++;
         });
       } else {
-        sheet2Data.push([
-          devIdx + 1,
-          it.model || '',
-          it.name || '',
-          it.brand || '',
-          1,
-          'Thông số chung',
-          'Đang cập nhật'
-        ]);
+        adminSetCell(wsSP, sr, 0, 'Thông số kỹ thuật', SK);
+        adminSetCell(wsSP, sr, 1, 'Đang cập nhật tiêu chí kỹ thuật chi tiết.', SV);
+        adminSetCell(wsSP, sr, 2, '', SV);
+        mgSP.push({ s: { r: sr, c: 1 }, e: { r: sr, c: 2 } });
+        wsSP['!rows'][sr] = { hpt: 26 };
+        sr++;
       }
+
+      wsSP['!merges'] = mgSP;
+      wsSP['!ref'] = XLSX.utils.encode_range({ s: { r: 0, c: 0 }, e: { r: sr - 1, c: 4 } });
+      XLSX.utils.book_append_sheet(wb, wsSP, String(idx + 1));
     });
 
-    var ws2 = XLSX.utils.aoa_to_sheet(sheet2Data);
-    ws2['!cols'] = [
-      { wch: 10 },  // STT Máy
-      { wch: 18 },  // Model
-      { wch: 38 },  // Tên máy
-      { wch: 16 },  // Hãng
-      { wch: 12 },  // STT tiêu chí
-      { wch: 34 },  // Chỉ tiêu
-      { wch: 70 }   // Thông số chi tiết
-    ];
-    XLSX.utils.book_append_sheet(wb, ws2, 'Chi Tiết Specs');
-
-    var fileName = 'TatCa_ThietBi_HeThong_' + (new Date().toISOString().slice(0, 10).replace(/-/g, '')) + '.xlsx';
+    var fileName = 'DuToan_TatCa_' + allItems.length + 'ThietBi_' + (new Date().toISOString().slice(0, 10).replace(/-/g, '')) + '.xlsx';
     XLSX.writeFile(wb, fileName);
 
-    // Ghi nhận vào nhật ký Lịch Sử File
+    // Ghi nhận vào Lịch Sử File
     if (typeof lsAddEntry === 'function') {
-      lsAddEntry('dutoan', 'Xuất toàn bộ danh mục thiết bị (' + items.length + ' máy)', fileName, {
-        project: 'Quản trị hệ thống',
-        devices: items.length,
-        total: 'Xuất toàn bộ catalog'
+      lsAddEntry('dutoan', 'File Dự toán toàn bộ ' + allItems.length + ' thiết bị', fileName, {
+        project: pjVal,
+        devices: allItems.length,
+        total: totalVal > 0 ? totalVal.toLocaleString('vi-VN') + ' ₫' : 'Đầy đủ thông số bóc tách'
       });
     }
 
-    toast('📊 Đã xuất thành công toàn bộ ' + items.length + ' thiết bị ra file Excel (' + fileName + ')!', 'ok');
+    toast('📊 Đã xuất thành công file Excel Dự Toán chuẩn mẫu (' + fileName + ') gồm Sheet Tổng hợp và ' + allItems.length + ' Sheet thông số chi tiết!', 'ok');
   } catch (err) {
-    console.error('Lỗi khi xuất Excel tất cả thiết bị:', err);
-    toast('❌ Lỗi khi xuất file Excel: ' + err.message, 'err');
+    console.error('Lỗi khi xuất file dự toán tất cả thiết bị:', err);
+    toast('❌ Lỗi khi tạo file Excel dự toán: ' + err.message, 'err');
   }
 }
 
