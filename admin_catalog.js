@@ -3124,11 +3124,11 @@ function renderAdminDashboard(container) {
   var html =
     '<div class="admin-page-wrap" style="padding:16px 20px;max-width:1400px;margin:0 auto">' +
     '  <!-- HEADER BAR -->' +
-    '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:20px;padding-bottom:16px;border-bottom:1.5px solid var(--bdr2)">' +
+    '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;padding-bottom:16px;border-bottom:1.5px solid var(--bdr2)">' +
     '    <div>' +
-    '      <div style="font-size:22px;font-weight:900;color:var(--t1);letter-spacing:0.5px">⚙️ QUẢN TRỊ DANH MỤC SẢN PHẨM & THÔNG SỐ DỰ TOÁN</div>' +
+    '      <div style="font-size:22px;font-weight:900;color:var(--t1);letter-spacing:0.5px">⚙️ TRUNG TÂM QUẢN TRỊ HỆ THỐNG</div>' +
     '      <div style="font-size:13px;color:var(--t2);margin-top:3px">' +
-    '        Hiển thị <b>' + filtered.length + '</b> / <b>' + CATALOG_ITEMS.length + '</b> sản phẩm trong cơ sở dữ liệu hệ thống.' +
+    '        Khu vực bảo mật: Quản lý hồ sơ mẫu, công cụ đồng bộ, sao lưu và danh mục thiết bị dự toán.' +
     '      </div>' +
     '    </div>' +
     '    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">' +
@@ -3137,6 +3137,40 @@ function renderAdminDashboard(container) {
     '      <button class="btn btn-o btn-sm" onclick="adminExportJson()" title="Tải file sao lưu danh mục .json">📤 Xuất JSON</button>' +
     '      <button class="btn btn-o btn-sm" onclick="adminResetToDefault()" title="Khôi phục về danh mục sản phẩm gốc">🔄 Khôi phục gốc</button>' +
     '      <button class="btn btn-o btn-sm" onclick="adminLogout()" style="color:#ef4444;border-color:#fca5a5" title="Đăng xuất chế độ Admin">🔒 Đăng xuất</button>' +
+    '    </div>' +
+    '  </div>' +
+
+    '  <!-- SECTION: HỒ SƠ MẪU & CÔNG CỤ QUẢN TRỊ TOÀN DIỆN -->' +
+    '  <div style="background:var(--card);border-radius:14px;border:1.5px solid var(--bdr2);padding:16px 20px;margin-bottom:20px;box-shadow:0 4px 12px rgba(0,0,0,0.03)">' +
+    '    <div style="font-size:14px;font-weight:800;color:var(--t1);margin-bottom:12px;display:flex;align-items:center;gap:8px">' +
+    '      <span>🧰</span> HỒ SƠ MẪU &amp; CÔNG CỤ QUẢN TRỊ HỆ THỐNG' +
+    '    </div>' +
+    '    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">' +
+    '      <div style="flex:1;min-width:200px;max-width:260px">' +
+    '        <select class="form-control" style="width:100%;height:38px;padding:0 10px;border-radius:8px;border:1px solid var(--bdr2);background:var(--bg);color:var(--t1);font-size:13px;cursor:pointer;font-weight:600" onchange="if(typeof menuApplyPreset===\'function\'){menuApplyPreset(this.value);this.value=\'\';}" title="Chọn nhanh hồ sơ mẫu công ty">' +
+    '          <option value="">📁 Chọn hồ sơ mẫu ▾</option>' +
+    '          <option value="thuan_phat">🏢 Công ty Thuận Phát</option>' +
+    '          <option value="bao_an">🏢 Công ty Bảo An</option>' +
+    '          <option value="cahcm">👮 Công an TP. Hồ Chí Minh</option>' +
+    '          <option value="hoa_phat">📚 Công ty Hòa Phát</option>' +
+    '          <option value="ecoit">🏢 ECOIT / NETSYS</option>' +
+    '        </select>' +
+    '      </div>' +
+    '      <button class="btn btn-o btn-sm" onclick="if(typeof menuTriggerAiScrape===\'function\')menuTriggerAiScrape()" style="height:38px;font-weight:700;display:inline-flex;align-items:center;gap:6px">' +
+    '        <span>🤖</span> AI Cào Thông Số Hãng' +
+    '      </button>' +
+    '      <button class="btn btn-o btn-sm" onclick="if(typeof menuSyncToBaogia===\'function\')menuSyncToBaogia()" style="height:38px;font-weight:700;display:inline-flex;align-items:center;gap:6px">' +
+    '        <span>🔄</span> Đồng Bộ ➔ Báo Giá' +
+    '      </button>' +
+    '      <button class="btn btn-o btn-sm" onclick="if(typeof exportLichSuJson===\'function\')exportLichSuJson()" style="height:38px;font-weight:700;display:inline-flex;align-items:center;gap:6px">' +
+    '        <span>💾</span> Sao Lưu Dữ Liệu' +
+    '      </button>' +
+    '      <button class="btn btn-o btn-sm" onclick="var el=document.getElementById(\'lsImportFileInput\');if(el)el.click()" style="height:38px;font-weight:700;display:inline-flex;align-items:center;gap:6px">' +
+    '        <span>📥</span> Khôi Phục Dữ Liệu' +
+    '      </button>' +
+    '      <button class="btn btn-sm" onclick="if(typeof openAiSettingsModal===\'function\')openAiSettingsModal()" style="height:38px;font-weight:800;display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);color:#15803d;border:1px solid #86efac;cursor:pointer">' +
+    '        <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block"></span> Cài Đặt Google Gemini AI' +
+    '      </button>' +
     '    </div>' +
     '  </div>' +
 
