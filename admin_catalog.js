@@ -2999,44 +2999,78 @@ function patchCatalogClassifier() {
 var _coreSwitchMainTab = typeof switchMainTab === 'function' ? switchMainTab : (typeof window !== 'undefined' ? window.switchMainTab : null);
 
 switchMainTab = function (tab) {
-  if (tab === 'dutoan') {
-    // Khi thoát khỏi Quản trị về Làm Dự Toán -> tự động KHÓA phiên quản trị
-    adminIsUnlocked = false;
-    sessionStorage.removeItem('admin_authenticated');
-    currentActiveTab = 'dutoan';
-
+  if (tab === 'admin') {
+    currentActiveTab = 'admin';
     document.querySelectorAll('.mtab').forEach(function (el) { el.classList.remove('active'); });
-    var tabD = document.getElementById('mtab-dutoan');
-    if (tabD) tabD.classList.add('active');
+    var tabAdmin = document.getElementById('mtab-admin');
+    if (tabAdmin) tabAdmin.classList.add('active');
 
-    // Ẩn admin shell và toàn bộ các view nội bộ
-    var adminShell = document.getElementById('admin-shell');
-    if (adminShell) adminShell.style.display = 'none';
-
-    var av = document.getElementById('view-admin');
-    if (av) av.style.display = 'none';
-
-    ['view-bbbg', 'view-tddu', 'view-baogia', 'view-lichsu', 'view-huongdan'].forEach(function (vid) {
+    // Ẩn tất cả các view công khai
+    ['view-dutoan', 'view-bbbg', 'view-tddu', 'view-baogia', 'view-lichsu', 'view-huongdan'].forEach(function (vid) {
       var el = document.getElementById(vid);
       if (el) el.style.display = 'none';
     });
 
-    var dtView = document.getElementById('view-dutoan');
-    if (dtView) dtView.style.display = 'block';
+    var adminShell = document.getElementById('admin-shell');
+    if (adminShell) adminShell.style.display = 'block';
 
-    var statusEl = document.getElementById('menubarActiveTabStatus');
-    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot"></span> Đang ở: <b>📊 Làm Dự Toán</b>';
+    if (!adminIsUnlocked) {
+      // Luôn yêu cầu mật khẩu khi vào Quản trị hệ thống (không hiển thị mật khẩu trên giao diện)
+      var lockScreen = document.getElementById('admin-lock-screen');
+      if (lockScreen) lockScreen.style.display = 'block';
+      var workspace = document.getElementById('admin-workspace');
+      if (workspace) workspace.style.display = 'none';
 
-    var quickBtn = document.getElementById('btnMenuQuickAction');
-    if (quickBtn) quickBtn.innerHTML = '⬇️ Xuất File Dự Toán (.xlsx)';
+      var statusEl = document.getElementById('menubarActiveTabStatus');
+      if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>🔒 Xác Thực Quản Trị Hệ Thống</b>';
+
+      var quickBtn = document.getElementById('btnMenuQuickAction');
+      if (quickBtn) quickBtn.innerHTML = '🔒 Nhập Mật Khẩu Admin';
+
+      setTimeout(function () {
+        var inp = document.getElementById('adminPagePassInput');
+        if (inp) {
+          inp.value = '';
+          inp.focus();
+        }
+      }, 50);
+    } else {
+      // Đã mở khóa -> vào thẳng giao diện quản trị
+      var lockScreen = document.getElementById('admin-lock-screen');
+      if (lockScreen) lockScreen.style.display = 'none';
+      var workspace = document.getElementById('admin-workspace');
+      if (workspace) workspace.style.display = 'block';
+
+      var catView = document.getElementById('admin-subview-catalog');
+      if (catView) {
+        catView.style.display = 'block';
+        renderAdminDashboard(catView);
+      }
+
+      var statusEl = document.getElementById('menubarActiveTabStatus');
+      if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị Hệ Thống</b>';
+
+      var quickBtn = document.getElementById('btnMenuQuickAction');
+      if (quickBtn) quickBtn.innerHTML = '💾 Lưu Thay Đổi Sản Phẩm';
+    }
 
     try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { }
     return;
   }
 
-  // Vào Quản Trị Hệ Thống hoặc các phân hệ nội bộ (baogia, tddu, bbbg, lichsu, huongdan)
-  var targetSub = (tab === 'admin' || !tab) ? 'catalog' : tab;
-  openAdminSection(targetSub);
+  // Khi chuyển sang các tab khác (1. Dự Toán, 2. Báo Giá, 3. Tuyên Bố, 4. Biên Bản, 5. Lịch Sử, 6. Hướng Dẫn)
+  // Tự động KHÓA phiên Quản trị hệ thống để bảo mật
+  adminIsUnlocked = false;
+  sessionStorage.removeItem('admin_authenticated');
+
+  var adminShell = document.getElementById('admin-shell');
+  if (adminShell) adminShell.style.display = 'none';
+  var av = document.getElementById('view-admin');
+  if (av) av.style.display = 'none';
+
+  if (typeof _coreSwitchMainTab === 'function') {
+    _coreSwitchMainTab(tab);
+  }
 };
 if (typeof window !== 'undefined') {
   window.switchMainTab = switchMainTab;
@@ -3044,58 +3078,6 @@ if (typeof window !== 'undefined') {
 
 function isAdminLoggedIn() {
   return adminIsUnlocked === true;
-}
-
-/* ── MỞ PHÂN HỆ QUẢN TRỊ (YÊU CẦU MẬT KHẨU 2208) ── */
-function openAdminSection(targetSubTab) {
-  currentActiveTab = 'admin';
-  document.querySelectorAll('.mtab').forEach(function (el) { el.classList.remove('active'); });
-  var tabAdmin = document.getElementById('mtab-admin');
-  if (tabAdmin) tabAdmin.classList.add('active');
-
-  // Ẩn view Làm Dự Toán
-  var dtView = document.getElementById('view-dutoan');
-  if (dtView) dtView.style.display = 'none';
-
-  var adminShell = document.getElementById('admin-shell');
-  if (adminShell) adminShell.style.display = 'block';
-
-  if (!adminIsUnlocked) {
-    // Chưa mở khóa -> Luôn hiện màn hình nhập mật khẩu (không hiện mật khẩu hay gợi ý)
-    adminPendingSubTab = targetSubTab || 'catalog';
-    var lockScreen = document.getElementById('admin-lock-screen');
-    if (lockScreen) lockScreen.style.display = 'block';
-    var workspace = document.getElementById('admin-workspace');
-    if (workspace) workspace.style.display = 'none';
-
-    // Ẩn các view nội dung khác khi đang khóa
-    ['view-bbbg', 'view-tddu', 'view-baogia', 'view-lichsu', 'view-huongdan'].forEach(function (vid) {
-      var el = document.getElementById(vid);
-      if (el) el.style.display = 'none';
-    });
-
-    var statusEl = document.getElementById('menubarActiveTabStatus');
-    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>🔒 Xác Thực Quản Trị Hệ Thống</b>';
-
-    var quickBtn = document.getElementById('btnMenuQuickAction');
-    if (quickBtn) quickBtn.innerHTML = '🔒 Nhập Mật Khẩu Admin';
-
-    setTimeout(function () {
-      var inp = document.getElementById('adminPagePassInput');
-      if (inp) {
-        inp.value = '';
-        inp.focus();
-      }
-    }, 50);
-  } else {
-    // Đã mở khóa -> Vào thẳng workspace và kích hoạt tab tương ứng
-    var lockScreen = document.getElementById('admin-lock-screen');
-    if (lockScreen) lockScreen.style.display = 'none';
-    var workspace = document.getElementById('admin-workspace');
-    if (workspace) workspace.style.display = 'block';
-
-    switchAdminSubTab(targetSubTab || adminActiveSubTab || 'catalog');
-  }
 }
 
 /* ── XÁC THỰC MẬT KHẨU ADMIN ── */
@@ -3107,9 +3089,7 @@ function submitAdminPassword() {
     adminIsUnlocked = true;
     sessionStorage.setItem('admin_authenticated', 'true');
     toast('🔓 Mở khóa Quản trị thành công!', 'ok');
-    var target = adminPendingSubTab || 'catalog';
-    adminPendingSubTab = null;
-    openAdminSection(target);
+    switchMainTab('admin');
   } else {
     toast('❌ Mật khẩu không chính xác! Vui lòng thử lại.', 'err');
     inp.value = '';
@@ -3126,97 +3106,11 @@ function adminLogout() {
   switchMainTab('dutoan');
 }
 
-/* ── CHUYỂN SUB-TAB BÊN TRONG QUẢN TRỊ ── */
-function switchAdminSubTab(subTab) {
-  adminActiveSubTab = subTab;
-
-  // Cập nhật nút active trên thanh subtab
-  document.querySelectorAll('.admin-subtab-btn').forEach(function (btn) {
-    btn.classList.remove('active');
-  });
-  var activeBtn = document.getElementById('btn-admin-sub-' + subTab);
-  if (activeBtn) activeBtn.classList.add('active');
-
-  // Ẩn tất cả các subviews
-  var catView = document.getElementById('admin-subview-catalog');
-  if (catView) catView.style.display = 'none';
-  ['view-baogia', 'view-tddu', 'view-bbbg', 'view-lichsu', 'view-huongdan'].forEach(function (vid) {
-    var el = document.getElementById(vid);
-    if (el) el.style.display = 'none';
-  });
-
-  var statusEl = document.getElementById('menubarActiveTabStatus');
-  var quickBtn = document.getElementById('btnMenuQuickAction');
-
-  if (subTab === 'catalog') {
-    if (catView) catView.style.display = 'block';
-    renderAdminDashboard(catView);
-    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị / Danh Mục Sản Phẩm &amp; Specs</b>';
-    if (quickBtn) quickBtn.innerHTML = '💾 Lưu Thay Đổi Sản Phẩm';
-  } else if (subTab === 'baogia') {
-    var bgView = document.getElementById('view-baogia');
-    if (bgView) bgView.style.display = 'block';
-    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị / Báo Giá Thuận Phát</b>';
-    if (quickBtn) quickBtn.innerHTML = '🧾 Xuất File Excel Báo Giá';
-    if (typeof bgItems !== 'undefined' && (!bgItems || bgItems.length === 0)) {
-      if (typeof BAOGIA_THUANPHAT_ITEMS !== 'undefined') {
-        bgItems = JSON.parse(JSON.stringify(BAOGIA_THUANPHAT_ITEMS));
-      }
-    }
-    if (typeof renderBaogiaForm === 'function') {
-      renderBaogiaForm();
-    }
-  } else if (subTab === 'tddu') {
-    var tdView = document.getElementById('view-tddu');
-    if (tdView) tdView.style.display = 'block';
-    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị / Tuyên Bố Đáp Ứng</b>';
-    if (quickBtn) quickBtn.innerHTML = '✅ Xuất File Excel Tuyên Bố';
-    if (typeof renderTdduForm === 'function') {
-      renderTdduForm();
-    }
-  } else if (subTab === 'bbbg') {
-    var bbView = document.getElementById('view-bbbg');
-    if (bbView) bbView.style.display = 'block';
-    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị / Biên Bản Bàn Giao</b>';
-    if (quickBtn) quickBtn.innerHTML = '📝 Xuất File Word BBBG';
-    if (typeof renderHandoverForm === 'function') {
-      renderHandoverForm();
-    }
-  } else if (subTab === 'lichsu') {
-    var lsView = document.getElementById('view-lichsu');
-    if (lsView) lsView.style.display = 'block';
-    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị / Lịch Sử File</b>';
-    if (quickBtn) quickBtn.innerHTML = '💾 Xuất Sao Lưu JSON';
-    if (typeof renderLichSu === 'function') {
-      renderLichSu();
-    }
-  } else if (subTab === 'huongdan') {
-    var hdView = document.getElementById('view-huongdan');
-    if (hdView) hdView.style.display = 'block';
-    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị / Hướng Dẫn Sử Dụng</b>';
-    if (quickBtn) quickBtn.innerHTML = '📊 Về Làm Dự Toán';
-  }
-
-  try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { }
-}
-
 /* ── HOOK VÀO MENU QUICK EXPORT ── */
 var _coreMenuQuickExport = typeof menuQuickExport === 'function' ? menuQuickExport : (typeof window !== 'undefined' ? window.menuQuickExport : null);
 menuQuickExport = function () {
   if (currentActiveTab === 'admin') {
-    if (adminActiveSubTab === 'catalog') {
-      adminSaveCatalogChanges();
-    } else if (adminActiveSubTab === 'baogia') {
-      if (typeof exportBaogiaExcel === 'function') exportBaogiaExcel();
-    } else if (adminActiveSubTab === 'tddu') {
-      if (typeof exportComplianceExcel === 'function') exportComplianceExcel();
-    } else if (adminActiveSubTab === 'bbbg') {
-      if (typeof exportHandoverWord === 'function') exportHandoverWord();
-    } else if (adminActiveSubTab === 'lichsu') {
-      if (typeof exportLichSuJson === 'function') exportLichSuJson();
-    } else if (adminActiveSubTab === 'huongdan') {
-      switchMainTab('dutoan');
-    }
+    adminSaveCatalogChanges();
     return;
   }
   if (typeof _coreMenuQuickExport === 'function') {
@@ -3228,16 +3122,13 @@ if (typeof window !== 'undefined') {
 }
 
 function checkAndRenderAdminView() {
-  var targetSub = adminActiveSubTab || 'catalog';
-  openAdminSection(targetSub);
+  switchMainTab('admin');
 }
 
 if (typeof window !== 'undefined') {
   window.isAdminLoggedIn = isAdminLoggedIn;
-  window.switchAdminSubTab = switchAdminSubTab;
   window.submitAdminPassword = submitAdminPassword;
   window.adminLogout = adminLogout;
-  window.openAdminSection = openAdminSection;
   window.checkAndRenderAdminView = checkAndRenderAdminView;
 }
 
