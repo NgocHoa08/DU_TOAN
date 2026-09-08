@@ -81343,7 +81343,7 @@ function renderCatalogGrid() {
             (isSel ?
               '<div style="display:inline-flex;align-items:center;justify-content:center;gap:5px">' +
               '<button class="btn-cat-select selected" onclick="createSheetForCatalogItem(\'' + item.id + '\')" title="Tạo ngay bảng dự toán và chi tiết từng sheet cho thiết bị này">' +
-              '🚀 Tạo sheet luôn' + (curQ > 1 ? ' (' + curQ + ')' : '') +
+              '🚀 Tạo sheet' + (curQ > 1 ? ' (' + curQ + ')' : '') +
               '</button>' +
               '<button onclick="toggleCatalogItem(\'' + item.id + '\')" title="Bỏ chọn máy này" style="padding:6px 9px;border-radius:8px;border:1.5px solid #cbd5e1;background:#fff;color:#ef4444;font-weight:800;font-size:12px;cursor:pointer;line-height:1;transition:all .15s" onmouseover="this.style.background=\'#fee2e2\'" onmouseout="this.style.background=\'#fff\'">✕</button>' +
               '</div>'
