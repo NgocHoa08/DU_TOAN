@@ -1,3 +1,26 @@
+
+/* ── FUZZY SEARCH HELPER ── */
+function matchFuzzyKw(text, q) {
+  if (!q) return true;
+  if (!text) return false;
+  var t = String(text).toLowerCase();
+  var query = String(q).toLowerCase().trim();
+  if (t.includes(query)) return true;
+
+  var tClean = t.replace(/[\s\-_/\\,.]+/g, '');
+  var qClean = query.replace(/[\s\-_/\\,.]+/g, '');
+  if (qClean && tClean.includes(qClean)) return true;
+
+  var tokens = query.split(/\s+/).filter(Boolean);
+  if (tokens.length > 1) {
+    return tokens.every(function (tok) {
+      var tokClean = tok.replace(/[\s\-_/\\,.]+/g, '');
+      return t.includes(tok) || (tokClean && tClean.includes(tokClean));
+    });
+  }
+  return false;
+}
+
 /* ═══════════════════════════════════════════════════════════════════
    ADMIN PRODUCT MANAGEMENT MODULE & MẪU MÁY EXPANSION
    Mật khẩu quản trị Admin: 2208
@@ -13,6 +36,7 @@ var adminCurrentSearch = '';
 var adminCurrentBrand = '';
 var adminCurrentCat = '';
 var adminCurrentSource = 'all';
+var adminCurrentStatus = 'all'; // 'all' | 'active' | 'locked'
 var adminEditingItemId = null;
 
 // 48 Dòng máy bổ sung đầy đủ thông số bóc tách chuẩn xác từ các file Word (.docx) và Excel (.xlsx), bao gồm MSI PRO DP80 A14G, DP21 & Màn hình PRO MP225 E12VL
@@ -4270,33 +4294,42 @@ if (typeof window !== 'undefined') {
   window.adminExportAllDevicesExcel = adminExportAllDevicesExcel;
 }
 
-/* ── BẢNG ĐIỀU KHIỂN ADMIN QUẢN LÝ SẢN PHẨM ── */
+/* ── BẢNG ĐIỀU KHIỂN ADMIN QUẢN LÝ SẢN PHẨM (ĐẦY ĐỦ: TÌM KIẾM, CHỈNH SỬA, KHÓA, XÓA) ── */
 function renderAdminDashboard(container) {
   if (!container) {
     container = document.getElementById('admin-subview-catalog') || document.getElementById('view-admin');
   }
   if (!container) return;
+
+  var totalCount = CATALOG_ITEMS.length;
+  var lockedCount = CATALOG_ITEMS.filter(function (it) { return !!it.isLocked; }).length;
+  var activeCount = totalCount - lockedCount;
   var wordExcelCount = CATALOG_ITEMS.filter(function (it) {
     return it.isFromMauMay || it.file || it.sourceFile;
   }).length;
 
-  // Nếu chưa tìm kiếm và đang ở chế độ 'all': Ẩn toàn bộ để giao diện gọn gàng
-  var isSearchActive = !!adminCurrentSearch.trim() || !!adminCurrentBrand || !!adminCurrentCat || adminCurrentSource === 'word_excel';
-
-  var filtered = !isSearchActive ? [] : CATALOG_ITEMS.filter(function (it) {
+  // Lọc sản phẩm theo tất cả các tiêu chí (KHÔNG ẨN DANH SÁCH - LUÔN HIỂN THỊ)
+  var filtered = CATALOG_ITEMS.filter(function (it) {
+    // Lọc theo nguồn
     if (adminCurrentSource === 'word_excel') {
       if (!(it.isFromMauMay || it.file || it.sourceFile)) return false;
     }
-    var q = adminCurrentSearch.toLowerCase().trim();
-    if (q) {
-      var text = ((it.name || '') + ' ' + (it.model || '') + ' ' + (it.brand || '') + ' ' + (it.origin || '') + ' ' + (it.file || it.sourceFile || '')).toLowerCase();
-      if (!text.includes(q)) return false;
-    }
+    // Lọc theo trạng thái Khóa / Mở
+    if (adminCurrentStatus === 'active' && it.isLocked) return false;
+    if (adminCurrentStatus === 'locked' && !it.isLocked) return false;
+
+    // Lọc theo Hãng
     if (adminCurrentBrand && (it.brand || '').toLowerCase() !== adminCurrentBrand.toLowerCase()) {
       return false;
     }
+    // Lọc theo Phân loại
     if (adminCurrentCat && it.cat !== adminCurrentCat) {
       return false;
+    }
+    // Tìm kiếm thông minh (Fuzzy keyword: 'dp 80' khớp 'DP80', không dấu, bỏ khoảng trắng)
+    if (adminCurrentSearch && adminCurrentSearch.trim()) {
+      var text = (it.name || '') + ' ' + (it.model || '') + ' ' + (it.brand || '') + ' ' + (it.origin || '') + ' ' + (it.file || it.sourceFile || '');
+      if (!matchFuzzyKw(text, adminCurrentSearch)) return false;
     }
     return true;
   });
@@ -4305,163 +4338,182 @@ function renderAdminDashboard(container) {
   var allBrands = Array.from(new Set(CATALOG_ITEMS.map(function (it) { return it.brand; }).filter(Boolean))).sort();
 
   var html =
-    '<div class="admin-page-wrap" style="padding:16px 20px;max-width:1400px;margin:0 auto">' +
+    '<div class="admin-page-wrap" style="padding:16px 20px;max-width:1440px;margin:0 auto">' +
     '  <!-- HEADER BAR -->' +
     '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;padding-bottom:16px;border-bottom:1.5px solid var(--bdr2)">' +
     '    <div>' +
     '      <div style="font-size:22px;font-weight:900;color:var(--t1);letter-spacing:0.5px">⚙️ TRUNG TÂM QUẢN TRỊ HỆ THỐNG</div>' +
     '      <div style="font-size:13px;color:var(--t2);margin-top:3px">' +
-    '        Khu vực bảo mật: Quản lý hồ sơ mẫu, công cụ đồng bộ, sao lưu và danh mục thiết bị dự toán.' +
+    '        Quản trị toàn diện: Tìm kiếm thông minh, Chỉnh sửa, Khóa/Ẩn sản phẩm, Xóa và xuất dữ liệu dự toán.' +
     '      </div>' +
     '    </div>' +
     '    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">' +
-    '      <button class="btn btn-p btn-sm" onclick="adminOpenAddProductModal()" style="font-weight:800">➕ Thêm sản phẩm mới</button>' +
-    '      <button class="btn btn-sm" onclick="adminExportAllDevicesExcel()" style="background:#0284c7;color:#fff;font-weight:800;border:none;display:inline-flex;align-items:center;gap:5px;box-shadow:0 2px 6px rgba(2,132,199,0.3)" title="Xuất toàn bộ danh mục thiết bị và thông số kỹ thuật ra file Excel (.xlsx)">📊 Xuất Excel Tất Cả Thiết Bị</button>' +
-    '      <button class="btn btn-sm" onclick="adminSaveCatalogChanges()" style="background:#10b981;color:#fff;font-weight:800;border:none" title="Lưu toàn bộ thay đổi vào bộ nhớ trình duyệt">💾 Lưu thay đổi</button>' +
+    '      <button class="btn btn-p btn-sm" onclick="adminOpenAddProductModal()" style="font-weight:800;background:var(--p);box-shadow:0 2px 6px rgba(0,0,0,0.15)">➕ Thêm sản phẩm mới</button>' +
+    '      <button class="btn btn-sm" onclick="adminExportAllDevicesExcel()" style="background:#0284c7;color:#fff;font-weight:800;border:none;display:inline-flex;align-items:center;gap:5px;box-shadow:0 2px 6px rgba(2,132,199,0.3)" title="Xuất toàn bộ danh mục thiết bị và thông số kỹ thuật ra file Excel (.xlsx)">📊 Xuất Excel Tất Cả</button>' +
+    '      <button class="btn btn-sm" onclick="adminSaveCatalogChanges()" style="background:#10b981;color:#fff;font-weight:800;border:none;box-shadow:0 2px 6px rgba(16,185,129,0.3)" title="Lưu toàn bộ thay đổi vào bộ nhớ trình duyệt">💾 Lưu thay đổi</button>' +
     '      <button class="btn btn-o btn-sm" onclick="adminExportJson()" title="Tải file sao lưu danh mục .json">📤 Xuất JSON</button>' +
     '      <button class="btn btn-o btn-sm" onclick="adminResetToDefault()" title="Khôi phục về danh mục sản phẩm gốc">🔄 Khôi phục gốc</button>' +
     '      <button class="btn btn-o btn-sm" onclick="adminLogout()" style="color:#ef4444;border-color:#fca5a5" title="Đăng xuất chế độ Admin">🔒 Đăng xuất</button>' +
     '    </div>' +
     '  </div>' +
 
-    '  <!-- SECTION: HỒ SƠ MẪU & CÔNG CỤ QUẢN TRỊ TOÀN DIỆN -->' +
-    '  <div style="background:var(--card);border-radius:14px;border:1.5px solid var(--bdr2);padding:16px 20px;margin-bottom:20px;box-shadow:0 4px 12px rgba(0,0,0,0.03)">' +
-    '    <div style="font-size:14px;font-weight:800;color:var(--t1);margin-bottom:12px;display:flex;align-items:center;gap:8px">' +
-    '      <span>🧰</span> HỒ SƠ MẪU &amp; CÔNG CỤ QUẢN TRỊ HỆ THỐNG' +
+    '  <!-- STATS BADGES (THỐNG KÊ NHANH) -->' +
+    '  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:12px;margin-bottom:16px">' +
+    '    <div onclick="adminCurrentStatus=\'all\';adminCurrentSource=\'all\';renderAdminDashboard()" style="cursor:pointer;background:var(--card);border-radius:10px;border:1.5px solid var(--bdr2);padding:10px 14px;display:flex;align-items:center;gap:12px;transition:all 0.15s ease">' +
+    '      <div style="font-size:24px">📦</div>' +
+    '      <div><div style="font-size:11px;color:var(--t3);font-weight:700">TỔNG SẢN PHẨM</div><div style="font-size:18px;font-weight:900;color:var(--t1)">' + totalCount + '</div></div>' +
     '    </div>' +
+    '    <div onclick="adminCurrentStatus=\'active\';renderAdminDashboard()" style="cursor:pointer;background:var(--card);border-radius:10px;border:1.5px solid #a7f3d0;padding:10px 14px;display:flex;align-items:center;gap:12px;transition:all 0.15s ease">' +
+    '      <div style="font-size:24px">✅</div>' +
+    '      <div><div style="font-size:11px;color:#059669;font-weight:700">ĐANG MỞ (HIỂN THỊ)</div><div style="font-size:18px;font-weight:900;color:#059669">' + activeCount + '</div></div>' +
+    '    </div>' +
+    '    <div onclick="adminCurrentStatus=\'locked\';renderAdminDashboard()" style="cursor:pointer;background:var(--card);border-radius:10px;border:1.5px solid ' + (lockedCount > 0 ? '#fca5a5' : 'var(--bdr2)') + ';padding:10px 14px;display:flex;align-items:center;gap:12px;transition:all 0.15s ease">' +
+    '      <div style="font-size:24px">🔒</div>' +
+    '      <div><div style="font-size:11px;color:#dc2626;font-weight:700">ĐANG KHÓA (ẨN)</div><div style="font-size:18px;font-weight:900;color:#dc2626">' + lockedCount + '</div></div>' +
+    '    </div>' +
+    '    <div onclick="adminCurrentSource=\'word_excel\';renderAdminDashboard()" style="cursor:pointer;background:var(--card);border-radius:10px;border:1.5px solid #bae6fd;padding:10px 14px;display:flex;align-items:center;gap:12px;transition:all 0.15s ease">' +
+    '      <div style="font-size:24px">📑</div>' +
+    '      <div><div style="font-size:11px;color:#0284c7;font-weight:700">MẪU TỪ WORD & EXCEL</div><div style="font-size:18px;font-weight:900;color:#0284c7">' + wordExcelCount + '</div></div>' +
+    '    </div>' +
+    '  </div>' +
+
+    '  <!-- FILTER & SEARCH TOOLBAR -->' +
+    '  <div style="background:var(--card);padding:14px;border-radius:12px;border:1.5px solid var(--bdr2);margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.03)">' +
     '    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">' +
-    '      <div style="flex:1;min-width:200px;max-width:260px">' +
-    '        <select class="form-control" style="width:100%;height:38px;padding:0 10px;border-radius:8px;border:1px solid var(--bdr2);background:var(--bg);color:var(--t1);font-size:13px;cursor:pointer;font-weight:600" onchange="if(typeof menuApplyPreset===\'function\'){menuApplyPreset(this.value);this.value=\'\';}" title="Chọn nhanh hồ sơ mẫu công ty">' +
-    '          <option value="">📁 Chọn hồ sơ mẫu ▾</option>' +
-    '          <option value="thuan_phat">🏢 Công ty Thuận Phát</option>' +
-    '          <option value="bao_an">🏢 Công ty Bảo An</option>' +
-    '          <option value="cahcm">👮 Công an TP. Hồ Chí Minh</option>' +
-    '          <option value="hoa_phat">📚 Công ty Hòa Phát</option>' +
-    '          <option value="ecoit">🏢 ECOIT / NETSYS</option>' +
+    '      <!-- Ô tìm kiếm realtime -->' +
+    '      <div style="flex:2.5;min-width:260px;position:relative">' +
+    '        <input type="text" id="adminSearchInput" class="form-control" style="width:100%;height:38px;padding:0 34px 0 12px;border-radius:8px;border:1px solid var(--bdr2);background:var(--bg);color:var(--t1);font-size:13px;font-weight:600" placeholder="🔍 Tìm theo Model (VD: dp 80, dp 21, mp 225...), Tên máy, Hãng..." value="' + escH(adminCurrentSearch) + '" oninput="adminCurrentSearch=this.value;renderAdminDashboard()" />' +
+    (adminCurrentSearch ? '        <button onclick="adminCurrentSearch=\'\';renderAdminDashboard()" style="position:absolute;right:8px;top:8px;background:none;border:none;color:var(--t3);cursor:pointer;font-size:14px">✕</button>' : '') +
+    '      </div>' +
+    '      <!-- Lọc Hãng -->' +
+    '      <div style="flex:1;min-width:140px">' +
+    '        <select class="form-control" style="width:100%;height:38px;padding:0 10px;border-radius:8px;border:1px solid var(--bdr2);background:var(--bg);color:var(--t1);font-size:13px;cursor:pointer;font-weight:600" onchange="adminCurrentBrand=this.value;renderAdminDashboard()">' +
+    '          <option value="">🏢 Tất cả hãng (' + allBrands.length + ')</option>' +
+    allBrands.map(function (b) { return '<option value="' + escH(b) + '"' + (adminCurrentBrand === b ? ' selected' : '') + '>' + escH(b) + '</option>'; }).join('') +
     '        </select>' +
     '      </div>' +
-    '      <button class="btn btn-o btn-sm" onclick="if(typeof menuTriggerAiScrape===\'function\')menuTriggerAiScrape()" style="height:38px;font-weight:700;display:inline-flex;align-items:center;gap:6px">' +
-    '        <span>🤖</span> AI Cào Thông Số Hãng' +
-    '      </button>' +
-    '      <button class="btn btn-o btn-sm" onclick="if(typeof menuSyncToBaogia===\'function\')menuSyncToBaogia()" style="height:38px;font-weight:700;display:inline-flex;align-items:center;gap:6px">' +
-    '        <span>🔄</span> Đồng Bộ ➔ Báo Giá' +
-    '      </button>' +
-    '      <button class="btn btn-sm" onclick="adminExportAllDevicesExcel()" style="height:38px;font-weight:800;display:inline-flex;align-items:center;gap:6px;background:#0284c7;color:#fff;border:none">' +
-    '        <span>📊</span> Xuất Tất Cả Thiết Bị (Excel)' +
-    '      </button>' +
-    '      <button class="btn btn-o btn-sm" onclick="if(typeof exportLichSuJson===\'function\')exportLichSuJson()" style="height:38px;font-weight:700;display:inline-flex;align-items:center;gap:6px">' +
-    '        <span>💾</span> Sao Lưu Dữ Liệu' +
-    '      </button>' +
-    '      <button class="btn btn-o btn-sm" onclick="var el=document.getElementById(\'lsImportFileInput\');if(el)el.click()" style="height:38px;font-weight:700;display:inline-flex;align-items:center;gap:6px">' +
-    '        <span>📥</span> Khôi Phục Dữ Liệu' +
-    '      </button>' +
-    '      <button class="btn btn-sm" onclick="if(typeof openAiSettingsModal===\'function\')openAiSettingsModal()" style="height:38px;font-weight:800;display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);color:#15803d;border:1px solid #86efac;cursor:pointer">' +
-    '        <span style="width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block"></span> Cài Đặt Google Gemini AI' +
-    '      </button>' +
+    '      <!-- Lọc Phân loại -->' +
+    '      <div style="flex:1;min-width:150px">' +
+    '        <select class="form-control" style="width:100%;height:38px;padding:0 10px;border-radius:8px;border:1px solid var(--bdr2);background:var(--bg);color:var(--t1);font-size:13px;cursor:pointer;font-weight:600" onchange="adminCurrentCat=this.value;renderAdminDashboard()">' +
+    '          <option value="">📁 Tất cả phân loại</option>' +
+    '          <option value="may_tinh"' + (adminCurrentCat === 'may_tinh' ? ' selected' : '') + '>💻 Máy vi tính & Mini PC</option>' +
+    '          <option value="man_hinh"' + (adminCurrentCat === 'man_hinh' ? ' selected' : '') + '>🖥️ Màn hình hiển thị</option>' +
+    '          <option value="may_in"' + (adminCurrentCat === 'may_in' ? ' selected' : '') + '>🖨️ Máy in Laser</option>' +
+    '          <option value="photocopy"' + (adminCurrentCat === 'photocopy' ? ' selected' : '') + '>📠 Máy Photocopy đa năng</option>' +
+    '          <option value="may_scan"' + (adminCurrentCat === 'may_scan' ? ' selected' : '') + '>📄 Máy quét (Scanner)</option>' +
+    '          <option value="network_av"' + (adminCurrentCat === 'network_av' ? ' selected' : '') + '>🌐 Thiết bị mạng & Hội nghị</option>' +
+    '          <option value="phu_kien"' + (adminCurrentCat === 'phu_kien' ? ' selected' : '') + '>🔌 Phụ kiện & Thiết bị khác</option>' +
+    '        </select>' +
+    '      </div>' +
+    '      <!-- Lọc Trạng thái Khóa / Mở -->' +
+    '      <div style="flex:1;min-width:140px">' +
+    '        <select class="form-control" style="width:100%;height:38px;padding:0 10px;border-radius:8px;border:1.5px solid ' + (adminCurrentStatus === 'locked' ? '#ef4444' : 'var(--bdr2)') + ';background:var(--bg);color:var(--t1);font-size:13px;cursor:pointer;font-weight:700" onchange="adminCurrentStatus=this.value;renderAdminDashboard()">' +
+    '          <option value="all"' + (adminCurrentStatus === 'all' ? ' selected' : '') + '>🌐 Tất cả trạng thái</option>' +
+    '          <option value="active"' + (adminCurrentStatus === 'active' ? ' selected' : '') + '>✅ Đang mở (hoạt động)</option>' +
+    '          <option value="locked"' + (adminCurrentStatus === 'locked' ? ' selected' : '') + '>🔒 Đã khóa (ẩn)</option>' +
+    '        </select>' +
+    '      </div>' +
+    '      <!-- Nút Reset bộ lọc -->' +
+    (adminCurrentSearch || adminCurrentBrand || adminCurrentCat || adminCurrentStatus !== 'all' || adminCurrentSource !== 'all'
+      ? '<button class="btn btn-o btn-sm" onclick="adminCurrentSearch=\'\';adminCurrentBrand=\'\';adminCurrentCat=\'\';adminCurrentStatus=\'all\';adminCurrentSource=\'all\';renderAdminDashboard()" style="height:38px;padding:0 12px;font-weight:700" title="Đặt lại toàn bộ bộ lọc">🔄 Xóa lọc</button>'
+      : '') +
     '    </div>' +
     '  </div>' +
 
-    '  <!-- QUICK SOURCE TABS -->' +
-    '  <div style="display:flex;gap:8px;margin-bottom:14px;align-items:center;flex-wrap:wrap">' +
-    '    <span style="font-size:12px;font-weight:800;color:var(--t2);margin-right:4px">📂 Phân loại nguồn:</span>' +
-    '    <button class="btn btn-sm" onclick="adminCurrentSource=\'all\'; renderAdminDashboard(document.getElementById(\'view-admin\'))" style="border-radius:20px;padding:5px 14px;font-size:12px;font-weight:700;' + (adminCurrentSource === 'all' ? 'background:var(--p);color:#fff;border-color:var(--p);box-shadow:0 2px 6px rgba(0,0,0,0.15)' : 'background:var(--card);color:var(--t2);border:1px solid var(--bdr2)') + '">🌐 Tất cả sản phẩm (' + CATALOG_ITEMS.length + ')</button>' +
-    '    <button class="btn btn-sm" onclick="adminCurrentSource=\'word_excel\'; renderAdminDashboard(document.getElementById(\'view-admin\'))" style="border-radius:20px;padding:5px 14px;font-size:12px;font-weight:700;' + (adminCurrentSource === 'word_excel' ? 'background:#059669;color:#fff;border-color:#059669;box-shadow:0 2px 6px rgba(5,150,105,0.25)' : 'background:var(--card);color:#059669;border:1.5px solid #10b981') + '">📑 Chỉ mẫu máy từ file Word & Excel (' + wordExcelCount + ' mẫu)</button>' +
-    '  </div>' +
-
-    '  <!-- FILTER TOOLBAR -->' +
-    '  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;background:var(--card);padding:12px;border-radius:12px;border:1px solid var(--bdr2)">' +
-    '    <div style="flex:2;min-width:240px">' +
-    '      <input type="text" class="form-control" style="width:100%;height:36px;padding:0 12px;border-radius:8px;border:1px solid var(--bdr2);background:var(--bg);color:var(--t1);font-size:13px" placeholder="🔍 Tìm kiếm theo tên máy, model, hãng, xuất xứ..." value="' + escH(adminCurrentSearch) + '" oninput="adminCurrentSearch = this.value; renderAdminDashboard(document.getElementById(\'view-admin\'))" />' +
-    '    </div>' +
-    '    <div style="flex:1;min-width:160px">' +
-    '      <select class="form-control" style="width:100%;height:36px;padding:0 10px;border-radius:8px;border:1px solid var(--bdr2);background:var(--bg);color:var(--t1);font-size:13px;cursor:pointer" onchange="adminCurrentBrand = this.value; renderAdminDashboard(document.getElementById(\'view-admin\'))">' +
-    '        <option value="">🏢 Tất cả hãng SX (' + allBrands.length + ')</option>' +
-    allBrands.map(function (b) { return '<option value="' + escH(b) + '"' + (adminCurrentBrand === b ? ' selected' : '') + '>' + escH(b) + '</option>'; }).join('') +
-    '      </select>' +
-    '    </div>' +
-    '    <div style="flex:1;min-width:160px">' +
-    '      <select class="form-control" style="width:100%;height:36px;padding:0 10px;border-radius:8px;border:1px solid var(--bdr2);background:var(--bg);color:var(--t1);font-size:13px;cursor:pointer" onchange="adminCurrentCat = this.value; renderAdminDashboard(document.getElementById(\'view-admin\'))">' +
-    '        <option value="">📁 Tất cả phân loại</option>' +
-    '        <option value="may_scan"' + (adminCurrentCat === 'may_scan' ? ' selected' : '') + '>📄 Máy quét (Scanner)</option>' +
-    '        <option value="may_in"' + (adminCurrentCat === 'may_in' ? ' selected' : '') + '>🖨️ Máy in Laser</option>' +
-    '        <option value="photocopy"' + (adminCurrentCat === 'photocopy' ? ' selected' : '') + '>📠 Máy Photocopy đa chức năng</option>' +
-    '        <option value="may_tinh"' + (adminCurrentCat === 'may_tinh' ? ' selected' : '') + '>💻 Máy vi tính & Laptop</option>' +
-    '        <option value="man_hinh"' + (adminCurrentCat === 'man_hinh' ? ' selected' : '') + '>🖥️ Màn hình hiển thị</option>' +
-    '        <option value="network_av"' + (adminCurrentCat === 'network_av' ? ' selected' : '') + '>🌐 Thiết bị mạng & Hội nghị</option>' +
-    '      </select>' +
-    '    </div>' +
+    '  <!-- DATA TABLE BAR INFO -->' +
+    '  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;font-size:12.5px;color:var(--t2)">' +
+    '    <div>Đang hiển thị: <b style="color:var(--t1)">' + filtered.length + '</b> / ' + totalCount + ' sản phẩm' +
+    (adminCurrentSearch ? ' (Tìm theo: "<b>' + escH(adminCurrentSearch) + '</b>")' : '') + '</div>' +
+    '    <div style="font-size:11.5px;color:var(--t3)">💡 Mẹo: Bấm <b>✏️ Sửa</b> để đổi thông số; <b>🔒 Khóa</b> để ẩn máy khỏi Catalog dự toán; <b>🗑️ Xóa</b> để gỡ bỏ.</div>' +
     '  </div>' +
 
     '  <!-- DATA TABLE -->' +
-    '  <div style="background:var(--card);border-radius:12px;border:1px solid var(--bdr2);overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.04)">' +
-    '    <div style="max-height:680px;overflow-y:auto">' +
+    '  <div style="background:var(--card);border-radius:12px;border:1.5px solid var(--bdr2);overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.04)">' +
+    '    <div style="max-height:720px;overflow-y:auto">' +
     '      <table class="table-admin" style="width:100%;border-collapse:collapse;font-size:12.5px;text-align:left">' +
     '        <thead>' +
     '          <tr style="background:var(--bg);position:sticky;top:0;z-index:2;box-shadow:0 1px 3px rgba(0,0,0,0.05);color:var(--t2);font-weight:800">' +
-    '            <th style="padding:10px 12px;width:45px;text-align:center">STT</th>' +
+    '            <th style="padding:10px 10px;width:40px;text-align:center">STT</th>' +
+    '            <th style="padding:10px 10px;width:95px;text-align:center">Trạng thái</th>' +
     '            <th style="padding:10px 12px;min-width:240px">Tên thiết bị</th>' +
-    '            <th style="padding:10px 12px;width:120px">Model</th>' +
-    '            <th style="padding:10px 12px;width:100px">Hãng</th>' +
-    '            <th style="padding:10px 12px;width:90px">Xuất xứ</th>' +
-    '            <th style="padding:10px 12px;width:70px">ĐVT</th>' +
-    '            <th style="padding:10px 12px;width:120px;text-align:right">Giá dự toán (đ)</th>' +
-    '            <th style="padding:10px 12px;width:95px;text-align:center">Thông số</th>' +
-    '            <th style="padding:10px 12px;min-width:160px">Tài liệu mẫu</th>' +
-    '            <th style="padding:10px 12px;width:125px;text-align:center">Thao tác</th>' +
+    '            <th style="padding:10px 12px;width:150px">Model</th>' +
+    '            <th style="padding:10px 10px;width:90px">Hãng</th>' +
+    '            <th style="padding:10px 10px;width:90px">Xuất xứ</th>' +
+    '            <th style="padding:10px 10px;width:65px;text-align:center">ĐVT</th>' +
+    '            <th style="padding:10px 12px;width:115px;text-align:right">Giá dự toán</th>' +
+    '            <th style="padding:10px 10px;width:95px;text-align:center">Thông số</th>' +
+    '            <th style="padding:10px 12px;min-width:140px">Tài liệu mẫu</th>' +
+    '            <th style="padding:10px 12px;width:170px;text-align:center">Thao tác</th>' +
     '          </tr>' +
     '        </thead>' +
     '        <tbody>';
 
   if (filtered.length === 0) {
-    if (!isSearchActive) {
-      html += '<tr><td colspan="10" style="text-align:center;padding:48px 20px;color:var(--t2)">' +
-        '<div style="font-size:36px;margin-bottom:8px">🔍</div>' +
-        '<div style="font-size:13.5px;color:var(--t2);margin-bottom:14px">Nhập <b>Model</b> hoặc <b>Tên máy</b> vào ô tìm kiếm ở trên để hiển thị sản phẩm cần chỉnh sửa.<br>Hoặc bấm nút <b>[📑 Chỉ mẫu máy từ file Word & Excel (' + wordExcelCount + ' mẫu)]</b> để hiển thị các dòng máy mẫu.</div>' +
-        '<button class="btn btn-o btn-sm" onclick="adminCurrentSource=\'word_excel\'; renderAdminDashboard(document.getElementById(\'view-admin\'))">📑 Xem 32 mẫu Word & Excel</button>' +
-        '</td></tr>';
-    } else {
-      html += '<tr><td colspan="10" style="text-align:center;padding:40px;color:var(--t2)">Không tìm thấy sản phẩm nào khớp với điều kiện lọc!</td></tr>';
-    }
+    html += '<tr><td colspan="11" style="text-align:center;padding:48px 20px;color:var(--t2)">' +
+      '<div style="font-size:36px;margin-bottom:8px">🔍</div>' +
+      '<div style="font-size:14px;font-weight:700;color:var(--t1);margin-bottom:6px">Không tìm thấy sản phẩm nào khớp với điều kiện lọc!</div>' +
+      '<div style="font-size:12.5px;color:var(--t2);margin-bottom:14px">Bạn có thể thử tìm từ khóa khác hoặc bấm nút đặt lại bộ lọc.</div>' +
+      '<button class="btn btn-p btn-sm" onclick="adminCurrentSearch=\'\';adminCurrentBrand=\'\';adminCurrentCat=\'\';adminCurrentStatus=\'all\';adminCurrentSource=\'all\';renderAdminDashboard()">Hiển thị lại toàn bộ sản phẩm</button>' +
+      '</td></tr>';
   } else {
     filtered.forEach(function (it, idx) {
       var realIdx = CATALOG_ITEMS.findIndex(function (x) { return x.id === it.id; });
       var specCnt = (it.specs && it.specs.length) || 0;
       var priceStr = (it.price && it.price > 0) ? it.price.toLocaleString('vi-VN') : '';
+      var isLocked = !!it.isLocked;
 
       html +=
-        '<tr style="border-bottom:1px solid var(--bdr2);transition:background 0.1s" onmouseover="this.style.background=\'rgba(0,0,0,0.02)\'" onmouseout="this.style.background=\'transparent\'">' +
-        '  <td style="padding:8px 12px;text-align:center;color:var(--t3);font-weight:700">' + (idx + 1) + '</td>' +
-        '  <td style="padding:8px 12px">' +
-        '    <input type="text" class="cell-inp" style="font-weight:700;color:var(--t1)" value="' + escH(it.name || '') + '" onchange="adminUpdateProductField(' + realIdx + ', \'name\', this.value)" />' +
+        '<tr style="border-bottom:1px solid var(--bdr2);transition:background 0.1s;' + (isLocked ? 'background:#fff1f2;opacity:0.85;' : '') + '" onmouseover="this.style.background=\'rgba(0,0,0,0.02)\'" onmouseout="this.style.background=\'' + (isLocked ? '#fff1f2' : 'transparent') + '\'">' +
+        '  <td style="padding:8px 10px;text-align:center;color:var(--t3);font-weight:700">' + (idx + 1) + '</td>' +
+        '  <!-- Cột Trạng thái -->' +
+        '  <td style="padding:8px 10px;text-align:center">' +
+        (isLocked
+          ? '<span style="display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:10px;background:#fee2e2;color:#b91c1c;border:1px solid #fca5a5;font-size:11px;font-weight:800" title="Sản phẩm đang bị khóa (Ẩn khỏi Catalog công khai)">🔒 Đã khóa</span>'
+          : '<span style="display:inline-flex;align-items:center;gap:3px;padding:2px 7px;border-radius:10px;background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;font-size:11px;font-weight:800" title="Sản phẩm đang mở hoạt động bình thường">✅ Đang mở</span>') +
         '  </td>' +
+        '  <!-- Cột Tên -->' +
         '  <td style="padding:8px 12px">' +
-        '    <input type="text" class="cell-inp" style="font-weight:800;color:#0284c7" value="' + escH(it.model || '') + '" onchange="adminUpdateProductField(' + realIdx + ', \'model\', this.value)" />' +
+        '    <input type="text" class="cell-inp" style="font-weight:700;color:var(--t1)" value="' + escH(it.name || '') + '" onchange="adminUpdateProductField(' + realIdx + ', \'name\', this.value)" title="Bấm để sửa nhanh tên máy" />' +
         '  </td>' +
+        '  <!-- Cột Model -->' +
         '  <td style="padding:8px 12px">' +
+        '    <input type="text" class="cell-inp" style="font-weight:800;color:#0284c7;font-family:monospace" value="' + escH(it.model || '') + '" onchange="adminUpdateProductField(' + realIdx + ', \'model\', this.value)" title="Bấm để sửa nhanh Model" />' +
+        '  </td>' +
+        '  <!-- Cột Hãng -->' +
+        '  <td style="padding:8px 10px">' +
         '    <input type="text" class="cell-inp" value="' + escH(it.brand || '') + '" onchange="adminUpdateProductField(' + realIdx + ', \'brand\', this.value)" />' +
         '  </td>' +
-        '  <td style="padding:8px 12px">' +
+        '  <!-- Cột Xuất xứ -->' +
+        '  <td style="padding:8px 10px">' +
         '    <input type="text" class="cell-inp" value="' + escH(it.origin || '') + '" onchange="adminUpdateProductField(' + realIdx + ', \'origin\', this.value)" />' +
         '  </td>' +
-        '  <td style="padding:8px 12px">' +
+        '  <!-- Cột ĐVT -->' +
+        '  <td style="padding:8px 10px;text-align:center">' +
         '    <input type="text" class="cell-inp" style="text-align:center" value="' + escH(it.unit || 'Cái') + '" onchange="adminUpdateProductField(' + realIdx + ', \'unit\', this.value)" />' +
         '  </td>' +
+        '  <!-- Cột Đơn giá -->' +
         '  <td style="padding:8px 12px;text-align:right">' +
         '    <input type="text" class="cell-inp" style="text-align:right;font-weight:700;color:#059669" value="' + priceStr + '" placeholder="0" oninput="formatMoneyInput(this)" onchange="adminUpdateProductField(' + realIdx + ', \'price\', parseNum(this.value))" />' +
         '  </td>' +
-        '  <td style="padding:8px 12px;text-align:center">' +
-        '    <button class="btn btn-sm" onclick="adminOpenSpecModal(' + realIdx + ')" style="padding:2px 8px;font-size:11.5px;border-radius:12px;background:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;cursor:pointer;font-weight:700" title="Bấm để xem và sửa chi tiết thông số">' +
+        '  <!-- Cột Thông số -->' +
+        '  <td style="padding:8px 10px;text-align:center">' +
+        '    <button class="btn btn-sm" onclick="adminOpenSpecModal(' + realIdx + ')" style="padding:3px 8px;font-size:11.5px;border-radius:12px;background:#e0f2fe;color:#0369a1;border:1px solid #bae6fd;cursor:pointer;font-weight:700" title="Bấm để xem và sửa chi tiết thông số kỹ thuật">' +
         '      📋 ' + specCnt + ' tiêu chí' +
         '    </button>' +
         '  </td>' +
+        '  <!-- Cột Tài liệu -->' +
         '  <td style="padding:8px 12px">' +
         ((it.file || it.sourceFile)
           ? '<span style="display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:6px;background:#ecfdf5;color:#047857;border:1px solid #a7f3d0;font-size:11px;font-weight:700" title="' + escH(it.file || it.sourceFile) + '">' + ((it.file || it.sourceFile).endsWith('.xlsx') ? '📊 ' : '📄 ') + escH(it.file || it.sourceFile) + '</span>'
           : '<span style="color:var(--t3);font-size:11px">Mặc định hệ thống</span>') +
         '  </td>' +
+        '  <!-- CỘT THAO TÁC (ĐẦY ĐỦ: SỬA, KHÓA/MỞ, XÓA) -->' +
         '  <td style="padding:8px 12px;text-align:center;white-space:nowrap">' +
-        '    <button class="btn btn-o btn-sm" onclick="adminOpenSpecModal(' + realIdx + ')" style="padding:3px 7px;font-size:11.5px;margin-right:4px" title="Sửa chi tiết thông số kỹ thuật">📝 Specs</button>' +
-        '    <button class="btn btn-sm" onclick="adminDeleteProduct(' + realIdx + ')" style="padding:3px 7px;font-size:11.5px;color:#ef4444;background:#fee2e2;border:1px solid #fca5a5" title="Xóa thiết bị này">🗑️</button>' +
+        '    <button class="btn btn-sm" onclick="adminOpenEditProductModal(' + realIdx + ')" style="padding:3px 8px;font-size:11.5px;background:#f1f5f9;color:#0f172a;border:1px solid #cbd5e1;font-weight:700;margin-right:4px;border-radius:6px" title="Chỉnh sửa toàn diện sản phẩm">✏️ Sửa</button>' +
+        (isLocked
+          ? '<button class="btn btn-sm" onclick="adminToggleLockProduct(' + realIdx + ')" style="padding:3px 8px;font-size:11.5px;background:#dcfce7;color:#15803d;border:1px solid #86efac;font-weight:700;margin-right:4px;border-radius:6px" title="Mở khóa sản phẩm để hiển thị lại trên Catalog">🔓 Mở</button>'
+          : '<button class="btn btn-sm" onclick="adminToggleLockProduct(' + realIdx + ')" style="padding:3px 8px;font-size:11.5px;background:#fef3c7;color:#b45309;border:1px solid #fde68a;font-weight:700;margin-right:4px;border-radius:6px" title="Khóa sản phẩm (Ẩn khỏi Catalog bên ngoài)">🔒 Khóa</button>') +
+        '    <button class="btn btn-sm" onclick="adminDeleteProduct(' + realIdx + ')" style="padding:3px 8px;font-size:11.5px;color:#ef4444;background:#fee2e2;border:1px solid #fca5a5;font-weight:700;border-radius:6px" title="Xóa vĩnh viễn thiết bị này">🗑️</button>' +
         '  </td>' +
         '</tr>';
     });
@@ -4481,22 +4533,36 @@ function renderAdminDashboard(container) {
 function adminUpdateProductField(idx, field, val) {
   if (!CATALOG_ITEMS[idx]) return;
   CATALOG_ITEMS[idx][field] = val;
-  // Đồng bộ presetKey
   if (CATALOG_ITEMS[idx].presetKey && typeof MODEL_PRESETS !== 'undefined' && MODEL_PRESETS[CATALOG_ITEMS[idx].presetKey]) {
     MODEL_PRESETS[CATALOG_ITEMS[idx].presetKey][field] = val;
   }
   toast('Đã cập nhật: ' + field, 'ok');
 }
 
+/* ── KHÓA / MỞ KHÓA SẢN PHẨM ── */
+function adminToggleLockProduct(idx) {
+  var it = CATALOG_ITEMS[idx];
+  if (!it) return;
+  it.isLocked = !it.isLocked;
+  var statusText = it.isLocked ? '🔒 Đã khóa sản phẩm' : '🔓 Đã mở khóa sản phẩm';
+  adminSaveCatalogChanges();
+  renderAdminDashboard(document.getElementById('view-admin'));
+  toast(statusText + ': ' + (it.name || it.model), 'ok');
+}
+
 /* ── XÓA SẢN PHẨM ── */
 function adminDeleteProduct(idx) {
   var it = CATALOG_ITEMS[idx];
   if (!it) return;
-  if (confirm('Bạn có chắc chắn muốn xóa sản phẩm [' + (it.name || it.model) + '] khỏi cơ sở dữ liệu?')) {
+  if (confirm('Bạn có chắc chắn muốn XÓA VĨNH VIỄN sản phẩm [' + (it.name || it.model) + '] khỏi cơ sở dữ liệu? Hành động này không thể hoàn tác.')) {
+    var pKey = it.presetKey || it.id;
     CATALOG_ITEMS.splice(idx, 1);
-    toast('🗑️ Đã xóa sản phẩm thành công!', 'ok');
+    if (pKey && typeof MODEL_PRESETS !== 'undefined' && MODEL_PRESETS[pKey]) {
+      delete MODEL_PRESETS[pKey];
+    }
+    adminSaveCatalogChanges();
     renderAdminDashboard(document.getElementById('view-admin'));
-    if (typeof renderCatalogGrid === 'function') renderCatalogGrid();
+    toast('🗑️ Đã xóa sản phẩm thành công!', 'ok');
   }
 }
 
@@ -4504,7 +4570,7 @@ function adminDeleteProduct(idx) {
 function adminSaveCatalogChanges() {
   try {
     localStorage.setItem(LS_CUSTOM_CATALOG_KEY, JSON.stringify(CATALOG_ITEMS));
-    toast('💾 Đã lưu vĩnh viễn toàn bộ ' + CATALOG_ITEMS.length + ' sản phẩm vào hệ thống!', 'ok');
+    toast('💾 Đã lưu thay đổi vào bộ nhớ hệ thống!', 'ok');
     if (typeof renderCatalogGrid === 'function') renderCatalogGrid();
     if (typeof renderBrandAndSubNav === 'function') renderBrandAndSubNav();
   } catch (e) {
@@ -4519,6 +4585,164 @@ function adminResetToDefault() {
     location.reload();
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════════
+   MODAL CHỈNH SỬA SẢN PHẨM TOÀN DIỆN (EDIT PRODUCT MODAL)
+═══════════════════════════════════════════════════════════════════ */
+var adminCurrentEditingIdx = null;
+
+function adminOpenEditProductModal(idx) {
+  var it = CATALOG_ITEMS[idx];
+  if (!it) return;
+  adminCurrentEditingIdx = idx;
+
+  var modal = document.getElementById('adminEditProductModal');
+  if (!modal) {
+    createAdminEditProductModalHtml();
+    modal = document.getElementById('adminEditProductModal');
+  }
+
+  document.getElementById('editProdName').value = it.name || '';
+  document.getElementById('editProdModel').value = it.model || '';
+  document.getElementById('editProdBrand').value = it.brand || '';
+  document.getElementById('editProdOrigin').value = it.origin || '';
+  document.getElementById('editProdCat').value = it.cat || 'may_scan';
+  document.getElementById('editProdUnit').value = it.unit || 'Cái';
+  document.getElementById('editProdPrice').value = (it.price && it.price > 0) ? it.price.toLocaleString('vi-VN') : '0';
+  document.getElementById('editProdWarranty').value = it.warranty || '12 tháng';
+  document.getElementById('editProdStatus').value = it.isLocked ? 'locked' : 'active';
+  document.getElementById('editProdSourceFile').value = it.file || it.sourceFile || 'Mặc định';
+
+  modal.style.display = 'flex';
+}
+
+function closeAdminEditProductModal() {
+  var modal = document.getElementById('adminEditProductModal');
+  if (modal) modal.style.display = 'none';
+  adminCurrentEditingIdx = null;
+}
+
+function adminSaveEditProductSubmit() {
+  if (adminCurrentEditingIdx === null || !CATALOG_ITEMS[adminCurrentEditingIdx]) return;
+  var it = CATALOG_ITEMS[adminCurrentEditingIdx];
+
+  var name = (document.getElementById('editProdName') && document.getElementById('editProdName').value) || '';
+  var model = (document.getElementById('editProdModel') && document.getElementById('editProdModel').value) || '';
+  if (!name.trim() || !model.trim()) {
+    alert('Vui lòng không để trống Tên thiết bị và Model!');
+    return;
+  }
+
+  it.name = name.trim();
+  it.model = model.trim();
+  it.brand = (document.getElementById('editProdBrand').value || '').trim();
+  it.origin = (document.getElementById('editProdOrigin').value || '').trim();
+  it.cat = document.getElementById('editProdCat').value || 'may_scan';
+  it.unit = (document.getElementById('editProdUnit').value || 'Cái').trim();
+  it.price = parseNum(document.getElementById('editProdPrice').value || 0);
+  it.warranty = (document.getElementById('editProdWarranty').value || '12 tháng').trim();
+  it.isLocked = (document.getElementById('editProdStatus').value === 'locked');
+
+  // Đồng bộ sang MODEL_PRESETS
+  if (it.presetKey && typeof MODEL_PRESETS !== 'undefined' && MODEL_PRESETS[it.presetKey]) {
+    MODEL_PRESETS[it.presetKey].name = it.name;
+    MODEL_PRESETS[it.presetKey].model = it.model;
+    MODEL_PRESETS[it.presetKey].brand = it.brand;
+    MODEL_PRESETS[it.presetKey].origin = it.origin;
+    MODEL_PRESETS[it.presetKey].unit = it.unit;
+    MODEL_PRESETS[it.presetKey].price = it.price;
+    MODEL_PRESETS[it.presetKey].warranty = it.warranty;
+  }
+
+  adminSaveCatalogChanges();
+  closeAdminEditProductModal();
+  renderAdminDashboard(document.getElementById('view-admin'));
+  toast('💾 Đã lưu thành công sản phẩm: ' + it.name, 'ok');
+}
+
+function createAdminEditProductModalHtml() {
+  var div = document.createElement('div');
+  div.id = 'adminEditProductModal';
+  div.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.65);backdrop-filter:blur(4px);z-index:99999;display:none;align-items:center;justify-content:center;padding:20px';
+  div.innerHTML =
+    '<div style="background:var(--card);width:100%;max-width:640px;border-radius:16px;border:1.5px solid var(--bdr2);box-shadow:0 20px 50px rgba(0,0,0,0.3);overflow:hidden;animation:fadeIn 0.2s ease">' +
+    '  <div style="padding:16px 20px;border-bottom:1px solid var(--bdr2);display:flex;justify-content:space-between;align-items:center;background:var(--bg)">' +
+    '    <div style="font-size:16px;font-weight:900;color:var(--t1)">✏️ Chỉnh sửa thông tin sản phẩm</div>' +
+    '    <button onclick="closeAdminEditProductModal()" style="background:none;border:none;font-size:20px;cursor:pointer;color:var(--t2)">✕</button>' +
+    '  </div>' +
+    '  <div style="padding:20px;max-height:75vh;overflow-y:auto">' +
+    '    <div style="margin-bottom:12px">' +
+    '      <label style="display:block;font-size:12px;font-weight:700;margin-bottom:4px;color:var(--t2)">TÊN THIẾT BỊ (*)</label>' +
+    '      <input type="text" id="editProdName" class="cell-inp" style="width:100%;height:38px;padding:0 10px;border:1px solid var(--bdr2);border-radius:8px;font-weight:700" />' +
+    '    </div>' +
+    '    <div style="display:flex;gap:12px;margin-bottom:12px">' +
+    '      <div style="flex:1">' +
+    '        <label style="display:block;font-size:12px;font-weight:700;margin-bottom:4px;color:var(--t2)">MODEL (*)</label>' +
+    '        <input type="text" id="editProdModel" class="cell-inp" style="width:100%;height:38px;padding:0 10px;border:1px solid var(--bdr2);border-radius:8px;font-weight:800;color:#0284c7;font-family:monospace" />' +
+    '      </div>' +
+    '      <div style="flex:1">' +
+    '        <label style="display:block;font-size:12px;font-weight:700;margin-bottom:4px;color:var(--t2)">HÃNG SẢN XUẤT</label>' +
+    '        <input type="text" id="editProdBrand" class="cell-inp" style="width:100%;height:38px;padding:0 10px;border:1px solid var(--bdr2);border-radius:8px" />' +
+    '      </div>' +
+    '    </div>' +
+    '    <div style="display:flex;gap:12px;margin-bottom:12px">' +
+    '      <div style="flex:1">' +
+    '        <label style="display:block;font-size:12px;font-weight:700;margin-bottom:4px;color:var(--t2)">PHÂN LOẠI DANH MỤC</label>' +
+    '        <select id="editProdCat" class="cell-inp" style="width:100%;height:38px;padding:0 10px;border:1px solid var(--bdr2);border-radius:8px;font-weight:600">' +
+    '          <option value="may_tinh">💻 Máy vi tính & Mini PC</option>' +
+    '          <option value="man_hinh">🖥️ Màn hình hiển thị</option>' +
+    '          <option value="may_in">🖨️ Máy in Laser</option>' +
+    '          <option value="photocopy">📠 Máy Photocopy đa năng</option>' +
+    '          <option value="may_scan">📄 Máy quét (Scanner)</option>' +
+    '          <option value="network_av">🌐 Thiết bị mạng & Hội nghị</option>' +
+    '          <option value="phu_kien">🔌 Phụ kiện & Thiết bị khác</option>' +
+    '        </select>' +
+    '      </div>' +
+    '      <div style="flex:1">' +
+    '        <label style="display:block;font-size:12px;font-weight:700;margin-bottom:4px;color:var(--t2)">TRẠNG THÁI KHÓA / MỞ</label>' +
+    '        <select id="editProdStatus" class="cell-inp" style="width:100%;height:38px;padding:0 10px;border:1.5px solid var(--bdr2);border-radius:8px;font-weight:700">' +
+    '          <option value="active">✅ Đang mở (Hiển thị ngoài Catalog)</option>' +
+    '          <option value="locked">🔒 Đã khóa (Ẩn hoàn toàn khỏi Catalog)</option>' +
+    '        </select>' +
+    '      </div>' +
+    '    </div>' +
+    '    <div style="display:flex;gap:12px;margin-bottom:12px">' +
+    '      <div style="flex:1">' +
+    '        <label style="display:block;font-size:12px;font-weight:700;margin-bottom:4px;color:var(--t2)">XUẤT XỨ</label>' +
+    '        <input type="text" id="editProdOrigin" class="cell-inp" style="width:100%;height:38px;padding:0 10px;border:1px solid var(--bdr2);border-radius:8px" />' +
+    '      </div>' +
+    '      <div style="flex:1">' +
+    '        <label style="display:block;font-size:12px;font-weight:700;margin-bottom:4px;color:var(--t2)">ĐƠN VỊ TÍNH</label>' +
+    '        <input type="text" id="editProdUnit" class="cell-inp" style="width:100%;height:38px;padding:0 10px;border:1px solid var(--bdr2);border-radius:8px" />' +
+    '      </div>' +
+    '    </div>' +
+    '    <div style="display:flex;gap:12px;margin-bottom:12px">' +
+    '      <div style="flex:1">' +
+    '        <label style="display:block;font-size:12px;font-weight:700;margin-bottom:4px;color:var(--t2)">ĐƠN GIÁ DỰ TOÁN (VNĐ)</label>' +
+    '        <input type="text" id="editProdPrice" class="cell-inp" style="width:100%;height:38px;padding:0 10px;border:1px solid var(--bdr2);border-radius:8px;font-weight:700;color:#059669" oninput="formatMoneyInput(this)" />' +
+    '      </div>' +
+    '      <div style="flex:1">' +
+    '        <label style="display:block;font-size:12px;font-weight:700;margin-bottom:4px;color:var(--t2)">THỜI HẠN BẢO HÀNH</label>' +
+    '        <input type="text" id="editProdWarranty" class="cell-inp" style="width:100%;height:38px;padding:0 10px;border:1px solid var(--bdr2);border-radius:8px" />' +
+    '      </div>' +
+    '    </div>' +
+    '    <div style="margin-bottom:16px">' +
+    '      <label style="display:block;font-size:12px;font-weight:700;margin-bottom:4px;color:var(--t2)">FILE TÀI LIỆU NGUỒN</label>' +
+    '      <input type="text" id="editProdSourceFile" class="cell-inp" style="width:100%;height:38px;padding:0 10px;border:1px solid var(--bdr2);border-radius:8px;color:var(--t3)" readonly />' +
+    '    </div>' +
+    '    <div style="background:var(--bg);padding:12px;border-radius:10px;display:flex;justify-content:space-between;align-items:center">' +
+    '      <div><span style="font-weight:700">Thông số kỹ thuật:</span> Chỉnh sửa danh sách các tiêu chí chi tiết</div>' +
+    '      <button type="button" class="btn btn-o btn-sm" onclick="closeAdminEditProductModal();adminOpenSpecModal(adminCurrentEditingIdx)">📋 Sửa thông số (Specs)</button>' +
+    '    </div>' +
+    '  </div>' +
+    '  <div style="padding:14px 20px;border-top:1px solid var(--bdr2);background:var(--bg);display:flex;justify-content:flex-end;gap:8px">' +
+    '    <button class="btn btn-o btn-sm" onclick="closeAdminEditProductModal()">Hủy</button>' +
+    '    <button class="btn btn-p btn-sm" onclick="adminSaveEditProductSubmit()" style="font-weight:800">💾 Lưu thay đổi</button>' +
+    '  </div>' +
+    '</div>';
+  document.body.appendChild(div);
+}
+
 
 /* ── XUẤT TẤT CẢ THIẾT BỊ THEO CHUẨN MẪU FILE DỰ TOÁN (SHEET TỔNG HỢP + TỪNG SHEET MÁY) ── */
 function adminExportAllDevicesExcel() {
@@ -5068,6 +5292,7 @@ function patchCatalogSearchAndHiding() {
     }
 
     return CATALOG_ITEMS.filter(function (item) {
+      if (item.isLocked) return false; // Ẩn sản phẩm đã bị khóa trong Admin
       var itemBrand = (item.brand || item.manufacturer || '').toLowerCase();
       var itemName = (item.name || '').toLowerCase();
       var itemModel = (item.model || '').toLowerCase();
@@ -5075,7 +5300,8 @@ function patchCatalogSearchAndHiding() {
       var subName = (info.subCatName || '').toLowerCase();
       var serName = (info.seriesName || '').toLowerCase();
 
-      return itemModel.includes(kw) || itemName.includes(kw) || itemBrand.includes(kw) || subName.includes(kw) || serName.includes(kw);
+      // Sử dụng matchFuzzyKw: 'dp 80' khớp 'DP80', không dấu, bỏ khoảng trắng
+      return matchFuzzyKw(itemModel + ' ' + itemName + ' ' + itemBrand + ' ' + subName + ' ' + serName, kw);
     });
   };
 
@@ -5101,7 +5327,7 @@ function patchCatalogSearchAndHiding() {
         '<div style="text-align:center;padding:36px 20px;background:var(--card);border-radius:14px;border:1.5px dashed var(--bdr2);margin:14px 0">' +
         '  <div style="font-size:38px;margin-bottom:8px">🔍</div>' +
         '  <div style="font-size:13.5px;color:var(--t2);max-width:600px;margin:0 auto 16px auto;line-height:1.5">' +
-        '    Vui lòng nhập <b>Model</b> hoặc <b>Tên máy</b> vào ô tìm kiếm ở trên để hiển thị sản phẩm và bấm chọn.' +
+        '    Vui lòng nhập <b>Model</b> hoặc <b>Tên máy</b> vào ô tìm kiếm ở trên (VD: <b>dp 80</b>, <b>dp 21</b>, <b>mp 225</b>, <b>msi</b>) hoặc bấm chọn mẫu máy tra cứu nhanh bên dưới.' +
         '  </div>' +
         '  <div style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;align-items:center;max-width:980px;margin:0 auto">' +
         '    <span style="font-size:12px;color:var(--t3);font-weight:800">Mẫu máy tra cứu nhanh:</span>' +

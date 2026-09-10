@@ -81772,6 +81772,30 @@ function matchParametricSpecFilter(item) {
   return true;
 }
 
+
+/* ── FUZZY KEYWORD MATCHING (Hỗ trợ tìm kiếm thông minh: 'dp 80' khớp 'DP80', không dấu, bỏ khoảng trắng) ── */
+function matchFuzzyKw(text, q) {
+  if (!q) return true;
+  if (!text) return false;
+  var t = String(text).toLowerCase();
+  var query = String(q).toLowerCase().trim();
+  if (t.includes(query)) return true;
+
+  var tClean = t.replace(/[\s\-_/\\,.]+/g, '');
+  var qClean = query.replace(/[\s\-_/\\,.]+/g, '');
+  if (qClean && tClean.includes(qClean)) return true;
+
+  var tokens = query.split(/\s+/).filter(Boolean);
+  if (tokens.length > 1) {
+    return tokens.every(function (tok) {
+      var tokClean = tok.replace(/[\s\-_/\\,.]+/g, '');
+      return t.includes(tok) || (tokClean && tClean.includes(tokClean));
+    });
+  }
+  return false;
+}
+if (typeof window !== 'undefined') window.matchFuzzyKw = matchFuzzyKw;
+
 function getFilteredCatalogItems() {
   var kw = (document.getElementById('catSearch') ? document.getElementById('catSearch').value : '').toLowerCase().trim();
   var deepSpec = !!(document.getElementById('catDeepSpecSearch') && document.getElementById('catDeepSpecSearch').checked);
@@ -81792,8 +81816,11 @@ function getFilteredCatalogItems() {
     // Type filter matching
     var mType = curCatType === 'all' || item.cat === curCatType || (curCatType === 'may_in' && (item.cat === 'may_in' || item.cat === 'photocopy')) || (curCatType === 'thiet_bi_khac' && (item.cat === 'thiet_bi_khac' || item.cat === 'khac'));
 
-    // Keyword search matching
-    var mKw = !kw || item.name.toLowerCase().includes(kw) || item.model.toLowerCase().includes(kw) || itemBrand.toLowerCase().includes(kw) || info.subCatName.toLowerCase().includes(kw) || (info.seriesName && info.seriesName.toLowerCase().includes(kw));
+    // Ẩn sản phẩm đã bị khóa khỏi catalog công khai
+    if (item.isLocked) return false;
+
+    // Keyword search matching (Fuzzy search: hỗ trợ 'dp 80' khớp 'DP80', bỏ khoảng trắng/dấu gạch)
+    var mKw = !kw || matchFuzzyKw((item.name || '') + ' ' + (item.model || '') + ' ' + (itemBrand || '') + ' ' + (info.subCatName || '') + ' ' + (info.seriesName || ''), kw);
 
     if (!mKw && deepSpec && kw) {
       var specs = getDeviceSpecs(item);
