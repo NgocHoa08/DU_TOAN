@@ -102,11 +102,11 @@ var SAMPLE_HISTORY_DATA = [
     fileName: 'DuToan_ThietBi_CNTT_Scan.xlsx',
     meta: {
       project: 'Nâng cấp hạ tầng số và thiết bị CNTT',
-      total: '185.600.000 ₫',
+      total: '—',
       items: [
-        { name: 'Máy scan RICOH Fi-8170 chính hãng', model: 'Fi-8170', brand: 'RICOH', qty: 2, price: 42500000, specs: [] },
-        { name: 'Máy vi tính để bàn MSI PRO DP180', model: 'PRO DP180', brand: 'MSI', qty: 5, price: 18500000, specs: [] },
-        { name: 'Máy in Laser đơn năng OKI B433DN', model: 'B433DN', brand: 'OKI', qty: 3, price: 6200000, specs: [] }
+        { name: 'Máy scan RICOH Fi-8170 chính hãng', model: 'Fi-8170', brand: 'RICOH', qty: 2, price: 0, specs: [] },
+        { name: 'Máy vi tính để bàn MSI PRO DP180', model: 'PRO DP180', brand: 'MSI', qty: 5, price: 0, specs: [] },
+        { name: 'Máy in Laser đơn năng OKI B433DN', model: 'B433DN', brand: 'OKI', qty: 3, price: 0, specs: [] }
       ]
     }
   },
