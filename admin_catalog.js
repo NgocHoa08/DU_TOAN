@@ -2849,6 +2849,721 @@ var EXTRA_MAU_MAY_DEVICES = [
     "file": "Báo giá máy Scan, Photo.xlsx",
     "sourceFile": "Báo giá máy Scan, Photo.xlsx"
   }
+,
+  {
+    "key": "fujitsu_lifebook_e5412",
+    "name": "Máy vi tính xách tay: Fujitsu Lifebook E5412 (Bảo mật vân tay)",
+    "model": "Lifebook E5412",
+    "brand": "Fujitsu",
+    "origin": "Japan",
+    "unit": "Chiếc",
+    "cat": "may_tinh",
+    "price": 0,
+    "warranty": "12 tháng",
+    "file": "BANG BAO GIA CLEAR KHO_V2.xlsx",
+    "specs": [
+      {
+        "key": "Màn hình",
+        "value": "14 inch, Full-HD LCD, Chống chói"
+      },
+      {
+        "key": "Bộ vi xử lý",
+        "value": "Intel® Core™ i7-1255U processor (10 Cores, up to 4.7 GHz), vPro Essentials supported"
+      },
+      {
+        "key": "Bộ nhớ trong",
+        "value": "8GB DDR4-3200; 2 khe RAM cho phép nâng cấp lên tới: 64 GB"
+      },
+      {
+        "key": "Ổ đĩa cứng",
+        "value": "SSD 1TB Value-PCIe M.2 NVMe"
+      },
+      {
+        "key": "Đồ họa",
+        "value": "Intel® UHD Graphics (tích hợp theo CPU)"
+      },
+      {
+        "key": "Âm thanh",
+        "value": "HD Audio, Stereo speakers and Dual digital array microphone, AI noise reduction in dual built-in microphones."
+      },
+      {
+        "key": "Camera",
+        "value": "Built-in HD Webcam with integrated privacy shutter"
+      },
+      {
+        "key": "Kết nối",
+        "value": "Gigabit Ethernet Connection\nIntel® Wi-Fi 6E AX211 802.11ax 2x2\nBluetooth® 5.2"
+      },
+      {
+        "key": "Khe cắm thẻ nhớ",
+        "value": "microSD 3.0"
+      },
+      {
+        "key": "Cổng kết nối",
+        "value": "1x 3.5mm Audio Combo\n2x USB 3.2 Gen 1 Type-A\n2x USB 4.0 Gen 3 Type-C\n1x HDMI Port\n1x Gigabit Ethernet RJ-45"
+      },
+      {
+        "key": "Nhập liệu",
+        "value": "Keyboard & touchpad"
+      },
+      {
+        "key": "An toàn bảo mật",
+        "value": "- Tích hợp Bảo mật vân tay.\n- Chip bảo mật: TPM 2.0\n- EraseDisk: Tính năng xóa vĩnh viễn toàn bộ dữ liệu ổ cứng, không thể khôi phục lại.\n- BIOS/ Hard Disk password protection: Bảo vệ BIOS và ổ cứng bằng mật khẩu."
+      },
+      {
+        "key": "Pin",
+        "value": "4-cell, công suất: 60Wh"
+      },
+      {
+        "key": "Bảo hành",
+        "value": "12 tháng."
+      }
+    ]
+  },
+  {
+    "key": "hp_laserjet_mfp_m528dn",
+    "name": "Máy in chuyên dùng HP LaserJet Enterprise MFP M528dn",
+    "model": "LaserJet Enterprise MFP M528dn",
+    "brand": "HP",
+    "origin": "China",
+    "unit": "Chiếc",
+    "cat": "may_in",
+    "price": 0,
+    "warranty": "03 năm theo tiêu chuẩn chính hãng",
+    "file": "BANG BAO GIA CLEAR KHO_V2.xlsx",
+    "specs": [
+      {
+        "key": "Chức năng",
+        "value": "Máy in mạng đa năng (Print - Copy - Scan) laser đơn sắc khổ A4 2 mặt tự động."
+      },
+      {
+        "key": "Tốc độ sao chụp liên tục (copy, A4)",
+        "value": "Chế độ 1 mặt: 43 trang/phút, tối đa lên tới 50 trang/phút ở chế độ in tốc độ cao;\nChế độ 2 mặt: 34 trang/phút;"
+      },
+      {
+        "key": "Bộ nhớ",
+        "value": "1.25 GB"
+      },
+      {
+        "key": "Thời gian in bản đầu tiên (A4)",
+        "value": "6 giây"
+      },
+      {
+        "key": "Khổ giấy",
+        "value": "A4, A5, A6, B5"
+      },
+      {
+        "key": "Màn hình",
+        "value": "LCD cảm ứng 8 inch"
+      },
+      {
+        "key": "In ấn trực tiếp từ ổ USB",
+        "value": "Có"
+      },
+      {
+        "key": "Cổng kết nối",
+        "value": "1000Base-T/100Base-TX/10Base-T, Wireless LAN WEEE 802.11b/g/n, 3 x USB 2.0"
+      },
+      {
+        "key": "Sao chụp liên tục",
+        "value": "Lên đến 9999 tờ"
+      },
+      {
+        "key": "Định lượng hộp mực",
+        "value": "7.500 trang"
+      },
+      {
+        "key": "Trữ lượng giấy (tiêu chuẩn)",
+        "value": "1 khay 550 tờ; khay tay 100 tờ (khả năng mở rộng lên đến 5 khay giấy)"
+      },
+      {
+        "key": "Mức tiêu thụ điện tối đa khi hoạt động",
+        "value": "629W, đạt nhãn năng lượng Energy Star 3.0."
+      },
+      {
+        "key": "Bảo hành",
+        "value": "03 năm theo tiêu chuẩn chính hãng, tận nơi sử dụng"
+      }
+    ]
+  },
+  {
+    "key": "fujitsu_py_rx2540_m7_pyr2547ran",
+    "name": "Máy Chủ Fujitsu PY RX2540 M7 12x 3.5 (PYR2547RAN)",
+    "model": "PY RX2540 M7",
+    "brand": "Fujitsu",
+    "origin": "Nhật Bản",
+    "unit": "Bộ",
+    "cat": "may_chu",
+    "price": 0,
+    "warranty": "3 Year Onsite 8x6xNBD",
+    "file": "BANG BAO GIA CLEAR KHO_V2.xlsx",
+    "specs": [
+      {
+        "key": "Bộ vi xử lý (CPU)",
+        "value": "Intel Xeon Silver 4410T 10C 2.7 GHz (SL: 1)"
+      },
+      {
+        "key": "Chế độ lắp đặt",
+        "value": "Independent Mode Installation (SL: 1)"
+      },
+      {
+        "key": "Bộ nhớ trong (RAM)",
+        "value": "16GB (1x16GB) 1Rx8 DDR5-4800 R ECC (SL: 2)"
+      },
+      {
+        "key": "Ổ đĩa cứng HĐH",
+        "value": "HD SAS 12G 1.2TB 10K 512n HOT PL 3.5' EP (SL: 2)"
+      },
+      {
+        "key": "Ổ đĩa cứng dữ liệu",
+        "value": "HD SAS 12G 12TB 7.2K 512e HOT PL 3.5' BC (SL: 10)"
+      },
+      {
+        "key": "Card điều khiển RAID",
+        "value": "PRAID EP 3254-8i LP (SL: 1)"
+      },
+      {
+        "key": "Card điều khiển RAID",
+        "value": "FBU option for PRAID EP 325x (SL: 1)"
+      },
+      {
+        "key": "Card mạng LAN",
+        "value": "PLAN CP 4x1Gbit Cu Intel I350-T4 OCPV3 (SL: 1)"
+      },
+      {
+        "key": "Bộ thanh ray gắn tủ rack",
+        "value": "Rack Mount Kit (SL: 1)"
+      },
+      {
+        "key": "Bộ phụ kiện vùng",
+        "value": "region kit APAC/EMEA/India (SL: 1)"
+      },
+      {
+        "key": "Gói quản trị máy chủ từ xa",
+        "value": "iRMC advanced pack (SL: 1)"
+      },
+      {
+        "key": "Thẻ nhớ quản trị iRMC",
+        "value": "iRMC MicroSD card 64GB (SL: 1)"
+      },
+      {
+        "key": "Giấy phép quản trị iRMC eLCM",
+        "value": "iRMCS6 eLCM Activation License preloaded (SL: 1)"
+      },
+      {
+        "key": "Bộ nguồn dự phòng",
+        "value": "Modular PSU 1600W platinum hp (SL: 2)"
+      },
+      {
+        "key": "Cáp nguồn rack",
+        "value": "Cable powercord rack, 2.5m, black (SL: 2)"
+      },
+      {
+        "key": "Mặt nạ bảo vệ mặt trước",
+        "value": "Front Bezel on front Base (SL: 1)"
+      },
+      {
+        "key": "Chip an toàn bảo mật",
+        "value": "TPM 2.0 Module V1 (SL: 1)"
+      },
+      {
+        "key": "Chính sách bảo hành",
+        "value": "Warranty 3 Year Onsite 8x6xNBD (SL: 1)"
+      }
+    ]
+  },
+  {
+    "key": "fujitsu_py_rx1330m6_sff_pyr1336r2n_32gb",
+    "name": "Máy Chủ Fujitsu PY RX1330M6/SFF (PYR1336R2N - 32GB RAM)",
+    "model": "PY RX1330M6/SFF (32GB)",
+    "brand": "Fujitsu",
+    "origin": "Nhật Bản",
+    "unit": "Bộ",
+    "cat": "may_chu",
+    "price": 0,
+    "warranty": "3 Year Onsite 8x6xNBD",
+    "file": "BANG BAO GIA CLEAR KHO_V2.xlsx",
+    "specs": [
+      {
+        "key": "Bộ vi xử lý (CPU)",
+        "value": "Intel Xeon E-2488 8C/16T 3.20 GHz (SL: 1)"
+      },
+      {
+        "key": "Bộ nhớ trong (RAM)",
+        "value": "16GB (1x16GB) 1Rx8 DDR5-4800 U ECC (SL: 2)"
+      },
+      {
+        "key": "Ổ đĩa cứng thể rắn",
+        "value": "SSD SATA 6G 1.92TB Read-Int. 2.5' H-P EP (SL: 2)"
+      },
+      {
+        "key": "Card điều khiển RAID",
+        "value": "PRAID CP600i LP (SL: 1)"
+      },
+      {
+        "key": "Bộ thanh ray gắn tủ rack",
+        "value": "RMK F1 Slimline, Slide-In Rail, QRL (SL: 1)"
+      },
+      {
+        "key": "Bộ phụ kiện vùng",
+        "value": "region kit APAC/EMEA/India (SL: 1)"
+      },
+      {
+        "key": "Gói quản trị máy chủ từ xa",
+        "value": "iRMC advanced pack (SL: 1)"
+      },
+      {
+        "key": "Giấy phép quản trị iRMC eLCM",
+        "value": "iRMCS6 eLCM Activation License preloaded (SL: 1)"
+      },
+      {
+        "key": "Bộ nguồn dự phòng",
+        "value": "Modular PSU 500W titanium hp (SL: 2)"
+      },
+      {
+        "key": "Cáp nguồn rack",
+        "value": "Cable powercord rack, 2.5m, black (SL: 2)"
+      },
+      {
+        "key": "Chip an toàn bảo mật",
+        "value": "TPM 2.0 Module V2 (SL: 1)"
+      },
+      {
+        "key": "Chính sách bảo hành",
+        "value": "Warranty 3 Year Onsite 8x6xNBD (SL: 1)"
+      }
+    ]
+  },
+  {
+    "key": "fujitsu_py_rx1330m6_lff_pyr1336r3n",
+    "name": "Máy chủ Fujitsu PY RX1330M6/LFF (PYR1336R3N)",
+    "model": "PY RX1330M6/LFF",
+    "brand": "Fujitsu",
+    "origin": "Nhật Bản",
+    "unit": "Bộ",
+    "cat": "may_chu",
+    "price": 0,
+    "warranty": "3 Year Onsite 8x6xNBD",
+    "file": "BANG BAO GIA CLEAR KHO_V2.xlsx",
+    "specs": [
+      {
+        "key": "Bộ vi xử lý (CPU)",
+        "value": "Intel Xeon E-2488 8C/16T 3.20 GHz (SL: 1)"
+      },
+      {
+        "key": "Bộ nhớ trong (RAM)",
+        "value": "16GB (1x16GB) 1Rx8 DDR5-4800 U ECC (SL: 2)"
+      },
+      {
+        "key": "Ổ đĩa cứng khởi động OS",
+        "value": "SSD SATA 6G 240GB Read-Int. 3.5' H-P EP (SL: 2)"
+      },
+      {
+        "key": "Ổ đĩa cứng lưu trữ dữ liệu",
+        "value": "HD SAS 12G 4TB 7.2K 512n HOT PL 3.5' BC (SL: 2)"
+      },
+      {
+        "key": "Card điều khiển RAID",
+        "value": "PRAID EP 3252-8i LP (SL: 1)"
+      },
+      {
+        "key": "Card điều khiển RAID",
+        "value": "FBU option for PRAID EP 325x (SL: 1)"
+      },
+      {
+        "key": "Bộ thanh ray gắn tủ rack",
+        "value": "RMK F1 Slimline, Slide-In Rail, QRL (SL: 1)"
+      },
+      {
+        "key": "Bộ phụ kiện vùng",
+        "value": "region kit APAC/EMEA/India (SL: 1)"
+      },
+      {
+        "key": "Gói quản trị máy chủ từ xa",
+        "value": "iRMC advanced pack (SL: 1)"
+      },
+      {
+        "key": "Giấy phép quản trị iRMC eLCM",
+        "value": "iRMCS6 eLCM Activation License preloaded (SL: 1)"
+      },
+      {
+        "key": "Bộ nguồn dự phòng",
+        "value": "Modular PSU 500W platinum hp (SL: 2)"
+      },
+      {
+        "key": "Cáp nguồn rack",
+        "value": "Cable powercord rack, 2.5m, black (SL: 2)"
+      },
+      {
+        "key": "Chip an toàn bảo mật",
+        "value": "TPM 2.0 Module V2 (SL: 1)"
+      },
+      {
+        "key": "Chính sách bảo hành",
+        "value": "Warranty 3 Year Onsite 8x6xNBD (SL: 1)"
+      }
+    ]
+  },
+  {
+    "key": "fujitsu_py_rx1330m6_sff_pyr1336r2n_16gb",
+    "name": "Server Fujitsu PY RX1330M6/SFF (PYR1336R2N - 16GB RAM)",
+    "model": "PY RX1330M6/SFF (16GB)",
+    "brand": "Fujitsu",
+    "origin": "Nhật Bản",
+    "unit": "Bộ",
+    "cat": "may_chu",
+    "price": 0,
+    "warranty": "3 Year Onsite 8x6xNBD",
+    "file": "BANG BAO GIA CLEAR KHO_V2.xlsx",
+    "specs": [
+      {
+        "key": "Bộ vi xử lý (CPU)",
+        "value": "Intel Xeon E-2488 8C/16T 3.20 GHz (SL: 1)"
+      },
+      {
+        "key": "Bộ nhớ trong (RAM)",
+        "value": "16GB (1x16GB) 1Rx8 DDR5-4800 U ECC (SL: 1)"
+      },
+      {
+        "key": "Ổ đĩa cứng thể rắn",
+        "value": "SSD SATA 6G 1.92TB Read-Int. 2.5' H-P EP (SL: 2)"
+      },
+      {
+        "key": "Card điều khiển RAID",
+        "value": "PRAID CP600i LP (SL: 1)"
+      },
+      {
+        "key": "Bộ thanh ray gắn tủ rack",
+        "value": "RMK F1 Slimline, Slide-In Rail, QRL (SL: 1)"
+      },
+      {
+        "key": "Bộ phụ kiện vùng",
+        "value": "region kit APAC/EMEA/India (SL: 1)"
+      },
+      {
+        "key": "Gói quản trị máy chủ từ xa",
+        "value": "iRMC advanced pack (SL: 1)"
+      },
+      {
+        "key": "Giấy phép quản trị iRMC eLCM",
+        "value": "iRMCS6 eLCM Activation License preloaded (SL: 1)"
+      },
+      {
+        "key": "Bộ nguồn dự phòng",
+        "value": "Modular PSU 500W titanium hp (SL: 2)"
+      },
+      {
+        "key": "Cáp nguồn rack",
+        "value": "Cable powercord rack, 2.5m, black (SL: 2)"
+      },
+      {
+        "key": "Chip an toàn bảo mật",
+        "value": "TPM 2.0 Module V2 (SL: 1)"
+      },
+      {
+        "key": "Chính sách bảo hành",
+        "value": "Warranty 3 Year Onsite 8x6xNBD (SL: 1)"
+      }
+    ]
+  },
+  {
+    "key": "fujitsu_py_rx2530_m7_pyr2537rdn",
+    "name": "Máy chủ Fujitsu PY RX2530 M7 8x 2.5 (PYR2537RDN)",
+    "model": "PY RX2530 M7",
+    "brand": "Fujitsu",
+    "origin": "Nhật Bản",
+    "unit": "Bộ",
+    "cat": "may_chu",
+    "price": 0,
+    "warranty": "3 Year Onsite 8x6xNBD",
+    "file": "BANG BAO GIA CLEAR KHO_V2.xlsx",
+    "specs": [
+      {
+        "key": "Bộ vi xử lý (CPU)",
+        "value": "Intel Xeon Silver 4410Y 12C 2.0 GHz (SL: 1)"
+      },
+      {
+        "key": "Chế độ lắp đặt",
+        "value": "Independent Mode Installation (SL: 1)"
+      },
+      {
+        "key": "Bộ nhớ trong (RAM)",
+        "value": "32GB (1x32GB) 1Rx4 DDR5-4800 R ECC (SL: 2)"
+      },
+      {
+        "key": "Ổ đĩa quang",
+        "value": "DVD-RW supermulti ultraslim SATA (SL: 1)"
+      },
+      {
+        "key": "Ổ đĩa cứng thể rắn",
+        "value": "SSD SATA 6G 240GB Read-Int. 2.5' H-P EP (SL: 2)"
+      },
+      {
+        "key": "Card điều khiển RAID",
+        "value": "PRAID CP500i LP (SL: 1)"
+      },
+      {
+        "key": "Card giao tiếp SAN Quang",
+        "value": "PFC EP LPe31002 2x 16Gb Emulex LP (SL: 1)"
+      },
+      {
+        "key": "Card mạng LAN",
+        "value": "PLAN CP 4x1Gbit Cu Intel I350-T4 OCPV3 (SL: 1)"
+      },
+      {
+        "key": "Bộ thanh ray gắn tủ rack",
+        "value": "RMK F1 Slimline, Slide-In Rail, QRL (SL: 1)"
+      },
+      {
+        "key": "Bộ phụ kiện vùng",
+        "value": "region kit APAC/EMEA/India (SL: 1)"
+      },
+      {
+        "key": "Gói quản trị máy chủ từ xa",
+        "value": "iRMC advanced pack (SL: 1)"
+      },
+      {
+        "key": "Thẻ nhớ lưu trữ iRMC",
+        "value": "iRMC MicroSD card 64GB (SL: 1)"
+      },
+      {
+        "key": "Giấy phép quản trị iRMC eLCM",
+        "value": "iRMCS6 eLCM Activation License preloaded (SL: 1)"
+      },
+      {
+        "key": "Bộ nguồn dự phòng",
+        "value": "Modular PSU 900W titanium hp (SL: 2)"
+      },
+      {
+        "key": "Cáp nguồn rack",
+        "value": "Cable powercord rack, 2.5m, black (SL: 2)"
+      },
+      {
+        "key": "Mặt nạ bảo vệ mặt trước",
+        "value": "Front Bezel on front Base (SL: 1)"
+      },
+      {
+        "key": "Chip an toàn bảo mật",
+        "value": "TPM 2.0 Module V1 (SL: 1)"
+      },
+      {
+        "key": "Chính sách bảo hành",
+        "value": "Warranty 3 Year Onsite 8x6xNBD (SL: 1)"
+      }
+    ]
+  },
+  {
+    "key": "fujitsu_et_dx200s5_et205sau",
+    "name": "Thiết bị lưu trữ Fujitsu ET DX200S5 Base 2.5 (ET205SAU)",
+    "model": "ET DX200S5 Base 2.5",
+    "brand": "Fujitsu",
+    "origin": "Nhật Bản",
+    "unit": "Bộ",
+    "cat": "thiet_bi_luu_tru",
+    "price": 0,
+    "warranty": "3 Year Onsite 8x6xNBD",
+    "file": "BANG BAO GIA CLEAR KHO_V2.xlsx",
+    "specs": [
+      {
+        "key": "Khay ổ đĩa mở rộng (Drive Enclosure)",
+        "value": "ET DX1/200S5 DriveEncl. 3.5 IO Mod. x2 (SL: 1)"
+      },
+      {
+        "key": "Bộ nhớ đệm Controller (Cache)",
+        "value": "DX200S5 64G Mem.set 1Contr32x2DIM (SL: 2)"
+      },
+      {
+        "key": "Bộ điều khiển Controller (FC 16Gbps)",
+        "value": "DX200S5 Contr.x1 FC 4Port 16G (SL: 2)"
+      },
+      {
+        "key": "Ổ cứng SAS 2.5 inch tốc độ cao",
+        "value": "DX1/200S5 HD SAS 2.4TB 10k 2.5 AF (SL: 5)"
+      },
+      {
+        "key": "Ổ cứng NL SAS 3.5 inch dung lượng lớn",
+        "value": "DX1/200S5 HD NL 18TB 7.2k 3.5 AF x1 (SL: 10)"
+      },
+      {
+        "key": "Cáp nguồn chuẩn quốc tế",
+        "value": "AFS3DXS5Ent PwrCrd IEC60320 C14 3m x2 (SL: 1)"
+      },
+      {
+        "key": "Chính sách bảo hành",
+        "value": "Warranty 3 Year Onsite 8x6xNBD (SL: 1)"
+      }
+    ]
+  },
+  {
+    "key": "hikvision_ds_2sh343v2",
+    "name": "Camera quan sát Hikvision DS-2SH343V2",
+    "model": "DS-2SH343V2",
+    "brand": "Hikvision",
+    "origin": "China",
+    "unit": "Cái",
+    "cat": "camera",
+    "price": 0,
+    "warranty": "24 tháng",
+    "file": "BANG BAO GIA CLEAR KHO_V2.xlsx",
+    "specs": [
+      {
+        "key": "Loại thiết bị",
+        "value": "Camera quan sát IP / Analog hồng ngoại"
+      },
+      {
+        "key": "Độ phân giải",
+        "value": "Độ phân giải cao Full HD / 2K sắc nét"
+      },
+      {
+        "key": "Tầm quan sát hồng ngoại",
+        "value": "Hồng ngoại ban đêm Smart IR 30m - 50m"
+      },
+      {
+        "key": "Tiêu chuẩn bảo vệ",
+        "value": "Chuẩn chống nước bụi IP67 lắp đặt trong nhà & ngoài trời"
+      }
+    ]
+  },
+  {
+    "key": "hikvision_ds_7604nxi_k1",
+    "name": "Đầu ghi hình Hikvision DS-7604NXI-K1",
+    "model": "DS-7604NXI-K1",
+    "brand": "Hikvision",
+    "origin": "China",
+    "unit": "Cái",
+    "cat": "camera",
+    "price": 0,
+    "warranty": "24 tháng",
+    "file": "BANG BAO GIA CLEAR KHO_V2.xlsx",
+    "specs": [
+      {
+        "key": "Chủng loại",
+        "value": "Đầu ghi hình mạng NVR 4 kênh chuẩn AcuSense thông minh"
+      },
+      {
+        "key": "Số kênh hỗ trợ",
+        "value": "4 kênh camera IP, độ phân giải tối đa 12 Megapixel"
+      },
+      {
+        "key": "Chuẩn nén video",
+        "value": "H.265+ / H.265 / H.264+ / H.264 tiết kiệm băng thông"
+      },
+      {
+        "key": "Băng thông",
+        "value": "Băng thông đầu vào 40 Mbps, đầu ra 80 Mbps"
+      },
+      {
+        "key": "Cổng xuất hình",
+        "value": "1 cổng HDMI (4K UHD), 1 cổng VGA độc lập"
+      },
+      {
+        "key": "Dung lượng lưu trữ",
+        "value": "1 khe cắm ổ cứng SATA lên đến 10TB"
+      },
+      {
+        "key": "Tính năng AI",
+        "value": "Phân tích phát hiện người và phương tiện, lọc báo động giả AcuSense"
+      }
+    ]
+  },
+  {
+    "key": "hikvision_ds10hkvs_vx2_1tb",
+    "name": "Ổ đĩa cứng Hikvision DS10HKVS-VX2 dung lượng 1TB cho đầu ghi hình",
+    "model": "DS10HKVS-VX2 1TB",
+    "brand": "Hikvision",
+    "origin": "China",
+    "unit": "Cái",
+    "cat": "thiet_bi_luu_tru",
+    "price": 0,
+    "warranty": "24 tháng",
+    "file": "BANG BAO GIA CLEAR KHO_V2.xlsx",
+    "specs": [
+      {
+        "key": "Chủng loại",
+        "value": "Ổ đĩa cứng chuyên dụng cho hệ thống giám sát và đầu ghi hình camera"
+      },
+      {
+        "key": "Dung lượng",
+        "value": "1TB (1.000 GB)"
+      },
+      {
+        "key": "Giao diện kết nối",
+        "value": "SATA 6Gb/s (SATA 3.0)"
+      },
+      {
+        "key": "Kích thước ổ",
+        "value": "3.5 inch tiêu chuẩn"
+      },
+      {
+        "key": "Đặc tính hoạt động",
+        "value": "Tối ưu hóa ghi hình liên tục 24/7, giảm rung chấn và chịu nhiệt"
+      }
+    ]
+  },
+  {
+    "key": "nguon_ads_12fg_12n_12012epg",
+    "name": "Nguồn Adapter ADS-12FG-12N 12012EPG (12V-1A / 12V-2A)",
+    "model": "ADS-12FG-12N 12012EPG",
+    "brand": "Honor",
+    "origin": "China",
+    "unit": "Cái",
+    "cat": "phu_kien",
+    "price": 0,
+    "warranty": "12 tháng",
+    "file": "BANG BAO GIA CLEAR KHO_V2.xlsx",
+    "specs": [
+      {
+        "key": "Loại phụ kiện",
+        "value": "Bộ adapter nguồn chuyển đổi AC/DC"
+      },
+      {
+        "key": "Điện áp vào",
+        "value": "100 - 240V AC, 50/60Hz"
+      },
+      {
+        "key": "Điện áp ra",
+        "value": "12V DC ổn định"
+      },
+      {
+        "key": "Bảo vệ an toàn",
+        "value": "Tích hợp mạch bảo vệ chống quá tải, ngắn mạch và quá áp"
+      }
+    ]
+  },
+  {
+    "key": "unitek_c9025bk_15m",
+    "name": "Dây tín hiệu âm thanh 1-2 có đầu giắc 15m C9025BK Unitek",
+    "model": "C9025BK (15m)",
+    "brand": "Unitek",
+    "origin": "China",
+    "unit": "Sợi",
+    "cat": "phu_kien",
+    "price": 0,
+    "warranty": "12 tháng",
+    "file": "BANG BAO GIA CLEAR KHO_V2.xlsx",
+    "specs": [
+      {
+        "key": "Chủng loại cáp",
+        "value": "Cáp tín hiệu âm thanh Jack 3.5mm sang 2 RCA (Hoa sen)"
+      },
+      {
+        "key": "Chiều dài",
+        "value": "15 mét"
+      },
+      {
+        "key": "Đầu giắc tiếp xúc",
+        "value": "Đầu giắc đúc mạ vàng 24K truyền tín hiệu chuẩn, chống suy hao"
+      },
+      {
+        "key": "Lõi dẫn tín hiệu",
+        "value": "Đồng nguyên chất OFC chống oxy hóa"
+      },
+      {
+        "key": "Lớp bọc bảo vệ",
+        "value": "Vỏ nhựa PVC cao cấp dẻo dai, chống nhiễu từ trường"
+      }
+    ]
+  }
 ];
 
 /* ── KHỞI TẠO & HỢP NHẤT DỮ LIỆU SẢN PHẨM ── */
@@ -2939,7 +3654,13 @@ function initAdminAndMauMayCatalog() {
     });
 
     if (addedCount > 0) {
-      console.log('✨ Đã bổ sung thành công ' + addedCount + ' máy từ Mẫu Máy vào Catalog!');
+      console.log('✨ Đã bổ sung thành công ' + addedCount + ' máy từ Mẫu Máy & Kho vào Catalog!');
+      if (savedCustom) {
+        try {
+          localStorage.setItem(LS_CUSTOM_CATALOG_KEY, JSON.stringify(CATALOG_ITEMS));
+          console.log('💾 Đã tự động cập nhật sản phẩm mới vào bộ nhớ trình duyệt!');
+        } catch (e) {}
+      }
     }
 
     // 3. Nâng cấp bộ phân loại Brand & Phân hệ (classifyCatalogItem)
@@ -2989,6 +3710,31 @@ function patchCatalogClassifier() {
     // ROWE Large Format Scanner
     if (bL === 'rowe' || m.includes('rowe') || n.includes('rowe')) {
       return { brandGroup: "Thiết bị mạng & Hội nghị", brandIcon: "📐", brandLabel: "Mạng & Khác", subCatId: "rowe_scanner", subCatName: "📐 Máy quét bản vẽ khổ lớn A0 (ROWE)", seriesName: "ROWE Large Format" };
+    }
+
+    // FUJITSU (Laptop, Server PRIMERGY, Storage ETERNUS)
+    if (bL === 'fujitsu' || n.includes('fujitsu') || m.includes('fujitsu')) {
+      if (c === 'may_tinh' || n.includes('lifebook') || m.includes('lifebook') || n.includes('xách tay') || n.includes('laptop')) {
+        return { brandGroup: "Fujitsu", brandIcon: "💻", brandLabel: "Fujitsu", subCatId: "fujitsu_laptop", subCatName: "💻 Máy tính xách tay (Fujitsu Lifebook)", seriesName: "Fujitsu Lifebook" };
+      }
+      if (c === 'may_chu' || n.includes('máy chủ') || n.includes('server') || m.includes('rx') || n.includes('rx2540') || n.includes('rx1330') || n.includes('rx2530')) {
+        return { brandGroup: "Fujitsu", brandIcon: "🖥️", brandLabel: "Fujitsu", subCatId: "fujitsu_server", subCatName: "🖥️ Máy chủ Server (Fujitsu PRIMERGY)", seriesName: "Fujitsu PRIMERGY" };
+      }
+      if (c === 'thiet_bi_luu_tru' || n.includes('lưu trữ') || m.includes('dx') || n.includes('dx200') || n.includes('eternus')) {
+        return { brandGroup: "Fujitsu", brandIcon: "💾", brandLabel: "Fujitsu", subCatId: "fujitsu_storage", subCatName: "💾 Thiết bị lưu trữ SAN (Fujitsu ETERNUS)", seriesName: "Fujitsu ETERNUS" };
+      }
+      return { brandGroup: "Fujitsu", brandIcon: "🇯🇵", brandLabel: "Fujitsu", subCatId: "fujitsu_other", subCatName: "📑 Thiết bị Fujitsu khác", seriesName: "Fujitsu Device" };
+    }
+
+    // HIKVISION (Camera, NVR, Ổ cứng giám sát)
+    if (bL === 'hikvision' || n.includes('hikvision') || m.includes('hikvision')) {
+      if (c === 'camera' || n.includes('camera') || n.includes('đầu ghi') || m.startsWith('ds-') || m.includes('7604') || m.includes('343')) {
+        return { brandGroup: "Hikvision", brandIcon: "📹", brandLabel: "Hikvision", subCatId: "hikvision_cctv", subCatName: "📹 Camera & Đầu ghi hình (Hikvision)", seriesName: "Hikvision Security" };
+      }
+      if (c === 'thiet_bi_luu_tru' || n.includes('ổ đĩa') || n.includes('ổ cứng')) {
+        return { brandGroup: "Hikvision", brandIcon: "💾", brandLabel: "Hikvision", subCatId: "hikvision_storage", subCatName: "💾 Ổ cứng chuyên dụng camera (Hikvision)", seriesName: "Hikvision Surveillance HDD" };
+      }
+      return { brandGroup: "Hikvision", brandIcon: "📹", brandLabel: "Hikvision", subCatId: "hikvision_other", subCatName: "📑 Thiết bị Hikvision khác", seriesName: "Hikvision Device" };
     }
 
     return _origClassify(item);
