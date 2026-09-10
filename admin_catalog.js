@@ -4343,14 +4343,15 @@ function renderAdminDashboard(container) {
     '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;padding-bottom:16px;border-bottom:1.5px solid var(--bdr2)">' +
     '    <div>' +
     '      <div style="font-size:22px;font-weight:900;color:var(--t1);letter-spacing:0.5px">⚙️ TRUNG TÂM QUẢN TRỊ HỆ THỐNG</div>' +
-    '      <div style="font-size:13px;color:var(--t2);margin-top:3px">' +
-    '        Quản trị toàn diện: Tìm kiếm thông minh, Chỉnh sửa, Khóa/Ẩn sản phẩm, Xóa và xuất dữ liệu dự toán.' +
+    '      <div style="font-size:13px;color:var(--t2);margin-top:3px;display:flex;align-items:center;gap:10px;flex-wrap:wrap">' +
+    '        <span>Quản trị toàn diện: Tìm kiếm thông minh, Chỉnh sửa, Khóa/Ẩn sản phẩm, Xóa và xuất dữ liệu dự toán.</span>' +
+    '        <div id="cloud-sync-status-badge" style="display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:20px;font-size:11.5px;background:#ecfdf5;border:1px solid #10b981;color:#065f46">🟢 <span style="font-weight:700">Cloud Realtime:</span> Đang kết nối...</div>' +
     '      </div>' +
     '    </div>' +
     '    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">' +
     '      <button class="btn btn-p btn-sm" onclick="adminOpenAddProductModal()" style="font-weight:800;background:var(--p);box-shadow:0 2px 6px rgba(0,0,0,0.15)">➕ Thêm sản phẩm mới</button>' +
     '      <button class="btn btn-sm" onclick="adminExportAllDevicesExcel()" style="background:#0284c7;color:#fff;font-weight:800;border:none;display:inline-flex;align-items:center;gap:5px;box-shadow:0 2px 6px rgba(2,132,199,0.3)" title="Xuất toàn bộ danh mục thiết bị và thông số kỹ thuật ra file Excel (.xlsx)">📊 Xuất Excel Tất Cả</button>' +
-    '      <button class="btn btn-sm" onclick="adminSaveCatalogChanges()" style="background:#10b981;color:#fff;font-weight:800;border:none;box-shadow:0 2px 6px rgba(16,185,129,0.3)" title="Lưu toàn bộ thay đổi vào bộ nhớ trình duyệt">💾 Lưu thay đổi</button>' +
+    '      <button class="btn btn-sm" onclick="if(window.DU_TOAN_CLOUD)window.DU_TOAN_CLOUD.pushCatalogToCloud(true);else adminSaveCatalogChanges()" style="background:#10b981;color:#fff;font-weight:800;border:none;box-shadow:0 2px 6px rgba(16,185,129,0.3);display:inline-flex;align-items:center;gap:4px" title="Đồng bộ ngay dữ liệu lên Cloud Database cho mọi máy cùng thấy">☁️ Đồng bộ Cloud</button>' +
     '      <button class="btn btn-o btn-sm" onclick="adminExportJson()" title="Tải file sao lưu danh mục .json">📤 Xuất JSON</button>' +
     '      <button class="btn btn-o btn-sm" onclick="adminResetToDefault()" title="Khôi phục về danh mục sản phẩm gốc">🔄 Khôi phục gốc</button>' +
     '      <button class="btn btn-o btn-sm" onclick="adminLogout()" style="color:#ef4444;border-color:#fca5a5" title="Đăng xuất chế độ Admin">🔒 Đăng xuất</button>' +
