@@ -15,7 +15,7 @@ var adminCurrentCat = '';
 var adminCurrentSource = 'all';
 var adminEditingItemId = null;
 
-// 32 Dòng máy bổ sung đầy đủ thông số bóc tách chuẩn xác từ các file Word (.docx) và Excel (.xlsx)
+// 48 Dòng máy bổ sung đầy đủ thông số bóc tách chuẩn xác từ các file Word (.docx) và Excel (.xlsx), bao gồm MSI PRO DP80 A14G, DP21 & Màn hình PRO MP225 E12VL
 var EXTRA_MAU_MAY_DEVICES = [
   {
     "key": "ricoh_fi_8040",
@@ -3563,6 +3563,386 @@ var EXTRA_MAU_MAY_DEVICES = [
         "value": "Vỏ nhựa PVC cao cấp dẻo dai, chống nhiễu từ trường"
       }
     ]
+  }  ,
+  {
+  "key": "msi_pro_dp80_a14g",
+  "name": "Máy tính để bàn PC MSI PRO DP80 A14G",
+  "model": "MSI PRO DP80 A14G",
+  "brand": "MSI",
+  "origin": "Trung Quốc",
+  "unit": "Bộ",
+  "cat": "may_tinh",
+  "price": 0,
+  "warranty": "12 tháng",
+  "file": "Báo Giá DP80_V1.xlsx",
+  "specs": [
+    {
+      "key": "Thương hiệu",
+      "value": "MSI (Taiwan)"
+    },
+    {
+      "key": "Model",
+      "value": "MSI PRO DP B208"
+    },
+    {
+      "key": "Marketing Name",
+      "value": "MSI PRO DP80 A14G"
+    },
+    {
+      "key": "Xuất xứ",
+      "value": "Trung Quốc"
+    },
+    {
+      "key": "Nhãn sinh thái",
+      "value": "Tuân thủ tối thiểu: EPEAT, Energy star"
+    },
+    {
+      "key": "Processor / Bộ Vi Xử Lý",
+      "value": "Intel® Core i5-14500  ( 14 Core, 20 luồng, 24M bộ nhớ đệm, lên đến 5,00 GHz)"
+    },
+    {
+      "key": "Chipset",
+      "value": "Intel® H610 Chipset"
+    },
+    {
+      "key": "Dung lượng RAM",
+      "value": "16G DDR5 4800Mhz/5600Mhz , 2 x DDR5 U-Dimm upto 64GB"
+    },
+    {
+      "key": "Graphic / Đồ họa",
+      "value": "Intel® UHD Graphics"
+    },
+    {
+      "key": "Storage / Ổ đĩa lưu trữ",
+      "value": "1x 512GB M.2 SSD (NVMe PCIe / SATA Auto switch)"
+    },
+    {
+      "key": "Sound / Âm thanh",
+      "value": "Realtek® ALC897, Built-in Speaker"
+    },
+    {
+      "key": "Cổng I/O (Phía trước)",
+      "value": "1x USB 3.2 Gen 2 upto 10Gbps Type-C\n2x USB 3.2 Gen 1 upto  5Gbps Type-A\n1x Mic-in\n1x Headphone-out\n1x Card Reader (Support SD & Micro SD Card)"
+    },
+    {
+      "key": "Cổng I/O (Phía sau)",
+      "value": "1x USB 3.2 gen 1 up to 5Gbps Type A\n4x USB 2.0 Type-A\n2x RJ45 LAN (1G / 2.5G)\n1x HDMI out (supports 4K @60Hz as specified in HDMI 2.1)\n1x DisplayPort (1.4)\n1x COM port\n1 x PS/2\n1x VGA out\n3x Audio Jack, 1x Kensington Lock, 1x Padlock"
+    },
+    {
+      "key": "Khe mở rộng",
+      "value": "1x PCIe 4.0 x16\n1x PCIe 3.0 x1"
+    },
+    {
+      "key": "Bảo mật",
+      "value": "- Vi mạch cung cấp chứng năng bảo mật: TPM 2.0.\n- Có chức năng bảo vệ BIOS, có khả năng phát hiện các thay đổi trái phép do bị tấn công hoặc hư lỗi,\n- Có công nghệ quản lý cấu hình BIOS dựa vào chứng chỉ số và mã khóa công khai đảm bảo an toàn thông tin.\n- Có tính năng ngăn chặn máy bị hoàn nguyên/khôi phục về các phiên bản BIOS cũ (tiềm tàng các lỗi, lỗ hổng bảo mật đã được phát hiện trước đó).\n- Có tính năng xóa dữ liệu an toàn trên ổ đĩa, đảm bảo dữ liệu không thể khôi phục."
+    },
+    {
+      "key": "Kensington Lock",
+      "value": "Có"
+    },
+    {
+      "key": "PSU / Nguồn",
+      "value": "TFX 300W PSU  80 Bronze Plus (ATX 12VO)"
+    },
+    {
+      "key": "Cooling System",
+      "value": "Fan Cooler"
+    },
+    {
+      "key": "Volume / Dung tích",
+      "value": "8 liter"
+    },
+    {
+      "key": "Form thùng máy",
+      "value": "SFF. Kích thước (RxDxC): 95 x 296 x 333 mm"
+    },
+    {
+      "key": "Keyboard/Mouse",
+      "value": "Wired Copilot KB+M đồng bộ thương hiệu hãng máy tính"
+    },
+    {
+      "key": "Tính năng máy tính",
+      "value": "1.\tHệ thống tích hợp Dual Lan RJ45 onboard gồm 1G & 2.5Gb nhằm tăng cường tốc độ truy suất đường truyền và cho phép người dùng và người quản trị thiết lập hạ tầng mạng  riêng biệt, nâng cao bảo mật giữa internet và local.\n2. Máy tính tích hợp hệ thống AI Engine tự học tự động phát hiện các tình huống của người dùng và điều chỉnh hiệu suất, hiệu ứng âm thanh và chế độ hiển thị cho phù hợp. Chẩn đoán hệ thống và tự động rà soát và nâng cấp Bios và phân mềm khi có bản cập nhật mới.\n3.\tCho phép người dùng kết nối máy tính, điện thoại sao lưu và chia sẽ dữ liệu quan trọng cần thiết qua M-Cloud đến các thiết bị khác như smartphone, máy tính khác\n4.\tHệ thống hiển thị và theo dõi toàn bộ thông số hệ thống CPU về tần số, nhiệt độ, tốc độ quạt, điện năng tiêu thụ theo thời gian thực\n5.\tHệ thống có khả năng tự động tìm kiếm tất cả Driver mới nhất của phần cứng như VGA, Audio, Lan, Wifi, Bluetooth...và các ứng dụng Microsoft để cập nhật theo ý muốn người dùng.\n6.\tMainboard đồng bộ thương hiệu máy tính."
+    },
+    {
+      "key": "Chứng nhận hàng hóa đạt tiêu chuẩn",
+      "value": "- ISO 9001: 2015: Hệ thống quản lý chất lượng đạt tiêu chuẩn\n- ISO 14001: 2015: Hệ thống quản lý môi trường doanh nghiệp\n- ISO / IEC 17025: Yêu cầu chung về năng lực của phòng thử nghiệm, hiệu chuẩn\n- ISO 27001:2022: Hệ thống tiêu chuẩn cho quản lý an toàn thông tin\n- ISO 45001: 2018: Hệ thống quản lý an toàn sức khỏe theo tiêu chuẩn\n- ISO 50001: 2018: Nhà sản xuất đạt tiêu chuẩn về hệ thống quản lý năng lượng\n- Sản phẩm máy tính đáp ứng tiêu chuẩn Châu Âu IECQ QC 080000: 2017 về hạn chế chất độc hại theo chỉ thị và quy định Châu Âu gồm:\n               + Phù hợp chỉ thị Châu Âu RoHS 2011/65/EU về hạn chế chất nguy hiểm trong sản phẩm thiết bị điện và điện tử (bao gồm chỉ thị 2006/66/EC về pin và pin thải).\n               + Phù hợp chỉ thị Châu Âu 94/62/EC về chất thải bao bì và đóng gói.\n- Nhà sản xuất đạt tiêu chuẩn hệ thống IATF 16949"
+    }
+  ],
+  "sourceFile": "Báo Giá DP80_V1.xlsx"
+  },
+  {
+  "key": "msi_pro_mp225_e12vl",
+  "name": "Màn hình MSI PRO MP225 E12VL 21.45 inch Full HD 120Hz",
+  "model": "PRO MP225 E12VL",
+  "brand": "MSI",
+  "origin": "Trung Quốc",
+  "unit": "Cái",
+  "cat": "man_hinh",
+  "price": 0,
+  "warranty": "12 tháng",
+  "file": "Báo Giá DP80_V1.xlsx",
+  "specs": [
+    {
+      "key": "Xuất xứ",
+      "value": "Trung Quốc"
+    },
+    {
+      "key": "Hãng sản xuất",
+      "value": "MSI Taiwan"
+    },
+    {
+      "key": "Model",
+      "value": "PRO MP225 E12VL"
+    },
+    {
+      "key": "Type / Size/ Kích thước",
+      "value": "21.45\""
+    },
+    {
+      "key": "Active Display Area / Vùng hiển thị (mm)",
+      "value": "478.656(H) x 260.28(V)"
+    },
+    {
+      "key": "Panel Type / Màn hình dạng",
+      "value": "Phẳng"
+    },
+    {
+      "key": "Panel / Tấm nền",
+      "value": "VA"
+    },
+    {
+      "key": "Resolution / Độ phân giải",
+      "value": "1920 x 1080 (FHD)"
+    },
+    {
+      "key": "Pixel Pitch / Kích thước điểm ảnh",
+      "value": "0.2493(H) x 0.241(V)"
+    },
+    {
+      "key": "Aspect Ratio / Tỉ lệ hình ảnh",
+      "value": "16:9"
+    },
+    {
+      "key": "Brightness (nits) / Độ sáng",
+      "value": "300 cd/m²"
+    },
+    {
+      "key": "Contrast Ratio / Độ tương phản",
+      "value": "4000:1"
+    },
+    {
+      "key": "DCR (Dynamic Contrast Ratio / Độ tương phản động",
+      "value": "100000000:1"
+    },
+    {
+      "key": "Refresh Rate / Tần số quét / Tỉ lệ làm tươi",
+      "value": "120Hz"
+    },
+    {
+      "key": "Response Time / Thời gian phản hồi",
+      "value": "1ms (MPRT) / 4ms (GTG)"
+    },
+    {
+      "key": "View Angles / Góc nhìn",
+      "value": "178°(H) / 178°(V)"
+    },
+    {
+      "key": "Surface Treatment / Chóng chói",
+      "value": "Anti-glare"
+    },
+    {
+      "key": "Display Colors / Màu hiển thị",
+      "value": "16.7M"
+    },
+    {
+      "key": "Color Bit / Bit Màu",
+      "value": "8 bits"
+    },
+    {
+      "key": "Video Interface / Cổng kết nối / Giao diện kết nối",
+      "value": "1x HDMI™ 1.4b (FHD@120Hz)\n1x D-Sub (VGA)"
+    },
+    {
+      "key": "Power Input / Điện thế đầu vào / Nguồn điện",
+      "value": "100~240V, 50~60Hz"
+    }
+  ],
+  "sourceFile": "Báo Giá DP80_V1.xlsx"
+  },
+  {
+  "key": "msi_pro_dp80_combo",
+  "name": "Bộ máy tính PC MSI PRO DP80 A14G kèm Màn hình PRO MP225 E12VL",
+  "model": "MSI PRO DP80 A14G (Combo)",
+  "brand": "MSI",
+  "origin": "Trung Quốc",
+  "unit": "Bộ",
+  "cat": "may_tinh",
+  "price": 26000000,
+  "warranty": "12 tháng",
+  "file": "Báo Giá DP80_V1.xlsx",
+  "specs": [
+    {
+      "key": "Bộ cấu hình chào thầu",
+      "value": "Máy tính để bàn PC MSI PRO DP80 A14G/ i5 14500/ RAM 16G DDR5/ SSD 512GB M.2 NVMe/ KB+M/ Màn hình MSI Pro MP225 E12VL 21.45\" Full HD 120Hz"
+    },
+    {
+      "key": "Thương hiệu & Xuất xứ",
+      "value": "MSI (Taiwan) - Xuất xứ: Trung Quốc"
+    },
+    {
+      "key": "Processor / Bộ Vi Xử Lý",
+      "value": "Intel® Core i5-14500 (14 Core, 20 luồng, 24M Cache, Turbo 5.00 GHz)"
+    },
+    {
+      "key": "Mainboard & Chipset",
+      "value": "Intel® H610 Chipset, Mainboard đồng bộ thương hiệu MSI"
+    },
+    {
+      "key": "Bộ nhớ RAM",
+      "value": "16G DDR5 4800Mhz/5600Mhz (2 x DDR5 U-Dimm hỗ trợ tối đa 64GB)"
+    },
+    {
+      "key": "Ổ đĩa lưu trữ",
+      "value": "512GB M.2 SSD (NVMe PCIe / SATA Auto switch)"
+    },
+    {
+      "key": "Đồ họa & Âm thanh",
+      "value": "Intel® UHD Graphics, Realtek® ALC897, Built-in Speaker"
+    },
+    {
+      "key": "Cổng I/O Trước & Sau",
+      "value": "Trước: 1x USB 3.2 Gen 2 Type-C, 2x USB 3.2 Gen 1 Type-A, Mic-in, Headphone-out, Card Reader SD/MicroSD\nSau: 1x USB 3.2 Gen 1 Type A, 4x USB 2.0, 2x RJ45 LAN (1G / 2.5G Dual LAN), 1x HDMI out 4K@60Hz, 1x DisplayPort 1.4, 1x COM port, 1x PS/2, 1x VGA out"
+    },
+    {
+      "key": "Bảo mật & Tính năng AI",
+      "value": "TPM 2.0 phần cứng, BIOS bảo mật chống tấn công, AI Engine tự học điều chỉnh hiệu năng và quạt làm mát, M-Cloud"
+    },
+    {
+      "key": "Nguồn & Thùng máy",
+      "value": "TFX 300W PSU 80 Bronze Plus (ATX 12VO), Thể tích 8L SFF (95 x 296 x 333 mm)"
+    },
+    {
+      "key": "Bàn phím & Chuột",
+      "value": "Wired Copilot KB+M đồng bộ thương hiệu hãng máy tính"
+    },
+    {
+      "key": "Màn hình đi kèm",
+      "value": "Màn hình MSI PRO MP225 E12VL: Kích thước 21.45 inch, Full HD (1920x1080), Tấm nền VA phẳng, Tần số quét 120Hz, Độ sáng 300 cd/m², Phản hồi 1ms/4ms, Chống chói Anti-glare, Cổng HDMI 1.4b & VGA"
+    },
+    {
+      "key": "Tiêu chuẩn & Chứng nhận",
+      "value": "EPEAT, Energy star, ISO 9001:2015, ISO 14001:2015, ISO/IEC 17025, ISO 27001:2022, ISO 45001:2018, ISO 50001:2018, IECQ QC 080000:2017, RoHS 2011/65/EU, IATF 16949"
+    }
+  ],
+  "sourceFile": "Báo Giá DP80_V1.xlsx"
+  }  ,
+  {
+  "key": "msi_pro_dp21",
+  "name": "Máy tính để bàn Mini PC MSI PRO DP21",
+  "model": "MSI PRO DP21",
+  "brand": "MSI",
+  "origin": "Trung Quốc",
+  "unit": "Bộ",
+  "cat": "may_tinh",
+  "price": 0,
+  "warranty": "12 tháng",
+  "file": "Báo Giá DP80_V1.xlsx",
+  "specs": [
+    {
+      "key": "Thương hiệu",
+      "value": "MSI (Taiwan)"
+    },
+    {
+      "key": "Model",
+      "value": "MSI PRO DP21 13M"
+    },
+    {
+      "key": "Marketing Name",
+      "value": "MSI PRO DP21"
+    },
+    {
+      "key": "Xuất xứ",
+      "value": "Trung Quốc"
+    },
+    {
+      "key": "Nhãn sinh thái",
+      "value": "Tuân thủ tối thiểu: Energy Star, RoHS, EPEAT"
+    },
+    {
+      "key": "Processor / Bộ Vi Xử Lý",
+      "value": "Intel® Core™ i5-13400 (10 nhân, 16 luồng, 20MB Cache, xung nhịp lên đến 4.60 GHz)"
+    },
+    {
+      "key": "Chipset",
+      "value": "Intel® H610 Chipset"
+    },
+    {
+      "key": "Dung lượng RAM",
+      "value": "16GB DDR4 3200MHz, 2 x SO-DIMM upto 64GB"
+    },
+    {
+      "key": "Graphic / Đồ họa",
+      "value": "Intel® UHD Graphics 730"
+    },
+    {
+      "key": "Storage / Ổ đĩa lưu trữ",
+      "value": "1x 512GB M.2 NVMe PCIe SSD (hỗ trợ mở rộng thêm 2x khay ổ đĩa 2.5\" SATA HDD/SSD)"
+    },
+    {
+      "key": "Sound / Âm thanh",
+      "value": "Realtek® ALC897, High Definition Audio"
+    },
+    {
+      "key": "Cổng I/O (Phía trước)",
+      "value": "1x USB 3.2 Gen 2 Type-C (10Gbps)\n1x USB 3.2 Gen 2 Type-A (10Gbps)\n2x USB 2.0 Type-A\n1x Mic-in (3.5mm)\n1x Headphone-out (3.5mm)"
+    },
+    {
+      "key": "Cổng I/O (Phía sau)",
+      "value": "2x USB 3.2 Gen 1 Type-A (5Gbps)\n2x USB 2.0 Type-A\n1x RJ45 Gigabit LAN (1Gbps)\n1x HDMI out (hỗ trợ 4K @60Hz theo HDMI 2.0b)\n1x DisplayPort (1.4)\n1x COM port (RS-232)\n1x Mic-in\n1x Line-out\n1x DC Jack\n1x Kensington Lock"
+    },
+    {
+      "key": "Kết nối không dây & mở rộng",
+      "value": "Intel® Wi-Fi 6E AX211 + Bluetooth 5.3; 1x M.2 2280 PCIe SSD slot, 1x M.2 Wi-Fi slot, 2x 2.5\" Drive Bay"
+    },
+    {
+      "key": "Bảo mật",
+      "value": "- Vi mạch bảo mật chuyên dụng: dTPM 2.0 phần cứng\n- Khóa an toàn vật lý Kensington Lock\n- Hỗ trợ giải pháp bảo mật và quản lý BIOS MSI Security\n- Phần mềm MSI Cloud Center sao lưu và bảo mật dữ liệu doanh nghiệp"
+    },
+    {
+      "key": "Kensington Lock",
+      "value": "Có"
+    },
+    {
+      "key": "PSU / Nguồn",
+      "value": "Adapter 120W AC/DC Adapter chuẩn tiết kiệm điện"
+    },
+    {
+      "key": "Cooling System",
+      "value": "Silent Pro Cooling System độc quyền MSI với quạt tản nhiệt thông minh độ ồn thấp"
+    },
+    {
+      "key": "Volume / Dung tích",
+      "value": "2.3 liter (Ultra Compact Mini PC)"
+    },
+    {
+      "key": "Form thùng máy",
+      "value": "Mini PC siêu nhỏ gọn, hỗ trợ chuẩn treo VESA (75x75mm / 100x100mm). Kích thước (RxDxC): 204 x 208 x 54.8 mm, Trọng lượng: 1.27 kg"
+    },
+    {
+      "key": "Keyboard/Mouse",
+      "value": "Wired Copilot KB+M đồng bộ thương hiệu hãng máy tính MSI"
+    },
+    {
+      "key": "Tính năng máy tính",
+      "value": "1. Thiết kế siêu nhỏ gọn 2.3L cho phép đặt đứng, nằm ngang hoặc gắn trực tiếp sau lưng màn hình chuẩn VESA tiết kiệm 90% diện tích bàn làm việc.\n2. Tích hợp cổng COM (RS-232) chuyên dụng kết nối nhanh các thiết bị công nghiệp, máy POS, máy quét mã vạch, máy in bill.\n3. Hỗ trợ xuất 2 màn hình độc lập cùng lúc độ phân giải cao 4K qua cổng HDMI và DisplayPort.\n4. Phần mềm MSI Center độc quyền cho phép quản lý tài nguyên phần cứng theo thời gian thực, điều chỉnh chế độ làm việc và tự động cập nhật Driver hệ thống.\n5. Ứng dụng MSI Cloud Center sao lưu và chia sẻ dữ liệu an toàn giữa PC và thiết bị thông minh (Smartphone/Tablet) qua mạng nội bộ.\n6. Bo mạch chủ và linh kiện đồng bộ chính hãng MSI đạt độ bền tiêu chuẩn quân sự."
+    },
+    {
+      "key": "Chứng nhận hàng hóa đạt tiêu chuẩn",
+      "value": "- ISO 9001: 2015: Hệ thống quản lý chất lượng đạt tiêu chuẩn\n- ISO 14001: 2015: Hệ thống quản lý môi trường doanh nghiệp\n- ISO / IEC 17025: Yêu cầu chung về năng lực phòng thử nghiệm, hiệu chuẩn\n- ISO 27001: 2022: Hệ thống tiêu chuẩn an toàn thông tin\n- ISO 45001: 2018: Hệ thống quản lý an toàn và sức khỏe nghề nghiệp\n- ISO 50001: 2018: Hệ thống quản lý năng lượng\n- Sản phẩm máy tính đáp ứng tiêu chuẩn Châu Âu IECQ QC 080000: 2017 về hạn chế chất độc hại theo chỉ thị RoHS 2011/65/EU\n- Nhà sản xuất đạt chứng nhận IATF 16949"
+    }
+  ],
+  "sourceFile": "Báo Giá DP80_V1.xlsx"
   }
 ];
 
@@ -3735,6 +4115,17 @@ function patchCatalogClassifier() {
         return { brandGroup: "Hikvision", brandIcon: "💾", brandLabel: "Hikvision", subCatId: "hikvision_storage", subCatName: "💾 Ổ cứng chuyên dụng camera (Hikvision)", seriesName: "Hikvision Surveillance HDD" };
       }
       return { brandGroup: "Hikvision", brandIcon: "📹", brandLabel: "Hikvision", subCatId: "hikvision_other", subCatName: "📑 Thiết bị Hikvision khác", seriesName: "Hikvision Device" };
+    }
+
+    // MSI (PC PRO DP80 A14G, DP180, Cubi NUC, Màn hình PRO MP225 E12VL...)
+    if (bL === 'msi' || n.includes('msi') || m.includes('msi') || m.includes('dp80') || m.includes('dp21') || m.includes('mp225')) {
+      if (c === 'man_hinh' || n.includes('màn hình') || m.includes('mp225') || m.includes('mp241')) {
+        return { brandGroup: "MSI", brandIcon: "🖥️", brandLabel: "MSI", subCatId: "msi_screen", subCatName: "🖥️ Màn hình hiển thị (MSI PRO Series)", seriesName: "MSI PRO Monitor" };
+      }
+      if (c === 'may_tinh' || n.includes('máy tính') || n.includes('pc') || m.includes('dp80') || m.includes('dp21') || m.includes('dp180') || m.includes('cubi')) {
+        return { brandGroup: "MSI", brandIcon: "💻", brandLabel: "MSI", subCatId: "msi_pc", subCatName: "💻 Máy tính để bàn & Đồng bộ (MSI PRO Series)", seriesName: "MSI PRO Desktop" };
+      }
+      return { brandGroup: "MSI", brandIcon: "💻", brandLabel: "MSI", subCatId: "msi_other", subCatName: "📑 Thiết bị MSI", seriesName: "MSI Device" };
     }
 
     return _origClassify(item);
