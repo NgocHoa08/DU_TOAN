@@ -4378,6 +4378,21 @@ function renderAdminDashboard(container) {
     '    </div>' +
     '  </div>' +
 
+    '  <!-- NAV TABS TRẠNG THÁI (ĐANG HOẠT ĐỘNG / ĐÃ KHÓA) -->' +
+    '  <div style="display:flex;gap:8px;margin-bottom:14px;border-bottom:2px solid var(--bdr2);padding-bottom:10px;flex-wrap:wrap;align-items:center">' +
+    '    <button onclick="adminCurrentStatus=\'all\';renderAdminDashboard()" style="cursor:pointer;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:800;border:none;transition:all 0.15s ease;display:inline-flex;align-items:center;gap:6px;' + (adminCurrentStatus === 'all' ? 'background:var(--p);color:#fff;box-shadow:0 3px 8px rgba(0,0,0,0.18)' : 'background:var(--card);color:var(--t2);border:1px solid var(--bdr2)') + '">' +
+    '      🌐 Tất cả sản phẩm <span style="background:rgba(0,0,0,0.12);padding:1px 8px;border-radius:12px;font-size:11px">' + totalCount + '</span>' +
+    '    </button>' +
+    '    <button onclick="adminCurrentStatus=\'active\';renderAdminDashboard()" style="cursor:pointer;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:800;border:none;transition:all 0.15s ease;display:inline-flex;align-items:center;gap:6px;' + (adminCurrentStatus === 'active' ? 'background:#059669;color:#fff;box-shadow:0 3px 8px rgba(5,150,105,0.25)' : 'background:var(--card);color:#059669;border:1.5px solid #a7f3d0') + '">' +
+    '      ✅ Máy đang hoạt động <span style="background:rgba(0,0,0,0.12);padding:1px 8px;border-radius:12px;font-size:11px">' + activeCount + '</span>' +
+    '    </button>' +
+    '    <button onclick="adminCurrentStatus=\'locked\';renderAdminDashboard()" style="cursor:pointer;padding:8px 18px;border-radius:20px;font-size:13px;font-weight:800;border:none;transition:all 0.15s ease;display:inline-flex;align-items:center;gap:6px;' + (adminCurrentStatus === 'locked' ? 'background:#dc2626;color:#fff;box-shadow:0 3px 8px rgba(220,38,38,0.25)' : 'background:var(--card);color:#dc2626;border:1.5px solid #fca5a5') + '">' +
+    '      🔒 Máy đã khóa (Tạm ẩn) <span style="background:rgba(0,0,0,0.12);padding:1px 8px;border-radius:12px;font-size:11px">' + lockedCount + '</span>' +
+    '    </button>' +
+    '    <div style="margin-left:auto;font-size:12px;color:var(--t3);font-style:italic">' +
+    '      💡 Chuyển tab để kiểm tra nhanh danh sách máy đang mở hoặc bị khóa' +
+    '    </div>' +
+    '  </div>' +
     '  <!-- FILTER & SEARCH TOOLBAR -->' +
     '  <div style="background:var(--card);padding:14px;border-radius:12px;border:1.5px solid var(--bdr2);margin-bottom:16px;box-shadow:0 2px 8px rgba(0,0,0,0.03)">' +
     '    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">' +
