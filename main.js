@@ -83589,53 +83589,61 @@ function renderHandoverForm() {
     document.getElementById('bbDate').valueAsDate = new Date();
   }
 
+  // Danh sách toàn bộ sản phẩm đang hoạt động từ CATALOG_ITEMS hoặc MODEL_PRESETS
+  var availableProducts = [];
+  if (typeof CATALOG_ITEMS !== 'undefined' && Array.isArray(CATALOG_ITEMS) && CATALOG_ITEMS.length > 0) {
+    availableProducts = CATALOG_ITEMS.filter(function (it) { return !it.isLocked; });
+  }
+
   var html = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">' +
     '<div style="font-weight:700;font-size:14px;color:#0f172a">Danh sách thiết bị bàn giao &amp; Số Serial (Mỗi serial trên 1 dòng)</div>' +
     '<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">' +
-    '<select class="key-inp" style="height:32px;font-size:12px;background:#ffffff" onchange="if(this.value){bbAddPreset(this.value);this.value=\'\';}">' +
-    '<option value="">➕ Thêm nhanh mẫu máy chuẩn...</option>' +
-    '<option value="msi_pro_dp80_a14g">💻 Máy vi tính MSI PRO DP80 A14G</option>' +
-    '<option value="msi_pro_dp21">💻 Mini PC MSI PRO DP21</option>' +
-    '<option value="msi_pro_mp225_e12vl">🖥️ Màn hình MSI PRO MP225 E12VL</option>' +
-    '<option value="msi_cubi_nuc">💻 Mini PC MSI Cubi NUC 1M</option>' +
-    '<option value="msi_dp180">💻 Máy vi tính MSI PRO DP180</option>' +
-    '<option value="oki_b433dn">🖨️ Máy in OKI B433DN</option>' +
-    '<option value="oki_b513dn">🖨️ Máy in OKI B513DN</option>' +
-    '<option value="canon_lbp2900">🖨️ Máy in Canon LBP2900</option>' +
-    '<option value="hp_m404dn">🖨️ Máy in HP LaserJet M404dn</option>' +
-    '<option value="ricoh_im2500">📠 Photocopy Ricoh IM 2500</option>' +
-    '<option value="ricoh_fi8170">📄 Máy scan RICOH Fi-8170</option>' +
-    '<option value="switch_gwn7813">🌐 Switch Grandstream GWN7813</option>' +
-    '<option value="dau_doc_the_tu">💳 Đầu đọc thẻ từ uTrust 4701 F</option>' +
-    '<option value="doc_the_nho">💾 Đọc thẻ nhớ ATEN UH3240</option>' +
-    '<option value="man_hinh_24">🖥️ Màn hình 23.8 inch IPS</option>' +
-    '<option value="ups_santak_1000">🔋 Bộ lưu điện UPS 1000VA</option>' +
-    '<option value="canon_eos_r6">📷 Máy ảnh Canon EOS R6</option>' +
-    '</select>' +
     '<button class="btn btn-p btn-sm" onclick="bbAddDev()">➕ Thêm dòng mới</button>' +
+    (typeof devs !== 'undefined' && devs && devs.length > 0 ? '<button class="btn btn-o btn-sm" style="color:var(--p);font-weight:700" onclick="bbSyncFromDutoan()" title="Đồng bộ danh sách thiết bị đang làm trong tab Dự Toán">📥 Lấy từ Dự Toán (' + devs.length + ' máy)</button>' : '') +
     '<button class="btn btn-o btn-sm" style="color:var(--re);border-color:rgba(207,34,46,0.3)" onclick="bbResetAll()" title="Xóa trắng để lập biên bản mới">🗑️ Làm mới biên bản</button>' +
     '</div>' +
     '</div>';
 
   html += '<table class="excel-table" style="width:100%">' +
-    '<thead><tr><th style="width:40px">STT</th><th>Danh Mục Hàng Hóa &amp; Model</th><th style="width:70px">SL</th><th style="width:70px">ĐVT</th><th style="width:340px">Số Serial (Mỗi serial 1 dòng / phân bổ 2 cột)</th><th style="width:50px">Xóa</th></tr></thead><tbody>';
+    '<thead><tr><th style="width:40px">STT</th><th>Danh Mục Hàng Hóa &amp; Model (Có thể gõ hoặc chọn từ menu ▾)</th><th style="width:70px">SL</th><th style="width:70px">ĐVT</th><th style="width:340px">Số Serial (Mỗi serial 1 dòng / phân bổ 2 cột)</th><th style="width:50px">Xóa</th></tr></thead><tbody>';
 
   if (bbDevs.length === 0) {
     html += '<tr><td colspan="6" class="ctr" style="padding:32px 20px;color:var(--t2);background:#ffffff">' +
       '<div style="font-size:32px;margin-bottom:8px">📝</div>' +
       '<div style="font-size:14px;font-weight:700;color:#0f172a;margin-bottom:4px">Chưa có thiết bị nào trong biên bản bàn giao</div>' +
-      '<div style="font-size:12.5px;color:var(--t2);margin-bottom:14px">Bạn có thể thêm dòng mới hoặc chọn nhanh từ danh mục mẫu máy có sẵn bên dưới</div>' +
+      '<div style="font-size:12.5px;color:var(--t2);margin-bottom:14px">Bấm nút "Thêm dòng mới" bên dưới để nhập thiết bị hoặc chọn nhanh từ danh mục mẫu máy có trong hệ thống</div>' +
       '<div style="display:flex;gap:10px;justify-content:center">' +
-      '<button class="btn btn-p btn-sm" onclick="bbAddDev()">➕ Thêm thiết bị mới</button>' +
-      '<button class="btn btn-o btn-sm" onclick="bbAddPreset(\'msi_cubi_nuc\')">💻 Thêm mẫu Mini PC</button>' +
-      '<button class="btn btn-o btn-sm" onclick="bbAddPreset(\'oki_b433dn\')">🖨️ Thêm mẫu Máy in</button>' +
+      '<button class="btn btn-p btn-sm" onclick="bbAddDev()">➕ Thêm dòng mới</button>' +
+      (typeof devs !== 'undefined' && devs && devs.length > 0 ? '<button class="btn btn-o btn-sm" style="color:var(--p);font-weight:700" onclick="bbSyncFromDutoan()">📥 Lấy ' + devs.length + ' máy từ Dự Toán</button>' : '') +
       '</div>' +
       '</td></tr>';
   } else {
     bbDevs.forEach(function (d, i) {
+      // Xây dựng danh sách option cho mũi tên chọn mẫu máy có trong hệ thống
+      var optHtml = '<option value="">▾ Chọn mẫu máy trong kho dự toán...</option>';
+      if (availableProducts.length > 0) {
+        availableProducts.forEach(function (it) {
+          var label = (it.name || '') + (it.model ? ' - ' + it.model : '');
+          optHtml += '<option value="' + escH(label) + '|' + escH(it.unit || 'Máy') + '">' + escH(label) + '</option>';
+        });
+      } else if (typeof MODEL_PRESETS !== 'undefined') {
+        for (var pKey in MODEL_PRESETS) {
+          var p = MODEL_PRESETS[pKey];
+          var label = (p.name || '') + (p.model ? ' - ' + p.model : '');
+          optHtml += '<option value="' + escH(label) + '|' + escH(p.unit || 'Máy') + '">' + escH(label) + '</option>';
+        }
+      }
+
       html += '<tr>' +
         '<td class="ctr" style="font-weight:700">' + (i + 1) + '</td>' +
-        '<td><input type="text" class="key-inp" style="width:100%;font-weight:600" value="' + escH(d.name || '') + '" oninput="bbDevs[' + i + '].name=this.value" placeholder="Nhập tên thiết bị..."></td>' +
+        '<td>' +
+        '  <div style="display:flex;gap:6px;align-items:center">' +
+        '    <input type="text" class="key-inp" style="flex:1;font-weight:600;min-width:180px" value="' + escH(d.name || '') + '" oninput="bbDevs[' + i + '].name=this.value" placeholder="Nhập tên thiết bị hoặc chọn từ menu ▾">' +
+        '    <select class="key-inp" style="width:40px;padding:0;text-align:center;cursor:pointer;font-weight:700;font-size:14px;background:#f8fafc;border-color:var(--bdr2);color:var(--p)" title="Chọn mẫu máy có sẵn trong kho dự toán" onchange="bbSelectDeviceForCurrentRow(' + i + ', this.value);this.value=\'\';">' +
+        optHtml +
+        '    </select>' +
+        '  </div>' +
+        '</td>' +
         '<td class="ctr"><input type="number" class="key-inp" style="width:100%;text-align:center;font-weight:700" value="' + (d.qty || 1) + '" oninput="bbDevs[' + i + '].qty=this.value"></td>' +
         '<td class="ctr"><input type="text" class="key-inp" style="width:100%;text-align:center" value="' + escH(d.unit || 'Máy') + '" oninput="bbDevs[' + i + '].unit=this.value"></td>' +
         '<td><textarea class="key-inp" style="width:100%;height:75px;resize:vertical;font-family:monospace;font-size:12px;text-align:center" oninput="bbDevs[' + i + '].serials=this.value" placeholder="Dán danh sách serials vào đây (tự động chia 2 cột đều nhau và căn giữa)...">' + escH(d.serials || '') + '</textarea></td>' +
@@ -83646,6 +83654,18 @@ function renderHandoverForm() {
   html += '</tbody></table>';
 
   document.getElementById('bbTableArea').innerHTML = html;
+}
+
+/* ── CHỌN MẪU MÁY TỪ DANH MỤC DỰ TOÁN CHO TỪNG DÒNG THIẾT BỊ ── */
+function bbSelectDeviceForCurrentRow(rowIdx, rawVal) {
+  if (!rawVal || !bbDevs[rowIdx]) return;
+  var parts = rawVal.split('|');
+  var devName = parts[0] || '';
+  var devUnit = parts[1] || 'Máy';
+  bbDevs[rowIdx].name = devName;
+  bbDevs[rowIdx].unit = devUnit;
+  renderHandoverForm();
+  toast('✅ Đã nạp thiết bị: ' + devName, 'ok');
 }
 
 /* ─── PARTY PRESETS (BÊN BÁN / BÊN MUA ĐƯỢC TRÍCH XUẤT ĐẦY ĐỦ TỪ HỒ SƠ) ─── */
