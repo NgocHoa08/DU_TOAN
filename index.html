@@ -647,6 +647,9 @@
 </head>
 
 <body>
+  <!-- Warm Ash Atmospheric Aura Gradient Layers -->
+  <div class="aura-layer-1" aria-hidden="true"></div>
+  <div class="aura-layer-2" aria-hidden="true"></div>
   <div class="app-layout">
     <!-- ═══════════════ SIDEBAR BÊN TRÁI (LEFT MENU) ═══════════════ -->
     <aside class="app-sidebar" id="appSidebar">
@@ -669,9 +672,9 @@
           <span class="nav-label">1. Làm Dự Toán</span>
         </button>
         <button class="mtab" id="mtab-baogia" onclick="switchMainTab('baogia')"
-          title="Lập Báo Giá Chuẩn Mẫu Thuận Phát (BGThuanPhat.xlsx)">
+          title="Lập Báo Giá Chuẩn Mẫu Thuận Phát &amp; Lynk Core (BGThuanPhat.xlsx / Copy of báo giá Lynk Core.xlsx)">
           <span class="nav-icon">🧾</span>
-          <span class="nav-label">2. Báo Giá Thuận Phát</span>
+          <span class="nav-label">2. Báo Giá (TP &amp; Lynk Core)</span>
         </button>
         <button class="mtab" id="mtab-tddu" onclick="switchMainTab('tddu')" title="Lập Bảng Tuyên Bố Đáp Ứng">
           <span class="nav-icon">✅</span>
@@ -1338,14 +1341,33 @@
         <!-- ══════════════════ VIEW BAO GIA (ADMIN - THUẬN PHÁT) ══════════════════ -->
         <div id="view-baogia" style="display:none">
           <div class="card" style="margin-top:0">
+            <!-- TEMPLATE SWITCHER BAR -->
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;padding:12px 18px;background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);border:1.5px solid var(--bdr,#e2e8f0);border-radius:14px;flex-wrap:wrap;box-shadow:0 2px 10px rgba(0,0,0,0.03)">
+              <div style="display:flex;align-items:center;gap:10px">
+                <div style="width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,#0284c7,#2563eb);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 2px 6px rgba(2,132,199,0.3)">📑</div>
+                <div>
+                  <div style="font-size:13.5px;font-weight:800;color:var(--t1);letter-spacing:0.2px">CHỌN MẪU BÁO GIÁ EXCEL:</div>
+                  <div style="font-size:11.5px;color:var(--t2)">Chuyển đổi giao diện và mẫu xuất file Excel linh hoạt theo từng đối tác</div>
+                </div>
+              </div>
+              <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+                <button type="button" id="btnTplThuanPhat" class="btn btn-sm btn-p" onclick="bgSelectTemplate('thuan_phat')" style="font-weight:700;padding:7px 15px;border-radius:8px">
+                  🏢 Mẫu 1: Thuận Phát (BGThuanPhat.xlsx)
+                </button>
+                <button type="button" id="btnTplLynkCore" class="btn btn-sm btn-o" onclick="bgSelectTemplate('lynk_core')" style="font-weight:700;padding:7px 15px;border-radius:8px">
+                  ⚡ Mẫu 2: Lynk Core (Báo giá Lynk Core.xlsx)
+                </button>
+              </div>
+            </div>
+
             <div class="baogia-header-card">
               <div style="width:100%;display:flex;justify-content:center;align-items:center;margin-bottom:14px">
-                <img src="logo_thuanphat.png" alt="Logo Công ty Thuận Phát"
+                <img id="bgHeaderLogo" src="logo_thuanphat.png" alt="Logo Báo Giá"
                   style="height:120px;max-width:95%;width:auto;object-fit:contain;display:block;margin:0 auto" />
               </div>
-              <div style="font-size:19px;font-weight:900;color:var(--t1);letter-spacing:0.5px">BẢNG BÁO GIÁ THUẬN PHÁT
+              <div id="bgHeaderTitle" style="font-size:19px;font-weight:900;color:var(--t1);letter-spacing:0.5px">BẢNG BÁO GIÁ THUẬN PHÁT
                 CHUẨN MẪU</div>
-              <div style="font-size:13px;color:var(--t2);margin-top:4px;font-weight:500">BGThuanPhat.xlsx • Tự động tính
+              <div id="bgHeaderSub" style="font-size:13px;color:var(--t2);margin-top:4px;font-weight:500">BGThuanPhat.xlsx • Tự động tính
                 thuế VAT &amp; dịch số thành chữ tiếng Việt</div>
             </div>
 
@@ -1418,15 +1440,14 @@
             <!-- EXPORT ACTIONS -->
             <div class="expc" style="margin-top:16px">
               <div class="expc-ico">📊</div>
-              <div class="expc-t">Xuất File Excel Báo Giá Thuận Phát Chuẩn (.xlsx)</div>
+              <div class="expc-t" id="bgExpTitle">Xuất File Excel Báo Giá Thuận Phát Chuẩn (.xlsx)</div>
               <div class="expc-d">
-                File Excel xuất ra chuẩn 100% mẫu <b>BGThuanPhat.xlsx</b>: Sheet "Báo giá TP", tiêu đề trang trọng, bảng
-                sản phẩm có công thức thành tiền tự động <code>=G*H</code>, tổng cộng trước thuế <code>=SUM()</code>,
-                thuế VAT <code>=I*10%</code>, tổng sau thuế, kèm dịch số tiền thành chữ Tiếng Việt chuẩn xác.
+                File Excel xuất ra chuẩn 100% định dạng <b>BGThuanPhat.xlsx</b> hoặc <b>Copy of báo giá Lynk Core.xlsx</b>: Đầy đủ ảnh logo thực tế chất lượng cao, tiêu đề trang trọng, bảng sản phẩm có công thức thành tiền tự động <code>=G*H</code>, tổng cộng <code>=SUM()</code>, điều khoản hợp đồng và chữ ký chuyên nghiệp.
               </div>
               <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-                <button class="btn btn-g btn-lg" onclick="exportBaogiaExcel()">⬇️ Tải file Excel Báo Giá Thuận Phát
-                  (.xlsx)</button>
+                <button class="btn btn-g btn-lg" id="btnExportBaogiaPrimary" onclick="exportActiveBaogiaExcel()">⬇️ Tải file Excel Báo Giá (.xlsx)</button>
+                <button class="btn btn-o btn-lg" onclick="exportBaogiaExcel()" title="Xuất file theo đúng chuẩn mẫu Thuận Phát">🏢 Xuất Mẫu Thuận Phát (.xlsx)</button>
+                <button class="btn btn-o btn-lg" onclick="exportLynkCoreExcel()" title="Xuất file theo đúng chuẩn mẫu Lynk Core">⚡ Xuất Mẫu Lynk Core (.xlsx)</button>
               </div>
             </div>
           </div>
@@ -2251,6 +2272,7 @@
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>
   <script src="firebase_sync.js?v=20260910_161500"></script>
+  <script src="page_mascot.js?v=20260916_panda"></script>
 </body>
 
 </html>

@@ -6,63 +6,73 @@
 /* ── GOOGLE FONTS ── */
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap');
 
-/* ── DESIGN TOKENS (3D ELEVATED & MODERN TACTILE THEME) ── */
+/* ── DESIGN TOKENS: AURA "WARM ASH" HARMONIZED THEME ── */
 :root {
-  /* Surfaces & Backgrounds */
-  --bg:        #f1f5f9;  /* Slate 100: Nền tổng thể làm tôn nổi các khối thẻ màu trắng */
-  --bg2:       #e2e8f0;  /* Slate 200: Vùng lõm, dock thanh công cụ */
-  --card:      #ffffff;  /* Trắng tinh khiết cho thẻ chức năng nổi khối */
-  --card2:     #f8fafc;  /* Thẻ con phụ trợ phân cấp */
-  --inp:       #ffffff;  /* Nền input trắng sắc nét */
-  --bdr:       #cbd5e1;  /* Slate 300: Viền nét chuẩn, rõ ràng */
-  --bdr2:      #94a3b8;  /* Slate 400: Viền nhấn nổi bật */
-  --foc:       #2563eb;  /* Blue 600: Focus sắc nét */
-  --b1:        #0f172a;  /* Slate 900: Tiêu đề chính đậm nét */
-  --b2:        #1d4ed8;  /* Blue 700: Điểm nhấn thương hiệu */
-  --glow:      rgba(37, 99, 235, .16);
+  /* Surfaces & Backgrounds - Warm Ash */
+  --bg:        #faf8f2;  /* Base Warm Ash Backdrop (blend mode backdrop) */
+  --bg2:       #f2eee3;  /* Warm ash stone depression */
+  --card:      #ffffff;  /* Trắng ngà sắc nét nổi khối */
+  --card2:     #fbf9f4;  /* Thẻ con phụ */
+  --inp:       #ffffff;  /* Ô nhập liệu */
+  --bdr:       #e3dac9;  /* Viền ấm Warm Ash */
+  --bdr2:      #cdbfab;  /* Viền nhấn nổi bật */
+  --foc:       #a8947a;  /* Focus Warm Ash Golden Bronze */
+  --b1:        #2f2821;  /* Deep Warm Ash Charcoal - Tiêu đề chính */
+  --b2:        #a8947a;  /* Warm Ash Bronze - Điểm nhấn */
+  --glow:      rgba(168, 148, 122, .24);
 
-  /* Accent Palette (Chuẩn tương phản cao & Gradient 3D) */
-  --blue:      #2563eb;
-  --blue-lt:   #1d4ed8;
-  --green:     #16a34a;
-  --green-lt:  #15803d;
-  --amber:     #d97706;
-  --amber-lt:  #b45309;
-  --red:       #dc2626;
-  --red-lt:    #b91c1c;
-  --purple:    #7c3aed;
-  --purple-lt: #6d28d9;
-  --cyan:      #0891b2;
+  /* Warm Ash Brand Palette */
+  --p:         #2f2821;  /* Primary Brand Tone */
+  --tp-navy:   #2f2821;  /* Deep Charcoal Slate */
+  --tp-navy-lt:#453b32;  /* Lighter warm espresso */
+  --tp-gold:   #a8947a;  /* Warm Ash Gold / Bronze */
+  --tp-gold-lt:#c4b5a0;  /* Light Warm Ash */
+  --tp-gold-dk:#8e7a62;  /* Dark Warm Ash */
+
+  /* Accent Palette harmonized with Warm Ash */
+  --blue:      #2f2821;
+  --blue-lt:   #453b32;
+  --green:     #2e7d4c;
+  --green-lt:  #23653d;
+  --amber:     #a87e38;
+  --amber-lt:  #8e692a;
+  --red:       #c24335;
+  --red-lt:    #a33226;
+  --purple:    #7b5294;
+  --purple-lt: #66417d;
+  --cyan:      #458087;
 
   /* Typography / Text Colors */
-  --t1:  #0f172a;  /* Slate 900 - Chữ đen đậm rõ nét tuyệt đối */
-  --t2:  #334155;  /* Slate 700 - Chữ phụ trợ dễ đọc, tương phản chuẩn WCAG AAA */
-  --t3:  #64748b;  /* Slate 500 - Nhãn phụ, gợi ý */
-  --go:  #b45309;  /* Giá tiền / Lưu ý nổi bật */
-  --gr:  #16a34a;  /* Thành công / Đạt chuẩn */
-  --re:  #dc2626;  /* Cảnh báo / Xóa */
-  --ai:  #7c3aed;  /* Trí tuệ nhân tạo AI */
-  --aib: rgba(124, 58, 237, .15);
+  --t1:  #2f2821;  /* Chữ chính nâu đen thẫm ấm áp */
+  --t2:  #5c5145;  /* Chữ phụ */
+  --t3:  #8e8071;  /* Nhãn phụ, gợi ý */
+  --go:  #a87e38;  /* Giá tiền / Lưu ý nổi bật */
+  --gr:  #2e7d4c;  /* Thành công / Đạt chuẩn */
+  --re:  #c24335;  /* Cảnh báo / Xóa */
+  --ai:  #7b5294;  /* Trí tuệ nhân tạo AI */
+  --aib: rgba(123, 82, 148, .15);
 
   /* Layout Spacing & Radius */
   --r:   16px;
   --rs:  10px;
   --xl:  20px;
 
-  /* 3D Elevation Shadows (Đổ bóng nổi khối đa tầng vật lý) */
-  --shadow-sm:        0 1px 2px rgba(15, 23, 42, 0.05), 0 1px 1px rgba(15, 23, 42, 0.03);
-  --shadow-card:      0 1px 3px rgba(15, 23, 42, 0.05), 0 8px 24px -4px rgba(15, 23, 42, 0.08), 0 4px 8px -2px rgba(15, 23, 42, 0.03);
-  --shadow-card-hover:0 3px 6px rgba(15, 23, 42, 0.06), 0 16px 36px -6px rgba(15, 23, 42, 0.12), 0 6px 12px -3px rgba(15, 23, 42, 0.04);
-  --shadow-raised:    0 10px 30px -5px rgba(15, 23, 42, 0.14), 0 4px 10px -2px rgba(15, 23, 42, 0.06);
-  --shadow-inset:     inset 0 2px 4px rgba(15, 23, 42, 0.06), inset 0 1px 2px rgba(15, 23, 42, 0.04);
-  --shadow-btn:       0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 8px rgba(0, 0, 0, 0.06);
+  /* 3D Elevation Shadows (Warm Ash Tint) */
+  --shadow-sm:        0 1px 2px rgba(47, 40, 33, 0.05), 0 1px 1px rgba(47, 40, 33, 0.03);
+  --shadow-card:      0 1px 3px rgba(47, 40, 33, 0.05), 0 8px 24px -4px rgba(47, 40, 33, 0.07), 0 4px 8px -2px rgba(47, 40, 33, 0.03);
+  --shadow-card-hover:0 3px 6px rgba(47, 40, 33, 0.06), 0 16px 36px -6px rgba(47, 40, 33, 0.12), 0 6px 12px -3px rgba(47, 40, 33, 0.05);
+  --shadow-raised:    0 10px 30px -5px rgba(47, 40, 33, 0.14), 0 4px 10px -2px rgba(47, 40, 33, 0.07);
+  --shadow-inset:     inset 0 2px 4px rgba(47, 40, 33, 0.05), inset 0 1px 2px rgba(47, 40, 33, 0.03);
+  --shadow-btn:       0 2px 0 rgba(47, 40, 33, 0.08), 0 3px 8px rgba(47, 40, 33, 0.06);
   --highlight-top:    inset 0 1px 0 rgba(255, 255, 255, 0.95);
 
-  /* Gradients */
-  --grad-h:  linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-  --grad-g:  linear-gradient(135deg, #16a34a 0%, #059669 100%);
-  --grad-a:  linear-gradient(135deg, #d97706 0%, #b45309 100%);
-  --grad-p:  linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%);
+  /* Gradients Warm Ash */
+  --grad-h:     linear-gradient(135deg, #2f2821 0%, #453b32 60%, #a8947a 100%);
+  --grad-gold:  linear-gradient(135deg, #c4b5a0 0%, #a8947a 50%, #8e7a62 100%);
+  --grad-navy:  linear-gradient(135deg, #2f2821 0%, #453b32 100%);
+  --grad-g:     linear-gradient(135deg, #2e7d4c 0%, #23653d 100%);
+  --grad-a:     linear-gradient(135deg, #a8947a 0%, #8e7a62 100%);
+  --grad-p:     linear-gradient(135deg, #7b5294 0%, #58376e 100%);
 }
 
 /* ── RESET ── */
@@ -76,15 +86,47 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ── BODY & BACKGROUND ── */
+/* ── BODY & AURA WARM ASH BACKGROUND ── */
 body {
   font-family: 'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--bg);
+  background-color: #faf8f2 !important;
   color: var(--t1);
   min-height: 100vh;
   line-height: 1.55;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+}
+
+/* ── AURA GRADIENT: WARM ASH ATMOSPHERIC LAYERS ── */
+.aura-layer-1 {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0) 0%, rgba(214,204,190,0.12) 28%, rgb(255,255,255) 18%, rgb(196,181,160) 68%, rgb(168,148,122) 100%);
+  mix-blend-mode: multiply;
+  filter: blur(130px);
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.aura-layer-2 {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0) 0%, rgba(214,204,190,0.22) 34%, rgb(255,255,255) 66%, rgb(196,181,160) 82%, rgb(168,148,122) 100%);
+  mix-blend-mode: multiply;
+  filter: blur(130px);
+  transform: translateZ(0);
+  will-change: transform;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+  .aura-layer-1,
+  .aura-layer-2 {
+    filter: blur(90px);
+  }
 }
 
 /* Subtle architectural grid pattern */
@@ -93,8 +135,8 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(148, 163, 184, .08) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(148, 163, 184, .08) 1px, transparent 1px);
+    linear-gradient(rgba(168, 148, 122, .06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(168, 148, 122, .06) 1px, transparent 1px);
   background-size: 36px 36px;
   pointer-events: none;
   z-index: 0;
@@ -133,22 +175,22 @@ body::after {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #eff6ff;
-  border: 1px solid #bfdbfe;
-  color: #1d4ed8;
+  background: #fbf7ee;
+  border: 1px solid #e7d5a5;
+  color: #9c7b28;
   font-size: 11.5px;
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.5px;
   padding: 5px 16px;
   border-radius: 100px;
   margin-bottom: 12px;
-  box-shadow: 0 2px 6px rgba(37, 99, 235, .06);
+  box-shadow: 0 2px 6px rgba(195, 164, 92, .15);
 }
 
 .hdr h1 {
   font-size: clamp(22px, 3.5vw, 32px);
   font-weight: 800;
-  color: #0f172a;
+  color: #001A4C;
   line-height: 1.3;
   margin-bottom: 6px;
   letter-spacing: -0.4px;
@@ -165,7 +207,7 @@ body::after {
   padding: 6px;
   border-radius: 16px;
   border: 1px solid var(--bdr);
-  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.04);
+  box-shadow: 0 4px 16px rgba(0, 26, 76, 0.06);
 }
 
 .mtab {
@@ -186,15 +228,15 @@ body::after {
 
 .mtab:hover:not(.active) {
   background: #f1f5f9;
-  color: var(--t1);
+  color: #001A4C;
   transform: translateY(-1px);
 }
 
 .mtab.active {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  background: linear-gradient(135deg, #001A4C, #002b66);
   color: #ffffff !important;
-  border-color: transparent;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, .32);
+  border-bottom: 2.5px solid #c3a45c;
+  box-shadow: 0 4px 14px rgba(0, 26, 76, .32);
 }
 
 #mtab-bbbg.active {
@@ -208,13 +250,14 @@ body::after {
 }
 
 #mtab-baogia.active {
-  background: linear-gradient(135deg, #d97706, #b45309) !important;
-  box-shadow: 0 4px 14px rgba(217, 119, 6, .32);
+  background: linear-gradient(135deg, #c3a45c, #a8883b) !important;
+  color: #001A4C !important;
+  box-shadow: 0 4px 14px rgba(195, 164, 92, .38);
 }
 
 #mtab-lichsu.active {
-  background: linear-gradient(135deg, #7c3aed, #2563eb) !important;
-  box-shadow: 0 4px 14px rgba(124, 58, 237, .32);
+  background: linear-gradient(135deg, #001A4C, #c3a45c) !important;
+  box-shadow: 0 4px 14px rgba(0, 26, 76, .32);
 }
 
 /* ── STEPS (3D SEGMENTED CONTROLLER) ── */
@@ -267,22 +310,22 @@ body::after {
   color: var(--t2);
   flex-shrink: 0;
   transition: all .22s;
-  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.08);
+  box-shadow: 0 2px 4px rgba(0, 26, 76, 0.08);
 }
 
 .stab.active {
-  color: var(--blue);
+  color: #001A4C;
   background: #ffffff;
-  border-color: rgba(37, 99, 235, 0.2);
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04), var(--highlight-top);
+  border-color: rgba(195, 164, 92, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 26, 76, 0.08), 0 1px 2px rgba(0, 26, 76, 0.04), var(--highlight-top);
   transform: translateY(-1px);
 }
 
 .stab.active .snum {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  border-color: #1d4ed8;
-  color: #ffffff;
-  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  background: linear-gradient(135deg, #001A4C 0%, #002b66 100%);
+  border-color: #c3a45c;
+  color: #c3a45c;
+  box-shadow: 0 3px 10px rgba(0, 26, 76, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.35);
 }
 
 .stab.done {
@@ -303,16 +346,16 @@ body::after {
   border-radius: 99px;
   overflow: hidden;
   margin-bottom: 20px;
-  box-shadow: inset 0 1px 2px rgba(15, 23, 42, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 26, 76, 0.1);
   padding: 1px;
 }
 
 .pbar-f {
   height: 100%;
   border-radius: 99px;
-  background: linear-gradient(90deg, #2563eb 0%, #7c3aed 50%, #06b6d4 100%);
+  background: linear-gradient(90deg, #001A4C 0%, #002b66 50%, #c3a45c 100%);
   transition: width .4s cubic-bezier(.4,0,.2,1);
-  box-shadow: 0 0 10px rgba(37, 99, 235, 0.45);
+  box-shadow: 0 0 10px rgba(195, 164, 92, 0.45);
 }
 
 /* ── PANEL ── */
@@ -345,8 +388,8 @@ body::after {
   left: 0;
   right: 0;
   height: 3.5px;
-  background: linear-gradient(90deg, #2563eb, #3b82f6, #06b6d4);
-  opacity: 0.9;
+  background: linear-gradient(90deg, #001A4C 0%, #002b66 50%, #c3a45c 100%);
+  opacity: 0.95;
 }
 
 .card:hover {
@@ -743,10 +786,10 @@ select option {
 }
 
 .cat-btn.active {
-  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
-  border-color: #1d4ed8;
+  background: linear-gradient(135deg, #001A4C 0%, #002b66 100%);
+  border-color: #c3a45c;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 14px rgba(0, 26, 76, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.3);
   transform: translateY(-1px);
 }
 
@@ -1035,43 +1078,44 @@ select option {
 }
 
 .btn-p {
-  background: linear-gradient(180deg, #3b82f6 0%, #2563eb 100%);
-  color: #ffffff !important;
-  border-color: #1d4ed8;
-  box-shadow: 0 2.5px 0 #1d4ed8, 0 4px 14px rgba(37, 99, 235, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  background: linear-gradient(180deg, #c4b5a0 0%, #a8947a 100%);
+  color: #2f2821 !important;
+  font-weight: 800;
+  border-color: #8e7a62;
+  box-shadow: 0 2.5px 0 #7a6750, 0 4px 14px rgba(168, 148, 122, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 }
 
 .btn-p:hover {
-  background: linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%);
-  border-color: #1e40af;
-  box-shadow: 0 3px 0 #1e40af, 0 6px 18px rgba(37, 99, 235, 0.42);
+  background: linear-gradient(180deg, #b8a58e 0%, #9c876d 100%);
+  border-color: #6d5b47;
+  box-shadow: 0 3px 0 #6d5b47, 0 6px 18px rgba(168, 148, 122, 0.48);
   transform: translateY(-1px);
 }
 
 .btn-p:active {
-  box-shadow: 0 1px 0 #1e40af, 0 2px 6px rgba(37, 99, 235, 0.3) !important;
+  box-shadow: 0 1px 0 #6d5b47, 0 2px 6px rgba(168, 148, 122, 0.3) !important;
 }
 
 .btn-g {
-  background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%);
+  background: linear-gradient(180deg, #2e7d4c 0%, #23653d 100%);
   color: #ffffff !important;
-  border-color: #15803d;
-  box-shadow: 0 2.5px 0 #15803d, 0 4px 14px rgba(22, 163, 74, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: #1b4f30;
+  box-shadow: 0 2.5px 0 #1b4f30, 0 4px 14px rgba(46, 125, 76, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
 .btn-g:hover {
-  background: linear-gradient(180deg, #16a34a 0%, #15803d 100%);
-  border-color: #166534;
-  box-shadow: 0 3px 0 #166534, 0 6px 18px rgba(22, 163, 74, 0.42);
+  background: linear-gradient(180deg, #23653d 0%, #1b4f30 100%);
+  border-color: #143d25;
+  box-shadow: 0 3px 0 #143d25, 0 6px 18px rgba(46, 125, 76, 0.42);
   transform: translateY(-1px);
 }
 
 .btn-g:active {
-  box-shadow: 0 1px 0 #166534, 0 2px 6px rgba(22, 163, 74, 0.3) !important;
+  box-shadow: 0 1px 0 #143d25, 0 2px 6px rgba(46, 125, 76, 0.3) !important;
 }
 
 .btn-s {
-  background: #f1f5f9;
+  background: #f2eee3;
   color: var(--t1);
   border: 1.5px solid var(--bdr);
   box-shadow: 0 2px 0 var(--bdr), 0 2px 4px rgba(15, 23, 42, 0.04);
@@ -2126,96 +2170,110 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   transition: transform 0.3s ease;
 }
 /* ================================================================
-   DARK MODE THEME SYSTEM (PURE TRUE OLED BLACK & CHARCOAL)
+   DARK MODE THEME SYSTEM (WARM SMOKED ASH & BRONZE GOLD)
    ================================================================ */
 [data-theme="dark"] {
-  /* Surfaces & Backgrounds - Pure OLED Black */
-  --bg:        #000000;  /* Đen tuyền 100% tuyệt đối */
-  --bg2:       #0d0d0d;  /* Đen phụ trợ */
-  --card:      #121212;  /* Thẻ đen nhám cao cấp chuẩn AMOLED */
-  --card2:     #1a1a1a;  /* Thẻ con phụ */
-  --inp:       #181818;  /* Ô nhập liệu đen sâu */
-  --bdr:       #262626;  /* Đường viền xám đen tinh tế */
-  --bdr2:      #383838;  /* Đường viền nổi bật */
-  --foc:       #3b82f6;  /* Điểm nhấn focus */
-  --b1:        #ffffff;  /* Chữ tiêu đề trắng tinh khiết */
-  --b2:        #60a5fa;  /* Accent */
-  --glow:      rgba(255, 255, 255, .10);
+  /* Surfaces & Backgrounds - Warm Smoked Ash */
+  --bg:        #181512;  /* Nền xông khói ấm áp */
+  --bg2:       #211d18;  /* Vùng lõm phân cấp */
+  --card:      #26211c;  /* Thẻ khói ấm cao cấp */
+  --card2:     #2f2923;  /* Thẻ con phụ */
+  --inp:       #211d18;  /* Ô nhập liệu */
+  --bdr:       #3f372e;  /* Đường viền ấm */
+  --bdr2:      #574c40;  /* Đường viền nổi bật */
+  --foc:       #c4b5a0;  /* Điểm nhấn focus warm ash */
+  --b1:        #faf8f2;  /* Chữ tiêu đề ấm sáng */
+  --b2:        #c4b5a0;  /* Warm Ash Bronze */
+  --glow:      rgba(196, 181, 160, .22);
 
-  /* Typography - Pure White & Crisp Silver */
-  --t1:  #ffffff;  /* Chữ chính trắng tinh khiết 100% */
-  --t2:  #e5e5e5;  /* Chữ phụ trắng sáng */
-  --t3:  #a3a3a3;  /* Chữ mờ */
-  --go:  #f59e0b;  /* Vàng kim */
-  --gr:  #22c55e;  /* Xanh lá */
-  --re:  #ef4444;  /* Đỏ */
+  --p:         #c4b5a0;
+  --tp-navy:   #181512;
+  --tp-navy-lt:#2a241d;
+  --tp-gold:   #c4b5a0;
+  --tp-gold-lt:#d9cebe;
+  --tp-gold-dk:#a8947a;
+
+  /* Typography - Warm Ash */
+  --t1:  #faf8f2;  /* Chữ chính ngà ấm */
+  --t2:  #d6ccbe;  /* Chữ phụ */
+  --t3:  #a19584;  /* Chữ mờ */
+  --go:  #c4b5a0;  /* Vàng kim ấm */
+  --gr:  #4ade80;  /* Xanh lá */
+  --re:  #f87171;  /* Đỏ */
   --ai:  #c084fc;  /* Tím AI */
   --aib: rgba(192, 132, 252, .25);
 }
 
-/* Body & Layout - True Pure Black */
+/* Body & Layout - Warm Smoked Ash */
 [data-theme="dark"] body {
-  background-color: #000000 !important;
-  color: #ffffff !important;
+  background-color: #181512 !important;
+  color: #faf8f2 !important;
+}
+
+[data-theme="dark"] .aura-layer-1,
+[data-theme="dark"] .aura-layer-2 {
+  opacity: 0.22;
+  mix-blend-mode: screen;
 }
 
 [data-theme="dark"] body::before {
   background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px) !important;
+    linear-gradient(to right, rgba(196, 181, 160, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(196, 181, 160, 0.04) 1px, transparent 1px) !important;
 }
 
 /* Header & Titles */
 [data-theme="dark"] .hdr h1 {
-  color: #ffffff !important;
+  color: #faf8f2 !important;
 }
 
 [data-theme="dark"] .hdr .badge {
-  background: #181818 !important;
-  color: #ffffff !important;
-  border-color: #333333 !important;
+  background: rgba(196, 181, 160, 0.14) !important;
+  color: #d9cebe !important;
+  border-color: rgba(196, 181, 160, 0.3) !important;
 }
 
 /* Main Navigation Tabs */
 [data-theme="dark"] .main-tabs {
-  background: #121212 !important;
-  border-color: #262626 !important;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8) !important;
+  background: #211d18 !important;
+  border-color: #3f372e !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5) !important;
 }
 
 [data-theme="dark"] .mtab {
-  color: #a3a3a3 !important;
+  color: #a19584 !important;
 }
 
 [data-theme="dark"] .mtab:hover:not(.active) {
-  background: #1f1f1f !important;
-  color: #ffffff !important;
+  background: #2b251f !important;
+  color: #faf8f2 !important;
 }
 
 [data-theme="dark"] .mtab.active {
-  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  background: linear-gradient(135deg, #2f2821 0%, #453b32 100%) !important;
   color: #ffffff !important;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4) !important;
+  border-bottom: 2.5px solid #c4b5a0 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5) !important;
 }
 
-/* Cards & Containers - Pure Charcoal Black */
+/* Cards & Containers - Smoked Ash */
 [data-theme="dark"] .card {
-  background: #121212 !important;
-  border-color: #262626 !important;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.7) !important;
-  color: #ffffff !important;
+  background: #26211c !important;
+  border-color: #3f372e !important;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4) !important;
+  color: #faf8f2 !important;
 }
 
 [data-theme="dark"] .card:hover {
-  border-color: #383838 !important;
+  border-color: #574c40 !important;
 }
 
 [data-theme="dark"] .ct {
-  color: #ffffff !important;
+  color: #faf8f2 !important;
 }
 
 [data-theme="dark"] .cs {
-  color: #d4d4d4 !important;
+  color: #cbd5e1 !important;
 }
 
 /* Labels & Form Elements */
@@ -2223,7 +2281,7 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 [data-theme="dark"] .lbl,
 [data-theme="dark"] .sec-lbl,
 [data-theme="dark"] .fgrid label {
-  color: #ffffff !important;
+  color: #f1f5f9 !important;
   font-weight: 700;
 }
 
@@ -2231,22 +2289,22 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 [data-theme="dark"] select,
 [data-theme="dark"] textarea,
 [data-theme="dark"] .inp {
-  background: #181818 !important;
+  background: #0b162c !important;
   color: #ffffff !important;
-  border-color: #2e2e2e !important;
+  border-color: #1e3258 !important;
 }
 
 [data-theme="dark"] input::placeholder,
 [data-theme="dark"] textarea::placeholder {
-  color: #737373 !important;
+  color: #64748b !important;
 }
 
 [data-theme="dark"] input:focus,
 [data-theme="dark"] select:focus,
 [data-theme="dark"] textarea:focus {
-  background: #202020 !important;
-  border-color: #3b82f6 !important;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25) !important;
+  background: #0f2042 !important;
+  border-color: #c3a45c !important;
+  box-shadow: 0 0 0 3px rgba(195, 164, 92, 0.25) !important;
   color: #ffffff !important;
 }
 
@@ -3841,8 +3899,8 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-  border: 1.5px solid #e2e8f0;
+  background: linear-gradient(180deg, #ffffff 0%, #fbf9f4 100%);
+  border: 1.5px solid var(--bdr, #e3dac9);
   border-radius: 18px;
   padding: 26px 32px;
   margin-bottom: 20px;
@@ -3857,12 +3915,12 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #d97706, #f59e0b, #b45309);
+  background: linear-gradient(90deg, #a8947a, #c4b5a0, #8e7a62);
 }
 
 .baogia-settings-box {
-  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
-  border: 1.5px solid var(--bdr);
+  background: linear-gradient(180deg, #ffffff 0%, #fbf9f4 100%);
+  border: 1.5px solid var(--bdr, #e3dac9);
   border-radius: var(--r);
   padding: 20px 22px;
   margin-bottom: 20px;
@@ -3896,8 +3954,8 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
 }
 
 [data-theme="dark"] .baogia-header-card > div:first-child {
-  background: #181818 !important;
-  border-color: #2e2e2e !important;
+  background: #ffffff !important;
+  border-color: #cbd5e1 !important;
   border-radius: 12px;
   padding: 10px;
 }
@@ -4776,6 +4834,78 @@ input[type="date"]::-webkit-calendar-picker-indicator:hover {
     width: 100% !important;
   }
 }
+
+/* ══════════════════ MODAL CHỌN SẢN PHẨM BÁO GIÁ ══════════════════ */
+#bgProductPickerModal .spec-modal-box {
+  border-radius: 16px;
+  border: 1.5px solid var(--bdr2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.bg-picker-selected-count {
+  display: inline-block;
+  min-width: 18px;
+  padding: 1px 6px;
+  border-radius: 10px;
+  background: var(--gr);
+  color: #ffffff !important;
+  font-size: 11px;
+  font-weight: 800;
+  text-align: center;
+  line-height: 1.3;
+}
+
+#bgPickerTableBody tr {
+  transition: background 0.15s ease;
+}
+
+#bgPickerTableBody tr:hover {
+  background: rgba(37, 99, 235, 0.04);
+}
+
+[data-theme="dark"] #bgProductPickerModal .spec-modal-box {
+  background: #18181b !important;
+  border-color: #3f3f46 !important;
+  color: #f4f4f5 !important;
+}
+
+[data-theme="dark"] #bgProductPickerModal .spec-modal-header {
+  background: #141417 !important;
+  border-bottom-color: #27272a !important;
+}
+
+[data-theme="dark"] #bgProductPickerModal .spec-modal-footer {
+  background: #141417 !important;
+  border-top-color: #27272a !important;
+}
+
+#bgProductPickerModal .tp-sheet-table {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+}
+
+#bgProductPickerModal .tp-sheet-table thead th {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 25 !important;
+  background-color: #D9E1F2 !important;
+  color: #0f172a !important;
+  border-top: none !important;
+  border-bottom: 2px solid #8ea9db !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="dark"] #bgProductPickerModal .tp-sheet-table thead th {
+  background-color: #27272a !important;
+  color: #f4f4f5 !important;
+  border-top: none !important;
+  border-bottom: 2px solid #3f3f46 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.45) !important;
+}
+
+
 
 
 

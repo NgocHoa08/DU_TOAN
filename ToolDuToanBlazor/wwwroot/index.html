@@ -6,12 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Tool Dự Toán Thiết Bị - Blazor</title>
     <base href="/" />
+    <link rel="icon" type="image/png" href="logo_thuanphat.png" />
     <link href="css/app.css" rel="stylesheet" />
     <!-- Blazor specific styles will be dynamically added here -->
     <link href="ToolDuToanBlazor.styles.css" rel="stylesheet" />
+    <style>
+        body { background-color: #faf8f2; }
+        .aura-layer-1 {
+            position: fixed; inset: 0;
+            background: linear-gradient(rgba(0,0,0,0) 0%, rgba(214,204,190,0.12) 28%, rgb(255,255,255) 18%, rgb(196,181,160) 68%, rgb(168,148,122) 100%);
+            mix-blend-mode: multiply; filter: blur(130px); transform: translateZ(0); pointer-events: none; z-index: 0;
+        }
+        .aura-layer-2 {
+            position: fixed; inset: 0;
+            background: linear-gradient(rgba(0,0,0,0) 0%, rgba(214,204,190,0.22) 34%, rgb(255,255,255) 66%, rgb(196,181,160) 82%, rgb(168,148,122) 100%);
+            mix-blend-mode: multiply; filter: blur(130px); transform: translateZ(0); pointer-events: none; z-index: 0;
+        }
+        #app { position: relative; z-index: 1; }
+    </style>
 </head>
 
 <body>
+    <div class="aura-layer-1" aria-hidden="true"></div>
+    <div class="aura-layer-2" aria-hidden="true"></div>
     <div id="app">
         <svg class="loading-progress">
             <circle r="40%" cx="50%" cy="50%" />
@@ -22,6 +39,7 @@
 
     <!-- Required script to boot Blazor WebAssembly -->
     <script src="_framework/blazor.webassembly.js"></script>
+    <script src="page_mascot.js?v=20260916_panda"></script>
 </body>
 
 </html>
