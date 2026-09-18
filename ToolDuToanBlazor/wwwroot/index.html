@@ -2,14 +2,14 @@
 <html lang="vi">
 
 <head>
-  <link rel="icon" type="image/png" href="logo_thuanphat.png?v=20260916_v3">
-  <link rel="apple-touch-icon" href="logo_thuanphat.png?v=20260916_v3">
+  <link rel="icon" type="image/png" href="logo_thuanphat.png?v=20260916_thuanphat8">
+  <link rel="apple-touch-icon" href="logo_thuanphat.png?v=20260916_thuanphat8">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <meta name="description"
     content="Tool Dự Toán Thiết Bị - Tự động bóc tách báo giá, thông số kỹ thuật và xuất file Excel chuẩn mẫu V1 chuyên nghiệp" />
-  <meta name="theme-color" content="#ffffff" />
-  <title>TOOL TP - Chuẩn Mẫu Excel V1</title>
+  <meta name="theme-color" content="#001A4C" />
+  <title>THUẬN PHÁT (thuanphat8.vn) - Hệ Thống Dự Toán &amp; Báo Giá Chuẩn Mẫu</title>
   <link
     href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
     rel="stylesheet" />
@@ -19,6 +19,12 @@
       document.write('<script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js"><\/script>');
     }
   </script>
+  <script src="exceljs.min.js"></script>
+  <script>
+    if (typeof ExcelJS === 'undefined') {
+      document.write('<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"><\/script>');
+    }
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.6.0/mammoth.browser.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
   <script>
@@ -26,7 +32,7 @@
       pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
     }
   </script>
-  <link rel="stylesheet" href="styles.css?v=20260907_113500" />
+  <link rel="stylesheet" href="styles.css?v=20260916_thuanphat8_v3" />
   <style>
     /* CRITICAL SIDEBAR WORKSPACE LAYOUT (INLINE PREVENTS GITHUB PAGES BROWSER CACHE ISSUES) */
     html,
@@ -40,7 +46,7 @@
       display: flex !important;
       min-height: 100vh !important;
       width: 100% !important;
-      background: var(--bg, #f8fafc) !important;
+      background: var(--bg, #f4f6fa) !important;
     }
 
     .app-sidebar {
@@ -56,7 +62,7 @@
       flex-direction: column !important;
       background: #ffffff !important;
       border-right: 1.5px solid var(--bdr, #e2e8f0) !important;
-      box-shadow: 2px 0 14px rgba(15, 23, 42, 0.04) !important;
+      box-shadow: 2px 0 14px rgba(0, 26, 76, 0.05) !important;
       z-index: 1000 !important;
       padding: 16px 12px 14px !important;
       box-sizing: border-box !important;
@@ -67,8 +73,8 @@
     }
 
     [data-theme="dark"] .app-sidebar {
-      background: #141414 !important;
-      border-right-color: #262626 !important;
+      background: #060d1a !important;
+      border-right-color: #1e3052 !important;
       box-shadow: 2px 0 20px rgba(0, 0, 0, 0.5) !important;
     }
 
@@ -82,18 +88,22 @@
       box-sizing: border-box !important;
     }
 
+    [data-theme="dark"] .sidebar-brand {
+      border-bottom-color: #1e3052 !important;
+    }
+
     .sidebar-brand .brand-icon {
       width: 38px !important;
       height: 38px !important;
       border-radius: 11px !important;
-      background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%) !important;
+      background: linear-gradient(135deg, #001A4C 0%, #c3a45c 100%) !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       color: #ffffff !important;
       font-size: 20px !important;
       flex-shrink: 0 !important;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35) !important;
+      box-shadow: 0 4px 12px rgba(0, 26, 76, 0.25) !important;
     }
 
     .sidebar-brand .brand-info {
@@ -104,7 +114,7 @@
     .sidebar-brand .brand-title {
       font-size: 15px !important;
       font-weight: 800 !important;
-      color: var(--t1, #0f172a) !important;
+      color: var(--t1, #001A4C) !important;
       letter-spacing: -0.3px !important;
       display: flex !important;
       align-items: center !important;
@@ -112,14 +122,24 @@
       white-space: nowrap !important;
     }
 
+    [data-theme="dark"] .sidebar-brand .brand-title {
+      color: #f8fafc !important;
+    }
+
     .sidebar-brand .brand-badge {
       font-size: 9.5px !important;
       font-weight: 800 !important;
-      background: #eff6ff !important;
-      color: #1d4ed8 !important;
+      background: #fbf7ee !important;
+      color: #c3a45c !important;
       padding: 2px 6px !important;
       border-radius: 6px !important;
-      border: 1px solid #bfdbfe !important;
+      border: 1px solid #e7d5a5 !important;
+    }
+
+    [data-theme="dark"] .sidebar-brand .brand-badge {
+      background: rgba(195, 164, 92, 0.16) !important;
+      color: #d8bf78 !important;
+      border-color: rgba(195, 164, 92, 0.35) !important;
     }
 
     .sidebar-brand .brand-sub {
@@ -184,20 +204,28 @@
     }
 
     .sidebar-nav .mtab:hover:not(.active) {
-      background: #f1f5f9 !important;
-      color: var(--t1, #0f172a) !important;
+      background: #edf2f9 !important;
+      color: #001A4C !important;
       transform: translateX(2px) !important;
     }
 
     [data-theme="dark"] .sidebar-nav .mtab:hover:not(.active) {
-      background: #222222 !important;
+      background: #0f1d38 !important;
       color: #f8fafc !important;
     }
 
     .sidebar-nav .mtab.active {
-      background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%) !important;
+      background: linear-gradient(135deg, #001A4C 0%, #002b66 100%) !important;
       color: #ffffff !important;
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.32) !important;
+      border-left: 3.5px solid #c3a45c !important;
+      box-shadow: 0 4px 14px rgba(0, 26, 76, 0.32) !important;
+    }
+
+    [data-theme="dark"] .sidebar-nav .mtab.active {
+      background: linear-gradient(135deg, #0f1d38 0%, #1e3052 100%) !important;
+      color: #ffffff !important;
+      border-left: 3.5px solid #c3a45c !important;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4) !important;
     }
 
     .sidebar-nav .mtab .nav-icon {
@@ -274,6 +302,10 @@
       box-sizing: border-box !important;
     }
 
+    [data-theme="dark"] .sidebar-footer {
+      border-top-color: #1e3052 !important;
+    }
+
     .sidebar-foot-btn {
       display: flex !important;
       align-items: center !important;
@@ -290,10 +322,22 @@
       box-sizing: border-box !important;
     }
 
+    [data-theme="dark"] .sidebar-foot-btn {
+      background: #0f1d38 !important;
+      border-color: #1e3052 !important;
+      color: #f8fafc !important;
+    }
+
     .sidebar-foot-btn.btn-ai-status {
       background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%) !important;
       border-color: #86efac !important;
       color: #15803d !important;
+    }
+
+    [data-theme="dark"] .sidebar-foot-btn.btn-ai-status {
+      background: linear-gradient(135deg, #064e3b 0%, #022c22 100%) !important;
+      border-color: #059669 !important;
+      color: #6ee7b7 !important;
     }
 
     .ai-status-dot {
@@ -310,7 +354,7 @@
       min-width: 0 !important;
       display: flex !important;
       flex-direction: column !important;
-      background: var(--bg, #f8fafc) !important;
+      background: var(--bg, #f4f6fa) !important;
       margin-left: 260px !important;
       width: calc(100% - 260px) !important;
       transition: margin-left 0.22s ease, width 0.22s ease !important;
@@ -322,8 +366,9 @@
       justify-content: space-between !important;
       gap: 16px !important;
       padding: 10px 24px !important;
-      background: rgba(255, 255, 255, 0.92) !important;
+      background: rgba(255, 255, 255, 0.94) !important;
       backdrop-filter: blur(12px) !important;
+      border-top: 3px solid #c3a45c !important;
       border-bottom: 1.5px solid var(--bdr, #e2e8f0) !important;
       position: sticky !important;
       top: 0 !important;
@@ -332,8 +377,8 @@
     }
 
     [data-theme="dark"] .main-topbar {
-      background: rgba(18, 18, 18, 0.92) !important;
-      border-bottom-color: #262626 !important;
+      background: rgba(10, 20, 38, 0.94) !important;
+      border-bottom-color: #1e3052 !important;
     }
 
     .topbar-left {
@@ -398,8 +443,15 @@
     }
 
     .app-sidebar.collapsed .sidebar-brand {
+      flex-direction: column !important;
       justify-content: center !important;
-      padding-bottom: 10px !important;
+      align-items: center !important;
+      padding: 4px 0 10px !important;
+      gap: 8px !important;
+    }
+
+    .app-sidebar.collapsed .sidebar-brand .brand-icon {
+      cursor: pointer !important;
     }
 
     .app-sidebar.collapsed .sidebar-nav .mtab {
@@ -445,17 +497,17 @@
     }
 
     .brand-pill-btn:hover {
-      border-color: var(--gr);
-      color: var(--gr);
+      border-color: #c3a45c;
+      color: #001A4C;
       transform: translateY(-1px);
-      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+      box-shadow: 0 3px 8px rgba(0, 26, 76, 0.08);
     }
 
     .brand-pill-btn.active {
-      background: var(--gr);
-      border-color: var(--gr);
+      background: linear-gradient(135deg, #001A4C 0%, #002b66 100%);
+      border-color: #c3a45c;
       color: #fff;
-      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35);
+      box-shadow: 0 4px 12px rgba(0, 26, 76, 0.35);
     }
 
     .brand-pill-count {
@@ -506,9 +558,9 @@
     }
 
     .subcat-chip-btn.active {
-      background: #eff6ff;
-      border-color: #3b82f6;
-      color: #1d4ed8;
+      background: #fbf7ee;
+      border-color: #c3a45c;
+      color: #001A4C;
       font-weight: 700;
     }
 
@@ -521,8 +573,8 @@
     }
 
     .subcat-chip-btn.active .subcat-chip-count {
-      background: #bfdbfe;
-      color: #1e40af;
+      background: #c3a45c;
+      color: #ffffff;
     }
 
     /* Category Group Section Header */
@@ -562,8 +614,8 @@
       display: inline-block;
       padding: 2px 8px;
       border-radius: 10px;
-      background: #3b82f6;
-      color: #fff;
+      background: linear-gradient(135deg, #c3a45c 0%, #a8883b 100%);
+      color: #001A4C;
       font-size: 11px;
       font-weight: 800;
     }
@@ -587,9 +639,9 @@
     }
 
     .cat-group-btn:hover {
-      background: var(--gr);
+      background: linear-gradient(135deg, #001A4C 0%, #002b66 100%);
       color: #fff;
-      border-color: var(--gr);
+      border-color: #c3a45c;
     }
 
     .series-tag-pill {
@@ -598,9 +650,9 @@
       border-radius: 4px;
       font-size: 10.5px;
       font-weight: 700;
-      background: #e0f2fe;
-      color: #0369a1;
-      border: 1px solid #bae6fd;
+      background: #fbf7ee;
+      color: #9c7b28;
+      border: 1px solid #e7d5a5;
       margin-left: 6px;
     }
   
@@ -642,7 +694,7 @@
       background: var(--p) !important;
       color: #ffffff !important;
       border-color: var(--p) !important;
-      box-shadow: 0 2px 8px rgba(30, 64, 175, 0.25);
+      box-shadow: 0 2px 8px rgba(0, 26, 76, 0.28);
     }
 
   </style>
@@ -657,9 +709,9 @@
     <aside class="app-sidebar" id="appSidebar">
       <!-- SIDEBAR BRAND -->
       <div class="sidebar-brand">
-        <div class="brand-icon" style="background:#ffffff !important;border:1.5px solid #cbd5e1 !important;box-shadow:0 2px 8px rgba(0,0,0,0.08) !important;padding:3px !important;border-radius:10px !important;display:flex !important;align-items:center !important;justify-content:center !important"><img src="logo_thuanphat.png?v=20260916_v3" alt="Logo Thuận Phát" style="width:100%;height:100%;object-fit:contain;display:block" /></div>
+        <div class="brand-icon" onclick="toggleSidebar()" style="cursor:pointer;background:#ffffff !important;border:1.5px solid #c3a45c !important;box-shadow:0 2px 8px rgba(195,164,92,0.2) !important;padding:3px !important;border-radius:10px !important;display:flex !important;align-items:center !important;justify-content:center !important" title="Thu gọn / Mở rộng menu"><img src="logo_thuanphat.png?v=20260916_thuanphat8" alt="Logo Thuận Phát" style="width:100%;height:100%;object-fit:contain;display:block" /></div>
         <div class="brand-info">
-          <div class="brand-title">THUẬN PHÁT <span class="brand-badge">v3.2</span></div>
+          <div class="brand-title">THUẬN PHÁT <span class="brand-badge" title="Website chính thức: thuanphat8.vn">thuanphat8.vn</span></div>
           <div class="brand-sub">Hệ Thống Lập Dự Toán &amp; Báo Giá</div>
         </div>
         <button class="btn-sidebar-collapse" onclick="toggleSidebar()" title="Thu gọn / Mở rộng menu">◀</button>
@@ -1346,7 +1398,7 @@
             <!-- TEMPLATE SWITCHER BAR -->
             <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:16px;padding:12px 18px;background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);border:1.5px solid var(--bdr,#e2e8f0);border-radius:14px;flex-wrap:wrap;box-shadow:0 2px 10px rgba(0,0,0,0.03)">
               <div style="display:flex;align-items:center;gap:10px">
-                <div style="width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,#0284c7,#2563eb);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 2px 6px rgba(2,132,199,0.3)">📑</div>
+                <div style="width:36px;height:36px;border-radius:9px;background:linear-gradient(135deg,#001A4C,#c3a45c);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px;box-shadow:0 2px 6px rgba(0,26,76,0.3)">📑</div>
                 <div>
                   <div style="font-size:13.5px;font-weight:800;color:var(--t1);letter-spacing:0.2px">CHỌN MẪU BÁO GIÁ EXCEL:</div>
                   <div style="font-size:11.5px;color:var(--t2)">Chuyển đổi giao diện và mẫu xuất file Excel linh hoạt theo từng đối tác</div>
@@ -1363,15 +1415,15 @@
             </div>
 
             <div class="baogia-header-card">
-              <div style="width:100%;display:flex;justify-content:center;align-items:center;margin-bottom:14px">
-                <div style="display:inline-flex;align-items:center;justify-content:center;padding:12px 28px;background:#ffffff;border-radius:14px;border:1.5px solid #cbd5e1;box-shadow:0 4px 14px rgba(0,0,0,0.06)">
-                  <img id="bgHeaderLogo" src="logo_thuanphat.png?v=20260916_v3" alt="Logo Báo Giá"
-                    style="height:110px;max-width:320px;width:auto;object-fit:contain;display:block;margin:0 auto" />
+              <div style="width:100%;display:flex;justify-content:center;align-items:center;margin:0 auto 16px auto">
+                <div id="bgHeaderLogoBox" style="display:flex;align-items:center;justify-content:center;padding:14px 28px;background:#ffffff;border-radius:16px;border:2px solid #c3a45c;box-shadow:0 6px 20px rgba(195,164,92,0.22);max-width:1080px;width:98%;margin:0 auto;transition:all 0.25s ease">
+                  <img id="bgHeaderLogo" src="logo_baogia_thuanphat.png?v=20260916_v4" alt="Logo & Thông tin Báo Giá Thuận Phát"
+                    style="max-height:165px;max-width:1050px;width:auto;height:auto;object-fit:contain;display:block;margin:0 auto" />
                 </div>
               </div>
-              <div id="bgHeaderTitle" style="font-size:19px;font-weight:900;color:var(--t1);letter-spacing:0.5px">BẢNG BÁO GIÁ THUẬN PHÁT
+              <div id="bgHeaderTitle" style="font-size:20px;font-weight:900;color:var(--t1);letter-spacing:0.5px;text-align:center">BẢNG BÁO GIÁ THUẬN PHÁT
                 CHUẨN MẪU</div>
-              <div id="bgHeaderSub" style="font-size:13px;color:var(--t2);margin-top:4px;font-weight:500">BGThuanPhat.xlsx • Tự động tính
+              <div id="bgHeaderSub" style="font-size:13px;color:var(--t2);margin-top:4px;font-weight:500;text-align:center">BGThuanPhat.xlsx • Tự động tính
                 thuế VAT &amp; dịch số thành chữ tiếng Việt</div>
             </div>
 
@@ -1465,12 +1517,12 @@
               style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:18px;border-bottom:1px solid var(--bdr);padding-bottom:14px">
               <div style="display:flex;align-items:center;gap:12px">
                 <div
-                  style="width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#2563eb);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;box-shadow:0 4px 12px rgba(124,58,237,0.3)">
+                  style="width:46px;height:46px;border-radius:12px;background:linear-gradient(135deg,#001A4C,#c3a45c);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0;box-shadow:0 4px 12px rgba(0,26,76,0.3)">
                   🕐</div>
                 <div>
                   <div style="font-size:18px;font-weight:800;color:var(--t1);display:flex;align-items:center;gap:8px">
-                    <span class="sec-badge purple">PHÂN HỆ 5</span> Lịch Sử File Đã Xuất <span id="lichsuCount"
-                      style="background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;padding:2px 10px;border-radius:20px;font-size:11.5px;font-weight:700">0
+                    <span class="sec-badge">PHÂN HỆ 5</span> Lịch Sử File Đã Xuất <span id="lichsuCount"
+                      style="background:linear-gradient(135deg,#001A4C,#c3a45c);color:#fff;padding:2px 10px;border-radius:20px;font-size:11.5px;font-weight:700">0
                       file</span></div>
                   <div style="font-size:12.5px;color:var(--t2);margin-top:2px">Quản lý, tìm kiếm, sao lưu và theo dõi
                     các file Excel / Word đã tạo</div>
@@ -2066,7 +2118,7 @@
 
             <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
               <div
-                style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#7c3aed,#3b82f6);display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px">
+                style="width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#001A4C,#c3a45c);display:flex;align-items:center;justify-content:center;color:#fff;font-size:22px">
                 🤖</div>
               <div>
                 <div style="font-size:17px;font-weight:800;color:var(--t1)">Cài Đặt AI Cào Thông Số Hãng</div>
@@ -2100,7 +2152,7 @@
               style="font-size:12px;color:var(--t2);line-height:1.6;margin-bottom:18px;background:var(--inp);padding:10px 12px;border-radius:8px">
               💡 <b>Cách lấy Google Gemini API Key hoàn toàn miễn phí:</b><br />
               1. Truy cập <a href="https://aistudio.google.com/app/apikey" target="_blank"
-                style="color:#2563eb;font-weight:700">Google AI Studio (aistudio.google.com)</a>.<br />
+                style="color:#c3a45c;font-weight:700">Google AI Studio (aistudio.google.com)</a>.<br />
               2. Đăng nhập tài khoản Google và bấm <b>"Create API key"</b>.<br />
               3. Copy và dán vào ô trên, hệ thống sẽ lưu vĩnh viễn trên trình duyệt của bạn!
             </div>
@@ -2270,7 +2322,7 @@
   <div id="toast"><span id="ti">✅</span><span id="tm">OK</span></div>
 
   <script src="exceljs.min.js"></script>
-  <script src="main.js?v=20260910_154600"></script>
+  <script src="main.js?v=20260916_fix_export"></script>
   <script src="admin_catalog.js?v=20260910_154600"></script>
   <!-- GOOGLE FIREBASE REALTIME CLOUD SYNC -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
