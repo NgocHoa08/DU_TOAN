@@ -93,17 +93,33 @@
     }
 
     .sidebar-brand .brand-icon {
-      width: 38px !important;
-      height: 38px !important;
-      border-radius: 11px !important;
-      background: linear-gradient(135deg, #001A4C 0%, #c3a45c 100%) !important;
+      width: 40px !important;
+      height: 40px !important;
+      border-radius: 12px !important;
+      background: 
+        linear-gradient(180deg, rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.08) 45%, rgba(0, 0, 0, 0.2) 60%, rgba(255, 255, 255, 0.15) 100%),
+        linear-gradient(135deg, #001A4C 0%, #002b66 50%, #c3a45c 100%) !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
       color: #ffffff !important;
-      font-size: 20px !important;
+      font-size: 21px !important;
       flex-shrink: 0 !important;
-      box-shadow: 0 4px 12px rgba(0, 26, 76, 0.25) !important;
+      border: 1px solid rgba(195, 164, 92, 0.6) !important;
+      box-shadow: 
+        0 4px 10px rgba(0, 26, 76, 0.28),
+        0 8px 18px rgba(0, 0, 0, 0.12),
+        inset 0 1.5px 1px rgba(255, 255, 255, 0.6),
+        inset 0 -1.5px 2px rgba(0, 0, 0, 0.3) !important;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5) !important;
+      transition: all 0.25s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
+    }
+
+    .sidebar-brand:hover .brand-icon {
+      transform: scale(1.06) rotate(3deg) !important;
+      box-shadow: 
+        0 6px 16px rgba(195, 164, 92, 0.4),
+        inset 0 1.5px 1px rgba(255, 255, 255, 0.8) !important;
     }
 
     .sidebar-brand .brand-info {
@@ -129,17 +145,26 @@
     .sidebar-brand .brand-badge {
       font-size: 9.5px !important;
       font-weight: 800 !important;
-      background: #fbf7ee !important;
-      color: #c3a45c !important;
-      padding: 2px 6px !important;
-      border-radius: 6px !important;
+      background: 
+        linear-gradient(180deg, #ffffff 0%, #fef9ee 100%) !important;
+      color: #92400e !important;
+      padding: 2.5px 8px !important;
+      border-radius: 999px !important;
       border: 1px solid #e7d5a5 !important;
+      box-shadow: 
+        0 2px 5px rgba(195, 164, 92, 0.22),
+        inset 0 1px 1px #ffffff,
+        inset 0 -1px 1px rgba(0, 0, 0, 0.04) !important;
+      letter-spacing: 0.2px !important;
     }
 
     [data-theme="dark"] .sidebar-brand .brand-badge {
-      background: rgba(195, 164, 92, 0.16) !important;
-      color: #d8bf78 !important;
-      border-color: rgba(195, 164, 92, 0.35) !important;
+      background: 
+        linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.03) 100%),
+        rgba(195, 164, 92, 0.2) !important;
+      color: #f5d78e !important;
+      border-color: rgba(195, 164, 92, 0.45) !important;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4), inset 0 1px 1px rgba(255, 255, 255, 0.2) !important;
     }
 
     .sidebar-brand .brand-sub {
@@ -153,11 +178,12 @@
     }
 
     .btn-sidebar-collapse {
-      background: linear-gradient(180deg, #ffffff 0%, #f1f5f9 100%) !important;
-      border: 1px solid var(--bdr, #e2e8f0) !important;
+      background: 
+        linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(241, 245, 249, 0.9) 100%) !important;
+      border: 1px solid rgba(203, 213, 225, 0.8) !important;
       border-radius: 50% !important;
-      width: 26px !important;
-      height: 26px !important;
+      width: 28px !important;
+      height: 28px !important;
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
@@ -165,15 +191,26 @@
       color: var(--t2, #475569) !important;
       font-size: 11px !important;
       flex-shrink: 0 !important;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08), inset 0 1px 1px #ffffff !important;
+      box-shadow: 
+        0 2px 6px rgba(0, 0, 0, 0.1),
+        0 4px 10px rgba(0, 26, 76, 0.06),
+        inset 0 1.5px 1px #ffffff,
+        inset 0 -1.5px 2px rgba(0, 0, 0, 0.08) !important;
       transition: all 0.2s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
     }
 
     .btn-sidebar-collapse:hover {
-      transform: scale(1.1) !important;
+      transform: scale(1.12) !important;
       border-color: #c3a45c !important;
       color: #001A4C !important;
-      box-shadow: 0 4px 10px rgba(195, 164, 92, 0.25), inset 0 1px 1px #ffffff !important;
+      box-shadow: 
+        0 4px 12px rgba(195, 164, 92, 0.35),
+        inset 0 1.5px 1px #ffffff !important;
+    }
+
+    .btn-sidebar-collapse:active {
+      transform: scale(0.96) !important;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2) !important;
     }
 
     .sidebar-section-title {
@@ -832,6 +869,8 @@
         </button>
       </div>
     </aside>
+    <!-- Mobile Sidebar Drawer Backdrop -->
+    <div class="app-sidebar-backdrop" id="appSidebarBackdrop" onclick="toggleSidebar()"></div>
 
     <!-- ═══════════════ MAIN CONTENT WRAPPER ═══════════════ -->
     <div class="app-main-wrapper">

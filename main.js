@@ -87808,8 +87808,13 @@ function toggleSidebar() {
 }
 
 try {
-  if (typeof localStorage !== 'undefined' && localStorage.getItem('sidebar_collapsed') === '1') {
-    var sb = document.getElementById('appSidebar');
-    if (sb) sb.classList.add('collapsed');
+  var sb = document.getElementById('appSidebar');
+  if (sb) {
+    if (window.innerWidth <= 860) {
+      sb.classList.add('collapsed');
+    } else if (typeof localStorage !== 'undefined' && localStorage.getItem('sidebar_collapsed') === '1') {
+      sb.classList.add('collapsed');
+    }
   }
 } catch(e){}
+
