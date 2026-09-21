@@ -717,6 +717,84 @@ function switchMainTab(tab) {
   try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch(e) {}
 }
 
+/* ══════════════════ 🌿 SYLVA 3D INTEGRATION CONTROLLERS ══════════════════ */
+function toggleSylvaHeroBanner() {
+  var b = document.getElementById('sylvaHeroBanner');
+  var btn = document.getElementById('btnCollapseSylva');
+  if (!b) return;
+  var isCol = b.classList.toggle('collapsed');
+  if (btn) {
+    btn.innerHTML = isCol ? '▼ Mở rộng' : '▲ Thu gọn';
+  }
+  try { localStorage.setItem('sylva_banner_collapsed', isCol ? '1' : '0'); } catch(e){}
+}
+
+function toggleSylvaBackground() {
+  var isActive = document.body.classList.toggle('sylva-bg-active');
+  var bgLayer = document.getElementById('sylvaBgLayer');
+  var bgIframe = document.getElementById('sylvaBgIframe');
+  var toggleTxt = document.getElementById('sylvaBgToggleText');
+  var topBtn = document.getElementById('btnSylvaBgToggle');
+  var bannerBtn = document.getElementById('btnSylvaBannerBg');
+
+  if (isActive) {
+    if (bgLayer) bgLayer.style.display = 'block';
+    if (bgIframe && (!bgIframe.src || bgIframe.src === 'about:blank' || bgIframe.src === '')) {
+      bgIframe.src = 'public/landing-pages/inner-green-3d.html';
+    }
+    if (toggleTxt) toggleTxt.textContent = 'Nền 3D: BẬT';
+    if (topBtn) topBtn.classList.add('active');
+    if (bannerBtn) {
+      bannerBtn.textContent = '🌿 Tắt Nền 3D';
+      bannerBtn.classList.add('active');
+    }
+    try { localStorage.setItem('sylva_bg_mode', '1'); } catch(e){}
+  } else {
+    if (bgLayer) bgLayer.style.display = 'none';
+    if (toggleTxt) toggleTxt.textContent = 'Nền 3D: TẮT';
+    if (topBtn) topBtn.classList.remove('active');
+    if (bannerBtn) {
+      bannerBtn.textContent = '🌿 Bật Nền 3D';
+      bannerBtn.classList.remove('active');
+    }
+    try { localStorage.setItem('sylva_bg_mode', '0'); } catch(e){}
+  }
+}
+
+function requestSylvaFullscreen() {
+  var ifr = document.getElementById('sylvaFullIframe') || document.getElementById('sylvaHeroIframe');
+  if (!ifr) return;
+  if (ifr.requestFullscreen) {
+    ifr.requestFullscreen();
+  } else if (ifr.webkitRequestFullscreen) {
+    ifr.webkitRequestFullscreen();
+  } else if (ifr.msRequestFullscreen) {
+    ifr.msRequestFullscreen();
+  }
+}
+
+function initSylvaSettings() {
+  try {
+    if (typeof localStorage !== 'undefined') {
+      if (localStorage.getItem('sylva_banner_collapsed') === '1') {
+        var b = document.getElementById('sylvaHeroBanner');
+        var btn = document.getElementById('btnCollapseSylva');
+        if (b) b.classList.add('collapsed');
+        if (btn) btn.innerHTML = '▼ Mở rộng';
+      }
+      if (localStorage.getItem('sylva_bg_mode') === '1') {
+        toggleSylvaBackground();
+      }
+    }
+  } catch(e){}
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initSylvaSettings);
+} else {
+  initSylvaSettings();
+}
+
 function goStep(s) {
   if (s === 2 || s === 3) {
     if ((!devs || devs.length === 0) && typeof selectedCatalogItems !== 'undefined' && Object.keys(selectedCatalogItems).length > 0) {
