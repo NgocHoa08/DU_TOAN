@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 
 <head>
@@ -32,7 +32,7 @@
       pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
     }
   </script>
-  <link rel="stylesheet" href="styles.css?v=20260916_thuanphat8_v3" />
+  <link rel="stylesheet" href="styles.css?v=20260923_fix" />
   <style>
     /* CRITICAL SIDEBAR WORKSPACE LAYOUT (INLINE PREVENTS GITHUB PAGES BROWSER CACHE ISSUES) */
     html,
@@ -967,7 +967,7 @@
                   <option value="hoa_phat">🏢 Hòa Phát - Hợp đồng thiết bị giáo dục 1308</option>
                 </select>
               </div>
-              <div class="fgrid">
+              <div class="fgrid" id="fgrid-dutoan-info">
                 <div class="fg full">
                   <label>Tên dự án / gói thầu <span class="req">*</span></label>
                   <input id="pjN" type="text"
@@ -987,6 +987,10 @@
                 <div class="fg">
                   <label>Ngày lập</label>
                   <input id="dtN" type="date" />
+                </div>
+                <div class="fg full">
+                  <label>📝 Ghi chú dự toán / lưu ý xuất file</label>
+                  <input id="pjNote" type="text" placeholder="Nhập ghi chú hoặc lý do phiên bản (VD: Phương án 1, giá đã gồm chi phí bảo hành 2 năm...)" />
                 </div>
               </div>
             </div>
@@ -1193,12 +1197,29 @@
                 chi
                 tiết của từng máy
               </div>
+              <!-- TÊN FILE DỰ TOÁN TRƯỚC KHI XUẤT -->
+              <div class="exp-filename-card">
+                <div class="exp-filename-header">
+                  <label for="dtCustomFileName" class="exp-filename-label">
+                    <span>🏷️ Tên file Excel dự toán trước khi xuất:</span>
+                    <span style="font-size:11px;color:var(--t2);font-weight:normal">(Có thể chỉnh theo ý muốn)</span>
+                  </label>
+                  <button type="button" class="btn btn-o btn-sm" onclick="dtResetDefaultFileName()" style="font-size:11px;padding:2px 8px" title="Đặt lại tên mặc định">🔄 Đặt lại mặc định</button>
+                </div>
+                <div class="exp-filename-input-wrap">
+                  <input type="text" id="dtCustomFileName" class="inp" placeholder="Nhập tên file dự toán..." />
+                  <span class="exp-filename-ext">.xlsx</span>
+                </div>
+              </div>
+
               <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
                 <button class="btn btn-s" onclick="goStep(2)">← Chỉnh sửa thêm</button>
                 <button class="btn btn-g btn-lg" id="btnExp" onclick="doExport()">⬇️ Tải file Excel dự toán
                   (.xlsx)</button>
               </div>
             </div>
+            <!-- MINI LỊCH SỬ DỰ TOÁN -->
+            <div id="miniHistoryWrap_dutoan" class="mini-history-container" style="margin-top:20px"></div>
           </div>
         </div> <!-- end view-dutoan -->
 
@@ -1211,13 +1232,19 @@
             <div style="max-width:480px;margin:50px auto;padding:36px 32px;background:var(--card);border:1.5px solid var(--bdr2);border-radius:18px;box-shadow:0 12px 36px rgba(0,0,0,0.08);text-align:center">
               <div style="font-size:54px;margin-bottom:12px">🔒</div>
               <h2 style="font-size:20px;font-weight:900;color:var(--t1);margin-bottom:6px">XÁC THỰC QUẢN TRỊ HỆ THỐNG</h2>
-              <p style="font-size:13px;color:var(--t2);line-height:1.5;margin-bottom:24px">Khu vực quản trị nội bộ hệ thống. Vui lòng nhập mật khẩu quản trị để tiếp tục.</p>
-              <form onsubmit="event.preventDefault(); submitAdminPassword();">
-                <div style="margin-bottom:16px;text-align:left">
+              <p style="font-size:13px;color:var(--t2);line-height:1.5;margin-bottom:20px">Khu vực quản trị nội bộ hệ thống. Vui lòng nhập mật khẩu quản trị để tiếp tục.</p>
+              <form onsubmit="event.preventDefault(); submitAdminPassword(); return false;">
+                <div style="margin-bottom:12px;text-align:left">
                   <label style="display:block;font-size:12px;font-weight:700;color:var(--t2);margin-bottom:6px">MẬT KHẨU QUẢN TRỊ</label>
-                  <input type="password" id="adminPagePassInput" class="form-control" style="width:100%;height:44px;padding:0 14px;border-radius:10px;border:1.5px solid var(--bdr2);background:var(--bg);color:var(--t1);font-size:16px;text-align:center;letter-spacing:4px" placeholder="Nhập mật khẩu..." autofocus autocomplete="off" />
+                  <div style="position:relative;display:flex;align-items:center">
+                    <input type="password" id="adminPagePassInput" class="form-control" style="width:100%;height:46px;padding:0 42px 0 14px;border-radius:10px;border:1.5px solid var(--bdr2);background:var(--bg);color:var(--t1);font-size:16px;text-align:center;letter-spacing:3px" placeholder="Nhập mật khẩu..." autofocus autocomplete="off" onkeydown="if(event.key==='Enter'){event.preventDefault();submitAdminPassword();}" />
+                    <button type="button" onclick="toggleAdminPassVisibility('adminPagePassInput', this)" style="position:absolute;right:10px;background:none;border:none;cursor:pointer;font-size:18px;color:var(--t2);padding:4px" title="Ẩn/Hiện mật khẩu">👁️</button>
+                  </div>
+                  <div style="font-size:11.5px;color:var(--t3);margin-top:6px;text-align:center">
+                    💡 Mật khẩu quản trị mặc định: <b style="color:var(--foc);letter-spacing:1px">2208</b> (hoặc <b>admin</b>, <b>thuanphat</b>)
+                  </div>
                 </div>
-                <button type="submit" class="btn btn-p" style="width:100%;height:44px;font-size:14px;font-weight:800;border-radius:10px;margin-bottom:12px">🔓 MỞ KHÓA QUẢN TRỊ</button>
+                <button type="button" onclick="submitAdminPassword()" class="btn btn-p" style="width:100%;height:46px;font-size:14.5px;font-weight:800;border-radius:10px;margin-bottom:10px;box-shadow:0 4px 14px rgba(0,0,0,0.12)">🔓 MỞ KHÓA QUẢN TRỊ</button>
                 <button type="button" class="btn btn-o" onclick="switchMainTab('dutoan')" style="width:100%;height:38px;font-size:13px;border-radius:8px;font-weight:600">◀ Quay lại Làm Dự Toán</button>
               </form>
             </div>
@@ -1277,7 +1304,7 @@
                     <option value="bao_an">🏢 Bảo An (Công nghệ &amp; Truyền thông)</option>
                   </select>
                 </div>
-                <div class="fgrid">
+                <div class="fgrid" id="fgrid-bbbg-seller">
                   <div class="fg full"><label>Tên công ty</label><input id="bbA_name" type="text"
                       value="CÔNG TY TNHH THƯƠNG MẠI ĐẦU TƯ VÀ SẢN XUẤT THUẬN PHÁT" /></div>
                   <div class="fg full"><label>Địa chỉ</label><input id="bbA_addr" type="text"
@@ -1303,7 +1330,7 @@
                     <option value="cahcm">🏢 Công an Thành phố Hồ Chí Minh</option>
                   </select>
                 </div>
-                <div class="fgrid">
+                <div class="fgrid" id="fgrid-bbbg-buyer">
                   <div class="fg full"><label>Tên công ty</label><input id="bbB_name" type="text"
                       value="CÔNG TY CỔ PHẦN SÁCH VÀ THIẾT BỊ GIÁO DỤC HÒA PHÁT" /></div>
                   <div class="fg full"><label>Địa chỉ công ty</label><input id="bbB_addr" type="text"
@@ -1321,9 +1348,37 @@
             </div>
             <div id="bbTableArea" style="overflow-x:auto;margin-bottom:16px"></div>
 
+            <!-- TÊN FILE BIÊN BẢN BÀN GIAO TRƯỚC KHI XUẤT -->
+            <div class="exp-filename-card">
+              <div class="exp-filename-header">
+                <label for="bbbgCustomFileName" class="exp-filename-label">
+                  <span>🏷️ Tên file Word bàn giao trước khi xuất:</span>
+                  <span style="font-size:11px;color:var(--t2);font-weight:normal">(Có thể chỉnh theo ý muốn)</span>
+                </label>
+                <button type="button" class="btn btn-o btn-sm" onclick="bbbgResetDefaultFileName()" style="font-size:11px;padding:2px 8px" title="Đặt lại tên mặc định">🔄 Đặt lại mặc định</button>
+              </div>
+              <div class="exp-filename-input-wrap">
+                <input type="text" id="bbbgCustomFileName" class="inp" placeholder="Nhập tên file Word..." />
+                <span class="exp-filename-ext">.doc</span>
+              </div>
+            </div>
+
             <div style="text-align:center">
               <button class="btn btn-p btn-lg" onclick="exportHandoverWord()">📝 Xuất File Word Biên Bản Bàn
                 Giao</button>
+            </div>
+
+            <!-- MINI LỊCH SỬ BIÊN BẢN BÀN GIAO -->
+            <div id="miniHistoryWrap_bbbg" class="mini-history-container" style="margin-top:20px"></div>
+
+            <!-- VISUAL WORD A4 SHEET PREVIEW & DRAG CUSTOMIZER -->
+            <div style="margin-top:28px;padding-top:20px;border-top:2px dashed var(--bdr2)">
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px">
+                <div style="font-size:16px;font-weight:800;color:var(--t1);display:flex;align-items:center;gap:8px">
+                  <span>📄 XEM TRƯỚC VĂN BẢN THẬT (TỜ GIẤY WORD A4):</span>
+                </div>
+              </div>
+              <div id="bbSheetArea"></div>
             </div>
           </div>
         </div> <!-- end view-bbbg -->
@@ -1408,7 +1463,7 @@
               </select>
             </div>
 
-            <div class="fgrid" style="margin-bottom:12px">
+            <div class="fgrid" id="fgrid-tddu-info" style="margin-bottom:12px">
               <div class="fg full">
                 <label>Tiêu đề bảng</label>
                 <input id="tddu_title" type="text" value="BẢNG TUYÊN BỐ ĐÁP ỨNG YÊU CẦU KỸ THUẬT CỦA HÀNG HÓA CHÀO THẦU"
@@ -1526,12 +1581,30 @@
                 mục ĐÁP
                 ỨNG / KHÔNG ĐÁP ỨNG hiển thị đẹp mắt, chữ ký đại diện hợp pháp ở chân bảng.
               </div>
+              <!-- TÊN FILE TUYÊN BỐ ĐÁP ỨNG TRƯỚC KHI XUẤT -->
+              <div class="exp-filename-card">
+                <div class="exp-filename-header">
+                  <label for="tdduCustomFileName" class="exp-filename-label">
+                    <span>🏷️ Tên file Excel đáp ứng trước khi xuất:</span>
+                    <span style="font-size:11px;color:var(--t2);font-weight:normal">(Có thể chỉnh theo ý muốn)</span>
+                  </label>
+                  <button type="button" class="btn btn-o btn-sm" onclick="tdduResetDefaultFileName()" style="font-size:11px;padding:2px 8px" title="Đặt lại tên mặc định">🔄 Đặt lại mặc định</button>
+                </div>
+                <div class="exp-filename-input-wrap">
+                  <input type="text" id="tdduCustomFileName" class="inp" placeholder="Nhập tên file đáp ứng..." />
+                  <span class="exp-filename-ext">.xlsx</span>
+                </div>
+              </div>
+
               <div style="text-align:center">
                 <button class="btn btn-g btn-lg" onclick="exportComplianceExcel()">⬇️ Tải file Excel Bảng Tuyên Bố Đáp
                   Ứng
                   (.xlsx)</button>
               </div>
             </div>
+
+            <!-- MINI LỊCH SỬ TUYÊN BỐ ĐÁP ỨNG -->
+            <div id="miniHistoryWrap_tddu" class="mini-history-container" style="margin-top:20px"></div>
           </div>
         </div> <!-- end view-tddu -->
 
@@ -1586,7 +1659,7 @@
                   <option value="cahcm">🏢 Công an Thành phố Hồ Chí Minh</option>
                 </select>
               </div>
-              <div class="fgrid">
+              <div class="fgrid" id="fgrid-baogia-info">
                 <div class="fg"><label>Kính gửi (Người nhận / Quý khách hàng)</label><input id="bg_to" type="text"
                     value="Quý khách hàng" oninput="renderBaogiaForm()" /></div>
                 <div class="fg"><label>Tên Công ty / Cơ quan</label><input id="bg_company" type="text"
@@ -1609,6 +1682,12 @@
                     value="Tại kho bên mua hoặc địa điểm chỉ định" oninput="renderBaogiaForm()" /></div>
                 <div class="fg full"><label>Hiệu lực của báo giá</label><input id="bg_validity" type="text"
                     value="trong vòng 20 ngày kể từ ngày phát hành báo giá." oninput="renderBaogiaForm()" /></div>
+                <div class="fg full">
+                  <label>📝 Ghi chú &amp; Điều khoản bổ sung báo giá</label>
+                  <textarea id="bg_notes" rows="2" class="inp"
+                    placeholder="Nhập ghi chú hoặc điều khoản bổ sung (sẽ hiển thị vào điều khoản báo giá và xuất Excel)..."
+                    oninput="renderBaogiaForm()"></textarea>
+                </div>
               </div>
             </div>
 
@@ -1643,12 +1722,30 @@
               <div class="expc-d">
                 File Excel xuất ra chuẩn 100% định dạng <b>BGThuanPhat.xlsx</b> hoặc <b>Copy of báo giá Lynk Core.xlsx</b>: Đầy đủ ảnh logo thực tế chất lượng cao, tiêu đề trang trọng, bảng sản phẩm có công thức thành tiền tự động <code>=G*H</code>, tổng cộng <code>=SUM()</code>, điều khoản hợp đồng và chữ ký chuyên nghiệp.
               </div>
+              <!-- TÊN FILE BÁO GIÁ TRƯỚC KHI XUẤT -->
+              <div class="exp-filename-card">
+                <div class="exp-filename-header">
+                  <label for="bgCustomFileName" class="exp-filename-label">
+                    <span>🏷️ Tên file Excel báo giá trước khi xuất:</span>
+                    <span style="font-size:11px;color:var(--t2);font-weight:normal">(Có thể chỉnh theo ý muốn)</span>
+                  </label>
+                  <button type="button" class="btn btn-o btn-sm" onclick="bgResetDefaultFileName()" style="font-size:11px;padding:2px 8px" title="Đặt lại tên mặc định">🔄 Đặt lại mặc định</button>
+                </div>
+                <div class="exp-filename-input-wrap">
+                  <input type="text" id="bgCustomFileName" class="inp" placeholder="Nhập tên file báo giá..." />
+                  <span class="exp-filename-ext">.xlsx</span>
+                </div>
+              </div>
+
               <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
                 <button class="btn btn-g btn-lg" id="btnExportBaogiaPrimary" onclick="exportActiveBaogiaExcel()">⬇️ Tải file Excel Báo Giá (.xlsx)</button>
                 <button class="btn btn-o btn-lg" onclick="exportBaogiaExcel()" title="Xuất file theo đúng chuẩn mẫu Thuận Phát">🏢 Xuất Mẫu Thuận Phát (.xlsx)</button>
                 <button class="btn btn-o btn-lg" onclick="exportLynkCoreExcel()" title="Xuất file theo đúng chuẩn mẫu Lynk Core">⚡ Xuất Mẫu Lynk Core (.xlsx)</button>
               </div>
             </div>
+
+            <!-- MINI LỊCH SỬ BÁO GIÁ -->
+            <div id="miniHistoryWrap_baogia" class="mini-history-container" style="margin-top:20px"></div>
           </div>
         </div> <!-- end view-baogia -->
 
@@ -1692,40 +1789,71 @@
 
             <!-- Filter & Search Toolbar -->
             <div
-              style="background:var(--inp);border:1px solid var(--bdr);border-radius:12px;padding:12px 14px;margin-bottom:18px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
-              <!-- Search Input -->
-              <div style="position:relative;flex:1;min-width:240px;max-width:400px">
-                <input type="text" id="lsSearchInput" placeholder="🔍 Tìm theo tên file, dự án, khách hàng..."
-                  oninput="onLsSearchInput(this.value)"
-                  style="width:100%;padding:8px 30px 8px 12px;border:1px solid var(--bdr);border-radius:8px;font-size:12.5px;background:var(--card);color:var(--t1);outline:none;transition:border-color .15s" />
-                <button id="lsSearchClearBtn" onclick="clearLsSearch()"
-                  style="display:none;position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--t3);cursor:pointer;font-size:14px;padding:2px">✕</button>
+              style="background:var(--inp);border:1px solid var(--bdr);border-radius:12px;padding:12px 14px;margin-bottom:18px;display:flex;flex-direction:column;gap:10px">
+              <!-- Top Row: Search & Dropdowns -->
+              <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+                <!-- Search Input -->
+                <div style="position:relative;flex:1;min-width:240px;max-width:380px">
+                  <input type="text" id="lsSearchInput" placeholder="🔍 Tìm theo tên file, dự án, khách hàng..."
+                    oninput="onLsSearchInput(this.value)"
+                    style="width:100%;padding:8px 30px 8px 12px;border:1px solid var(--bdr);border-radius:8px;font-size:12.5px;background:var(--card);color:var(--t1);outline:none;transition:border-color .15s" />
+                  <button id="lsSearchClearBtn" onclick="clearLsSearch()"
+                    style="display:none;position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;color:var(--t3);cursor:pointer;font-size:14px;padding:2px">✕</button>
+                </div>
+
+                <!-- Dropdown Filters -->
+                <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
+                  <!-- Định dạng file -->
+                  <select id="lsFormatFilter" onchange="onLsFormatFilterChange(this.value)"
+                    style="padding:6px 10px;border:1px solid var(--bdr);border-radius:8px;font-size:12px;background:var(--card);color:var(--t1);cursor:pointer" title="Lọc theo định dạng đuôi file">
+                    <option value="all">📁 Tất cả định dạng</option>
+                    <option value="xlsx">📗 Excel (.xlsx)</option>
+                    <option value="doc">📘 Word (.doc)</option>
+                    <option value="json">🗂️ Sao lưu (.json)</option>
+                  </select>
+
+                  <!-- Phiên bản -->
+                  <select id="lsVersionFilter" onchange="onLsVersionFilterChange(this.value)"
+                    style="padding:6px 10px;border:1px solid var(--bdr);border-radius:8px;font-size:12px;background:var(--card);color:var(--t1);cursor:pointer" title="Lọc theo phiên bản file">
+                    <option value="all">📑 Tất cả phiên bản</option>
+                    <option value="original">📌 Bản Gốc</option>
+                    <option value="versioned">🔄 Có bản v1, v2...</option>
+                    <option value="duplicate">⚠️ Trùng lặp (Chưa sửa)</option>
+                  </select>
+
+                  <!-- Thời gian -->
+                  <select id="lsDateFilter" onchange="onLsDateFilterChange(this.value)"
+                    style="padding:6px 10px;border:1px solid var(--bdr);border-radius:8px;font-size:12px;background:var(--card);color:var(--t1);cursor:pointer">
+                    <option value="all">🗓️ Toàn bộ thời gian</option>
+                    <option value="today">🗓️ Hôm nay</option>
+                    <option value="yesterday">🗓️ Hôm qua</option>
+                    <option value="7days">🗓️ 7 ngày qua</option>
+                    <option value="30days">🗓️ 30 ngày qua</option>
+                    <option value="this_month">🗓️ Tháng này</option>
+                  </select>
+                </div>
               </div>
 
-              <!-- Date Filter & Type Filter Buttons -->
-              <div style="display:flex;gap:6px;align-items:center;flex-wrap:wrap">
-                <select id="lsDateFilter" onchange="onLsDateFilterChange(this.value)"
-                  style="padding:6px 10px;border:1px solid var(--bdr);border-radius:8px;font-size:12px;background:var(--card);color:var(--t1);cursor:pointer">
-                  <option value="all">🗓️ Toàn bộ thời gian</option>
-                  <option value="today">🗓️ Hôm nay</option>
-                  <option value="yesterday">🗓️ Hôm qua</option>
-                  <option value="7days">🗓️ 7 ngày qua</option>
-                  <option value="30days">🗓️ 30 ngày qua</option>
-                  <option value="this_month">🗓️ Tháng này</option>
-                </select>
-
+              <!-- Bottom Row: Type Filter Pills & Compare Button -->
+              <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;padding-top:6px;border-top:1px dashed var(--bdr)">
                 <div
-                  style="display:flex;gap:4px;background:var(--card);padding:3px;border-radius:8px;border:1px solid var(--bdr)">
+                  style="display:flex;gap:4px;background:var(--card);padding:3px;border-radius:8px;border:1px solid var(--bdr);flex-wrap:wrap">
                   <button class="btn btn-sm" onclick="filterLichSu('all')" id="lsf-all"
                     style="font-size:11.5px;padding:4px 10px;border:none;border-radius:6px">Tất cả</button>
                   <button class="btn btn-sm" onclick="filterLichSu('dutoan')" id="lsf-dutoan"
                     style="font-size:11.5px;padding:4px 10px;border:none;border-radius:6px">📊 Dự Toán</button>
+                  <button class="btn btn-sm" onclick="filterLichSu('baogia')" id="lsf-baogia"
+                    style="font-size:11.5px;padding:4px 10px;border:none;border-radius:6px">🧾 Báo Giá</button>
                   <button class="btn btn-sm" onclick="filterLichSu('bbbg')" id="lsf-bbbg"
                     style="font-size:11.5px;padding:4px 10px;border:none;border-radius:6px">📝 Biên Bản</button>
                   <button class="btn btn-sm" onclick="filterLichSu('tddu')" id="lsf-tddu"
                     style="font-size:11.5px;padding:4px 10px;border:none;border-radius:6px">✅ Tuyên Bố</button>
-                  <button class="btn btn-sm" onclick="filterLichSu('baogia')" id="lsf-baogia"
-                    style="font-size:11.5px;padding:4px 10px;border:none;border-radius:6px">🧾 Báo Giá</button>
+                </div>
+
+                <div style="display:flex;align-items:center;gap:8px">
+                  <button class="btn btn-o btn-sm" onclick="openCustomComparePickerModal()" style="font-size:11.5px;padding:4px 10px" title="Chọn 2 file bất kỳ để so sánh sự khác biệt">
+                    ⚖️ So Sánh 2 File Tùy Chọn
+                  </button>
                 </div>
               </div>
             </div>
@@ -2241,9 +2369,15 @@
             <div style="font-size:13px;color:#475569;margin-bottom:20px;line-height:1.6">Tính năng Báo Giá đang được
               phát triển nội bộ. Vui lòng nhập mật khẩu Quản trị (Admin) để mở khóa:</div>
             <div style="margin-bottom:16px">
-              <input type="password" id="adminPassInput" placeholder="Nhập mật khẩu Admin..."
-                style="width:100%;padding:11px 14px;border:1px solid #cbd5e1;border-radius:10px;font-size:16px;text-align:center;background:#ffffff;color:#0f172a;outline:none;box-shadow:0 1px 2px rgba(0,0,0,0.04);font-family:inherit"
-                onkeydown="if(event.key==='Enter') verifyAdminPass()" />
+              <div style="position:relative;display:flex;align-items:center">
+                <input type="password" id="adminPassInput" placeholder="Nhập mật khẩu Admin..."
+                  style="width:100%;padding:11px 40px 11px 14px;border:1px solid #cbd5e1;border-radius:10px;font-size:16px;text-align:center;background:#ffffff;color:#0f172a;outline:none;box-shadow:0 1px 2px rgba(0,0,0,0.04);font-family:inherit"
+                  onkeydown="if(event.key==='Enter') verifyAdminPass()" />
+                <button type="button" onclick="toggleAdminPassVisibility('adminPassInput', this)" style="position:absolute;right:10px;background:none;border:none;cursor:pointer;font-size:18px;color:#64748b;padding:4px" title="Ẩn/Hiện mật khẩu">👁️</button>
+              </div>
+              <div style="font-size:11.5px;color:#64748b;margin-top:6px;text-align:center">
+                💡 Mật khẩu: <b style="color:#0284c7">2208</b> (hoặc <b>admin</b>, <b>thuanphat</b>)
+              </div>
             </div>
             <div style="display:flex;gap:10px;justify-content:center">
               <button class="btn btn-s" onclick="closeAdminModal()">Hủy bỏ</button>
@@ -2463,11 +2597,102 @@
       </div> <!-- end wrap -->
     </div> <!-- end app-main-wrapper -->
   </div> <!-- end app-layout -->
+
+  <!-- MODAL CẢNH BÁO QUÊN CHỈNH SỬA / THÔNG BÁO KHÁC BIỆT KHI XUẤT VERSION MỚI -->
+  <div id="lsExportAlertModal" class="modal-overlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(15,23,42,0.65);z-index:99999;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(6px);box-sizing:border-box" onclick="if(event.target===this)closeLsExportAlertModal()">
+    <div class="modal-box" style="max-width:560px;width:92%;background:var(--card);border-radius:16px;border:1.5px solid var(--bdr2);box-shadow:0 20px 60px rgba(0,0,0,0.3);overflow:hidden;animation:ls-slide-up .25s ease">
+      <div id="lsExportAlertHeader" style="padding:16px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--bdr)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span id="lsExportAlertIcon" style="font-size:24px">⚠️</span>
+          <div>
+            <h3 id="lsExportAlertTitle" style="font-size:16px;font-weight:800;margin:0;color:var(--t1)">Cảnh Báo Quên Sửa Dữ Liệu</h3>
+            <div id="lsExportAlertSub" style="font-size:12px;color:var(--t2);margin-top:2px">Hệ thống phát hiện phiên bản xuất mới</div>
+          </div>
+        </div>
+        <button onclick="closeLsExportAlertModal()" style="background:none;border:none;font-size:20px;color:var(--t2);cursor:pointer;padding:4px">✕</button>
+      </div>
+      <div id="lsExportAlertBody" style="padding:20px;font-size:13.5px;color:var(--t1);line-height:1.6">
+        <!-- Nội dung cảnh báo hoặc danh sách thay đổi -->
+      </div>
+      <div id="lsExportAlertFooter" style="padding:14px 20px;background:var(--inp);border-top:1px solid var(--bdr);display:flex;justify-content:flex-end;gap:10px;flex-wrap:wrap">
+        <!-- Nút hành động -->
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL BẢNG SO SÁNH CHI TIẾT (DIFF VIEWER) -->
+  <div id="lsDiffViewerModal" class="modal-overlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(15,23,42,0.65);z-index:99998;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(6px);box-sizing:border-box" onclick="if(event.target===this)closeLsDiffViewerModal()">
+    <div class="modal-box ls-diff-modal-box">
+      <div class="ls-diff-header">
+        <div style="display:flex;align-items:center;gap:10px">
+          <div style="width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,#7c3aed,#2563eb);color:#fff;display:flex;align-items:center;justify-content:center;font-size:18px">🔍</div>
+          <div>
+            <h3 style="font-size:16px;font-weight:800;color:var(--t1);margin:0">Bảng So Sánh Chi Tiết Phiên Bản (Diff Viewer)</h3>
+            <div id="lsDiffModalSubTitle" style="font-size:12px;color:var(--t2);margin-top:2px">Đối chiếu trực quan sự khác biệt giữa các phiên bản file đã xuất</div>
+          </div>
+        </div>
+        <button onclick="closeLsDiffViewerModal()" style="background:none;border:none;font-size:22px;color:var(--t2);cursor:pointer;padding:4px">✕</button>
+      </div>
+      <div class="ls-diff-body" id="lsDiffModalContent">
+        <!-- Nội dung Diff: KPI cards + 2 file comparison + Diff table -->
+      </div>
+      <div style="padding:12px 20px;background:var(--inp);border-top:1px solid var(--bdr);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px">
+        <div id="lsDiffFooterNote" style="font-size:12px;color:var(--t2)">
+          💡 <i>Nhấn phím <b>Esc</b> để đóng bảng so sánh</i>
+        </div>
+        <div id="lsDiffFooterActions" style="display:flex;gap:8px">
+          <button class="btn btn-o btn-sm" onclick="closeLsDiffViewerModal()">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL CHỌN 2 FILE BẤT KỲ ĐỂ SO SÁNH -->
+  <div id="lsCustomComparePickerModal" class="modal-overlay" style="display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(15,23,42,0.65);z-index:99997;align-items:center;justify-content:center;padding:16px;backdrop-filter:blur(6px);box-sizing:border-box" onclick="if(event.target===this)closeCustomComparePickerModal()">
+    <div class="modal-box" style="max-width:650px;width:92%;background:var(--card);border-radius:16px;border:1.5px solid var(--bdr2);box-shadow:0 20px 60px rgba(0,0,0,0.3);overflow:hidden">
+      <div style="padding:16px 20px;border-bottom:1px solid var(--bdr);display:flex;align-items:center;justify-content:space-between;background:var(--inp)">
+        <div style="display:flex;align-items:center;gap:10px">
+          <span style="font-size:20px">⚖️</span>
+          <div>
+            <h3 style="margin:0;font-size:15px;font-weight:800;color:var(--t1)">Chọn 2 File Trong Lịch Sử Để So Sánh</h3>
+            <div style="font-size:11.5px;color:var(--t2)">Hệ thống sẽ đối chiếu và phân tích từng điểm khác biệt giữa 2 file</div>
+          </div>
+        </div>
+        <button onclick="closeCustomComparePickerModal()" style="background:none;border:none;font-size:20px;color:var(--t2);cursor:pointer">✕</button>
+      </div>
+      <div style="padding:18px 20px;display:flex;flex-direction:column;gap:14px">
+        <div>
+          <label style="font-size:12.5px;font-weight:700;color:var(--t1);display:block;margin-bottom:6px">📌 Chọn File Thứ Nhất (File Cũ / Bản Gốc):</label>
+          <select id="lsCompareSelectA" style="width:100%;padding:8px 10px;border-radius:8px;border:1px solid var(--bdr2);background:var(--inp);color:var(--t1);font-size:12.5px"></select>
+        </div>
+        <div>
+          <label style="font-size:12.5px;font-weight:700;color:var(--t1);display:block;margin-bottom:6px">🔄 Chọn File Thứ Hai (File Mới / Phiên Bản Sau):</label>
+          <select id="lsCompareSelectB" style="width:100%;padding:8px 10px;border-radius:8px;border:1px solid var(--bdr2);background:var(--inp);color:var(--t1);font-size:12.5px"></select>
+        </div>
+      </div>
+      <div style="padding:12px 20px;background:var(--inp);border-top:1px solid var(--bdr);display:flex;justify-content:flex-end;gap:8px">
+        <button class="btn btn-o btn-sm" onclick="closeCustomComparePickerModal()">Hủy</button>
+        <button class="btn btn-p btn-sm" onclick="executeCustomFileCompare()">🔍 Bắt Đầu So Sánh</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- THANH NỔI SO SÁNH 2 FILE ĐÃ CHỌN -->
+  <div id="lsCompareFloatingBar" class="ls-compare-floating-bar" style="display:none">
+    <div style="display:flex;align-items:center;gap:8px">
+      <span style="font-size:18px">⚖️</span>
+      <span id="lsCompareBarText" style="font-size:13px;font-weight:700">Đã chọn 2 file để so sánh</span>
+    </div>
+    <button class="btn btn-sm" onclick="triggerSelectedFilesCompare()" style="background:#c3a45c;color:#001A4C;border:none;font-weight:800;padding:6px 14px;border-radius:20px;cursor:pointer">🔍 So Sánh Ngay</button>
+    <button onclick="clearSelectedCompareFiles()" style="background:none;border:none;color:#ffffff;cursor:pointer;font-size:12px;opacity:0.8;text-decoration:underline">Bỏ chọn</button>
+  </div>
+
   <div id="toast"><span id="ti">✅</span><span id="tm">OK</span></div>
 
   <script src="exceljs.min.js"></script>
-  <script src="main.js?v=20260916_fix_export"></script>
-  <script src="admin_catalog.js?v=20260910_154600"></script>
+  <script src="main.js?v=20260923_fix"></script>
+  <script src="admin_catalog.js?v=20261011_visits"></script>
+  <script src="form_builder.js?v=20260923_fix"></script>
   <!-- GOOGLE FIREBASE REALTIME CLOUD SYNC -->
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-database-compat.js"></script>

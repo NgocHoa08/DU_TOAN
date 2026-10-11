@@ -4157,6 +4157,54 @@ function patchCatalogClassifier() {
 }
 
 /* ── HOOK VÀO SWITCH MAIN TAB ── */
+/* ── DANH SÁCH MẬT KHẨU ADMIN & TÍNH NĂNG ĐỔI MẬT KHẨU ── */
+var DEFAULT_ADMIN_PASSWORDS = ['2208', 'admin', 'admin2208', 'thuanphat', '123456', 'tp2208'];
+var LS_ADMIN_CUSTOM_PASS_KEY = 'dutoan_custom_admin_pass';
+
+function getValidAdminPasswords() {
+  var list = DEFAULT_ADMIN_PASSWORDS.slice();
+  try {
+    var custom = localStorage.getItem(LS_ADMIN_CUSTOM_PASS_KEY);
+    if (custom && custom.trim()) {
+      list.push(custom.trim().toLowerCase());
+    }
+  } catch (e) { }
+  if (typeof ADMIN_PASSWORD_VAL !== 'undefined' && ADMIN_PASSWORD_VAL) {
+    list.push(String(ADMIN_PASSWORD_VAL).toLowerCase().trim());
+  }
+  return list;
+}
+
+function adminOpenChangePassModal() {
+  var currentPass = localStorage.getItem(LS_ADMIN_CUSTOM_PASS_KEY) || '2208';
+  var newPass = prompt('🔑 CÀI ĐẶT MẬT KHẨU QUẢN TRỊ MỚI:\n\n(Mật khẩu hiện tại của bạn: ' + currentPass + ')\n\nNhập mật khẩu quản trị mới mà bạn muốn đặt (ví dụ: số điện thoại, mật khẩu công ty...):', '');
+  if (newPass === null) return;
+  newPass = newPass.trim();
+  if (!newPass) {
+    alert('Mật khẩu không được để trống!');
+    return;
+  }
+  try {
+    localStorage.setItem(LS_ADMIN_CUSTOM_PASS_KEY, newPass);
+    if (typeof toast === 'function') {
+      toast('🔑 Đã đổi mật khẩu quản trị thành công! Mật khẩu mới: ' + newPass, 'ok');
+    }
+  } catch (e) {
+    alert('Không thể lưu mật khẩu: ' + e.message);
+  }
+}
+
+function adminResetPasswordDefault() {
+  if (!confirm('Bạn có chắc muốn khôi phục mật khẩu quản trị về mặc định ban đầu (2208)?')) return;
+  try {
+    localStorage.removeItem(LS_ADMIN_CUSTOM_PASS_KEY);
+    if (typeof toast === 'function') {
+      toast('🔄 Đã khôi phục mật khẩu quản trị mặc định: 2208', 'ok');
+    }
+  } catch (e) { }
+}
+
+/* ── HOOK VÀO SWITCH MAIN TAB ── */
 var _coreSwitchMainTab = typeof switchMainTab === 'function' ? switchMainTab : (typeof window !== 'undefined' ? window.switchMainTab : null);
 
 switchMainTab = function (tab) {
@@ -4175,8 +4223,8 @@ switchMainTab = function (tab) {
     var adminShell = document.getElementById('admin-shell');
     if (adminShell) adminShell.style.display = 'block';
 
+    // Luôn kiểm tra mật khẩu để bảo vệ an toàn cho hệ thống quản trị
     if (!adminIsUnlocked) {
-      // Luôn yêu cầu mật khẩu khi vào Quản trị hệ thống (không hiển thị mật khẩu trên giao diện)
       var lockScreen = document.getElementById('admin-lock-screen');
       if (lockScreen) lockScreen.style.display = 'block';
       var workspace = document.getElementById('admin-workspace');
@@ -4205,7 +4253,11 @@ switchMainTab = function (tab) {
       var catView = document.getElementById('admin-subview-catalog');
       if (catView) {
         catView.style.display = 'block';
-        renderAdminDashboard(catView);
+        try {
+          renderAdminDashboard(catView);
+        } catch (e) {
+          console.error('Lỗi renderAdminDashboard:', e);
+        }
       }
 
       var statusEl = document.getElementById('menubarActiveTabStatus');
@@ -4220,9 +4272,9 @@ switchMainTab = function (tab) {
   }
 
   // Khi chuyển sang các tab khác (1. Dự Toán, 2. Báo Giá, 3. Tuyên Bố, 4. Biên Bản, 5. Lịch Sử, 6. Hướng Dẫn)
-  // Tự động KHÓA phiên Quản trị hệ thống để bảo mật
+  // Luôn khóa lại phiên quản trị để đảm bảo bảo mật cho hệ thống
   adminIsUnlocked = false;
-  sessionStorage.removeItem('admin_authenticated');
+  try { sessionStorage.removeItem('admin_authenticated'); } catch (e) { }
 
   var adminShell = document.getElementById('admin-shell');
   if (adminShell) adminShell.style.display = 'none';
@@ -4241,28 +4293,72 @@ function isAdminLoggedIn() {
   return adminIsUnlocked === true;
 }
 
-/* ── XÁC THỰC MẬT KHẨU ADMIN ── */
+/* ── XÁC THỰC MẬT KHẨU ADMIN (HỖ TRỢ 2208, admin, thuanphat, admin2208, 123456 & MẬT KHẨU TỰ ĐẶT) ── */
 function submitAdminPassword() {
   var inp = document.getElementById('adminPagePassInput');
   if (!inp) return;
-  var val = inp.value.trim();
-  if (val === '2208' || val === ADMIN_PASSWORD_VAL) {
+  var rawVal = inp.value || '';
+  var val = rawVal.trim().toLowerCase();
+
+  var validList = getValidAdminPasswords();
+  var isMatch = validList.includes(val);
+
+  if (isMatch) {
     adminIsUnlocked = true;
-    sessionStorage.setItem('admin_authenticated', 'true');
+    window.adminIsUnlocked = true;
+    try { sessionStorage.setItem('admin_authenticated', 'true'); } catch (e) { }
     toast('🔓 Mở khóa Quản trị thành công!', 'ok');
-    switchMainTab('admin');
+
+    // Chuyển đổi trực tiếp giao diện ngay lập tức
+    var lockScreen = document.getElementById('admin-lock-screen');
+    if (lockScreen) lockScreen.style.display = 'none';
+    var workspace = document.getElementById('admin-workspace');
+    if (workspace) workspace.style.display = 'block';
+
+    var adminShell = document.getElementById('admin-shell');
+    if (adminShell) adminShell.style.display = 'block';
+
+    var statusEl = document.getElementById('menubarActiveTabStatus');
+    if (statusEl) statusEl.innerHTML = '<span class="pulse-dot" style="background:#ef4444"></span> Đang ở: <b>⚙️ Quản Trị Hệ Thống</b>';
+
+    var quickBtn = document.getElementById('btnMenuQuickAction');
+    if (quickBtn) quickBtn.innerHTML = '📊 Xuất Excel Tất Cả Thiết Bị';
+
+    var catView = document.getElementById('admin-subview-catalog');
+    if (catView) {
+      catView.style.display = 'block';
+      try {
+        renderAdminDashboard(catView);
+      } catch (err) {
+        console.error('Lỗi khi renderAdminDashboard:', err);
+      }
+    }
+
+    try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (e) { }
   } else {
     toast('❌ Mật khẩu không chính xác! Vui lòng thử lại.', 'err');
-    inp.value = '';
     inp.focus();
     inp.style.borderColor = '#ef4444';
+  }
+}
+
+/* ── HÀM BẬT/TẮT HIỂN THỊ MẬT KHẨU ── */
+function toggleAdminPassVisibility(inputId, btnEl) {
+  var inp = document.getElementById(inputId);
+  if (!inp) return;
+  if (inp.type === 'password') {
+    inp.type = 'text';
+    if (btnEl) btnEl.innerHTML = '🙈';
+  } else {
+    inp.type = 'password';
+    if (btnEl) btnEl.innerHTML = '👁️';
   }
 }
 
 /* ── KHÓA & ĐĂNG XUẤT ADMIN ── */
 function adminLogout() {
   adminIsUnlocked = false;
-  sessionStorage.removeItem('admin_authenticated');
+  try { sessionStorage.removeItem('admin_authenticated'); } catch (e) { }
   toast('🔒 Đã khóa phiên Quản trị hệ thống!', 'ok');
   switchMainTab('dutoan');
 }
@@ -4289,9 +4385,269 @@ function checkAndRenderAdminView() {
 if (typeof window !== 'undefined') {
   window.isAdminLoggedIn = isAdminLoggedIn;
   window.submitAdminPassword = submitAdminPassword;
+  window.toggleAdminPassVisibility = toggleAdminPassVisibility;
   window.adminLogout = adminLogout;
   window.checkAndRenderAdminView = checkAndRenderAdminView;
   window.adminExportAllDevicesExcel = adminExportAllDevicesExcel;
+}
+
+/* ═══ NHẬT KÝ PHIÊN ĐĂNG NHẬP ADMIN (XEM LỊCH SỬ ĐĂNG NHẬP / ĐĂNG XUẤT / SAI MẬT KHẨU) ═══ */
+var LS_ADMIN_SESSIONS_KEY = 'dutoan_admin_sessions';
+var ADMIN_SESSIONS_MAX = 300;
+var adminCurrentSessionId = null;
+var adminSessionsFilter = 'all'; // 'all' | 'success' | 'fail'
+
+function adminParseDevice() {
+  var ua = (navigator.userAgent || '');
+  var os = /Windows NT 10/.test(ua) ? 'Windows 10/11' : /Windows/.test(ua) ? 'Windows' :
+    /Android/.test(ua) ? 'Android' : /iPhone|iPad|iPod/.test(ua) ? 'iOS' :
+    /Mac OS X/.test(ua) ? 'macOS' : /Linux/.test(ua) ? 'Linux' : 'Không rõ';
+  var br = /Edg\//.test(ua) ? 'Edge' : /OPR\//.test(ua) ? 'Opera' :
+    /Chrome\//.test(ua) ? 'Chrome' : /Firefox\//.test(ua) ? 'Firefox' :
+    /Safari\//.test(ua) ? 'Safari' : 'Không rõ';
+  var mobile = /Mobi|Android|iPhone|iPad/.test(ua);
+  return { os: os, browser: br, type: mobile ? 'Điện thoại/Tablet' : 'Máy tính', screen: (screen.width || 0) + 'x' + (screen.height || 0) };
+}
+
+function adminLoadLocalSessions() {
+  try {
+    var arr = JSON.parse(localStorage.getItem(LS_ADMIN_SESSIONS_KEY) || '[]');
+    return Array.isArray(arr) ? arr : [];
+  } catch (e) { return []; }
+}
+
+function adminSaveLocalSessions(arr) {
+  try {
+    localStorage.setItem(LS_ADMIN_SESSIONS_KEY, JSON.stringify(arr.slice(0, ADMIN_SESSIONS_MAX)));
+  } catch (e) { }
+}
+
+function adminSessionsCloudRef() {
+  try {
+    if (typeof firebase !== 'undefined' && firebase.apps && firebase.apps.length) {
+      return firebase.database().ref('du_toan_admin_sessions');
+    }
+  } catch (e) { }
+  return null;
+}
+
+function adminLogSession(result) {
+  var d = adminParseDevice();
+  var rec = {
+    id: 's' + Date.now() + Math.random().toString(36).slice(2, 6),
+    result: result, // 'success' | 'fail'
+    loginAt: Date.now(),
+    logoutAt: null,
+    logoutReason: null,
+    os: d.os, browser: d.browser, type: d.type, screen: d.screen,
+    tz: (function () { try { return Intl.DateTimeFormat().resolvedOptions().timeZone; } catch (e) { return ''; } })(),
+    lang: navigator.language || ''
+  };
+  var arr = adminLoadLocalSessions();
+  arr.unshift(rec);
+  adminSaveLocalSessions(arr);
+  if (result === 'success') adminCurrentSessionId = rec.id;
+  var ref = adminSessionsCloudRef();
+  if (ref) { try { ref.child(rec.id).set(rec); } catch (e) { } }
+  return rec;
+}
+
+function adminCloseSession(reason) {
+  if (!adminCurrentSessionId) return;
+  var id = adminCurrentSessionId;
+  adminCurrentSessionId = null;
+  var now = Date.now();
+  var arr = adminLoadLocalSessions();
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].id === id) { arr[i].logoutAt = now; arr[i].logoutReason = reason; break; }
+  }
+  adminSaveLocalSessions(arr);
+  var ref = adminSessionsCloudRef();
+  if (ref) { try { ref.child(id).update({ logoutAt: now, logoutReason: reason }); } catch (e) { } }
+}
+
+function adminFmtDuration(ms) {
+  if (!ms || ms < 0) return '—';
+  var s = Math.round(ms / 1000);
+  if (s < 60) return s + ' giây';
+  var m = Math.floor(s / 60);
+  if (m < 60) return m + ' phút ' + (s % 60) + ' giây';
+  return Math.floor(m / 60) + ' giờ ' + (m % 60) + ' phút';
+}
+
+function adminEscHtml(v) {
+  return String(v == null ? '' : v).replace(/[&<>"']/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+
+/* Hook ghi nhật ký vào các hàm xác thực hiện có */
+(function () {
+  var origSubmit = submitAdminPassword;
+  submitAdminPassword = function () {
+    var before = adminIsUnlocked;
+    origSubmit.apply(this, arguments);
+    if (!before) adminLogSession(adminIsUnlocked ? 'success' : 'fail');
+  };
+  window.submitAdminPassword = submitAdminPassword;
+
+  var origLogout = adminLogout;
+  adminLogout = function () {
+    adminCloseSession('Đăng xuất thủ công');
+    origLogout.apply(this, arguments);
+  };
+  window.adminLogout = adminLogout;
+
+  var prevSwitch = switchMainTab;
+  switchMainTab = function (tab) {
+    if (tab !== 'admin' && adminIsUnlocked) adminCloseSession('Tự khóa khi chuyển tab');
+    return prevSwitch.apply(this, arguments);
+  };
+  window.switchMainTab = switchMainTab;
+
+  window.addEventListener('beforeunload', function () {
+    if (adminIsUnlocked) adminCloseSession('Đóng trang');
+  });
+})();
+
+(function () {
+  function logVisitOnce() {
+    try {
+      if (sessionStorage.getItem('dutoan_visit_logged')) return;
+      sessionStorage.setItem('dutoan_visit_logged', '1');
+    } catch (e) { }
+    adminLogSession('visit');
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function () { setTimeout(logVisitOnce, 1500); });
+  } else {
+    setTimeout(logVisitOnce, 1500);
+  }
+})();
+
+function adminClearSessions() {
+  if (!confirm('Xóa toàn bộ nhật ký phiên đăng nhập (trên máy này và trên Cloud)?')) return;
+  adminSaveLocalSessions([]);
+  var ref = adminSessionsCloudRef();
+  if (ref) { try { ref.remove(); } catch (e) { } }
+  if (typeof toast === 'function') toast('🗑️ Đã xóa nhật ký phiên đăng nhập', 'ok');
+  adminRenderSessionsView();
+}
+
+function adminSetSessionsFilter(f) {
+  adminSessionsFilter = f;
+  adminRenderSessionsView();
+}
+
+function adminRenderSessionsView(container) {
+  container = container || document.getElementById('admin-subview-catalog');
+  if (!container) return;
+  var ref = adminSessionsCloudRef();
+  if (ref && !adminRenderSessionsView._loading) {
+    adminRenderSessionsView._loading = true;
+    ref.limitToLast(ADMIN_SESSIONS_MAX).once('value').then(function (snap) {
+      var val = snap.val() || {};
+      var list = Object.keys(val).map(function (k) { return val[k]; });
+      adminRenderSessionsView._loading = false;
+      adminDrawSessions(container, list, 'Cloud (mọi thiết bị)');
+    }).catch(function () {
+      adminRenderSessionsView._loading = false;
+      adminDrawSessions(container, adminLoadLocalSessions(), 'Trên máy này (không kết nối được Cloud)');
+    });
+    adminDrawSessions(container, adminLoadLocalSessions(), 'Đang tải từ Cloud...');
+    return;
+  }
+  adminDrawSessions(container, adminLoadLocalSessions(), 'Trên máy này');
+}
+
+function adminDrawSessions(container, list, sourceLabel) {
+  if (adminCurrentSubView !== 'sessions') return;
+  list = list.slice().sort(function (a, b) { return (b.loginAt || 0) - (a.loginAt || 0); });
+  var okCount = list.filter(function (r) { return r.result === 'success'; }).length;
+  var visitCount = list.filter(function (r) { return r.result === 'visit'; }).length;
+  var failCount = list.filter(function (r) { return r.result === 'fail'; }).length;
+  var activeCount = list.filter(function (r) { return r.result === 'success' && !r.logoutAt && r.id === adminCurrentSessionId; }).length;
+  var shown = list.filter(function (r) {
+    return adminSessionsFilter === 'all' || r.result === adminSessionsFilter;
+  });
+
+  var rows = shown.map(function (r, i) {
+    var isCur = r.id === adminCurrentSessionId;
+    var ok = r.result === 'success';
+    var isVisit = r.result === 'visit';
+    var badge = isVisit
+      ? '<span style="background:#e0f2fe;color:#075985;padding:2px 8px;border-radius:99px;font-weight:700;font-size:12px">👁️ Truy cập</span>'
+      : ok
+      ? '<span style="background:#dcfce7;color:#166534;padding:2px 8px;border-radius:99px;font-weight:700;font-size:12px">✅ Thành công</span>'
+      : '<span style="background:#fee2e2;color:#991b1b;padding:2px 8px;border-radius:99px;font-weight:700;font-size:12px">❌ Sai mật khẩu</span>';
+    var status = isVisit ? 'Chỉ xem web (chưa đăng nhập)' : !ok ? '—' : isCur ? '<b style="color:#16a34a">🟢 Đang hoạt động (phiên của bạn)</b>'
+      : r.logoutAt ? adminEscHtml(r.logoutReason || 'Đã đăng xuất') : '<span style="color:#b45309">Không rõ (đóng đột ngột)</span>';
+    var dur = ok && r.logoutAt ? adminFmtDuration(r.logoutAt - r.loginAt) : (isCur ? adminFmtDuration(Date.now() - r.loginAt) : '—');
+    return '<tr style="border-bottom:1px solid var(--bdr2);' + (isCur ? 'background:#f0fdf4' : '') + '">' +
+      '<td style="padding:8px 10px">' + (i + 1) + '</td>' +
+      '<td style="padding:8px 10px;white-space:nowrap">' + new Date(r.loginAt).toLocaleString('vi-VN') + '</td>' +
+      '<td style="padding:8px 10px">' + badge + '</td>' +
+      '<td style="padding:8px 10px">' + adminEscHtml(r.browser) + ' / ' + adminEscHtml(r.os) + '<div style="font-size:11px;color:var(--t2)">' + adminEscHtml(r.type) + ' · ' + adminEscHtml(r.screen) + '</div></td>' +
+      '<td style="padding:8px 10px">' + (ok && r.logoutAt ? new Date(r.logoutAt).toLocaleString('vi-VN') : '—') + '</td>' +
+      '<td style="padding:8px 10px">' + dur + '</td>' +
+      '<td style="padding:8px 10px">' + status + '</td>' +
+      '<td style="padding:8px 10px;font-size:12px;color:var(--t2)">' + adminEscHtml(r.tz) + '</td>' +
+      '</tr>';
+  }).join('');
+  if (!rows) rows = '<tr><td colspan="8" style="padding:24px;text-align:center;color:var(--t2)">Chưa có phiên đăng nhập nào được ghi nhận.</td></tr>';
+
+  function fbtn(key, label) {
+    return '<button type="button" class="btn btn-sm ' + (adminSessionsFilter === key ? 'btn-p' : 'btn-o') + '" onclick="adminSetSessionsFilter(\'' + key + '\')">' + label + '</button>';
+  }
+  var card = function (n, label, color) {
+    return '<div style="border:1.5px solid var(--bdr2);border-radius:12px;padding:12px 16px;background:var(--bg1,#fff)"><div style="font-size:26px;font-weight:900;color:' + color + '">' + n + '</div><div style="font-size:12px;color:var(--t2)">' + label + '</div></div>';
+  };
+
+  container.innerHTML =
+    '<div class="admin-page-wrap" style="padding:16px 20px;max-width:1440px;margin:0 auto">' +
+    '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;padding-bottom:16px;border-bottom:1.5px solid var(--bdr2)">' +
+    '    <div><div style="font-size:22px;font-weight:900;color:var(--t1)">🕒 PHIÊN ĐĂNG NHẬP ADMIN</div>' +
+    '    <div style="font-size:13px;color:var(--t2);margin-top:3px">Nguồn dữ liệu: <b>' + adminEscHtml(sourceLabel) + '</b></div></div>' +
+    '    <div style="display:flex;gap:8px;flex-wrap:wrap">' +
+    '      <button class="btn btn-o btn-sm" onclick="adminRenderSessionsView()">🔄 Làm mới</button>' +
+    '      <button class="btn btn-o btn-sm" onclick="adminClearSessions()" style="color:#ef4444;border-color:#fca5a5">🗑️ Xóa nhật ký</button>' +
+    '      <button class="btn btn-o btn-sm" onclick="adminLogout()" style="color:#ef4444;border-color:#fca5a5">🔒 Đăng xuất</button>' +
+    '    </div>' +
+    '  </div>' +
+    '  <div style="display:flex;gap:10px;margin-bottom:18px;border-bottom:1px solid var(--bdr2);padding-bottom:10px">' +
+    '    <button type="button" class="btn btn-sm btn-o" onclick="adminSwitchSubView(\'catalog\')" style="font-weight:800;border-radius:8px">📦 Quản Lý Thiết Bị</button>' +
+    '    <button type="button" class="btn btn-sm btn-o" onclick="adminSwitchSubView(\'form_studio\')" style="font-weight:800;border-radius:8px">🎨 Studio Thiết Kế</button>' +
+    '    <button type="button" class="btn btn-sm btn-p" onclick="adminSwitchSubView(\'sessions\')" style="font-weight:800;border-radius:8px">🕒 Phiên Đăng Nhập</button>' +
+    '  </div>' +
+    '  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:16px">' +
+    card(list.length, 'Tổng bản ghi', '#0284c7') + card(okCount, 'Đăng nhập thành công', '#16a34a') +
+    card(visitCount, 'Lượt truy cập web', '#0891b2') + card(failCount, 'Sai mật khẩu', '#dc2626') + card(activeCount, 'Phiên đang hoạt động', '#7c3aed') +
+    '  </div>' +
+    '  <div style="display:flex;gap:8px;margin-bottom:12px">' + fbtn('all', 'Tất cả') + fbtn('visit', '👁️ Truy cập') + fbtn('success', '✅ Thành công') + fbtn('fail', '❌ Thất bại') + '</div>' +
+    '  <div style="overflow-x:auto;border:1.5px solid var(--bdr2);border-radius:12px">' +
+    '    <table style="width:100%;border-collapse:collapse;font-size:13px;text-align:left">' +
+    '      <thead><tr style="background:var(--bg2,#f1f5f9)"><th style="padding:10px">#</th><th style="padding:10px">Thời gian đăng nhập</th><th style="padding:10px">Kết quả</th><th style="padding:10px">Thiết bị</th><th style="padding:10px">Thời gian thoát</th><th style="padding:10px">Thời lượng</th><th style="padding:10px">Trạng thái phiên</th><th style="padding:10px">Múi giờ</th></tr></thead>' +
+    '      <tbody>' + rows + '</tbody>' +
+    '    </table>' +
+    '  </div>' +
+    '</div>';
+}
+
+if (typeof window !== 'undefined') {
+  window.adminRenderSessionsView = adminRenderSessionsView;
+  window.adminClearSessions = adminClearSessions;
+  window.adminSetSessionsFilter = adminSetSessionsFilter;
+}
+
+var adminCurrentSubView = 'catalog'; // 'catalog' | 'form_studio'
+
+function adminSwitchSubView(subView) {
+  adminCurrentSubView = subView;
+  renderAdminDashboard();
+}
+if (typeof window !== 'undefined') {
+  window.adminSwitchSubView = adminSwitchSubView;
+  window.renderAdminDashboard = renderAdminDashboard;
 }
 
 /* ── BẢNG ĐIỀU KHIỂN ADMIN QUẢN LÝ SẢN PHẨM (ĐẦY ĐỦ: TÌM KIẾM, CHỈNH SỬA, KHÓA, XÓA) ── */
@@ -4301,8 +4657,41 @@ function renderAdminDashboard(container) {
   }
   if (!container) return;
 
+  if (typeof CATALOG_ITEMS === 'undefined' || !Array.isArray(CATALOG_ITEMS)) {
+    CATALOG_ITEMS = [];
+  }
   var totalCount = CATALOG_ITEMS.length;
-  var lockedCount = CATALOG_ITEMS.filter(function (it) { return !!it.isLocked; }).length;
+  var lockedCount = CATALOG_ITEMS.filter(function (it) { return it && !!it.isLocked; }).length;
+  if (adminCurrentSubView === 'sessions') {
+    adminRenderSessionsView(container);
+    return;
+  }
+  if (adminCurrentSubView === 'form_studio') {
+    var htmlStudio = '<div class="admin-page-wrap" style="padding:16px 20px;max-width:1440px;margin:0 auto">' +
+      '  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;padding-bottom:16px;border-bottom:1.5px solid var(--bdr2)">' +
+      '    <div>' +
+      '      <div style="font-size:22px;font-weight:900;color:var(--t1);letter-spacing:0.5px">⚙️ TRUNG TÂM QUẢN TRỊ HỆ THỐNG</div>' +
+      '      <div style="font-size:13px;color:var(--t2);margin-top:3px">Quản lý và tùy biến bố cục các form, co giãn kích thước, kéo thả và lưu mẫu biểu.</div>' +
+      '    </div>' +
+      '    <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">' +
+      '      <button class="btn btn-o btn-sm" onclick="adminOpenChangePassModal()" style="color:#0284c7;border-color:#bae6fd;font-weight:700" title="Cài đặt và đổi mật khẩu quản trị theo ý bạn">🔑 Đổi mật khẩu</button>' +
+      '      <button class="btn btn-o btn-sm" onclick="adminLogout()" style="color:#ef4444;border-color:#fca5a5" title="Đăng xuất chế độ Admin">🔒 Đăng xuất</button>' +
+      '    </div>' +
+      '  </div>' +
+      '  <div style="display:flex;gap:10px;margin-bottom:18px;border-bottom:1px solid var(--bdr2);padding-bottom:10px">' +
+      '    <button type="button" class="btn btn-sm btn-o" onclick="adminSwitchSubView(\'catalog\')" style="font-weight:800;border-radius:8px">📦 Quản Lý Thiết Bị &amp; Thông Số (' + totalCount + ')</button>' +
+      '    <button type="button" class="btn btn-sm btn-p" onclick="adminSwitchSubView(\'form_studio\')" style="font-weight:800;border-radius:8px">🎨 Studio Thiết Kế &amp; Mẫu Form</button>' +
+      '    <button type="button" class="btn btn-sm btn-o" onclick="adminSwitchSubView(\'sessions\')" style="font-weight:800;border-radius:8px">🕒 Phiên Đăng Nhập</button>' +
+      '  </div>' +
+      '  <div id="admin-studio-container"></div>' +
+      '</div>';
+    container.innerHTML = htmlStudio;
+    var studioContainer = document.getElementById('admin-studio-container');
+    if (studioContainer && window.FormBuilder && typeof window.FormBuilder.renderAdminStudio === 'function') {
+      window.FormBuilder.renderAdminStudio(studioContainer);
+    }
+    return;
+  }
   var activeCount = totalCount - lockedCount;
   var wordExcelCount = CATALOG_ITEMS.filter(function (it) {
     return it.isFromMauMay || it.file || it.sourceFile;
@@ -4335,7 +4724,7 @@ function renderAdminDashboard(container) {
   });
 
   // Danh sách các Hãng để lọc
-  var allBrands = Array.from(new Set(CATALOG_ITEMS.map(function (it) { return it.brand; }).filter(Boolean))).sort();
+  var allBrands = Array.from(new Set((CATALOG_ITEMS || []).map(function (it) { return it && it.brand; }).filter(Boolean))).sort();
 
   var html =
     '<div class="admin-page-wrap" style="padding:16px 20px;max-width:1440px;margin:0 auto">' +
@@ -4354,10 +4743,16 @@ function renderAdminDashboard(container) {
     '      <button class="btn btn-sm" onclick="if(window.DU_TOAN_CLOUD)window.DU_TOAN_CLOUD.pushCatalogToCloud(true);else adminSaveCatalogChanges()" style="background:#10b981;color:#fff;font-weight:800;border:none;box-shadow:0 2px 6px rgba(16,185,129,0.3);display:inline-flex;align-items:center;gap:4px" title="Đồng bộ ngay dữ liệu lên Cloud Database cho mọi máy cùng thấy">☁️ Đồng bộ Cloud</button>' +
     '      <button class="btn btn-o btn-sm" onclick="adminExportJson()" title="Tải file sao lưu danh mục .json">📤 Xuất JSON</button>' +
     '      <button class="btn btn-o btn-sm" onclick="adminResetToDefault()" title="Khôi phục về danh mục sản phẩm gốc">🔄 Khôi phục gốc</button>' +
+    '      <button class="btn btn-o btn-sm" onclick="adminOpenChangePassModal()" style="color:#0284c7;border-color:#bae6fd;font-weight:700" title="Cài đặt và đổi mật khẩu quản trị theo ý bạn">🔑 Đổi mật khẩu</button>' +
     '      <button class="btn btn-o btn-sm" onclick="adminLogout()" style="color:#ef4444;border-color:#fca5a5" title="Đăng xuất chế độ Admin">🔒 Đăng xuất</button>' +
     '    </div>' +
     '  </div>' +
-
+    '  <!-- ADMIN SUB-MODULE NAVIGATION TABS -->' +
+    '  <div style="display:flex;gap:10px;margin-bottom:18px;border-bottom:1px solid var(--bdr2);padding-bottom:10px">' +
+    '    <button type="button" class="btn btn-sm btn-p" onclick="adminSwitchSubView(\'catalog\')" style="font-weight:800;border-radius:8px">📦 Quản Lý Thiết Bị &amp; Thông Số (' + totalCount + ')</button>' +
+    '    <button type="button" class="btn btn-sm btn-o" onclick="adminSwitchSubView(\'form_studio\')" style="font-weight:800;border-radius:8px">🎨 Studio Thiết Kế &amp; Mẫu Form</button>' +
+    '    <button type="button" class="btn btn-sm btn-o" onclick="adminSwitchSubView(\'sessions\')" style="font-weight:800;border-radius:8px">🕒 Phiên Đăng Nhập</button>' +
+    '  </div>' +
     '  <!-- STATS BADGES (THỐNG KÊ NHANH) -->' +
     '  <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:12px;margin-bottom:16px">' +
     '    <div onclick="adminCurrentStatus=\'all\';adminCurrentSource=\'all\';renderAdminDashboard()" style="cursor:pointer;background:var(--card);border-radius:10px;border:1.5px solid var(--bdr2);padding:10px 14px;display:flex;align-items:center;gap:12px;transition:all 0.15s ease">' +
